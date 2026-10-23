@@ -1,0 +1,29 @@
+{
+  "pool": {
+    "sc": [
+      0.7169152498245239,
+      0.9907082915306091
+    ],
+    "sm": [
+      0.29891911149024963,
+      0.9155299067497253
+    ]
+  },
+  "n_pairs": 1,
+  "selection": {
+    "motion": {
+      "arm": "motion.dynamic.up_blocks.0.ft",
+      "blocks": [
+        "up_blocks.0"
+      ],
+      "window": "ft",
+      "median_dD_dev": 0.21767851541463973
+    },
+    "content": {
+      "arm": "content.static.allmm.all",
+      "blocks": "all",
+      "window": "all",
+      "median_dD_dev": -0.2188296250009179
+    }
+  }
+}

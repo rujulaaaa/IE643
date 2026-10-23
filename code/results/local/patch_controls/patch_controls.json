@@ -1,0 +1,88 @@
+{
+  "experiment": "patch_controls",
+  "date": "2026-10-20",
+  "python": "3.10.12",
+  "torch": "2.10.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.0",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_total_vram_gb": 7.62,
+  "capability": "sm_89",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "seconds": {
+    "group1": 553.0606318539994,
+    "group2": 188.8864387170006
+  },
+  "seconds_per_clip": 67.44973368827273,
+  "n_patched": {
+    "null_tensor": 400,
+    "null_dynamic": 400,
+    "null_static": 400,
+    "misindexed": 384,
+    "A_to_B": 27,
+    "B_to_A": 27
+  },
+  "n_attn_injected": {
+    "null_tensor": 0,
+    "null_dynamic": 0,
+    "null_static": 0,
+    "null_attn": 1050,
+    "misindexed": 0,
+    "B_plain": 0,
+    "A_to_B": 0
+  },
+  "null_tensor": {
+    "latent_mad": 0.0,
+    "psnr_db": Infinity,
+    "pass": true
+  },
+  "null_dynamic": {
+    "latent_mad": 0.0,
+    "psnr_db": Infinity,
+    "pass": true
+  },
+  "null_static": {
+    "latent_mad": 0.0,
+    "psnr_db": Infinity,
+    "pass": true
+  },
+  "null_attn": {
+    "latent_mad": 0.0,
+    "psnr_db": Infinity,
+    "pass": true
+  },
+  "misindexed": {
+    "latent_mad": 0.10335781425237656,
+    "psnr_db": 25.13844678451864,
+    "pass": false
+  },
+  "B_plain_vs_sourceB_mad": 0.0,
+  "A_plain_vs_sourceA_mad": 0.0,
+  "transfer_A_to_B": 0.17148251461642972,
+  "transfer_B_to_A": 0.08298568713581789,
+  "checks": {
+    "null tensor patch passes D-11": true,
+    "null x\u0303 patch passes D-11": true,
+    "null x\u0304 patch passes D-11": true,
+    "null attention injection passes D-11": true,
+    "mis-indexed null patch fails D-11": true,
+    "unpatched arm == source of the other group": true,
+    "symmetric transfer (ratio within 2x)": false
+  }
+}

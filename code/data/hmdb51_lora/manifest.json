@@ -1,0 +1,165 @@
+{
+ "source": "https://huggingface.co/datasets/divm/hmdb51",
+ "revision": "0b7ec9fef2ce1809ebc7a669227b99f731075683",
+ "classes": {
+  "run": "running",
+  "walk": "walking",
+  "jump": "jumping",
+  "turn": "spinning"
+ },
+ "rule": "(deterministic, applied to HMDB51's own annotation tags in the file name):\n    body fully visible (f), no camera motion (nm), one person (np1), quality not \"bad\";\n    sorted by file name, at most one clip per source film, first 5 per class.\nA static camera matters: with camera motion the LoRA would learn panning, not the action.",
+ "clips": [
+  {
+   "class": "run",
+   "verb": "running",
+   "split": "test",
+   "path": "run/run_20060723sfjffbartsinger_run_f_nm_np1_fr_med_1.mp4",
+   "bytes": 64111,
+   "sha256": "a55a2d3ac5342a5fbc9ff824603967d2e35e1e89d37fc9fc8570332acbd2c9ff"
+  },
+  {
+   "class": "run",
+   "verb": "running",
+   "split": "test",
+   "path": "run/run_20060723sfjffsomelikeitwarmed_run_f_nm_np1_fr_med_6.mp4",
+   "bytes": 48781,
+   "sha256": "44c1c6aa3e1444220abc6bbb73ce133f81f9dbca114704a9834024fa2651c77d"
+  },
+  {
+   "class": "run",
+   "verb": "running",
+   "split": "test",
+   "path": "run/run_Age13_1_run_f_nm_np1_fr_med_2.mp4",
+   "bytes": 208646,
+   "sha256": "b88387479816a158a26c8cf97fc80784d922bce7f207de5d3c0fbb6200aedf4d"
+  },
+  {
+   "class": "run",
+   "verb": "running",
+   "split": "test",
+   "path": "run/run_BLACK_HAWK_DOWN_run_f_nm_np1_ri_med_17.mp4",
+   "bytes": 79562,
+   "sha256": "e7afe7fc82f3b5e4b9b82466f834f8b70553a90e02782d8286fd7728f1575440"
+  },
+  {
+   "class": "run",
+   "verb": "running",
+   "split": "test",
+   "path": "run/run_HP_PRISONER_OF_AZKABAN_run_f_nm_np1_fr_med_25.mp4",
+   "bytes": 123798,
+   "sha256": "6e1248ad571c6bb936b133ac507b782da3ba4c931f5d5c92113e75d1f6d5b24b"
+  },
+  {
+   "class": "walk",
+   "verb": "walking",
+   "split": "test",
+   "path": "walk/walk_20060723sfjffjewcy_walk_f_nm_np1_fr_med_0.mp4",
+   "bytes": 125368,
+   "sha256": "2ccc7d59092ea9be0d97c1f0e828516a20dae6e58429885aab4b19c4acbe111f"
+  },
+  {
+   "class": "walk",
+   "verb": "walking",
+   "split": "test",
+   "path": "walk/walk_20070723_sfjff_waitingforrescue_walk_f_nm_np1_ba_med_1.mp4",
+   "bytes": 112327,
+   "sha256": "911bd36ef3d81aabacb44cc070e9c2c63bf78074194be55b13d1b01770c2dffa"
+  },
+  {
+   "class": "walk",
+   "verb": "walking",
+   "split": "test",
+   "path": "walk/walk_AgriculturalAviation_walk_f_nm_np1_le_med_0.mp4",
+   "bytes": 143350,
+   "sha256": "cf9ef2494ae058b2f1d80c3c015d0539ba0b80059bf335cbc3b80aab30766a55"
+  },
+  {
+   "class": "walk",
+   "verb": "walking",
+   "split": "test",
+   "path": "walk/walk_AmericanGangster_walk_f_nm_np1_ba_med_72.mp4",
+   "bytes": 55592,
+   "sha256": "e0b3a931fa2556acc9da630cd5656466a51ee8643949ceaeb8535bed8632441f"
+  },
+  {
+   "class": "walk",
+   "verb": "walking",
+   "split": "test",
+   "path": "walk/walk_BIG_FISH_walk_f_nm_np1_fr_med_13.mp4",
+   "bytes": 148818,
+   "sha256": "f60e31f562b057e6e0d66bde45b01e37ac85278175491e7dc28d3314f7edade7"
+  },
+  {
+   "class": "jump",
+   "verb": "jumping",
+   "split": "test",
+   "path": "jump/jump_Faith_Rewarded_jump_f_nm_np1_ri_med_89.mp4",
+   "bytes": 138762,
+   "sha256": "f7df0e939ce17c113eb95291d41b7c4d3400da08d7c930599775d5ddf8c84eef"
+  },
+  {
+   "class": "jump",
+   "verb": "jumping",
+   "split": "train",
+   "path": "jump/jump_Arrasando_no_Le_Parkour_jump_f_nm_np1_le_med_2.mp4",
+   "bytes": 92797,
+   "sha256": "37c4ea73e44c26c10e61832ba32a9fc06b26ec07e6bb77f91c048941a70fee0f"
+  },
+  {
+   "class": "jump",
+   "verb": "jumping",
+   "split": "train",
+   "path": "jump/jump_prelinger_ControlY1950_jump_f_nm_np1_fr_med_12.mp4",
+   "bytes": 65844,
+   "sha256": "2a58aaa451ffe754a8547995361ecbf0979c92f33cb6f1fae3367ab699be3173"
+  },
+  {
+   "class": "jump",
+   "verb": "jumping",
+   "split": "validation",
+   "path": "jump/jump_DONNIE_DARKO_jump_f_nm_np1_fr_med_7.mp4",
+   "bytes": 252725,
+   "sha256": "6decb27c490b5da9c74a6bef96ce2542c3a8f140c6aae52548132e3a773d860e"
+  },
+  {
+   "class": "turn",
+   "verb": "spinning",
+   "split": "test",
+   "path": "turn/turn_NOVA_ELEGANTUNIVERSE2_turn_f_nm_np1_ba_med_1.mp4",
+   "bytes": 33285,
+   "sha256": "864512ebe4eb91f82744d85fb004619ab637d70f8f49e360085863f4c8f1fe00"
+  },
+  {
+   "class": "turn",
+   "verb": "spinning",
+   "split": "test",
+   "path": "turn/turn_OldSchool_turn_f_nm_np1_fr_med_3.mp4",
+   "bytes": 75804,
+   "sha256": "f7729434cea528e27845d1caba55c2bca51b03ef45219326370c48dfbe50005c"
+  },
+  {
+   "class": "turn",
+   "verb": "spinning",
+   "split": "test",
+   "path": "turn/turn_eddieizzardcircle_turn_f_nm_np1_le_med_1.mp4",
+   "bytes": 64227,
+   "sha256": "1a8090bbfd7058d2e0f7b3788970b28cba1e6fc17a3cb8d75c7c1f9814eb84d3"
+  },
+  {
+   "class": "turn",
+   "verb": "spinning",
+   "split": "test",
+   "path": "turn/turn_likebeckam_turn_f_nm_np1_fr_med_37.mp4",
+   "bytes": 61529,
+   "sha256": "ad479bde871a6dd1b2eb241b8a69c4bc47c8298513a88c76a01391856ebf813c"
+  },
+  {
+   "class": "turn",
+   "verb": "spinning",
+   "split": "train",
+   "path": "turn/turn_KUNG_FU_HUSTLE_turn_f_nm_np1_ba_med_28.mp4",
+   "bytes": 88425,
+   "sha256": "5e42d5ae15d96c34e26bd0a0fcd46dd493451761bbb4ba9ed48371071deb23b4"
+  }
+ ]
+}

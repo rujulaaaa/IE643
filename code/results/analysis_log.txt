@@ -1,0 +1,14 @@
+6 groups: s1337/on a beach, s2024/on a beach, s42/on a beach, s1337/in a forest, s2024/in a forest, s42/in a forest
+125 pair ids per group (max), 300,000 distance rows
+matched selectivity units per seed (scene x clip): {42: 78, 1337: 78, 2024: 78}
+  probe verb_tilde    best 1.000  mean 0.442  (chance 0.25)
+  probe verb_bar      best 1.000  mean 0.556  (chance 0.25)
+  probe family_tilde  best 1.000  mean 0.724  (chance 0.50)
+  probe family_bar    best 1.000  mean 0.819  (chance 0.50)
+  probes done in 836 s
+
+H1 (layer)     FALSIFIED | argmax up_blocks.0 | 95% set ['up_blocks.0']
+H2 (timestep)  SURVIVES | tau 2 CI [1.0, 3.0] | early 0.073 late -0.001
+H3 (static)    FALSIFIED | f_stat 0.65 n_flip 0
+robustness {'spearman_dyn_cos_vs_l2': 0.9870022312639454, 'spearman_dyn_median_ratio_vs_ratio_of_medians': 0.9303294395589972, 'seed_agreement_dyn': {'42-1337': 0.5759998499990624, '42-2024': 0.6938958993493708, '1337-2024': 0.7305505034406464}}
+wrote results/analysis/analysis.json and maps.npz

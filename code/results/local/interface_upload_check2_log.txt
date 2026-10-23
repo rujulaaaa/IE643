@@ -1,0 +1,24 @@
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+[transformers] `SiglipImageProcessor` requires torchvision (not installed); falling back to `SiglipImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `SiglipImageProcessorPil` directly to silence this warning.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 795.51it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1259.06it/s]
+/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 10860.90it/s]
+Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:00,  9.98it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:00<00:00, 23.55it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 26.00it/s]
+/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 27482.80it/s]
+selected 237s
+      clip  sm_video  sc_video  clip_text_target  motion_magnitude
+0   video     1.000     1.000             0.176             0.479
+1  source     0.996     0.981             0.181             0.486
+2    base     0.085     0.436             0.328             0.835
+3    edit     0.087     0.413             0.230             3.396
+attn 244s
+      clip  sm_video  sc_video  clip_text_target  motion_magnitude
+0   video     1.000     1.000             0.176             0.479
+1  source     0.996     0.981             0.181             0.486
+2    base     0.085     0.436             0.328             0.835
+3    edit    -0.053     0.480             0.321             0.226

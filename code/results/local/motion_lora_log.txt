@@ -1,0 +1,69 @@
+=== full 22:59:27
+building pipeline (profile=gpu) ...
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+[transformers] `SiglipImageProcessor` requires torchvision (not installed); falling back to `SiglipImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `SiglipImageProcessorPil` directly to silence this warning.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 913.79it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1146.13it/s]
+/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 11209.82it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00, 17.00it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 27.94it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 7.6 s
+full: 9.67 M trainable LoRA parameters, 21 motion modules checkpointed
+step    0  val 0.09955
+step  100  train(avg100) 0.06534  val 0.06575  166 s (1.66 s/step)
+step  200  train(avg100) 0.07418  val 0.06446  329 s (1.64 s/step)
+step  300  train(avg100) 0.06455  val 0.06415  490 s (1.63 s/step)
+step  400  train(avg100) 0.04930  val 0.06403  652 s (1.63 s/step)
+step  500  train(avg100) 0.04986  val 0.06392  814 s (1.63 s/step)
+step  600  train(avg100) 0.06810  val 0.06389  976 s (1.63 s/step)
+step  700  train(avg100) 0.07481  val 0.06384  1138 s (1.63 s/step)
+step  800  train(avg100) 0.06146  val 0.06381  1300 s (1.62 s/step)
+wrote results/local/motion_lora/full/train_log.json
+=== probe 23:21:44
+building pipeline (profile=gpu) ...
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+[transformers] `SiglipImageProcessor` requires torchvision (not installed); falling back to `SiglipImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `SiglipImageProcessorPil` directly to silence this warning.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 658.76it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1505.49it/s]
+/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00, 19.56it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 11574.89it/s]
+Loading pipeline components...:  83%|████████▎ | 5/6 [00:00<00:00, 23.46it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 27.43it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 7.5 s
+probe: 1.97 M trainable LoRA parameters, 21 motion modules checkpointed
+step    0  val 0.09955
+step  100  train(avg100) 0.08860  val 0.07786  130 s (1.30 s/step)
+step  200  train(avg100) 0.07998  val 0.06655  261 s (1.30 s/step)
+step  300  train(avg100) 0.06721  val 0.06591  391 s (1.30 s/step)
+step  400  train(avg100) 0.05148  val 0.06560  522 s (1.30 s/step)
+step  500  train(avg100) 0.05198  val 0.06542  652 s (1.30 s/step)
+step  600  train(avg100) 0.07072  val 0.06533  783 s (1.30 s/step)
+step  700  train(avg100) 0.07726  val 0.06526  913 s (1.30 s/step)
+step  800  train(avg100) 0.06395  val 0.06520  1044 s (1.30 s/step)
+wrote results/local/motion_lora/probe/train_log.json
+=== anti 23:39:42
+building pipeline (profile=gpu) ...
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+[transformers] `SiglipImageProcessor` requires torchvision (not installed); falling back to `SiglipImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `SiglipImageProcessorPil` directly to silence this warning.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 853.11it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1214.87it/s]
+/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:00<00:00, 33.65it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 12810.03it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 28.21it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 7.5 s
+anti: 2.62 M trainable LoRA parameters, 21 motion modules checkpointed
+step    0  val 0.09955
+step  100  train(avg100) 0.08055  val 0.06929  137 s (1.37 s/step)
+step  200  train(avg100) 0.07615  val 0.06524  273 s (1.37 s/step)
+step  300  train(avg100) 0.06584  val 0.06496  410 s (1.37 s/step)
+step  400  train(avg100) 0.05048  val 0.06480  547 s (1.37 s/step)
+step  500  train(avg100) 0.05103  val 0.06471  683 s (1.37 s/step)
+step  600  train(avg100) 0.06960  val 0.06468  820 s (1.37 s/step)
+step  700  train(avg100) 0.07614  val 0.06464  957 s (1.37 s/step)
+step  800  train(avg100) 0.06288  val 0.06461  1094 s (1.37 s/step)
+wrote results/local/motion_lora/anti/train_log.json

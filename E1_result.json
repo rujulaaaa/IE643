@@ -1,0 +1,29 @@
+{
+  "experiment": "E1",
+  "date": "2026-09-21",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "base_model": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+  "motion_adapter": "guoyww/animatediff-motion-adapter-v1-5-2",
+  "diffusers": "0.40.0",
+  "torch": "2.10.0+cu128",
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "seed": 42,
+  "prompt": "a golden retriever running on a beach, high quality, detailed",
+  "negative_prompt": "bad quality, worse quality, blurry",
+  "wall_clock_s_mean": 94.1,
+  "wall_clock_s_sd": 0.1,
+  "cold_start_s": 93.6,
+  "peak_vram_gb_reserved": 10.17,
+  "peak_vram_gb_allocated": 9.5,
+  "model_load_s": 14.3,
+  "config_sweep": [
+    ["fp16, no slicing", "97.6", "14.09"],
+    ["fp16 + vae slicing", "94.4", "10.16"],
+    ["fp16 + slicing + cpu offload", "95.9", "8.93"]
+  ]
+}

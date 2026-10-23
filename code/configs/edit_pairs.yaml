@@ -1,0 +1,32 @@
+# Edit pairs for Stages 5-6 (D-15, D-30). Frozen 2026-10-20, before any edit was run.
+#
+# A pair (A, B): same family, same scene, same seed, different subject AND different verb, so
+# each edit direction has something to keep and something to change.
+#   motion direction   keep A's motion, take B's content: target prompt = (B.subject, A.verb)
+#   content direction  keep A's content, take B's motion: target prompt = (A.subject, B.verb)
+# Both directions run from one source clip A, in one lockstep group.
+#
+# dev  : used ONLY to pick the (block, window, component) that the test set then uses (Stage 5)
+# test : the twelve D-15 pairs; six per family, all four verbs on both sides, scenes and seeds
+#        cycled. Nothing is selected on these.
+# Format: [subject_A, verb_A, subject_B, verb_B, scene, seed]
+
+dev:
+  - [fox, running, german shepherd, jumping, in a forest, 2024]
+  - [brown bear, walking, golden retriever, spinning, on a beach, 1337]
+  - [child, running, elderly man, jumping, on a beach, 1337]
+  - [young woman, walking, soldier, spinning, in a forest, 2024]
+
+test:
+  - [golden retriever, running, horse, walking, on a beach, 42]
+  - [german shepherd, walking, wolf, jumping, in a forest, 1337]
+  - [tiger, jumping, fox, spinning, on a beach, 2024]
+  - [deer, spinning, brown bear, running, in a forest, 42]
+  - [horse, running, tiger, jumping, on a beach, 1337]
+  - [wolf, walking, deer, spinning, in a forest, 2024]
+  - [young man, running, young woman, walking, on a beach, 42]
+  - [athlete, walking, soldier, jumping, in a forest, 1337]
+  - [dancer, jumping, child, spinning, on a beach, 2024]
+  - [elderly man, spinning, young man, running, in a forest, 42]
+  - [young woman, running, athlete, jumping, in a forest, 1337]
+  - [soldier, walking, dancer, spinning, on a beach, 2024]

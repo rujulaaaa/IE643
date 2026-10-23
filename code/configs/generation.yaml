@@ -1,0 +1,25 @@
+# Frozen generation protocol. Identical to the Kaggle pilots E1-E3 (roadmap §2.2).
+# Changing anything here changes the experiment; memory-saving options that do
+# not change the computation live in the --profile flag of each script instead.
+
+adapter_id: guoyww/animatediff-motion-adapter-v1-5-2      # mm_sd_v15_v2, ~417M params
+# runwayml/stable-diffusion-v1-5 was withdrawn from the Hub; these are the live
+# mirrors, tried in order. The one that resolves is written to every result (D-20).
+base_candidates:
+  - stable-diffusion-v1-5/stable-diffusion-v1-5
+  - botp/stable-diffusion-v1-5
+  - emilianJR/epiCRealism
+
+frames: 16
+height: 512
+width: 512
+steps: 25                 # DDIM, AnimateDiff reference scheduler settings
+guidance_scale: 7.5
+negative_prompt: "bad quality, worse quality, blurry"
+# Verbatim from roadmap §4.1 (so "a elderly man" stays ungrammatical; frozen is frozen).
+prompt_template: "a {subject} {verb} {scene}, high quality, detailed"
+
+# Noise policy (D-04, E2): one fp16 tensor drawn on the CPU from torch.Generator
+# seeded with the clip's seed, so it is identical on any GPU. Stricter than a seed.
+noise_device: cpu
+noise_dtype: float16

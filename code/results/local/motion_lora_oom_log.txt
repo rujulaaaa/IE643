@@ -1,0 +1,80 @@
+=== full 22:56:20
+building pipeline (profile=gpu) ...
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+[transformers] `SiglipImageProcessor` requires torchvision (not installed); falling back to `SiglipImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `SiglipImageProcessorPil` directly to silence this warning.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 685.06it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1224.75it/s]
+/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 12787.91it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00, 25.36it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 28.47it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 7.6 s
+full: 9.67 M trainable LoRA parameters
+step    0  val 0.09955
+Traceback (most recent call last):
+  File "/home/rujula/IE643_CourseProject_Prep/code/scripts/train_motion_lora.py", line 181, in <module>
+    main()
+  File "/home/rujula/IE643_CourseProject_Prep/code/scripts/train_motion_lora.py", line 154, in main
+    loss = loss_at(lat, c["verb"], t, torch.randn_like(lat))
+  File "/home/rujula/IE643_CourseProject_Prep/code/scripts/train_motion_lora.py", line 124, in loss_at
+    pred = unet(noisy.half(), t, encoder_hidden_states=emb[verb]).sample
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/utils/peft_utils.py", line 323, in wrapper
+    result = forward_fn(self, *args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/models/unets/unet_motion_model.py", line 2080, in forward
+    sample = upsample_block(
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/models/unets/unet_motion_model.py", line 710, in forward
+    hidden_states = motion_module(hidden_states, num_frames=num_frames)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/models/unets/unet_motion_model.py", line 192, in forward
+    hidden_states = block(
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/models/attention.py", line 1069, in forward
+    ff_output = self.ff(norm_hidden_states)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/models/attention.py", line 1741, in forward
+    hidden_states = module(hidden_states)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/models/activations.py", line 117, in forward
+    hidden_states = self.proj(hidden_states)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 80.00 MiB. GPU 0 has a total capacity of 7.62 GiB of which 69.56 MiB is free. Including non-PyTorch memory, this process has 7.26 GiB memory in use. Of the allocated memory 7.09 GiB is allocated by PyTorch, and 55.22 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+FAILED full
+=== probe 22:56:56
+building pipeline (profile=gpu) ...
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+[transformers] `SiglipImageProcessor` requires torchvision (not installed); falling back to `SiglipImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `SiglipImageProcessorPil` directly to silence this warning.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1027.76it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1370.48it/s]
+/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 12803.44it/s]
+Loading pipeline components...:  83%|████████▎ | 5/6 [00:00<00:00, 26.74it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 29.33it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 8.6 s
+probe: 1.97 M trainable LoRA parameters

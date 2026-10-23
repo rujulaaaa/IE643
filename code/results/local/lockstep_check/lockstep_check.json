@@ -1,0 +1,51 @@
+{
+  "experiment": "lockstep_check",
+  "date": "2026-10-20",
+  "python": "3.10.12",
+  "torch": "2.10.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.0",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_total_vram_gb": 7.62,
+  "capability": "sm_89",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "pipe_seconds": 61.74225704400001,
+  "floor_mad": 0.0,
+  "solo_mad": 0.0,
+  "solo_seconds": 152.16029173600003,
+  "grouped_mad": 0.0,
+  "grouped_seconds_per_clip": 109.65774436299999,
+  "probed_mad": 0.0,
+  "probed_seconds_per_clip": 128.72239110966666,
+  "self_pair_max_d_dynamic": 1.7881393432617188e-07,
+  "self_pair_max_d_static": 2.980232238769531e-07,
+  "swap_pair_median_d_dynamic": 0.5549501180648804,
+  "swap_pair_median_d_static": 0.08278822898864746,
+  "rows_per_pair": 400,
+  "per_channel_entries": 48,
+  "sketch_entries": 400,
+  "checks": {
+    "solo matches pipe": true,
+    "grouping does not leak": true,
+    "probes are read-only": true,
+    "self pair distance ~0": true,
+    "swap pair distance > self pair": true,
+    "row counts": true
+  }
+}

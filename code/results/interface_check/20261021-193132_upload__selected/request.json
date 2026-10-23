@@ -1,0 +1,9 @@
+{
+ "video": "data/hmdb51_lora/run/run_20060723sfjffbartsinger_run_f_nm_np1_fr_med_1.mp4",
+ "source_prompt": "a man running, high quality, detailed",
+ "target_prompt": "a tiger running, high quality, detailed",
+ "method": "selected",
+ "alpha": 1.0,
+ "inversion_seconds": 33.76150815300025,
+ "seconds": 238.217414318
+}

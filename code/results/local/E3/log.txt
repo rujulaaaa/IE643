@@ -1,0 +1,24 @@
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+building pipeline (profile=gpu) ...
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 8.7 s
+95 hookable coordinates: {'spatial_attn1': 16, 'spatial_attn2': 16, 'temporal_attn1': 21, 'temporal_attn2': 21, 'temporal_module': 21}
+no hooks              63.9 s
+metadata hooks        63.3 s  (-0.9%)
+summary recorder     109.7 s  (+71.7%)
+
+kind               coords  full dump GiB
+spatial_attn1          16         17.212
+spatial_attn2          16         17.212
+temporal_attn1         21         17.822
+temporal_attn2         21         17.822
+temporal_module        21         17.822
+FULL DUMP              95         87.891   (text-conditional branch only: 43.945)
+
+summary store, analytic     44.62 MiB  (stats 15.71 + attention 28.91)
+summary store, on disk      44.66 MiB  (359 tensors, written in 0.0 s)
+compression vs full dump     2015x   (vs a conditional-branch-only dump: 1008x)
+  grid 32x32   131.3 MiB/clip   46.17 GiB for 360 clips
+  grid 16x16    44.6 MiB/clip   15.69 GiB for 360 clips
+  grid  8x8     22.9 MiB/clip    8.06 GiB for 360 clips
+  grid  4x4     17.5 MiB/clip    6.16 GiB for 360 clips
+wrote /home/rujula/MI_DiffusionModels/results/local/E3/E3_result.json

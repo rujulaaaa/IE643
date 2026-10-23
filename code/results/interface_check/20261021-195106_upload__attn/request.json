@@ -1,0 +1,10 @@
+{
+ "video": "data/hmdb51_lora/jump/jump_Faith_Rewarded_jump_f_nm_np1_ri_med_89.mp4",
+ "source_prompt": "a man jumping, high quality, detailed",
+ "target_prompt": "a tiger jumping, high quality, detailed",
+ "method": "attn",
+ "alpha": 1.0,
+ "seed": 42,
+ "inversion_seconds": 33.69507344900012,
+ "seconds": 244.26846256200042
+}

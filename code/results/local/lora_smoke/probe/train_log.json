@@ -1,0 +1,104 @@
+{
+  "experiment": "motion_lora",
+  "date": "2026-10-20",
+  "python": "3.10.12",
+  "torch": "2.10.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.0",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_total_vram_gb": 7.62,
+  "capability": "sm_89",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 30,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "variant": "probe",
+  "lr": 5e-05,
+  "rank": 32,
+  "trainable_params": 1966080,
+  "train_clips": [
+    "run/run_20060723sfjffbartsinger_run_f_nm_np1_fr_med_1.mp4",
+    "run/run_20060723sfjffsomelikeitwarmed_run_f_nm_np1_fr_med_6.mp4",
+    "run/run_Age13_1_run_f_nm_np1_fr_med_2.mp4",
+    "run/run_BLACK_HAWK_DOWN_run_f_nm_np1_ri_med_17.mp4",
+    "walk/walk_20060723sfjffjewcy_walk_f_nm_np1_fr_med_0.mp4",
+    "walk/walk_20070723_sfjff_waitingforrescue_walk_f_nm_np1_ba_med_1.mp4",
+    "walk/walk_AgriculturalAviation_walk_f_nm_np1_le_med_0.mp4",
+    "walk/walk_AmericanGangster_walk_f_nm_np1_ba_med_72.mp4",
+    "jump/jump_Arrasando_no_Le_Parkour_jump_f_nm_np1_le_med_2.mp4",
+    "jump/jump_DONNIE_DARKO_jump_f_nm_np1_fr_med_7.mp4",
+    "jump/jump_Faith_Rewarded_jump_f_nm_np1_ri_med_89.mp4",
+    "turn/turn_KUNG_FU_HUSTLE_turn_f_nm_np1_ba_med_28.mp4",
+    "turn/turn_NOVA_ELEGANTUNIVERSE2_turn_f_nm_np1_ba_med_1.mp4",
+    "turn/turn_OldSchool_turn_f_nm_np1_fr_med_3.mp4",
+    "turn/turn_eddieizzardcircle_turn_f_nm_np1_le_med_1.mp4"
+  ],
+  "val_clips": [
+    "run/run_HP_PRISONER_OF_AZKABAN_run_f_nm_np1_fr_med_25.mp4",
+    "walk/walk_BIG_FISH_walk_f_nm_np1_fr_med_13.mp4",
+    "jump/jump_prelinger_ControlY1950_jump_f_nm_np1_fr_med_12.mp4",
+    "turn/turn_likebeckam_turn_f_nm_np1_fr_med_37.mp4"
+  ],
+  "loss": [
+    0.14024075865745544,
+    0.21270781755447388,
+    0.005457200575619936,
+    0.1036887839436531,
+    0.008282429538667202,
+    0.08926697820425034,
+    0.16384640336036682,
+    0.004605288617312908,
+    0.11153419315814972,
+    0.1722542941570282,
+    0.15532724559307098,
+    0.0247145127505064,
+    0.21874117851257324,
+    0.019316451624035835,
+    0.12215660512447357,
+    0.003125178162008524,
+    0.09182247519493103,
+    0.15886139869689941,
+    0.04385126382112503,
+    0.2720648944377899,
+    0.03208617866039276,
+    0.01354956068098545,
+    0.20693019032478333,
+    0.26720741391181946,
+    0.18648499250411987,
+    0.05219190567731857,
+    0.1345565915107727,
+    0.12830016016960144,
+    0.22830501198768616,
+    0.029914693906903267
+  ],
+  "val": [
+    [
+      0,
+      0.09955249402628397
+    ],
+    [
+      15,
+      0.09899958583264379
+    ],
+    [
+      30,
+      0.09789122223082813
+    ]
+  ],
+  "seconds": 72.7386246219994,
+  "peak_alloc_gb": 5.815304756164551,
+  "saved_params": 1966080
+}

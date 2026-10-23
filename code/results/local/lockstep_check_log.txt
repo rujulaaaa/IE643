@@ -1,0 +1,30 @@
+building pipeline (profile=gpu) ...
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+[transformers] `SiglipImageProcessor` requires torchvision (not installed); falling back to `SiglipImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `SiglipImageProcessorPil` directly to silence this warning.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 778.89it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1072.42it/s]
+/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:01,  4.80it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 3193.86it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00,  8.13it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 13.27it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 10.0 s
+floor   pipe vs pipe            MAD 0.00e+00   (61.7 s)
+solo    lockstep vs pipe        MAD 0.00e+00   (152.2 s)
+grouped P in [P,Q,R] vs pipe    MAD 0.00e+00   (109.7 s per clip)
+    step  5/25     72.4 s  (4.82 s per clip-step)
+    step 10/25    161.4 s  (5.38 s per clip-step)
+    step 15/25    219.5 s  (4.88 s per clip-step)
+    step 20/25    304.0 s  (5.07 s per clip-step)
+    step 25/25    386.2 s  (5.15 s per clip-step)
+probed  P with probes vs pipe   MAD 0.00e+00   (128.7 s per clip)
+self pair  max d_dynamic 1.79e-07  max d_static 2.98e-07
+swap pair  median d_dynamic 0.555  median d_static 0.083
+rows per pair 400 (16 coords x 25 steps = 400), per-channel 48 (16 x 3 = 48), sketches 400 (400)
+  [PASS] solo matches pipe
+  [PASS] grouping does not leak
+  [PASS] probes are read-only
+  [PASS] self pair distance ~0
+  [PASS] swap pair distance > self pair
+  [PASS] row counts
+wrote /home/rujula/MI_DiffusionModels/results/local/lockstep_check/lockstep_check.json

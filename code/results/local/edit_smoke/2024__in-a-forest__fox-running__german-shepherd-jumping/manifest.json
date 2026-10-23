@@ -1,0 +1,56 @@
+{
+  "experiment": "edit_sweep",
+  "date": "2026-10-20",
+  "python": "3.10.12",
+  "torch": "2.10.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.0",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_total_vram_gb": 7.62,
+  "capability": "sm_89",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "split": "dev",
+  "arm_set": "coarse",
+  "selection": null,
+  "pair": {
+    "subject_a": "fox",
+    "verb_a": "running",
+    "subject_b": "german shepherd",
+    "verb_b": "jumping",
+    "scene": "in a forest",
+    "seed": 2024
+  },
+  "seconds": 454.8183559950003,
+  "n_tracks": 7,
+  "seconds_per_clip": 64.9740508564286,
+  "peak_alloc_gb": 5.747530460357666,
+  "n_patched": {
+    "motion.dynamic.up_blocks.0.ft": 27,
+    "content.static.allmm.all": 525
+  },
+  "n_attn_injected": {
+    "B_ref": 0,
+    "motion.base": 0,
+    "content.base": 0,
+    "motion.dynamic.up_blocks.0.ft": 0,
+    "content.static.allmm.all": 0,
+    "motion.attn.all.ft": 378
+  },
+  "finished": "2026-10-20 21:07:54"
+}

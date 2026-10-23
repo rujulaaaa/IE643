@@ -1,0 +1,16 @@
+{
+ "motion": {
+  "arm": "motion.dynamic.up_blocks.0.ft",
+  "blocks": [
+   "up_blocks.0"
+  ],
+  "window": "ft",
+  "median_dD_dev": 0.21767851541463973
+ },
+ "content": {
+  "arm": "content.static.allmm.all",
+  "blocks": "all",
+  "window": "all",
+  "median_dD_dev": -0.2188296250009179
+ }
+}

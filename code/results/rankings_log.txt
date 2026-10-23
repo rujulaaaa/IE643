@@ -1,0 +1,27 @@
+The config attributes {'motion_activation_fn': 'geglu', 'motion_attention_bias': False, 'motion_cross_attention_dim': None} were passed to MotionAdapter, but are not expected and will be ignored. Please verify your config.json configuration file.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  out[m] = float(w.norm())
+        block  selectivity  presence  use_all  use_ft  learning
+down_blocks.0      -0.0515    0.3851  -0.0673  0.0092    0.0070
+down_blocks.1      -0.0449    0.3471   0.0360 -0.0043    0.0088
+down_blocks.2      -0.0753    0.3978   0.0692  0.0659    0.0131
+down_blocks.3      -0.0770    0.3963   0.0276  0.0309    0.0150
+    mid_block      -0.0257    0.4829  -0.0032  0.0090    0.0179
+  up_blocks.0       0.0052    0.4984   0.0289  0.0298    0.0184
+  up_blocks.1      -0.0173    0.3627  -0.0924  0.0347    0.0122
+  up_blocks.2      -0.0192    0.3634  -0.0843  0.0793    0.0096
+  up_blocks.3      -0.0282    0.3547  -0.1148  0.0802    0.0064
+  spearman selectivity~presence       +0.08  (p 0.831, n 9)
+  spearman selectivity~use_all        -0.37  (p 0.332, n 9)
+  spearman selectivity~use_ft         +0.07  (p 0.865, n 9)
+  spearman selectivity~learning       +0.23  (p 0.546, n 9)
+  spearman presence~use_all           +0.42  (p 0.265, n 9)
+  spearman presence~use_ft            -0.17  (p 0.668, n 9)
+  spearman presence~learning          +0.83  (p 0.005, n 9)
+  spearman use_all~use_ft             -0.48  (p 0.187, n 9)
+  spearman use_all~learning           +0.48  (p 0.187, n 9)
+  spearman use_ft~learning            -0.27  (p 0.488, n 9)
+  LoRA anti   params   2.62 M   val loss 0.09955 -> 0.06461
+  LoRA full   params   9.67 M   val loss 0.09955 -> 0.06381
+  LoRA probe  params   1.97 M   val loss 0.09955 -> 0.06520
+wrote results/rankings/layer_rankings.json

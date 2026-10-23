@@ -1,0 +1,7 @@
+data/hmdb51_lora/run/run_20060723sfjffbartsinger_run_f_nm_np1_fr_med_1.mp4
+  clip  sm_video  sc_video  clip_text_target  motion_magnitude
+ video     1.000     1.000             0.190             0.940
+source     0.923     0.946             0.197             0.943
+  base     0.123     0.555             0.288             0.566
+  edit     0.427     0.512             0.274             0.423
+results/interface_check/20261022-195627_upload__attn_all/edit.gif 249

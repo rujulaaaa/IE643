@@ -1,0 +1,18 @@
+A_inv done 337.8150601110001
+B_blend done 345.91985239899986
+C_gauss done 346.52536052100004
+video              {'sm_video': 1.0, 'sc_video': 1.0, 'txt': 0.176, 'mag': 0.479}
+A_inv.base         {'sm_video': 0.118, 'sc_video': 0.425, 'txt': 0.344, 'mag': 0.431}
+A_inv.sel          {'sm_video': 0.519, 'sc_video': 0.469, 'txt': 0.359, 'mag': 0.39}
+A_inv.attn_ft      {'sm_video': 0.309, 'sc_video': 0.451, 'txt': 0.357, 'mag': 0.212}
+A_inv.attn_all     {'sm_video': 0.668, 'sc_video': 0.44, 'txt': 0.351, 'mag': 0.251}
+B_blend.base       {'sm_video': 0.322, 'sc_video': 0.478, 'txt': 0.35, 'mag': 0.21}
+B_blend.sel        {'sm_video': 0.025, 'sc_video': 0.413, 'txt': 0.232, 'mag': 4.743}
+B_blend.attn_ft    {'sm_video': 0.395, 'sc_video': 0.472, 'txt': 0.352, 'mag': 0.244}
+B_blend.attn_all   {'sm_video': 0.656, 'sc_video': 0.455, 'txt': 0.351, 'mag': 0.227}
+C_gauss.source     {'sm_video': 0.996, 'sc_video': 0.981, 'txt': 0.181, 'mag': 0.486}
+C_gauss.base       {'sm_video': 0.085, 'sc_video': 0.436, 'txt': 0.328, 'mag': 0.835}
+C_gauss.sel        {'sm_video': 0.087, 'sc_video': 0.413, 'txt': 0.23, 'mag': 3.396}
+C_gauss.attn_ft    {'sm_video': -0.053, 'sc_video': 0.48, 'txt': 0.321, 'mag': 0.226}
+C_gauss.attn_all   {'sm_video': 0.366, 'sc_video': 0.485, 'txt': 0.326, 'mag': 0.2}
+['video', 'A_inv.base', 'A_inv.sel', 'A_inv.attn_ft', 'A_inv.attn_all', 'B_blend.base', 'B_blend.sel', 'B_blend.attn_ft', 'B_blend.attn_all', 'C_gauss.source', 'C_gauss.base', 'C_gauss.sel', 'C_gauss.attn_ft', 'C_gauss.attn_all']
