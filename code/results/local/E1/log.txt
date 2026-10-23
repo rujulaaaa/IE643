@@ -1,0 +1,16 @@
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+building pipeline (profile=gpu) ...
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 10.3 s
+run        denoise s  decode s  alloc GB  resv GB
+warm-up         62.6       2.8      5.77     6.42
+timed 1         64.7       2.8      5.77     6.42
+timed 2         62.8       2.8      5.77     6.42
+timed 3         62.5       2.8      5.77     6.42
+
+memory-config sweep
+fp16, no slicing                     OOM s     OOM GB peak
+fp16 + vae slicing                  65.2 s    6.41 GB peak
+fp16 + slicing + cpu offload        66.1 s    5.33 GB peak
+wrote /home/rujula/MI_DiffusionModels/results/local/E1/E1_result.json
+
+wall-clock per clip 66.1 s, peak VRAM 6.42 GB reserved (NVIDIA GeForce RTX 4060 Laptop GPU, profile gpu); 360-clip probing set = 6.61 GPU-h

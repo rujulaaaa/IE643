@@ -1,0 +1,25 @@
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+building pipeline (profile=gpu) ...
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 8.2 s
+fixed noise tensor (1, 4, 16, 64, 64)  sum=-341.4397
+BASE              70.1 s   a golden retriever running on a beach, high quality, detailed
+noun:cat          66.8 s   a cat running on a beach, high quality, detailed
+noun:horse        69.5 s   a horse running on a beach, high quality, detailed
+noun:bird         67.8 s   a bird running on a beach, high quality, detailed
+verb:walking      67.0 s   a golden retriever walking on a beach, high quality, detailed
+verb:jumping      67.5 s   a golden retriever jumping on a beach, high quality, detailed
+verb:standing     68.3 s   a golden retriever standing on a beach, high quality, detailed
+
+clip              d_c appear  d_m motion   S index   layout
+noun:cat              0.2433      0.4191    -0.265    0.338
+noun:horse            0.2135      0.4624    -0.368    0.510
+noun:bird             0.3197      0.4920    -0.212    0.255
+verb:walking          0.1287      0.3595    -0.473    0.344
+verb:jumping          0.0481      0.3578    -0.763    0.564
+verb:standing         0.1171      0.4481    -0.586    0.293
+
+mean S  noun swaps -0.282   verb swaps -0.607  -> E2 INCONCLUSIVE - signs did not separate
+content control: noun swaps move CLIP appearance 2.64x more than verb swaps
+pixel motion proxy: noun 0.4578 vs verb 0.3885 -> INVERTED (static content confounds the motion measure)
+contact sheet rows, top to bottom: ['BASE', 'noun:cat', 'noun:horse', 'noun:bird', 'verb:walking', 'verb:jumping', 'verb:standing']
+wrote /home/rujula/MI_DiffusionModels/results/local/E2/E2_result.json

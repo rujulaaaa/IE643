@@ -1,0 +1,10 @@
+{"experiment":"E2","date":"2026-09-21","seed":42,
+ "noise":"fixed CPU-generated tensor, shared by all 7 clips",
+ "frames":16,"resolution":"512x512","steps":25,"guidance_scale":7.5,"scene":"on a beach",
+ "rows":[
+  {"clip":"noun:cat","d_c":0.2444,"d_m":0.4207,"S":-0.265,"layout_ssim":0.338},
+  {"clip":"noun:horse","d_c":0.2162,"d_m":0.4640,"S":-0.364,"layout_ssim":0.508},
+  {"clip":"noun:bird","d_c":0.3185,"d_m":0.4997,"S":-0.221,"layout_ssim":0.255},
+  {"clip":"verb:walking","d_c":0.1301,"d_m":0.3619,"S":-0.471,"layout_ssim":0.343},
+  {"clip":"verb:jumping","d_c":0.0507,"d_m":0.3590,"S":-0.753,"layout_ssim":0.564},
+  {"clip":"verb:standing","d_c":0.1172,"d_m":0.4500,"S":-0.587,"layout_ssim":0.292}]}

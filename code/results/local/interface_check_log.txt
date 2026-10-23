@@ -1,0 +1,28 @@
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+[transformers] `SiglipImageProcessor` requires torchvision (not installed); falling back to `SiglipImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `SiglipImageProcessorPil` directly to silence this warning.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1288.57it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1067.48it/s]
+/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00, 10.46it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 3837.42it/s]
+Loading pipeline components...:  67%|██████▋   | 4/6 [00:00<00:00, 11.00it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 14.57it/s]
+/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 32162.55it/s]
+loaded in 20s, loras ['lora_probe', 'lora_full', 'lora_anti']
+     clip   sc_A   sm_A  motion_magnitude  consistency_ratio   sc_B   sm_B      D
+0  source  1.000  1.000             3.133              1.000  0.758  0.260    NaN
+1   B_ref  0.758  0.260             1.300              1.022  1.000  1.000    NaN
+2    base  0.787  0.377             3.237              1.009  0.959  0.338  0.285
+3    edit  0.819  0.596             2.323              1.006  0.936  0.397  0.286 
+ 270s pool=dev
+peak GB 6.374629497528076
+video data/hmdb51_lora/run/run_20060723sfjffbartsinger_run_f_nm_np1_fr_med_1.mp4
+     clip  sm_video  sc_video  clip_text_target  motion_magnitude
+0   video     1.000     1.000             0.164             1.566
+1  source     0.993     0.949             0.169             1.567
+2    base     0.135     0.560             0.300             1.730
+3    edit     0.408     0.600             0.269             1.900 
+ 238s
+gifs {'video': 'results/interface_check/20261021-193132_upload__selected/video.gif', 'source': 'results/interface_check/20261021-193132_upload__selected/source.gif', 'base': 'results/interface_check/20261021-193132_upload__selected/base.gif', 'edit': 'results/interface_check/20261021-193132_upload__selected/edit.gif'}

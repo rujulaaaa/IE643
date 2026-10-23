@@ -1,0 +1,59 @@
+{
+  "experiment": "E1",
+  "date": "2026-10-16",
+  "python": "3.10.12",
+  "torch": "2.10.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.0",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_total_vram_gb": 7.62,
+  "capability": "sm_89",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "seed": 42,
+  "prompt": "a golden retriever running on a beach, high quality, detailed",
+  "negative_prompt": "bad quality, worse quality, blurry",
+  "unet_params_b": 1.313,
+  "model_load_s": 10.3,
+  "wall_clock_s_mean": 66.1,
+  "wall_clock_s_sd": 1.18,
+  "denoise_s_mean": 63.3,
+  "decode_s_mean": 2.8,
+  "cold_start_s": 65.4,
+  "peak_vram_gb_reserved": 6.42,
+  "peak_vram_gb_allocated": 5.77,
+  "denoise_peak_vram_gb_allocated": 5.77,
+  "gpu_hours_for_360_clips": 6.61,
+  "config_sweep": [
+    [
+      "fp16, no slicing",
+      "OOM",
+      "OOM"
+    ],
+    [
+      "fp16 + vae slicing",
+      "65.2",
+      "6.41"
+    ],
+    [
+      "fp16 + slicing + cpu offload",
+      "66.1",
+      "5.33"
+    ]
+  ]
+}

@@ -1,0 +1,9 @@
+{
+ "video": "data/hmdb51_lora/run/run_Age13_1_run_f_nm_np1_fr_med_2.mp4",
+ "source_prompt": "a boy running, high quality, detailed",
+ "target_prompt": "a tiger running, high quality, detailed",
+ "method": "selected",
+ "alpha": 1.0,
+ "inversion_seconds": 35.54225608500019,
+ "seconds": 244.17864730300062
+}

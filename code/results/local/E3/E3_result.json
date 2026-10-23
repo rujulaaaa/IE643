@@ -1,0 +1,87 @@
+{
+  "experiment": "E3",
+  "date": "2026-10-16",
+  "python": "3.10.12",
+  "torch": "2.10.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.0",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_total_vram_gb": 7.62,
+  "capability": "sm_89",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "seed": 42,
+  "prompt": "a golden retriever running on a beach, high quality, detailed",
+  "unet_calls": 25,
+  "n_coordinates": 95,
+  "coordinates_by_kind": {
+    "spatial_attn1": 16,
+    "spatial_attn2": 16,
+    "temporal_attn1": 21,
+    "temporal_attn2": 21,
+    "temporal_module": 21
+  },
+  "baseline_s_no_hooks": 63.9,
+  "generation_s_with_metadata_hooks": 63.3,
+  "metadata_hook_overhead_pct": -0.9,
+  "generation_s_with_summary_recorder": 109.7,
+  "summary_recorder_overhead_pct": 71.7,
+  "full_dump_gb_per_clip": 87.891,
+  "full_dump_gb_per_clip_cond_branch": 43.945,
+  "full_dump_gb_by_kind": {
+    "spatial_attn1": 17.212,
+    "spatial_attn2": 17.212,
+    "temporal_attn1": 17.822,
+    "temporal_attn2": 17.822,
+    "temporal_module": 17.822
+  },
+  "attention_grid": 16,
+  "summary_store_mb_per_clip_analytic": 44.62,
+  "summary_store_mb_per_clip_on_disk": 44.66,
+  "summary_split_mb": {
+    "channel_stats": 15.71,
+    "attention_movies": 28.91
+  },
+  "compression_ratio": 2017.3,
+  "compression_ratio_on_disk": 2015.3,
+  "compression_ratio_vs_cond_branch_dump": 1007.6,
+  "grid_sensitivity": {
+    "32x32": {
+      "mb_per_clip": 131.33,
+      "gb_360_clips": 46.17
+    },
+    "16x16": {
+      "mb_per_clip": 44.62,
+      "gb_360_clips": 15.69
+    },
+    "8x8": {
+      "mb_per_clip": 22.94,
+      "gb_360_clips": 8.06
+    },
+    "4x4": {
+      "mb_per_clip": 17.52,
+      "gb_360_clips": 6.16
+    }
+  },
+  "n_clips_planned": 360,
+  "full_dump_gb_total": 31640.6,
+  "summary_store_gb_total": 15.7,
+  "full_dump_one_clip_fits_kaggle_disk": false,
+  "store_path": "store/s42__golden-retriever__running__on-a-beach",
+  "units": "GiB / MiB (powers of 1024), as in the Kaggle E3 record"
+}

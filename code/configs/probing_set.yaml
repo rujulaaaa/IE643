@@ -1,0 +1,29 @@
+# Frozen probing vocabulary (D-06), enumerated 22 September 2026 (roadmap §4.1).
+# 15 subjects x 4 verbs x 2 scenes = 120 clips per seed, three seeds = 360 clips.
+# Append-only: any change gets a dated entry in docs/protocol.md, never an in-place edit.
+
+frozen_on: "2026-09-22"
+
+families:
+  Q:   # quadrupeds
+    anchor: golden retriever
+    subjects: [golden retriever, german shepherd, horse, wolf, tiger, fox, deer, brown bear]
+  H:   # humans
+    anchor: young man
+    subjects: [young man, young woman, athlete, soldier, dancer, child, elderly man]
+
+verbs: [running, walking, jumping, spinning]
+anchor_verb: running
+scenes: [on a beach, in a forest]
+seeds: [42, 1337, 2024]
+
+# Pair construction (D-03). Within one seed only; pairs never cross a seed.
+#   content pairs     : hold verb + scene, swap subject against its family anchor  -> 56 (Q) + 48 (H) = 104
+#   motion pairs      : hold subject + scene, swap verb against anchor_verb         -> 3 x 15 x 2 = 90
+#   cross-family pairs: Q anchor vs every H subject, same verb + scene              -> 7 x 4 x 2 = 56
+#                       (labelled hard subset, never pooled into the headline figure, D-05)
+expected_counts:
+  clips_per_seed: 120
+  content_pairs: 104
+  motion_pairs: 90
+  cross_family_pairs: 56

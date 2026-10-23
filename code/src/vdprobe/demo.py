@@ -1,0 +1,318 @@
+"""The interface's engine: live edits, edits driven by an uploaded video, cached results.
+
+Everything the Gradio app (scripts/app.py) runs goes through here, so it can be tested without
+a browser. Three entry points:
+
+  Engine.edit(EditRequest)       two prompts in, source A + prompt-only baseline + the chosen edit
+                                 (+ B's own clip as the reference), all from one noise tensor,
+                                 scored with s_c, s_m and D exactly as score_edits.py does
+  Engine.upload_edit(...)        a real video as clip A: DDIM inversion (inversion.py), then the
+                                 motion-direction edit onto a new subject
+  cached_runs() / load_cached()  the Kaggle dev/test sweeps, for instant browsing during a viva
+
+D needs a min-max pool (D-14). A single live edit has no pool of its own, so it is normalised
+with the pool of the scored test run (dev run until the test run is scored); values outside
+that pool fall outside [-1, 1]. The app says which pool is in use.
+"""
+
+from __future__ import annotations
+
+import json
+import time
+from dataclasses import asdict, dataclass
+from pathlib import Path
+
+import pandas as pd
+import torch
+import yaml
+
+from .config import CONFIG_DIR, REPO_ROOT
+from .edit import Arm, AttnSpec, EditSpec, run_arms
+from .edit_plan import WINDOWS, EditPair, motion_modules, temporal_attention, temporal_blocks
+from .metrics import (content_fidelity, disentanglement, flow_fields, motion_fidelity, motion_magnitude,
+                      subject_consistency)
+from .patching import PatchSpec
+
+RESULTS = REPO_ROOT / "results"
+LORA_DIR = RESULTS / "local" / "motion_lora"
+SELECTION = CONFIG_DIR / "edit_selection.json"
+SCORED_RUNS = {"test": RESULTS / "kaggle" / "vdprobe-test" / "out",
+               "dev": RESULTS / "kaggle" / "vdprobe-dev" / "out"}
+METHODS = {
+    "selected": "component patch at the Stage 5 selection",
+    "custom": "component patch, block and window chosen below",
+    "attn": "temporal attention injection (training-free baseline)",
+    "attn_all": "temporal attention injection at all 25 steps",
+    "tensor": "whole-tensor patch at the selected place",
+    "lora_probe": "prompt + probe-guided motion LoRA (up_blocks.0)",
+    "lora_full": "prompt + full motion LoRA (all motion modules)",
+    "lora_anti": "prompt + wrong-place LoRA control (down_blocks.2-3)",
+}
+SEC_PER_CLIP = 65          # laptop RTX 4060, CPU-side cache (patch controls, §16 of the log)
+
+
+def vocabulary() -> dict:
+    v = yaml.safe_load((CONFIG_DIR / "probing_set.yaml").read_text())
+    subjects = [s for f in v["families"].values() for s in f["subjects"]]
+    return {"subjects": subjects, "verbs": v["verbs"], "scenes": v["scenes"], "seeds": v["seeds"]}
+
+
+def selection() -> dict:
+    return json.loads(SELECTION.read_text())
+
+
+def reference_pool() -> tuple[str, dict]:
+    for name, root in SCORED_RUNS.items():
+        f = root / "score_summary.json"
+        if f.exists():
+            return name, json.loads(f.read_text())["pool"]
+    raise FileNotFoundError("no scored edit run: run scripts/score_edits.py first")
+
+
+def upload_start(z_inv: torch.Tensor, gauss: torch.Tensor, start: str) -> torch.Tensor:
+    """Starting latent of the new clips in the upload path (see Engine.upload_edit), fp16."""
+    if start == "gaussian":
+        return gauss.half()
+    if start == "inverted":
+        return z_inv.half()
+    if start != "blend":
+        raise ValueError(f"unknown start {start!r}: blend, inverted or gaussian")
+    z = z_inv.float() / z_inv.float().std() + gauss.float().to(z_inv.device)
+    return (z / z.std()).half()
+
+
+@dataclass
+class EditRequest:
+    subject_a: str
+    verb_a: str
+    subject_b: str
+    verb_b: str
+    scene: str
+    seed: int
+    direction: str = "motion"          # "motion": keep A's motion, take B's subject; "content": the reverse
+    method: str = "selected"
+    block: str = "up_blocks.3"         # method "custom" only; "all" = all 21 motion modules
+    window: str = "ft"                 # method "custom" only; key of edit_plan.WINDOWS
+    alpha: float = 1.0
+    with_reference: bool = True        # also generate B's own clip (needed for D)
+
+    @property
+    def pair(self) -> EditPair:
+        return EditPair(self.subject_a.strip(), self.verb_a.strip(), self.subject_b.strip(),
+                        self.verb_b.strip(), self.scene.strip(), int(self.seed))
+
+
+def _component(direction: str) -> str:
+    return "dynamic" if direction == "motion" else "static"
+
+
+def edit_arm(arm_id: str, prompt: str, direction: str, method: str, coords, sel: dict,
+             block: str = "", window: str = "", alpha: float = 1.0) -> Arm:
+    """One edited target track. `sel` is the Stage 5 selection (configs/edit_selection.json)."""
+    if method.startswith("lora_"):
+        if direction != "motion":
+            raise ValueError("the motion LoRAs only apply to the motion direction")
+        return Arm(arm_id, prompt, EditSpec(label=METHODS[method]), lora=method)
+    if method == "custom":
+        blocks, win = ("all" if block == "all" else [block]), window
+    else:
+        blocks, win = sel[direction]["blocks"], sel[direction]["window"]
+    if win not in WINDOWS:
+        raise ValueError(f"unknown window {win!r}; one of {sorted(WINDOWS)}")
+    steps = WINDOWS["all" if method == "attn_all" else win]
+    if method in ("attn", "attn_all"):
+        if direction != "motion":
+            raise ValueError("attention injection transfers motion: use the motion direction")
+        return Arm(arm_id, prompt, EditSpec(attn=AttnSpec(temporal_attention(coords), steps, alpha=alpha),
+                                            label=METHODS[method]))
+    if blocks != "all" and blocks[0] not in temporal_blocks(coords):
+        raise ValueError(f"unknown block {blocks[0]!r}")
+    mods = motion_modules(coords) if blocks == "all" else tuple(m for b in blocks for m in motion_modules(coords, b))
+    comp = "all" if method == "tensor" else _component(direction)
+    return Arm(arm_id, prompt, EditSpec(PatchSpec(mods, steps, alpha=alpha, component=comp), label=METHODS[method]))
+
+
+def build_arms(req: EditRequest, cfg, coords, sel: dict) -> tuple[str, list[Arm]]:
+    """Source prompt (A) and the target arms: [B_ref,] prompt-only baseline, the edit."""
+    p = req.pair.prompts(cfg)
+    d = req.direction
+    if d not in ("motion", "content"):
+        raise ValueError(d)
+    arms = [Arm("B_ref", p["B"], EditSpec(label="B, unpatched"))] if req.with_reference else []
+    arms.append(Arm("base", p[d], EditSpec(label="prompt only")))
+    arms.append(edit_arm("edit", p[d], d, req.method, coords, sel, req.block, req.window, req.alpha))
+    return p["A"], arms
+
+
+def score_edit(feats: dict, direction: str, pool: dict | None) -> pd.DataFrame:
+    """feats: clip id -> {"emb", "flow"}; ids "source" (A), optional "B_ref", then arms.
+
+    Same quantities as score_edits.py: s_c = per-frame CLIP cosine, s_m = Farneback flow cosine,
+    D with the fixed reference pool. Without B_ref only the A-side numbers exist."""
+    A, B = feats["source"], feats.get("B_ref")
+    cons_src = subject_consistency(A["emb"])
+    rows = []
+    for k, f in feats.items():
+        r = {"clip": k, "sc_A": content_fidelity(f["emb"], A["emb"]), "sm_A": motion_fidelity(f["flow"], A["flow"]),
+             "motion_magnitude": motion_magnitude(f["flow"]),
+             "consistency_ratio": subject_consistency(f["emb"]) / cons_src}
+        if B is not None:
+            r["sc_B"] = content_fidelity(f["emb"], B["emb"])
+            r["sm_B"] = motion_fidelity(f["flow"], B["flow"])
+        rows.append(r)
+    df = pd.DataFrame(rows)
+    if B is not None and pool is not None:
+        if direction == "motion":     # output should have B's content and A's motion
+            d = disentanglement(df.sc_B, df.sm_A, df.sc_A, df.sm_B, pool["sc"], pool["sm"])
+        else:
+            d = disentanglement(df.sc_A, df.sm_B, df.sc_B, df.sm_A, pool["sc"], pool["sm"])
+        df["D"] = d
+        mask = df["clip"].isin(["source", "B_ref"])   # not df.clip: that is DataFrame.clip
+        df.loc[mask, "D"] = float("nan")       # D is defined for edit outputs only
+    return df
+
+
+class Engine:
+    """Loads AnimateDiff, CLIP and the three motion LoRAs once, on first use."""
+
+    def __init__(self, profile: str | None = None, cache_device: str = "cpu", out: Path | None = None):
+        self.profile, self.cache_device = profile, cache_device
+        self.out = out or RESULTS / "interface"
+        self.loaded = self.coords = self.clip = None
+        self.loras: list[str] = []
+
+    def ensure(self):
+        if self.loaded is not None:
+            return
+        from .coords import enumerate_coordinates
+        from .lora import load_motion_lora
+        from .metrics import ClipScorer
+        from .pipeline import build_pipeline
+        from .config import GenerationConfig
+        from .runio import default_profile
+
+        cfg = GenerationConfig.from_yaml()
+        self.loaded = build_pipeline(cfg, profile=self.profile or default_profile())
+        for v in ("probe", "full", "anti"):
+            f = LORA_DIR / v / "motion_lora.safetensors"
+            if f.exists():
+                load_motion_lora(self.loaded.unet, f, name=f"lora_{v}")
+                self.loras.append(f"lora_{v}")
+        if self.loras:
+            self.loaded.unet.disable_adapters()
+        self.coords = enumerate_coordinates(self.loaded.unet)
+        self.clip = ClipScorer()
+
+    def _features(self, frames: dict) -> dict:
+        return {k: {"emb": self.clip.image(fr).cpu(), "flow": flow_fields(fr)} for k, fr in frames.items()}
+
+    def _save(self, tag: str, frames: dict, table: pd.DataFrame, record: dict) -> dict:
+        from .runio import save_gif
+
+        d = self.out / f"{time.strftime('%Y%m%d-%H%M%S')}_{tag}"
+        gifs = {}
+        for k, fr in frames.items():
+            gifs[k] = d / f"{k}.gif"
+            save_gif(fr, gifs[k])
+        table.to_csv(d / "scores.csv", index=False)
+        (d / "request.json").write_text(json.dumps(record, indent=1, default=str))
+        return {k: str(v) for k, v in gifs.items()}
+
+    def edit(self, req: EditRequest) -> dict:
+        from .pipeline import make_noise
+
+        self.ensure()
+        if req.method.startswith("lora_") and req.method not in self.loras:
+            raise ValueError(f"{req.method} is not available (no file in {LORA_DIR})")
+        src, arms = build_arms(req, self.loaded.cfg, self.coords, selection())
+        t0 = time.perf_counter()
+        r = run_arms(self.loaded, self.coords, src, arms, make_noise(self.loaded.cfg, req.seed),
+                     cache_device=self.cache_device)
+        frames = {"source": r.frames["source"], **{a.id: r.frames[a.id] for a in arms}}
+        pool_name, pool = reference_pool()
+        table = score_edit(self._features(frames), req.direction, pool)
+        prompts = {"source": src, **{a.id: a.prompt for a in arms}}
+        rec = {"request": asdict(req), "prompts": prompts, "arms": [a.id for a in arms],
+               "seconds": time.perf_counter() - t0, "pool": pool_name, "n_patched": r.n_patched,
+               "n_attn_injected": r.n_attn_injected}
+        gifs = self._save(req.pair.id + f"__{req.direction}__{req.method}", frames, table, rec)
+        return {"gifs": gifs, "table": table, "prompts": prompts, "pool": pool_name, "seconds": rec["seconds"]}
+
+    def upload_edit(self, video: str, source_prompt: str, target_prompt: str, method: str = "attn_all",
+                    alpha: float = 1.0, seed: int = 42, start: str = "blend") -> dict:
+        """Clip A = an uploaded video, inverted onto the sampler's trajectory; motion direction only.
+
+        `start` is the latent the new clips start from (§22 of the log, checked 2026-10-22):
+          "blend"     z_t0 and the seed's Gaussian noise mixed at equal variance (default)
+          "inverted"  the inverted noise z_t0 itself (layout of the video; grainier)
+          "gaussian"  the seed's noise only (layout unrelated to the video)
+        A layout-aligned start is what makes the transfer work: with "gaussian", attention
+        injection gives a near-static clip, and the component patch runs away (latent std 26)
+        under "gaussian" and "blend", because the video's frame-varying activations do not line
+        up with the new clip's layout. Default: attention injection at all steps + "blend".
+        """
+        from .inversion import invert, read_video
+        from .pipeline import make_noise
+
+        self.ensure()
+        cfg = self.loaded.cfg
+        frames_in = read_video(video, frames=cfg.frames, size=cfg.height)
+        t0 = time.perf_counter()
+        traj = invert(self.loaded, frames_in, source_prompt)
+        t_inv = time.perf_counter() - t0
+        arms = [Arm("base", target_prompt, EditSpec(label="prompt only")),
+                edit_arm("edit", target_prompt, "motion", method, self.coords, selection(), alpha=alpha)]
+        r = run_arms(self.loaded, self.coords, source_prompt, arms, upload_start(traj[0], make_noise(cfg, seed), start),
+                     cache_device=self.cache_device, source_trajectory=traj)
+        frames = {"video": frames_in, "source": r.frames["source"], **{a.id: r.frames[a.id] for a in arms}}
+        feats = self._features(frames)
+        txt = self.clip_text(target_prompt)
+        rows = []
+        for k, f in feats.items():
+            rows.append({"clip": k, "sm_video": motion_fidelity(f["flow"], feats["video"]["flow"]),
+                         "sc_video": content_fidelity(f["emb"], feats["video"]["emb"]),
+                         "clip_text_target": float((f["emb"] @ txt.T).mean()),
+                         "motion_magnitude": motion_magnitude(f["flow"])})
+        table = pd.DataFrame(rows)
+        rec = {"video": video, "source_prompt": source_prompt, "target_prompt": target_prompt, "method": method,
+               "alpha": alpha, "seed": seed, "start": start, "inversion_seconds": t_inv, "seconds": time.perf_counter() - t0}
+        gifs = self._save("upload__" + method, frames, table, rec)
+        return {"gifs": gifs, "table": table, "seconds": rec["seconds"]}
+
+    @torch.no_grad()
+    def clip_text(self, text: str) -> torch.Tensor:
+        m = self.clip.model
+        inp = self.clip.proc(text=[text], return_tensors="pt", padding=True).to(self.clip.device)
+        e = self.clip._to_embedding(m.get_text_features(**inp), m.text_projection)
+        return torch.nn.functional.normalize(e.float(), dim=-1).cpu()
+
+
+# --- cached sweep results ------------------------------------------------------------------
+
+def cached_runs() -> dict[str, list[Path]]:
+    """run name -> pair directories that finished (manifest.json written last)."""
+    out = {}
+    for name, root in SCORED_RUNS.items():
+        dirs = sorted(p.parent for p in root.rglob("manifest.json")) if root.exists() else []
+        if dirs:
+            out[name] = dirs
+    return out
+
+
+def load_cached(pair_dir: Path) -> dict:
+    """GIF paths, prompts and (if the run is scored) the per-arm scores of one sweep pair."""
+    arms = json.loads((pair_dir / "arms.json").read_text())
+    gifs = {p.stem: str(p) for p in sorted((pair_dir / "gifs").glob("*.gif"))}
+    run_root = next((r for r in SCORED_RUNS.values() if r in pair_dir.parents), None)
+    scores = None
+    if run_root is not None and (run_root / "scores_D.csv").exists():
+        df = pd.read_csv(run_root / "scores_D.csv")
+        scores = df[df.pair == pair_dir.name].drop(columns=["pair", "family_seed"])
+    prompts = {"source": arms["prompts"]["A"], **{a["id"]: a["prompt"] for a in arms["arms"]}}
+    return {"pair": arms["pair"], "gifs": gifs, "prompts": prompts, "scores": scores,
+            "labels": {a["id"]: a.get("label", "") for a in arms["arms"]}}
+
+
+def run_summary(name: str) -> pd.DataFrame | None:
+    f = SCORED_RUNS[name] / "summary.csv"
+    return pd.read_csv(f) if f.exists() else None

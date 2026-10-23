@@ -1,0 +1,42 @@
+{
+  "experiment": "E3",
+  "date": "2026-09-21",
+  "gpu": "Tesla T4",
+  "diffusers": "0.40.0",
+  "torch": "2.10.0+cu128",
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "guidance_scale": 7.5,
+  "seed": 42,
+  "unet_calls": 25,
+  "baseline_s_no_hooks": 85.1,
+  "generation_s_with_hooks": 85.6,
+  "hook_overhead_pct": 0.6,
+  "n_coordinates": 95,
+  "coordinates_by_kind": {
+    "spatial_attn1": 16,
+    "spatial_attn2": 16,
+    "temporal_attn1": 21,
+    "temporal_attn2": 21,
+    "temporal_module": 21
+  },
+  "full_dump_gb_per_clip": 87.891,
+  "full_dump_gb_by_kind": {
+    "spatial_attn1": 17.212,
+    "spatial_attn2": 17.212,
+    "temporal_attn1": 17.822,
+    "temporal_attn2": 17.822,
+    "temporal_module": 17.822
+  },
+  "attention_grid": 16,
+  "summary_store_mb_per_clip": 44.62,
+  "summary_split_mb": {
+    "channel_stats": 15.71,
+    "attention_movies": 28.91
+  },
+  "compression_ratio": 2017.3,
+  "n_clips_planned": 360,
+  "full_dump_gb_total": 31640.6,
+  "summary_store_gb_total": 15.69
+}

@@ -1,0 +1,39 @@
+[project]
+name = "vdprobe"
+version = "0.1.0"
+description = "Probing the latent space of video diffusion U-Nets: content vs. motion in AnimateDiff (IE 643 course project)"
+readme = "README.md"
+requires-python = ">=3.10"
+# Pinned to the versions the Kaggle pilots (E1-E3) ran on, so local reruns are comparable.
+dependencies = [
+    "torch==2.10.0",
+    "diffusers==0.40.0",
+    "transformers",
+    "accelerate",
+    "safetensors",
+    "huggingface_hub",
+    "numpy",
+    "pillow",
+    "scikit-image",
+    "pyyaml",
+    "matplotlib",
+    "pandas",
+    "scikit-learn",
+    "opencv-python-headless",
+    "peft",
+    "gradio",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

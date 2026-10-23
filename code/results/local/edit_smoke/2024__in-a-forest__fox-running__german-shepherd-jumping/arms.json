@@ -1,0 +1,182 @@
+{
+ "pair": {
+  "subject_a": "fox",
+  "verb_a": "running",
+  "subject_b": "german shepherd",
+  "verb_b": "jumping",
+  "scene": "in a forest",
+  "seed": 2024
+ },
+ "prompts": {
+  "A": "a fox running in a forest, high quality, detailed",
+  "B": "a german shepherd jumping in a forest, high quality, detailed",
+  "motion": "a german shepherd running in a forest, high quality, detailed",
+  "content": "a fox jumping in a forest, high quality, detailed"
+ },
+ "arms": [
+  {
+   "id": "B_ref",
+   "prompt": "a german shepherd jumping in a forest, high quality, detailed",
+   "label": "B, unpatched"
+  },
+  {
+   "id": "motion.base",
+   "prompt": "a german shepherd running in a forest, high quality, detailed",
+   "label": "prompt only"
+  },
+  {
+   "id": "content.base",
+   "prompt": "a fox jumping in a forest, high quality, detailed",
+   "label": "prompt only"
+  },
+  {
+   "id": "motion.dynamic.up_blocks.0.ft",
+   "prompt": "a german shepherd running in a forest, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.allmm.all",
+   "prompt": "a fox jumping in a forest, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1",
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1",
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1",
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1",
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2",
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2",
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2",
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2",
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.attn.all.ft",
+   "prompt": "a german shepherd running in a forest, high quality, detailed",
+   "label": "",
+   "attn": {
+    "modules": [
+     "down_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.2.transformer_blocks.0.attn2",
+     "mid_block.motion_modules.0.transformer_blocks.0.attn1",
+     "mid_block.motion_modules.0.transformer_blocks.0.attn2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0
+   }
+  }
+ ]
+}

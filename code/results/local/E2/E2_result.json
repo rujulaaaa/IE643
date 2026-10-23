@@ -1,0 +1,95 @@
+{
+  "experiment": "E2",
+  "date": "2026-10-16",
+  "python": "3.10.12",
+  "torch": "2.10.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.0",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_total_vram_gb": 7.62,
+  "capability": "sm_89",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "seed": 42,
+  "scene": "on a beach",
+  "noise": "fixed CPU-generated fp16 tensor, shared by all 7 clips",
+  "rows": [
+    {
+      "clip": "noun:cat",
+      "d_c": 0.2433,
+      "d_m": 0.4191,
+      "S": -0.265,
+      "layout_ssim": 0.338,
+      "prompt": "a cat running on a beach, high quality, detailed"
+    },
+    {
+      "clip": "noun:horse",
+      "d_c": 0.2135,
+      "d_m": 0.4624,
+      "S": -0.368,
+      "layout_ssim": 0.51,
+      "prompt": "a horse running on a beach, high quality, detailed"
+    },
+    {
+      "clip": "noun:bird",
+      "d_c": 0.3197,
+      "d_m": 0.492,
+      "S": -0.212,
+      "layout_ssim": 0.255,
+      "prompt": "a bird running on a beach, high quality, detailed"
+    },
+    {
+      "clip": "verb:walking",
+      "d_c": 0.1287,
+      "d_m": 0.3595,
+      "S": -0.473,
+      "layout_ssim": 0.344,
+      "prompt": "a golden retriever walking on a beach, high quality, detailed"
+    },
+    {
+      "clip": "verb:jumping",
+      "d_c": 0.0481,
+      "d_m": 0.3578,
+      "S": -0.763,
+      "layout_ssim": 0.564,
+      "prompt": "a golden retriever jumping on a beach, high quality, detailed"
+    },
+    {
+      "clip": "verb:standing",
+      "d_c": 0.1171,
+      "d_m": 0.4481,
+      "S": -0.586,
+      "layout_ssim": 0.293,
+      "prompt": "a golden retriever standing on a beach, high quality, detailed"
+    }
+  ],
+  "summary": {
+    "d_c_noun_mean": 0.2588,
+    "d_c_verb_mean": 0.098,
+    "d_c_noun_over_verb": 2.64,
+    "d_m_noun_mean": 0.4578,
+    "d_m_verb_mean": 0.3885,
+    "layout_ssim_noun_mean": 0.3677,
+    "layout_ssim_verb_mean": 0.4003,
+    "S_noun_mean": -0.2817,
+    "S_verb_mean": -0.6073,
+    "notebook_pass": false,
+    "pixel_motion_proxy_inverted": true,
+    "d_m_standing": 0.4481
+  }
+}

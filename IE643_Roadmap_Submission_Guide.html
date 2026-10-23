@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IE 643 Project Roadmap — Probing the Latent Space of Video Diffusion U-Nets</title>
+<style>
+  @page { size: A4; margin: 18mm 17mm 21mm 17mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #23373B;
+    font-size: 9.6pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  section { display: block; }
+  .pbreak { page-break-before: always; }
+  .note, .formula, .ref { page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  h2, h3, h4 { page-break-after: avoid; }
+  tr { page-break-inside: avoid; }
+
+  .eyebrow { font-size: 7.6pt; letter-spacing: .14em; text-transform: uppercase;
+             color: #EB811B; font-weight: 600; margin-bottom: 6mm; }
+  h1 { font-size: 23pt; line-height: 1.16; font-weight: 600; margin: 0 0 2mm 0; letter-spacing: -.01em; }
+  .sub { font-size: 12.5pt; color: #5A6E73; font-weight: 400; margin: 0 0 4mm 0; }
+  .byline { font-size: 8.6pt; color: #92A2A5; border-top: 1.2pt solid #EB811B;
+            padding-top: 2.5mm; display: inline-block; margin-bottom: 8mm; }
+
+  h2 { font-size: 13pt; font-weight: 600; margin: 7mm 0 2.5mm 0; letter-spacing: -.005em; }
+  h2:first-of-type { margin-top: 0; }
+  h3 { font-size: 10.4pt; font-weight: 600; margin: 5mm 0 1.5mm 0; }
+  h4 { font-size: 9.6pt; font-weight: 600; margin: 3.5mm 0 1mm 0; color: #23373B; }
+  p { margin: 0 0 2.4mm 0; color: #3D5256; }
+  ul { margin: 0 0 2.4mm 0; padding-left: 5mm; }
+  li { margin-bottom: 1.3mm; color: #3D5256; }
+  b, strong { font-weight: 600; color: #23373B; }
+  code, .mono { font-family: "Consolas", "SF Mono", Menlo, monospace; font-size: 8.6pt;
+                background: #F2F5F5; padding: 0 1mm; border-radius: 1.5px; color: #23373B; }
+  a { color: #5A6E73; text-decoration: none; word-break: break-all; }
+
+  table { width: 100%; border-collapse: collapse; margin: 2mm 0 3mm 0; font-size: 8.4pt; }
+  th { text-align: left; font-weight: 600; font-size: 7.4pt; letter-spacing: .09em;
+       text-transform: uppercase; color: #EB811B; border-bottom: 1pt solid #23373B;
+       padding: 1.6mm 2mm 1.6mm 0; vertical-align: bottom; }
+  td { padding: 1.9mm 2mm 1.9mm 0; border-bottom: 0.5pt solid #DDE4E5;
+       vertical-align: top; color: #3D5256; }
+  td.id { font-weight: 600; color: #EB811B; white-space: nowrap; }
+  td.k  { font-weight: 600; color: #23373B; }
+  tr.tight td { padding: 1.3mm 2mm 1.3mm 0; }
+
+  .note { border-left: 2pt solid #EB811B; padding: 1mm 0 1mm 3.5mm;
+          margin: 3mm 0; font-size: 8.8pt; color: #5A6E73; }
+  .formula { text-align: center; font-size: 11pt; margin: 3.5mm 0 1.5mm 0; color: #23373B; }
+  .formula .cap { display: block; font-size: 7.8pt; color: #92A2A5; margin-top: 1.5mm; }
+  .lede { font-size: 10.2pt; color: #5A6E73; margin-bottom: 3.5mm; }
+  .new { display: inline-block; font-size: 6.8pt; letter-spacing: .1em; text-transform: uppercase;
+         color: #fff; background: #EB811B; padding: 0.4mm 1.4mm; border-radius: 2px;
+         vertical-align: 2px; margin-left: 2mm; font-weight: 600; }
+  .ref { font-size: 8.2pt; margin-bottom: 1.8mm; color: #3D5256; padding-left: 4mm; text-indent: -4mm; }
+  .ref i { color: #23373B; font-style: normal; font-weight: 600; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 8mm; }
+</style>
+</head>
+<body>
+
+<section>
+  <div class="eyebrow">IE 643 Course Project · Working Roadmap</div>
+  <h1>Probing the Latent Space of Video<br>Diffusion U-Nets</h1>
+  <p class="sub">Disentangling Content vs. Motion</p>
+  <div class="byline">Team Claudn't · revised 22 September 2026 · supersedes the draft of 21 September</div>
+
+  <h2>1. Project snapshot</h2>
+  <p><b>Team:</b> Claudn't · <b>Roll numbers:</b> [fill in, one per member]</p>
+
+  <p><b>The task.</b> A video diffusion U-Net does two jobs in alternation. Its spatial layers work inside a
+  single frame and decide what the thing looks like; its temporal layers work across frames and decide how it
+  moves. Our job is to find out where that division actually sits inside the network, which layers and which
+  denoising timesteps, and then prove we found it by making an edit that only that understanding would allow.
+  The target demonstration is a clip of a golden retriever running on a beach where we keep the exact running
+  gait but turn the dog into a horse, and the reverse, where the dog stays but starts walking instead.</p>
+
+  <p><b>Why this is a probing project and not a generation project.</b> We are not trying to build a better
+  video model. We are trying to explain one. The edit at the end is evidence, not the product. That framing
+  matters for how we spend compute: a careful sweep over a small, controlled clip set beats a large, messy one.</p>
+
+  <p><b>What changed in this revision.</b> The previous draft left roughly twenty methodological choices
+  implicit — the distance function behind the central figure, how pairs are drawn, how many seeds, what
+  counts as success, and what the "trained model" deliverable actually is. Every one of those is now fixed in
+  writing. Section 5.7 is the register; it is the section to read if you are reviewing this document against
+  the earlier one.</p>
+
+  <p><b>Timeline.</b> Course staff extended the overall project by roughly a month and a half, which puts the
+  intensive assessment somewhere in early-to-mid November 2026. We have not seen a firm date yet, so
+  everything past 1 November in the table in section 6 is provisional. The prep presentation deadline
+  (21 September) may or may not have moved with it; we are treating it as still live and submitting on time.</p>
+
+  <h2>2. Where we are: 2 to 22 September</h2>
+  <p>We started on 2 September. The window from 11 to 20 September ran into midsems, so we deliberately
+  planned almost nothing for it apart from reading, and that is how it went. Everything below is what actually
+  happened in those three weeks.</p>
+
+  <h3>2.1 Reading completed</h3>
+  <p>Groups 1 to 5 of the reading list in section 3 are done. Group 7 (the model and tooling documentation) we
+  are reading as we build, which is the sensible order for it. The single most useful thing we read was not on
+  the original list at all: a small cluster of recent papers that have already gone looking for motion inside
+  video diffusion features. They changed what we plan to measure. See section 5.2.</p>
+
+  <h3>2.2 Pilot experiments</h3>
+  <p>Five short experiments on a single GPU, mostly to find out whether the project is tractable at all before
+  committing to a method. E1 to E4 are complete. E5 is new in this revision and is scheduled for Stage 1,
+  because it is the feasibility check for the trained-model deliverable and we would rather fail it in
+  September than in late October.</p>
+
+  <table>
+    <tr><th style="width:7%">ID</th><th style="width:24%">Question we were asking</th>
+        <th style="width:33%">What we ran</th><th style="width:36%">Outcome</th></tr>
+    <tr>
+      <td class="id">E1</td>
+      <td class="k">Can we generate video at all on the hardware we have?</td>
+      <td>AnimateDiff v1.5 (motion adapter <span class="mono">v1-5-2</span>) on an SD1.5 backbone through
+          <span class="mono">diffusers</span>. 16 frames, 512×512, 25 DDIM steps, fp16, CFG 7.5.</td>
+      <td><b>Works. 94 s per clip, 10.2 GB peak VRAM on a Kaggle T4.</b> This is the unit cost behind every
+          budget in section 7. Our 8 GB laptop GPU cannot run the configuration, so all generation happens on
+          Kaggle.</td>
+    </tr>
+    <tr>
+      <td class="id">E2</td>
+      <td class="k">If we fix the seed and change one word of the prompt, does the rest of the clip stay put?</td>
+      <td>Same latent noise, same settings, prompt varied along one axis at a time: noun swap
+          (retriever → cat) and verb swap (running → walking).</td>
+      <td>Largely yes. Composition and camera framing survive a fixed seed well enough that paired clips are a
+          usable controlled design. <b>The failure case is informative and we have designed around it:</b> a
+          noun swap between very differently shaped subjects drags the layout with it. See D-05.</td>
+    </tr>
+    <tr>
+      <td class="id">E3</td>
+      <td class="k">Can we get activations out, and how much disk does that cost?</td>
+      <td>Forward hooks on <span class="mono">unet.up_blocks[i].motion_modules[j]</span> and on the
+          <span class="mono">attn2</span> cross-attention modules. Dumped shapes and sizes for one clip.</td>
+      <td>Straightforward to hook. <b>Storage is the real constraint, not compute:</b> a full fp16 dump of
+          every module at every timestep is 3.4 GB per clip, which is 1.2 TB across the planned set. The
+          harness therefore stores summaries by default and full tensors only on request (D-09).</td>
+    </tr>
+    <tr>
+      <td class="id">E4</td>
+      <td class="k">Do the temporal modules causally carry motion, or is that just an architectural story?</td>
+      <td>Scaled the motion-module residual contribution down towards zero and regenerated with an otherwise
+          identical configuration.</td>
+      <td>The clip collapses towards a near-static sequence while each individual frame stays a plausible
+          image. That is the cheapest possible causal demonstration that these modules are the cross-frame
+          path, and it is a good opening result for the report.</td>
+    </tr>
+    <tr>
+      <td class="id">E5<span class="new">new</span></td>
+      <td class="k">Can we train a LoRA on this hardware, and at what clip length and resolution?</td>
+      <td><i>Stage 1, 21–27 September.</i> One motion LoRA, one concept, 100 steps, rank 16, gradient
+          checkpointing on. Purpose is to record frames × resolution that fit in 16 GB, seconds per step, and
+          peak VRAM — nothing else.</td>
+      <td><i>Pending.</i> E1 established the inference budget before we committed to a sweep; E5 does the same
+          for the training budget before we commit to section 5.5. The expected answer is that training runs
+          at 8 frames × 256×256 even though we generate at 16 × 512.</td>
+    </tr>
+  </table>
+
+</section>
+
+<section>
+  <h3>2.3 What we decided because of the pilots</h3>
+  <ul>
+    <li><b>AnimateDiff is the primary model.</b> E1 settled the feasibility question and E4 confirmed the
+        motion module is a real causal handle, not just a label on a box.</li>
+    <li><b>Every clip in the probing set is generated from a fixed seed and a fixed noise tensor.</b> E2 is the
+        justification. Without it, activation differences between two clips are dominated by sampling noise and
+        the whole probe is meaningless. How many seeds, and how they are assigned, is now fixed in D-04.</li>
+    <li><b>The harness stores per-coordinate summary statistics by default.</b> E3 killed the original plan of
+        dumping every activation to disk, at 3.4 GB per clip.</li>
+    <li><b>Content pairs are drawn within a body-plan family.</b> E2's noun-swap failure is a direct threat to
+        the controlled design, so the subject vocabulary is split into two families and cross-family pairs are
+        reported separately as a labelled hard subset. See D-05.</li>
+    <li><b>The trained-model deliverable gets a feasibility pilot of its own.</b> E5, above.</li>
+  </ul>
+
+  <h2>3. Reading roadmap</h2>
+  <p>Grouped by subtopic, roughly in the order we read them. Citations follow the course format.</p>
+
+  <h3>Group 1. Video diffusion foundations</h3>
+  <div class="ref">Ho, Jonathan, Tim Salimans, Alexey Gritsenko, William Chan, Mohammad Norouzi and David J. Fleet. <i>Video Diffusion Models</i>, NeurIPS, 2022. https://arxiv.org/abs/2204.03458</div>
+  <div class="ref">Blattmann, Andreas, Robin Rombach, Huan Ling, Tim Dockhorn, Seung Wook Kim, Sanja Fidler and Karsten Kreis. <i>Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models</i>, CVPR, 2023. https://arxiv.org/abs/2304.08818</div>
+  <div class="ref">Blattmann, Andreas, Tim Dockhorn, Sumith Kulal, Daniel Mendelevitch, Maciej Kilian, Dominik Lorenz, Yam Levi, Zion English, Vikram Voleti, Adam Letts, Varun Jampani and Robin Rombach. <i>Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets</i>, arXiv, 2023. https://arxiv.org/abs/2311.15127</div>
+  <div class="note">These establish the factorisation we are probing: spatial blocks inside a frame, temporal
+  blocks across frames, repeated at every resolution.</div>
+
+  <h3>Group 2. Motion modules and separation by design</h3>
+  <div class="ref">Guo, Yuwei, Ceyuan Yang, Anyi Rao, Zhengyang Liang, Yaohui Wang, Yu Qiao, Maneesh Agrawala, Dahua Lin and Bo Dai. <i>AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning</i>, ICLR, 2024. https://arxiv.org/abs/2307.04725</div>
+  <div class="ref">Zhao, Rui, Yuchao Gu, Jay Zhangjie Wu, David Junhao Zhang, Jiawei Liu, Weijia Wu, Jussi Keppo and Mike Zheng Shou. <i>MotionDirector: Motion Customization of Text-to-Video Diffusion Models</i>, ECCV, 2024. https://arxiv.org/abs/2310.08465</div>
+  <div class="ref">Wu, Jay Zhangjie, Yixiao Ge, Xintao Wang, Stan Weixian Lei, Yuchao Gu, Yufei Shi, Wynne Hsu, Ying Shan, Xiaohu Qie and Mike Zheng Shou. <i>Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation</i>, ICCV, 2023. https://arxiv.org/abs/2212.11565</div>
+  <div class="note">Closest prior art to our deliverable. MotionDirector's dual-path appearance/motion LoRA is
+  both the baseline we compare against and, in modified form, the recipe behind our own trained model in
+  section 5.5. It shows the split is exploitable, which is a weaker claim than ours but the same territory.</div>
+
+  <h3>Group 3. Activation patching as a method</h3>
+  <div class="ref">Meng, Kevin, David Bau, Alex Andonian and Yonatan Belinkov. <i>Locating and Editing Factual Associations in GPT</i>, NeurIPS, 2022. https://arxiv.org/abs/2202.05262</div>
+  <div class="ref">Wang, Kevin, Alexandre Variengien, Arthur Conmy, Buck Shlegeris and Jacob Steinhardt. <i>Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 Small</i>, ICLR, 2023. https://arxiv.org/abs/2211.00593</div>
+  <div class="ref">Zhang, Fred and Neel Nanda. <i>Towards Best Practices of Activation Patching in Language Models: Metrics and Methods</i>, ICLR, 2024. https://arxiv.org/abs/2309.16042</div>
+  <div class="note">Developed on language models, but the causal logic carries over unchanged. Zhang and Nanda
+  drive two decisions in this document: our corruption is resampling rather than noising (D-12), and the
+  distance metric behind the central figure is written down before the sweep rather than chosen after seeing
+  the data (D-01).</div>
+
+  <h3>Group 4. Cross-attention as a diagnostic</h3>
+  <div class="ref">Hertz, Amir, Ron Mokady, Jay Tenenbaum, Kfir Aberman, Yael Pritch and Daniel Cohen-Or. <i>Prompt-to-Prompt Image Editing with Cross Attention Control</i>, ICLR, 2023. https://arxiv.org/abs/2208.01626</div>
+  <div class="ref">Tang, Raphael, Akshat Pandey, Zhiying Jiang, Gefei Yang, Karun Kumar, Jimmy Lin and Ferhan Ture. <i>What the DAAM: Interpreting Stable Diffusion Using Cross Attention</i>, ACL, 2023. https://arxiv.org/abs/2210.04885</div>
+  <div class="note">Working recipes for pulling attention maps out of a diffusion U-Net per layer and per
+  timestep. We adapt DAAM's aggregation from one image to a stack of frames by keeping the frame axis instead
+  of collapsing it.</div>
+
+  <h3>Group 5. Where motion has already been located (added after the pilots)</h3>
+  <div class="ref">Xiao, Zeqi, Yifan Zhou, Shuai Yang and Xingang Pan. <i>Video Diffusion Models are Training-free Motion Interpreter and Controller</i>, NeurIPS, 2024. https://arxiv.org/abs/2405.14864</div>
+  <div class="ref">Yatim, Danah, Rafail Fridman, Omer Bar-Tal, Yoni Kasten and Tali Dekel. <i>Space-Time Diffusion Features for Zero-Shot Text-Driven Motion Transfer</i>, CVPR, 2024. https://arxiv.org/abs/2311.17009</div>
+  <div class="ref">Ling, Pengyang, Jiazi Bu, Pan Zhang, Xiaoyi Dong, Yuhang Zang, Tong Wu, Huaian Chen, Jiaqi Wang and Yi Jin. <i>MotionClone: Training-Free Motion Cloning for Controllable Video Generation</i>, ICLR, 2025. https://arxiv.org/abs/2406.05338</div>
+  <div class="ref">Baherwani, Vatsal, Yixuan Ren and Abhinav Shrivastava. <i>Characterizing Motion Encoding in Video Diffusion Timesteps</i>, arXiv, 2025. https://arxiv.org/abs/2512.22175</div>
+  <div class="ref">Kwon, Mingi, Jaeseok Jeong and Youngjung Uh. <i>Diffusion Models already have a Semantic Latent Space</i>, ICLR, 2023. https://arxiv.org/abs/2210.10960</div>
+  <div class="note">This group is the reason our plan changed. Together these papers tell us roughly where to
+  look before we start looking, which turns a blind sweep into a set of testable predictions. Details in
+  section 5.2.</div>
+
+</section>
+
+<section>
+  <h3>Group 6. Earlier framings of the same split</h3>
+  <div class="ref">Tulyakov, Sergey, Ming-Yu Liu, Xiaodong Yang and Jan Kautz. <i>MoCoGAN: Decomposing Motion and Content for Video Generation</i>, CVPR, 2018. https://arxiv.org/abs/1707.04993</div>
+  <div class="ref">Yu, Sihyun, Weili Nie, De-An Huang, Boyi Li, Jinwoo Shin and Anima Anandkumar. <i>Efficient Video Diffusion Models via Content-Frame Motion-Latent Decomposition</i>, ICLR, 2024. https://arxiv.org/abs/2403.14148</div>
+  <div class="note">MoCoGAN is where the content/motion vocabulary in our project brief comes from, and CMD is
+  the modern diffusion-era version of the same idea. Both build the split in by construction. We are asking the
+  harder question: does a model that was never factored this way learn a version of it anyway?</div>
+
+  <h3>Group 7. Tools and documentation (read while building)</h3>
+  <div class="ref">Teed, Zachary and Jia Deng. <i>RAFT: Recurrent All-Pairs Field Transforms for Optical Flow</i>, ECCV, 2020. https://arxiv.org/abs/2003.12039</div>
+  <div class="ref">Karaev, Nikita, Ignacio Rocco, Benjamin Graham, Natalia Neverova, Andrea Vedaldi and Christian Rupprecht. <i>CoTracker: It is Better to Track Together</i>, ECCV, 2024. https://arxiv.org/abs/2307.07635</div>
+  <div class="ref">Huang, Ziqi, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuanhan Zhang, Tianxing Wu, Qingyang Jin, Nattapol Chanpaisit, Yaohui Wang, Xinyuan Chen, Limin Wang, Dahua Lin, Yu Qiao and Ziwei Liu. <i>VBench: Comprehensive Benchmark Suite for Video Generative Models</i>, CVPR, 2024. https://arxiv.org/abs/2311.17982</div>
+  <div class="ref">Hu, Edward J., Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang and Weizhu Chen. <i>LoRA: Low-Rank Adaptation of Large Language Models</i>, ICLR, 2022. https://arxiv.org/abs/2106.09685</div>
+  <div class="ref">Soomro, Khurram, Amir Roshan Zamir and Mubarak Shah. <i>UCF101: A Dataset of 101 Human Actions Classes From Videos in The Wild</i>, arXiv, 2012. https://arxiv.org/abs/1212.0402</div>
+  <div class="ref">Hugging Face. <i>Diffusers documentation, text-to-video pipelines.</i> https://huggingface.co/docs/diffusers/using-diffusers/text-img2vid. Accessed on: 21 September 2026.</div>
+  <div class="ref">Hugging Face. <i>PEFT documentation, LoRA methods.</i> https://huggingface.co/docs/peft/developer_guides/lora. Accessed on: 22 September 2026.</div>
+  <div class="ref">Guo, Yuwei et al. <i>AnimateDiff model card.</i> https://huggingface.co/guoyww/animatediff. Accessed on: 21 September 2026.</div>
+
+  <h2>4. Model and dataset shortlist</h2>
+  <p><b>Primary model: AnimateDiff.</b> An SD1.5 UNet (roughly 860M parameters, frozen) with a separately
+  trained motion module inserted after its residual and attention blocks. The motion module checkpoint
+  <span class="mono">mm_sd_v15_v2</span> is about 417M parameters, around 1.6 GB on disk. The earlier draft of
+  this document said the motion module was 1.7B; that was wrong, it confused the file size in gigabytes with a
+  parameter count. The total is closer to 1.3B parameters before the VAE and text encoder.</p>
+
+  <p>We picked it because the spatial/temporal division is already explicit in the code, which means
+  Deliverable 2 starts from a hypothesis rather than a blank sheet. The honest caveat, and it belongs in the
+  report: because the motion module was trained on top of a frozen image model, the "content" layers never saw
+  motion during training. Any separation we find is partly an artefact of that training procedure. This is
+  exactly why the ModelScope check matters.</p>
+
+  <p><b>Exact revisions.</b> Pinned at the start of Stage 2 and recorded in the run manifest, because
+  <span class="mono">runwayml/stable-diffusion-v1-5</span> was withdrawn from the Hub and the pipeline now
+  resolves through a mirror. The resolved base repository id and commit hash are written into every result
+  file rather than assumed (D-20).</p>
+
+  <table>
+    <tr><th style="width:20%">Model</th><th style="width:15%">Size</th>
+        <th style="width:32%">Why it is on the list</th><th style="width:33%">Why it is not primary</th></tr>
+    <tr>
+      <td class="k">AnimateDiff <span style="color:#EB811B;font-size:7pt;letter-spacing:.08em;text-transform:uppercase">primary</span></td>
+      <td>417M motion module + ~860M SD1.5 UNet</td>
+      <td>Explicit spatial/temporal split in the module tree; 10.2 GB measured on a T4; mature
+          <span class="mono">diffusers</span> support</td>
+      <td>Motion module bolted onto a frozen image model, so the split is partly given rather than learned
+          jointly</td>
+    </tr>
+    <tr>
+      <td class="k">ModelScope T2V<br><span class="mono" style="font-size:7.4pt">damo-vilab/text-to-video-ms-1.7b</span></td>
+      <td>1.7B</td>
+      <td>Spatial and temporal trained together end to end. The harder and more interesting test case</td>
+      <td>Thinner tooling for attention extraction than SD-derived pipelines</td>
+    </tr>
+    <tr>
+      <td class="k">Stable Video Diffusion (img2vid)</td>
+      <td>~1.5B UNet</td>
+      <td>Best output quality of the three, well documented</td>
+      <td>Image-conditioned only, so we cannot build matched content/motion pairs from text prompts</td>
+    </tr>
+  </table>
+
+  <p><b>Plan:</b> all of Deliverables 1 to 5 on AnimateDiff. If Stage 7 has room, repeat the Deliverable 2
+  sweep only on ModelScope T2V as a robustness check. Deliverable 4 asks us to demonstrate disentanglement,
+  not to demonstrate it twice, so this is a bonus rather than a requirement.</p>
+
+</section>
+
+<section>
+  <h2>4.1 The probing set, fully specified</h2>
+  <p class="lede">We generate our own clips. That is not a shortcut; it is the only way to get pairs that
+  differ along exactly one axis, and without that the probe has nothing to measure. The previous draft gave the
+  shape of this set but not its contents. Both are now fixed, because a sweep run against an unwritten
+  vocabulary is not reproducible.</p>
+
+  <h3>The frozen vocabulary</h3>
+  <p>15 subjects × 4 verbs × 2 scenes = <b>120 clips per seed</b>. The prompt template is
+  <span class="mono">"a {subject} {verb} {scene}, high quality, detailed"</span> with the negative prompt
+  <span class="mono">"bad quality, worse quality, blurry"</span> held constant. Subjects are split into two
+  body-plan families so that content pairs can be drawn within a family (D-05).</p>
+
+  <table>
+    <tr><th style="width:18%">Axis</th><th style="width:82%">Values, frozen 22 September 2026</th></tr>
+    <tr class="tight"><td class="k">Subject — family Q<br><span style="font-weight:400;color:#92A2A5">quadrupeds, 8</span></td>
+        <td>golden retriever · german shepherd · horse · wolf · tiger · fox · deer · brown bear</td></tr>
+    <tr class="tight"><td class="k">Subject — family H<br><span style="font-weight:400;color:#92A2A5">humans, 7</span></td>
+        <td>young man · young woman · athlete · soldier · dancer · child · elderly man</td></tr>
+    <tr class="tight"><td class="k">Verb (4)</td><td>running · walking · jumping · spinning</td></tr>
+    <tr class="tight"><td class="k">Scene (2)</td><td>on a beach · in a forest</td></tr>
+    <tr class="tight"><td class="k">Anchors</td><td>subject <span class="mono">golden retriever</span>, verb <span class="mono">running</span> — every pair holds one of these fixed</td></tr>
+  </table>
+
+  <p>All four verbs are plausible for all fifteen subjects, which is why this particular list was chosen: a
+  verb that only applies to some subjects would silently turn a motion pair into a content pair.</p>
+
+  <h3>How a pair is built</h3>
+  <p>A pair is two clips that share a seed, a noise tensor, a sampler and every prompt token but one. The
+  anchor design makes the count deterministic rather than "whichever pairs we happened to use".</p>
+  <ul>
+    <li><b>Content pairs.</b> Hold verb and scene, swap the subject against the family anchor.
+        Within family Q: 7 partners × 4 verbs × 2 scenes = 56. Within family H the anchor is
+        <span class="mono">young man</span>: 6 × 4 × 2 = 48. <b>Total 104 within-family content pairs.</b></li>
+    <li><b>Motion pairs.</b> Hold subject and scene, swap the verb against the anchor
+        <span class="mono">running</span>: 3 partners × 15 subjects × 2 scenes = <b>90 motion pairs.</b></li>
+    <li><b>Cross-family content pairs.</b> A separate labelled set of 56 pairs (quadruped against human,
+        same verb and scene). These are the hard subset E2 warned us about, reported separately and never
+        pooled into the headline figure.</li>
+  </ul>
+
+  <h3>Seeds</h3>
+  <p>The whole grid is regenerated under <b>three seeds — 42, 1337, 2024</b> — giving 360 clips. A pair always
+  lives inside one seed. The selectivity score is computed within a seed and then averaged across seeds, and
+  the spread across seeds is the error bar on the central figure. One seed would leave us unable to say whether
+  the map is a property of the model or of one noise tensor, which is the first question any examiner will ask.
+  At 94 s per clip this costs 9.4 GPU-hours, which section 7 shows we can afford.</p>
+
+  <h3>Where the vocabulary comes from</h3>
+  <ul>
+    <li><b>Subjects and scenes</b> sampled from MSR-VTT and WebVid-10M captions, so we are not testing on a
+        handful of toy prompts. WebVid in particular is close to what these models were pretrained on.</li>
+    <li><b>Verbs</b> taken from UCF101 and Kinetics-400 action labels, which give a clean standard list of
+        distinct motions instead of whatever we happened to think of.</li>
+  </ul>
+
+  <div class="note"><b>Data provenance, stated precisely.</b> For the probing set of Deliverables 1 to 4 we
+  train on none of these datasets; they are a source of vocabulary and structure only, and every clip we probe
+  is generated by the model itself. <b>Section 5.5 is the one exception</b> and we flag it rather than let it
+  be discovered: the LoRA pair is fitted on roughly 20 real clips drawn from UCF101 and Kinetics-400. That is
+  a deliberate, bounded use of real video for the trained-model deliverable, it is disclosed in the report's
+  data section, and it touches nothing in Deliverables 1 to 4.</div>
+
+  <h3>Pretraining data of the models we use</h3>
+  <p>Required by the presentation checklist and worth stating plainly. The SD1.5 backbone was trained on
+  LAION-5B subsets (image–text pairs, web-scraped, known to carry demographic and aesthetic bias). The
+  AnimateDiff motion module was trained on WebVid-10M (short stock-footage clips, watermarked, biased towards
+  professionally shot content and slow camera motion). Both biases are visible in our own pilots — the beach
+  scenes look like stock footage — and they bound what our conclusions can claim: we are characterising
+  <i>this</i> model, not video diffusion in general.</p>
+
+</section>
+
+<section class="pbreak">
+  <h2>5. Refined plan, deliverable by deliverable</h2>
+  <p>This section is where the reading in group 5 changed things. The original plan was to sweep every layer
+  and every timestep and look for structure. That is still the shape of it, but we now know enough to predict
+  what we should find, which makes the result falsifiable instead of merely descriptive. There are now
+  <b>five</b> deliverables: the trained model in 5.5 has been promoted from an afterthought to a numbered
+  workstream, because it is a graded item and because, done the way described there, it tests Deliverable 2
+  rather than merely sitting beside it.</p>
+
+  <h3>5.1 Deliverable 1: setup and the extraction harness</h3>
+  <ul>
+    <li><b>Hook targets.</b> In <span class="mono">diffusers</span>, AnimateDiff builds a
+        <span class="mono">UNetMotionModel</span> from a <span class="mono">UNet2DConditionModel</span> plus a
+        <span class="mono">MotionAdapter</span>. The temporal path is the
+        <span class="mono">motion_modules</span> list inside each <span class="mono">down_blocks[i]</span>,
+        <span class="mono">up_blocks[i]</span> and the mid block — 21 modules in total (8 down, 1 mid, 12 up).
+        The spatial path is the <span class="mono">transformer_blocks</span>, with
+        <span class="mono">attn1</span> self-attention and <span class="mono">attn2</span> cross-attention to
+        the text embedding. Forward hooks on both, keyed by module path.</li>
+    <li><b>Coordinate system.</b> Everything is indexed by a triple: (module path, denoising timestep, clip id).
+        Every later stage queries by that triple, so getting it right once saves a lot of pain.</li>
+    <li><b>The two-tier sweep.</b> The coarse pass takes one representative module per block — 9 temporal
+        coordinates and 7 spatial — at all 25 timesteps. The refined pass expands only inside whichever block
+        wins, at full module resolution. This is what makes the sweep affordable; see D-07 and D-08.</li>
+    <li><b>What gets stored.</b> Not the raw tensors, by default: E3 measured a full dump at 3.4 GB per clip.
+        Instead we store, per coordinate, the channel means and variances, the norms of the frame-mean-removed
+        residual, and cross-attention maps head-averaged and downsampled to a 16 × 16 spatial grid with the
+        frame axis kept, for the subject, verb and scene tokens only. Full tensors are retained for a short
+        list of coordinates we mark as interesting (D-09).</li>
+    <li><b>Determinism.</b> One seed policy, written down and enforced in the generation script rather than
+        passed by hand. Every clip records the seed, sampler, step count, resolution, base-model repository id
+        and commit hash alongside its activations.</li>
+    <li><b>Attention maps.</b> DAAM-style aggregation, extended to video by keeping the frame axis rather than
+        collapsing it. A token's map becomes a small movie, which is what makes it useful for telling content
+        attention apart from motion attention.</li>
+  </ul>
+
+  <h3>5.2 Deliverable 2: three predictions, then a measurement</h3>
+  <p>Rather than sweeping blind, we go in with three hypotheses drawn from the group 5 papers. Each is
+  falsifiable and each is cheap to test with the harness from Deliverable 1.</p>
+
+  <p><b>H1, the layer axis.</b> Motion information concentrates in the temporal modules at medium resolution
+  rather than at the extremes. Xiao et al. find their motion feature works best after the first up-block and
+  report that mid-resolution features give better motion correspondence than either shallow or deep ones.
+  <i>Prediction:</i> motion selectivity peaks around <span class="mono">up_blocks[1]</span>, not at the
+  highest-resolution decoder layers and not at the bottleneck.</p>
+
+  <p><b>H2, the timestep axis.</b> Motion is decided early, appearance late. This is a widely repeated piece of
+  folklore that Baherwani et al. actually went and tested, finding two regimes with a reasonably consistent
+  boundary between them. <i>Prediction:</i> motion selectivity is high in the first third of the denoising
+  trajectory and falls off; content selectivity does the opposite. If the boundary sits somewhere different for
+  AnimateDiff than they report, that is a result worth writing up, not a bug.</p>
+
+  <p><b>H3, the content confound.</b> Raw activations, even in temporal layers, are dominated by appearance.
+  Xiao et al. only get a clean motion signal after subtracting the per-frame mean across the frame axis, which
+  removes the static component. <i>Prediction:</i> if we skip that normalisation, every layer will look
+  content-selective and we will wrongly conclude there is no motion anywhere. This one matters most, because it
+  is the mistake we would otherwise have made in week one of the sweep.</p>
+
+  <h4>How H1 and H2 are actually decided</h4>
+  <p>A prediction with no test statistic is not falsifiable in practice. For H1, the test is the
+  <span class="mono">argmax</span> over blocks of the mean motion selectivity, with a 95% bootstrap confidence
+  interval over pairs; H1 survives if that interval excludes both the shallowest and the deepest block. For H2,
+  we fit a single changepoint over the timestep axis and report its location with a bootstrap interval; H2
+  survives if the changepoint falls in the first half of the trajectory. Both tests are written into the
+  analysis script before the sweep runs, not chosen after seeing the map.</p>
+
+</section>
+
+<section>
+  <h4>The measurement, and the distance function behind it</h4>
+  <p>The previous draft defined the central figure in terms of "how far the activations move" without saying
+  what distance that is. Since the whole project reduces to one heat map computed from that function, it is now
+  specified. Let <i>a</i> be the cached activation at coordinate (<i>L</i>, <i>t</i>) for one clip, with a
+  frame axis of length <i>F</i> = 16. Split it into a static and a dynamic part:</p>
+
+  <div class="formula">
+    ā = mean<sub>F</sub>(a) &nbsp;&nbsp;·&nbsp;&nbsp; ã = a − ā
+    <span class="cap">the static component, broadcast over frames, and the frame-mean-removed residual</span>
+  </div>
+
+  <p>For a pair of clips (<i>A</i>, <i>B</i>) the distance is one minus cosine similarity on the flattened
+  tensor, taken on <b>ā for the content channel and ã for the motion channel</b>. Cosine rather than L2,
+  because activation magnitudes differ by orders of magnitude between blocks and we need coordinates to be
+  comparable; L2 is reported in an appendix as a robustness check, per Zhang and Nanda's advice that the metric
+  should be fixed in advance and its alternatives shown.</p>
+
+  <p>This yields <b>two maps, not one</b>, which is the concrete form H3 takes:</p>
+
+  <div class="formula">
+    S<sub>dyn</sub>(L, t) = (d<sub>c</sub><sup>ã</sup> − d<sub>m</sub><sup>ã</sup>) / (d<sub>c</sub><sup>ã</sup> + d<sub>m</sub><sup>ã</sup>)
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    S<sub>stat</sub>(L, t) = (d<sub>c</sub><sup>ā</sup> − d<sub>m</sub><sup>ā</sup>) / (d<sub>c</sub><sup>ā</sup> + d<sub>m</sub><sup>ā</sup>)
+    <span class="cap">d<sub>c</sub> is the distance across a content pair, d<sub>m</sub> across a motion pair; both maps land in [−1, 1]</span>
+  </div>
+
+  <p>The sign is what makes these useful. Positive means the coordinate responds to what is depicted, negative
+  means it responds to how things move, near zero means it responds to both or to neither.
+  <b>S<sub>dyn</sub> is the headline figure</b> — motion isolated from the static component — and
+  S<sub>stat</sub> is printed beside it as the control that shows what H3 predicted: without the split, almost
+  everything reads as content-selective. Publishing both is the difference between demonstrating the confound
+  and merely asserting it.</p>
+
+  <p><b>Aggregation.</b> The ratio is computed per pair and then averaged over pairs, never the other way
+  round: a ratio of averages is not an average of ratios, and only the per-pair form supports a bootstrap
+  interval. We report the median over pairs with a 95% bootstrap CI, within each seed, then average across the
+  three seeds.</p>
+
+  <h4>The correlational counterpart</h4>
+  <p>Separately, fit a small linear probe on each coordinate's cached activation to predict the motion verb
+  and, in a second probe, the subject family. Probe accuracy per coordinate says what information is
+  <i>present</i>. The patching in Deliverable 3 says what information is <i>used</i>. These two can disagree,
+  and where they disagree is the most interesting thing we are likely to find.</p>
+  <p><b>Protocol, because a probe on 120 clips overfits trivially.</b> Logistic regression with L2
+  regularisation on the flattened, frame-mean-removed activation, reduced to 256 dimensions by PCA fitted on
+  the training split only. The split is <b>by scene</b>: train on <span class="mono">on a beach</span>, test on
+  <span class="mono">in a forest</span>, then swap and average. This forces the probe to find something about
+  the verb rather than memorising a scene. The verb probe is 4-way (chance 25%) with 60 test clips per fold;
+  the subject-family probe is binary (chance 50%). Chance level is plotted on every probe figure.</p>
+
+  <h3>5.3 Deliverable 3: the patching framework</h3>
+  <p>A patch replaces the activation at a chosen coordinate during clip B's generation with the one cached from
+  clip A. Both runs share an initial noise tensor or the comparison is meaningless. Following Zhang and Nanda,
+  our corruption is <b>resampling</b> — the replacement comes from a real second clip — and not Gaussian
+  noising. That choice is stated because the two answer different questions and are routinely confused.</p>
+
+  <p><b>Four granularities, in increasing order of precision.</b> We implement them in this order and stop when
+  one works well enough:</p>
+  <ul>
+    <li><b>1. Whole tensor.</b> Replace the full activation. Blunt, and likely to break coherence, but it
+        establishes an upper bound on effect size.</li>
+    <li><b>2. Channel subset.</b> Replace only the most motion-selective channels. This needs a per-channel
+        score, which S(L, t) does not provide because it aggregates over channels, so we define
+        S<sub>c</sub>(L, t, c) by the same formula restricted to channel <i>c</i> of the dynamic component and
+        take the top <i>k</i>% by that score. <i>k</i> is swept over {1, 5, 10, 25} and reported as a curve
+        (D-10). We expect this is where the method starts working.</li>
+    <li><b>3. Attention weights only.</b> Replace the temporal attention map rather than the features, in the
+        spirit of MotionClone's observation that the dominant components of temporal attention are what
+        actually drive motion.</li>
+    <li><b>4. Scaled residual injection.</b> Blend rather than replace, with a strength α from 0 to 1. Sweeping
+        α over {0, 0.25, 0.5, 0.75, 1.0} gives a dose–response curve, which is far stronger evidence than a
+        binary worked/did-not-work.</li>
+  </ul>
+
+</section>
+
+<section>
+  <p><b>The patch window.</b> A patch is applied over a contiguous range of timesteps, not a single one, and
+  the range is a free parameter we sweep rather than a detail we leave unsaid: {one step}, {five steps centred
+  on the peak}, {the first third}, {all 25}. Layer granularity is one module or one whole block. The winning
+  (window, block) combination from the coarse pass is what Deliverable 4 uses.</p>
+
+  <p><b>Three controls, all of which we run before believing any positive result:</b></p>
+  <ul>
+    <li><b>Null patch.</b> Patch a clip with its own activation; the output must come back unchanged. In fp16
+        with cuDNN autotuning it will not be bit-identical, so the criterion is numerical rather than exact:
+        mean absolute difference of the final latents below 1e-3 <i>and</i> PSNR above 45 dB between the
+        decoded clips. Below that bar there is a bug in the harness and nothing downstream is trustworthy
+        (D-11).</li>
+    <li><b>Random coordinate.</b> Patch a coordinate with low |S|. The effect should be small. If a random
+        layer does as well as our chosen one, we have not localised anything.</li>
+    <li><b>Symmetry.</b> Patch A into B and B into A. The two effects should be approximate inverses.
+        Asymmetry means something is leaking.</li>
+  </ul>
+
+  <h3>5.4 Deliverable 4: the demonstration, and how we score it</h3>
+  <p>Two edits per test case, each with a clear target: keep A's motion while taking B's content, and the
+  reverse. <b>Twelve test pairs, both directions, so 24 edits</b> — six from family Q, six from family H,
+  spanning all four verbs, listed in the appendix of the report so the selection cannot be read as
+  cherry-picked. Reported as a video grid plus numbers.</p>
+
+  <p><b>Content fidelity s<sub>c</sub>.</b> CLIP similarity between output frames and the intended content
+  prompt, plus CLIP or DINO image-to-image similarity against the reference clip's frames. The image-to-image
+  version is the more honest of the two, since CLIP text similarity is easy to satisfy accidentally, and it is
+  the one that enters the headline number.</p>
+
+  <p><b>Motion fidelity s<sub>m</sub>.</b> A trajectory-based score in the style of Yatim et al.: extract point
+  tracks from both clips with CoTracker and compare displacement vectors over time. Optical flow correlation
+  via RAFT as a cheaper second opinion.</p>
+
+  <p><b>Video quality.</b> Three VBench dimensions — subject consistency, motion smoothness, temporal
+  flickering — so we can show the edit did not simply wreck the clip. Cheap to run, and it pre-empts the
+  obvious objection.</p>
+
+  <h4>The headline number</h4>
+  <p>A single disentanglement score built from the four cross-similarities of one edit. For an output that
+  should carry A's motion and B's content:</p>
+
+  <div class="formula">
+    D = ½[ s<sub>c</sub>(out, B) + s<sub>m</sub>(out, A) ] − ½[ s<sub>c</sub>(out, A) + s<sub>m</sub>(out, B) ]
+    <span class="cap">s<sub>c</sub> is content similarity, s<sub>m</sub> is motion similarity, out is the edited clip</span>
+  </div>
+
+  <p><b>A correction the previous draft needed.</b> As written, D adds a CLIP cosine (empirically ≈ 0.5 to 0.95)
+  to a trajectory correlation (−1 to 1). Those are not commensurable and their sum is dominated by whichever
+  has the wider spread. Both terms are therefore <b>min–max normalised across the whole evaluation set</b>
+  before entering D, so D lands in [−1, 1] and the two axes contribute equally by construction. The raw
+  un-normalised s<sub>c</sub> and s<sub>m</sub> are printed in the same table, so the normalisation hides
+  nothing (D-14).</p>
+
+  <p>Positive and large means the edit moved the axis we aimed at and left the other one alone. Reported
+  separately for both edit directions, because a method that works one way and not the other has not
+  demonstrated disentanglement.</p>
+
+  <h4>What would count as success, decided in advance</h4>
+  <p>The previous draft never said what result would make us claim the project worked, which leaves the claim
+  free to be fitted to whatever came out. Pre-registered, the claim is supported if <b>all three</b> hold:</p>
+  <ul>
+    <li>median D over the twelve pairs is greater for patching than for the prompt-only baseline, and the 95%
+        bootstrap CI of that difference excludes zero;</li>
+    <li>this holds in <b>both</b> edit directions, not just one;</li>
+    <li>VBench subject consistency for the edited clip is within 10% of the unedited source clip, so we are not
+        buying the score by destroying the video.</li>
+  </ul>
+  <p>If those are not met we report it as a negative result together with the α dose–response curve and the
+  selectivity map, which remain findings in their own right. A localisation that does not survive intervention
+  is exactly the disagreement between "present" and "used" that section 5.2 says is worth looking for.</p>
+
+  <p><b>Baselines.</b> A disentanglement score with nothing to compare against is an unanchored number. We run:
+  <b>prompt-only</b> (same seed, new prompt, no patching — mandatory, and if we cannot beat it we have built an
+  expensive way to do nothing); <b>MotionClone</b> as the training-free reference, chosen over the MOFT
+  controller so the comparison is decided rather than optional, on the grounds that its public code is closest
+  in spirit to our granularity 3; and <b>our own LoRA pair from 5.5</b> as the trained reference, which is
+  cheaper and more directly comparable than running MotionDirector's full pipeline.</p>
+
+</section>
+
+<section>
+  <h3>5.5 Deliverable 5: the trained model <span class="new">rewritten</span></h3>
+  <p class="lede">The course requires a trained or finetuned model. Our method is training-free, so the
+  previous draft satisfied the requirement with a one-paragraph promise of "a small MotionDirector-style pair
+  of LoRAs, one or two days in Stage 6". That was the vaguest item in the plan and the easiest to arrive at
+  unprepared. It is now a numbered deliverable with a recipe, a dataset, a budget, a feasibility pilot and — the
+  important change — <b>a job to do inside the project rather than beside it</b>.</p>
+
+  <h4>What we train</h4>
+  <p>Two LoRA adapters on the same AnimateDiff pipeline, fitted separately, following MotionDirector's
+  dual-path design.</p>
+  <ul>
+    <li><b>Appearance LoRA</b> — on the spatial path only:
+        <span class="mono">to_q / to_k / to_v / to_out.0</span> inside the
+        <span class="mono">transformer_blocks</span> (both <span class="mono">attn1</span> and
+        <span class="mono">attn2</span>) of the frozen SD1.5 UNet. The key trick is
+        <i>appearance debiasing</i>: train on a <b>single randomly sampled frame per step</b>, not the clip. A
+        single frame contains no motion to learn, so the adapter is forced to absorb only identity, colour and
+        texture.</li>
+    <li><b>Motion LoRA</b> — the same projection names but filtered to modules whose path contains
+        <span class="mono">motion_modules</span>. Trained on the full clip with the appearance LoRA attached
+        and <b>frozen</b>, so the appearance component is already explained away and the temporal loss carries
+        residual motion. Latents are residualised against an anchor frame before the temporal loss, as
+        MotionDirector does.</li>
+  </ul>
+  <p>In <span class="mono">diffusers</span> plus <span class="mono">peft</span> this is a
+  <span class="mono">LoraConfig</span> whose <span class="mono">target_modules</span> is a regex, and the
+  spatial/temporal split is just whether <span class="mono">motion_modules</span> appears in the module path —
+  the same string filter the E3 hooks already use.</p>
+
+  <table>
+    <tr><th style="width:28%">Setting</th><th style="width:36%">Appearance LoRA</th><th style="width:36%">Motion LoRA</th></tr>
+    <tr class="tight"><td class="k">Target modules</td><td><span class="mono">transformer_blocks.*attn[12].to_{q,k,v,out.0}</span></td><td><span class="mono">motion_modules.*to_{q,k,v,out.0}</span></td></tr>
+    <tr class="tight"><td class="k">Rank / alpha</td><td>16 / 16</td><td>32 / 32</td></tr>
+    <tr class="tight"><td class="k">Learning rate</td><td>1e-4, AdamW</td><td>5e-5, AdamW</td></tr>
+    <tr class="tight"><td class="k">Steps</td><td>300–500</td><td>500–800</td></tr>
+    <tr class="tight"><td class="k">Training input</td><td>one random frame per step</td><td>full clip, appearance LoRA frozen</td></tr>
+    <tr class="tight"><td class="k">Precision / batch</td><td colspan="2">fp16, batch 1, gradient checkpointing on</td></tr>
+    <tr class="tight"><td class="k">Clip geometry</td><td colspan="2">8 frames × 256 × 256 for training, even though we generate at 16 × 512 — <b>to be confirmed by E5</b>, which is the single most likely thing to run out of memory</td></tr>
+  </table>
+
+  <h4>What we train it on</h4>
+  <p>Four motion concepts drawn from the verb vocabulary already frozen in section 4.1 — running, walking,
+  jumping, spinning — with roughly five real clips each from UCF101 and Kinetics-400, so about 20 clips in
+  total. These are real videos, which is a deliberate departure from the probing set and is disclosed in the
+  note on page 4 and in the report's data section. Training on our own generated clips instead was considered
+  and rejected: it would make the LoRA a distillation of the model's existing behaviour and the comparison
+  below would be circular.</p>
+
+  <h4>The part that makes it earn its place</h4>
+  <p>A generic LoRA pair would satisfy the checklist and teach us nothing. Instead we train the motion LoRA
+  twice and compare, which turns a required artefact into a test of Deliverable 2:</p>
+  <ul>
+    <li><b>Full-coverage motion LoRA</b> — adapters on every temporal attention projection. This is the
+        MotionDirector-equivalent and the trained baseline of section 5.4.</li>
+    <li><b>Probe-guided motion LoRA</b> — adapters only on the top-<i>k</i> coordinates from
+        S<sub>dyn</sub>(L, t), which if H1 holds means <span class="mono">up_blocks[1]</span> and its
+        neighbours. Same rank, same data, same steps, far fewer trainable parameters.</li>
+  </ul>
+  <p>If the probe-guided variant matches the full-coverage one at a fraction of the parameters, our selectivity
+  map has predictive power in <i>weight</i> space and not only in activation space, which is a considerably
+  stronger claim than the patching result alone. If it does not match, that is a real negative result about the
+  limits of the map, and a more interesting slide than "we also trained a LoRA". Either way it costs one extra
+  training run, because the data, script and evaluation are already built.</p>
+
+  <p><b>A third view, nearly free.</b> Take the trained full-coverage LoRAs and compute ‖ΔW‖ per module for the
+  motion adapter against the appearance adapter. That gives a <b>training-derived layer ranking</b> to set
+  against the two we already have: patching says what the model uses, the linear probe says what is present,
+  and ‖ΔW‖ says where gradient descent chose to put the motion when asked. We report the rank correlation
+  between all three. It is a dozen lines of code over weights we already have, and a three-way agreement (or
+  disagreement) is the strongest single figure available to this project.</p>
+
+  <h4>Feasibility and budget</h4>
+  <p>E5 in Stage 1 records frames × resolution that fit, seconds per step and peak VRAM on a T4 — the training
+  analogue of what E1 did for inference. The four training runs are then Stage 6 work at roughly 6 GPU-hours
+  total; section 7 has the breakdown. We do not start LoRA training before the Stage 4 map exists, because the
+  probe-guided variant depends on it.</p>
+
+</section>
+
+<section>
+  <h3>5.6 Interface</h3>
+  <p>A Gradio app. The important design decision is that it should expose the interpretability rather than
+  hide it.</p>
+  <p><b>Inputs:</b> two prompts (or two generated clips), a layer selector, a timestep range, and the patch
+  strength α. <b>Outputs:</b> the edited clip, the three metric values, and the cross-attention heat map for
+  the selected coordinate shown beside the selectivity map from Deliverable 2, so a user can see why that
+  coordinate was chosen. A demo that only shows the output video would satisfy the requirement, but it would
+  waste the project.</p>
+  <p><b>Precomputed, not live — a practical decision the previous draft left open.</b> At 94 s per clip, a live
+  generation inside a demo is a 94-second silence in a graded presentation. The app therefore serves a cache of
+  the ~500 clips and all precomputed maps, and every combination reachable from the controls is one we have
+  already generated. Live generation stays available behind an explicit button with a stated wait, for the one
+  or two cases where an examiner asks for something off the grid. Confirm the expected scope with the TA
+  regardless; the brief explicitly says to ask.</p>
+
+  <h3>5.7 Frozen protocol: the decisions register <span class="new">new</span></h3>
+  <p class="lede">Everything below was implicit in the previous draft and is now fixed. The register exists so
+  that a choice made in September is not quietly remade in October to suit the data, and so the stage-wise
+  report can cite a decision rather than reconstruct one. Anything changed after this date is appended with a
+  date and a reason rather than edited in place.</p>
+
+  <table>
+    <tr><th style="width:8%">ID</th><th style="width:26%">Question that was open</th><th style="width:66%">Decision</th></tr>
+    <tr class="tight"><td class="id">D-01</td><td class="k">What distance is d?</td><td>1 − cosine similarity on the flattened activation. Content channel uses the static part ā, motion channel uses the frame-mean-removed part ã. L2 reported as an appendix robustness check. §5.2</td></tr>
+    <tr class="tight"><td class="id">D-02</td><td class="k">One selectivity map or two?</td><td>Two. S<sub>dyn</sub> is the headline; S<sub>stat</sub> is published beside it as the H3 control. §5.2</td></tr>
+    <tr class="tight"><td class="id">D-03</td><td class="k">How are pairs drawn?</td><td>Anchor design. 104 within-family content pairs, 90 motion pairs, 56 cross-family content pairs held out as a labelled hard subset. §4.1</td></tr>
+    <tr class="tight"><td class="id">D-04</td><td class="k">How many seeds?</td><td>Three — 42, 1337, 2024 — the full grid regenerated under each. Pairs never cross a seed. Across-seed spread is the error bar. §4.1</td></tr>
+    <tr class="tight"><td class="id">D-05</td><td class="k">E2 showed noun swaps drag the layout. What about it?</td><td>Subjects split into two body-plan families; content pairs drawn within a family by default. Cross-family pairs reported separately, never pooled. §4.1</td></tr>
+    <tr class="tight"><td class="id">D-06</td><td class="k">What are the 15 subjects, 4 verbs, 2 scenes?</td><td>Enumerated and frozen 22 September 2026, in the table on page 4. Also committed to <span class="mono">configs/probing_set.yaml</span>.</td></tr>
+    <tr class="tight"><td class="id">D-07</td><td class="k">Which timesteps?</td><td>Summaries cached at all 25. Full tensors and all patching limited to t ∈ {0, 4, 8, 12, 16, 20, 24}, refined to ±2 around any peak. §5.1</td></tr>
+    <tr class="tight"><td class="id">D-08</td><td class="k">Which layers?</td><td>Coarse pass: one representative module per block, 9 temporal and 7 spatial. Refined pass: all modules inside the winning block only. §5.1</td></tr>
+    <tr class="tight"><td class="id">D-09</td><td class="k">What exactly is stored?</td><td>Channel means and variances, ‖ã‖ per channel, and attention maps head-averaged at 16 × 16 with the frame axis kept, for subject/verb/scene tokens. Full tensors only for flagged coordinates. §5.1</td></tr>
+    <tr class="tight"><td class="id">D-10</td><td class="k">"Most motion-selective channels" — by what score?</td><td>S<sub>c</sub>(L, t, c), the same ratio restricted to one channel of ã. Top k% with k swept over {1, 5, 10, 25} and reported as a curve. §5.3</td></tr>
+    <tr class="tight"><td class="id">D-11</td><td class="k">The null patch "must come back identical" — to what tolerance?</td><td>Mean absolute latent difference &lt; 1e-3 and decoded-clip PSNR &gt; 45 dB. Bit-identity is unattainable in fp16 with cuDNN autotuning. §5.3</td></tr>
+    <tr class="tight"><td class="id">D-12</td><td class="k">Noising or resampling corruption?</td><td>Resampling, from a real second clip. Stated explicitly because Zhang and Nanda show the two answer different questions. §5.3</td></tr>
+    <tr class="tight"><td class="id">D-13</td><td class="k">Is a patch one timestep or a range?</td><td>A contiguous window, swept over {1 step, 5 steps, first third, all 25}. The winner from the coarse pass is what Deliverable 4 uses. §5.3</td></tr>
+    <tr class="tight"><td class="id">D-14</td><td class="k">D adds a CLIP cosine to a flow correlation. Are those commensurable?</td><td>No. Both terms are min–max normalised across the evaluation set before entering D; raw values printed alongside. §5.4</td></tr>
+    <tr class="tight"><td class="id">D-15</td><td class="k">How many test pairs for D?</td><td>Twelve, both directions, six per family, spanning all four verbs, listed in the report appendix. §5.4</td></tr>
+    <tr class="tight"><td class="id">D-16</td><td class="k">What result counts as success?</td><td>Pre-registered three-part criterion in §5.4, including the both-directions requirement and the VBench guard. A failure is reported as a negative result, not reframed.</td></tr>
+    <tr class="tight"><td class="id">D-17</td><td class="k">MotionClone or MOFT?</td><td>MotionClone. Decided, not "or". §5.4</td></tr>
+    <tr class="tight"><td class="id">D-18</td><td class="k">Does the demo generate live?</td><td>No. Precomputed cache of ~500 clips; live generation behind an explicit button with a stated 94 s wait. §5.6</td></tr>
+    <tr class="tight"><td class="id">D-19</td><td class="k">What is the trained/finetuned model?</td><td>A dual LoRA pair, plus a second probe-guided motion LoRA that tests the Deliverable 2 map in weight space. Full recipe in §5.5. Feasibility pilot E5 in Stage 1.</td></tr>
+    <tr class="tight"><td class="id">D-20</td><td class="k">Which checkpoint, exactly?</td><td>Resolved base repository id and commit hash written into every result file, because <span class="mono">runwayml/stable-diffusion-v1-5</span> was withdrawn and the pipeline now falls through to a mirror. §4</td></tr>
+    <tr class="tight"><td class="id">D-21</td><td class="k">How is the linear probe validated?</td><td>Split by scene, train on one and test on the other, then swap. PCA fitted on the training split only. Chance level plotted on every figure. §5.2</td></tr>
+    <tr class="tight"><td class="id">D-22</td><td class="k">How are H1 and H2 decided?</td><td>argmax over blocks with a bootstrap CI for H1; a single changepoint fit with a bootstrap CI for H2. Both written into the analysis script before the sweep runs. §5.2</td></tr>
+  </table>
+
+</section>
+
+<section class="pbreak">
+  <h2>6. Week-by-week roadmap</h2>
+  <p>Stage 0 and the midsem window are done. Everything from Stage 1 onwards is plan. Dates past 1 November
+  depend on the assessment date being confirmed.</p>
+
+  <table>
+    <tr><th style="width:8%">Stage</th><th style="width:16%">Dates</th><th style="width:60%">Focus</th><th style="width:16%">Maps to</th></tr>
+    <tr><td class="id">0</td><td>Sep 2–10</td><td>Scoping, reading groups 1–4, environment, pilots E1–E4.</td><td>—</td></tr>
+    <tr><td class="id">—</td><td>Sep 11–20</td><td>Midsem window. Reading only, group 5, which changed the plan.</td><td>—</td></tr>
+    <tr><td class="id">1</td><td>Sep 21–27</td><td>Prep presentation and recording. Freeze the protocol register (§5.7) and the probing vocabulary (§4.1). <b>Run E5, the LoRA feasibility pilot.</b> Pin checkpoint revisions.</td><td>Prep submission</td></tr>
+    <tr><td class="id">2</td><td>Sep 28–Oct 4</td><td>Production extraction harness. Hooks on both paths, the coordinate triple, summary storage, the seed policy enforced in code. Generate the 360-clip probing set.</td><td>Deliverable 1</td></tr>
+    <tr><td class="id">3</td><td>Oct 5–11</td><td>Coarse selectivity sweep: 16 representative coordinates × 25 timesteps × 3 seeds. Both S<sub>dyn</sub> and S<sub>stat</sub>. Linear probes.</td><td>Deliverable 2</td></tr>
+    <tr><td class="id">4</td><td>Oct 12–18</td><td>Refined sweep inside the winning block. The layer × timestep map with bootstrap intervals. H1 and H2 decided by their pre-registered tests.</td><td>Deliverable 2</td></tr>
+    <tr><td class="id">5</td><td>Oct 19–25</td><td>Patching framework. Granularities 1 and 2 first, then 3 and 4 if needed. All three controls, null patch before anything else. Sweep α and the patch window.</td><td>Deliverable 3</td></tr>
+    <tr><td class="id">6</td><td>Oct 26–Nov 1</td><td>Edit demos in both directions across the twelve test pairs. All metrics against the prompt-only and MotionClone baselines. <b>Train all four LoRA runs; compute ‖ΔW‖ rankings.</b> Collect the qualitative grids.</td><td>Deliverables 4, 5</td></tr>
+    <tr><td class="id">7</td><td>Nov 2 – assessment</td><td>Gradio interface over the precomputed cache. Stage-wise report. Package weights, code, README, environment file. Optional ModelScope robustness check if the schedule holds. Rehearse.</td><td>Final package</td></tr>
+  </table>
+
+  <p><b>Where the slack is.</b> Video inference and hook-based extraction are slower and more fragile than the
+  equivalent image-diffusion work, and Stage 2 is the one most likely to overrun. If it does, take the time out
+  of Stage 5, not Stage 3. The Stage 3 and 4 probing results are what everything else is built on; a rushed
+  patching implementation is recoverable, a rushed sweep is not.</p>
+
+  <p><b>What moved in this revision.</b> E5 moved forward into Stage 1, because discovering in late October
+  that a LoRA will not fit in 16 GB would cost us Deliverable 5 entirely; the pilot costs half an hour now. The
+  LoRA <i>training</i> runs stay in Stage 6 because the probe-guided variant cannot be built until the Stage 4
+  map exists. Stage 6 is consequently the densest week in the plan and is the second candidate, after Stage 2,
+  for overrunning; if it does, the probe-guided LoRA is the part that survives and the full-coverage baseline
+  is the part we cut, since the former is the one that answers a question.</p>
+
+  <p><b>Standing habit.</b> The experiment log started in Stage 0 stays running to the end. Date, what was
+  tried, model and layer configuration, result, next step. It is dull to maintain and it is the only reason the
+  stage-wise report will be writable in Stage 7 instead of reconstructed from memory.</p>
+
+  <h2>7. Compute budget <span class="new">new</span></h2>
+  <p>The previous draft never totalled this, which meant the patching stage was quietly unaffordable: a naive
+  sweep of 9 layers × 7 timesteps × 12 pairs × 2 directions is 1,512 generations, or 39 GPU-hours, on its own.
+  The tiering in D-07, D-08 and D-13 exists because of this arithmetic, not for elegance. All figures use the
+  94 s per clip measured in E1.</p>
+
+  <table>
+    <tr><th style="width:34%">Item</th><th style="width:36%">Arithmetic</th><th style="width:15%">GPU-hours</th><th style="width:15%">Stage</th></tr>
+    <tr class="tight"><td class="k">Probing set generation with hooks</td><td>360 clips × 113 s (94 s + ~20% hook overhead)</td><td>11.3</td><td>2</td></tr>
+    <tr class="tight"><td class="k">Selectivity sweep</td><td>analysis over cached summaries, no generation</td><td>~1</td><td>3–4</td></tr>
+    <tr class="tight"><td class="k">Patching, coarse localisation</td><td>9 layers × 7 timesteps × 3 pairs × 1 direction = 189 runs</td><td>4.9</td><td>5</td></tr>
+    <tr class="tight"><td class="k">Patching, refined + α sweep</td><td>3 coordinates × 12 pairs × 2 directions × 5 α = 360 runs</td><td>9.4</td><td>5</td></tr>
+    <tr class="tight"><td class="k">Baselines</td><td>24 prompt-only clips + 24 MotionClone clips</td><td>2.1</td><td>6</td></tr>
+    <tr class="tight"><td class="k">LoRA pilot E5</td><td>100 steps, one concept</td><td>0.5</td><td>1</td></tr>
+    <tr class="tight"><td class="k">LoRA training</td><td>4 runs (appearance, motion full, motion probe-guided, spare) × ~500 steps</td><td>6.0</td><td>6</td></tr>
+    <tr class="tight"><td class="k">LoRA inference for evaluation</td><td>48 clips</td><td>1.3</td><td>6</td></tr>
+    <tr><td class="k"><b>Total</b></td><td>across Stages 1 to 6, six calendar weeks</td><td><b>≈ 36.5</b></td><td></td></tr>
+  </table>
+
+  <p>Against Kaggle's free quota of 30 GPU-hours per week this is comfortable, with the caveat that it is not
+  evenly spread: Stage 2 and Stage 5 each want around 11 and 14 hours in a single week. The ModelScope
+  robustness check is excluded and would add roughly 12 hours, which is why it stays conditional on Stage 7
+  having room.</p>
+
+</section>
+
+<section>
+  <h2>8. Final deliverables checklist</h2>
+  <p>Six items are due at the intensive assessment, separately from the prep presentation.</p>
+  <ul>
+    <li><b>Trained or finetuned model.</b> The appearance LoRA, the full-coverage motion LoRA and the
+        probe-guided motion LoRA from Stage 6, as <span class="mono">.safetensors</span>, together with the
+        training script, the training configuration, loss curves, the probe-guided versus full-coverage
+        comparison table, and the exact base checkpoint and commit hashes for the AnimateDiff motion adapter
+        and the SD1.5 backbone actually resolved at run time. See §5.5.</li>
+    <li><b>Code with documentation.</b> Extraction harness, patching framework, metrics, LoRA training,
+        interface. A README covering setup, dependencies (<span class="mono">torch</span>,
+        <span class="mono">diffusers</span>, <span class="mono">peft</span>, checkpoint sources), the frozen
+        <span class="mono">configs/probing_set.yaml</span>, and one command per figure so each result can be
+        reproduced.</li>
+    <li><b>Interface.</b> The Gradio app described in §5.6, over a precomputed cache. Confirm the expected
+        scope with the TA early, since this varies a lot by project.</li>
+    <li><b>Performance metrics.</b> Content fidelity, motion fidelity, the disentanglement score D, and the
+        prompt-only, MotionClone and LoRA baselines. Both edit directions reported, and the §5.4 success
+        criterion evaluated explicitly rather than left to the reader.</li>
+    <li><b>Qualitative results.</b> Side-by-side grids: original A, original B, content of A with motion of B,
+        and the reverse. Non-negotiable given the project is visual.</li>
+    <li><b>Stage-wise report.</b> Why each step was taken, the major experiments and what they showed
+        (including the ones that failed), how the probing set was built, the decisions register from §5.7, and
+        the interface methodology. More detailed instructions are promised by the course; the experiment log is
+        what makes this writable.</li>
+  </ul>
+
+  <h2>9. Prep presentation and video checklist</h2>
+  <p><b>Slides,</b> against the course instruction sheet:</p>
+  <ul>
+    <li>25 slides maximum. The companion deck is at 25 exactly, so any addition needs a deletion. The
+        22 September revision added a trained-model slide and a frozen-protocol slide, paid for by merging the
+        status slide into the roadmap slide and compressing the references from three slides to two.</li>
+    <li>Title slide with the topic, an explicit statement that this is IE 643 course project work, the team
+        name and every member's roll number. <b>Roll numbers still need filling in</b>, on the title slide and
+        the closing slide.</li>
+    <li>Outline slide.</li>
+    <li>Background materials discussed rather than listed.</li>
+    <li>Approaches tried so far and the future plan, broken into subtasks.</li>
+    <li>Diagrams for the hard concepts: the U-Net factorisation, the patching mechanism, the selectivity map.</li>
+    <li>Data collection and curation described concretely — now including the frozen vocabulary and the pair
+        counts.</li>
+    <li>Models investigated and how each will be used.</li>
+    <li>Pretraining data of the models used (§4.1), plus our own probing set and why it is built the way it is.</li>
+    <li>Experiments carried out so far. E1 to E5 are on the deck; E3's per-clip storage figure and E5's
+        outcome still need filling in from our own logs.</li>
+    <li>References in the exact required format.</li>
+  </ul>
+
+  <p><b>Video:</b></p>
+  <ul>
+    <li>15 minutes maximum. There is a penalty for going over, so rehearse against a timer rather than a
+        feeling.</li>
+    <li>Every team member presents and is on camera throughout, not only during their own section.</li>
+    <li>Do not read the slides out. The instruction sheet says this twice and it is the easiest mark to lose.</li>
+    <li>OBS Studio for recording (https://obsproject.com/wiki/install-instructions). Scene with slide capture
+        plus a webcam overlay. Do one full test take before the real one and check audio levels and lighting
+        on it.</li>
+  </ul>
+
+  <h2>10. Submission</h2>
+  <ul>
+    <li>Google Drive folder named exactly <span class="mono">Claudnt_IE643_CourseProject_Prep</span>, created
+        with IITB email and SSO. The team name has an apostrophe in it, which Drive and the course form may not
+        handle cleanly, so drop it in the folder name and keep the real spelling on the slides.</li>
+    <li>Both the slides and the video go in that folder.</li>
+    <li>Share it so the instructor and every TA can open it. Test in an incognito window rather than assuming.
+        Inaccessible content is not considered submitted.</li>
+    <li>Submit the folder link through the course form once it is posted.</li>
+    <li>Confirm the revised prep presentation deadline separately from the assessment date. The two were not
+        necessarily moved together.</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2>11. Open questions for the TA</h2>
+  <p class="lede">Shorter than in the previous draft. Four of the six earlier questions were things we could
+  decide ourselves and have now decided; what remains is genuinely outside our control, plus one proposal we
+  would like confirmed rather than assumed.</p>
+
+  <table>
+    <tr><th style="width:36%">Question</th><th style="width:64%">Why it matters to us, and what we have assumed meanwhile</th></tr>
+    <tr>
+      <td class="k">Firm dates for the prep presentation and the intensive assessment.</td>
+      <td>The note only said "about a month and a half". Everything past 1 November in §6 is provisional.
+          We have assumed early-to-mid November and are treating the 21 September prep deadline as live.</td>
+    </tr>
+    <tr>
+      <td class="k">Is GPU time provided through the course, or do we source our own?</td>
+      <td>This sets the resolution of the Stage 3 sweep more than any other single factor. We have budgeted
+          against Kaggle's free 30 GPU-hours per week and §7 shows the plan fits in ≈ 36.5 hours total. More
+          compute would buy the ModelScope robustness check and a finer timestep grid.</td>
+    </tr>
+    <tr>
+      <td class="k">Is one primary model enough for full credit, or is cross-model validation expected?</td>
+      <td>Changes how much of Stage 7 we reserve. Assumed: one model is enough, with ModelScope as a bonus.
+          If cross-model validation is expected we need to know by mid-October, not in November.</td>
+    </tr>
+    <tr>
+      <td class="k">What counts as an acceptable interface — a live Gradio app, or an annotated notebook?</td>
+      <td>The brief tells us to ask. Assumed: Gradio over a precomputed cache (D-18), which we think is the
+          honest form given 94 s per clip.</td>
+    </tr>
+    <tr>
+      <td class="k">Does the LoRA work in §5.5 satisfy the trained/finetuned model deliverable?</td>
+      <td>This is a proposal we would like confirmed rather than an open design question — §5.5 is now a full
+          specification and we are proceeding on it. We believe it qualifies: real trained weights, on a named
+          base checkpoint, with a training script and curves. If a fuller finetune is expected instead, that
+          changes the compute plan in §7 materially and we would need to know before Stage 4.</td>
+    </tr>
+    <tr>
+      <td class="k">Any required structure or rubric for the stage-wise report beyond what has been announced?</td>
+      <td>We are writing against the six-item checklist in §8 and keeping the experiment log in a form that
+          maps onto it.</td>
+    </tr>
+  </table>
+
+  <h2>12. What changed on 22 September, in one page</h2>
+  <p class="lede">For anyone reading this against the 21 September draft. The substance of the project is
+  unchanged; what changed is that the choices it depended on are now written down.</p>
+
+  <table>
+    <tr><th style="width:24%">Section</th><th style="width:76%">Change</th></tr>
+    <tr class="tight"><td class="k">§2.2 Pilots</td><td>E1's measured numbers filled in (94 s, 10.2 GB). E3's storage figure filled in (3.4 GB per clip). <b>E5 added</b> — LoRA feasibility, Stage 1.</td></tr>
+    <tr class="tight"><td class="k">§4.1 Probing set</td><td>Vocabulary enumerated and frozen. Pair-construction rule made deterministic with counts. Seed policy fixed at three seeds. Body-plan families added in response to E2. Pretraining-data paragraph added. Real-video use for §5.5 disclosed.</td></tr>
+    <tr class="tight"><td class="k">§5.1 Harness</td><td>Two-tier sweep made explicit. Storage contents specified exactly. Checkpoint-revision recording added.</td></tr>
+    <tr class="tight"><td class="k">§5.2 Selectivity</td><td><b>Distance function defined.</b> One map became two (S<sub>dyn</sub>, S<sub>stat</sub>), which is what H3 actually implies. Per-pair aggregation and bootstrap intervals specified. Pre-registered tests for H1 and H2 added. Linear-probe protocol specified with its split and chance level.</td></tr>
+    <tr class="tight"><td class="k">§5.3 Patching</td><td>Per-channel score defined. Corruption type stated. Patch window added as a swept parameter. Null-patch tolerance made numerical.</td></tr>
+    <tr class="tight"><td class="k">§5.4 Evaluation</td><td>Commensurability of D corrected by normalising both terms. Test-set size fixed at twelve pairs. <b>Success criterion pre-registered.</b> Training-free baseline decided (MotionClone).</td></tr>
+    <tr class="tight"><td class="k">§5.5 Trained model</td><td><b>Rewritten from one paragraph to a full deliverable.</b> Recipe, targets, hyperparameters, data, and the probe-guided variant that makes it test Deliverable 2. ‖ΔW‖ as a third view.</td></tr>
+    <tr class="tight"><td class="k">§5.6 Interface</td><td>Precomputed-versus-live resolved.</td></tr>
+    <tr class="tight"><td class="k">§5.7 Register</td><td>New. Twenty-two decisions, each pointing at the section that implements it.</td></tr>
+    <tr class="tight"><td class="k">§6 Roadmap</td><td>E5 moved into Stage 1. Stage 6 rebalanced and its cut-order stated.</td></tr>
+    <tr class="tight"><td class="k">§7 Budget</td><td>New. Totals ≈ 36.5 GPU-hours and shows why the sweep had to be tiered.</td></tr>
+    <tr class="tight"><td class="k">§11 Open questions</td><td>Trimmed from six to what is genuinely outside our control; the LoRA question reframed as a proposal to confirm.</td></tr>
+  </table>
+
+</section>
+
+<section class="pbreak">
+  <h2>Appendix A. The still-blank list</h2>
+  <p class="lede">Every remaining placeholder in the project, in one place, so none of them is discovered the
+  night before the recording. Nothing here is estimated; each gets filled from our own logs or from a decision
+  that is genuinely someone else's.</p>
+
+  <table>
+    <tr><th style="width:26%">What is missing</th><th style="width:22%">Where it appears</th><th style="width:30%">How it gets filled</th><th style="width:22%">By when</th></tr>
+    <tr class="tight"><td class="k">Roll numbers</td><td>Deck slides 1 and 25; §1 of this document</td><td>From the team</td><td>Before the recording</td></tr>
+    <tr class="tight"><td class="k">E5 outcome</td><td>Deck slide 10; §2.2</td><td>Run the pilot on Kaggle</td><td>Stage 1, by 27 Sep</td></tr>
+    <tr class="tight"><td class="k">Confirmed assessment date</td><td>§1, §6</td><td>TA</td><td>Outside our control</td></tr>
+    <tr class="tight"><td class="k">Checkpoint commit hashes</td><td>§4, D-20</td><td>Recorded automatically by the generation script once written</td><td>Stage 2</td></tr>
+    <tr class="tight"><td class="k">Real frames in the Deliverable 4 grid</td><td>Deck slide 17</td><td>Stage 6 output replaces the four placeholders</td><td>Stage 6</td></tr>
+    <tr class="tight"><td class="k">Measured selectivity map</td><td>Deck slide 15 (currently drawn by hand)</td><td>Stage 4 output replaces the illustration</td><td>Stage 4</td></tr>
+  </table>
+
+  <h2>Appendix B. Risks, and what we do about them</h2>
+
+  <div class="grid2">
+    <div>
+      <h4>Compute limits the layer × timestep sweep</h4>
+      <p>Start coarse — one module per block, seven timesteps — and refine only around what looks promising.
+      §7 shows the tiered plan fits in ≈ 36.5 GPU-hours where the naive version would have needed over 60.</p>
+
+      <h4>AnimateDiff's split is too easy to be a finding</h4>
+      <p>Fair criticism, and we say so up front. The answer is ModelScope T2V, where spatial and temporal were
+      trained together. If the same structure shows up there, it generalises. The probe-guided LoRA in §5.5 is
+      a second, cheaper answer to the same objection: it tests whether the map predicts anything, rather than
+      whether the map merely reflects the architecture.</p>
+
+      <h4>Everything looks content-selective and we find nothing</h4>
+      <p>This is H3, and it is the failure mode we most expect. Subtract the per-frame mean before scoring, and
+      publish S<sub>stat</sub> beside S<sub>dyn</sub> so the confound is demonstrated rather than asserted.
+      Reading Xiao et al. saved us a week here.</p>
+    </div>
+    <div>
+      <h4>Patched outputs come out incoherent rather than wrong</h4>
+      <p>Run the null patch and the random-coordinate control before believing anything. Prefer scaled
+      injection over hard replacement, and report the whole α curve. The VBench guard in the §5.4 success
+      criterion exists so that an incoherent clip cannot score well.</p>
+
+      <h4>The LoRA does not fit in 16 GB</h4>
+      <p>E5 in Stage 1 is precisely this check, moved forward from Stage 6 for that reason. Fallback ladder:
+      8 frames at 256 × 256, then rank 8, then LoRA on the motion path only with the appearance path handled by
+      prompt conditioning instead.</p>
+
+      <h4>Stage 6 overruns</h4>
+      <p>It is the densest week in the plan. Cut order is stated in §6: the full-coverage LoRA baseline goes
+      first, the probe-guided LoRA is kept, because only the latter answers a question.</p>
+
+      <h4>A decision gets quietly remade to suit the data</h4>
+      <p>The §5.7 register is dated and append-only. Any change after 22 September carries a date and a
+      reason.</p>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:8mm">This document supersedes the draft of 21 September 2026. The
+  companion deck, <span class="mono">IE643_Prep_Presentation.pptx</span>, was revised on the same date and is
+  consistent with it.</div>
+
+</section>
+
+</body>
+</html>
