@@ -836,3 +836,102 @@ To resume:
 2. README + usage docs + submission packaging (no GPU).
 3. Pending user decision: Kaggle run (~4 h wall on T4 ×2) = cut-free LoRA retrain, 3 variants ×
    3 seeds + LoRA arms and attention injection over all steps on the 12 test pairs.
+
+## 2026-10-24 · Session 5
+
+### 25. New machine; Kaggle account switched (afternoon)
+
+- Work moved to `~/IE643` on a machine with **no GPU**. CPU venv `code/.venv` (torch 2.10.0+cpu,
+  diffusers 0.40.0, torchvision 0.25.0+cpu): **47 passed** before any change.
+- Kaggle CLI 2.2.5 in `~/kaggle/.venv` (Python 3.12; 1.7.x cannot read the new `KGAT_` access
+  tokens), token in `~/.kaggle/access_token`. Account: `shivanshisme`.
+  `scripts/kaggle_run.py` takes `--user` (or `$KAGGLE_USER`) instead of the hard-coded account.
+- The sweep outputs of §14–22 (`results/kaggle/vdprobe-{sweep,dev,test}`, incl. `sketches.pt`) are
+  **not on this machine** and are private to the old account: the D-34 probes below cannot run on
+  real data until they are copied over (or the sweep is re-run, ≈5 h of quota).
+- Demo kernel `shivanshisme/vdprobe-demo-clips` (T4): retriever running / walking / horse running
+  from seed 42, 79–92 s per clip. Outputs in the session scratchpad (not in the repo).
+
+### 26. Probe controls, D-34 (CPU)
+
+- `analysis.probe_scores`: Hewitt–Liang control task (type = (subject, verb) within a seed, labels
+  permuted over types), MLP probe (hidden 10, L2 1.0, lbfgs, 500 iterations), type-level restricted
+  permutation null (verbs within subject; family across subjects), draws shared by all cells, so a
+  max-over-map p (`p_fwer`) is reported beside the per-cell p. `probe_accuracy` now calls it
+  (bit-identical, tested). `analyze_sweep.py --probe-controls [--n-perm 99]`.
+- First version used hidden 64 and free label shuffles; changed before any real run after the
+  methods review (small hidden + weight decay are what kept MLP probes selective in Hewitt & Liang;
+  a free shuffle also destroys subject structure, so it is not the right null).
+- Speed: sklearn fits at n = 60 ran ~30x slower with multi-threaded BLAS (MLP 14 s per fit);
+  `threadpool_limits(1)` per cell + joblib over cells.
+- Tests: planted verb code is selective (control ≈ chance) and beats every null draw; a pure
+  prompt-identity code scores high on real *and* control labels, selectivity ≈ 0. **55 passed**.
+
+### 27. Cross-attention visualisation; model variants (Kaggle `vdprobe-xattn`, T4 ×2)
+
+- `harness.CrossAttentionMaps` (DAAM aggregation per frame: head-averaged mass on a phrase's
+  tokens, bicubic upsampling, summed over the 16 spatial attn2 layers and 25 steps; τ = 0.4 masks)
+  and `scripts/cross_attention_maps.py` (overlay GIFs, layer × step-window grids, masks.npz).
+- `configs/variants/`: `epicrealism_mm2`, `sd15_mm3`, `epicrealism_mm3` (only base model / adapter
+  changed). v1-5-3 has no mid-block motion module.
+- Run on "a golden retriever running on a beach", seed 42, all four variants, 72–75 s per clip:
+  subject-mask IoU across frames 0.64 (sd15+v2, the frozen model), 0.72 (epiCRealism+v2), 0.56
+  (sd15+v3), 0.82 (epiCRealism+v3). Not a stability score: IoU also falls when the subject travels
+  (the sd15+v3 dog runs across the frame). By eye, the frozen model's dog morphs and both
+  epiCRealism dogs keep their identity; a proper identity-consistency metric is still to be run.
+  Outputs: `code/results/kaggle/vdprobe-xattn/out/`, contact sheet `variants_contact_sheet.png`.
+- Seen in the grids, not yet measured: the verb token's attention sits on the dog's body from
+  step 3 on, and the mid block's map concentrates on the lower half (legs, splash).
+
+### 28. Experiment 2 groundwork (CPU)
+
+- `metrics.raft_flow` (torchvision RAFT-large), `remove_camera_motion` (median background flow),
+  `masked_motion_fidelity` (flow cosine inside the subject masks). RAFT checked on a synthetic
+  2-pixel translation (opt-in test, `VDPROBE_DOWNLOAD_TESTS=1`).
+- `analysis.debiased_cka` (unbiased HSIC), `rsa_commonality` + `rsa_permutation` (multiple-regression
+  RSA with unique/shared variance and permutation p).
+- Design research notes: `research_notes/Content motion probing experiment design/`.
+
+### 29. Experiment 2 launched ("run everything", 2026-10-24 evening)
+
+- **Code** (all tested on CPU, **74 passed**; GPU paths smoke-tested on Kaggle):
+  - `probe_sweep.py --exp2` (+ `--set ladder`), `configs/ladder.yaml` + `ladder.py`;
+  - `exp2_quality.py` (VBench subject consistency / dynamic degree, CLIP-T, X-CLIP verbs);
+  - `exp2_analysis.py`, `exp2_grid.py`, `exp2_ladder.py`, `exp2_select.py` (CPU analyses);
+  - `exp2_patching.py` (A→B, B→A, C→B), `exp2_erasure.py` (LEACE vs random), `erasure.py`;
+  - `train_motion_lora.py` (module-set arms, MotionDirector debiased loss, shot-aware windows,
+    `--max-stride`), `eval_motion_lora.py` + `motion_eval.py` (MFS), `fetch_lora_data.py` (any class);
+  - runbook `code/docs/experiment2.md`; rules fixed before any data in protocol D-35.
+- **Bugs caught before they cost GPU time:** a `global` declared after use in the training script
+  (SyntaxError; pyflakes does not catch it — every script is now also compile-checked); the LEACE
+  eraser's affine term shifted x̄ (fixed by re-centring over frames); zero-variance layers at step 0
+  (text-blind ResNets before any step: identical across clips) divided by zero in the ANOVA.
+- **Smoke test** (`vdprobe-exp2-smoke`, sd15_mm2 + epicrealism_mm3, 4 clips each): 117 / 114
+  coordinates, 43 / 42 scored, 108 s per clip (+12 % over the plain sweep), peak RSS 8.3–8.5 GB.
+  ~13 MB of outputs per clip. RAFT on the frozen model's clip: 19 px/frame mean flow (its frames
+  change by 26 grey levels per frame: morphing + splashes), vs 0.5 px on epiCRealism+v3 — the
+  better model barely moves the dog, which the dynamic-degree gate will have to weigh.
+- **Data:** cartwheel clips, HMDB51 static camera, ≤3 per film: 8 candidates, 3 have cuts,
+  **5 kept** (private Kaggle dataset `shivanshisme/vdprobe-cartwheel`).
+- **Kaggle limit:** at most **2 GPU batch sessions** at once ("Maximum batch GPU session count of
+  2 reached"); kernels are queued by a polling script.
+- **Running at the end of this entry:** Phase 2 `vdprobe-exp2-sd15-mm2` and `-epicrealism-mm2`
+  (T4 ×2 each, ~4 h); queued: `-sd15-mm3`, `-epicrealism-mm3`, then `vdprobe-lora-pilot`
+  (T on up_blocks.0 r32 vs all-temporal r7, 1,000 steps each, then evaluation).
+
+### 30. Interface finished for the demo (2026-10-24, night)
+
+- `demo.py`: D pool falls back (test → dev → `results/local/edit_smoke` → `configs/d_pool.json`) and
+  edits still run without one (s_c / s_m only); results browser also lists the local scored run;
+  `Engine(variant=...)` for the Experiment 2 model cells (LoRAs that do not fit a cell are skipped
+  and reported); `Engine.cross_attention` (live DAAM maps); `cached_xattn`; `link_assets`.
+- `app.py`: fifth tab **Cross-attention** (cached 2x2 maps + contact sheet, live maps, the
+  Experiment 2 replication table once analyses exist); `--variant`, `--assets`.
+- Checked in a real browser (Playwright, `--no-gpu`): all CPU tabs render, no console errors.
+- GPU paths: `scripts/interface_check.py` (both edit directions, LoRA, upload, live cross-attention,
+  app build) queued on Kaggle as `vdprobe-interface-check`, ahead of the remaining Phase 2 cells.
+- Live demo without a local GPU: Kaggle notebook `shivanshisme/ie643-interface`
+  (`code/notebooks/run_interface_kaggle.ipynb`) + private datasets `vdprobe-code`,
+  `vdprobe-app-assets`; prints a public gradio.live URL. Its CPU-only run found both datasets.
+- Still missing on this machine: the dev/test sweep outputs, so the browser shows only the local
+  smoke pair and D uses the 1-pair smoke pool until they are copied in.

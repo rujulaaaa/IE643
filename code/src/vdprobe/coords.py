@@ -20,9 +20,11 @@ from dataclasses import dataclass
 import torch
 
 KINDS = ("spatial_attn1", "spatial_attn2", "temporal_attn1", "temporal_attn2", "temporal_module")
+RESNET = "resnet"   # optional (Experiment 2 refined pass): spatial ResNet blocks, (B*F, C, H, W) like a motion module
 D07_STEPS = (0, 4, 8, 12, 16, 20, 24)  # full tensors and patching are limited to these (D-07)
 
 _MOTION_MODULE = re.compile(r"motion_modules\.\d+$")
+_RESNET = re.compile(r"(down_blocks\.\d+|up_blocks\.\d+|mid_block)\.resnets\.\d+$")
 _BLOCK = re.compile(r"^(down_blocks|up_blocks)\.(\d+)")
 
 
@@ -44,14 +46,14 @@ class Coordinate:
     @property
     def channel_dim(self) -> int:
         """Channel axis of the raw output tensor."""
-        return 1 if self.kind == "temporal_module" else -1
+        return 1 if self.kind in ("temporal_module", RESNET) else -1
 
     @property
     def short(self) -> str:
         b = self.block.replace("down_blocks.", "down").replace("up_blocks.", "up").replace("mid_block", "mid")
-        idx = re.findall(r"(attentions|motion_modules)\.(\d+)", self.name)
+        idx = re.findall(r"(attentions|motion_modules|resnets)\.(\d+)", self.name)
         tail = {"temporal_module": "mm", "temporal_attn1": "mm.a1", "temporal_attn2": "mm.a2",
-                "spatial_attn1": "sp.a1", "spatial_attn2": "sp.a2"}[self.kind]
+                "spatial_attn1": "sp.a1", "spatial_attn2": "sp.a2", RESNET: "rn"}[self.kind]
         return f"{b}.{tail}{idx[-1][1] if idx else ''}"
 
 
@@ -76,11 +78,12 @@ def _block_and_level(name: str, n_levels: int) -> tuple[str, int]:
     raise ValueError(f"cannot place {name} in the U-Net")
 
 
-def enumerate_coordinates(unet: torch.nn.Module) -> list[Coordinate]:
+def enumerate_coordinates(unet: torch.nn.Module, resnets: bool = False) -> list[Coordinate]:
+    """Every hookable coordinate in module order; `resnets` adds the spatial ResNet blocks."""
     n_levels = len(unet.config.block_out_channels)
     coords = []
     for name, _ in unet.named_modules():
-        kind = classify(name)
+        kind = classify(name) or (RESNET if resnets and _RESNET.search(name) else None)
         if kind:
             block, level = _block_and_level(name, n_levels)
             coords.append(Coordinate(name, kind, block, level))
@@ -89,7 +92,13 @@ def enumerate_coordinates(unet: torch.nn.Module) -> list[Coordinate]:
 
 def count_by_kind(coords: list[Coordinate]) -> dict[str, int]:
     c = Counter(x.kind for x in coords)
-    return {k: c.get(k, 0) for k in KINDS}
+    return {k: c.get(k, 0) for k in KINDS + ((RESNET,) if RESNET in c else ())}
+
+
+def in_blocks(coords: list[Coordinate], blocks) -> list[Coordinate]:
+    """Every coordinate inside the given blocks (the refined pass), in module order."""
+    blocks = set(blocks)
+    return [c for c in coords if c.block in blocks]
 
 
 def block_order(coords: list[Coordinate]) -> list[str]:
@@ -144,7 +153,7 @@ def canonical(t: torch.Tensor, kind: str, n_branches: int, frames: int) -> torch
     if kind.startswith("temporal_attn"):
         bs, f, c = t.shape
         return t.reshape(n_branches, bs // n_branches, f, c).permute(0, 2, 3, 1)
-    if kind == "temporal_module":
+    if kind in ("temporal_module", RESNET):
         _, c, h, w = t.shape
         return t.reshape(n_branches, frames, c, h * w)
     raise ValueError(kind)
@@ -154,7 +163,7 @@ def frame_mean_raw(t: torch.Tensor, kind: str, n_branches: int, frames: int) -> 
     """x̄ broadcast back to the raw layout of `t` (same shape): the mean over frames, per CFG branch."""
     if kind.startswith("temporal_attn"):          # (B*S, F, C): frames are already an axis
         return t.mean(dim=1, keepdim=True).expand_as(t)
-    if kind.startswith("spatial_attn") or kind == "temporal_module":   # frames folded into batch
+    if kind.startswith("spatial_attn") or kind in ("temporal_module", RESNET):   # frames folded into batch
         v = t.reshape(n_branches, frames, *t.shape[1:])
         return v.mean(dim=1, keepdim=True).expand_as(v).reshape(t.shape)
     raise ValueError(kind)

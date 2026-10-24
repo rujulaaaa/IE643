@@ -137,3 +137,51 @@ fp16 autocast with fp32 LoRA weights, gradient checkpointing. The appearance LoR
 **Reason.** Roadmap §5.5 values where they exist (rank, lr, top of the step range); 16 frames
 instead of 8 because AnimateDiff's motion modules are trained at 16; no camera motion because a
 LoRA trained on panning shots learns the pan.
+
+### D-34 · 2026-10-24 · Probe controls: control task, non-linear probe, permutation null
+**Decision.** Next to the D-21 linear probe, `analyze_sweep.py --probe-controls` runs, per
+(coordinate, step, channel) and on the same scene split and PCA:
+- a **control task** (Hewitt & Liang 2019): each clip type (subject, verb) gets a label drawn by
+  permuting the real labels over types, fixed per seed; **selectivity = acc(real) − acc(control)**;
+- an **MLP probe** (one hidden layer of 10, L2 1.0, lbfgs; Hewitt & Liang found small hidden
+  layers plus weight decay keep MLP probes selective) beside the linear one;
+- a **permutation null** (Ojala & Garriga 2010, test 1): training labels permuted, test labels
+  kept, 99 draws, p = (1 + #{null ≥ observed}) / (1 + R) on the seed-averaged accuracy. The
+  permutation is restricted and type-level: verbs are shuffled within each subject (family
+  labels across subjects), identically in both scenes, so the null keeps subject identity and
+  removes only the target. The draws are shared by all cells, so the per-draw maximum over the
+  map gives a family-wise-error p (`p_fwer`) besides the per-cell one.
+"The layer carries the verb" needs high selectivity and p < 0.05, not accuracy alone.
+**Reason.** Every scene-split clip type appears once in each scene, so a probe can score by
+recognising the prompt and memorising type → label rather than by reading a verb direction;
+the control task keeps that route and removes the verb. A more expressive probe raises both
+accuracies, so its gain only counts through selectivity. Hyperparameters are fixed here, before
+the run, not tuned on the result.
+
+### D-35 · 2026-10-24 · Experiment 2: pre-registered rules (fixed before any Phase 2 data)
+Design: `reports/Content motion probing experiment design.md`; code: `scripts/probe_sweep.py --exp2`,
+`scripts/exp2_*.py`. All Phase 2 sweeps use seeds 42 and 1337; seed 2024 is held out for Phase 5.
+- **Confirmatory test.** Region = `up_blocks.0.motion_modules.2`, steps 0–2, S_dyn. Per-subject mean
+  over its matched units; exact one-sided sign flip over subjects; replicates if p < 0.05. Run in
+  each new cell (`exp2_analysis.py`, section `confirm`). Everything else in Phase 2 is exploratory.
+- **Maps.** Sign-flip t per (coordinate, step) with max-|t| FWER over the map (S maps), permutation
+  within group with max-over-map FWER (RSA, 49 draws). No cell-wise FDR on the 2,375-cell map.
+- **Primary cell** (`exp2_quality.py`): highest median VBench subject consistency among cells with
+  dynamic share ≥ 0.5 and CLIP-T within 0.01 of the best; **ladder verbs** = the two verbs with the
+  highest X-CLIP hit rate on it.
+- **Phase 5 candidates** (primary cell): (1) the Experiment 1 region, dynamic component;
+  (2) the refined coordinate with the highest RSA unique motion share, 5-step window at its peak,
+  dynamic component; (3) `up_blocks.1` motion modules, steps 0–7, dynamic component (the literature's
+  site); (4) the coordinate with the highest RSA unique content share, 5-step window at its peak,
+  static component. **Pairs:** 25 motion + 25 content pairs drawn with `numpy.default_rng(2024)` from
+  seed 2024's probing pairs. Each candidate: A→B (sufficiency), B→A (necessity), C→B (unrelated
+  clip C = same family anchor's other-verb clip with a different subject) — scored with the
+  normalised contrastive effects of the report (PE, NE), subject-level bootstrap CIs.
+- **LoRA target T** (Phase 6): the 3 width-1280 motion modules with the highest mean RSA unique
+  motion share over steps 0–14 in the primary cell, rank 32; all-temporal arm at the budget-matched
+  rank; null = 19 random width-matched 3-module sets (`lora.matched_random_subsets`, seed 643);
+  primary metric MFS (official direction); p = (1 + #{R_i ≥ T}) / 20 on T's first seed.
+- **LoRA data** (deviation from the report's "4–8 hand-checked clips"): HMDB51 static-camera
+  cartwheels come from 4 films and only 5 are cut-free, so the target set is those 5 (4 train,
+  1 validation). Training: debiased loss (β = 1), lr 1e-4, 1,000 steps, 256 px, frame stride ≤ 6.
+**Reason.** The report's plan, with each free choice fixed before seeing the data it is applied to.

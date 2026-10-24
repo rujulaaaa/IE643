@@ -83,3 +83,25 @@ def temporal_cross_frame_mass(attn, hs: torch.Tensor, row_chunk: int = 4096) -> 
         p = _softmax_scores(q, k, scale)                  # (s, h, F, F)
         out.append(1.0 - p.diagonal(dim1=-2, dim2=-1).mean(1))   # (s, F)
     return torch.cat(out).transpose(0, 1)
+
+
+@torch.no_grad()
+def temporal_head_stats(attn, hs: torch.Tensor, row_chunk: int = 4096) -> torch.Tensor:
+    """hs: (S, F, C) one CFG branch of a temporal attention's input. Returns (heads, 3), averaged
+    over spatial positions and query frames, per head:
+      entropy   -sum_k P[q, k] log P[q, k] (uniform over F frames = log F; one-hot = 0)
+      offdiag   1 - P[q, q]: how much a frame reads from other frames
+      offset    E_k |k - q| under P: how far in time it reads (0 = itself)"""
+    F_ = hs.shape[1]
+    lag = (torch.arange(F_, device=hs.device)[None, :] - torch.arange(F_, device=hs.device)[:, None]).abs().float()
+    acc, n = None, 0
+    for i in range(0, hs.shape[0], row_chunk):
+        q, k, scale = _project_qk(attn, hs[i:i + row_chunk], None)
+        p = _softmax_scores(q, k, scale)                                  # (s, h, F, F)
+        ent = -(p * p.clamp_min(1e-12).log()).sum(-1).mean(-1)            # (s, h)
+        off = 1.0 - p.diagonal(dim1=-2, dim2=-1).mean(-1)
+        lg = (p * lag).sum(-1).mean(-1)
+        part = torch.stack([ent, off, lg], -1).sum(0)                    # (h, 3)
+        acc = part if acc is None else acc + part
+        n += p.shape[0]
+    return acc / n

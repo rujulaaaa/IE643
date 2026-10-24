@@ -185,9 +185,10 @@ class Sketcher(Probe):
     and the tensor kind, identical for every clip.
     """
 
-    def __init__(self, coords, steps, dim: int = 512):
+    def __init__(self, coords, steps, dim: int = 512, parts=("tilde", "bar")):
         super().__init__(coords, steps)
         self.dim = dim
+        self.parts = tuple(parts)
         self.out: dict[tuple[str, int], torch.Tensor] = {}
 
     def _sketch(self, x: torch.Tensor, key: str) -> torch.Tensor:
@@ -201,5 +202,37 @@ class Sketcher(Probe):
     @torch.no_grad()
     def __call__(self, ctx, coord, module, output, args, kwargs):
         x_bar, x_til = split_static_dynamic(ctx.cond(output, coord.kind).float())
+        x = {"tilde": x_til, "bar": x_bar}
         self.out[(coord.name, ctx.step)] = torch.stack(
-            [self._sketch(x_til, f"{coord.name}|tilde"), self._sketch(x_bar, f"{coord.name}|bar")]).half().cpu()
+            [self._sketch(x[k], f"{coord.name}|{k}") for k in self.parts]).half().cpu()
+
+
+class ChannelStats(Probe):
+    """Per-channel summaries of one clip for the refined pass (MOFT-style channel selection):
+    static mean (C,) = channel mean of x_bar, and dynamic energy (C,) = mean of x_tilde^2 over
+    frames and space. Kept as (coords, steps) -> (2, C) fp16."""
+
+    def __init__(self, coords, steps=None):
+        super().__init__(coords, steps)
+        self.out: dict[tuple[str, int], torch.Tensor] = {}
+
+    @torch.no_grad()
+    def __call__(self, ctx, coord, module, output, args, kwargs):
+        x_bar, x_til = split_static_dynamic(ctx.cond(output, coord.kind).float())
+        self.out[(coord.name, ctx.step)] = torch.stack([x_bar.mean(-1), x_til.pow(2).mean(dim=(0, 2))]).half().cpu()
+
+
+class HeadStats(Probe):
+    """Per-head temporal attention summaries (attention.temporal_head_stats): entropy, off-diagonal
+    mass and mean frame offset, per (temporal attention coordinate, step) -> (heads, 3)."""
+
+    def __init__(self, coords, steps=None):
+        super().__init__([c for c in coords if c.kind.startswith("temporal_attn")], steps)
+        self.out: dict[tuple[str, int], torch.Tensor] = {}
+
+    @torch.no_grad()
+    def __call__(self, ctx, coord, module, output, args, kwargs):
+        from .attention import temporal_head_stats
+
+        hs = ctx.cond_rows(args[0] if args else kwargs["hidden_states"])
+        self.out[(coord.name, ctx.step)] = temporal_head_stats(module, hs).half().cpu()

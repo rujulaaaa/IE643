@@ -37,7 +37,12 @@ RESULTS = REPO_ROOT / "results"
 LORA_DIR = RESULTS / "local" / "motion_lora"
 SELECTION = CONFIG_DIR / "edit_selection.json"
 SCORED_RUNS = {"test": RESULTS / "kaggle" / "vdprobe-test" / "out",
-               "dev": RESULTS / "kaggle" / "vdprobe-dev" / "out"}
+               "dev": RESULTS / "kaggle" / "vdprobe-dev" / "out",
+               "local smoke": RESULTS / "local" / "edit_smoke"}
+POOL_SNAPSHOT = CONFIG_DIR / "d_pool.json"     # frozen copy of a scored run's pool, for machines without it
+XATTN_RUN = RESULTS / "kaggle" / "vdprobe-xattn" / "out"     # model variants x cross-attention (session 5)
+VARIANTS = {"sd15_mm2": CONFIG_DIR / "generation.yaml",
+            **{p.stem: p for p in sorted((CONFIG_DIR / "variants").glob("*.yaml"))}}
 METHODS = {
     "selected": "component patch at the Stage 5 selection",
     "custom": "component patch, block and window chosen below",
@@ -51,6 +56,21 @@ METHODS = {
 SEC_PER_CLIP = 65          # laptop RTX 4060, CPU-side cache (patch controls, §16 of the log)
 
 
+def link_assets(root: Path) -> int:
+    """Symlink every file under `root` (laid out like the repository: results/..., data/...) into the
+    repository where it is missing. For machines that get the code and its assets separately (a
+    Kaggle dataset, a fresh clone). Returns the number of links made."""
+    root, n = Path(root), 0
+    for f in root.rglob("*"):
+        if f.is_file():
+            dst = REPO_ROOT / f.relative_to(root)
+            if not dst.exists():
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                dst.symlink_to(f.resolve())
+                n += 1
+    return n
+
+
 def vocabulary() -> dict:
     v = yaml.safe_load((CONFIG_DIR / "probing_set.yaml").read_text())
     subjects = [s for f in v["families"].values() for s in f["subjects"]]
@@ -62,11 +82,16 @@ def selection() -> dict:
 
 
 def reference_pool() -> tuple[str, dict]:
+    """The D pool: the first scored run found (test, dev, local smoke), else the frozen snapshot
+    configs/d_pool.json. FileNotFoundError if none exists (the app then shows s_c / s_m without D)."""
     for name, root in SCORED_RUNS.items():
         f = root / "score_summary.json"
         if f.exists():
             return name, json.loads(f.read_text())["pool"]
-    raise FileNotFoundError("no scored edit run: run scripts/score_edits.py first")
+    if POOL_SNAPSHOT.exists():
+        snap = json.loads(POOL_SNAPSHOT.read_text())
+        return f"{snap['run']} (snapshot)", snap["pool"]
+    raise FileNotFoundError("no scored edit run and no configs/d_pool.json: run scripts/score_edits.py first")
 
 
 def upload_start(z_inv: torch.Tensor, gauss: torch.Tensor, start: str) -> torch.Tensor:
@@ -173,13 +198,18 @@ def score_edit(feats: dict, direction: str, pool: dict | None) -> pd.DataFrame:
 
 
 class Engine:
-    """Loads AnimateDiff, CLIP and the three motion LoRAs once, on first use."""
+    """Loads AnimateDiff, CLIP and the three motion LoRAs once, on first use. `variant` picks the
+    model cell (VARIANTS: the frozen SD1.5 + v1-5-2, or an Experiment 2 variant config)."""
 
-    def __init__(self, profile: str | None = None, cache_device: str = "cpu", out: Path | None = None):
-        self.profile, self.cache_device = profile, cache_device
+    def __init__(self, profile: str | None = None, cache_device: str = "cpu", out: Path | None = None,
+                 variant: str = "sd15_mm2"):
+        if variant not in VARIANTS:
+            raise ValueError(f"unknown variant {variant!r}; one of {sorted(VARIANTS)}")
+        self.profile, self.cache_device, self.variant = profile, cache_device, variant
         self.out = out or RESULTS / "interface"
         self.loaded = self.coords = self.clip = None
         self.loras: list[str] = []
+        self.lora_skipped: dict[str, str] = {}
 
     def ensure(self):
         if self.loaded is not None:
@@ -191,13 +221,20 @@ class Engine:
         from .config import GenerationConfig
         from .runio import default_profile
 
-        cfg = GenerationConfig.from_yaml()
+        cfg = GenerationConfig.from_yaml(VARIANTS[self.variant])
         self.loaded = build_pipeline(cfg, profile=self.profile or default_profile())
         for v in ("probe", "full", "anti"):
             f = LORA_DIR / v / "motion_lora.safetensors"
             if f.exists():
-                load_motion_lora(self.loaded.unet, f, name=f"lora_{v}")
-                self.loras.append(f"lora_{v}")
+                try:     # trained on SD1.5 + v1-5-2: v1-5-3 lacks the mid-block module the full LoRA targets
+                    load_motion_lora(self.loaded.unet, f, name=f"lora_{v}")
+                    self.loras.append(f"lora_{v}")
+                except Exception as e:
+                    self.lora_skipped[f"lora_{v}"] = f"{type(e).__name__}: {e}"[:200]
+                    try:
+                        self.loaded.unet.delete_adapters(f"lora_{v}")
+                    except Exception:
+                        pass
         if self.loras:
             self.loaded.unet.disable_adapters()
         self.coords = enumerate_coordinates(self.loaded.unet)
@@ -229,7 +266,10 @@ class Engine:
         r = run_arms(self.loaded, self.coords, src, arms, make_noise(self.loaded.cfg, req.seed),
                      cache_device=self.cache_device)
         frames = {"source": r.frames["source"], **{a.id: r.frames[a.id] for a in arms}}
-        pool_name, pool = reference_pool()
+        try:
+            pool_name, pool = reference_pool()
+        except FileNotFoundError:
+            pool_name, pool = "none (D not computed)", None
         table = score_edit(self._features(frames), req.direction, pool)
         prompts = {"source": src, **{a.id: a.prompt for a in arms}}
         rec = {"request": asdict(req), "prompts": prompts, "arms": [a.id for a in arms],
@@ -279,6 +319,41 @@ class Engine:
         gifs = self._save("upload__" + method, frames, table, rec)
         return {"gifs": gifs, "table": table, "seconds": rec["seconds"]}
 
+    def cross_attention(self, subject: str, verb: str, scene: str, seed: int = 42, tau: float = 0.4) -> dict:
+        """One clip with DAAM-style per-frame cross-attention maps for its subject, verb and scene
+        (harness.CrossAttentionMaps); overlay GIFs and the layer x step-window grid per phrase."""
+        import importlib.util
+
+        from .harness import CrossAttentionMaps, Harness
+        from .pipeline import generate, make_noise, phrase_token_positions
+        from .probing_set import Clip
+
+        self.ensure()
+        spec = importlib.util.spec_from_file_location("xattn_script", REPO_ROOT / "scripts" / "cross_attention_maps.py")
+        xs = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(xs)
+        cfg = self.loaded.cfg
+        clip = Clip(subject.strip(), verb.strip(), scene.strip(), int(seed))
+        prompt = clip.prompt(cfg)
+        tokens = phrase_token_positions(self.loaded.pipe.tokenizer, prompt, clip.phrases)
+        rec = CrossAttentionMaps(list(clip.phrases), coords=[c for c in self.coords if c.kind == "spatial_attn2"])
+        t0 = time.perf_counter()
+        with Harness(self.loaded.unet, self.coords, [rec], token_index=tokens):
+            gen = generate(self.loaded, prompt, make_noise(cfg, clip.seed))
+        d = self.out / f"{time.strftime('%Y%m%d-%H%M%S')}_xattn__{self.variant}__{clip.id}"
+        d.mkdir(parents=True, exist_ok=True)
+        from .runio import save_gif
+        save_gif(gen.frames, d / "clip.gif")
+        out = {"clip": str(d / "clip.gif"), "overlay": {}, "grid": {}, "mask_area": {}}
+        for ph in clip.phrases:
+            fr = xs.overlay(gen.frames, rec.heatmap(ph))
+            fr[0].save(d / f"overlay_{ph}.gif", save_all=True, append_images=fr[1:], duration=125, loop=0)
+            xs.grid_figure(rec, self.coords, ph, d / f"grid_{ph}.png", cfg.steps)
+            out["overlay"][ph], out["grid"][ph] = str(d / f"overlay_{ph}.gif"), str(d / f"grid_{ph}.png")
+            out["mask_area"][ph] = float(rec.mask(ph, tau).float().mean())
+        out["seconds"], out["prompt"] = time.perf_counter() - t0, prompt
+        return out
+
     @torch.no_grad()
     def clip_text(self, text: str) -> torch.Tensor:
         m = self.clip.model
@@ -316,3 +391,19 @@ def load_cached(pair_dir: Path) -> dict:
 def run_summary(name: str) -> pd.DataFrame | None:
     f = SCORED_RUNS[name] / "summary.csv"
     return pd.read_csv(f) if f.exists() else None
+
+
+def cached_xattn() -> dict[str, dict]:
+    """Model variant -> the cached cross-attention run of the probing prompt (clip, overlays, grids)."""
+    out = {}
+    if not XATTN_RUN.exists():
+        return out
+    for v in sorted(p for p in XATTN_RUN.iterdir() if p.is_dir()):
+        for d in sorted(x for x in v.iterdir() if (x / "cross_attention.json").exists()):
+            info = json.loads((d / "cross_attention.json").read_text())
+            out[v.name] = {"dir": str(d), "prompt": info["prompt"], "clip": str(d / "clip.gif"),
+                           "overlay": {ph: str(d / f"overlay_{ph}.gif") for ph in info["phrases"]},
+                           "grid": {ph: str(d / f"grid_{ph}.png") for ph in info["phrases"]},
+                           "stats": {ph: {k: v2 for k, v2 in st.items() if k != "concentration"}
+                                     for ph, st in info["phrases"].items()}}
+    return out
