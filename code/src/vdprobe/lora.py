@@ -12,6 +12,10 @@ Three adapters with the same rank, data and steps, differing only in where they 
 
 If `probe` comes closer to `full` than `anti` does on held-out clips, the selectivity map
 predicts where motion can be learned, not only where it is represented.
+
+Experiment 2 (docs/experiment2.md) adds LoRAs on an arbitrary set of motion modules (`modules`),
+so the probe-selected set can be tested against parameter-matched random sets: a rank-r LoRA on
+q/k/v/out of both temporal attentions of a motion module of width C costs 16 r C parameters.
 """
 
 from __future__ import annotations
@@ -35,15 +39,56 @@ def target_regex(variant: str) -> str:
     raise ValueError(variant)
 
 
-def lora_config(variant: str, rank: int = 32, alpha: int = 32):
+def modules_regex(modules) -> str:
+    """Projections inside exactly these motion modules, e.g. ["up_blocks.0.motion_modules.1"]."""
+    alt = "|".join(re.escape(m) for m in modules)
+    return rf"({alt})\.{PROJ}"
+
+
+def lora_config(variant: str, rank: int = 32, alpha: int = 32, modules=None):
     from peft import LoraConfig
 
-    return LoraConfig(r=rank, lora_alpha=alpha, init_lora_weights="gaussian", target_modules=target_regex(variant))
+    target = modules_regex(modules) if modules else target_regex(variant)
+    return LoraConfig(r=rank, lora_alpha=alpha, init_lora_weights="gaussian", target_modules=target)
 
 
-def add_motion_lora(unet, variant: str, rank: int = 32, alpha: int = 32, name: str = "motion") -> list:
-    """Attach a fresh adapter; returns its trainable parameters (fp32)."""
-    unet.add_adapter(lora_config(variant, rank, alpha), adapter_name=name)
+def motion_module_widths(unet) -> dict[str, int]:
+    """{motion module path: channel width C}, in module order."""
+    from diffusers.models.unets.unet_motion_model import AnimateDiffTransformer3D
+
+    return {n: m.proj_in.in_features for n, m in unet.named_modules() if isinstance(m, AnimateDiffTransformer3D)}
+
+
+def lora_param_count(widths, rank: int) -> int:
+    """16 r sum(C): q/k/v/out (4 C x C matrices, r(C + C) each) in both temporal attentions."""
+    return 16 * rank * sum(widths)
+
+
+def matched_random_subsets(widths: dict[str, int], target: list[str], n: int, seed: int = 643) -> list[list[str]]:
+    """n distinct random module sets with exactly the target's multiset of widths, disjoint from
+    the target (so equal rank gives an equal parameter count): the localisation null."""
+    import random
+    from collections import Counter
+
+    rng = random.Random(seed)
+    need = Counter(widths[m] for m in target)
+    pools = {c: [m for m, w in widths.items() if w == c and m not in target] for c in need}
+    seen, out = set(), []
+    for _ in range(100 * n):
+        pick = tuple(sorted(m for c, k in need.items() for m in rng.sample(pools[c], k)))
+        if pick not in seen:
+            seen.add(pick)
+            out.append(list(pick))
+        if len(out) == n:
+            return out
+    raise ValueError(f"only {len(out)} distinct matched subsets exist; asked for {n}")
+
+
+def add_motion_lora(unet, variant: str, rank: int = 32, alpha: int = 32, name: str = "motion",
+                    modules=None) -> list:
+    """Attach a fresh adapter (a named `variant`, or an explicit list of motion `modules`);
+    returns its trainable parameters (fp32)."""
+    unet.add_adapter(lora_config(variant, rank, alpha, modules), adapter_name=name)
     params = []
     for n, p in unet.named_parameters():
         if "lora_" in n:
@@ -70,7 +115,8 @@ def load_motion_lora(unet, path: Path, name: str = "motion", scale: float = 1.0)
 
     with safe_open(str(path), "pt") as f:
         meta = f.metadata()
-    cfg = lora_config(meta["variant"], int(meta["rank"]), int(meta["alpha"]))
+    modules = meta["modules"].split(",") if meta.get("modules") else None
+    cfg = lora_config(meta["variant"], int(meta["rank"]), int(meta["alpha"]), modules)
     unet.add_adapter(cfg, adapter_name=name)
     sd = {k: v.to(unet.dtype) for k, v in load_file(str(path)).items()}
     res = set_peft_model_state_dict(unet, sd, adapter_name=name)

@@ -40,6 +40,12 @@ class ClipScorer:
         return cand
 
     @torch.no_grad()
+    def text(self, prompts: list[str]) -> torch.Tensor:
+        inp = self.proc(text=prompts, return_tensors="pt", padding=True, truncation=True).to(self.device)
+        emb = self._to_embedding(self.model.get_text_features(**inp), self.model.text_projection)
+        return F.normalize(emb.float(), dim=-1)
+
+    @torch.no_grad()
     def image(self, frames: list[Image.Image]) -> torch.Tensor:
         inp = self.proc(images=frames, return_tensors="pt").to(self.device)
         emb = self._to_embedding(self.model.get_image_features(**inp), self.model.visual_projection)
@@ -126,6 +132,76 @@ def motion_fidelity(flow_a: np.ndarray, flow_b: np.ndarray) -> float:
     num = (a * b).sum(1)
     den = np.linalg.norm(a, axis=1) * np.linalg.norm(b, axis=1)
     return float(np.mean(num / np.maximum(den, 1e-8)))
+
+
+# ---------------------------------------------------------------------------
+# Experiment 2 motion measurement (docs/experiment2.md): RAFT flow, camera motion removed, and
+# optionally restricted to the subject (a DAAM mask from scripts/cross_attention_maps.py), so the
+# measure follows how the subject moves rather than where its silhouette sits (the E2 confound).
+# ---------------------------------------------------------------------------
+
+_RAFT: dict = {}
+
+
+@torch.no_grad()
+def raft_flow(frames: list[Image.Image], size: int = 256, device: str = "cpu", batch: int = 5) -> np.ndarray:
+    """RAFT-large flow between consecutive frames (Teed & Deng, ECCV 2020; torchvision weights
+    C_T_SKHT_V2, last of the refinement iterations), (F-1, size, size, 2), in pixels at `size`.
+    `size` must be a multiple of 8 and at least 128."""
+    from torchvision.models.optical_flow import Raft_Large_Weights, raft_large
+
+    if size % 8 or size < 128:
+        raise ValueError("RAFT needs a side that is a multiple of 8 and >= 128")
+    if device not in _RAFT:
+        w = Raft_Large_Weights.DEFAULT
+        _RAFT[device] = (raft_large(weights=w).eval().to(device), w.transforms())
+    model, tf = _RAFT[device]
+    x = torch.stack([torch.from_numpy(np.asarray(f.convert("RGB").resize((size, size)), np.float32) / 255)
+                     .permute(2, 0, 1) for f in frames])
+    out = []
+    for i in range(0, len(x) - 1, batch):
+        a, b = x[i:i + batch], x[i + 1:i + 1 + batch]
+        a = a[:len(b)]
+        a, b = tf(a, b)
+        out.append(model(a.to(device), b.to(device))[-1].permute(0, 2, 3, 1).float().cpu())
+    return torch.cat(out).numpy()
+
+
+def _pair_masks(mask: np.ndarray | None, flow: np.ndarray) -> np.ndarray | None:
+    """Per-frame masks (F, h, w) -> per-frame-pair masks at the flow's size: union of frames i, i+1."""
+    if mask is None:
+        return None
+    m = torch.from_numpy(np.asarray(mask, np.float32))[:, None]
+    m = torch.nn.functional.interpolate(m, size=flow.shape[1:3], mode="nearest")[:, 0].numpy() > 0.5
+    return m[:-1] | m[1:] if len(m) == len(flow) + 1 else m
+
+
+def remove_camera_motion(flow: np.ndarray, mask: np.ndarray | None = None) -> np.ndarray:
+    """Subtract each frame pair's median background flow (outside `mask`, or over the whole frame
+    without one): a pan or zoom-free stand-in for the camera, so what remains is subject motion.
+    A homography fit would also remove rotation/zoom; the median is robust and assumption-light."""
+    pm = _pair_masks(mask, flow)
+    out = flow.copy()
+    for i in range(len(flow)):
+        bg = flow[i][~pm[i]] if pm is not None and (~pm[i]).sum() >= 16 else flow[i].reshape(-1, 2)
+        out[i] -= np.median(bg, axis=0)
+    return out
+
+
+def masked_motion_fidelity(flow_a: np.ndarray, flow_b: np.ndarray, mask_a: np.ndarray | None = None,
+                           mask_b: np.ndarray | None = None) -> float:
+    """motion_fidelity restricted to the subject: per frame pair, the cosine of the two flows over
+    the union of the two clips' subject masks; without masks it equals motion_fidelity."""
+    ma, mb = _pair_masks(mask_a, flow_a), _pair_masks(mask_b, flow_b)
+    if ma is None and mb is None:
+        return motion_fidelity(flow_a, flow_b)
+    m = ma if mb is None else mb if ma is None else ma | mb
+    sims = []
+    for i in range(len(flow_a)):
+        a, b = flow_a[i][m[i]].ravel(), flow_b[i][m[i]].ravel()
+        den = np.linalg.norm(a) * np.linalg.norm(b)
+        sims.append(float(a @ b / den) if den > 1e-8 else 0.0)
+    return float(np.mean(sims))
 
 
 def motion_magnitude(flow: np.ndarray) -> float:

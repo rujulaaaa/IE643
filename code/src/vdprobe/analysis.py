@@ -210,7 +210,11 @@ def load_sketches(groups: list[Group]) -> tuple[dict, pd.DataFrame, list[str]]:
     """{clip id: (L, T, 2, dim)} and a clip table (seed, scene, subject, verb, family)."""
     feats, rows, coords = {}, [], None
     for g in groups:
-        sk = torch.load(g.path / "sketches.pt")
+        if (g.path / "sketches.pt").exists():
+            sk = torch.load(g.path / "sketches.pt")
+        else:       # Experiment 2 sweeps: the coarse coordinates are a slice of sketches_all.pt
+            idx = [g.manifest["all_coords"].index(n) for n in g.manifest["coords"]]
+            sk = {cid: t[idx] for cid, t in torch.load(g.path / "sketches_all.pt").items()}
         coords = coords or g.manifest["coords"]
         if g.manifest["coords"] != coords:
             raise ValueError("groups disagree on the coordinate list")
@@ -228,34 +232,238 @@ def probe_accuracy(feats: dict, clips: pd.DataFrame, target: str, channel: int,
     """Scene-split probe (D-21): train on one scene, test on the other, swap, average; per seed,
     then averaged over seeds. channel 0 = x_tilde sketch, 1 = x_bar sketch.
     Returns {"acc": (L, T), "per_seed": {seed: (L, T)}, "chance": float}."""
-    from sklearn.decomposition import PCA
-    from sklearn.linear_model import LogisticRegression
-    from sklearn.pipeline import make_pipeline
-    from sklearn.preprocessing import StandardScaler
+    res = probe_scores(feats, clips, target, channel, n_coords, n_steps, probe="linear",
+                       control=False, max_pca=max_pca, C=C)
+    return {"acc": res["acc"], "per_seed": res["per_seed"], "chance": res["chance"]}
 
-    per_seed = {}
+
+# ---------------------------------------------------------------------------
+# Probe controls (D-34): control task, non-linear probe, permutation null
+#
+# Control task (Hewitt & Liang 2019). The "type" of a clip is its prompt minus the scene,
+# (subject, verb) within a seed: the same type appears once in each scene, so a scene-split probe can score
+# well either because the layer carries the target or because it identifies the type and the
+# probe memorises type -> label. The control task keeps the second route and removes the
+# first: every type gets a label drawn by permuting the real labels over types (class
+# frequencies kept), fixed per seed. selectivity = acc(real) - acc(control).
+#
+# Permutation null (Ojala & Garriga 2010, test 1): training labels permuted, test labels kept;
+# p = (1 + #{null >= observed}) / (1 + R), on the seed-averaged accuracy. The permutation is
+# restricted (verbs shuffled within each subject, family labels across subjects) and defined
+# on types, so both scenes get the same relabelling; p_fwer uses the max over the map.
+# Scaler + PCA are unsupervised, so they are fitted once per fold and shared by the real,
+# control and permuted fits.
+# ---------------------------------------------------------------------------
+
+PROBES = ("linear", "mlp")
+
+
+def _classifier(probe: str, C: float, hidden: int, alpha: float, seed: int):
+    if probe == "linear":
+        from sklearn.linear_model import LogisticRegression
+        return LogisticRegression(C=C, max_iter=2000)
+    if probe == "mlp":
+        from sklearn.neural_network import MLPClassifier
+        # Hewitt & Liang: small hidden layers + weight decay keep MLP probes selective.
+        # lbfgs suits n ~ 60; 500 iterations: shuffled labels never converge and would otherwise
+        # run to the cap (2000 iterations cost ~7x as much for no change in held-out accuracy)
+        return MLPClassifier(hidden_layer_sizes=(hidden,), alpha=alpha, solver="lbfgs", max_iter=500,
+                             random_state=seed)
+    raise ValueError(f"probe must be one of {PROBES}")
+
+
+def control_labels(cs: pd.DataFrame, target: str, rng, type_cols=("subject", "verb")) -> np.ndarray:
+    """Hewitt-Liang control labels for one seed's clips: a fixed random type -> label map."""
+    keys = [tuple(r) for r in cs[list(type_cols)].itertuples(index=False)]
+    first = dict(zip(keys[::-1], cs[target].to_numpy()[::-1]))     # one label per type
+    types = list(first)
+    mapping = dict(zip(types, rng.permutation([first[k] for k in types])))
+    return np.array([mapping[k] for k in keys])
+
+
+def permuted_labels(cs: pd.DataFrame, target: str, rng, type_cols=("subject", "verb"),
+                    block: str = "subject") -> np.ndarray:
+    """One draw of the restricted permutation null for one seed's clips. Labels are permuted at
+    the type level (so both scenes get the same relabelling) and within `block` when the target
+    varies inside it (verb: shuffle each subject's 4 verbs), else across blocks (family: shuffle
+    the subjects' labels). Exchangeable under "the layer carries subject identity but no target"."""
+    keys = [tuple(r) for r in cs[list(type_cols)].itertuples(index=False)]
+    lab = dict(zip(keys[::-1], cs[target].to_numpy()[::-1]))
+    bpos = list(type_cols).index(block)
+    by_block: dict = {}
+    for k in lab:
+        by_block.setdefault(k[bpos], []).append(k)
+    if all(len({lab[k] for k in ks}) == 1 for ks in by_block.values()):     # target is a block property
+        blocks = list(by_block)
+        new = dict(zip(blocks, rng.permutation([lab[by_block[b][0]] for b in blocks])))
+        mapping = {k: new[k[bpos]] for k in lab}
+    else:
+        mapping = {}
+        for ks in by_block.values():
+            mapping.update(zip(ks, rng.permutation([lab[k] for k in ks])))
+    return np.array([mapping[k] for k in keys])
+
+
+def _probe_cell(X: np.ndarray, folds: list, labels: list[tuple[np.ndarray, np.ndarray]], probe: str,
+                max_pca: int, C: float, hidden: int, alpha: float) -> np.ndarray:
+    """Held-out accuracy of one (seed, coordinate, step) cell for each (train labels, test labels)
+    pair, averaged over the scene folds: real (y, y), control (c, c), permutation draw r (pi_r, y)."""
+    import warnings
+
+    from sklearn.decomposition import PCA
+    from sklearn.exceptions import ConvergenceWarning
+    from sklearn.preprocessing import StandardScaler
+    from threadpoolctl import threadpool_limits
+
+    out = np.zeros(len(labels))
+    # Matrices this small run ~30x slower with a multi-threaded BLAS; parallelism is over cells.
+    with threadpool_limits(1), warnings.catch_warnings():
+        warnings.simplefilter("ignore", ConvergenceWarning)
+        for tr in folds:
+            sc = StandardScaler().fit(X[tr])
+            k = min(max_pca, int(tr.sum()) - 1, X.shape[1])
+            pca = PCA(n_components=k, random_state=0).fit(sc.transform(X[tr]))
+            z_tr, z_te = pca.transform(sc.transform(X[tr])), pca.transform(sc.transform(X[~tr]))
+            for j, (y_fit, y_eval) in enumerate(labels):
+                clf = _classifier(probe, C, hidden, alpha, seed=j).fit(z_tr, y_fit[tr])
+                out[j] += (clf.predict(z_te) == y_eval[~tr]).mean()
+    return out / len(folds)
+
+
+def probe_scores(feats: dict, clips: pd.DataFrame, target: str, channel: int, n_coords: int, n_steps: int,
+                 probe: str = "linear", control: bool = True, n_perm: int = 0, max_pca: int = 256,
+                 C: float = 1.0, hidden: int = 10, alpha: float = 1.0, n_jobs: int = 1,
+                 rng_seed: int = RNG_SEED) -> dict:
+    """Scene-split probe of `target` with the D-34 controls, per seed, averaged over seeds.
+
+    The permutation draws are shared by every cell of a seed, so the maximum over the map is a
+    valid null for the whole map: p_fwer controls the family-wise error over all (L, T) cells.
+
+    Returns {"acc", "control_acc", "selectivity", "p_perm", "p_fwer": (L, T) or None,
+    "per_seed": {seed: acc}, "chance"}: control_acc / selectivity are None without `control`,
+    p_perm / p_fwer None without n_perm."""
+    from joblib import Parallel, delayed
+
+    per_seed, ctrl_seed, null_seed = {}, {}, {}
     for seed, cs in clips.groupby("seed"):
+        cs = cs.reset_index(drop=True)
         scenes = sorted(cs.scene.unique())
         if len(scenes) < 2:
             continue
+        rng = np.random.default_rng([rng_seed, int(seed)])
+        y = cs[target].to_numpy()
+        labels = [(y, y)]
+        if control:
+            c = control_labels(cs, target, rng)
+            labels.append((c, c))
+        labels += [(permuted_labels(cs, target, rng), y) for _ in range(n_perm)]
+        folds = [(cs.scene == s).to_numpy() for s in scenes]
         X_all = np.stack([feats[c] for c in cs["clip"]])        # (n, L, T, 2, dim)
-        y_all = cs[target].to_numpy()
-        acc = np.zeros((n_coords, n_steps))
-        for li in range(n_coords):
-            for t in range(n_steps):
-                X = X_all[:, li, t, channel]
-                fold = []
-                for tr_scene in scenes:
-                    tr = (cs.scene == tr_scene).to_numpy()
-                    k = min(max_pca, tr.sum() - 1, X.shape[1])
-                    clf = make_pipeline(StandardScaler(), PCA(n_components=k, random_state=0),
-                                        LogisticRegression(C=C, max_iter=2000))
-                    clf.fit(X[tr], y_all[tr])
-                    fold.append(float((clf.predict(X[~tr]) == y_all[~tr]).mean()))
-                acc[li, t] = np.mean(fold)
-        per_seed[seed] = acc
-    chance = 1.0 / clips[target].nunique()
-    return {"acc": np.mean(list(per_seed.values()), axis=0), "per_seed": per_seed, "chance": chance}
+        res = Parallel(n_jobs=n_jobs)(
+            delayed(_probe_cell)(X_all[:, li, t, channel], folds, labels, probe, max_pca, C, hidden, alpha)
+            for li in range(n_coords) for t in range(n_steps))
+        res = np.array(res).reshape(n_coords, n_steps, -1)
+        per_seed[seed] = res[..., 0]
+        if control:
+            ctrl_seed[seed] = res[..., 1]
+        if n_perm:
+            null_seed[seed] = res[..., 1 + control:]
+    acc = np.mean(list(per_seed.values()), axis=0)
+    out = {"acc": acc, "per_seed": per_seed, "chance": 1.0 / clips[target].nunique(),
+           "control_acc": None, "selectivity": None, "p_perm": None, "p_fwer": None}
+    if control:
+        out["control_acc"] = np.mean(list(ctrl_seed.values()), axis=0)
+        out["selectivity"] = acc - out["control_acc"]
+    if n_perm:
+        null = np.mean(list(null_seed.values()), axis=0)       # (L, T, R), seed-averaged per draw
+        eps = 1e-12
+        out["p_perm"] = (1 + (null >= acc[..., None] - eps).sum(-1)) / (1 + n_perm)
+        null_max = null.reshape(-1, n_perm).max(0)              # max over the map, per draw
+        out["p_fwer"] = (1 + (null_max[None, None, :] >= acc[..., None] - eps).sum(-1)) / (1 + n_perm)
+    return out
+
+
+# ---------------------------------------------------------------------------
+# Layer comparison for Experiment 2 (docs/experiment2.md)
+# ---------------------------------------------------------------------------
+
+def _hsic_unbiased(K: np.ndarray, L: np.ndarray) -> float:
+    """Unbiased HSIC estimator (Song et al., JMLR 2012), used by debiased CKA:
+    [tr(K~L~) + (1'K~1)(1'L~1)/((n-1)(n-2)) - 2/(n-2) 1'K~L~1] / (n(n-3)), K~ = K with zero diagonal."""
+    n = K.shape[0]
+    K, L = K.copy(), L.copy()
+    np.fill_diagonal(K, 0)
+    np.fill_diagonal(L, 0)
+    one_k, one_l = K.sum(0), L.sum(0)
+    return float(((K * L).sum() + one_k.sum() * one_l.sum() / ((n - 1) * (n - 2))
+                  - 2 / (n - 2) * one_k @ one_l) / (n * (n - 3)))
+
+
+def debiased_cka(X: np.ndarray, Y: np.ndarray) -> float:
+    """Debiased linear CKA between two (n, p) representations of the same n clips. Unlike the
+    plain estimator (which gives ~0.9 for two *independent* random 60 x 512 matrices), it is ~0 under
+    independence at small n; it can be slightly negative, and is reported as is."""
+    X = X - X.mean(0)
+    Y = Y - Y.mean(0)
+    K, L = X @ X.T, Y @ Y.T
+    den = np.sqrt(max(_hsic_unbiased(K, K), 0) * max(_hsic_unbiased(L, L), 0))
+    return _hsic_unbiased(K, L) / den if den > 0 else 0.0
+
+
+def _r2(y: np.ndarray, X: np.ndarray) -> float:
+    X1 = np.column_stack([np.ones(len(y)), X])
+    beta, *_ = np.linalg.lstsq(X1, y, rcond=None)
+    res = y - X1 @ beta
+    return float(1 - res @ res / ((y - y.mean()) @ (y - y.mean())))
+
+
+def rsa_commonality(d_layer: np.ndarray, predictors: dict[str, np.ndarray], rank: bool = True) -> dict:
+    """Multiple-regression RSA with commonality analysis on vectorised RDMs (one entry per clip
+    pair): R^2 of the layer distances on every subset of the model RDMs (e.g. CLIP content
+    distance, masked-flow motion distance, scene), the unique share of each predictor
+    (R^2_all - R^2_without_it), and the shared remainder (R^2_all - sum of uniques, negative under
+    suppression). Rank-transformed by default (robust to the scale of cosine distances)."""
+    from itertools import combinations
+
+    from scipy.stats import rankdata
+
+    tf = (lambda v: rankdata(v)) if rank else (lambda v: np.asarray(v, float))
+    y = tf(d_layer)
+    names = list(predictors)
+    cols = {k: tf(v) for k, v in predictors.items()}
+    r2 = {}
+    for r in range(1, len(names) + 1):
+        for sub in combinations(names, r):
+            r2[sub] = _r2(y, np.column_stack([cols[k] for k in sub]))
+    full = r2[tuple(names)]
+    unique = {k: full - (r2[tuple(n for n in names if n != k)] if len(names) > 1 else 0.0) for k in names}
+    return {"r2": full, "unique": unique, "shared": full - sum(unique.values()),
+            "r2_single": {k: r2[(k,)] for k in names}}
+
+
+def rsa_permutation(D_layer: np.ndarray, preds: dict[str, np.ndarray], n_perm: int, rng,
+                    groups: np.ndarray | None = None, rank: bool = True) -> dict:
+    """Permutation p-values for rsa_commonality's unique terms. D_layer and preds are square
+    (N, N) RDMs over the same N clips; rows and columns of the layer RDM are permuted together
+    (within `groups`, e.g. seed, when given), the predictors are kept, and the regression refitted.
+    p = (1 + #{null >= observed}) / (1 + R)."""
+    iu = np.triu_indices(len(D_layer), 1)
+    vec = {k: v[iu] for k, v in preds.items()}
+    obs = rsa_commonality(D_layer[iu], vec, rank)
+    null = {k: [] for k in preds}
+    for _ in range(n_perm):
+        if groups is None:
+            perm = rng.permutation(len(D_layer))
+        else:
+            perm = np.arange(len(D_layer))
+            for g in np.unique(groups):
+                idx = np.flatnonzero(groups == g)
+                perm[idx] = rng.permutation(idx)
+        res = rsa_commonality(D_layer[np.ix_(perm, perm)][iu], vec, rank)
+        for k in preds:
+            null[k].append(res["unique"][k])
+    obs["p_unique"] = {k: (1 + sum(v >= obs["unique"][k] - 1e-12 for v in null[k])) / (1 + n_perm) for k in preds}
+    return obs
 
 
 def spearman(a, b) -> float:

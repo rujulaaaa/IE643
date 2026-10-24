@@ -195,7 +195,8 @@ def _union_attn(arms: list[Arm]) -> AttnSpec | None:
 @torch.no_grad()
 def run_arms(loaded: Loaded, coords: list[Coordinate], source_prompt: str, arms: list[Arm],
              noise: torch.Tensor | None, decode_frames: bool = True, cache_device: str = "cuda",
-             log_every: int = 0, source_trajectory: list | None = None) -> ArmsResult:
+             log_every: int = 0, source_trajectory: list | None = None,
+             extra_probes: dict | None = None) -> ArmsResult:
     """One source clip and N target arms in one lockstep group, sharing the source's cache.
 
     At step t the source runs first: its raw activations at the union of every arm's patch
@@ -203,6 +204,9 @@ def run_arms(loaded: Loaded, coords: list[Coordinate], source_prompt: str, arms:
     an AttnSpec). Each arm then runs and takes what its own spec asks for. A sweep over N
     settings for one source therefore costs N + 1 generations, not 2N. The cache holds one
     step (two when an arm uses a negative step offset).
+
+    `extra_probes` ({"source" or arm id: [probes]}) adds recorders to individual tracks, e.g.
+    cross-attention maps for subject masks.
 
     `source_trajectory` (from `inversion.invert`, 26 latents) drives the source along a real
     video's inverted trajectory instead of letting it denoise. The arms start from `noise`; with
@@ -219,7 +223,8 @@ def run_arms(loaded: Loaded, coords: list[Coordinate], source_prompt: str, arms:
                             {t + a.step_offset for a in arms if a.spec.patch for t in a.spec.patch.steps},
                             mode="raw", device=cache_device)
     keep = 1 + max([-a.step_offset for a in arms] + [0])
-    tracks = [Track("source", source_prompt, [cache] if cache else [],
+    extra_probes = extra_probes or {}
+    tracks = [Track("source", source_prompt, ([cache] if cache else []) + list(extra_probes.get("source", [])),
                     start=None if source_trajectory is None else source_trajectory[0].half())]
     patchers, specs = {}, {"source": _union_attn(arms)}
     for a in arms:
@@ -227,7 +232,7 @@ def run_arms(loaded: Loaded, coords: list[Coordinate], source_prompt: str, arms:
         if a.spec.patch is not None:
             patchers[a.id] = Patcher(cache, a.spec.patch, step_offset=a.step_offset)
             probes.append(patchers[a.id])
-        tracks.append(Track(a.id, a.prompt, probes))
+        tracks.append(Track(a.id, a.prompt, probes + list(extra_probes.get(a.id, []))))
         specs[a.id] = a.spec.attn
     ctl = AttnController(specs["source"], store_device=cache_device)      # processors are installed on the union of modules;
     applied = {a.id: 0 for a in arms}

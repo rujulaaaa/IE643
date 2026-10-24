@@ -3,7 +3,8 @@
     python scripts/analyze_sweep.py results/kaggle/vdprobe-sweep [more roots ...] --out results/analysis
 
 Writes <out>/analysis.json (verdicts, block profiles, robustness numbers) and
-<out>/maps.npz (S_dyn, S_stat, S_raw, S_l2dyn maps with CIs; probe accuracy maps), which the
+<out>/maps.npz (S_dyn, S_stat, S_raw, S_l2dyn maps with CIs; probe accuracy maps; with
+--probe-controls also control-task accuracy, selectivity and permutation p per probe), which the
 figures and the interface read. Tests follow docs/hypotheses.md exactly (D-22, D-23); the
 matched-unit definition of S is D-28 (see vdprobe/analysis.py).
 """
@@ -37,6 +38,12 @@ def main():
     p.add_argument("--out", type=Path, default=Path("results/analysis"))
     p.add_argument("--n-boot", type=int, default=A.N_BOOT)
     p.add_argument("--no-probes", action="store_true")
+    p.add_argument("--probe-controls", action="store_true",
+                   help="D-34: control task, MLP probe and permutation null next to the linear probes")
+    p.add_argument("--n-perm", type=int, default=99, help="permutation draws for the D-34 null")
+    p.add_argument("--mlp-hidden", type=int, default=10)
+    p.add_argument("--mlp-alpha", type=float, default=1.0, help="L2 penalty of the MLP probe")
+    p.add_argument("--n-jobs", type=int, default=-1)
     args = p.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
 
@@ -89,6 +96,32 @@ def main():
                   f"(chance {probes[key]['chance']:.2f})", flush=True)
         print(f"  probes done in {time.perf_counter() - t0:.0f} s")
 
+    controls = {}
+    if args.probe_controls and not args.no_probes:
+        t0 = time.perf_counter()
+        for target, chan, tag in (("verb", 0, "tilde"), ("verb", 1, "bar"), ("family", 0, "tilde"), ("family", 1, "bar")):
+            for probe in A.PROBES:
+                key = f"{target}_{tag}_{probe}"
+                controls[key] = A.probe_scores(feats, clips, target, chan, len(names), n_steps, probe=probe,
+                                               n_perm=args.n_perm, hidden=args.mlp_hidden, alpha=args.mlp_alpha,
+                                               n_jobs=args.n_jobs)
+                r = controls[key]
+                print(f"  control {key:<20} acc {r['acc'].mean():.3f}  control {r['control_acc'].mean():.3f}  "
+                      f"selectivity max {r['selectivity'].max():+.3f}  cells p<.05 {(r['p_perm'] < .05).mean():.2f} "
+                      f"(FWER {(r['p_fwer'] < .05).mean():.2f})",
+                      flush=True)
+        print(f"  probe controls done in {time.perf_counter() - t0:.0f} s")
+
+    def control_summary(r):
+        sel = r["selectivity"]
+        li, t = np.unravel_index(sel.argmax(), sel.shape)
+        return {"acc_mean": float(r["acc"].mean()), "control_mean": float(r["control_acc"].mean()),
+                "selectivity_max": float(sel.max()), "selectivity_max_coord": meta[int(li)]["short"],
+                "selectivity_max_step": int(t), "frac_cells_p05": float((r["p_perm"] < .05).mean()),
+                "frac_cells_p05_fwer": float((r["p_fwer"] < .05).mean()),
+                "selectivity_by_coord": {meta[i]["short"]: float(sel[i].mean()) for i in range(len(meta))},
+                "chance": r["chance"]}
+
     def block_profile(mp):
         return {m["short"]: {"median": float(mp["median"][i].mean()),
                              "lo": float(mp["lo"][i].mean()), "hi": float(mp["hi"][i].mean())}
@@ -109,11 +142,15 @@ def main():
                        "best_step": int(np.unravel_index(v["acc"].argmax(), v["acc"].shape)[1]),
                        "by_coord": {meta[i]["short"]: float(v["acc"][i].mean()) for i in range(len(meta))}}
                    for k, v in probes.items()},
+        "probe_controls": {"n_perm": args.n_perm, "mlp_hidden": args.mlp_hidden, "mlp_alpha": args.mlp_alpha,
+                           **{k: control_summary(v) for k, v in controls.items()}} if controls else {},
     }
     (args.out / "analysis.json").write_text(json.dumps(result, indent=2, default=float))
     np.savez_compressed(args.out / "maps.npz", coords=np.array(names),
                         **{f"S_{ch}_{k}": maps[ch][k] for ch in maps for k in ("median", "lo", "hi", "ratio_of_medians")},
-                        **{f"probe_{k}": v["acc"] for k, v in probes.items()})
+                        **{f"probe_{k}": v["acc"] for k, v in probes.items()},
+                        **{f"ctrl_{k}_{f}": v[f] for k, v in controls.items()
+                           for f in ("acc", "control_acc", "selectivity", "p_perm", "p_fwer")})
 
     print("\nH1 (layer)    ", "SURVIVES" if h1["survives"] else "FALSIFIED",
           f"| argmax {h1['argmax_block']} | 95% set {h1['set95']}")
