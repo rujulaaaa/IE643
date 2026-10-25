@@ -1,0 +1,70 @@
+{
+  "experiment": "edit_sweep",
+  "date": "2026-10-24",
+  "python": "3.13.15",
+  "torch": "2.11.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.16.1",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "split": "test",
+  "arm_set": "lora",
+  "selection": null,
+  "pair": {
+    "subject_a": "young woman",
+    "verb_a": "running",
+    "subject_b": "athlete",
+    "verb_b": "jumping",
+    "scene": "in a forest",
+    "seed": 1337
+  },
+  "loras": [
+    "/kaggle/working/out/job0/full_s0/full/motion_lora.safetensors",
+    "/kaggle/working/out/job0/full_s1/full/motion_lora.safetensors",
+    "/kaggle/working/out/job0/full_s2/full/motion_lora.safetensors",
+    "/kaggle/working/out/job0/probe_s0/probe/motion_lora.safetensors",
+    "/kaggle/working/out/job1/anti_s0/anti/motion_lora.safetensors",
+    "/kaggle/working/out/job1/anti_s1/anti/motion_lora.safetensors",
+    "/kaggle/working/out/job1/anti_s2/anti/motion_lora.safetensors",
+    "/kaggle/working/out/job1/probe_s1/probe/motion_lora.safetensors",
+    "/kaggle/working/out/job1/probe_s2/probe/motion_lora.safetensors"
+  ],
+  "seconds": 1116.6596167139996,
+  "n_tracks": 13,
+  "seconds_per_clip": 85.89689359338459,
+  "peak_alloc_gb": 6.730860233306885,
+  "n_patched": {},
+  "n_attn_injected": {
+    "B_ref": 0,
+    "motion.base": 0,
+    "motion.attn_all": 1050,
+    "motion.lora_full_s0": 0,
+    "motion.lora_full_s1": 0,
+    "motion.lora_full_s2": 0,
+    "motion.lora_probe_s0": 0,
+    "motion.lora_anti_s0": 0,
+    "motion.lora_anti_s1": 0,
+    "motion.lora_anti_s2": 0,
+    "motion.lora_probe_s1": 0,
+    "motion.lora_probe_s2": 0
+  },
+  "finished": "2026-10-24 17:47:02"
+}

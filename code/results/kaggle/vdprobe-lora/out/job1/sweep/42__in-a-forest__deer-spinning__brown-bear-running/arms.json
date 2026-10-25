@@ -1,0 +1,188 @@
+{
+ "pair": {
+  "subject_a": "deer",
+  "verb_a": "spinning",
+  "subject_b": "brown bear",
+  "verb_b": "running",
+  "scene": "in a forest",
+  "seed": 42
+ },
+ "prompts": {
+  "A": "a deer spinning in a forest, high quality, detailed",
+  "B": "a brown bear running in a forest, high quality, detailed",
+  "motion": "a brown bear spinning in a forest, high quality, detailed",
+  "content": "a deer running in a forest, high quality, detailed"
+ },
+ "arms": [
+  {
+   "id": "B_ref",
+   "prompt": "a brown bear running in a forest, high quality, detailed",
+   "label": "B, unpatched"
+  },
+  {
+   "id": "motion.base",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "prompt only"
+  },
+  {
+   "id": "motion.attn_all",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "attention, all steps",
+   "attn": {
+    "modules": [
+     "down_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.2.transformer_blocks.0.attn2",
+     "mid_block.motion_modules.0.transformer_blocks.0.attn1",
+     "mid_block.motion_modules.0.transformer_blocks.0.attn2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0
+   }
+  },
+  {
+   "id": "motion.lora_full_s0",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "prompt only + lora_full_s0",
+   "lora": {
+    "adapter": "lora_full_s0",
+    "scale": 1.0
+   }
+  },
+  {
+   "id": "motion.lora_full_s1",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "prompt only + lora_full_s1",
+   "lora": {
+    "adapter": "lora_full_s1",
+    "scale": 1.0
+   }
+  },
+  {
+   "id": "motion.lora_full_s2",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "prompt only + lora_full_s2",
+   "lora": {
+    "adapter": "lora_full_s2",
+    "scale": 1.0
+   }
+  },
+  {
+   "id": "motion.lora_probe_s0",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "prompt only + lora_probe_s0",
+   "lora": {
+    "adapter": "lora_probe_s0",
+    "scale": 1.0
+   }
+  },
+  {
+   "id": "motion.lora_anti_s0",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "prompt only + lora_anti_s0",
+   "lora": {
+    "adapter": "lora_anti_s0",
+    "scale": 1.0
+   }
+  },
+  {
+   "id": "motion.lora_anti_s1",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "prompt only + lora_anti_s1",
+   "lora": {
+    "adapter": "lora_anti_s1",
+    "scale": 1.0
+   }
+  },
+  {
+   "id": "motion.lora_anti_s2",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "prompt only + lora_anti_s2",
+   "lora": {
+    "adapter": "lora_anti_s2",
+    "scale": 1.0
+   }
+  },
+  {
+   "id": "motion.lora_probe_s1",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "prompt only + lora_probe_s1",
+   "lora": {
+    "adapter": "lora_probe_s1",
+    "scale": 1.0
+   }
+  },
+  {
+   "id": "motion.lora_probe_s2",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "prompt only + lora_probe_s2",
+   "lora": {
+    "adapter": "lora_probe_s2",
+    "scale": 1.0
+   }
+  }
+ ]
+}

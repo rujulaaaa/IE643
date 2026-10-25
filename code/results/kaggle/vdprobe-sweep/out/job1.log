@@ -1,0 +1,36 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 911.41it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1240.13it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00, 18.06it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 3161.86it/s]
+Loading pipeline components...:  67%|██████▋   | 4/6 [00:01<00:01,  1.99it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.21it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.14it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.9 s
+
+=== seed 42 · in a forest: 60 clips, 125 pairs (52 content, 45 motion, 28 cross-family), 21 anchors
+    step  5/25   1105.4 s  (3.68 s per clip-step)
+    step 10/25   2215.9 s  (3.69 s per clip-step)
+    step 15/25   3327.2 s  (3.70 s per clip-step)
+    step 20/25   4437.8 s  (3.70 s per clip-step)
+    step 25/25   5551.5 s  (3.70 s per clip-step)
+  denoised in 92.5 min (92.5 s per clip), peak host RSS 8.3 GB
+wrote /kaggle/working/out/job1/s42__in-a-forest/manifest.json
+
+=== seed 1337 · in a forest: 60 clips, 125 pairs (52 content, 45 motion, 28 cross-family), 21 anchors
+    step  5/25   1112.7 s  (3.71 s per clip-step)
+    step 10/25   2222.6 s  (3.70 s per clip-step)
+    step 15/25   3333.4 s  (3.70 s per clip-step)
+    step 20/25   4443.6 s  (3.70 s per clip-step)
+    step 25/25   5558.0 s  (3.71 s per clip-step)
+  denoised in 92.6 min (92.6 s per clip), peak host RSS 8.3 GB
+wrote /kaggle/working/out/job1/s1337__in-a-forest/manifest.json
+
+=== seed 2024 · in a forest: 60 clips, 125 pairs (52 content, 45 motion, 28 cross-family), 21 anchors
+    step  5/25   1111.0 s  (3.70 s per clip-step)
+    step 10/25   2221.4 s  (3.70 s per clip-step)
+    step 15/25   3332.1 s  (3.70 s per clip-step)
+    step 20/25   4441.8 s  (3.70 s per clip-step)
+    step 25/25   5556.6 s  (3.70 s per clip-step)
+  denoised in 92.6 min (92.6 s per clip), peak host RSS 8.3 GB
+wrote /kaggle/working/out/job1/s2024__in-a-forest/manifest.json

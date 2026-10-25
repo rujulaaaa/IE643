@@ -1,0 +1,18 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 906.29it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1273.26it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:01<00:07,  1.54s/it]Loading pipeline components...:  50%|█████     | 3/6 [00:01<00:01,  2.16it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2433.31it/s]
+Loading pipeline components...:  67%|██████▋   | 4/6 [00:01<00:00,  2.55it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:02<00:00,  3.32it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.87it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 18.0 s
+
+=== seed 42 · in a forest: 8 clips, 12 pairs (4 content, 4 motion, 4 cross-family), 6 anchors
+    step  5/25    137.8 s  (3.45 s per clip-step)
+    step 10/25    294.1 s  (3.68 s per clip-step)
+    step 15/25    456.3 s  (3.80 s per clip-step)
+    step 20/25    618.7 s  (3.87 s per clip-step)
+    step 25/25    781.5 s  (3.91 s per clip-step)
+  denoised in 13.0 min (97.7 s per clip), peak host RSS 8.3 GB
+wrote /kaggle/working/out/job1/s42__in-a-forest/manifest.json

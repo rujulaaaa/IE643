@@ -14,3 +14,5 @@ results/kaggle/**/*.pt
 !results/kaggle/vdprobe-switch-*/**/latents.pt
 !results/kaggle/vdprobe-interface-check*/**/latents.pt
 results/kaggle/**/.download_ok
+# live edits made in the interface
+results/interface/

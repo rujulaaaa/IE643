@@ -4,6 +4,8 @@
     --split test --arms selected --sel s.json  Stage 6 evaluation (edit_plan.selected_arms)
     --split dev  --arms lit                    Stage 6b: literature operators (edit_plan.literature_arms)
     --split test --arms lit --lit-sel l.json   Stage 6b evaluation (edit_plan.literature_test_arms, D-37)
+    --split test --arms lora --lora-dir DIR    Stage 6 add-on: cut-free LoRA seeds + attention
+                                               injection at all steps (edit_plan.lora_arms, D-34)
 
 Per pair, written to <out>/<pair id>/:
   arms.json       every arm's prompt and patch spec
@@ -18,21 +20,22 @@ Scoring is a separate CPU/GPU step (scripts/score_edits.py) over the saved laten
 
 import json
 import time
+from pathlib import Path
 
 import torch
 
 from vdprobe import runio
 from vdprobe.coords import enumerate_coordinates
 from vdprobe.edit import run_arms
-from vdprobe.edit_plan import (coarse_arms, describe, literature_arms, literature_test_arms, load_pairs,
-                               selected_arms)
+from vdprobe.edit_plan import (adapter_name, coarse_arms, describe, literature_arms, literature_test_arms,
+                               load_pairs, lora_arms, selected_arms)
 from vdprobe.pipeline import make_noise
 
 
 def main():
     ap = runio.parser(__doc__, "edit_sweep")
     ap.add_argument("--split", choices=["dev", "test"], required=True)
-    ap.add_argument("--arms", choices=["coarse", "selected", "lit"], required=True)
+    ap.add_argument("--arms", choices=["coarse", "selected", "lit", "lora"], required=True)
     ap.add_argument("--sel", default=None, help="selection JSON for --arms selected")
     ap.add_argument("--sel-json", default=None, help="the same, inline")
     ap.add_argument("--lit-sel", default=None, help="Stage 6b selection JSON (D-37) for --split test --arms lit")
@@ -40,8 +43,22 @@ def main():
     ap.add_argument("--pairs", type=int, default=0, help="limit to the first N pairs (smoke test)")
     ap.add_argument("--only", default="", help="comma-separated arm ids to keep (smoke test)")
     ap.add_argument("--cache-device", default="cuda")
-    ap.add_argument("--lora", action="append", default=[], help="motion LoRA file(s) for --arms selected")
+    ap.add_argument("--lora", action="append", default=[], help="motion LoRA file(s) for --arms selected/lora")
+    ap.add_argument("--lora-dir", default=None, help="add every motion_lora.safetensors below this directory")
+    ap.add_argument("--lora-wait", type=int, default=0,
+                    help="wait until this many trained LoRAs (train_log.json) exist below --lora-dir: "
+                         "lets one Kaggle GPU start sweeping after the other GPU's training ends")
     args = ap.parse_args()
+    if args.lora_wait:
+        t0 = time.time()
+        while (n := len(list(Path(args.lora_dir).rglob("train_log.json")))) < args.lora_wait:
+            failed = list(Path(args.lora_dir).rglob("*.FAILED"))
+            if failed or time.time() - t0 > 3 * 3600:
+                raise SystemExit(f"only {n}/{args.lora_wait} LoRAs; failed: {[f.name for f in failed]}")
+            time.sleep(60)
+        print(f"{n} LoRAs ready after {time.time() - t0:.0f} s wait", flush=True)
+    if args.lora_dir:
+        args.lora += sorted(str(p) for p in Path(args.lora_dir).rglob("motion_lora.safetensors"))
 
     loaded = runio.load(args)
     loras = []
@@ -50,7 +67,7 @@ def main():
 
         from vdprobe.lora import load_motion_lora
         with safe_open(path, "pt") as f:
-            name = "lora_" + f.metadata()["variant"]
+            name = adapter_name(f.metadata())
         load_motion_lora(loaded.unet, path, name=name)
         loras.append(name)
     if loras:
@@ -75,6 +92,8 @@ def main():
             arms = coarse_arms(pair, loaded.cfg, coords)
         elif args.arms == "selected":
             arms = selected_arms(pair, loaded.cfg, coords, sel, loras=tuple(loras))
+        elif args.arms == "lora":
+            arms = lora_arms(pair, loaded.cfg, coords, tuple(loras))
         elif lit_sel is None:
             arms = literature_arms(pair, loaded.cfg, coords)
         else:

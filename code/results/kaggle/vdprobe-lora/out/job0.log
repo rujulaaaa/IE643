@@ -1,0 +1,154 @@
+=== full_s0: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant full --seed 0 --out /kaggle/working/out/job0/full_s0
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 858.52it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1248.02it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:00,  8.78it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:03,  1.32it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2963.22it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:01<00:01,  1.98it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  4.74it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.51it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.5 s
+full: 9.67 M trainable LoRA parameters, 21 motion modules checkpointed
+cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}
+step    0  val 0.09818
+step  100  train(avg100) 0.06014  val 0.06461  227 s (2.27 s/step)
+step  200  train(avg100) 0.07132  val 0.06334  451 s (2.26 s/step)
+step  300  train(avg100) 0.05953  val 0.06301  674 s (2.25 s/step)
+step  400  train(avg100) 0.05079  val 0.06291  897 s (2.24 s/step)
+step  500  train(avg100) 0.04468  val 0.06280  1120 s (2.24 s/step)
+step  600  train(avg100) 0.06715  val 0.06278  1344 s (2.24 s/step)
+step  700  train(avg100) 0.07565  val 0.06275  1573 s (2.25 s/step)
+step  800  train(avg100) 0.05776  val 0.06272  1797 s (2.25 s/step)
+wrote /kaggle/working/out/job0/full_s0/full/train_log.json
+=== full_s0: exit 0 after 1892 s
+=== full_s1: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant full --seed 1 --out /kaggle/working/out/job0/full_s1
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 819.44it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1185.35it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00,  5.77it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00,  6.96it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2405.28it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 10.47it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  9.16it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.4 s
+full: 9.67 M trainable LoRA parameters, 21 motion modules checkpointed
+cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}
+step    0  val 0.09818
+step  100  train(avg100) 0.07394  val 0.06438  218 s (2.18 s/step)
+step  200  train(avg100) 0.06271  val 0.06319  441 s (2.20 s/step)
+step  300  train(avg100) 0.07927  val 0.06295  664 s (2.21 s/step)
+step  400  train(avg100) 0.05955  val 0.06285  889 s (2.22 s/step)
+step  500  train(avg100) 0.04791  val 0.06277  1117 s (2.23 s/step)
+step  600  train(avg100) 0.05463  val 0.06275  1341 s (2.23 s/step)
+step  700  train(avg100) 0.04718  val 0.06275  1564 s (2.23 s/step)
+step  800  train(avg100) 0.05432  val 0.06274  1787 s (2.23 s/step)
+wrote /kaggle/working/out/job0/full_s1/full/train_log.json
+=== full_s1: exit 0 after 1845 s
+=== full_s2: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant full --seed 2 --out /kaggle/working/out/job0/full_s2
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 903.07it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1294.08it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2413.79it/s]
+Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:01,  4.73it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00,  4.13it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:00<00:00,  7.79it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:00<00:00,  8.03it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  8.41it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.9 s
+full: 9.67 M trainable LoRA parameters, 21 motion modules checkpointed
+cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}
+step    0  val 0.09818
+step  100  train(avg100) 0.08330  val 0.06443  218 s (2.18 s/step)
+step  200  train(avg100) 0.05616  val 0.06329  442 s (2.21 s/step)
+step  300  train(avg100) 0.07630  val 0.06297  671 s (2.24 s/step)
+step  400  train(avg100) 0.07274  val 0.06286  895 s (2.24 s/step)
+step  500  train(avg100) 0.06970  val 0.06278  1119 s (2.24 s/step)
+step  600  train(avg100) 0.06393  val 0.06276  1342 s (2.24 s/step)
+step  700  train(avg100) 0.05999  val 0.06273  1565 s (2.24 s/step)
+step  800  train(avg100) 0.04939  val 0.06275  1787 s (2.23 s/step)
+wrote /kaggle/working/out/job0/full_s2/full/train_log.json
+=== full_s2: exit 0 after 1846 s
+=== probe_s0: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant probe --seed 0 --out /kaggle/working/out/job0/probe_s0
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 878.11it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1346.19it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2564.75it/s]
+Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:00,  5.24it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00,  4.26it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:00<00:00,  8.26it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 11.30it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  8.99it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.2 s
+probe: 1.97 M trainable LoRA parameters, 21 motion modules checkpointed
+cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}
+step    0  val 0.09818
+step  100  train(avg100) 0.08372  val 0.07671  184 s (1.84 s/step)
+step  200  train(avg100) 0.07723  val 0.06543  366 s (1.83 s/step)
+step  300  train(avg100) 0.06197  val 0.06477  547 s (1.82 s/step)
+step  400  train(avg100) 0.05312  val 0.06448  727 s (1.82 s/step)
+step  500  train(avg100) 0.04656  val 0.06428  908 s (1.82 s/step)
+step  600  train(avg100) 0.06966  val 0.06422  1089 s (1.81 s/step)
+step  700  train(avg100) 0.07810  val 0.06413  1270 s (1.81 s/step)
+step  800  train(avg100) 0.06008  val 0.06406  1450 s (1.81 s/step)
+wrote /kaggle/working/out/job0/probe_s0/probe/train_log.json
+=== probe_s0: exit 0 after 1506 s
+=== sweep: /usr/bin/python3 -u scripts/edit_sweep.py --split test --arms lora --lora-dir /kaggle/working/out --lora-wait 9 --shard 0/2 --out /kaggle/working/out/job0/sweep
+9 LoRAs ready after 0 s wait
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1020.64it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1386.76it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:01,  4.14it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00,  8.95it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2718.36it/s]
+Loading pipeline components...:  83%|████████▎ | 5/6 [00:00<00:00,  8.38it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  9.56it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 13.7 s
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+[1/6] 42__on-a-beach__golden-retriever-running__horse-walking: source + 12 arms
+    step  5/25    226.8 s  (3.49 s per clip-step)
+    step 10/25    448.0 s  (3.45 s per clip-step)
+    step 15/25    666.3 s  (3.42 s per clip-step)
+    step 20/25    884.0 s  (3.40 s per clip-step)
+    step 25/25   1104.8 s  (3.40 s per clip-step)
+wrote /kaggle/working/out/job0/sweep/42__on-a-beach__golden-retriever-running__horse-walking/manifest.json
+  1105 s (85.0 s per clip)
+[2/6] 2024__on-a-beach__tiger-jumping__fox-spinning: source + 12 arms
+    step  5/25    214.4 s  (3.30 s per clip-step)
+    step 10/25    431.8 s  (3.32 s per clip-step)
+    step 15/25    649.9 s  (3.33 s per clip-step)
+    step 20/25    867.5 s  (3.34 s per clip-step)
+    step 25/25   1091.6 s  (3.36 s per clip-step)
+wrote /kaggle/working/out/job0/sweep/2024__on-a-beach__tiger-jumping__fox-spinning/manifest.json
+  1092 s (84.0 s per clip)
+[3/6] 1337__on-a-beach__horse-running__tiger-jumping: source + 12 arms
+    step  5/25    214.0 s  (3.29 s per clip-step)
+    step 10/25    431.7 s  (3.32 s per clip-step)
+    step 15/25    649.5 s  (3.33 s per clip-step)
+    step 20/25    873.1 s  (3.36 s per clip-step)
+    step 25/25   1092.1 s  (3.36 s per clip-step)
+wrote /kaggle/working/out/job0/sweep/1337__on-a-beach__horse-running__tiger-jumping/manifest.json
+  1092 s (84.0 s per clip)
+[4/6] 42__on-a-beach__young-man-running__young-woman-walking: source + 12 arms
+    step  5/25    213.1 s  (3.28 s per clip-step)
+    step 10/25    430.8 s  (3.31 s per clip-step)
+    step 15/25    652.3 s  (3.34 s per clip-step)
+    step 20/25    873.3 s  (3.36 s per clip-step)
+    step 25/25   1090.9 s  (3.36 s per clip-step)
+wrote /kaggle/working/out/job0/sweep/42__on-a-beach__young-man-running__young-woman-walking/manifest.json
+  1091 s (83.9 s per clip)
+[5/6] 2024__on-a-beach__dancer-jumping__child-spinning: source + 12 arms
+    step  5/25    214.2 s  (3.30 s per clip-step)
+    step 10/25    432.2 s  (3.32 s per clip-step)
+    step 15/25    655.8 s  (3.36 s per clip-step)
+    step 20/25    875.2 s  (3.37 s per clip-step)
+    step 25/25   1093.3 s  (3.36 s per clip-step)
+wrote /kaggle/working/out/job0/sweep/2024__on-a-beach__dancer-jumping__child-spinning/manifest.json
+  1093 s (84.1 s per clip)
+[6/6] 1337__in-a-forest__young-woman-running__athlete-jumping: source + 12 arms
+    step  5/25    213.3 s  (3.28 s per clip-step)
+    step 10/25    437.4 s  (3.36 s per clip-step)
+    step 15/25    663.4 s  (3.40 s per clip-step)
+    step 20/25    890.2 s  (3.42 s per clip-step)
+    step 25/25   1116.7 s  (3.44 s per clip-step)
+wrote /kaggle/working/out/job0/sweep/1337__in-a-forest__young-woman-running__athlete-jumping/manifest.json
+  1117 s (85.9 s per clip)
+=== sweep: exit 0 after 7023 s
