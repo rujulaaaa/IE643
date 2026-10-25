@@ -270,7 +270,19 @@ During training only the motion modules are trained on a large video dataset. Th
 \textbf{Domain adapter} Web videos are blurry and they might carry watermarks. Before training the motion module.
 they trained a small add-on to the image layers that soaks up this look so the motion module would not learn those things. 
 That portion is switched off during inference.
-\textbf{MotionLoRA} A small trainable add-on LoRA was added to the motion modules attention
+\textbf{MotionLoRA} A small trainable add-on LoRA was added to the motion modules attention. It teaches
+a new camera movement from a small number of videos. 
+The motion module adds its output on top of whatever comes in so the activations after it should hold content and motion mixed together.
+Copying the motion module's output from one generation to another copies both of them, which is why we just copy a part of it. 
+The motion modile already treats the 16 frames as a sequence so it becomes very natural to split the activations into a 
+part that is constant over every frame and a part that varies with every frame. 
+We chose this model because the weights that encode motion and content are physically seperate and moreover they are even trained seperatrely.
+If even this model mixes motion and content then the models that are trained collectively would certainly mix them up.
+
+Now knowing which layers are temporal tells us where the motion could be stored not what those layers 
+actually have there. To find that out we needed a way to pull out the motion activation 
+which MOFT gave us. 
+
 
 
 is a stack of temporal transformers trained once on video and then plugged into any
