@@ -1,0 +1,42 @@
+building pipeline (profile=gpu) ...
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+[transformers] `SiglipImageProcessor` requires torchvision (not installed); falling back to `SiglipImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `SiglipImageProcessorPil` directly to silence this warning.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 672.87it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1159.24it/s]
+/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2881.36it/s]
+Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00, 11.98it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:00<00:00, 11.15it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 13.46it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 10.6 s
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 34313.82it/s]
+scored 1337__in-a-forest__young-woman-running__athlete-jumping: 18 clips
+scored 1337__on-a-beach__horse-running__tiger-jumping: 18 clips
+scored 2024__on-a-beach__dancer-jumping__child-spinning: 18 clips
+scored 2024__on-a-beach__tiger-jumping__fox-spinning: 18 clips
+scored 42__on-a-beach__golden-retriever-running__horse-walking: 18 clips
+scored 42__on-a-beach__young-man-running__young-woman-walking: 18 clips
+scored 1337__in-a-forest__athlete-walking__soldier-jumping: 18 clips
+scored 1337__in-a-forest__german-shepherd-walking__wolf-jumping: 18 clips
+scored 2024__in-a-forest__wolf-walking__deer-spinning: 18 clips
+scored 2024__on-a-beach__soldier-walking__dancer-spinning: 18 clips
+scored 42__in-a-forest__deer-spinning__brown-bear-running: 18 clips
+scored 42__in-a-forest__elderly-man-spinning__young-man-running: 18 clips
+direction               arm  median_D  median_dD  frac_dD_pos  d16_ci_lo  d16_ci_hi  consistency_ratio  sm_A  sc_B  sm_B  sc_A
+  content content.sel.a0.75     0.189      0.070        0.833     -0.015      0.145              0.989 0.315 0.760 0.248 0.885
+  content       content.sel     0.198      0.068        0.833     -0.010      0.158              0.999 0.313 0.760 0.182 0.894
+  content  content.sel.a0.5     0.199      0.029        0.750      0.001      0.152              0.998 0.255 0.765 0.316 0.887
+  content content.sel.a0.25     0.112      0.006        0.667     -0.007      0.040              0.992 0.201 0.767 0.275 0.846
+  content      content.base     0.090      0.000        0.000      0.000      0.000              1.009 0.118 0.775 0.259 0.830
+  content    content.tensor     0.133     -0.026        0.333     -0.080      0.106              0.998 0.491 0.759 0.166 0.911
+   motion       motion.attn     0.269      0.105        0.833      0.001      0.204              1.003 0.641 0.827 0.098 0.793
+   motion  motion.sel.a0.75     0.212      0.043        0.750     -0.023      0.130              0.997 0.644 0.817 0.116 0.822
+   motion        motion.sel     0.195      0.041        0.667     -0.027      0.143              0.997 0.673 0.809 0.119 0.829
+   motion  motion.sel.a0.25     0.212      0.038        0.833     -0.028      0.142              0.997 0.495 0.832 0.093 0.787
+   motion   motion.sel.a0.5     0.236      0.038        0.750     -0.031      0.142              0.999 0.546 0.828 0.105 0.805
+   motion motion.lora_probe     0.179      0.023        0.583     -0.066      0.096              1.007 0.177 0.816 0.050 0.749
+   motion       motion.base     0.149      0.000        0.000      0.000      0.000              1.003 0.233 0.850 0.172 0.770
+   motion  motion.lora_anti     0.061     -0.020        0.417     -0.154      0.033              1.019 0.109 0.847 0.136 0.780
+   motion  motion.lora_full     0.096     -0.021        0.417     -0.193      0.106              1.030 0.113 0.824 0.095 0.774
+   motion     motion.tensor     0.074     -0.036        0.417     -0.109      0.047              0.988 0.823 0.771 0.099 0.912
+wrote results/kaggle/vdprobe-test/out/score_summary.json

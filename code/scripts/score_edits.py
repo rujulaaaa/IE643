@@ -17,6 +17,12 @@ component-patch arms, the largest median ΔD over the dev pairs whose consistenc
 ties broken by fewer patched modules. Written to <run>/selection.json for --arms selected.
 
     python scripts/score_edits.py results/kaggle/edit-dev/out --select
+    python scripts/score_edits.py results/kaggle/vdprobe-lora/out --with results/kaggle/vdprobe-test/out
+
+--with RUN (repeatable) adds the cached scores.csv of runs on the same pairs to this run's, so
+s_c and s_m are normalised over one pool and every arm is compared with the same prompt-only
+baseline. A (pair, arm) present in both keeps the --with run's row (the reference clips are
+regenerated from the same noise; the regeneration is checked separately).
 """
 
 import argparse
@@ -125,6 +131,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("run", type=Path)
     ap.add_argument("--select", action="store_true")
+    ap.add_argument("--with", dest="with_runs", type=Path, action="append", default=[],
+                    help="earlier scored run(s) on the same pairs to pool with this one")
     ap.add_argument("--profile", default=None)
     ap.add_argument("--config", type=Path, default=runio.REPO_ROOT / "configs" / "generation.yaml")
     args = ap.parse_args()
@@ -135,6 +143,9 @@ def main():
         loaded = runio.load(args)
         df = score_run(args.run, loaded, ClipScorer())
         df.to_csv(cache, index=False)
+    if args.with_runs:
+        df = pd.concat([*(pd.read_csv(r / "scores.csv") for r in args.with_runs), df])
+        df = df.drop_duplicates(["pair", "arm"], keep="first").reset_index(drop=True)
     df = add_d(df)
     df.to_csv(args.run / "scores_D.csv", index=False)
     summary = summarise(df)
@@ -142,7 +153,7 @@ def main():
     pd.set_option("display.width", 220, "display.max_rows", 200)
     print(summary[["direction", "arm", "median_D", "median_dD", "frac_dD_pos", "d16_ci_lo", "d16_ci_hi",
                    "consistency_ratio", "sm_A", "sc_B", "sm_B", "sc_A"]].round(3).to_string(index=False))
-    res = {"pool": df.attrs["pool"], "n_pairs": int(df.pair.nunique())}
+    res = {"pool": df.attrs["pool"], "n_pairs": int(df.pair.nunique()), "with": [str(r) for r in args.with_runs]}
     if args.select:
         res["selection"] = select(summary, args.run)
         (args.run / "selection.json").write_text(json.dumps(res["selection"], indent=1))

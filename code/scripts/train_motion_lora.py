@@ -10,6 +10,12 @@ Loss: epsilon-prediction MSE on the whole clip under the frozen SD1.5 + motion a
 (fp16 weights, fp32 LoRA parameters, autocast, gradient checkpointing incl. motion modules). DDPM training
 noise schedule = the inference scheduler's betas (linear, 1000 steps).
 
+--cut-free (D-34): 11 of the 19 clips contain a hard cut (inversion.shot_bounds). With the flag,
+every training window is drawn inside one shot (shots of >= 16 frames, chosen with probability
+proportional to length; a clip with no such shot uses its longest shot, last frame repeated) and
+the validation window is the centre of the longest shot. Without it, windows may span a cut (the
+recipe of the first three LoRAs, kept for reproducibility).
+
 Validation loss: every held-out clip at 8 fixed timesteps x 2 fixed noises, fixed frame
 window and centre crop, identical for every variant and for the base model (step 0, before
 any update). Lower = the adapter explains real motion of unseen clips better.
@@ -18,6 +24,7 @@ Writes <out>/<variant>/motion_lora.safetensors (metadata: variant, rank, alpha, 
 and <out>/<variant>/train_log.json (loss curve, val losses, parameter count, timings).
 
     python -u scripts/train_motion_lora.py --variant full --steps 800
+    python -u scripts/train_motion_lora.py --variant probe --cut-free --seed 1
 """
 
 import json
@@ -48,6 +55,24 @@ def read_clip(path: Path) -> np.ndarray:
             break
         out.append(cv2.cvtColor(f, cv2.COLOR_BGR2RGB))
     return np.stack(out)                                  # (n, H, W, 3) uint8
+
+
+def usable_shots(clip: np.ndarray) -> list[tuple[int, int]]:
+    """Shots long enough for a full window; else the longest shot alone."""
+    from vdprobe.inversion import shot_bounds
+
+    shots = shot_bounds(list(clip))
+    long = [s for s in shots if s[1] - s[0] >= FRAMES]
+    return long or [max(shots, key=lambda s: s[1] - s[0])]
+
+
+def pick_shot(clip: np.ndarray, shots: list[tuple[int, int]], rng: random.Random | None) -> np.ndarray:
+    # one shot: no draw, so the old recipe's random stream is unchanged
+    if rng is None or len(shots) == 1:
+        a, b = max(shots, key=lambda s: s[1] - s[0])
+    else:
+        a, b = rng.choices(shots, weights=[b - a for a, b in shots])[0]
+    return clip[a:b]
 
 
 def window(clip: np.ndarray, rng: random.Random | None) -> torch.Tensor:
@@ -98,6 +123,8 @@ def main():
     ap.add_argument("--rank", type=int, default=32)
     ap.add_argument("--val-every", type=int, default=100)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--cut-free", action="store_true", help="draw windows inside one shot (D-34)")
+    ap.add_argument("--data-dir", type=Path, default=DATA)
     args = ap.parse_args()
     out = args.out / args.variant
     torch.manual_seed(args.seed)
@@ -116,7 +143,8 @@ def main():
     n_train = sum(p.numel() for p in params)
     print(f"{args.variant}: {n_train / 1e6:.2f} M trainable LoRA parameters, {n_ckpt} motion modules checkpointed")
 
-    manifest = json.loads((DATA / "manifest.json").read_text())
+    data = args.data_dir if args.data_dir.is_absolute() else REPO_ROOT / args.data_dir
+    manifest = json.loads((data / "manifest.json").read_text())
     by_class = {}
     for c in manifest["clips"]:
         by_class.setdefault(c["class"], []).append(c)
@@ -125,7 +153,15 @@ def main():
         cs = sorted(cs, key=lambda c: c["path"])
         val.append(cs[-1])
         train += cs[:-1]
-    clips = {c["path"]: read_clip(DATA / c["path"]) for c in train + val}
+    # a flat copy (the Kaggle dataset has no class folders) is found by file name
+    find = lambda rel: data / rel if (data / rel).exists() else data / Path(rel).name
+    clips = {c["path"]: read_clip(find(c["path"])) for c in train + val}
+    shots = {k: usable_shots(x) if args.cut_free else [(0, len(x))] for k, x in clips.items()}
+    if args.cut_free:
+        print("cut-free shots:", {Path(k).stem[:30]: [b - a for a, b in v] for k, v in shots.items()})
+
+    def clip_window(path, rng):
+        return window(pick_shot(clips[path], shots[path], rng), rng)
 
     @torch.no_grad()
     def embed(verb):
@@ -142,7 +178,7 @@ def main():
             pred = unet(noisy.half(), t, encoder_hidden_states=emb[verb]).sample
         return F.mse_loss(pred.float(), noise)
 
-    val_lat = [(encode_video(vae, window(clips[c["path"]], None)), c["verb"]) for c in val]
+    val_lat = [(encode_video(vae, clip_window(c["path"], None)), c["verb"]) for c in val]
     g = torch.Generator(device="cpu").manual_seed(1234)
     val_noise = [[torch.randn(lat.shape, generator=g).to(loaded.device) for _ in range(2)] for lat, _ in val_lat]
 
@@ -155,6 +191,8 @@ def main():
         return float(np.mean(ls))
 
     log = {"variant": args.variant, "steps": args.steps, "lr": args.lr, "rank": args.rank,
+           "seed": args.seed, "cut_free": args.cut_free,
+           "shots": {k: shots[k] for k in sorted(shots)},
            "trainable_params": n_train, "train_clips": [c["path"] for c in train],
            "val_clips": [c["path"] for c in val], "loss": [], "val": []}
     v0 = validate()
@@ -167,7 +205,7 @@ def main():
     t0 = time.perf_counter()
     for step in range(1, args.steps + 1):
         c = rng.choice(train)
-        lat = encode_video(vae, window(clips[c["path"]], rng))
+        lat = encode_video(vae, clip_window(c["path"], rng))
         t = torch.randint(0, sched.config.num_train_timesteps, (1,), device=loaded.device)
         loss = loss_at(lat, c["verb"], t, torch.randn_like(lat))
         opt.zero_grad(set_to_none=True)
@@ -188,6 +226,8 @@ def main():
     log["seconds"] = time.perf_counter() - t0
     log["peak_alloc_gb"] = torch.cuda.max_memory_allocated() / 2 ** 30
     meta = {"variant": args.variant, "rank": args.rank, "alpha": args.rank, "steps": args.steps, "lr": args.lr}
+    if args.cut_free:   # absent in the first three LoRAs; adapter names then stay lora_<variant>
+        meta.update(seed=args.seed, cut_free=True)
     unet.eval()
     from peft.utils import get_peft_model_state_dict
     log["saved_params"] = n_params(get_peft_model_state_dict(unet, adapter_name="motion"))

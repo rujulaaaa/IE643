@@ -1,0 +1,1821 @@
+{
+ "pair": {
+  "subject_a": "child",
+  "verb_a": "running",
+  "subject_b": "elderly man",
+  "verb_b": "jumping",
+  "scene": "on a beach",
+  "seed": 1337
+ },
+ "prompts": {
+  "A": "a child running on a beach, high quality, detailed",
+  "B": "a elderly man jumping on a beach, high quality, detailed",
+  "motion": "a elderly man running on a beach, high quality, detailed",
+  "content": "a child jumping on a beach, high quality, detailed"
+ },
+ "arms": [
+  {
+   "id": "B_ref",
+   "prompt": "a elderly man jumping on a beach, high quality, detailed",
+   "label": "B, unpatched"
+  },
+  {
+   "id": "motion.base",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "prompt only"
+  },
+  {
+   "id": "content.base",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "prompt only"
+  },
+  {
+   "id": "motion.dynamic.down_blocks.0.ft",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.down_blocks.0.all",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.down_blocks.1.ft",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.down_blocks.1.all",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.down_blocks.2.ft",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.down_blocks.2.all",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.down_blocks.3.ft",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.down_blocks.3.all",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.mid_block.ft",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.mid_block.all",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.up_blocks.0.ft",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.up_blocks.0.all",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.up_blocks.1.ft",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.up_blocks.1.all",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.up_blocks.2.ft",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.up_blocks.2.all",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.up_blocks.3.ft",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.up_blocks.3.all",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.allmm.one0",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1",
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1",
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1",
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1",
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2",
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2",
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2",
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2",
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.allmm.five1",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1",
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1",
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1",
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1",
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2",
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2",
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2",
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2",
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.allmm.ft",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1",
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1",
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1",
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1",
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2",
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2",
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2",
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2",
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.dynamic.allmm.all",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1",
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1",
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1",
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1",
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2",
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2",
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2",
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2",
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.tensor.allmm.ft",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1",
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1",
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1",
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1",
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2",
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2",
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2",
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2",
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "all",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.down_blocks.0.ft",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.down_blocks.0.all",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.down_blocks.1.ft",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.down_blocks.1.all",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.down_blocks.2.ft",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.down_blocks.2.all",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.down_blocks.3.ft",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.down_blocks.3.all",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.mid_block.ft",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.mid_block.all",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.up_blocks.0.ft",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.up_blocks.0.all",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.up_blocks.1.ft",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.up_blocks.1.all",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.up_blocks.2.ft",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.up_blocks.2.all",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.up_blocks.3.ft",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.up_blocks.3.all",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.allmm.one0",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1",
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1",
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1",
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1",
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2",
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2",
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2",
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2",
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.allmm.five1",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1",
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1",
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1",
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1",
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2",
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2",
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2",
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2",
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.allmm.ft",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1",
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1",
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1",
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1",
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2",
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2",
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2",
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2",
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.static.allmm.all",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1",
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1",
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1",
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1",
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2",
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2",
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2",
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2",
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.tensor.allmm.ft",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.0.motion_modules.0",
+     "down_blocks.0.motion_modules.1",
+     "down_blocks.1.motion_modules.0",
+     "down_blocks.1.motion_modules.1",
+     "down_blocks.2.motion_modules.0",
+     "down_blocks.2.motion_modules.1",
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1",
+     "up_blocks.0.motion_modules.0",
+     "up_blocks.0.motion_modules.1",
+     "up_blocks.0.motion_modules.2",
+     "up_blocks.1.motion_modules.0",
+     "up_blocks.1.motion_modules.1",
+     "up_blocks.1.motion_modules.2",
+     "up_blocks.2.motion_modules.0",
+     "up_blocks.2.motion_modules.1",
+     "up_blocks.2.motion_modules.2",
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2",
+     "mid_block.motion_modules.0"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "all",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.attn.all.ft",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "attn": {
+    "modules": [
+     "down_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.2.transformer_blocks.0.attn2",
+     "mid_block.motion_modules.0.transformer_blocks.0.attn1",
+     "mid_block.motion_modules.0.transformer_blocks.0.attn2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0
+   }
+  },
+  {
+   "id": "motion.attn.all.all",
+   "prompt": "a elderly man running on a beach, high quality, detailed",
+   "label": "",
+   "attn": {
+    "modules": [
+     "down_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.2.transformer_blocks.0.attn2",
+     "mid_block.motion_modules.0.transformer_blocks.0.attn1",
+     "mid_block.motion_modules.0.transformer_blocks.0.attn2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "alpha": 1.0
+   }
+  }
+ ]
+}
