@@ -535,9 +535,8 @@ storing activations was impossible which lead to the lockstep sampler and online
 Second the probing sweep falsified H1 and H3 so teh map did not give a clean motion layer to patch to. 
 Third the predicted component patches did not meet the criterion on test pairs. That lead us to 
 review the literature again to find attention  level operators and use H2 timings directly through
-prompt switching. We 
-
-
+prompt switching. We then repeated the probing on 3 other models adn added a two directional
+causal tests to check that the map is not model specific. 
 
 \textbf{Lockstep sampler and online scoring.} A selectivity map needs, for every pair, the
 distance between two clips' activations at every coordinate and step. Caching the anchor clip's
@@ -629,6 +628,72 @@ patch adds over simply changing the prompt. The pre-registered success criterion
 parts: in both directions, the median $\dD$ is positive, its 95\% paired-bootstrap CI over pairs
 excludes zero, and subject consistency stays within 10\% of the source clip's.
 
+\textbf{Attention-level edits (Stage 6b).} The component patches write into the residual stream
+and that stream carries both content and motion. H3 already showed us that even the frame mean
+$\xs$ of a motion module carries some motion, so a static patch also drags some motion along with
+it. The editing methods in the literature work one level lower, inside the attention. They only
+change what each position looks at, and the target keeps its own queries, so it keeps its own
+layout. We built three such operators and tested them with the same pairs, metric and success
+criterion as before. All the operators and the rule for picking one of them were written down
+before any of them ran (D-37). Since the test pairs had already been used once, we treat this stage
+as exploratory and report it separately from the pre-registered verdict.
+\begin{itemize}
+\item \textbf{Key/value injection} into spatial self-attention, following MasaCtrl
+  \citep{cao2023masactrl} and the content branch of UniEdit \citep{bai2024uniedit}. From a chosen
+  step onwards the target's spatial self-attention uses its own queries with the source's keys and
+  values (Eq.~\eqref{eq:masactrl}). The target gets the source's appearance but keeps its own layout
+  and motion. We have a frame-wise version, where frame $f$ reads source frame $f$, and a frame-0
+  version, where every frame reads source frame 0. The frame-0 version is there because frame-wise
+  keys and values also carry the layout of each source frame, and with it some of the source's motion.
+\item \textbf{Temporal attention injection over all 25 steps}, the motion branch of UniEdit. It is
+  the same operator as our baseline (Eq.~\eqref{eq:attn_inject}) but applied over the whole
+  trajectory instead of the first third.
+\item \textbf{Dual-source edits}, where appearance comes from one clip and motion from the other at
+  the same time. In the motion direction the output takes A's temporal attention and B's spatial keys
+  and values. In the content direction it takes A's keys and values and B's temporal attention.
+\end{itemize}
+For placement we first used what the papers use: keys and values in \code{up_blocks.2}--\code{3} or
+in every decoder block, starting from step 2 or step 5, and temporal attention in all modules, in
+\code{up_blocks.0}, or in \code{up_blocks.1}, the block that MotionClone \citep{ling2025motionclone}
+and MOFT \citep{xiao2024moft} use. We then added three \emph{probe-placed} arms whose placement comes
+from our own map instead of a paper: temporal attention in \code{up_blocks.0} and the mid block (the
+blocks that lean towards motion under H1) at steps 0--2 (the H2 window) and at all steps, and keys and
+values in \code{down_blocks.2}, which has the strongest content selectivity in $S_{stat}$. That makes
+5 motion arms and 6 content arms, run on the 4 dev pairs. The rule picks, for each direction and each
+family (single-source or dual), the arm with the highest median $\dD$ among the arms whose
+subject-consistency ratio is at least 0.9, with ties going to fewer modules. It picked:
+\begin{itemize}
+\item motion, single: temporal attention in every module at every step;
+\item motion, dual: the same, plus B's keys and values in \code{up_blocks.2}--\code{3} from step 2;
+\item content, single: the probe-placed keys and values in \code{down_blocks.2};
+\item content, dual: A's keys and values with B's temporal attention at every step.
+\end{itemize}
+As with the patches, injecting a clip's own keys and values into itself gives back exactly the same clip.
+
+One thing has to be said about the dual-source arms. They read clip B and are then scored partly
+against B ($s_c(\text{out},B)$ in the motion direction and $s_m(\text{out},B)$ in the content
+direction), so part of their score comes from the way they are built. They answer a different
+question, which is whether we can swap motion and appearance between two clips, and not whether we
+can edit a clip with a new prompt. So we report them as a separate family and do not compare them
+with the prompt-only edit as if they were the same thing.
+
+\textbf{Prompt switching timed by H2 (Stage 6c).} H2 says that motion is decided in the first two of
+the 25 steps. If that is true, an edit should not need any surgery inside the network at all. We can
+denoise with one prompt for the first $\tau$ steps and then switch to the other prompt. In the motion
+direction we start with A's prompt and switch to (B's subject, A's verb) at step $\tau$. In the
+content direction we start with (A's subject, B's verb) and switch to A's prompt. Every track starts
+from the pair's shared noise. We also built a \emph{masked} switch for the motion direction,
+following EIDT-V \citep{jagpal2025eidtv}. From step $\tau$ on the latent becomes
+$z \leftarrow M\cdot z + (1-M)\cdot z_A$, where $M$ is A's subject mask, so everything outside the
+subject stays as it is in A. The mask comes from A's cross-attention, aggregated as in DAAM
+\citep{tang2023daam} but keeping the frame axis: the attention on the subject's tokens is averaged over
+heads, upsampled, summed over the 16 spatial cross-attention layers and all 25 steps, thresholded at
+0.4 of each frame's maximum and dilated by 7 latent pixels. The pre-registered arms use $\tau = 2$, the
+H2 changepoint. That number came from the probing sweep, so nothing was chosen on the edit pairs.
+The other values ($\tau \in \{1, 3, 5, 8\}$ and masked $\tau = 3$) are exploratory and show how the
+result changes with the switch time. If the H2 timing is causal, this curve should bend sharply near
+$\tau = 2$. So this stage is a test of H2 and an editing method at the same time (D-38).
+
 \textbf{Motion LoRAs (the trained model).} LoRA \citep{hu2022lora} adds a trainable low-rank update
 $\Delta W = \frac{\alpha}{r}BA$ to frozen weight matrices. We put LoRA on the query, key, value and
 output projections of the temporal attention layers, in three placements with the same rank,
@@ -646,6 +711,159 @@ The loss is the standard $\epsilon$-prediction objective of the frozen model,
 \end{equation}
 on 16-frame VAE latents $z_0$ of real clips with caption $c$ = ``a person \{verb\}''; only the LoRA
 matrices receive gradients.
+
+We chose LoRA over fine-tuning the whole motion adapter because it trains about 2--10\,M parameters
+instead of 417\,M, so it fits on the 8\,GB laptop GPU and we can control exactly where it goes. We put
+it only on the temporal attention projections because that is where information moves across frames,
+which is also the choice made in the temporal path of MotionDirector \citep{zhao2024motiondirector}.
+The \code{anti} LoRA is a bit bigger than \code{probe}, so if \code{probe} wins it cannot be because it
+has more parameters. Diffusers' gradient checkpointing covers only the ResNets of this model, so we
+wrapped every motion module in checkpointing ourselves to fit training in memory (Section~\ref{sec:exp}).
+
+\textbf{Upload path: DDIM inversion.} Every edit needs a source track whose activations we can cache
+at every step. An uploaded video has no generation behind it, so we make one. The video is cut to its
+longest shot, where a cut is a jump in mean grey-level difference between frames that is larger than
+both 4$\times$ the clip's median jump and 20. The shot is resampled to 16 frames, encoded with the VAE
+and inverted with deterministic DDIM ($\eta = 0$, text-conditional only, no CFG) onto the same 25
+timesteps the sampler uses. Each inversion step goes from a cleaner latent $z_k$ to a noisier one,
+\begin{equation}
+\hat z_0 = \frac{z_k - \sqrt{1-\bar\alpha_k}\,\epsilon}{\sqrt{\bar\alpha_k}}, \qquad
+z_{k+1} = \sqrt{\bar\alpha_{k+1}}\,\hat z_0 + \sqrt{1-\bar\alpha_{k+1}}\,\epsilon,
+\end{equation}
+with $\epsilon$ predicted at $z_k$. During the edit the source track is driven along this trajectory:
+at each step the U-Net sees the inverted latent, so the activations we cache are the video's, and its
+own update is replaced by the next inverted latent. The new clip does not start from the inverted
+noise itself, because inverted latents are not Gaussian and sampling from them with CFG 7.5 gives
+blotchy, grid-patterned clips even without any edit. It starts from the inverted noise and the seed's
+Gaussian noise added at equal variance and rescaled to unit variance. Section~\ref{sec:res_upload}
+compares this start with the other two.
+
+\textbf{Experiment 2: replication on other models and causal tests.} Experiment 1 had three weak
+points. First, motion was just a word. The only motion label we had was the verb in the prompt, and
+the frozen SD1.5 base morphs from frame to frame, so $\xd$ holds appearance drift as well as real
+movement. Every layer after cross-attention also sees the verb token, so a verb probe can succeed
+without any motion being represented. Second, our grid was coarse. We probed one motion module per
+block, while \code{up_blocks.1}, the motion site in MOFT, MotionClone and DMT \citep{yatim2024dmt},
+has three. Third, our causal tests went in one direction only and used 12 pairs. Patching in one
+direction tests whether a site is sufficient but not whether it is necessary
+\citep{heimersheim2024patching}, and from the width of our CIs we would need about 25 pairs per claim
+to detect an effect of 0.10. Experiment 2 was built to fix each of these, and all of its rules were
+fixed before any of its data were generated (D-35).
+
+\emph{Four models.} We crossed the image weights, SD1.5 or epiCRealism \citep{hf_epicrealism} (a
+community fine-tune of SD1.5), with the motion weights, adapter \mbox{v1-5-2} or \mbox{v1-5-3}
+\citep{hf_animatediff_v3}. Only these weights change. The sampler, the prompts and the CPU-drawn noise
+are the same in all four cells, so every comparison between cells is paired by prompt and noise.
+Swapping the base tells us whether the motion site depends on the image features that go into the
+motion modules, and swapping the adapter tells us whether it belongs to the motion prior. The \mbox{v1-5-3} adapter has
+no motion module in the mid block (20 instead of 21), so we match coordinates by block and position.
+Each cell has 240 clips: the probing vocabulary with seeds 42 and 1337 and both scenes. Seed 2024 was
+kept aside for the causal tests.
+
+\emph{A finer sweep and measured motion.} The sweep hooks 117 coordinates, the 95 from Experiment 1
+plus 22 ResNet outputs, because Basu et al.\ \citep{basu2024localizing} found that much of Stable
+Diffusion's knowledge sits in the ResNets and self-attention rather than in cross-attention. Every
+coordinate is count-sketched to 512 dimensions, and $\xd$ in the refined \code{up_blocks.0} and
+\code{up_blocks.1} coordinates is sketched to 2{,}048 dimensions at steps 0--14, since sketched cosines
+close to zero are noisy at 512. Distances between pairs are still exact and computed online in
+lockstep. To turn motion into something we measure, we ran RAFT optical flow \citep{teed2020raft} on
+every clip, removed camera motion by subtracting the median background flow, and used the DAAM subject
+masks to keep only the subject's flow. CLIP frame embeddings are the content measure.
+
+\emph{Quality gate.} Before choosing one cell for the expensive steps we scored all 960 clips with
+checks from VBench \citep{huang2024vbench}: subject consistency (DINO \citep{caron2021dino} similarity
+of each frame to the first and to the previous frame), dynamic degree (a clip moves if enough frame
+pairs have a large top-5\% RAFT flow), CLIP-T for text alignment, and X-CLIP \citep{ni2022xclip} to
+check that the verb is recognisable. The rule was to take the highest subject consistency among the
+cells with a dynamic share of at least 0.5 and CLIP-T within 0.01 of the best. No cell passed both.
+Both epiCRealism cells hardly move (dynamic share 0.021 and 0.004), and both SD1.5 cells missed the
+CLIP-T tolerance by 0.001--0.002. The rule did not say what to do in that case, so before anything
+else ran we dropped the CLIP-T condition and kept the motion one (D-39), because subject consistency
+on its own rewards videos that do not move. The primary cell is SD1.5 with \mbox{v1-5-2}, the same model as
+Experiment 1, and the ladder verbs are walking and running, the two that X-CLIP recognised best.
+
+\emph{Looking for presence.} On each cell we ran the following.
+\begin{itemize}
+\item \textbf{A confirmatory test} of Experiment 1's motion site (\code{up_blocks.0} motion module 2,
+  steps 0--2, $S_{dyn}$): each subject's mean selectivity, and an exact one-sided sign-flip test over
+  the 15 subjects ($2^{15}$ patterns). The site replicates if $p < 0.05$. This is the only
+  confirmatory test; everything else here is exploratory.
+\item \textbf{Selectivity maps} with a sign-flip $t$ in every cell and max-$|t|$ family-wise
+  correction over the whole map.
+\item \textbf{ANOVA variance fractions.} The design is balanced, so the variance of an activation
+  splits exactly into subject, verb, scene, seed and subject$\times$verb fractions. This gives a direct
+  ``how much is content and how much is motion'' number for each layer.
+\item \textbf{RSA with variance partitioning} \citep{kriegeskorte2008rsa}. For each layer and step,
+  the clip-by-clip distance matrix is regressed on three model matrices: content (CLIP image
+  embeddings), motion (subject-masked flow) and the prompt's CLIP text embedding. The \emph{unique}
+  motion share is the part that flow explains beyond content and text. Significance comes from
+  permuting clips within a seed (49 draws) with max-over-map correction.
+\item \textbf{Debiased CKA} \citep{kornblith2019cka} to compare layers within a cell and across cells.
+  With 60--120 clips and 512 features, ordinary CKA is high even for random matrices, so we use the
+  unbiased version.
+\item \textbf{Flow decoding gain.} Ridge regression decodes the part of the flow that changes
+  \emph{within} a prompt (across seeds) from the layer's $\xd$, and separately from the step-$t$
+  latent. The gain $G = \max(R^2_{layer},0) - \max(R^2_{latent},0)$ is the motion information the layer
+  adds over the noisy latent. Variation within a prompt is the one kind of motion that the prompt
+  itself cannot explain.
+\item \textbf{Channel selectivity}, in the style of MOFT, to see whether motion sits in a few channels.
+\end{itemize}
+After analysing the first cell, and before selecting anything, we found and corrected three mistakes
+in the analysis (D-36). The ridge strength had been chosen by leave-one-clip-out CV, which leaks through
+the paired residuals of a prompt's two seeds, so we replaced it with grouped 4-fold CV over subjects.
+The RSA was missing the text-embedding matrix that the design asked for; without it the motion share
+was significant in 82\% of cells, because the verb word reaches every layer through the text. And the
+channel energies stored in fp16 underflowed, so we recomputed them in fp64.
+
+\emph{Testing use.} The pre-registered rule picked four candidate sites on the primary cell:
+(1) Experiment 1's site, \code{up_blocks.0} motion module 2 at steps 0--2, on $\xd$; (2) the refined
+coordinate with the highest unique RSA motion share, in a 3-step window at its peak, on $\xd$; (3) all
+three \code{up_blocks.1} motion modules at steps 0--7, on $\xd$, the site from the literature; and
+(4) the coordinate with the highest unique RSA content share, at its peak, on $\xs$. Each was tested on
+25 motion and 25 content pairs drawn from the held-out seed 2024, by patching in three ways:
+\begin{itemize}
+\item A$\to$B, running B with A's activation, which tests whether the site is \emph{sufficient};
+\item B$\to$A, running A with B's activation, which tests whether it is \emph{necessary};
+\item C$\to$B, patching from an unrelated clip C, which separates ``carries A's property'' from
+  ``any disruption at all''.
+\end{itemize}
+Following Zhang and Nanda \citep{zhang2024patching} we normalise the effect,
+\begin{equation}
+\mathrm{PE}_P = \frac{D_P(x_{patch}) - D_P(x_B)}{D_P(x_A) - D_P(x_B)},
+\end{equation}
+where $D_P$ is a contrastive score for property $P$ (for motion, flow similarity to A minus flow
+similarity to B). PE is 0 when nothing transfers and 1 when everything does, and the necessity effect
+NE is defined the same way for B$\to$A. The CIs come from a bootstrap over subjects.
+
+As a second test of necessity we used LEACE \citep{belrose2023leace}, a closed-form eraser that makes a
+concept linearly unpredictable while changing the activation as little as possible. We fitted it on a
+candidate's $\xd$ with the verb as the concept (rank at most 3) and applied it as a hook during
+sampling. The control is a random erasure of the same rank, as in amnesic probing
+\citep{elazar2021amnesic}: if LEACE hurts the motion more than the random erasure does, the directions
+it removed were being used. We re-centred the eraser over frames so that it does not shift $\xs$.
+
+To put all of this together we wrote a decision rule, combining ideas from Hewitt and Liang
+\citep{hewitt2019control}, amnesic probing and Heimersheim and Nanda; the combination itself is ours.
+\begin{itemize}
+\item \textbf{E, presence:} the site's unique RSA share or its decoding gain is above zero.
+\item \textbf{S, sufficiency:} the CI of its A$\to$B effect is above zero and above the C$\to$B control.
+\item \textbf{N, necessity:} the CI of its B$\to$A effect is above zero, or LEACE hurts more than
+  random erasure.
+\item \textbf{D, dissociation:} the site moves its own property while the other property stays
+  within $\pm 0.1$.
+\end{itemize}
+A site ``encodes but does not use'' a property when E holds and both S and N fail. It ``uses'' the
+property when S or N holds, and we say which one. We would only call a site \emph{the} motion locus if
+it showed a double dissociation against a content site.
+
+\emph{Content ladder.} To turn one-word swaps into dose-response curves, the ladder changes the
+subject in steps: a null step (``a dog'' $\to$ ``one dog''), then colour, coat, breed, species, scene
+and lighting, for 8 base animals $\times$ 2 verbs $\times$ 7 variants $\times$ 2 seeds. Each layer's
+distance is regressed on the measured CLIP content change and the measured flow change, which gives
+the layer's sensitivity to content with the motion taken out. This run was still going when we wrote
+this report. The design also had a LoRA test (modules picked by the probes against 19 random module
+sets with the same number of parameters, scored with the Motion Fidelity Score of DMT), MDL probing
+\citep{voita2020mdl} and attribution patching. We could not run these within our compute budget.
 
 \textbf{Interface.} The brief asks for an interface where a user can test the method on their
 own inputs. We built a Gradio app (\code{scripts/app.py}) over an engine class
@@ -669,6 +887,37 @@ request. It has four tabs.
 \end{itemize}
 Every live edit is saved with its GIFs, scores and the full request, so a result shown in the
 app can be reproduced.
+
+\subsection{Loss functions and objectives} \label{sec:losses}
+
+Most of what we do needs no training at all. The probing, the patches and the attention edits change
+no weights, and the edit score $D$ is only used to evaluate. A loss appears only where we train
+something, and Table~\ref{tab:losses} lists them.
+
+\begin{table}[!h]
+\centering
+\small
+\begin{tabular}{p{3.0cm}p{6.2cm}p{6.0cm}}
+\toprule
+What is trained & Loss or objective & Why this one \\
+\midrule
+AnimateDiff itself (pretrained, not by us) & $\mathbb{E}\,\|\epsilon - \epsilon_\theta(z_t,t,c)\|_2^2$, Eq.~\eqref{eq:eps_loss} &
+  Defines what the network computes. It was never told about content or motion, so any split is something it learned on its own. \\
+Motion LoRA & the same $\epsilon$-prediction loss, with gradients only into $A$ and $B$ of $\Delta W = \frac{\alpha}{r}BA$ &
+  Keeps the model's own objective, so the LoRA learns motion in the model's terms instead of a new task. \\
+Linear probes & multinomial cross-entropy with an L2 penalty ($C = 1$), on PCA of the count-sketched $\xd$ or $\xs$ &
+  Asks whether the information can be read out linearly, which is the usual probing question. \\
+Flow decoder (Exp.~2) & ridge, $\|y - Xw\|^2 + \lambda\|w\|^2$, with $\lambda$ chosen by grouped 4-fold CV over subjects &
+  The gain over the latent is the motion information the layer adds; grouped CV avoids the leak fixed in D-36. \\
+LEACE eraser (Exp.~2) & closed form: the smallest change to $x$ after which no linear classifier can predict the verb &
+  Removes exactly the linearly readable verb information, to test whether the model needs it. \\
+\midrule
+Not losses & $S$, $D$, $\dD$, PE, NE & Used only to measure and to evaluate. \\
+\bottomrule
+\end{tabular}
+\caption{Every loss or objective used in the project.}
+\label{tab:losses}
+\end{table}
 
 \section{Data set Details} \label{sec:data}
 
@@ -1104,9 +1353,15 @@ are released with this report.
 
 \bibitem{basu2024localizing} Samyadeep Basu, Nanxuan Zhao, Vlad Morariu, Soheil Feizi, and Varun Manjunatha. Localizing and editing knowledge in text-to-image generative models, International Conference on Learning Representations (ICLR), 2024. \url{https://arxiv.org/abs/2310.13730}
 
+\bibitem{belrose2023leace} Nora Belrose, David Schneider-Joseph, Shauli Ravfogel, Ryan Cotterell, Edward Raff, and Stella Biderman. LEACE: Perfect linear concept erasure in closed form, Advances in Neural Information Processing Systems (NeurIPS), 2023. \url{https://arxiv.org/abs/2306.03819}
+
 \bibitem{blattmann2023align} Andreas Blattmann, Robin Rombach, Huan Ling, Tim Dockhorn, Seung Wook Kim, Sanja Fidler, and Karsten Kreis. Align your latents: High-resolution video synthesis with latent diffusion models, IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023. \url{https://arxiv.org/abs/2304.08818}
 
 \bibitem{cao2023masactrl} Mingdeng Cao, Xintao Wang, Zhongang Qi, Ying Shan, Xiaohu Qie, and Yinqiang Zheng. MasaCtrl: Tuning-free mutual self-attention control for consistent image synthesis and editing, IEEE/CVF International Conference on Computer Vision (ICCV), 2023. \url{https://arxiv.org/abs/2304.08465}
+
+\bibitem{caron2021dino} Mathilde Caron, Hugo Touvron, Ishan Misra, Herv\'e J\'egou, Julien Mairal, Piotr Bojanowski, and Armand Joulin. Emerging properties in self-supervised vision transformers, IEEE/CVF International Conference on Computer Vision (ICCV), 2021. \url{https://arxiv.org/abs/2104.14294}
+
+\bibitem{elazar2021amnesic} Yanai Elazar, Shauli Ravfogel, Alon Jacovi, and Yoav Goldberg. Amnesic probing: Behavioral explanation with amnesic counterfactuals, Transactions of the Association for Computational Linguistics (TACL), 2021. \url{https://aclanthology.org/2021.tacl-1.10/}
 
 \bibitem{farneback2003} Gunnar Farneb\"ack. Two-frame motion estimation based on polynomial expansion, Scandinavian Conference on Image Analysis (SCIA), 2003. \url{https://doi.org/10.1007/3-540-45103-X_50}
 
@@ -1116,6 +1371,8 @@ are released with this report.
 
 \bibitem{hertz2023p2p} Amir Hertz, Ron Mokady, Jay Tenenbaum, Kfir Aberman, Yael Pritch, and Daniel Cohen-Or. Prompt-to-prompt image editing with cross attention control, International Conference on Learning Representations (ICLR), 2023. \url{https://arxiv.org/abs/2208.01626}
 
+\bibitem{hewitt2019control} John Hewitt and Percy Liang. Designing and interpreting probes with control tasks, Conference on Empirical Methods in Natural Language Processing (EMNLP), 2019. \url{https://arxiv.org/abs/1909.03368}
+
 \bibitem{ho2020ddpm} Jonathan Ho, Ajay Jain, and Pieter Abbeel. Denoising diffusion probabilistic models, Advances in Neural Information Processing Systems (NeurIPS), 2020. \url{https://arxiv.org/abs/2006.11239}
 
 \bibitem{ho2021cfg} Jonathan Ho and Tim Salimans. Classifier-free diffusion guidance, NeurIPS Workshop on Deep Generative Models and Downstream Applications, 2021. \url{https://arxiv.org/abs/2207.12598}
@@ -1124,13 +1381,23 @@ are released with this report.
 
 \bibitem{hu2022lora} Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. LoRA: Low-rank adaptation of large language models, International Conference on Learning Representations (ICLR), 2022. \url{https://arxiv.org/abs/2106.09685}
 
+\bibitem{huang2024vbench} Ziqi Huang, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuanhan Zhang, Tianxing Wu, Qingyang Jin, Nattapol Chanpaisit, Yaohui Wang, Xinyuan Chen, Limin Wang, Dahua Lin, Yu Qiao, and Ziwei Liu. VBench: Comprehensive benchmark suite for video generative models, IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024. \url{https://arxiv.org/abs/2311.17982}
+
+\bibitem{jagpal2025eidtv} Diljeet Jagpal, Xi Chen, and Vinay P. Namboodiri. EIDT-V: Exploiting intersections in diffusion trajectories for model-agnostic, zero-shot, training-free text-to-video generation, IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025. \url{https://arxiv.org/abs/2504.06861}
+
 \bibitem{karaev2024cotracker} Nikita Karaev, Ignacio Rocco, Benjamin Graham, Natalia Neverova, Andrea Vedaldi, and Christian Rupprecht. CoTracker: It is better to track together, European Conference on Computer Vision (ECCV), 2024. \url{https://arxiv.org/abs/2307.07635}
+
+\bibitem{kornblith2019cka} Simon Kornblith, Mohammad Norouzi, Honglak Lee, and Geoffrey Hinton. Similarity of neural network representations revisited, International Conference on Machine Learning (ICML), 2019. \url{https://arxiv.org/abs/1905.00414}
+
+\bibitem{kriegeskorte2008rsa} Nikolaus Kriegeskorte, Marieke Mur, and Peter Bandettini. Representational similarity analysis: connecting the branches of systems neuroscience, Frontiers in Systems Neuroscience, 2008. \url{https://doi.org/10.3389/neuro.06.004.2008}
 
 \bibitem{kuehne2011hmdb} Hildegard Kuehne, Hueihan Jhuang, Est\'ibaliz Garrote, Tomaso Poggio, and Thomas Serre. HMDB: A large video database for human motion recognition, IEEE International Conference on Computer Vision (ICCV), 2011. \url{https://doi.org/10.1109/ICCV.2011.6126543}
 
 \bibitem{ling2025motionclone} Pengyang Ling, Jiazi Bu, Pan Zhang, Xiaoyi Dong, Yuhang Zang, Tong Wu, Huaian Chen, Jiaqi Wang, and Yi Jin. MotionClone: Training-free motion cloning for controllable video generation, International Conference on Learning Representations (ICLR), 2025. \url{https://arxiv.org/abs/2406.05338}
 
 \bibitem{meng2022rome} Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov. Locating and editing factual associations in GPT, Advances in Neural Information Processing Systems (NeurIPS), 2022. \url{https://arxiv.org/abs/2202.05262}
+
+\bibitem{ni2022xclip} Bolin Ni, Houwen Peng, Minghao Chen, Songyang Zhang, Gaofeng Meng, Jianlong Fu, Shiming Xiang, and Haibin Ling. Expanding language-image pretrained models for general video recognition, European Conference on Computer Vision (ECCV), 2022. \url{https://arxiv.org/abs/2208.02816}
 
 \bibitem{radford2021clip} Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, and Ilya Sutskever. Learning transferable visual models from natural language supervision, International Conference on Machine Learning (ICML), 2021. \url{https://arxiv.org/abs/2103.00020}
 
@@ -1139,6 +1406,12 @@ are released with this report.
 \bibitem{ronneberger2015unet} Olaf Ronneberger, Philipp Fischer, and Thomas Brox. U-Net: Convolutional networks for biomedical image segmentation, International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), 2015. \url{https://arxiv.org/abs/1505.04597}
 
 \bibitem{song2021ddim} Jiaming Song, Chenlin Meng, and Stefano Ermon. Denoising diffusion implicit models, International Conference on Learning Representations (ICLR), 2021. \url{https://arxiv.org/abs/2010.02502}
+
+\bibitem{tang2023daam} Raphael Tang, Linqing Liu, Akshat Pandey, Zhiying Jiang, Gefei Yang, Karun Kumar, Pontus Stenetorp, Jimmy Lin, and Ferhan Ture. What the DAAM: Interpreting Stable Diffusion using cross attention, Annual Meeting of the Association for Computational Linguistics (ACL), 2023. \url{https://aclanthology.org/2023.acl-long.310/}
+
+\bibitem{teed2020raft} Zachary Teed and Jia Deng. RAFT: Recurrent all-pairs field transforms for optical flow, European Conference on Computer Vision (ECCV), 2020. \url{https://arxiv.org/abs/2003.12039}
+
+\bibitem{voita2020mdl} Elena Voita and Ivan Titov. Information-theoretic probing with minimum description length, Conference on Empirical Methods in Natural Language Processing (EMNLP), 2020. \url{https://arxiv.org/abs/2003.12298}
 
 \bibitem{wu2023tav} Jay Zhangjie Wu, Yixiao Ge, Xintao Wang, Stan Weixian Lei, Yuchao Gu, Yufei Shi, Wynne Hsu, Ying Shan, Xiaohu Qie, and Mike Zheng Shou. Tune-A-Video: One-shot tuning of image diffusion models for text-to-video generation, IEEE/CVF International Conference on Computer Vision (ICCV), 2023. \url{https://arxiv.org/abs/2212.11565}
 
@@ -1151,6 +1424,10 @@ are released with this report.
 \bibitem{zhao2024motiondirector} Rui Zhao, Yuchao Gu, Jay Zhangjie Wu, David Junhao Zhang, Jiawei Liu, Weijia Wu, Jussi Keppo, and Mike Zheng Shou. MotionDirector: Motion customization of text-to-video diffusion models, European Conference on Computer Vision (ECCV), 2024. \url{https://arxiv.org/abs/2310.08465}
 
 \bibitem{hf_animatediff} Yuwei Guo and others. \url{https://huggingface.co/guoyww/animatediff-motion-adapter-v1-5-2}, Accessed on: 20th October, 2026.
+
+\bibitem{hf_animatediff_v3} Yuwei Guo and others. \url{https://huggingface.co/guoyww/animatediff-motion-adapter-v1-5-3}, Accessed on: 26th October, 2026.
+
+\bibitem{hf_epicrealism} emilianJR. \url{https://huggingface.co/emilianJR/epiCRealism}, Accessed on: 26th October, 2026.
 
 \bibitem{hf_diffusers} Hugging Face. \url{https://huggingface.co/docs/diffusers}, Accessed on: 20th October, 2026.
 
