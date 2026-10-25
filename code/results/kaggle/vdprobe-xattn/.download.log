@@ -1,0 +1,161 @@
+Downloading clip.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/768k [00:00<?, ?B/s]100%|██████████| 768k/768k [00:01<00:00, 600kB/s]100%|██████████| 768k/768k [00:01<00:00, 596kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach/clip.gif
+Downloading cross_attention.json to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/103k [00:00<?, ?B/s]100%|██████████| 103k/103k [00:00<00:00, 3.71MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach/cross_attention.json
+Downloading grid_scene.png to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/119k [00:00<?, ?B/s]100%|██████████| 119k/119k [00:00<00:00, 284kB/s]100%|██████████| 119k/119k [00:00<00:00, 283kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach/grid_scene.png
+Downloading grid_subject.png to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/111k [00:00<?, ?B/s]100%|██████████| 111k/111k [00:00<00:00, 249kB/s]100%|██████████| 111k/111k [00:00<00:00, 249kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach/grid_subject.png
+Downloading grid_verb.png to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/117k [00:00<?, ?B/s]100%|██████████| 117k/117k [00:00<00:00, 233kB/s]100%|██████████| 117k/117k [00:00<00:00, 233kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach/grid_verb.png
+Downloading masks.npz to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/666k [00:00<?, ?B/s]100%|██████████| 666k/666k [00:01<00:00, 590kB/s]100%|██████████| 666k/666k [00:01<00:00, 588kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach/masks.npz
+Downloading overlay_scene.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/706k [00:00<?, ?B/s]100%|██████████| 706k/706k [00:01<00:00, 575kB/s]100%|██████████| 706k/706k [00:01<00:00, 574kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach/overlay_scene.gif
+Downloading overlay_subject.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/730k [00:00<?, ?B/s]100%|██████████| 730k/730k [00:01<00:00, 604kB/s]100%|██████████| 730k/730k [00:01<00:00, 603kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach/overlay_subject.gif
+Downloading overlay_verb.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/718k [00:00<?, ?B/s]100%|██████████| 718k/718k [00:01<00:00, 531kB/s]100%|██████████| 718k/718k [00:01<00:00, 530kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach/overlay_verb.gif
+Downloading clip.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/711k [00:00<?, ?B/s]100%|██████████| 711k/711k [00:01<00:00, 587kB/s]100%|██████████| 711k/711k [00:01<00:00, 585kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach/clip.gif
+Downloading cross_attention.json to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/103k [00:00<?, ?B/s]100%|██████████| 103k/103k [00:00<00:00, 221kB/s]100%|██████████| 103k/103k [00:00<00:00, 220kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach/cross_attention.json
+Downloading grid_scene.png to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/121k [00:00<?, ?B/s]100%|██████████| 121k/121k [00:00<00:00, 281kB/s]100%|██████████| 121k/121k [00:00<00:00, 280kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach/grid_scene.png
+Downloading grid_subject.png to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/113k [00:00<?, ?B/s]100%|██████████| 113k/113k [00:00<00:00, 271kB/s]100%|██████████| 113k/113k [00:00<00:00, 269kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach/grid_subject.png
+Downloading grid_verb.png to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/118k [00:00<?, ?B/s]100%|██████████| 118k/118k [00:00<00:00, 236kB/s]100%|██████████| 118k/118k [00:00<00:00, 236kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach/grid_verb.png
+Downloading masks.npz to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/664k [00:00<?, ?B/s]100%|██████████| 664k/664k [00:01<00:00, 540kB/s]100%|██████████| 664k/664k [00:01<00:00, 538kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach/masks.npz
+Downloading overlay_scene.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/660k [00:00<?, ?B/s]100%|██████████| 660k/660k [00:00<00:00, 8.71MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach/overlay_scene.gif
+Downloading overlay_subject.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/668k [00:00<?, ?B/s]100%|██████████| 668k/668k [00:01<00:00, 580kB/s]100%|██████████| 668k/668k [00:01<00:00, 580kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach/overlay_subject.gif
+Downloading overlay_verb.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/649k [00:00<?, ?B/s]100%|██████████| 649k/649k [00:01<00:00, 549kB/s]100%|██████████| 649k/649k [00:01<00:00, 548kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach/overlay_verb.gif
+Downloading job0.log to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out
+  0%|          | 0.00/1.77k [00:00<?, ?B/s]100%|██████████| 1.77k/1.77k [00:00<00:00, 509kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/job0.log
+Downloading job1.log to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out
+  0%|          | 0.00/2.66k [00:00<?, ?B/s]100%|██████████| 2.66k/2.66k [00:00<00:00, 2.08MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/job1.log
+Downloading job2.log to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out
+  0%|          | 0.00/1.80k [00:00<?, ?B/s]100%|██████████| 1.80k/1.80k [00:00<00:00, 293kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/job2.log
+Downloading job3.log to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out
+  0%|          | 0.00/1.59k [00:00<?, ?B/s]100%|██████████| 1.59k/1.59k [00:00<00:00, 1.58MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/job3.log
+Downloading clip.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/880k [00:00<?, ?B/s]100%|██████████| 880k/880k [00:01<00:00, 616kB/s]100%|██████████| 880k/880k [00:01<00:00, 615kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach/clip.gif
+Downloading cross_attention.json to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/103k [00:00<?, ?B/s]100%|██████████| 103k/103k [00:00<00:00, 246kB/s]100%|██████████| 103k/103k [00:00<00:00, 246kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach/cross_attention.json
+Downloading grid_scene.png to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/117k [00:00<?, ?B/s]100%|██████████| 117k/117k [00:00<00:00, 234kB/s]100%|██████████| 117k/117k [00:00<00:00, 233kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach/grid_scene.png
+Downloading grid_subject.png to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/109k [00:00<?, ?B/s]100%|██████████| 109k/109k [00:00<00:00, 231kB/s]100%|██████████| 109k/109k [00:00<00:00, 231kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach/grid_subject.png
+Downloading grid_verb.png to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/116k [00:00<?, ?B/s]100%|██████████| 116k/116k [00:00<00:00, 258kB/s]100%|██████████| 116k/116k [00:00<00:00, 257kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach/grid_verb.png
+Downloading masks.npz to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/674k [00:00<?, ?B/s]100%|██████████| 674k/674k [00:01<00:00, 590kB/s]100%|██████████| 674k/674k [00:01<00:00, 587kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach/masks.npz
+Downloading overlay_scene.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/825k [00:00<?, ?B/s]100%|██████████| 825k/825k [00:01<00:00, 637kB/s]100%|██████████| 825k/825k [00:01<00:00, 637kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach/overlay_scene.gif
+Downloading overlay_subject.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/789k [00:00<?, ?B/s]100%|██████████| 789k/789k [00:01<00:00, 606kB/s]100%|██████████| 789k/789k [00:01<00:00, 604kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach/overlay_subject.gif
+Downloading overlay_verb.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/825k [00:00<?, ?B/s]100%|██████████| 825k/825k [00:01<00:00, 589kB/s]100%|██████████| 825k/825k [00:01<00:00, 587kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm2/s42__golden-retriever__running__on-a-beach/overlay_verb.gif
+Downloading clip.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/841k [00:00<?, ?B/s]100%|██████████| 841k/841k [00:01<00:00, 721kB/s]100%|██████████| 841k/841k [00:01<00:00, 717kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach/clip.gif
+Downloading cross_attention.json to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/103k [00:00<?, ?B/s]100%|██████████| 103k/103k [00:00<00:00, 243kB/s]100%|██████████| 103k/103k [00:00<00:00, 242kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach/cross_attention.json
+Downloading grid_scene.png to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/121k [00:00<?, ?B/s]100%|██████████| 121k/121k [00:00<00:00, 316kB/s]100%|██████████| 121k/121k [00:00<00:00, 315kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach/grid_scene.png
+Downloading grid_subject.png to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/116k [00:00<?, ?B/s]100%|██████████| 116k/116k [00:00<00:00, 250kB/s]100%|██████████| 116k/116k [00:00<00:00, 249kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach/grid_subject.png
+Downloading grid_verb.png to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/120k [00:00<?, ?B/s]100%|██████████| 120k/120k [00:00<00:00, 272kB/s]100%|██████████| 120k/120k [00:00<00:00, 272kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach/grid_verb.png
+Downloading masks.npz to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/672k [00:00<?, ?B/s]100%|██████████| 672k/672k [00:00<00:00, 716kB/s]100%|██████████| 672k/672k [00:00<00:00, 714kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach/masks.npz
+Downloading overlay_scene.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/763k [00:00<?, ?B/s]100%|██████████| 763k/763k [00:01<00:00, 554kB/s]100%|██████████| 763k/763k [00:01<00:00, 552kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach/overlay_scene.gif
+Downloading overlay_subject.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/777k [00:00<?, ?B/s]100%|██████████| 777k/777k [00:01<00:00, 607kB/s]100%|██████████| 777k/777k [00:01<00:00, 605kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach/overlay_subject.gif
+Downloading overlay_verb.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach
+  0%|          | 0.00/779k [00:00<?, ?B/s]100%|██████████| 779k/779k [00:01<00:00, 603kB/s]100%|██████████| 779k/779k [00:01<00:00, 600kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/out/sd15_mm3/s42__golden-retriever__running__on-a-beach/overlay_verb.gif
+Kernel log downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-xattn/vdprobe-xattn.log 

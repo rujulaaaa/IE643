@@ -54,3 +54,28 @@ def test_roundtrip_and_toggle(tiny_unet, tiny_run, tmp_path):
     from safetensors.torch import load_file
     dw = delta_w_norms(load_file(str(path)), alpha=4, rank=4)
     assert dw and all(v > 0 for v in dw.values())
+
+
+def test_module_set_lora_and_matched_subsets(tiny_unet, tmp_path, tiny_run):
+    from vdprobe.lora import lora_param_count, matched_random_subsets, motion_module_widths
+
+    widths = motion_module_widths(tiny_unet)
+    target = [m for m in widths if m.startswith("up_blocks.0.")][:1]
+    u = copy.deepcopy(tiny_unet)
+    params = add_motion_lora(u, "modules", rank=4, alpha=4, modules=target)
+    adapted = {n.split(".lora_A")[0] for n, _ in u.named_parameters() if ".lora_A." in n}
+    assert adapted and all(n.startswith(target[0] + ".") for n in adapted)
+    # 16 r C only holds when the attention inner dim equals C (true for AnimateDiff's modules)
+    inner = dict(u.named_modules())[target[0]].transformer_blocks[0].attn1.to_q.out_features
+    assert sum(p.numel() for p in params) == lora_param_count([inner], 4)
+    _perturb(u)
+    save_motion_lora(u, tmp_path / "m.safetensors", {"variant": "modules", "rank": 4, "alpha": 4,
+                                                      "modules": ",".join(target)})
+    v = copy.deepcopy(tiny_unet)
+    load_motion_lora(v, tmp_path / "m.safetensors")
+    run = tiny_run()
+    assert torch.allclose(_out(u, run), _out(v, run), atol=1e-3)      # weights are stored in fp16
+    subs = matched_random_subsets(widths, target, n=2, seed=0)
+    assert len({tuple(s) for s in subs}) == 2
+    for s in subs:
+        assert not set(s) & set(target) and sorted(widths[m] for m in s) == sorted(widths[m] for m in target)

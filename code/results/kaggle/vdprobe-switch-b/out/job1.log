@@ -1,0 +1,100 @@
+=== switch: /usr/bin/python3 -u scripts/switch_sweep.py --split test --shard 3/4 --out /kaggle/working/out/job3/switch
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1018.65it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1274.27it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:02,  1.76it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:01<00:00,  3.53it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2528.60it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  4.97it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.97it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 15.9 s
+[1/3] 42__in-a-forest__deer-spinning__brown-bear-running: source + 6 reference arms + 12 switch arms
+    step  5/25    120.3 s  (3.44 s per clip-step)
+    step 10/25    250.0 s  (3.57 s per clip-step)
+    step 15/25    377.9 s  (3.60 s per clip-step)
+    step 20/25    505.2 s  (3.61 s per clip-step)
+    step 25/25    632.2 s  (3.61 s per clip-step)
+    step  5/25    199.1 s  (3.62 s per clip-step)
+    step 10/25    398.4 s  (3.62 s per clip-step)
+    step 15/25    598.0 s  (3.62 s per clip-step)
+    step 20/25    797.9 s  (3.63 s per clip-step)
+    step 25/25    997.8 s  (3.63 s per clip-step)
+    step  5/25     36.2 s  (3.62 s per clip-step)
+    step 10/25     72.4 s  (3.62 s per clip-step)
+    step 15/25    108.6 s  (3.62 s per clip-step)
+    step 20/25    144.9 s  (3.62 s per clip-step)
+    step 25/25    181.2 s  (3.62 s per clip-step)
+wrote /kaggle/working/out/job3/switch/42__in-a-forest__deer-spinning__brown-bear-running/manifest.json
+  1811 s (90.6 s per clip), mask area 0.51922607421875, source diff between groups 0.00e+00
+[2/3] 1337__in-a-forest__athlete-walking__soldier-jumping: source + 6 reference arms + 12 switch arms
+    step  5/25    127.3 s  (3.64 s per clip-step)
+    step 10/25    258.6 s  (3.69 s per clip-step)
+    step 15/25    386.1 s  (3.68 s per clip-step)
+    step 20/25    513.3 s  (3.67 s per clip-step)
+    step 25/25    640.4 s  (3.66 s per clip-step)
+    step  5/25    199.1 s  (3.62 s per clip-step)
+    step 10/25    398.7 s  (3.62 s per clip-step)
+    step 15/25    598.4 s  (3.63 s per clip-step)
+    step 20/25    798.2 s  (3.63 s per clip-step)
+    step 25/25    997.8 s  (3.63 s per clip-step)
+    step  5/25     36.0 s  (3.60 s per clip-step)
+    step 10/25     72.1 s  (3.61 s per clip-step)
+    step 15/25    108.3 s  (3.61 s per clip-step)
+    step 20/25    144.5 s  (3.61 s per clip-step)
+    step 25/25    180.8 s  (3.62 s per clip-step)
+wrote /kaggle/working/out/job3/switch/1337__in-a-forest__athlete-walking__soldier-jumping/manifest.json
+  1819 s (91.0 s per clip), mask area 1.0, source diff between groups 0.00e+00
+[3/3] 2024__on-a-beach__soldier-walking__dancer-spinning: source + 6 reference arms + 12 switch arms
+    step  5/25    126.7 s  (3.62 s per clip-step)
+    step 10/25    257.7 s  (3.68 s per clip-step)
+    step 15/25    384.6 s  (3.66 s per clip-step)
+    step 20/25    511.5 s  (3.65 s per clip-step)
+    step 25/25    638.3 s  (3.65 s per clip-step)
+    step  5/25    198.7 s  (3.61 s per clip-step)
+    step 10/25    399.1 s  (3.63 s per clip-step)
+    step 15/25    598.5 s  (3.63 s per clip-step)
+    step 20/25    797.7 s  (3.63 s per clip-step)
+    step 25/25    997.1 s  (3.63 s per clip-step)
+    step  5/25     36.3 s  (3.63 s per clip-step)
+    step 10/25     72.8 s  (3.64 s per clip-step)
+    step 15/25    109.4 s  (3.65 s per clip-step)
+    step 20/25    146.1 s  (3.65 s per clip-step)
+    step 25/25    182.6 s  (3.65 s per clip-step)
+wrote /kaggle/working/out/job3/switch/2024__on-a-beach__soldier-walking__dancer-spinning/manifest.json
+  1818 s (90.9 s per clip), mask area 0.7028045654296875, source diff between groups 0.00e+00
+=== switch: exit 0 after 5818 s
+=== score: /usr/bin/python3 -u scripts/score_edits.py /kaggle/working/out/job3/switch --out /kaggle/working/out/job3/score
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1046.48it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1530.47it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00,  7.52it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2774.07it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 10.26it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  9.73it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 13.6 s
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 12011.23it/s]
+scored 1337__in-a-forest__athlete-walking__soldier-jumping: 19 clips
+scored 2024__on-a-beach__soldier-walking__dancer-spinning: 19 clips
+scored 42__in-a-forest__deer-spinning__brown-bear-running: 19 clips
+direction                  arm  median_D  median_dD  frac_dD_pos  d16_ci_lo  d16_ci_hi  consistency_ratio  sm_A  sc_B  sm_B  sc_A
+  content    content.switch.t2     0.166      0.165        0.667     -0.137      0.231              1.013 0.719 0.758 0.124 0.938
+  content          content.sel     0.209      0.133        1.000      0.036      0.207              0.989 0.346 0.762 0.095 0.884
+  content    content.switch.t5     0.193      0.103        1.000      0.056      0.192              0.986 0.302 0.746 0.170 0.853
+  content    content.switch.t3     0.159      0.069        1.000      0.041      0.112              0.996 0.538 0.745 0.204 0.915
+  content         content.base     0.090      0.000        0.000      0.000      0.000              0.982 0.273 0.742 0.091 0.795
+  content    content.switch.t8     0.078     -0.011        0.333     -0.012      0.038              0.980 0.278 0.750 0.112 0.804
+  content    content.switch.t1    -0.003     -0.167        0.333     -0.198      0.142              1.000 0.824 0.761 0.034 0.941
+   motion          motion.attn     0.394      0.238        0.667     -0.060      0.432              1.000 0.770 0.806 0.101 0.797
+   motion           motion.sel     0.308      0.179        0.667     -0.096      0.333              0.997 0.816 0.787 0.125 0.840
+   motion     motion.switch.t3     0.311      0.155        0.667     -0.095      0.344              1.024 0.534 0.811 0.098 0.820
+   motion     motion.switch.t1     0.246      0.090        0.667     -0.101      0.310              1.005 0.408 0.794 0.039 0.793
+   motion     motion.switch.t5     0.241      0.086        0.667     -0.111      0.269              0.996 0.650 0.774 0.086 0.828
+   motion     motion.switch.t2     0.223      0.067        0.667     -0.128      0.368              1.028 0.451 0.808 0.099 0.809
+   motion motion.switchmask.t3     0.188      0.032        0.667     -0.089      0.344              0.997 0.534 0.811 0.138 0.820
+   motion          motion.base     0.143      0.000        0.000      0.000      0.000              1.007 0.065 0.816 0.174 0.756
+   motion motion.switchmask.t2     0.152     -0.004        0.333     -0.128      0.368              1.016 0.571 0.808 0.095 0.809
+   motion     motion.switch.t8     0.055     -0.101        0.333     -0.116      0.233              0.992 0.880 0.766 0.019 0.918
+wrote /kaggle/working/out/job3/switch/score_summary.json
+=== score: exit 0 after 282 s

@@ -1,0 +1,226 @@
+{
+  "variant": "sd15_mm2",
+  "load_seconds": 57.79822806499999,
+  "loras": [
+    "lora_probe",
+    "lora_full",
+    "lora_anti"
+  ],
+  "lora_skipped": {},
+  "checks": {
+    "edit_motion_selected": {
+      "ok": true,
+      "seconds": 335.93277671999994,
+      "table": [
+        {
+          "clip": "source",
+          "sc_A": 1.0,
+          "sm_A": 1.0,
+          "motion_magnitude": 3.1319,
+          "consistency_ratio": 1.0,
+          "sc_B": 0.757,
+          "sm_B": 0.2744,
+          "D": null
+        },
+        {
+          "clip": "B_ref",
+          "sc_A": 0.757,
+          "sm_A": 0.2744,
+          "motion_magnitude": 1.3395,
+          "consistency_ratio": 1.0228,
+          "sc_B": 1.0,
+          "sm_B": 1.0,
+          "D": null
+        },
+        {
+          "clip": "base",
+          "sc_A": 0.7838,
+          "sm_A": 0.3772,
+          "motion_magnitude": 3.2394,
+          "consistency_ratio": 1.0097,
+          "sc_B": 0.9602,
+          "sm_B": 0.3493,
+          "D": 0.3448
+        },
+        {
+          "clip": "edit",
+          "sc_A": 0.8182,
+          "sm_A": 0.6011,
+          "motion_magnitude": 2.2969,
+          "consistency_ratio": 1.0069,
+          "sc_B": 0.9366,
+          "sm_B": 0.4106,
+          "D": 0.3707
+        }
+      ],
+      "pool": "local smoke",
+      "files": {
+        "source": "/kaggle/working/out/sd15_mm2/interface/20261024-220045_42__on-a-beach__golden-retriever-running__horse-walking__motion__selected/source.gif",
+        "B_ref": "/kaggle/working/out/sd15_mm2/interface/20261024-220045_42__on-a-beach__golden-retriever-running__horse-walking__motion__selected/B_ref.gif",
+        "base": "/kaggle/working/out/sd15_mm2/interface/20261024-220045_42__on-a-beach__golden-retriever-running__horse-walking__motion__selected/base.gif",
+        "edit": "/kaggle/working/out/sd15_mm2/interface/20261024-220045_42__on-a-beach__golden-retriever-running__horse-walking__motion__selected/edit.gif"
+      },
+      "progress_ticks": 26,
+      "progress_last": [
+        1.0,
+        "Scoring the clips (CLIP and optical flow)"
+      ]
+    },
+    "edit_content_selected": {
+      "ok": true,
+      "seconds": 341.91686203300003,
+      "table": [
+        {
+          "clip": "source",
+          "sc_A": 1.0,
+          "sm_A": 1.0,
+          "motion_magnitude": 3.1319,
+          "consistency_ratio": 1.0,
+          "sc_B": 0.7798,
+          "sm_B": 0.2354,
+          "D": null
+        },
+        {
+          "clip": "B_ref",
+          "sc_A": 0.7798,
+          "sm_A": 0.2354,
+          "motion_magnitude": 1.431,
+          "consistency_ratio": 1.017,
+          "sc_B": 1.0,
+          "sm_B": 1.0,
+          "D": null
+        },
+        {
+          "clip": "base",
+          "sc_A": 0.9493,
+          "sm_A": 0.3674,
+          "motion_magnitude": 4.0561,
+          "consistency_ratio": 0.9957,
+          "sc_B": 0.7925,
+          "sm_B": 0.3788,
+          "D": 0.2956
+        },
+        {
+          "clip": "edit",
+          "sc_A": 0.9553,
+          "sm_A": 0.4909,
+          "motion_magnitude": 3.5838,
+          "consistency_ratio": 1.0097,
+          "sc_B": 0.8006,
+          "sm_B": 0.3798,
+          "D": 0.1924
+        }
+      ],
+      "pool": "local smoke",
+      "files": {
+        "source": "/kaggle/working/out/sd15_mm2/interface/20261024-220627_42__on-a-beach__golden-retriever-running__horse-jumping__content__selected/source.gif",
+        "B_ref": "/kaggle/working/out/sd15_mm2/interface/20261024-220627_42__on-a-beach__golden-retriever-running__horse-jumping__content__selected/B_ref.gif",
+        "base": "/kaggle/working/out/sd15_mm2/interface/20261024-220627_42__on-a-beach__golden-retriever-running__horse-jumping__content__selected/base.gif",
+        "edit": "/kaggle/working/out/sd15_mm2/interface/20261024-220627_42__on-a-beach__golden-retriever-running__horse-jumping__content__selected/edit.gif"
+      },
+      "progress_ticks": 0
+    },
+    "edit_motion_lora_probe": {
+      "ok": true,
+      "seconds": 257.5170000400001,
+      "table": [
+        {
+          "clip": "source",
+          "sc_A": 1.0,
+          "sm_A": 1.0,
+          "motion_magnitude": 7.1068,
+          "consistency_ratio": 1.0
+        },
+        {
+          "clip": "base",
+          "sc_A": 0.7009,
+          "sm_A": 0.1151,
+          "motion_magnitude": 6.47,
+          "consistency_ratio": 1.028
+        },
+        {
+          "clip": "edit",
+          "sc_A": 0.6788,
+          "sm_A": -0.0488,
+          "motion_magnitude": 2.7793,
+          "consistency_ratio": 1.0367
+        }
+      ],
+      "pool": "local smoke",
+      "files": {
+        "source": "/kaggle/working/out/sd15_mm2/interface/20261024-221046_1337__in-a-forest__golden-retriever-running__tiger-running__motion__lora_probe/source.gif",
+        "base": "/kaggle/working/out/sd15_mm2/interface/20261024-221046_1337__in-a-forest__golden-retriever-running__tiger-running__motion__lora_probe/base.gif",
+        "edit": "/kaggle/working/out/sd15_mm2/interface/20261024-221046_1337__in-a-forest__golden-retriever-running__tiger-running__motion__lora_probe/edit.gif"
+      },
+      "progress_ticks": 0
+    },
+    "upload_attn_all": {
+      "ok": true,
+      "seconds": 339.43361559100003,
+      "table": [
+        {
+          "clip": "video",
+          "sm_video": 1.0,
+          "sc_video": 1.0,
+          "clip_text_target": 0.1761,
+          "motion_magnitude": 0.4792
+        },
+        {
+          "clip": "source",
+          "sm_video": 0.9963,
+          "sc_video": 0.9815,
+          "clip_text_target": 0.181,
+          "motion_magnitude": 0.4861
+        },
+        {
+          "clip": "base",
+          "sm_video": 0.3212,
+          "sc_video": 0.4774,
+          "clip_text_target": 0.3503,
+          "motion_magnitude": 0.2107
+        },
+        {
+          "clip": "edit",
+          "sm_video": 0.6562,
+          "sc_video": 0.4556,
+          "clip_text_target": 0.3512,
+          "motion_magnitude": 0.2266
+        }
+      ],
+      "pool": null,
+      "files": {
+        "video": "/kaggle/working/out/sd15_mm2/interface/20261024-221624_upload__attn_all/video.gif",
+        "source": "/kaggle/working/out/sd15_mm2/interface/20261024-221624_upload__attn_all/source.gif",
+        "base": "/kaggle/working/out/sd15_mm2/interface/20261024-221624_upload__attn_all/base.gif",
+        "edit": "/kaggle/working/out/sd15_mm2/interface/20261024-221624_upload__attn_all/edit.gif"
+      },
+      "progress_ticks": 0
+    },
+    "cross_attention": {
+      "ok": true,
+      "seconds": 101.66335876599987,
+      "files": {
+        "clip": "/kaggle/working/out/sd15_mm2/interface/20261024-221800_xattn__sd15_mm2__s7__red-fox__jumping__in-a-snowy-forest/clip.gif",
+        "overlay": {
+          "subject": "/kaggle/working/out/sd15_mm2/interface/20261024-221800_xattn__sd15_mm2__s7__red-fox__jumping__in-a-snowy-forest/overlay_subject.gif",
+          "verb": "/kaggle/working/out/sd15_mm2/interface/20261024-221800_xattn__sd15_mm2__s7__red-fox__jumping__in-a-snowy-forest/overlay_verb.gif",
+          "scene": "/kaggle/working/out/sd15_mm2/interface/20261024-221800_xattn__sd15_mm2__s7__red-fox__jumping__in-a-snowy-forest/overlay_scene.gif"
+        },
+        "grid": {
+          "subject": "/kaggle/working/out/sd15_mm2/interface/20261024-221800_xattn__sd15_mm2__s7__red-fox__jumping__in-a-snowy-forest/grid_subject.png",
+          "verb": "/kaggle/working/out/sd15_mm2/interface/20261024-221800_xattn__sd15_mm2__s7__red-fox__jumping__in-a-snowy-forest/grid_verb.png",
+          "scene": "/kaggle/working/out/sd15_mm2/interface/20261024-221800_xattn__sd15_mm2__s7__red-fox__jumping__in-a-snowy-forest/grid_scene.png"
+        }
+      },
+      "progress_ticks": 26,
+      "progress_last": [
+        1.0,
+        "Drawing the attention maps"
+      ]
+    },
+    "app_builds": {
+      "ok": true
+    }
+  },
+  "playable_mp4": "/kaggle/working/out/sd15_mm2/interface/20261024-220045_42__on-a-beach__golden-retriever-running__horse-walking__motion__selected/edit.mp4"
+}

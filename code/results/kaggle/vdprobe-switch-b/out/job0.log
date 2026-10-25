@@ -1,0 +1,100 @@
+=== switch: /usr/bin/python3 -u scripts/switch_sweep.py --split test --shard 2/4 --out /kaggle/working/out/job2/switch
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1027.51it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1305.67it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:02,  1.64it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:01<00:00,  4.52it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2714.37it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.85it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 15.9 s
+[1/3] 2024__on-a-beach__tiger-jumping__fox-spinning: source + 6 reference arms + 12 switch arms
+    step  5/25    120.0 s  (3.43 s per clip-step)
+    step 10/25    245.2 s  (3.50 s per clip-step)
+    step 15/25    367.2 s  (3.50 s per clip-step)
+    step 20/25    488.6 s  (3.49 s per clip-step)
+    step 25/25    609.9 s  (3.48 s per clip-step)
+    step  5/25    189.9 s  (3.45 s per clip-step)
+    step 10/25    380.0 s  (3.45 s per clip-step)
+    step 15/25    570.4 s  (3.46 s per clip-step)
+    step 20/25    760.8 s  (3.46 s per clip-step)
+    step 25/25    951.4 s  (3.46 s per clip-step)
+    step  5/25     34.5 s  (3.45 s per clip-step)
+    step 10/25     69.0 s  (3.45 s per clip-step)
+    step 15/25    103.5 s  (3.45 s per clip-step)
+    step 20/25    138.1 s  (3.45 s per clip-step)
+    step 25/25    172.7 s  (3.45 s per clip-step)
+wrote /kaggle/working/out/job2/switch/2024__on-a-beach__tiger-jumping__fox-spinning/manifest.json
+  1734 s (86.7 s per clip), mask area 0.3094329833984375, source diff between groups 0.00e+00
+[2/3] 42__on-a-beach__young-man-running__young-woman-walking: source + 6 reference arms + 12 switch arms
+    step  5/25    125.8 s  (3.59 s per clip-step)
+    step 10/25    251.4 s  (3.59 s per clip-step)
+    step 15/25    373.5 s  (3.56 s per clip-step)
+    step 20/25    494.9 s  (3.53 s per clip-step)
+    step 25/25    616.1 s  (3.52 s per clip-step)
+    step  5/25    189.8 s  (3.45 s per clip-step)
+    step 10/25    379.8 s  (3.45 s per clip-step)
+    step 15/25    569.9 s  (3.45 s per clip-step)
+    step 20/25    760.1 s  (3.45 s per clip-step)
+    step 25/25    950.1 s  (3.45 s per clip-step)
+    step  5/25     34.4 s  (3.44 s per clip-step)
+    step 10/25     68.8 s  (3.44 s per clip-step)
+    step 15/25    103.3 s  (3.44 s per clip-step)
+    step 20/25    137.8 s  (3.44 s per clip-step)
+    step 25/25    172.3 s  (3.45 s per clip-step)
+wrote /kaggle/working/out/job2/switch/42__on-a-beach__young-man-running__young-woman-walking/manifest.json
+  1738 s (86.9 s per clip), mask area 0.9398956298828125, source diff between groups 0.00e+00
+[3/3] 1337__in-a-forest__young-woman-running__athlete-jumping: source + 6 reference arms + 12 switch arms
+    step  5/25    121.9 s  (3.48 s per clip-step)
+    step 10/25    247.7 s  (3.54 s per clip-step)
+    step 15/25    370.0 s  (3.52 s per clip-step)
+    step 20/25    491.9 s  (3.51 s per clip-step)
+    step 25/25    613.2 s  (3.50 s per clip-step)
+    step  5/25    189.7 s  (3.45 s per clip-step)
+    step 10/25    379.8 s  (3.45 s per clip-step)
+    step 15/25    570.8 s  (3.46 s per clip-step)
+    step 20/25    761.4 s  (3.46 s per clip-step)
+    step 25/25    951.7 s  (3.46 s per clip-step)
+    step  5/25     34.4 s  (3.44 s per clip-step)
+    step 10/25     68.9 s  (3.45 s per clip-step)
+    step 15/25    103.4 s  (3.45 s per clip-step)
+    step 20/25    137.9 s  (3.45 s per clip-step)
+    step 25/25    172.5 s  (3.45 s per clip-step)
+wrote /kaggle/working/out/job2/switch/1337__in-a-forest__young-woman-running__athlete-jumping/manifest.json
+  1737 s (86.9 s per clip), mask area 1.0, source diff between groups 0.00e+00
+=== switch: exit 0 after 5564 s
+=== score: /usr/bin/python3 -u scripts/score_edits.py /kaggle/working/out/job2/switch --out /kaggle/working/out/job2/score
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 843.75it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1379.57it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:01,  3.76it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00,  7.55it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2642.29it/s]
+Loading pipeline components...:  67%|██████▋   | 4/6 [00:00<00:00,  6.63it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  9.50it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.1 s
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 9376.75it/s]
+scored 1337__in-a-forest__young-woman-running__athlete-jumping: 19 clips
+scored 2024__on-a-beach__tiger-jumping__fox-spinning: 19 clips
+scored 42__on-a-beach__young-man-running__young-woman-walking: 19 clips
+direction                  arm  median_D  median_dD  frac_dD_pos  d16_ci_lo  d16_ci_hi  consistency_ratio  sm_A  sc_B  sm_B  sc_A
+  content    content.switch.t5     0.362      0.140        1.000      0.036      0.183              1.014 0.059 0.775 0.285 0.890
+  content          content.sel     0.369      0.107        1.000      0.042      0.110              1.003 0.130 0.800 0.325 0.874
+  content    content.switch.t3     0.358      0.105        1.000      0.031      0.126              1.000 0.076 0.775 0.279 0.890
+  content    content.switch.t8     0.323      0.037        1.000      0.009      0.047              1.002 0.046 0.777 0.241 0.852
+  content         content.base     0.286      0.000        0.000      0.000      0.000              1.017 0.030 0.786 0.252 0.840
+  content    content.switch.t2     0.264     -0.028        0.333     -0.087      0.248              0.995 0.141 0.780 0.116 0.903
+  content    content.switch.t1     0.136     -0.073        0.333     -0.149      0.120              1.003 0.631 0.779 0.032 0.947
+   motion          motion.base     0.130      0.000        0.000      0.000      0.000              0.995 0.590 0.848 0.095 0.868
+   motion     motion.switch.t2     0.147     -0.011        0.333     -0.077      0.018              0.988 0.708 0.816 0.075 0.875
+   motion motion.switchmask.t2     0.139     -0.011        0.333     -0.050      0.010              0.991 0.721 0.816 0.087 0.875
+   motion     motion.switch.t1     0.136     -0.014        0.333     -0.031      0.007              0.997 0.697 0.825 0.106 0.869
+   motion           motion.sel     0.110     -0.014        0.333     -0.020      0.033              0.997 0.847 0.824 0.112 0.911
+   motion          motion.attn     0.098     -0.019        0.333     -0.031      0.051              0.992 0.777 0.822 0.094 0.892
+   motion     motion.switch.t3     0.083     -0.047        0.000     -0.092     -0.013              0.987 0.692 0.822 0.122 0.879
+   motion motion.switchmask.t3     0.076     -0.054        0.000     -0.058     -0.013              0.989 0.703 0.822 0.134 0.879
+   motion     motion.switch.t5     0.075     -0.055        0.333     -0.091      0.037              0.987 0.698 0.806 0.064 0.884
+   motion     motion.switch.t8     0.013     -0.088        0.000     -0.126     -0.005              0.993 0.849 0.792 0.106 0.918
+wrote /kaggle/working/out/job2/switch/score_summary.json
+=== score: exit 0 after 262 s

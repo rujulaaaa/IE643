@@ -1,0 +1,280 @@
+{
+ "pair": {
+  "subject_a": "deer",
+  "verb_a": "spinning",
+  "subject_b": "brown bear",
+  "verb_b": "running",
+  "scene": "in a forest",
+  "seed": 42
+ },
+ "prompts": {
+  "A": "a deer spinning in a forest, high quality, detailed",
+  "B": "a brown bear running in a forest, high quality, detailed",
+  "motion": "a brown bear spinning in a forest, high quality, detailed",
+  "content": "a deer running in a forest, high quality, detailed"
+ },
+ "arms": [
+  {
+   "id": "B_ref",
+   "prompt": "a brown bear running in a forest, high quality, detailed",
+   "label": "B, unpatched"
+  },
+  {
+   "id": "motion.base",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "prompt only"
+  },
+  {
+   "id": "content.base",
+   "prompt": "a deer running in a forest, high quality, detailed",
+   "label": "prompt only"
+  },
+  {
+   "id": "motion.sel",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "selected",
+   "patch": {
+    "coords": [
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.sel",
+   "prompt": "a deer running in a forest, high quality, detailed",
+   "label": "selected",
+   "patch": {
+    "coords": [
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.attn",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "",
+   "attn": {
+    "modules": [
+     "down_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.2.transformer_blocks.0.attn2",
+     "mid_block.motion_modules.0.transformer_blocks.0.attn1",
+     "mid_block.motion_modules.0.transformer_blocks.0.attn2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "source": "source"
+   }
+  },
+  {
+   "id": "motion.switch.t1",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "switch",
+   "switch": {
+    "early": "a deer spinning in a forest, high quality, detailed",
+    "late": "a brown bear spinning in a forest, high quality, detailed",
+    "tau": 1,
+    "masked": false
+   }
+  },
+  {
+   "id": "content.switch.t1",
+   "prompt": "a deer spinning in a forest, high quality, detailed",
+   "label": "switch",
+   "switch": {
+    "early": "a deer running in a forest, high quality, detailed",
+    "late": "a deer spinning in a forest, high quality, detailed",
+    "tau": 1,
+    "masked": false
+   }
+  },
+  {
+   "id": "motion.switch.t2",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "switch",
+   "switch": {
+    "early": "a deer spinning in a forest, high quality, detailed",
+    "late": "a brown bear spinning in a forest, high quality, detailed",
+    "tau": 2,
+    "masked": false
+   }
+  },
+  {
+   "id": "content.switch.t2",
+   "prompt": "a deer spinning in a forest, high quality, detailed",
+   "label": "switch",
+   "switch": {
+    "early": "a deer running in a forest, high quality, detailed",
+    "late": "a deer spinning in a forest, high quality, detailed",
+    "tau": 2,
+    "masked": false
+   }
+  },
+  {
+   "id": "motion.switch.t3",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "switch",
+   "switch": {
+    "early": "a deer spinning in a forest, high quality, detailed",
+    "late": "a brown bear spinning in a forest, high quality, detailed",
+    "tau": 3,
+    "masked": false
+   }
+  },
+  {
+   "id": "content.switch.t3",
+   "prompt": "a deer spinning in a forest, high quality, detailed",
+   "label": "switch",
+   "switch": {
+    "early": "a deer running in a forest, high quality, detailed",
+    "late": "a deer spinning in a forest, high quality, detailed",
+    "tau": 3,
+    "masked": false
+   }
+  },
+  {
+   "id": "motion.switch.t5",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "switch",
+   "switch": {
+    "early": "a deer spinning in a forest, high quality, detailed",
+    "late": "a brown bear spinning in a forest, high quality, detailed",
+    "tau": 5,
+    "masked": false
+   }
+  },
+  {
+   "id": "content.switch.t5",
+   "prompt": "a deer spinning in a forest, high quality, detailed",
+   "label": "switch",
+   "switch": {
+    "early": "a deer running in a forest, high quality, detailed",
+    "late": "a deer spinning in a forest, high quality, detailed",
+    "tau": 5,
+    "masked": false
+   }
+  },
+  {
+   "id": "motion.switch.t8",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "switch",
+   "switch": {
+    "early": "a deer spinning in a forest, high quality, detailed",
+    "late": "a brown bear spinning in a forest, high quality, detailed",
+    "tau": 8,
+    "masked": false
+   }
+  },
+  {
+   "id": "content.switch.t8",
+   "prompt": "a deer spinning in a forest, high quality, detailed",
+   "label": "switch",
+   "switch": {
+    "early": "a deer running in a forest, high quality, detailed",
+    "late": "a deer spinning in a forest, high quality, detailed",
+    "tau": 8,
+    "masked": false
+   }
+  },
+  {
+   "id": "motion.switchmask.t2",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "switch (masked)",
+   "switch": {
+    "early": "a deer spinning in a forest, high quality, detailed",
+    "late": "a brown bear spinning in a forest, high quality, detailed",
+    "tau": 2,
+    "masked": true
+   }
+  },
+  {
+   "id": "motion.switchmask.t3",
+   "prompt": "a brown bear spinning in a forest, high quality, detailed",
+   "label": "switch (masked)",
+   "switch": {
+    "early": "a deer spinning in a forest, high quality, detailed",
+    "late": "a brown bear spinning in a forest, high quality, detailed",
+    "tau": 3,
+    "masked": true
+   }
+  }
+ ]
+}

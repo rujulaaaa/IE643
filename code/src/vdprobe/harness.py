@@ -197,3 +197,63 @@ class SummaryRecorder(Probe):
     def tensors(self) -> dict[str, torch.Tensor]:
         """{"<module path>::<field>": tensor with a leading step axis}."""
         return {f"{name}::{k}": torch.stack(vals) for name, rec in self.data.items() for k, vals in rec.items()}
+
+
+class CrossAttentionMaps(Probe):
+    """DAAM-style cross-attention heat maps (Tang et al., ACL 2023), per frame, for a video U-Net.
+
+    For each phrase, every spatial cross-attention (attn2) coordinate's head-averaged attention
+    mass on the phrase's tokens, text-conditional branch only, is upsampled bicubically to
+    `size` x `size` (negative bicubic overshoot clipped) and summed over coordinates and steps:
+
+        D[phrase](f, x, y) = sum_{coord, step} up(mass_{coord, step}[phrase])(f, x, y)
+
+    DAAM sums over heads; this averages, which only rescales D. Two further views are kept for
+    "which layer looks where, when": per (coordinate, step) the frame-mean map at `grid`, and its
+    concentration (share of the mass in the top 10% of positions)."""
+
+    def __init__(self, phrases: list[str], coords=None, steps=None, size: int = 64, grid: int = 16,
+                 token_index: dict[str, list[int]] | None = None):
+        super().__init__(coords, steps)
+        self.phrases, self.size, self.grid = list(phrases), size, grid
+        self.token_index = token_index      # per-clip positions (lockstep: one probe per clip)
+        self.total: dict[str, torch.Tensor] = {}
+        self.cells: dict[tuple[str, int], dict[str, torch.Tensor]] = {}
+
+    @torch.no_grad()
+    def __call__(self, ctx, coord, module, output, args, kwargs):
+        if coord.kind != "spatial_attn2":
+            return None
+        import torch.nn.functional as F
+
+        hs = ctx.cond_rows(args[0] if args else kwargs["hidden_states"])
+        ehs = ctx.cond_rows(kwargs["encoder_hidden_states"])
+        h, w = spatial_hw(coord.level, ctx.latent_hw)
+        cell = self.cells.setdefault((coord.name, ctx.step), {})
+        for phrase in self.phrases:
+            idx = (self.token_index or ctx.token_index).get(phrase)
+            if not idx:
+                raise KeyError(f"no token positions for phrase '{phrase}'; pass token_index to the Harness")
+            m = A.cross_token_mass(module, hs, ehs, idx).float().reshape(-1, 1, h, w)     # (F, 1, h, w)
+            up = F.interpolate(m, size=(self.size, self.size), mode="bicubic", align_corners=False)
+            up = up.clamp_min(0).squeeze(1).cpu()
+            self.total[phrase] = self.total.get(phrase, 0) + up
+            cell[phrase] = resize_map(m.squeeze(1), self.grid).mean(0).cpu()
+        return None
+
+    def heatmap(self, phrase: str) -> torch.Tensor:
+        """(F, size, size) aggregated map, scaled to [0, 1] by its maximum over all frames."""
+        d = self.total[phrase]
+        return d / d.max().clamp_min(1e-12)
+
+    def mask(self, phrase: str, tau: float = 0.4) -> torch.Tensor:
+        """DAAM's binary mask: D >= tau * max (tau 0.3-0.5 in the paper), per frame."""
+        d = self.total[phrase]
+        return d >= tau * d.amax(dim=(-1, -2), keepdim=True)
+
+    @staticmethod
+    def concentration(m: torch.Tensor, top: float = 0.1) -> float:
+        """Share of a map's mass in its top `top` fraction of positions (1/top-uniform = `top`)."""
+        v = m.flatten().clamp_min(0)
+        k = max(1, int(round(top * v.numel())))
+        return float(v.topk(k).values.sum() / v.sum().clamp_min(1e-12))

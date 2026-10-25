@@ -5,8 +5,14 @@ __pycache__/
 # per-clip activation stores are regenerable and large; results JSONs and figures are kept
 results/**/store/
 build/
-# Kaggle runs: keep records, scores and logs; generated clips and tensors are ~1.8 GB
-results/kaggle/**/*.gif
+# Kaggle run outputs are tracked (scores, summaries, logs, clips) except the raw per-clip tensors
+# (~12.6 GB, several over GitHub's 100 MB limit). Those stay downloadable from the Kaggle kernels
+# (scripts/kaggle_run.py --download-only); their derived outputs (exp2_analysis.json, maps.npz, scores) are tracked.
+# Final latents of the edit runs are small and kept, so those runs can be re-scored.
 results/kaggle/**/*.pt
+!results/kaggle/vdprobe-lit-*/**/latents.pt
+!results/kaggle/vdprobe-switch-*/**/latents.pt
+!results/kaggle/vdprobe-interface-check*/**/latents.pt
+results/kaggle/**/.download_ok
 # live edits made in the interface
 results/interface/

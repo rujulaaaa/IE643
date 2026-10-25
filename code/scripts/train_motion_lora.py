@@ -13,7 +13,8 @@ noise schedule = the inference scheduler's betas (linear, 1000 steps).
 --cut-free (D-34): 11 of the 19 clips contain a hard cut (inversion.shot_bounds). With the flag,
 every training window is drawn inside one shot (shots of >= 16 frames, chosen with probability
 proportional to length; a clip with no such shot uses its longest shot, last frame repeated) and
-the validation window is the centre of the longest shot. Without it, windows may span a cut (the
+the validation window is the centre of the longest shot. Without it, every window is drawn inside
+the longest shot of each clip (Experiment 2, below); --no-shot-split lets windows span a cut (the
 recipe of the first three LoRAs, kept for reproducibility).
 
 Validation loss: every held-out clip at 8 fixed timesteps x 2 fixed noises, fixed frame
@@ -25,6 +26,16 @@ and <out>/<variant>/train_log.json (loss curve, val losses, parameter count, tim
 
     python -u scripts/train_motion_lora.py --variant full --steps 800
     python -u scripts/train_motion_lora.py --variant probe --cut-free --seed 1
+
+Experiment 2 (docs/experiment2.md, Phases 4/6): `--modules m1,m2,...` trains a LoRA on exactly
+those motion modules (output dir `--arm`), `--data` points at another clip set (e.g.
+data/hmdb51_cartwheel), `--caption` sets the prompt template, and `--loss debiased` adds
+MotionDirector's appearance-debiased temporal term (Zhao et al., ECCV 2024, beta = 1):
+
+    phi(e)_i = sqrt(beta^2 + 1) e_i - beta e_anchor     (anchor = a random frame, per step)
+    L = ||e - e_hat||^2 + ||phi(e) - phi(e_hat)||^2
+
+Windows are drawn inside the longest shot of each clip, so no training window spans a cut.
 """
 
 import json
@@ -38,10 +49,12 @@ import torch.nn.functional as F
 
 from vdprobe import runio
 from vdprobe.config import REPO_ROOT
+from vdprobe.inversion import shot_bounds
 from vdprobe.lora import VARIANTS, add_motion_lora, n_params, save_motion_lora
 
 DATA = REPO_ROOT / "data" / "hmdb51_lora"
 FRAMES, SIZE = 16, 256
+MAX_STRIDE = 2
 VAL_T = (50, 150, 250, 400, 550, 700, 850, 950)
 
 
@@ -55,6 +68,11 @@ def read_clip(path: Path) -> np.ndarray:
             break
         out.append(cv2.cvtColor(f, cv2.COLOR_BGR2RGB))
     return np.stack(out)                                  # (n, H, W, 3) uint8
+
+
+def longest_shot(clip: np.ndarray) -> np.ndarray:
+    a, b = max(shot_bounds(list(clip)), key=lambda ab: ab[1] - ab[0])
+    return clip[a:b]
 
 
 def usable_shots(clip: np.ndarray) -> list[tuple[int, int]]:
@@ -78,7 +96,7 @@ def pick_shot(clip: np.ndarray, shots: list[tuple[int, int]], rng: random.Random
 def window(clip: np.ndarray, rng: random.Random | None) -> torch.Tensor:
     """(1, 3, F, SIZE, SIZE) in [-1, 1]; random start/crop when rng is given, else centred."""
     n, h, w, _ = clip.shape
-    stride = max(1, min(2, (n - 1) // (FRAMES - 1)))
+    stride = max(1, min(MAX_STRIDE, (n - 1) // (FRAMES - 1)))
     span = stride * (FRAMES - 1) + 1
     start = rng.randint(0, max(0, n - span)) if rng else max(0, (n - span) // 2)
     idx = [min(start + i * stride, n - 1) for i in range(FRAMES)]
@@ -116,17 +134,32 @@ def checkpoint_motion_modules(unet) -> int:
 
 
 def main():
+    global SIZE, MAX_STRIDE
     ap = runio.parser(__doc__, "motion_lora")
-    ap.add_argument("--variant", choices=VARIANTS, required=True)
+    ap.add_argument("--variant", choices=VARIANTS + ("modules",), default="modules")
+    ap.add_argument("--modules", default="", help="comma-separated motion module paths (variant 'modules')")
+    ap.add_argument("--arm", default="", help="output sub-directory (default: the variant)")
+    ap.add_argument("--data", "--data-dir", dest="data", type=Path, default=DATA,
+                    help="clip set with manifest.json; absolute or relative to the repo root")
+    ap.add_argument("--caption", default="a person {verb}")
+    ap.add_argument("--loss", choices=("mse", "debiased"), default="mse")
+    ap.add_argument("--beta", type=float, default=1.0)
+    ap.add_argument("--size", type=int, default=SIZE)
+    ap.add_argument("--max-stride", type=int, default=MAX_STRIDE,
+                    help="frame stride cap; raise it so a window covers a whole long action")
+    ap.add_argument("--no-shot-split", action="store_true", help="old behaviour: windows may span cuts")
     ap.add_argument("--steps", type=int, default=800)
     ap.add_argument("--lr", type=float, default=5e-5)     # roadmap §5.5 motion LoRA
     ap.add_argument("--rank", type=int, default=32)
     ap.add_argument("--val-every", type=int, default=100)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--cut-free", action="store_true", help="draw windows inside one shot (D-34)")
-    ap.add_argument("--data-dir", type=Path, default=DATA)
     args = ap.parse_args()
-    out = args.out / args.variant
+    SIZE, MAX_STRIDE = args.size, args.max_stride
+    modules = [m for m in args.modules.split(",") if m]
+    if args.variant == "modules" and not modules:
+        raise SystemExit("--modules is required for variant 'modules'")
+    out = args.out / (args.arm or args.variant)
     torch.manual_seed(args.seed)
     rng = random.Random(args.seed)
 
@@ -136,14 +169,14 @@ def main():
     unet.requires_grad_(False)
     vae.requires_grad_(False)
     pipe.text_encoder.requires_grad_(False)
-    params = add_motion_lora(unet, args.variant, rank=args.rank, alpha=args.rank)
+    params = add_motion_lora(unet, args.variant, rank=args.rank, alpha=args.rank, modules=modules or None)
     unet.enable_gradient_checkpointing()
     n_ckpt = checkpoint_motion_modules(unet)
     unet.train()
     n_train = sum(p.numel() for p in params)
     print(f"{args.variant}: {n_train / 1e6:.2f} M trainable LoRA parameters, {n_ckpt} motion modules checkpointed")
 
-    data = args.data_dir if args.data_dir.is_absolute() else REPO_ROOT / args.data_dir
+    data = args.data if args.data.is_absolute() else REPO_ROOT / args.data
     manifest = json.loads((data / "manifest.json").read_text())
     by_class = {}
     for c in manifest["clips"]:
@@ -156,6 +189,9 @@ def main():
     # a flat copy (the Kaggle dataset has no class folders) is found by file name
     find = lambda rel: data / rel if (data / rel).exists() else data / Path(rel).name
     clips = {c["path"]: read_clip(find(c["path"])) for c in train + val}
+    if not args.cut_free and not args.no_shot_split:
+        clips = {k: longest_shot(v) for k, v in clips.items()}
+        print("shot-split clip lengths:", {k.split("/")[-1][:30]: len(v) for k, v in clips.items()})
     shots = {k: usable_shots(x) if args.cut_free else [(0, len(x))] for k, x in clips.items()}
     if args.cut_free:
         print("cut-free shots:", {Path(k).stem[:30]: [b - a for a, b in v] for k, v in shots.items()})
@@ -165,18 +201,24 @@ def main():
 
     @torch.no_grad()
     def embed(verb):
-        return pipe.encode_prompt(f"a person {verb}", loaded.device, 1, False)[0].repeat_interleave(FRAMES, 0)
+        return pipe.encode_prompt(args.caption.format(verb=verb), loaded.device, 1, False)[0] \
+            .repeat_interleave(FRAMES, 0)
     emb = {v: embed(v) for v in set(manifest["classes"].values())}
 
     sched = pipe.scheduler
     acp = sched.alphas_cumprod.to(loaded.device)
 
-    def loss_at(lat, verb, t, noise):
+    def loss_at(lat, verb, t, noise, debiased=False):
         a = acp[t].view(1, 1, 1, 1, 1)
         noisy = a.sqrt() * lat + (1 - a).sqrt() * noise
         with torch.autocast("cuda", dtype=torch.float16):
             pred = unet(noisy.half(), t, encoder_hidden_states=emb[verb]).sample
-        return F.mse_loss(pred.float(), noise)
+        loss = F.mse_loss(pred.float(), noise)
+        if debiased:     # MotionDirector: remove the part of each frame shared with an anchor frame
+            k = int(torch.randint(0, noise.shape[2], (1,)))
+            phi = lambda e: (args.beta ** 2 + 1) ** 0.5 * e - args.beta * e[:, :, k:k + 1]
+            loss = loss + F.mse_loss(phi(pred.float()), phi(noise))
+        return loss
 
     val_lat = [(encode_video(vae, clip_window(c["path"], None)), c["verb"]) for c in val]
     g = torch.Generator(device="cpu").manual_seed(1234)
@@ -190,8 +232,9 @@ def main():
         unet.train()
         return float(np.mean(ls))
 
-    log = {"variant": args.variant, "steps": args.steps, "lr": args.lr, "rank": args.rank,
-           "seed": args.seed, "cut_free": args.cut_free,
+    log = {"variant": args.variant, "modules": modules, "arm": args.arm, "loss_type": args.loss, "size": SIZE,
+           "data": str(data), "caption": args.caption, "max_stride": MAX_STRIDE, "steps": args.steps, "lr": args.lr, "rank": args.rank,
+           "seed": args.seed, "cut_free": args.cut_free, "no_shot_split": args.no_shot_split,
            "shots": {k: shots[k] for k in sorted(shots)},
            "trainable_params": n_train, "train_clips": [c["path"] for c in train],
            "val_clips": [c["path"] for c in val], "loss": [], "val": []}
@@ -207,7 +250,7 @@ def main():
         c = rng.choice(train)
         lat = encode_video(vae, clip_window(c["path"], rng))
         t = torch.randint(0, sched.config.num_train_timesteps, (1,), device=loaded.device)
-        loss = loss_at(lat, c["verb"], t, torch.randn_like(lat))
+        loss = loss_at(lat, c["verb"], t, torch.randn_like(lat), debiased=args.loss == "debiased")
         opt.zero_grad(set_to_none=True)
         scaler.scale(loss).backward()
         if step == 1 and not any(p.grad is not None and p.grad.abs().sum() > 0 for p in params):
@@ -225,7 +268,8 @@ def main():
                   f"{el:.0f} s ({el / step:.2f} s/step)", flush=True)
     log["seconds"] = time.perf_counter() - t0
     log["peak_alloc_gb"] = torch.cuda.max_memory_allocated() / 2 ** 30
-    meta = {"variant": args.variant, "rank": args.rank, "alpha": args.rank, "steps": args.steps, "lr": args.lr}
+    meta = {"variant": args.variant, "rank": args.rank, "alpha": args.rank, "steps": args.steps, "lr": args.lr,
+            "modules": ",".join(modules), "loss": args.loss, "size": SIZE}
     if args.cut_free:   # absent in the first three LoRAs; adapter names then stay lora_<variant>
         meta.update(seed=args.seed, cut_free=True)
     unet.eval()

@@ -1,0 +1,35 @@
+{
+ "request": {
+  "subject_a": "golden retriever",
+  "verb_a": "running",
+  "subject_b": "horse",
+  "verb_b": "walking",
+  "scene": "on a beach",
+  "seed": 42,
+  "direction": "content",
+  "method": "lit_dual",
+  "block": "up_blocks.3",
+  "window": "ft",
+  "alpha": 1.0,
+  "with_reference": true
+ },
+ "prompts": {
+  "source": "a golden retriever running on a beach, high quality, detailed",
+  "B_ref": "a horse walking on a beach, high quality, detailed",
+  "base": "a golden retriever walking on a beach, high quality, detailed",
+  "edit": "a golden retriever walking on a beach, high quality, detailed"
+ },
+ "arms": [
+  "B_ref",
+  "base",
+  "edit"
+ ],
+ "seconds": 398.1299482349998,
+ "pool": "local smoke",
+ "n_patched": {},
+ "n_attn_injected": {
+  "B_ref": 0,
+  "base": 0,
+  "edit": 1050
+ }
+}

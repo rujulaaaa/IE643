@@ -1,0 +1,89 @@
+=== edit: /usr/bin/python3 -u scripts/edit_sweep.py --split test --arms lit --lit-sel configs/lit_selection.json --shard 0/2 --out /kaggle/working/out/job0/edit
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 899.68it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1308.27it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2689.06it/s]
+Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00,  9.67it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:01<00:01,  1.86it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:01<00:00,  3.53it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.83it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 15.4 s
+[1/6] 42__on-a-beach__golden-retriever-running__horse-walking: source + 10 arms
+    step  5/25    184.0 s  (3.35 s per clip-step)
+    step 10/25    377.5 s  (3.43 s per clip-step)
+    step 15/25    567.3 s  (3.44 s per clip-step)
+    step 20/25    757.0 s  (3.44 s per clip-step)
+    step 25/25    947.0 s  (3.44 s per clip-step)
+wrote /kaggle/working/out/job0/edit/42__on-a-beach__golden-retriever-running__horse-walking/manifest.json
+  947 s (86.1 s per clip)
+[2/6] 2024__on-a-beach__tiger-jumping__fox-spinning: source + 10 arms
+    step  5/25    192.1 s  (3.49 s per clip-step)
+    step 10/25    385.5 s  (3.50 s per clip-step)
+    step 15/25    576.1 s  (3.49 s per clip-step)
+    step 20/25    765.8 s  (3.48 s per clip-step)
+    step 25/25    956.5 s  (3.48 s per clip-step)
+wrote /kaggle/working/out/job0/edit/2024__on-a-beach__tiger-jumping__fox-spinning/manifest.json
+  957 s (87.0 s per clip)
+[3/6] 1337__on-a-beach__horse-running__tiger-jumping: source + 10 arms
+    step  5/25    188.8 s  (3.43 s per clip-step)
+    step 10/25    384.6 s  (3.50 s per clip-step)
+    step 15/25    575.2 s  (3.49 s per clip-step)
+    step 20/25    764.9 s  (3.48 s per clip-step)
+    step 25/25    955.0 s  (3.47 s per clip-step)
+wrote /kaggle/working/out/job0/edit/1337__on-a-beach__horse-running__tiger-jumping/manifest.json
+  955 s (86.8 s per clip)
+[4/6] 42__on-a-beach__young-man-running__young-woman-walking: source + 10 arms
+    step  5/25    187.9 s  (3.42 s per clip-step)
+    step 10/25    382.5 s  (3.48 s per clip-step)
+    step 15/25    573.7 s  (3.48 s per clip-step)
+    step 20/25    763.7 s  (3.47 s per clip-step)
+    step 25/25    954.0 s  (3.47 s per clip-step)
+wrote /kaggle/working/out/job0/edit/42__on-a-beach__young-man-running__young-woman-walking/manifest.json
+  954 s (86.7 s per clip)
+[5/6] 2024__on-a-beach__dancer-jumping__child-spinning: source + 10 arms
+    step  5/25    189.2 s  (3.44 s per clip-step)
+    step 10/25    381.4 s  (3.47 s per clip-step)
+    step 15/25    574.7 s  (3.48 s per clip-step)
+    step 20/25    765.5 s  (3.48 s per clip-step)
+    step 25/25    955.9 s  (3.48 s per clip-step)
+wrote /kaggle/working/out/job0/edit/2024__on-a-beach__dancer-jumping__child-spinning/manifest.json
+  956 s (86.9 s per clip)
+[6/6] 1337__in-a-forest__young-woman-running__athlete-jumping: source + 10 arms
+    step  5/25    188.6 s  (3.43 s per clip-step)
+    step 10/25    380.9 s  (3.46 s per clip-step)
+    step 15/25    573.5 s  (3.48 s per clip-step)
+    step 20/25    765.3 s  (3.48 s per clip-step)
+    step 25/25    955.2 s  (3.47 s per clip-step)
+wrote /kaggle/working/out/job0/edit/1337__in-a-forest__young-woman-running__athlete-jumping/manifest.json
+  955 s (86.8 s per clip)
+=== edit: exit 0 after 6117 s
+=== score: /usr/bin/python3 -u scripts/score_edits.py /kaggle/working/out/job0/edit --out /kaggle/working/out/job0/score
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 834.52it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1362.67it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2590.77it/s]
+Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00, 10.37it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:00<00:00,  6.53it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  9.12it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.1 s
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 8718.42it/s]
+scored 1337__in-a-forest__young-woman-running__athlete-jumping: 11 clips
+scored 1337__on-a-beach__horse-running__tiger-jumping: 11 clips
+scored 2024__on-a-beach__dancer-jumping__child-spinning: 11 clips
+scored 2024__on-a-beach__tiger-jumping__fox-spinning: 11 clips
+scored 42__on-a-beach__golden-retriever-running__horse-walking: 11 clips
+scored 42__on-a-beach__young-man-running__young-woman-walking: 11 clips
+direction                    arm  median_D  median_dD  frac_dD_pos  d16_ci_lo  d16_ci_hi  consistency_ratio  sm_A  sc_B  sm_B  sc_A
+  content       content.dual.all     0.345      0.132        1.000      0.062      0.314              1.001 0.318 0.785 0.575 0.913
+  content            content.sel     0.199      0.064        0.833     -0.005      0.092              1.006 0.313 0.776 0.289 0.892
+  content content.kv.probe.from2     0.224      0.016        0.833     -0.073      0.141              1.008 0.279 0.785 0.199 0.888
+  content           content.base     0.152      0.000        0.000      0.000      0.000              1.016 0.118 0.783 0.259 0.855
+   motion motion.dual.up23.from2     0.332      0.113        1.000      0.015      0.354              0.974 0.570 0.908 0.212 0.776
+   motion    motion.attn.all.all     0.261      0.110        1.000      0.027      0.168              0.999 0.758 0.835 0.086 0.866
+   motion             motion.sel     0.249      0.052        0.833     -0.018      0.098              1.006 0.657 0.834 0.120 0.849
+   motion     motion.attn.all.ft     0.240      0.047        0.833     -0.021      0.151              1.010 0.575 0.831 0.089 0.842
+   motion            motion.base     0.208      0.000        0.000      0.000      0.000              0.997 0.363 0.852 0.188 0.795
+wrote /kaggle/working/out/job0/edit/score_summary.json
+=== score: exit 0 after 280 s

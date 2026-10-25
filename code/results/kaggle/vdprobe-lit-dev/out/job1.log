@@ -1,0 +1,60 @@
+=== edit: /usr/bin/python3 -u scripts/edit_sweep.py --split dev --arms lit --shard 1/2 --out /kaggle/working/out/job1/edit
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 909.63it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1215.58it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00, 19.80it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2931.23it/s]
+Loading pipeline components...:  67%|██████▋   | 4/6 [00:01<00:00,  2.41it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  4.01it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.88it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 15.5 s
+[1/2] 1337__on-a-beach__brown-bear-walking__golden-retriever-spinning: source + 17 arms
+    step  5/25    319.8 s  (3.55 s per clip-step)
+    step 10/25    646.7 s  (3.59 s per clip-step)
+    step 15/25    972.8 s  (3.60 s per clip-step)
+    step 20/25   1297.6 s  (3.60 s per clip-step)
+    step 25/25   1622.6 s  (3.61 s per clip-step)
+wrote /kaggle/working/out/job1/edit/1337__on-a-beach__brown-bear-walking__golden-retriever-spinning/manifest.json
+  1623 s (90.1 s per clip)
+[2/2] 2024__in-a-forest__young-woman-walking__soldier-spinning: source + 17 arms
+    step  5/25    328.1 s  (3.65 s per clip-step)
+    step 10/25    655.4 s  (3.64 s per clip-step)
+    step 15/25    980.3 s  (3.63 s per clip-step)
+    step 20/25   1305.9 s  (3.63 s per clip-step)
+    step 25/25   1631.5 s  (3.63 s per clip-step)
+wrote /kaggle/working/out/job1/edit/2024__in-a-forest__young-woman-walking__soldier-spinning/manifest.json
+  1632 s (90.6 s per clip)
+=== edit: exit 0 after 3508 s
+=== score: /usr/bin/python3 -u scripts/score_edits.py /kaggle/working/out/job1/edit --out /kaggle/working/out/job1/score
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1078.37it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1525.03it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00,  5.94it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2489.05it/s]
+Loading pipeline components...:  67%|██████▋   | 4/6 [00:00<00:00,  7.48it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  9.47it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 13.4 s
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 10713.90it/s]
+scored 1337__on-a-beach__brown-bear-walking__golden-retriever-spinning: 18 clips
+scored 2024__in-a-forest__young-woman-walking__soldier-spinning: 18 clips
+direction                         arm  median_D  median_dD  frac_dD_pos  d16_ci_lo  d16_ci_hi  consistency_ratio  sm_A  sc_B  sm_B  sc_A
+  content       content.kv.up23.from5     0.295      0.180          0.5     -0.006      0.366              0.959 0.382 0.730 0.438 0.901
+  content            content.dual.all     0.284      0.169          0.5     -0.038      0.376              0.952 0.436 0.770 0.656 0.876
+  content content.kv.up23.from2.first     0.260      0.145          1.0      0.020      0.269              0.955 0.394 0.714 0.301 0.914
+  content             content.dual.ft     0.227      0.112          0.5     -0.083      0.307              0.967 0.518 0.726 0.396 0.914
+  content       content.kv.up23.from2     0.219      0.104          0.5     -0.048      0.256              0.970 0.551 0.710 0.309 0.935
+  content      content.kv.probe.from2     0.214      0.099          1.0      0.003      0.195              0.952 0.350 0.732 0.423 0.845
+  content        content.kv.dec.from2     0.187      0.072          0.5     -0.007      0.150              0.992 0.767 0.698 0.298 0.980
+  content                content.base     0.115      0.000          0.0      0.000      0.000              0.940 0.310 0.759 0.369 0.813
+   motion      motion.dual.up23.from2     0.282      0.224          1.0      0.002      0.445              0.949 0.657 0.864 0.475 0.745
+   motion       motion.dual.dec.from2     0.190      0.131          0.5     -0.042      0.303              0.933 0.515 0.878 0.631 0.716
+   motion         motion.attn.all.all     0.175      0.117          0.5     -0.022      0.255              0.967 0.787 0.731 0.328 0.777
+   motion         motion.attn.up1.all     0.105      0.046          0.5     -0.015      0.108              0.983 0.587 0.729 0.340 0.747
+   motion         motion.attn.up0.all     0.076      0.018          0.5     -0.031      0.066              0.980 0.471 0.713 0.287 0.728
+   motion     motion.attn.probe.early     0.067      0.008          0.5     -0.010      0.026              0.960 0.436 0.709 0.286 0.718
+   motion                 motion.base     0.059      0.000          0.0      0.000      0.000              0.955 0.407 0.707 0.269 0.717
+   motion       motion.attn.probe.all     0.044     -0.015          0.0     -0.017     -0.012              0.983 0.430 0.723 0.319 0.732
+wrote /kaggle/working/out/job1/edit/score_summary.json
+=== score: exit 0 after 179 s

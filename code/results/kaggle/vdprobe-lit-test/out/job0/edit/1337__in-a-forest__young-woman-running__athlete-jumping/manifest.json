@@ -1,0 +1,106 @@
+{
+  "experiment": "edit_sweep",
+  "date": "2026-10-25",
+  "python": "3.13.15",
+  "torch": "2.11.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.16.1",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "split": "test",
+  "arm_set": "lit",
+  "selection": {
+    "motion": {
+      "arm": "motion.dynamic.up_blocks.3.ft",
+      "blocks": [
+        "up_blocks.3"
+      ],
+      "window": "ft",
+      "median_dD_dev": 0.08017621374684199
+    },
+    "content": {
+      "arm": "content.static.down_blocks.3.ft",
+      "blocks": [
+        "down_blocks.3"
+      ],
+      "window": "ft",
+      "median_dD_dev": 0.015208449185717371
+    }
+  },
+  "lit_selection": {
+    "motion": {
+      "single": "motion.attn.all.all",
+      "dual": "motion.dual.up23.from2"
+    },
+    "content": {
+      "single": "content.kv.probe.from2",
+      "dual": "content.dual.all"
+    },
+    "dev_median_dD": {
+      "motion.attn.all.all": 0.152457694064227,
+      "motion.dual.up23.from2": 0.14737443634507935,
+      "content.kv.probe.from2": 0.056100089201416375,
+      "content.dual.all": 0.12057870521588415
+    }
+  },
+  "pair": {
+    "subject_a": "young woman",
+    "verb_a": "running",
+    "subject_b": "athlete",
+    "verb_b": "jumping",
+    "scene": "in a forest",
+    "seed": 1337
+  },
+  "loras": [],
+  "seconds": 955.2061387960002,
+  "n_tracks": 11,
+  "seconds_per_clip": 86.83692170872729,
+  "peak_alloc_gb": 9.205088138580322,
+  "n_patched": {
+    "motion.sel": 27,
+    "content.sel": 18
+  },
+  "n_attn_injected": {
+    "B_ref": 0,
+    "motion.base": 0,
+    "content.base": 0,
+    "motion.attn.all.all": 1050,
+    "motion.dual.up23.from2": 1050,
+    "content.kv.probe.from2": 0,
+    "content.dual.all": 1050,
+    "motion.sel": 0,
+    "content.sel": 0,
+    "motion.attn.all.ft": 378
+  },
+  "n_kv_injected": {
+    "B_ref": 0,
+    "motion.base": 0,
+    "content.base": 0,
+    "motion.attn.all.all": 0,
+    "motion.dual.up23.from2": 138,
+    "content.kv.probe.from2": 46,
+    "content.dual.all": 138,
+    "motion.sel": 0,
+    "content.sel": 0,
+    "motion.attn.all.ft": 0
+  },
+  "finished": "2026-10-25 10:21:39"
+}

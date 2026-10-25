@@ -172,13 +172,18 @@
     }
   ],
   "decision": {
-    "primary_cell": "epicrealism_mm3",
+    "primary_cell": "sd15_mm2",
     "ladder_verbs": [
       "walking",
-      "jumping"
+      "running"
     ],
+    "applied": "D-39 (no cell within the CLIP-T tolerance: dynamic share >= 0.5 kept, CLIP-T dropped)",
     "rule": "max median subject consistency among cells with dynamic share >= 0.5 and CLIP-T within 0.01 of the best; ladder verbs = top-2 X-CLIP hit rate on the primary cell",
-    "eligible": []
+    "eligible": [],
+    "moving": [
+      "sd15_mm2",
+      "sd15_mm3"
+    ]
   },
   "n_clips": 960
 }

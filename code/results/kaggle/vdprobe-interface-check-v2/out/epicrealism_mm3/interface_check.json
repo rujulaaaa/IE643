@@ -1,0 +1,227 @@
+{
+  "variant": "epicrealism_mm3",
+  "load_seconds": 87.45331194200003,
+  "loras": [
+    "lora_probe",
+    "lora_anti"
+  ],
+  "lora_skipped": {
+    "lora_full": "RuntimeError: unexpected LoRA keys: ['mid_block.motion_modules.0.transformer_blocks.0.attn1.to_k.lora_A.weight', 'mid_block.motion_modules.0.transformer_blocks.0.attn1.to_k.lora_B.weight', 'mid_block."
+  },
+  "checks": {
+    "edit_motion_selected": {
+      "ok": true,
+      "seconds": 309.856505604,
+      "table": [
+        {
+          "clip": "source",
+          "sc_A": 1.0,
+          "sm_A": 1.0,
+          "motion_magnitude": 0.3664,
+          "consistency_ratio": 1.0,
+          "sc_B": 0.8042,
+          "sm_B": 0.2382,
+          "D": null
+        },
+        {
+          "clip": "B_ref",
+          "sc_A": 0.8042,
+          "sm_A": 0.2382,
+          "motion_magnitude": 0.3062,
+          "consistency_ratio": 0.9983,
+          "sc_B": 1.0,
+          "sm_B": 1.0,
+          "D": null
+        },
+        {
+          "clip": "base",
+          "sc_A": 0.7575,
+          "sm_A": 0.1844,
+          "motion_magnitude": 0.2897,
+          "consistency_ratio": 0.9889,
+          "sc_B": 0.9399,
+          "sm_B": 0.534,
+          "D": 0.0495
+        },
+        {
+          "clip": "edit",
+          "sc_A": 0.7821,
+          "sm_A": 0.4541,
+          "motion_magnitude": 0.2446,
+          "consistency_ratio": 0.9929,
+          "sc_B": 0.9472,
+          "sm_B": 0.4373,
+          "D": 0.3151
+        }
+      ],
+      "pool": "local smoke",
+      "files": {
+        "source": "/kaggle/working/out/epicrealism_mm3/interface/20261025-034246_42__on-a-beach__golden-retriever-running__horse-walking__motion__selected/source.gif",
+        "B_ref": "/kaggle/working/out/epicrealism_mm3/interface/20261025-034246_42__on-a-beach__golden-retriever-running__horse-walking__motion__selected/B_ref.gif",
+        "base": "/kaggle/working/out/epicrealism_mm3/interface/20261025-034246_42__on-a-beach__golden-retriever-running__horse-walking__motion__selected/base.gif",
+        "edit": "/kaggle/working/out/epicrealism_mm3/interface/20261025-034246_42__on-a-beach__golden-retriever-running__horse-walking__motion__selected/edit.gif"
+      },
+      "progress_ticks": 26,
+      "progress_last": [
+        1.0,
+        "Scoring the clips (CLIP and optical flow)"
+      ]
+    },
+    "edit_content_selected": {
+      "ok": true,
+      "seconds": 312.01001667899993,
+      "table": [
+        {
+          "clip": "source",
+          "sc_A": 1.0,
+          "sm_A": 1.0,
+          "motion_magnitude": 0.3664,
+          "consistency_ratio": 1.0,
+          "sc_B": 0.7792,
+          "sm_B": 0.1394,
+          "D": null
+        },
+        {
+          "clip": "B_ref",
+          "sc_A": 0.7792,
+          "sm_A": 0.1394,
+          "motion_magnitude": 0.2811,
+          "consistency_ratio": 0.9916,
+          "sc_B": 1.0,
+          "sm_B": 1.0,
+          "D": null
+        },
+        {
+          "clip": "base",
+          "sc_A": 0.9808,
+          "sm_A": 0.3992,
+          "motion_magnitude": 0.2944,
+          "consistency_ratio": 0.9976,
+          "sc_B": 0.7755,
+          "sm_B": 0.213,
+          "D": 0.2239
+        },
+        {
+          "clip": "edit",
+          "sc_A": 0.9774,
+          "sm_A": 0.467,
+          "motion_magnitude": 0.3026,
+          "consistency_ratio": 0.9992,
+          "sc_B": 0.7696,
+          "sm_B": 0.2117,
+          "D": 0.1725
+        }
+      ],
+      "pool": "local smoke",
+      "files": {
+        "source": "/kaggle/working/out/epicrealism_mm3/interface/20261025-034758_42__on-a-beach__golden-retriever-running__horse-jumping__content__selected/source.gif",
+        "B_ref": "/kaggle/working/out/epicrealism_mm3/interface/20261025-034758_42__on-a-beach__golden-retriever-running__horse-jumping__content__selected/B_ref.gif",
+        "base": "/kaggle/working/out/epicrealism_mm3/interface/20261025-034758_42__on-a-beach__golden-retriever-running__horse-jumping__content__selected/base.gif",
+        "edit": "/kaggle/working/out/epicrealism_mm3/interface/20261025-034758_42__on-a-beach__golden-retriever-running__horse-jumping__content__selected/edit.gif"
+      },
+      "progress_ticks": 0
+    },
+    "edit_motion_lora_probe": {
+      "ok": true,
+      "seconds": 234.93738964400006,
+      "table": [
+        {
+          "clip": "source",
+          "sc_A": 1.0,
+          "sm_A": 1.0,
+          "motion_magnitude": 0.2817,
+          "consistency_ratio": 1.0
+        },
+        {
+          "clip": "base",
+          "sc_A": 0.7243,
+          "sm_A": 0.3651,
+          "motion_magnitude": 0.3469,
+          "consistency_ratio": 1.0057
+        },
+        {
+          "clip": "edit",
+          "sc_A": 0.726,
+          "sm_A": 0.3447,
+          "motion_magnitude": 0.3879,
+          "consistency_ratio": 1.0016
+        }
+      ],
+      "pool": "local smoke",
+      "files": {
+        "source": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035154_1337__in-a-forest__golden-retriever-running__tiger-running__motion__lora_probe/source.gif",
+        "base": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035154_1337__in-a-forest__golden-retriever-running__tiger-running__motion__lora_probe/base.gif",
+        "edit": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035154_1337__in-a-forest__golden-retriever-running__tiger-running__motion__lora_probe/edit.gif"
+      },
+      "progress_ticks": 0
+    },
+    "upload_attn_all": {
+      "ok": true,
+      "seconds": 303.01251381600014,
+      "table": [
+        {
+          "clip": "video",
+          "sm_video": 1.0,
+          "sc_video": 1.0,
+          "clip_text_target": 0.1761,
+          "motion_magnitude": 0.4792
+        },
+        {
+          "clip": "source",
+          "sm_video": 0.9972,
+          "sc_video": 0.9737,
+          "clip_text_target": 0.1946,
+          "motion_magnitude": 0.4845
+        },
+        {
+          "clip": "base",
+          "sm_video": -0.016,
+          "sc_video": 0.4164,
+          "clip_text_target": 0.342,
+          "motion_magnitude": 0.1748
+        },
+        {
+          "clip": "edit",
+          "sm_video": 0.6425,
+          "sc_video": 0.4145,
+          "clip_text_target": 0.341,
+          "motion_magnitude": 0.1661
+        }
+      ],
+      "pool": null,
+      "files": {
+        "video": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035655_upload__attn_all/video.gif",
+        "source": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035655_upload__attn_all/source.gif",
+        "base": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035655_upload__attn_all/base.gif",
+        "edit": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035655_upload__attn_all/edit.gif"
+      },
+      "progress_ticks": 0
+    },
+    "cross_attention": {
+      "ok": true,
+      "seconds": 90.423788887,
+      "files": {
+        "clip": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035823_xattn__epicrealism_mm3__s7__red-fox__jumping__in-a-snowy-forest/clip.gif",
+        "overlay": {
+          "subject": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035823_xattn__epicrealism_mm3__s7__red-fox__jumping__in-a-snowy-forest/overlay_subject.gif",
+          "verb": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035823_xattn__epicrealism_mm3__s7__red-fox__jumping__in-a-snowy-forest/overlay_verb.gif",
+          "scene": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035823_xattn__epicrealism_mm3__s7__red-fox__jumping__in-a-snowy-forest/overlay_scene.gif"
+        },
+        "grid": {
+          "subject": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035823_xattn__epicrealism_mm3__s7__red-fox__jumping__in-a-snowy-forest/grid_subject.png",
+          "verb": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035823_xattn__epicrealism_mm3__s7__red-fox__jumping__in-a-snowy-forest/grid_verb.png",
+          "scene": "/kaggle/working/out/epicrealism_mm3/interface/20261025-035823_xattn__epicrealism_mm3__s7__red-fox__jumping__in-a-snowy-forest/grid_scene.png"
+        }
+      },
+      "progress_ticks": 26,
+      "progress_last": [
+        1.0,
+        "Drawing the attention maps"
+      ]
+    },
+    "app_builds": {
+      "ok": true
+    }
+  },
+  "playable_mp4": "/kaggle/working/out/epicrealism_mm3/interface/20261025-034246_42__on-a-beach__golden-retriever-running__horse-walking__motion__selected/edit.mp4"
+}

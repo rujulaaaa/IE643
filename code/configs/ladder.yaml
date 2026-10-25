@@ -25,7 +25,7 @@ bases:
   - {family: bovid, breed: holstein cow, breed_swap: highland cow, species_swap: bison}
   - {family: bovid, breed: alpine goat, breed_swap: pygmy goat, species_swap: sheep}
 
-verbs: [running, walking]     # replace with the two best-rendered verbs of the Phase 1 pilot
+verbs: [walking, running]     # set by the Phase 1 quality gate (D-35)
 seeds: [42, 1337]
 
 expected_counts:

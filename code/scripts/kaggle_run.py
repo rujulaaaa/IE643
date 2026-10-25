@@ -14,13 +14,14 @@ results/kaggle/<slug>/.
 Every job gets `--out /kaggle/working/out/<name>` appended unless it already has --out.
 Larger inputs (trained LoRAs) go in a private dataset: --dataset <slug> attaches it and jobs
 see it at input/<slug>/.
-Needs the Kaggle CLI (~/kaggle/.venv/bin/kaggle) and ~/.kaggle/kaggle.json.
+Needs the Kaggle CLI (~/kaggle/.venv/bin/kaggle) and ~/.kaggle/kaggle.json or ~/.kaggle/access_token.
 """
 
 import argparse
 import base64
 import io
 import json
+import os
 import shlex
 import shutil
 import subprocess
@@ -30,7 +31,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 KAGGLE = str(Path.home() / "kaggle" / ".venv" / "bin" / "kaggle")
-USER = "rujularahate"
+# Kaggle account the kernels run under: --user, else $KAGGLE_USER, else the original account
+USER = os.environ.get("KAGGLE_USER", "rujularahate")
 DIFFUSERS = "0.40.0"
 PEFT = "0.21.2"     # the version the motion LoRAs were trained with
 
@@ -173,6 +175,7 @@ def download(slug):
 
 
 def main():
+    global USER
     p = argparse.ArgumentParser()
     p.add_argument("--slug", required=True)
     p.add_argument("--job", action="append", default=[], help="command line relative to the repo root")
@@ -182,7 +185,10 @@ def main():
     p.add_argument("--data", action="store_true", help="also ship data/ (LoRA training clips)")
     p.add_argument("--dataset", action="append", default=[],
                    help="private dataset slug of this user to attach; jobs see it at input/<slug>/")
+    p.add_argument("--user", help="Kaggle username (default: $KAGGLE_USER, else %s)" % USER)
     args = p.parse_args()
+    if args.user:
+        USER = args.user
     if args.download_only:
         return download(args.slug)
     kdir = build(args.slug, args.job, args.data, args.dataset)

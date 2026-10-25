@@ -112,3 +112,65 @@ def test_reconstructed_probabilities_reproduce_module_output(tiny_unet, tiny_run
         v = v.view(v.shape[0], -1, attn.heads, v.shape[-1] // attn.heads).transpose(1, 2)
         o = (p @ v).transpose(1, 2).reshape(store["hs"].shape[0], -1, attn.heads * v.shape[-1])
         assert torch.allclose(attn.to_out[0](o), store["out"], atol=1e-5), kind
+
+
+def test_cross_attention_maps(tiny_unet, tiny_run):
+    from vdprobe.harness import CrossAttentionMaps
+
+    coords = enumerate_coordinates(tiny_unet)
+    n_cross = sum(c.kind == "spatial_attn2" for c in coords)
+    rec = CrossAttentionMaps(["subject", "_all"], size=16, grid=4)
+    run = tiny_run()
+    with Harness(tiny_unet, coords, [rec], token_index=TOKENS):
+        run(steps=2)
+    sub, everything = rec.total["subject"], rec.total["_all"]
+    assert sub.shape == (run.F, 16, 16) and (sub >= 0).all()
+    assert (sub <= everything + 1e-5).all()                         # a token subset gets at most the total
+    # the 6 tokens of TinyRun hold all the mass, and "_all" here is 4 of them: < 1 per position per call
+    assert everything.max() <= 2 * n_cross + 1e-3
+    assert len(rec.cells) == 2 * n_cross
+    h = rec.heatmap("subject")
+    assert h.max() == 1 and rec.mask("subject").any()
+    assert 0.1 <= rec.concentration(h[0]) <= 1.0
+
+
+def test_temporal_head_stats_bounds(tiny_unet, tiny_run):
+    import math
+
+    coords = [c for c in enumerate_coordinates(tiny_unet) if c.kind == "temporal_attn1"]
+    module = dict(tiny_unet.named_modules())[coords[0].name]
+    store, h = _capture(module)
+    tiny_run()(steps=1)
+    h.remove()
+    hs = store["hs"][: store["hs"].shape[0] // 2]                  # one CFG branch, (S, F, C)
+    st = A.temporal_head_stats(module, hs, row_chunk=7)
+    F_ = hs.shape[1]
+    assert st.shape == (module.heads, 3)
+    assert (st[:, 0] >= 0).all() and (st[:, 0] <= math.log(F_) + 1e-5).all()
+    assert (st[:, 1] >= 0).all() and (st[:, 1] <= 1).all()
+    assert (st[:, 2] >= 0).all() and (st[:, 2] <= F_ - 1).all()
+    p = A.attention_probs(module, hs).float()                    # direct check of the mean entropy
+    ent = -(p * p.clamp_min(1e-12).log()).sum(-1).mean(dim=(0, 2))
+    assert torch.allclose(st[:, 0], ent, atol=1e-5)
+
+
+def test_resnet_coordinates_and_exp2_probes(tiny_unet, tiny_run):
+    from vdprobe.coords import RESNET, in_blocks
+    from vdprobe.lockstep import ChannelStats, HeadStats, Sketcher
+
+    coords = enumerate_coordinates(tiny_unet, resnets=True)
+    rn = [c for c in coords if c.kind == RESNET]
+    assert len(rn) == len([n for n, _ in tiny_unet.named_modules() if n.split(".")[-2:-1] == ["resnets"]])
+    assert len(coords) == len(enumerate_coordinates(tiny_unet)) + len(rn)
+    refined = in_blocks(coords, ["up_blocks.1"])
+    assert refined and all(c.block == "up_blocks.1" for c in refined) and any(c.kind == RESNET for c in refined)
+    chan, head = ChannelStats(refined), HeadStats(coords)
+    sk = Sketcher(refined, steps=range(2), dim=16, parts=("tilde",))
+    with Harness(tiny_unet, coords, [chan, head, sk]):
+        tiny_run()(steps=2)
+    for c in refined:
+        st = chan.out[(c.name, 1)]
+        assert st.shape[0] == 2 and (st[1] >= 0).all()                 # dynamic energy is a mean square
+        assert sk.out[(c.name, 0)].shape == (1, 16)
+    t_attn = [c for c in coords if c.kind.startswith("temporal_attn")]
+    assert {k[0] for k in head.out} == {c.name for c in t_attn}
