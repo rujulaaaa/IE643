@@ -133,6 +133,14 @@ desired ones rather than entire regeneration of the clip. It would show us where
 A negative answer is also useful because if the split is not clean then the editing methods that assume this clean split are working for some other reasons that need further invetsigation. 
 \n 
 
+haha
+
+To find such a map, we experiment with the model. The model is a u-net architecture that turns noise into video over a sequence of denoising steps. It was trained on just the input and the output and was never told 
+as to which part of the model should carry the motion and which should carry the content. So any
+such seperation should be something that it learned on its own and has to be located emperically.
+To do this we generate pairs of clips whose prompts differ only in either the content or the motion
+and record how each layers output changes  
+
 
 
 
