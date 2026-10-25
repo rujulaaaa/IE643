@@ -395,6 +395,24 @@ motion; we keep only the temporal path and ask whether its placement can come fr
 
 \section{Proposed Approach} \label{sec:our_proj}
 
+Our approach has three steps. First is that we generate pairs of clips from the same seed 
+whose prompts differ only at one word and record how much does activations at each layer and step
+respond to this change. This gives us a map of where the content and motion are stored. 
+Second we intervene on the model mid generation by copying activation or attentions from
+one generation to another at the places the map points to and see if we can see the change in the 
+property that we intended to see in. Third we use the map for two edits that is transferring the motion
+or content between clips and deciding where to place small adapters that teach the model new motions.
+Apart from the LoRA and the probes, we have trained nothing and are working on pre trained work. 
+
+Our work is different from the existing work because:
+\begin{itemize}
+  \item The existing editing methods like MotionClone and MOFt etc pick the layers to edit either by design
+  or by ablation. We are first building a map to measure which layers contain what from controlled pairs. 
+  Then we test whether the place we motion is stored is actually the place where editing will work? 
+  In our results they are not the same place and that gap is important to understand.
+  \item MOFT uses frame mean residual and PCA channels to guide the motion feature at a block. We apply
+  the split to every coordinate and step ($S_{dyn}$ vs $S_{stat}$) and then turn it into 
+
 \subsection{Model and notation}
 
 AnimateDiff consists of the frozen Stable Diffusion~1.5 U-Net (about 860\,M parameters) with
