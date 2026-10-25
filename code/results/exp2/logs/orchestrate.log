@@ -42,3 +42,107 @@ sd15_mm2/s1337__in-a-forest: 60 clips
 sd15_mm2/s1337__on-a-beach: 60 clips
 sd15_mm2/s42__in-a-forest: 60 clips
 sd15_mm2/s42__on-a-beach: 60 clips
+epicrealism_mm2/s1337__in-a-forest: 60 clips
+epicrealism_mm2/s1337__on-a-beach: 60 clips
+epicrealism_mm2/s42__in-a-forest: 60 clips
+epicrealism_mm2/s42__on-a-beach: 60 clips
+sd15_mm3/s1337__in-a-forest: 60 clips
+sd15_mm3/s1337__on-a-beach: 60 clips
+sd15_mm3/s42__in-a-forest: 60 clips
+sd15_mm3/s42__on-a-beach: 60 clips
+epicrealism_mm3/s1337__in-a-forest: 60 clips
+epicrealism_mm3/s1337__on-a-beach: 60 clips
+epicrealism_mm3/s42__in-a-forest: 60 clips
+epicrealism_mm3/s42__on-a-beach: 60 clips
+                 subject_consistency_median  subject_consistency_mean  dynamic_median  dynamic_mean  flow_top5_median  flow_top5_mean  clip_t_median  clip_t_mean  verb_prob_median  verb_prob_mean  verb_hit_median  verb_hit_mean
+cell                                                                                                                                                                                                                               
+epicrealism_mm2                      0.9611                    0.9551             0.0        0.0208            1.8976          2.0502         0.3442       0.3425            0.4517          0.4590              1.0         0.5500
+epicrealism_mm3                      0.9701                    0.9658             0.0        0.0042            1.0919          1.3617         0.3436       0.3441            0.4980          0.4816              1.0         0.6250
+sd15_mm2                             0.8653                    0.8631             1.0        0.8333           24.7591         46.0294         0.3317       0.3285            0.4054          0.4379              1.0         0.5750
+sd15_mm3                             0.8582                    0.8491             1.0        0.9292           16.8410         38.6760         0.3332       0.3320            0.4044          0.4315              1.0         0.5333
+                          verb_hit  verb_prob  flow_top5
+cell            verb                                    
+epicrealism_mm2 jumping     0.5333     0.4346     1.9482
+                running     0.4833     0.4725     1.9217
+                spinning    0.2333     0.2495     2.2909
+                walking     0.9500     0.6794     2.0401
+epicrealism_mm3 jumping     0.6833     0.4980     1.5397
+                running     0.5833     0.5275     1.3933
+                spinning    0.2667     0.2616     1.5717
+                walking     0.9667     0.6392     0.9422
+sd15_mm2        jumping     0.4667     0.3815    49.5039
+                running     0.5167     0.4641    61.1286
+                spinning    0.4000     0.2804    39.0899
+                walking     0.9167     0.6258    34.3950
+sd15_mm3        jumping     0.4167     0.3548    33.8526
+                running     0.6167     0.5288    50.9914
+                spinning    0.2167     0.2437    45.9097
+                walking     0.8833     0.5987    23.9502
+decision: {'primary_cell': 'epicrealism_mm3', 'ladder_verbs': ['walking', 'jumping'], 'rule': 'max median subject consistency among cells with dynamic share >= 0.5 and CLIP-T within 0.01 of the best; ladder verbs = top-2 X-CLIP hit rate on the primary cell', 'eligible': []}
+2026-10-25 17:27:35 primary cell epicrealism_mm3, ladder verbs [walking, jumping]
+[
+ {
+  "name": "exp1_region",
+  "coords": [
+   "up_blocks.0.motion_modules.2"
+  ],
+  "steps": [
+   0,
+   1,
+   2
+  ],
+  "component": "dynamic",
+  "why": "Experiment 1's motion site (pre-registered region)"
+ },
+ {
+  "name": "rsa_motion_peak",
+  "coords": [
+   "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1"
+  ],
+  "steps": [
+   16,
+   17,
+   18,
+   19,
+   20
+  ],
+  "component": "dynamic",
+  "why": "highest RSA unique motion share among refined coordinates, peak step 18"
+ },
+ {
+  "name": "up1_motion_modules",
+  "coords": [
+   "up_blocks.1.motion_modules.0",
+   "up_blocks.1.motion_modules.1",
+   "up_blocks.1.motion_modules.2"
+  ],
+  "steps": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "component": "dynamic",
+  "why": "the literature's motion site (MOFT, MotionClone, DMT)"
+ },
+ {
+  "name": "rsa_content_peak",
+  "coords": [
+   "up_blocks.2.attentions.2.transformer_blocks.0.attn2"
+  ],
+  "steps": [
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "component": "static",
+  "why": "highest RSA unique content share, peak step 6"
+ }
+]
+LoRA target: ['up_blocks.0.motion_modules.2', 'up_blocks.0.motion_modules.1', 'down_blocks.3.motion_modules.0']

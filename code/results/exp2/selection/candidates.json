@@ -1,0 +1,69 @@
+{
+ "rule": "D-35",
+ "cell": "epicrealism_mm3",
+ "candidates": [
+  {
+   "name": "exp1_region",
+   "coords": [
+    "up_blocks.0.motion_modules.2"
+   ],
+   "steps": [
+    0,
+    1,
+    2
+   ],
+   "component": "dynamic",
+   "why": "Experiment 1's motion site (pre-registered region)"
+  },
+  {
+   "name": "rsa_motion_peak",
+   "coords": [
+    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1"
+   ],
+   "steps": [
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "component": "dynamic",
+   "why": "highest RSA unique motion share among refined coordinates, peak step 18"
+  },
+  {
+   "name": "up1_motion_modules",
+   "coords": [
+    "up_blocks.1.motion_modules.0",
+    "up_blocks.1.motion_modules.1",
+    "up_blocks.1.motion_modules.2"
+   ],
+   "steps": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "component": "dynamic",
+   "why": "the literature's motion site (MOFT, MotionClone, DMT)"
+  },
+  {
+   "name": "rsa_content_peak",
+   "coords": [
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2"
+   ],
+   "steps": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "component": "static",
+   "why": "highest RSA unique content share, peak step 6"
+  }
+ ]
+}
