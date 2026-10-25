@@ -1,0 +1,11 @@
+{
+ "video": "/kaggle/working/repo/data/hmdb51_lora/jump/jump_Faith_Rewarded_jump_f_nm_np1_ri_med_89.mp4",
+ "source_prompt": "a man jumping, high quality, detailed",
+ "target_prompt": "a tiger jumping, high quality, detailed",
+ "method": "attn_all",
+ "alpha": 1.0,
+ "seed": 42,
+ "start": "blend",
+ "inversion_seconds": 40.301887234000105,
+ "seconds": 296.0620609570001
+}
