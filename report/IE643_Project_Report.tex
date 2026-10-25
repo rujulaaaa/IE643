@@ -444,7 +444,25 @@ steps and not just layers.
 \item\textbf{Spatial Transformer} Each has a self attenition layer where each position is given 
 attention wrt other in the frame and a cross attention layer where image positions attend to text token.
 and a FFN with residual connections. Frames are bacthed so these cannot see other frames. 
-Self attention keeps appearance consistent within a frame  
+Self attention keeps appearance consistent within a frame and that is used for appearance transfer.
+Cross attention is where we hook our content coordinates and where the DAAM maps come from . 
+\item\textbf{Motion Module(21 modules about 417M)} Inserted after the spatial layers of each block.
+It reshapes the activation from $(B\cdot F, C, H, W)$ to $(B\cdot H\cdot W, F, C)$ so that the 
+frames form a sequence. It also adds a sinusoidal position embedding and applies two temporal 
+self attention layers and FFN layer and finally adds the result back to the input through a zero initialised output layer.
+Temporal attention is where the information crosses through the frames hence the only place where motionca
+can be computed. Without positional encoding forward and backward motion would seem the same .
+residual addition means that the content and motion mix together and that is why we cannot copy
+the whole output fo layer. The zero initialisation means training starts from the 
+frozen image model and the motion module learns to add motion on top of it. The attention 
+probabilites are frame to frame matrices what is used for our attention injection baseline.
+\item\textbf{DDIM Sampler} This is the deterministic sampler that makes the same seed run the same 
+clip. It is important for our controlled pairs and for patching to work. Under CFG (scale 7.5) every U-Net call processes an unconditional and a conditional copy; our patches act on both copies by default.
+\end{itemize}
+
+This architecture is advantageouos to us because it has clear seperation in the layers so each and can 
+be hooked and patched. Also it is text conditioned so we can make controlled pairs. On top of that
+its 
 
 \subsection{Work done before the prep-presentation review} \label{sec:before}
 
