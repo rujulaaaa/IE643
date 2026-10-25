@@ -423,9 +423,24 @@ Our work is different from the existing work because:
 \subsection{Network Architecture}
 
 AnimateDiff = frozen VAE + frozen CLIP text encoder + frozen SD1.5 U-Net + motion modules + DDIM sampler
-/textbf{VAE(frozen, about 84M)} Each 512*512 RBG frame is encoded seperately into a 4*64*64 latent. 
+\begin{itemize}
+\item\textbf{VAE(frozen, about 84M)} Each 512*512 RBG frame is encoded seperately into a 4*64*64 latent. 
 Diffusion runs entirely in this latent space which means that every activation probe is a function of latents, not pixels.
-\textbf{CLIP(frozen, ViT-L/14)} This turns the prompt into 
+\item\textbf{CLIP(frozen, ViT-L/14)} This turns the prompt into 77 tokens each of a 768 dim embedding. 
+This is the route through which the prompt enters the model, through cross attention. It is done for all 16 frames
+so that the text cannot specify motion frame by frame. 
+\item\textbf{U-Net(frozen, about 1.5B)} This is the main denoiser that turns noise into video. 
+It has 4 encodeer blocks that lower the resolution from 64*64 to 8*8 with doubling the cahnnels. 
+a middle block and then 4 decoder blocks that raise the resolution back to 64*64. Skip connections 
+are present that pass encoder features to the decoder. The low resolution blocks are where the 
+layout and trajectory can be seen and at high resolution the appearance and texture. 
+The skip connections explain why outermost decoder block can be a strong patch site beacuse it combines encoder
+detail with the decoded results. 
+\item\textbf{ResNet blocks and timestep embedding} Each ResNet layer applies GroupNorm, SiLU and 3*3 convolutions
+at each frame with a residual connection. The denoising step enters as a sinusoidal emdedding 
+passed through a MLP and added to the features after the first convolution. This is the reson why 
+onel ayer can do differnt jobs at different steps and why our map needs to run over both layers and 
+steps and not just layers. 
 
 \subsection{Work done before the prep-presentation review} \label{sec:before}
 
