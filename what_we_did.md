@@ -1110,7 +1110,6 @@ Reading:
   - soldier→dancer: content.dual.all scores D = 0.39, but the clip is sand and a boot. A high per-pair D does not
     guarantee a good edit, so demo clips are chosen by eye.
 
-<<<<<<< HEAD
 ### 34. Quality gate, primary cell (D-39), local steps done (2026-10-25, 15:11-19:20)
 
 - **Quality gate** (local CPU, 2 h 15 min, 960 clips). No cell met both D-35 criteria:
@@ -1137,7 +1136,7 @@ Reading:
   - `kaggle_wait.sh` takes the account from the same variable; no account name is hardcoded.
   - The CLI can take a second account's token through `KAGGLE_API_TOKEN` without touching `~/.kaggle/access_token`.
 - The machine rebooted again at 19:00; nothing was lost (all steps resume from their outputs).
-=======
+
 ---
 
 > **Merged log (2026-10-25).** The two sessions below were logged on the `main` branch, in parallel
@@ -1248,4 +1247,3 @@ Reading:
 - TinyTeX lacked `footmisc` (needed by ragged2e); installed from the TeX Live 2025 frozen repository.
 - Open: roll numbers in the header; the team must read and rewrite the prose in its own words
   before submission (the instructions give zero for AI-generated report content).
->>>>>>> origin/final-submission
