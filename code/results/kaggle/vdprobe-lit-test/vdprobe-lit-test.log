@@ -1,0 +1,244 @@
+[{"stream_name":"stdout","time":14.024779825,"data":"2\n"}
+,{"stream_name":"stdout","time":14.024874609,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":14.024882566,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":14.02488936,"data":"2.11.0+cu128\n"}
+,{"stream_name":"stdout","time":14.024891629,"data":" \n"}
+,{"stream_name":"stderr","time":16.782743801,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":21.385441051,"data":"\rFetching 2 files: 100%|██████████| 2/2 [00:04\u003c00:00,  2.31s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:04\u003c00:00,  2.31s/it]\n"}
+,{"stream_name":"stderr","time":31.120973446,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:  46%|████▌     | 6/13 [00:00\u003c00:00, 54.22it/s]\rFetching 13 files:  92%|█████████▏| 12/13 [00:09\u003c00:00,  1.11it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:09\u003c00:00,  1.34it/s]\n"}
+,{"stream_name":"stderr","time":39.770565769,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:  33%|███▎      | 4/12 [00:00\u003c00:00, 37.32it/s]\rFetching 12 files:  83%|████████▎ | 10/12 [00:08\u003c00:01,  1.03it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:08\u003c00:00,  1.40it/s]\n"}
+,{"stream_name":"stdout","time":47.749741388,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/run_seq.py --out /kaggle/working/out/job0 --cmd edit=scripts/edit_sweep.py --split test --arms lit --lit-sel configs/lit_selection.json --shard 0/2 --cmd score=scripts/score_edits.py /kaggle/working/out/job0/edit\n"}
+,{"stream_name":"stdout","time":47.750652465,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/run_seq.py --out /kaggle/working/out/job1 --cmd edit=scripts/edit_sweep.py --split test --arms lit --lit-sel configs/lit_selection.json --shard 1/2 --cmd score=scripts/score_edits.py /kaggle/working/out/job1/edit\n"}
+,{"stream_name":"stdout","time":107.751881895,"data":"[job0] === edit: /usr/bin/python3 -u scripts/edit_sweep.py --split test --arms lit --lit-sel configs/lit_selection.json --shard 0/2 --out /kaggle/working/out/job0/edit\n"}
+,{"stream_name":"stdout","time":107.752104474,"data":"[job0] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":107.752115104,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":107.752120937,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":107.752127631,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 899.68it/s]\n"}
+,{"stream_name":"stdout","time":107.752134598,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":107.752151761,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":107.752157466,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1308.27it/s]\n"}
+,{"stream_name":"stdout","time":107.752163544,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":107.752169429,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":107.752175472,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":107.752180637,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":107.752204978,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":107.752209762,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":107.752214205,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2689.06it/s]\n"}
+,{"stream_name":"stdout","time":107.752219007,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":107.752223193,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:00,  9.67it/s]\n"}
+,{"stream_name":"stdout","time":107.752227952,"data":"[job0] Loading pipeline components...:  50%|█████     | 3/6 [00:01\u003c00:01,  1.86it/s]\n"}
+,{"stream_name":"stdout","time":107.752232646,"data":"[job0] Loading pipeline components...:  83%|████████▎ | 5/6 [00:01\u003c00:00,  3.53it/s]\n"}
+,{"stream_name":"stdout","time":107.752236897,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  3.83it/s]\n"}
+,{"stream_name":"stdout","time":107.752241738,"data":"[job0]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 15.4 s\n"}
+,{"stream_name":"stdout","time":107.752246368,"data":"[job0] [1/6] 42__on-a-beach__golden-retriever-running__horse-walking: source + 10 arms\n"}
+,{"stream_name":"stdout","time":107.752255797,"data":"[job1] === edit: /usr/bin/python3 -u scripts/edit_sweep.py --split test --arms lit --lit-sel configs/lit_selection.json --shard 1/2 --out /kaggle/working/out/job1/edit\n"}
+,{"stream_name":"stdout","time":107.752259947,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":107.752262932,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":107.752265915,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":107.752269205,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 886.75it/s]\n"}
+,{"stream_name":"stdout","time":107.752272841,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":107.752275918,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":107.752279299,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1332.14it/s]\n"}
+,{"stream_name":"stdout","time":107.752322889,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":107.752330762,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":107.752335504,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":107.752339814,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":107.752344294,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":107.75234824,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":107.752352937,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2587.36it/s]\n"}
+,{"stream_name":"stdout","time":107.752357704,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":107.752362287,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:01,  4.74it/s]\n"}
+,{"stream_name":"stdout","time":107.75239043,"data":"[job1] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:00,  6.83it/s]\n"}
+,{"stream_name":"stdout","time":107.752403958,"data":"[job1] Loading pipeline components...:  50%|█████     | 3/6 [00:01\u003c00:01,  1.73it/s]\n"}
+,{"stream_name":"stdout","time":107.752408848,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  4.14it/s]\n"}
+,{"stream_name":"stdout","time":107.752413627,"data":"[job1]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 15.4 s\n"}
+,{"stream_name":"stdout","time":107.752418115,"data":"[job1] [1/6] 1337__in-a-forest__german-shepherd-walking__wolf-jumping: source + 10 arms\n"}
+,{"stream_name":"stdout","time":287.753473424,"data":"[job0]     step  5/25    184.0 s  (3.35 s per clip-step)\n"}
+,{"stream_name":"stdout","time":347.753925102,"data":"[job1]     step  5/25    196.5 s  (3.57 s per clip-step)\n"}
+,{"stream_name":"stdout","time":527.755197901,"data":"[job0]     step 10/25    377.5 s  (3.43 s per clip-step)\n"}
+,{"stream_name":"stdout","time":527.755237435,"data":"[job1]     step 10/25    406.0 s  (3.69 s per clip-step)\n"}
+,{"stream_name":"stdout","time":707.756386272,"data":"[job0]     step 15/25    567.3 s  (3.44 s per clip-step)\n"}
+,{"stream_name":"stdout","time":707.756432733,"data":"[job1]     step 15/25    613.7 s  (3.72 s per clip-step)\n"}
+,{"stream_name":"stdout","time":887.757760988,"data":"[job0]     step 20/25    757.0 s  (3.44 s per clip-step)\n"}
+,{"stream_name":"stdout","time":947.758258316,"data":"[job1]     step 20/25    821.7 s  (3.73 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1067.759083694,"data":"[job0]     step 25/25    947.0 s  (3.44 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1127.759769708,"data":"[job0] wrote /kaggle/working/out/job0/edit/42__on-a-beach__golden-retriever-running__horse-walking/manifest.json\n"}
+,{"stream_name":"stdout","time":1127.759833066,"data":"[job0]   947 s (86.1 s per clip)\n"}
+,{"stream_name":"stdout","time":1127.75984101,"data":"[job0] [2/6] 2024__on-a-beach__tiger-jumping__fox-spinning: source + 10 arms\n"}
+,{"stream_name":"stdout","time":1127.7598468,"data":"[job1]     step 25/25   1029.9 s  (3.74 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1187.760214298,"data":"[job1] wrote /kaggle/working/out/job1/edit/1337__in-a-forest__german-shepherd-walking__wolf-jumping/manifest.json\n"}
+,{"stream_name":"stdout","time":1187.760280307,"data":"[job1]   1030 s (93.6 s per clip)\n"}
+,{"stream_name":"stdout","time":1187.760288839,"data":"[job1] [2/6] 42__in-a-forest__deer-spinning__brown-bear-running: source + 10 arms\n"}
+,{"stream_name":"stdout","time":1307.761237329,"data":"[job0]     step  5/25    192.1 s  (3.49 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1427.762267667,"data":"[job1]     step  5/25    210.2 s  (3.82 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1487.76271416,"data":"[job0]     step 10/25    385.5 s  (3.50 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1607.763622594,"data":"[job1]     step 10/25    421.2 s  (3.83 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1727.764797797,"data":"[job0]     step 15/25    576.1 s  (3.49 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1847.765550414,"data":"[job1]     step 15/25    628.9 s  (3.81 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1907.766103157,"data":"[job0]     step 20/25    765.8 s  (3.48 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2027.767025972,"data":"[job1]     step 20/25    836.7 s  (3.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2087.767450776,"data":"[job0]     step 25/25    956.5 s  (3.48 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2147.767911684,"data":"[job0] wrote /kaggle/working/out/job0/edit/2024__on-a-beach__tiger-jumping__fox-spinning/manifest.json\n"}
+,{"stream_name":"stdout","time":2147.767985332,"data":"[job0]   957 s (87.0 s per clip)\n"}
+,{"stream_name":"stdout","time":2147.767991125,"data":"[job0] [3/6] 1337__on-a-beach__horse-running__tiger-jumping: source + 10 arms\n"}
+,{"stream_name":"stdout","time":2267.768864695,"data":"[job1]     step 25/25   1044.3 s  (3.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2327.769567387,"data":"[job0]     step  5/25    188.8 s  (3.43 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2327.769727871,"data":"[job1] wrote /kaggle/working/out/job1/edit/42__in-a-forest__deer-spinning__brown-bear-running/manifest.json\n"}
+,{"stream_name":"stdout","time":2327.769741554,"data":"[job1]   1044 s (94.9 s per clip)\n"}
+,{"stream_name":"stdout","time":2327.769747774,"data":"[job1] [3/6] 2024__in-a-forest__wolf-walking__deer-spinning: source + 10 arms\n"}
+,{"stream_name":"stdout","time":2507.771254598,"data":"[job0]     step 10/25    384.6 s  (3.50 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2507.771299612,"data":"[job1]     step  5/25    208.4 s  (3.79 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2687.772553973,"data":"[job0]     step 15/25    575.2 s  (3.49 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2747.773087449,"data":"[job1]     step 10/25    418.6 s  (3.81 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2927.774462802,"data":"[job0]     step 20/25    764.9 s  (3.48 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2927.774518575,"data":"[job1]     step 15/25    626.4 s  (3.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3107.775734553,"data":"[job0]     step 25/25    955.0 s  (3.47 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3167.776356339,"data":"[job0] wrote /kaggle/working/out/job0/edit/1337__on-a-beach__horse-running__tiger-jumping/manifest.json\n"}
+,{"stream_name":"stdout","time":3167.776423763,"data":"[job0]   955 s (86.8 s per clip)\n"}
+,{"stream_name":"stdout","time":3167.776431769,"data":"[job0] [4/6] 42__on-a-beach__young-man-running__young-woman-walking: source + 10 arms\n"}
+,{"stream_name":"stdout","time":3167.776438277,"data":"[job1]     step 20/25    835.0 s  (3.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3347.777605815,"data":"[job0]     step  5/25    187.9 s  (3.42 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3347.777810688,"data":"[job1]     step 25/25   1043.5 s  (3.79 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3407.778366298,"data":"[job1] wrote /kaggle/working/out/job1/edit/2024__in-a-forest__wolf-walking__deer-spinning/manifest.json\n"}
+,{"stream_name":"stdout","time":3407.778404167,"data":"[job1]   1043 s (94.9 s per clip)\n"}
+,{"stream_name":"stdout","time":3407.77840965,"data":"[job1] [4/6] 1337__in-a-forest__athlete-walking__soldier-jumping: source + 10 arms\n"}
+,{"stream_name":"stdout","time":3527.779314804,"data":"[job0]     step 10/25    382.5 s  (3.48 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3647.780335566,"data":"[job1]     step  5/25    207.9 s  (3.78 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3707.780774364,"data":"[job0]     step 15/25    573.7 s  (3.48 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3827.781743236,"data":"[job1]     step 10/25    417.9 s  (3.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3887.782290071,"data":"[job0]     step 20/25    763.7 s  (3.47 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4067.783796853,"data":"[job1]     step 15/25    625.6 s  (3.79 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4127.784194352,"data":"[job0]     step 25/25    954.0 s  (3.47 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4187.784952991,"data":"[job0] wrote /kaggle/working/out/job0/edit/42__on-a-beach__young-man-running__young-woman-walking/manifest.json\n"}
+,{"stream_name":"stdout","time":4187.785025712,"data":"[job0]   954 s (86.7 s per clip)\n"}
+,{"stream_name":"stdout","time":4187.785031978,"data":"[job0] [5/6] 2024__on-a-beach__dancer-jumping__child-spinning: source + 10 arms\n"}
+,{"stream_name":"stdout","time":4247.785411712,"data":"[job1]     step 20/25    834.0 s  (3.79 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4367.786252268,"data":"[job0]     step  5/25    189.2 s  (3.44 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4487.787308182,"data":"[job1]     step 25/25   1042.3 s  (3.79 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4547.787753514,"data":"[job0]     step 10/25    381.4 s  (3.47 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4547.787826975,"data":"[job1] wrote /kaggle/working/out/job1/edit/1337__in-a-forest__athlete-walking__soldier-jumping/manifest.json\n"}
+,{"stream_name":"stdout","time":4547.787835822,"data":"[job1]   1042 s (94.8 s per clip)\n"}
+,{"stream_name":"stdout","time":4547.787841657,"data":"[job1] [5/6] 42__in-a-forest__elderly-man-spinning__young-man-running: source + 10 arms\n"}
+,{"stream_name":"stdout","time":4727.789141217,"data":"[job0]     step 15/25    574.7 s  (3.48 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4727.789187905,"data":"[job1]     step  5/25    207.6 s  (3.77 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4907.790509907,"data":"[job0]     step 20/25    765.5 s  (3.48 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4967.791050006,"data":"[job1]     step 10/25    418.3 s  (3.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5147.79251287,"data":"[job0]     step 25/25    955.9 s  (3.48 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5147.792548137,"data":"[job0] wrote /kaggle/working/out/job0/edit/2024__on-a-beach__dancer-jumping__child-spinning/manifest.json\n"}
+,{"stream_name":"stdout","time":5147.792553789,"data":"[job0]   956 s (86.9 s per clip)\n"}
+,{"stream_name":"stdout","time":5147.792558187,"data":"[job0] [6/6] 1337__in-a-forest__young-woman-running__athlete-jumping: source + 10 arms\n"}
+,{"stream_name":"stdout","time":5147.792586626,"data":"[job1]     step 15/25    626.9 s  (3.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5387.794469162,"data":"[job0]     step  5/25    188.6 s  (3.43 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5387.794661135,"data":"[job1]     step 20/25    835.8 s  (3.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5567.796153743,"data":"[job0]     step 10/25    380.9 s  (3.46 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5567.796218598,"data":"[job1]     step 25/25   1044.5 s  (3.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5627.796732805,"data":"[job1] wrote /kaggle/working/out/job1/edit/42__in-a-forest__elderly-man-spinning__young-man-running/manifest.json\n"}
+,{"stream_name":"stdout","time":5627.796774307,"data":"[job1]   1044 s (95.0 s per clip)\n"}
+,{"stream_name":"stdout","time":5627.796780719,"data":"[job1] [6/6] 2024__on-a-beach__soldier-walking__dancer-spinning: source + 10 arms\n"}
+,{"stream_name":"stdout","time":5747.79758097,"data":"[job0]     step 15/25    573.5 s  (3.48 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5867.798779335,"data":"[job1]     step  5/25    208.4 s  (3.79 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5927.799205826,"data":"[job0]     step 20/25    765.3 s  (3.48 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6047.800250418,"data":"[job1]     step 10/25    418.3 s  (3.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6107.800641254,"data":"[job0]     step 25/25    955.2 s  (3.47 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6167.801121268,"data":"[job0] wrote /kaggle/working/out/job0/edit/1337__in-a-forest__young-woman-running__athlete-jumping/manifest.json\n"}
+,{"stream_name":"stdout","time":6167.801203468,"data":"[job0]   955 s (86.8 s per clip)\n"}
+,{"stream_name":"stdout","time":6167.80120853,"data":"[job0] === edit: exit 0 after 6117 s\n"}
+,{"stream_name":"stdout","time":6167.801212038,"data":"[job0] === score: /usr/bin/python3 -u scripts/score_edits.py /kaggle/working/out/job0/edit --out /kaggle/working/out/job0/score\n"}
+,{"stream_name":"stdout","time":6167.80121566,"data":"[job0] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":6227.802264185,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":6227.80230088,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":6227.802307168,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 834.52it/s]\n"}
+,{"stream_name":"stdout","time":6227.802313427,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":6227.8023183,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":6227.80232362,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1362.67it/s]\n"}
+,{"stream_name":"stdout","time":6227.802328915,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":6227.802358612,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":6227.802363176,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":6227.802367286,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":6227.802371658,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":6227.802375779,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":6227.802380073,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2590.77it/s]\n"}
+,{"stream_name":"stdout","time":6227.802384613,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":6227.802388615,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:00, 10.37it/s]\n"}
+,{"stream_name":"stdout","time":6227.802393089,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:00\u003c00:00,  6.53it/s]\n"}
+,{"stream_name":"stdout","time":6227.802397606,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  9.12it/s]\n"}
+,{"stream_name":"stdout","time":6227.802402106,"data":"[job0]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.1 s\n"}
+,{"stream_name":"stdout","time":6227.802406513,"data":"[job0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":6227.802411085,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":6227.802415121,"data":"[job0] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":6227.802419406,"data":"[job0] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 8718.42it/s]\n"}
+,{"stream_name":"stdout","time":6287.802722965,"data":"[job0] scored 1337__in-a-forest__young-woman-running__athlete-jumping: 11 clips\n"}
+,{"stream_name":"stdout","time":6287.802762532,"data":"[job0] scored 1337__on-a-beach__horse-running__tiger-jumping: 11 clips\n"}
+,{"stream_name":"stdout","time":6287.802803908,"data":"[job1]     step 15/25    626.2 s  (3.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6347.803405486,"data":"[job0] scored 2024__on-a-beach__dancer-jumping__child-spinning: 11 clips\n"}
+,{"stream_name":"stdout","time":6407.804383695,"data":"[job0] scored 2024__on-a-beach__tiger-jumping__fox-spinning: 11 clips\n"}
+,{"stream_name":"stdout","time":6407.804468986,"data":"[job0] scored 42__on-a-beach__golden-retriever-running__horse-walking: 11 clips\n"}
+,{"stream_name":"stdout","time":6467.805197415,"data":"[job0] scored 42__on-a-beach__young-man-running__young-woman-walking: 11 clips\n"}
+,{"stream_name":"stdout","time":6467.805245682,"data":"[job0] direction                    arm  median_D  median_dD  frac_dD_pos  d16_ci_lo  d16_ci_hi  consistency_ratio  sm_A  sc_B  sm_B  sc_A\n"}
+,{"stream_name":"stdout","time":6467.805253895,"data":"[job0]   content       content.dual.all     0.345      0.132        1.000      0.062      0.314              1.001 0.318 0.785 0.575 0.913\n"}
+,{"stream_name":"stdout","time":6467.805260574,"data":"[job0]   content            content.sel     0.199      0.064        0.833     -0.005      0.092              1.006 0.313 0.776 0.289 0.892\n"}
+,{"stream_name":"stdout","time":6467.805266926,"data":"[job0]   content content.kv.probe.from2     0.224      0.016        0.833     -0.073      0.141              1.008 0.279 0.785 0.199 0.888\n"}
+,{"stream_name":"stdout","time":6467.8052734,"data":"[job0]   content           content.base     0.152      0.000        0.000      0.000      0.000              1.016 0.118 0.783 0.259 0.855\n"}
+,{"stream_name":"stdout","time":6467.805279615,"data":"[job0]    motion motion.dual.up23.from2     0.332      0.113        1.000      0.015      0.354              0.974 0.570 0.908 0.212 0.776\n"}
+,{"stream_name":"stdout","time":6467.805285806,"data":"[job0]    motion    motion.attn.all.all     0.261      0.110        1.000      0.027      0.168              0.999 0.758 0.835 0.086 0.866\n"}
+,{"stream_name":"stdout","time":6467.805291974,"data":"[job0]    motion             motion.sel     0.249      0.052        0.833     -0.018      0.098              1.006 0.657 0.834 0.120 0.849\n"}
+,{"stream_name":"stdout","time":6467.805298106,"data":"[job0]    motion     motion.attn.all.ft     0.240      0.047        0.833     -0.021      0.151              1.010 0.575 0.831 0.089 0.842\n"}
+,{"stream_name":"stdout","time":6467.805304372,"data":"[job0]    motion            motion.base     0.208      0.000        0.000      0.000      0.000              0.997 0.363 0.852 0.188 0.795\n"}
+,{"stream_name":"stdout","time":6467.805310559,"data":"[job0] wrote /kaggle/working/out/job0/edit/score_summary.json\n"}
+,{"stream_name":"stdout","time":6467.805316633,"data":"[job0] === score: exit 0 after 280 s\n"}
+,{"stream_name":"stdout","time":6467.805381089,"data":"[job1]     step 20/25    834.4 s  (3.79 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6707.807225869,"data":"[job1]     step 25/25   1041.5 s  (3.79 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6767.8078045,"data":"[job1] wrote /kaggle/working/out/job1/edit/2024__on-a-beach__soldier-walking__dancer-spinning/manifest.json\n"}
+,{"stream_name":"stdout","time":6767.807851787,"data":"[job1]   1042 s (94.7 s per clip)\n"}
+,{"stream_name":"stdout","time":6767.807858985,"data":"[job1] === edit: exit 0 after 6674 s\n"}
+,{"stream_name":"stdout","time":6767.807864735,"data":"[job1] === score: /usr/bin/python3 -u scripts/score_edits.py /kaggle/working/out/job1/edit --out /kaggle/working/out/job1/score\n"}
+,{"stream_name":"stdout","time":6767.80787086,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":6767.807876551,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":6767.807898787,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":6767.80790396,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 1098.56it/s]\n"}
+,{"stream_name":"stdout","time":6767.807909459,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":6767.807913714,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":6767.807918218,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1427.04it/s]\n"}
+,{"stream_name":"stdout","time":6767.807923373,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":6767.807930072,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":6767.807934864,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":6767.807939107,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":6767.807943796,"data":"[job1] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:00,  7.59it/s]\n"}
+,{"stream_name":"stdout","time":6767.807948288,"data":"[job1] Loading pipeline components...:  67%|██████▋   | 4/6 [00:00\u003c00:00, 11.78it/s]\n"}
+,{"stream_name":"stdout","time":6767.80795342,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":6767.807957416,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":6767.807962164,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2746.72it/s]\n"}
+,{"stream_name":"stdout","time":6767.80796683,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":6767.807970736,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  9.81it/s]\n"}
+,{"stream_name":"stdout","time":6767.807975378,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  9.80it/s]\n"}
+,{"stream_name":"stdout","time":6767.807979951,"data":"[job1]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 13.1 s\n"}
+,{"stream_name":"stdout","time":6767.807984581,"data":"[job1] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":6767.807998418,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":6767.808002653,"data":"[job1] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":6767.80800722,"data":"[job1] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 11231.39it/s]\n"}
+,{"stream_name":"stdout","time":6827.808393157,"data":"[job1] scored 1337__in-a-forest__athlete-walking__soldier-jumping: 11 clips\n"}
+,{"stream_name":"stdout","time":6887.808898198,"data":"[job1] scored 1337__in-a-forest__german-shepherd-walking__wolf-jumping: 11 clips\n"}
+,{"stream_name":"stdout","time":6947.809378838,"data":"[job1] scored 2024__in-a-forest__wolf-walking__deer-spinning: 11 clips\n"}
+,{"stream_name":"stdout","time":6947.809417384,"data":"[job1] scored 2024__on-a-beach__soldier-walking__dancer-spinning: 11 clips\n"}
+,{"stream_name":"stdout","time":7007.809884637,"data":"[job1] scored 42__in-a-forest__deer-spinning__brown-bear-running: 11 clips\n"}
+,{"stream_name":"stdout","time":7067.810575133,"data":"[job1] scored 42__in-a-forest__elderly-man-spinning__young-man-running: 11 clips\n"}
+,{"stream_name":"stdout","time":7067.810643266,"data":"[job1] direction                    arm  median_D  median_dD  frac_dD_pos  d16_ci_lo  d16_ci_hi  consistency_ratio  sm_A  sc_B  sm_B  sc_A\n"}
+,{"stream_name":"stdout","time":7067.810654544,"data":"[job1]   content       content.dual.all     0.343      0.232        1.000      0.104      0.360              0.983 0.162 0.761 0.562 0.861\n"}
+,{"stream_name":"stdout","time":7067.810657494,"data":"[job1]   content            content.sel     0.237      0.118        0.833     -0.036      0.226              0.989 0.270 0.745 0.104 0.894\n"}
+,{"stream_name":"stdout","time":7067.81066013,"data":"[job1]   content content.kv.probe.from2     0.192      0.021        0.500     -0.089      0.169              0.993 0.253 0.772 0.217 0.846\n"}
+,{"stream_name":"stdout","time":7067.810662581,"data":"[job1]   content           content.base     0.097      0.000        0.000      0.000      0.000              0.983 0.178 0.751 0.238 0.811\n"}
+,{"stream_name":"stdout","time":7067.810664982,"data":"[job1]    motion motion.dual.up23.from2     0.387      0.235        1.000      0.123      0.320              0.990 0.555 0.868 0.227 0.748\n"}
+,{"stream_name":"stdout","time":7067.810667434,"data":"[job1]    motion     motion.attn.all.ft     0.324      0.146        0.833      0.026      0.340              0.999 0.667 0.820 0.101 0.779\n"}
+,{"stream_name":"stdout","time":7067.810669843,"data":"[job1]    motion    motion.attn.all.all     0.310      0.135        0.667     -0.081      0.275              0.990 0.818 0.792 0.108 0.821\n"}
+,{"stream_name":"stdout","time":7067.81067222,"data":"[job1]    motion             motion.sel     0.195      0.017        0.500     -0.081      0.225              0.990 0.696 0.790 0.113 0.824\n"}
+,{"stream_name":"stdout","time":7067.810674614,"data":"[job1]    motion            motion.base     0.175      0.000        0.000      0.000      0.000              1.008 0.099 0.843 0.172 0.756\n"}
+,{"stream_name":"stdout","time":7067.810677112,"data":"[job1] wrote /kaggle/working/out/job1/edit/score_summary.json\n"}
+,{"stream_name":"stdout","time":7067.810679429,"data":"[job1] === score: exit 0 after 310 s\n"}
+,{"stream_name":"stdout","time":7067.810992141,"data":"exit codes [0, 0]\n"}
+,{"stream_name":"stderr","time":7069.654194052,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":7069.654219171,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":7069.869111546,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":7069.869135179,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":7070.582912324,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":7071.472169068,"data":"[NbConvertApp] Writing 488770 bytes to __results__.html\n"}
+]
