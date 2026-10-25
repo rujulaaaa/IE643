@@ -1,0 +1,25 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 956.51it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1371.07it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:01<00:08,  1.79s/it]Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:03,  1.23it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2767.95it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:02<00:01,  1.86it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:02<00:00,  3.81it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.64it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.8 s
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 9821.97it/s]
+pair 1/13 motion s2024__german-shepherd__running__on-a-beach -> s2024__german-shepherd__walking__on-a-beach  1477 s
+pair 2/13 motion s2024__horse__running__in-a-forest -> s2024__horse__jumping__in-a-forest  2953 s
+pair 3/13 motion s2024__deer__running__in-a-forest -> s2024__deer__jumping__in-a-forest  4430 s
+pair 4/13 motion s2024__young-woman__running__on-a-beach -> s2024__young-woman__spinning__on-a-beach  5873 s
+pair 5/13 motion s2024__dancer__running__on-a-beach -> s2024__dancer__jumping__on-a-beach  7320 s
+pair 6/13 motion s2024__child__running__in-a-forest -> s2024__child__jumping__in-a-forest  8767 s
+pair 7/13 content s2024__golden-retriever__jumping__in-a-forest -> s2024__german-shepherd__jumping__in-a-forest  10212 s
+pair 8/13 content s2024__golden-retriever__spinning__on-a-beach -> s2024__wolf__spinning__on-a-beach  11658 s
+pair 9/13 content s2024__golden-retriever__jumping__in-a-forest -> s2024__tiger__jumping__in-a-forest  13105 s
+pair 10/13 content s2024__golden-retriever__running__on-a-beach -> s2024__brown-bear__running__on-a-beach  14551 s
+pair 11/13 content s2024__young-man__walking__on-a-beach -> s2024__athlete__walking__on-a-beach  15996 s
+pair 12/13 content s2024__young-man__jumping__in-a-forest -> s2024__dancer__jumping__in-a-forest  17445 s
+pair 13/13 content s2024__young-man__jumping__on-a-beach -> s2024__elderly-man__jumping__on-a-beach  18891 s
+wrote /kaggle/working/out/s1/manifest.json

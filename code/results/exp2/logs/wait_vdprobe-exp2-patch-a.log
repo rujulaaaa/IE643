@@ -58,3 +58,12 @@
 00:31:40 rujularahate/vdprobe-exp2-patch-a has status "KernelWorkerStatus.RUNNING"
 00:32:42 rujularahate/vdprobe-exp2-patch-a has status "KernelWorkerStatus.RUNNING"
 00:33:44 rujularahate/vdprobe-exp2-patch-a has status "KernelWorkerStatus.RUNNING"
+00:34:46 rujularahate/vdprobe-exp2-patch-a has status "KernelWorkerStatus.RUNNING"
+00:35:49 rujularahate/vdprobe-exp2-patch-a has status "KernelWorkerStatus.RUNNING"
+00:36:50 rujularahate/vdprobe-exp2-patch-a has status "KernelWorkerStatus.RUNNING"
+00:37:52 rujularahate/vdprobe-exp2-patch-a has status "KernelWorkerStatus.RUNNING"
+00:38:53 rujularahate/vdprobe-exp2-patch-a has status "KernelWorkerStatus.RUNNING"
+00:39:54 rujularahate/vdprobe-exp2-patch-a has status "KernelWorkerStatus.RUNNING"
+00:40:56 rujularahate/vdprobe-exp2-patch-a has status "KernelWorkerStatus.COMPLETE"
+00:44:13 download attempt 1: exit 0, 108 files, 2 manifests
+DOWNLOAD OK vdprobe-exp2-patch-a
