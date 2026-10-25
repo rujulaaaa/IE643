@@ -260,7 +260,17 @@ He aimed to train the motion module once and then attach it to any image model t
 	\label{fig:animatediff}
 \end{figure}
 
-
+The working of the model can be studied in three seprate parts:
+\textbf{Motion module} This refers to a small attention block that is added after the spatial layers
+of the U-Net. It takes 16 frames at one pixel position and applies attention to it with other frames at the same position.
+A position encoder here helps the model know which is the first frame and what is their order. 
+The output of this module gets added back to its input using a skip connection and its last layer 
+starts with all zero weights so that when the model is being trained it behaves excatly like an image model.
+During training only the motion modules are trained on a large video dataset. The image models weights never change.
+\textbf{Domain adapter} Web videos are blurry and they might carry watermarks. Before training the motion module.
+they trained a small add-on to the image layers that soaks up this look so the motion module would not learn those things. 
+That portion is switched off during inference.
+\textbf{MotionLoRA} A small trainable add-on LoRA was added to the motion modules attention
 
 
 is a stack of temporal transformers trained once on video and then plugged into any
