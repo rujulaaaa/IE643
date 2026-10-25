@@ -135,7 +135,12 @@ A negative answer is also useful because if the split is not clean then the edit
 
 To find such a map, we experiment with the model. The model is a U-net architecture that turns noise into video over a sequence of denoising steps. It was trained on just the input and the output and was never told 
 as to which part of the model should carry the motion and which should carry the content. So any
-such seperation should be something that it learned on its own and has to be located emperically.
+such seperation should be something that it learned on its own and has to be located emperically because
+it is spread across many high-dimensional layers and across many denoising steps so it cannot be read
+by weights alone nor by the architecture diagram. 
+Architectural diagrams labelling layers as spatial and temporal tells us what each layer \emph{can}
+see not what it actually ends up encoding. 
+Finding the seperation would require us to actually 
 To do this we generate pairs of clips whose prompts differ only in either the content or the motion
 and record how each layers output changes at each step correspondingly. This gives us the map that we
 are looking for. To verify our results we copy the output of one layer from one clip to the same layer
