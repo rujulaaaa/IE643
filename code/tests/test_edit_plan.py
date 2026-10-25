@@ -46,3 +46,20 @@ def test_arm_builders(tiny_unet):
            "content": {"blocks": "all", "window": "all"}}
     arms = selected_arms(pair, cfg, coords, sel)
     assert {"motion.sel", "content.sel", "motion.attn", "motion.tensor", "content.sel.a0.5"} <= {a.id for a in arms}
+
+
+def test_lora_arms_and_adapter_names(tiny_unet):
+    from vdprobe.edit_plan import adapter_name, lora_arms
+
+    coords = enumerate_coordinates(tiny_unet)
+    cfg = GenerationConfig.from_yaml()
+    pair = load_pairs("test")[0]
+    assert adapter_name({"variant": "probe"}) == "lora_probe"
+    assert adapter_name({"variant": "probe", "seed": "2", "cut_free": "True"}) == "lora_probe_s2"
+    names = ("lora_full_s0", "lora_probe_s0")
+    arms = {a.id: a for a in lora_arms(pair, cfg, coords, names)}
+    assert set(arms) == {"B_ref", "motion.base", "motion.attn_all", "motion.lora_full_s0", "motion.lora_probe_s0"}
+    p = pair.prompts(cfg)
+    assert all(a.prompt == p["motion"] for k, a in arms.items() if k != "B_ref")
+    assert arms["motion.lora_full_s0"].lora == "lora_full_s0" and arms["motion.base"].lora is None
+    assert list(arms["motion.attn_all"].spec.attn.steps) == list(range(cfg.steps))

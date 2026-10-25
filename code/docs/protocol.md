@@ -158,6 +158,24 @@ the control task keeps that route and removes the verb. A more expressive probe 
 accuracies, so its gain only counts through selectivity. Hyperparameters are fixed here, before
 the run, not tuned on the result.
 
+> **Two decisions numbered D-34.** They were written in parallel on two branches (`final-submission`:
+> probe controls, above; `main`: cut-free LoRA retrain, below) and merged on 2026-10-25. References to
+> D-34 next to `--probe-controls` mean the first; next to `--cut-free`, `lora_arms`, `--arms lora` or
+> `score_edits.py --with`, the second.
+
+### D-34 · 2026-10-24 · Cut-free LoRA retrain, three seeds, scored with the test run
+**Decision.** The three motion LoRAs are retrained with every 16-frame window drawn inside one
+shot (`train_motion_lora.py --cut-free`; shots from `inversion.shot_bounds`, shots of ≥ 16
+frames chosen with probability ∝ length, else the longest shot with its last frame repeated;
+validation window = centre of the longest shot), at seeds 0, 1, 2, otherwise the D-33 recipe.
+On the 12 test pairs, one prompt-only arm per LoRA (9) plus attention injection over all 25
+steps (`edit_plan.lora_arms`), scored in one pool with the Stage 6 test run
+(`score_edits.py --with`). The D-33 LoRAs and their test-run numbers stay on record.
+**Reason.** 11 of the 19 clips contain a hard cut (found 2026-10-21 while debugging the upload
+path), so part of what the first LoRAs fit was the cut. Seeds give the variant comparison an
+error bar it did not have. Attention injection over all steps was the best motion arm of the
+dev sweep but outside the D-31 selection rule, so it had no test-set number.
+
 ### D-35 · 2026-10-24 · Experiment 2: pre-registered rules (fixed before any Phase 2 data)
 Design: `reports/Content motion probing experiment design.md`; code: `scripts/probe_sweep.py --exp2`,
 `scripts/exp2_*.py`. All Phase 2 sweeps use seeds 42 and 1337; seed 2024 is held out for Phase 5.

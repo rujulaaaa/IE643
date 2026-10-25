@@ -1109,3 +1109,114 @@ Reading:
   - deer→bear: the bear holds the deer's standing pose.
   - soldier→dancer: content.dual.all scores D = 0.39, but the clip is sand and a boot. A high per-pair D does not
     guarantee a good edit, so demo clips are chosen by eye.
+
+---
+
+> **Merged log (2026-10-25).** The two sessions below were logged on the `main` branch, in parallel
+> with Sessions 5–6 above on `final-submission`; their section numbers (§25–28) repeat those above and are
+> kept so references to them stay valid.
+
+## 2026-10-24 · Session 5
+
+### 25. Environment rebuilt; cut-free LoRA retrain launched on Kaggle (18:55–19:25)
+
+- `~/MI_DiffusionModels/` (and with it the venv) no longer exists. Rebuilt the venv at
+  **`code/.venv`** (gitignored) with uv, same pins: Python 3.10, torch 2.10.0+cu128, diffusers 0.40.0,
+  transformers 5.20.0, peft 0.21.2, scikit-learn 1.7.2, gradio 6.30.0; `vdprobe` installed editable.
+  Packages hardlinked from the uv cache, but `/home` still dropped from 4.2 to 1.3 GB free. Run
+  everything as `cd ~/IE643_CourseProject_Prep/code && env -u PYTHONPATH .venv/bin/python -u ...`.
+  The HF cache at `/var/tmp/rujula_hf_cache` is intact. Suite: 47 passed.
+- **User decision (2026-10-24):** run the cut-free LoRA retrain on Kaggle (quota reset this morning).
+- **D-34** (protocol register): retrain full / probe / anti with windows inside one shot, seeds 0, 1, 2;
+  on the 12 test pairs one prompt-only arm per LoRA plus attention injection over all 25 steps,
+  scored in one pool with the Stage 6 test run.
+- Code:
+  - `train_motion_lora.py --cut-free` (`usable_shots`, `pick_shot`; with one shot no random draw, so
+    the old recipe's stream is unchanged), `--data-dir` (finds a flat copy by file name); the seed
+    and the flag go into the LoRA metadata;
+  - `edit_plan.lora_arms`, `edit_plan.adapter_name` (`lora_<variant>_s<seed>` for the new files,
+    `lora_<variant>` for the old ones);
+  - `edit_sweep.py --arms lora --lora-dir --lora-wait N` (waits for N `train_log.json`, aborts on a
+    `*.FAILED` marker or after 3 h); `run_seq.py` writes `<name>.FAILED` when a command fails;
+  - `score_edits.py --with RUN` (pools another run's `scores.csv`; duplicates keep the earlier run's row).
+  - Tests: `test_lora_windows.py` (3), one more in `test_edit_plan.py`. **51 passed.**
+- Laptop smoke test (`--variant probe --cut-free --seed 1 --steps 3`): all 19 clips get a clean
+  window (shortest: BLACK_HAWK_DOWN, 14 frames, last frame repeated); base val loss 0.0982 (0.0996
+  with the old windows); metadata carries seed and cut_free.
+- Private dataset `rujularahate/vdprobe-hmdb51`: the 19 clips flat + manifest (the payload limit
+  rejected `data/` inside the kernel on 20 Oct).
+- **Kernel `rujularahate/vdprobe-lora` v1 pushed 19:20 IST**, RUNNING at once. GPU 0: full s0–s2,
+  probe s0, then sweep shard 0/2; GPU 1: probe s1–s2, anti s0–s2, then sweep shard 1/2. Each
+  sweep waits for all 9 LoRAs. Per pair: source, B_ref, motion.base, motion.attn_all, 9 LoRA arms
+  = 13 clips. Expected ≈ 2 h training + 2 h sweep. The CLI returns no log while a kernel runs.
+
+### 26. Interface: D pool, click-through, docs, packaging (19:25– )
+
+- D pool: `demo.SCORED_RUNS` already lists `test` first and the test run is scored, so live edits
+  are normalised with the test pool. No change needed.
+- Click-through through the running app with `gradio_client` (same handlers as the buttons):
+  results browser on all 12 test + 4 dev pairs (gallery and score table agree for every pair,
+  summary 16 / 50 rows), maps tab on all 16 coordinates: no errors.
+- `README.md` rewritten for the whole project (deliverables, results, setup, interface, reproduce,
+  data, layout, limitations); the pilot write-up moved unchanged to `docs/pilots.md`. The LoRA
+  section has a placeholder for the D-34 numbers.
+- `.gitignore`: `results/kaggle/` records, scores and logs are now tracked (58 MB, mostly the six
+  9 MB `distances.csv` of the probing sweep, the input of the Stage 4 analysis); GIFs and `.pt`
+  tensors (~1.8 GB) and `results/interface/` stay out.
+- GPU handlers through the app (log `code/results/local/interface_clickthrough_log.txt`):
+  - live edit, content direction, selected x̄ patch (cat walking → dog jumping, forest, seed 7):
+    4 clips in 429 s; ΔD over the prompt-only arm +0.014 (D 0.096 → 0.110);
+  - live edit, motion direction, prompt + LoRA probe (test pair 1): 422 s; D 0.269 → 0.244;
+  - content direction + attention injection: rejected with the intended message (gr.Error);
+  - upload, attention injection at all steps, blend start (OldSchool spin, "a man" → "a bear"):
+    279 s; sm_video 0.17 (prompt only) → 0.66 (edit); CLIP-target 0.26 → 0.30.
+  - The first upload call failed in my test client (Gradio 6 wants `handle_file(path)`, not
+    `{"video": ...}`); not an app bug.
+  - Live edits ran at ~105 s per clip vs 68 s on 22 Oct with nothing else on the GPU (probably
+    clocks or temperature); `SEC_PER_CLIP` and the app text now give 70–105 s.
+
+## 2026-10-25 · Session 6
+
+### 27. Cut-free LoRA run done and scored (15:00–16:30)
+
+- Kernel `rujularahate/vdprobe-lora` v1: COMPLETE, exit codes [0, 0], no tracebacks or `.FAILED`
+  markers. 9 LoRAs trained (full 1,787–1,797 s, probe 1,312–1,450 s, anti 1,376–1,378 s per T4), then
+  the edit sweeps (job0 7,023 s, job1 6,138 s), 12 pairs × 13 clips.
+- Downloaded without the `.safetensors` (disk: 1.8 GB free on /home):
+  `kaggle kernels output ... --file-pattern '^(?!.*\.safetensors$).*$'` → `code/results/kaggle/vdprobe-lora/`
+  (225 MB). **The nine cut-free LoRA weights are still only on Kaggle**; to ship them, download with
+  `--file-pattern '.*\.safetensors$'` (each ~4–20 MB).
+- Regeneration check: source, B_ref and motion.base latents equal the test run's on all 12 pairs
+  (MAD 0), so pooling is valid.
+- Scoring: `score_edits.py results/kaggle/vdprobe-lora/out --with results/kaggle/vdprobe-test/out`
+  (laptop, ~12 min, log `results/kaggle/vdprobe-lora/score_log.txt`).
+
+| arm (motion direction) | median ΔD | ΔD > 0 | 95 % CI |
+|---|---|---|---|
+| attention injection, all 25 steps | **+0.120** | 11/12 | **[0.020, 0.203]** |
+| LoRA probe s0 / s1 / s2 (cut-free) | +0.014 / +0.015 / +0.009 | 7, 7, 6 /12 | all include 0 |
+| LoRA full s0 / s1 / s2 | +0.004 / +0.008 / −0.013 | 6, 6, 5 /12 | all include 0 |
+| LoRA anti s0 / s1 / s2 | −0.011 / −0.031 / −0.001 | 6, 5, 6 /12 | all include 0 |
+
+- Held-out val loss at step 800 (untrained 0.0982): full 0.0627 ×3, anti 0.0635/0.0636/0.0635,
+  probe 0.0641 ×3. Same ordering as the first recipe; seed spread < 1e-4.
+- Reading: probe is the only placement above zero in every seed, but the gain is small and comes
+  from s_m(out, B) dropping (0.17 → 0.06–0.08), not s_m(out, A) rising (0.23 → 0.14–0.17).
+- Pool shift: the test-run arms move slightly in the pooled scoring (selected x̃ +0.041 → +0.045;
+  attn first third +0.105 → +0.108, CI [0.006, 0.202]; content x̄ α 0.5 CI now [−0.004, 0.137]).
+  The test run's own numbers stay the numbers of record.
+- README: D-34 section filled in; "4 body-plan families" corrected to 2 (the config has Q and H).
+
+### 28. Report drafted in the course template (15:15– )
+
+- Template fetched from the Drive folder linked in the instructions
+  (`IE643_Project_Report.tex` + `demo.bib`); kept as `report/template_original.tex` and
+  `report/template_reference.pdf`.
+- `report/IE643_Project_Report.tex` → `.pdf` (19 pages): template preamble and header unchanged,
+  sections in the template's order, before/after-prep-review split in §4, references written in the
+  format the instructions give (thebibliography). `report/make_figures.py` makes the frame strips
+  (test pair 1, both directions) and the LoRA validation curves; the other figures are copied from
+  `code/results/figures/` and `deck_src/fig/unet.png`.
+- TinyTeX lacked `footmisc` (needed by ragged2e); installed from the TeX Live 2025 frozen repository.
+- Open: roll numbers in the header; the team must read and rewrite the prose in its own words
+  before submission (the instructions give zero for AI-generated report content).

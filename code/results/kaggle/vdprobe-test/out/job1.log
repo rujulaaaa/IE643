@@ -1,0 +1,59 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 950.98it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1347.48it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:00,  9.26it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:03,  1.27it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:01<00:01,  2.07it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2911.23it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  4.72it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.50it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.3 s
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+[1/6] 1337__in-a-forest__german-shepherd-walking__wolf-jumping: source + 17 arms
+    step  5/25    302.8 s  (3.36 s per clip-step)
+    step 10/25    615.2 s  (3.42 s per clip-step)
+    step 15/25    923.9 s  (3.42 s per clip-step)
+    step 20/25   1231.7 s  (3.42 s per clip-step)
+    step 25/25   1540.1 s  (3.42 s per clip-step)
+wrote /kaggle/working/out/job1/1337__in-a-forest__german-shepherd-walking__wolf-jumping/manifest.json
+  1540 s (85.6 s per clip)
+[2/6] 42__in-a-forest__deer-spinning__brown-bear-running: source + 17 arms
+    step  5/25    308.8 s  (3.43 s per clip-step)
+    step 10/25    620.8 s  (3.45 s per clip-step)
+    step 15/25    928.4 s  (3.44 s per clip-step)
+    step 20/25   1236.7 s  (3.44 s per clip-step)
+    step 25/25   1544.3 s  (3.43 s per clip-step)
+wrote /kaggle/working/out/job1/42__in-a-forest__deer-spinning__brown-bear-running/manifest.json
+  1544 s (85.8 s per clip)
+[3/6] 2024__in-a-forest__wolf-walking__deer-spinning: source + 17 arms
+    step  5/25    307.8 s  (3.42 s per clip-step)
+    step 10/25    619.5 s  (3.44 s per clip-step)
+    step 15/25    927.2 s  (3.43 s per clip-step)
+    step 20/25   1234.5 s  (3.43 s per clip-step)
+    step 25/25   1542.5 s  (3.43 s per clip-step)
+wrote /kaggle/working/out/job1/2024__in-a-forest__wolf-walking__deer-spinning/manifest.json
+  1543 s (85.7 s per clip)
+[4/6] 1337__in-a-forest__athlete-walking__soldier-jumping: source + 17 arms
+    step  5/25    307.2 s  (3.41 s per clip-step)
+    step 10/25    620.6 s  (3.45 s per clip-step)
+    step 15/25    929.0 s  (3.44 s per clip-step)
+    step 20/25   1237.3 s  (3.44 s per clip-step)
+    step 25/25   1546.1 s  (3.44 s per clip-step)
+wrote /kaggle/working/out/job1/1337__in-a-forest__athlete-walking__soldier-jumping/manifest.json
+  1546 s (85.9 s per clip)
+[5/6] 42__in-a-forest__elderly-man-spinning__young-man-running: source + 17 arms
+    step  5/25    308.3 s  (3.43 s per clip-step)
+    step 10/25    620.7 s  (3.45 s per clip-step)
+    step 15/25    929.0 s  (3.44 s per clip-step)
+    step 20/25   1236.6 s  (3.43 s per clip-step)
+    step 25/25   1545.2 s  (3.43 s per clip-step)
+wrote /kaggle/working/out/job1/42__in-a-forest__elderly-man-spinning__young-man-running/manifest.json
+  1545 s (85.8 s per clip)
+[6/6] 2024__on-a-beach__soldier-walking__dancer-spinning: source + 17 arms
+    step  5/25    308.7 s  (3.43 s per clip-step)
+    step 10/25    621.0 s  (3.45 s per clip-step)
+    step 15/25    928.7 s  (3.44 s per clip-step)
+    step 20/25   1237.4 s  (3.44 s per clip-step)
+    step 25/25   1545.8 s  (3.44 s per clip-step)
+wrote /kaggle/working/out/job1/2024__on-a-beach__soldier-walking__dancer-spinning/manifest.json
+  1546 s (85.9 s per clip)

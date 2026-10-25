@@ -1,0 +1,472 @@
+[{"stream_name":"stdout","time":1.459349298,"data":"dataset vdprobe-hmdb51 -\u003e /kaggle/input/datasets/rujularahate/vdprobe-hmdb51 ['jump_Arrasando_no_Le_Parkour_jump_f_nm_np1_le_med_2.mp4', 'jump_DONNIE_DARKO_jump_f_nm_np1_fr_med_7.mp4', 'jump_Faith_Rewarded_jump_f_nm_np1_ri_med_89.mp4', 'jump_prelinger_ControlY1950_jump_f_nm_np1_fr_med_12.mp4', 'manifest.json', 'run_20060723sfjffbartsinger_run_f_nm_np1_fr_med_1.mp4', 'run_20060723sfjffsomelikeitwarmed_run_f_nm_np1_fr_med_6.mp4', 'run_Age13_1_run_f_nm_np1_fr_med_2.mp4', 'run_BLACK_HAWK_DOWN_run_f_nm_np1_ri_med_17.mp4', 'run_HP_PRISONER_OF_AZKABAN_run_f_nm_np1_fr_med_25.mp4', 'turn_KUNG_FU_HUSTLE_turn_f_nm_np1_ba_med_28.mp4', 'turn_NOVA_ELEGANTUNIVERSE2_turn_f_nm_np1_ba_med_1.mp4', 'turn_OldSchool_turn_f_nm_np1_fr_med_3.mp4', 'turn_eddieizzardcircle_turn_f_nm_np1_le_med_1.mp4', 'turn_likebeckam_turn_f_nm_np1_fr_med_37.mp4', 'walk_20060723sfjffjewcy_walk_f_nm_np1_fr_med_0.mp4', 'walk_20070723_sfjff_waitingforrescue_walk_f_nm_np1_ba_med_1.mp4', 'walk_AgriculturalAviation_walk_f_nm_np1_le_med_0.mp4', 'walk_AmericanGangster_walk_f_nm_np1_ba_med_72.mp4', 'walk_BIG_FISH_walk_f_nm_np1_fr_med_13.mp4']\n"}
+,{"stream_name":"stdout","time":19.130060164,"data":"2\n"}
+,{"stream_name":"stdout","time":19.130102292,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":19.130107503,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":19.130111758,"data":"2.11.0+cu128\n"}
+,{"stream_name":"stdout","time":19.130115954,"data":" \n"}
+,{"stream_name":"stderr","time":22.385301359,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":27.965481527,"data":"\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  9.55it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:05\u003c00:00,  3.31s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:05\u003c00:00,  2.83s/it]\n"}
+,{"stream_name":"stderr","time":39.346252555,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:   8%|▊         | 1/13 [00:00\u003c00:01,  9.59it/s]\rFetching 13 files:  62%|██████▏   | 8/13 [00:00\u003c00:00, 38.19it/s]\rFetching 13 files:  92%|█████████▏| 12/13 [00:09\u003c00:00,  1.02it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:11\u003c00:00,  1.16it/s]\n"}
+,{"stream_name":"stderr","time":46.313465377,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:   8%|▊         | 1/12 [00:00\u003c00:01,  8.82it/s]\rFetching 12 files:  25%|██▌       | 3/12 [00:00\u003c00:01,  7.24it/s]\rFetching 12 files:  67%|██████▋   | 8/12 [00:00\u003c00:00, 18.58it/s]\rFetching 12 files:  92%|█████████▏| 11/12 [00:06\u003c00:00,  1.21it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:06\u003c00:00,  1.78it/s]\n"}
+,{"stream_name":"stdout","time":54.307328013,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/run_seq.py --cmd full_s0=scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant full --seed 0 --cmd full_s1=scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant full --seed 1 --cmd full_s2=scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant full --seed 2 --cmd probe_s0=scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant probe --seed 0 --cmd sweep=scripts/edit_sweep.py --split test --arms lora --lora-dir /kaggle/working/out --lora-wait 9 --shard 0/2 --out /kaggle/working/out/job0\n"}
+,{"stream_name":"stdout","time":54.308221458,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/run_seq.py --cmd probe_s1=scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant probe --seed 1 --cmd probe_s2=scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant probe --seed 2 --cmd anti_s0=scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant anti --seed 0 --cmd anti_s1=scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant anti --seed 1 --cmd anti_s2=scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant anti --seed 2 --cmd sweep=scripts/edit_sweep.py --split test --arms lora --lora-dir /kaggle/working/out --lora-wait 9 --shard 1/2 --out /kaggle/working/out/job1\n"}
+,{"stream_name":"stdout","time":114.309456338,"data":"[job0] === full_s0: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant full --seed 0 --out /kaggle/working/out/job0/full_s0\n"}
+,{"stream_name":"stdout","time":114.309496816,"data":"[job0] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":114.309504625,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":114.309510409,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":114.309517121,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 858.52it/s]\n"}
+,{"stream_name":"stdout","time":114.309525336,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":114.309530851,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":114.309537344,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1248.02it/s]\n"}
+,{"stream_name":"stdout","time":114.309543875,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":114.309552287,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":114.309558712,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":114.30956442,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":114.309570644,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:00,  8.78it/s]\n"}
+,{"stream_name":"stdout","time":114.309577138,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:01\u003c00:03,  1.32it/s]\n"}
+,{"stream_name":"stdout","time":114.309583786,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":114.309589402,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":114.309595631,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2963.22it/s]\n"}
+,{"stream_name":"stdout","time":114.309602151,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":114.309607928,"data":"[job0] Loading pipeline components...:  50%|█████     | 3/6 [00:01\u003c00:01,  1.98it/s]\n"}
+,{"stream_name":"stdout","time":114.30961303,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  4.74it/s]\n"}
+,{"stream_name":"stdout","time":114.309618176,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  3.51it/s]\n"}
+,{"stream_name":"stdout","time":114.309624383,"data":"[job0]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.5 s\n"}
+,{"stream_name":"stdout","time":114.30963067,"data":"[job0] full: 9.67 M trainable LoRA parameters, 21 motion modules checkpointed\n"}
+,{"stream_name":"stdout","time":114.309653172,"data":"[job1] === probe_s1: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant probe --seed 1 --out /kaggle/working/out/job1/probe_s1\n"}
+,{"stream_name":"stdout","time":114.309674586,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":114.309679481,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":114.309683912,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":114.309688424,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 932.48it/s]\n"}
+,{"stream_name":"stdout","time":114.309692854,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":114.309696634,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":114.309702518,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1275.07it/s]\n"}
+,{"stream_name":"stdout","time":114.30971267,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":114.309715983,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":114.30971893,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":114.309721457,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":114.309724244,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:01\u003c00:06,  1.37s/it]\n"}
+,{"stream_name":"stdout","time":114.309727024,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":114.309729509,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":114.309732251,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2725.80it/s]\n"}
+,{"stream_name":"stdout","time":114.309735121,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":114.309737583,"data":"[job1] Loading pipeline components...:  50%|█████     | 3/6 [00:01\u003c00:01,  2.24it/s]\n"}
+,{"stream_name":"stdout","time":114.309740402,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  3.53it/s]\n"}
+,{"stream_name":"stdout","time":114.30974322,"data":"[job1]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.4 s\n"}
+,{"stream_name":"stdout","time":114.309746017,"data":"[job1] probe: 1.97 M trainable LoRA parameters, 21 motion modules checkpointed\n"}
+,{"stream_name":"stdout","time":174.310354564,"data":"[job0] cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}\n"}
+,{"stream_name":"stdout","time":174.310402598,"data":"[job0] step    0  val 0.09818\n"}
+,{"stream_name":"stdout","time":174.310536764,"data":"[job1] cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}\n"}
+,{"stream_name":"stdout","time":174.31055191,"data":"[job1] step    0  val 0.09818\n"}
+,{"stream_name":"stdout","time":354.311765418,"data":"[job1] step  100  train(avg100) 0.09679  val 0.07469  163 s (1.63 s/step)\n"}
+,{"stream_name":"stdout","time":414.312242075,"data":"[job0] step  100  train(avg100) 0.06014  val 0.06461  227 s (2.27 s/step)\n"}
+,{"stream_name":"stdout","time":474.31284142,"data":"[job1] step  200  train(avg100) 0.06840  val 0.06536  327 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":654.314166092,"data":"[job0] step  200  train(avg100) 0.07132  val 0.06334  451 s (2.26 s/step)\n"}
+,{"stream_name":"stdout","time":654.314330647,"data":"[job1] step  300  train(avg100) 0.08266  val 0.06469  491 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":834.315694324,"data":"[job0] step  300  train(avg100) 0.05953  val 0.06301  674 s (2.25 s/step)\n"}
+,{"stream_name":"stdout","time":834.315746124,"data":"[job1] step  400  train(avg100) 0.06215  val 0.06445  656 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":1014.31724678,"data":"[job1] step  500  train(avg100) 0.04999  val 0.06431  820 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":1074.320183526,"data":"[job0] step  400  train(avg100) 0.05079  val 0.06291  897 s (2.24 s/step)\n"}
+,{"stream_name":"stdout","time":1134.31820943,"data":"[job1] step  600  train(avg100) 0.05702  val 0.06421  984 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":1314.320395253,"data":"[job0] step  500  train(avg100) 0.04468  val 0.06280  1120 s (2.24 s/step)\n"}
+,{"stream_name":"stdout","time":1314.320868488,"data":"[job1] step  700  train(avg100) 0.04936  val 0.06416  1148 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":1494.322662217,"data":"[job0] step  600  train(avg100) 0.06715  val 0.06278  1344 s (2.24 s/step)\n"}
+,{"stream_name":"stdout","time":1494.322817319,"data":"[job1] step  800  train(avg100) 0.05662  val 0.06411  1312 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":1494.322827165,"data":"[job1] wrote /kaggle/working/out/job1/probe_s1/probe/train_log.json\n"}
+,{"stream_name":"stdout","time":1494.322831829,"data":"[job1] === probe_s1: exit 0 after 1405 s\n"}
+,{"stream_name":"stdout","time":1494.322836192,"data":"[job1] === probe_s2: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant probe --seed 2 --out /kaggle/working/out/job1/probe_s2\n"}
+,{"stream_name":"stdout","time":1494.322840919,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":1494.322845187,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":1494.32284989,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":1494.322854924,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 750.12it/s]\n"}
+,{"stream_name":"stdout","time":1494.322896168,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":1494.322900464,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":1494.322903832,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1397.03it/s]\n"}
+,{"stream_name":"stdout","time":1494.322907846,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":1494.322912885,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":1494.322916662,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":1494.32291961,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":1494.322930939,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:01,  2.92it/s]\n"}
+,{"stream_name":"stdout","time":1494.322934757,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":1494.322937912,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":1494.322941574,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2648.10it/s]\n"}
+,{"stream_name":"stdout","time":1494.322945724,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":1494.322948879,"data":"[job1] Loading pipeline components...:  50%|█████     | 3/6 [00:00\u003c00:00,  5.49it/s]\n"}
+,{"stream_name":"stdout","time":1494.322952635,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  9.40it/s]\n"}
+,{"stream_name":"stdout","time":1494.322956595,"data":"[job1]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.7 s\n"}
+,{"stream_name":"stdout","time":1494.322977017,"data":"[job1] probe: 1.97 M trainable LoRA parameters, 21 motion modules checkpointed\n"}
+,{"stream_name":"stdout","time":1494.322984257,"data":"[job1] cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}\n"}
+,{"stream_name":"stdout","time":1554.323322749,"data":"[job1] step    0  val 0.09818\n"}
+,{"stream_name":"stdout","time":1734.324728023,"data":"[job0] step  700  train(avg100) 0.07565  val 0.06275  1573 s (2.25 s/step)\n"}
+,{"stream_name":"stdout","time":1734.324854584,"data":"[job1] step  100  train(avg100) 0.10457  val 0.07743  164 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":1854.326220166,"data":"[job1] step  200  train(avg100) 0.06182  val 0.06547  328 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":1974.327095671,"data":"[job0] step  800  train(avg100) 0.05776  val 0.06272  1797 s (2.25 s/step)\n"}
+,{"stream_name":"stdout","time":1974.327185147,"data":"[job0] wrote /kaggle/working/out/job0/full_s0/full/train_log.json\n"}
+,{"stream_name":"stdout","time":1974.327210303,"data":"[job0] === full_s0: exit 0 after 1892 s\n"}
+,{"stream_name":"stdout","time":1974.327215854,"data":"[job0] === full_s1: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant full --seed 1 --out /kaggle/working/out/job0/full_s1\n"}
+,{"stream_name":"stdout","time":1974.327242419,"data":"[job0] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":1974.327248622,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":1974.327252559,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":1974.327257422,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 819.44it/s]\n"}
+,{"stream_name":"stdout","time":1974.327264063,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":1974.327268287,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":1974.327272898,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1185.35it/s]\n"}
+,{"stream_name":"stdout","time":1974.327277531,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":1974.327283583,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":1974.327288431,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":1974.327374762,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":1974.32738188,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:00,  5.77it/s]\n"}
+,{"stream_name":"stdout","time":1974.327386792,"data":"[job0] Loading pipeline components...:  50%|█████     | 3/6 [00:00\u003c00:00,  6.96it/s]\n"}
+,{"stream_name":"stdout","time":1974.327391096,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":1974.327395121,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":1974.327399999,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2405.28it/s]\n"}
+,{"stream_name":"stdout","time":1974.327415565,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":1974.327420903,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00, 10.47it/s]\n"}
+,{"stream_name":"stdout","time":1974.327425658,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  9.16it/s]\n"}
+,{"stream_name":"stdout","time":1974.327429117,"data":"[job0]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.4 s\n"}
+,{"stream_name":"stdout","time":1974.327432421,"data":"[job0] full: 9.67 M trainable LoRA parameters, 21 motion modules checkpointed\n"}
+,{"stream_name":"stdout","time":1974.327438895,"data":"[job0] cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}\n"}
+,{"stream_name":"stdout","time":2034.327630628,"data":"[job0] step    0  val 0.09818\n"}
+,{"stream_name":"stdout","time":2034.327744525,"data":"[job1] step  300  train(avg100) 0.07912  val 0.06477  492 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":2214.329340568,"data":"[job1] step  400  train(avg100) 0.07531  val 0.06441  656 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":2274.330707344,"data":"[job0] step  100  train(avg100) 0.07394  val 0.06438  218 s (2.18 s/step)\n"}
+,{"stream_name":"stdout","time":2334.33139261,"data":"[job1] step  500  train(avg100) 0.07235  val 0.06429  820 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":2454.332302027,"data":"[job0] step  200  train(avg100) 0.06271  val 0.06319  441 s (2.20 s/step)\n"}
+,{"stream_name":"stdout","time":2514.332964595,"data":"[job1] step  600  train(avg100) 0.06596  val 0.06418  984 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":2694.334699749,"data":"[job0] step  300  train(avg100) 0.07927  val 0.06295  664 s (2.21 s/step)\n"}
+,{"stream_name":"stdout","time":2694.334894035,"data":"[job1] step  700  train(avg100) 0.06230  val 0.06414  1148 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":2874.336546919,"data":"[job1] step  800  train(avg100) 0.05130  val 0.06409  1312 s (1.64 s/step)\n"}
+,{"stream_name":"stdout","time":2874.336612501,"data":"[job1] wrote /kaggle/working/out/job1/probe_s2/probe/train_log.json\n"}
+,{"stream_name":"stdout","time":2874.336620397,"data":"[job1] === probe_s2: exit 0 after 1367 s\n"}
+,{"stream_name":"stdout","time":2874.336626094,"data":"[job1] === anti_s0: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant anti --seed 0 --out /kaggle/working/out/job1/anti_s0\n"}
+,{"stream_name":"stdout","time":2874.336631905,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":2874.336637477,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":2874.3366427,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":2874.336669417,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 882.08it/s]\n"}
+,{"stream_name":"stdout","time":2874.336677072,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":2874.336682317,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":2874.33668811,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1412.99it/s]\n"}
+,{"stream_name":"stdout","time":2874.336694215,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":2874.336701459,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":2874.336707136,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":2874.336712276,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":2874.336717887,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:01,  2.98it/s]\n"}
+,{"stream_name":"stdout","time":2874.336723493,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":2874.336747705,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":2874.336754019,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2635.67it/s]\n"}
+,{"stream_name":"stdout","time":2874.336784002,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":2874.336788567,"data":"[job1] Loading pipeline components...:  83%|████████▎ | 5/6 [00:00\u003c00:00,  9.32it/s]\n"}
+,{"stream_name":"stdout","time":2874.336793089,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  9.38it/s]\n"}
+,{"stream_name":"stdout","time":2874.336797969,"data":"[job1]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.3 s\n"}
+,{"stream_name":"stdout","time":2874.336802179,"data":"[job1] anti: 2.62 M trainable LoRA parameters, 21 motion modules checkpointed\n"}
+,{"stream_name":"stdout","time":2874.336810077,"data":"[job1] cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}\n"}
+,{"stream_name":"stdout","time":2934.33715815,"data":"[job0] step  400  train(avg100) 0.05955  val 0.06285  889 s (2.22 s/step)\n"}
+,{"stream_name":"stdout","time":2934.337205654,"data":"[job1] step    0  val 0.09818\n"}
+,{"stream_name":"stdout","time":3054.33850094,"data":"[job1] step  100  train(avg100) 0.07570  val 0.06792  172 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":3174.339502162,"data":"[job0] step  500  train(avg100) 0.04791  val 0.06277  1117 s (2.23 s/step)\n"}
+,{"stream_name":"stdout","time":3234.340419837,"data":"[job1] step  200  train(avg100) 0.07320  val 0.06412  344 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":3354.341584139,"data":"[job0] step  600  train(avg100) 0.05463  val 0.06275  1341 s (2.23 s/step)\n"}
+,{"stream_name":"stdout","time":3414.342360111,"data":"[job1] step  300  train(avg100) 0.06072  val 0.06388  516 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":3594.34440018,"data":"[job0] step  700  train(avg100) 0.04718  val 0.06275  1564 s (2.23 s/step)\n"}
+,{"stream_name":"stdout","time":3594.344735042,"data":"[job1] step  400  train(avg100) 0.05203  val 0.06377  689 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":3774.346731156,"data":"[job1] step  500  train(avg100) 0.04575  val 0.06366  861 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":3834.3473945,"data":"[job0] step  800  train(avg100) 0.05432  val 0.06274  1787 s (2.23 s/step)\n"}
+,{"stream_name":"stdout","time":3834.347449994,"data":"[job0] wrote /kaggle/working/out/job0/full_s1/full/train_log.json\n"}
+,{"stream_name":"stdout","time":3834.347455534,"data":"[job0] === full_s1: exit 0 after 1845 s\n"}
+,{"stream_name":"stdout","time":3834.347459573,"data":"[job0] === full_s2: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant full --seed 2 --out /kaggle/working/out/job0/full_s2\n"}
+,{"stream_name":"stdout","time":3834.347463812,"data":"[job0] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":3834.347467731,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3834.347471454,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":3834.347489868,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 903.07it/s]\n"}
+,{"stream_name":"stdout","time":3834.34749402,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3834.347496906,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":3834.347499901,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1294.08it/s]\n"}
+,{"stream_name":"stdout","time":3834.347503079,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":3834.347507681,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":3834.34752604,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3834.347528892,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":3834.347531926,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3834.34753483,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":3834.347537745,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2413.79it/s]\n"}
+,{"stream_name":"stdout","time":3834.347540864,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3834.347543583,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:01,  4.73it/s]\n"}
+,{"stream_name":"stdout","time":3834.347546641,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:00,  4.13it/s]\n"}
+,{"stream_name":"stdout","time":3834.347549646,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:00\u003c00:00,  7.79it/s]\n"}
+,{"stream_name":"stdout","time":3834.347552637,"data":"[job0] Loading pipeline components...:  83%|████████▎ | 5/6 [00:00\u003c00:00,  8.03it/s]\n"}
+,{"stream_name":"stdout","time":3834.347555641,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  8.41it/s]\n"}
+,{"stream_name":"stdout","time":3834.347558702,"data":"[job0]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.9 s\n"}
+,{"stream_name":"stdout","time":3834.347561769,"data":"[job0] full: 9.67 M trainable LoRA parameters, 21 motion modules checkpointed\n"}
+,{"stream_name":"stdout","time":3834.347584036,"data":"[job0] cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}\n"}
+,{"stream_name":"stdout","time":3894.347918339,"data":"[job0] step    0  val 0.09818\n"}
+,{"stream_name":"stdout","time":3954.348692166,"data":"[job1] step  600  train(avg100) 0.06862  val 0.06364  1033 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":4074.349942676,"data":"[job0] step  100  train(avg100) 0.08330  val 0.06443  218 s (2.18 s/step)\n"}
+,{"stream_name":"stdout","time":4134.350896922,"data":"[job1] step  700  train(avg100) 0.07706  val 0.06359  1205 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":4314.353028183,"data":"[job0] step  200  train(avg100) 0.05616  val 0.06329  442 s (2.21 s/step)\n"}
+,{"stream_name":"stdout","time":4314.353072498,"data":"[job1] step  800  train(avg100) 0.05916  val 0.06353  1378 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":4314.353078337,"data":"[job1] wrote /kaggle/working/out/job1/anti_s0/anti/train_log.json\n"}
+,{"stream_name":"stdout","time":4314.353082728,"data":"[job1] === anti_s0: exit 0 after 1432 s\n"}
+,{"stream_name":"stdout","time":4314.353087251,"data":"[job1] === anti_s1: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant anti --seed 1 --out /kaggle/working/out/job1/anti_s1\n"}
+,{"stream_name":"stdout","time":4314.353091888,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":4314.353096209,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":4314.353100739,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":4314.35310564,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 780.63it/s]\n"}
+,{"stream_name":"stdout","time":4314.353120169,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":4314.353124528,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":4314.353129039,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1145.00it/s]\n"}
+,{"stream_name":"stdout","time":4314.353148885,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":4314.353155438,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":4314.353160298,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":4314.353164622,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":4314.353169163,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":4314.353173433,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":4314.353178019,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2622.33it/s]\n"}
+,{"stream_name":"stdout","time":4314.353182738,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":4314.35318724,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:00,  5.35it/s]\n"}
+,{"stream_name":"stdout","time":4314.353191888,"data":"[job1] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:01,  3.61it/s]\n"}
+,{"stream_name":"stdout","time":4314.353196648,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00, 11.42it/s]\n"}
+,{"stream_name":"stdout","time":4314.353201862,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  9.20it/s]\n"}
+,{"stream_name":"stdout","time":4314.353206548,"data":"[job1]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.7 s\n"}
+,{"stream_name":"stdout","time":4314.353211043,"data":"[job1] anti: 2.62 M trainable LoRA parameters, 21 motion modules checkpointed\n"}
+,{"stream_name":"stdout","time":4314.353234055,"data":"[job1] cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}\n"}
+,{"stream_name":"stdout","time":4314.3532417,"data":"[job1] step    0  val 0.09818\n"}
+,{"stream_name":"stdout","time":4494.355051295,"data":"[job1] step  100  train(avg100) 0.08857  val 0.06764  172 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":4554.355573191,"data":"[job0] step  300  train(avg100) 0.07630  val 0.06297  671 s (2.24 s/step)\n"}
+,{"stream_name":"stdout","time":4674.357912794,"data":"[job1] step  200  train(avg100) 0.06459  val 0.06404  344 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":4794.359068205,"data":"[job0] step  400  train(avg100) 0.07274  val 0.06286  895 s (2.24 s/step)\n"}
+,{"stream_name":"stdout","time":4854.35994274,"data":"[job1] step  300  train(avg100) 0.08097  val 0.06384  516 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":4974.361163583,"data":"[job0] step  500  train(avg100) 0.06970  val 0.06278  1119 s (2.24 s/step)\n"}
+,{"stream_name":"stdout","time":5034.361935281,"data":"[job1] step  400  train(avg100) 0.06098  val 0.06374  689 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":5214.364044613,"data":"[job0] step  600  train(avg100) 0.06393  val 0.06276  1342 s (2.24 s/step)\n"}
+,{"stream_name":"stdout","time":5214.364107853,"data":"[job1] step  500  train(avg100) 0.04906  val 0.06366  861 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":5394.365950286,"data":"[job1] step  600  train(avg100) 0.05607  val 0.06364  1033 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":5454.366448787,"data":"[job0] step  700  train(avg100) 0.05999  val 0.06273  1565 s (2.24 s/step)\n"}
+,{"stream_name":"stdout","time":5574.367996033,"data":"[job1] step  700  train(avg100) 0.04851  val 0.06359  1205 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":5694.369379529,"data":"[job0] step  800  train(avg100) 0.04939  val 0.06275  1787 s (2.23 s/step)\n"}
+,{"stream_name":"stdout","time":5694.369414854,"data":"[job0] wrote /kaggle/working/out/job0/full_s2/full/train_log.json\n"}
+,{"stream_name":"stdout","time":5694.369420936,"data":"[job0] === full_s2: exit 0 after 1846 s\n"}
+,{"stream_name":"stdout","time":5694.369425737,"data":"[job0] === probe_s0: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant probe --seed 0 --out /kaggle/working/out/job0/probe_s0\n"}
+,{"stream_name":"stdout","time":5694.369430809,"data":"[job0] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":5694.369435462,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":5694.369439834,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":5694.369444779,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 878.11it/s]\n"}
+,{"stream_name":"stdout","time":5694.369450434,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":5694.369454857,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":5694.36947253,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1346.19it/s]\n"}
+,{"stream_name":"stdout","time":5694.369477009,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":5694.369482542,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":5694.36948672,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":5694.36949018,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":5694.369493907,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":5694.369497148,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":5694.369500869,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2564.75it/s]\n"}
+,{"stream_name":"stdout","time":5694.369504863,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":5694.369508181,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:00,  5.24it/s]\n"}
+,{"stream_name":"stdout","time":5694.36951195,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:00,  4.26it/s]\n"}
+,{"stream_name":"stdout","time":5694.369515842,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:00\u003c00:00,  8.26it/s]\n"}
+,{"stream_name":"stdout","time":5694.369519851,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00, 11.30it/s]\n"}
+,{"stream_name":"stdout","time":5694.369523871,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  8.99it/s]\n"}
+,{"stream_name":"stdout","time":5694.36952782,"data":"[job0]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.2 s\n"}
+,{"stream_name":"stdout","time":5694.369531491,"data":"[job0] probe: 1.97 M trainable LoRA parameters, 21 motion modules checkpointed\n"}
+,{"stream_name":"stdout","time":5694.369539327,"data":"[job0] cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}\n"}
+,{"stream_name":"stdout","time":5694.369545661,"data":"[job0] step    0  val 0.09818\n"}
+,{"stream_name":"stdout","time":5694.369738956,"data":"[job1] step  800  train(avg100) 0.05573  val 0.06356  1377 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":5694.369813836,"data":"[job1] wrote /kaggle/working/out/job1/anti_s1/anti/train_log.json\n"}
+,{"stream_name":"stdout","time":5694.369817906,"data":"[job1] === anti_s1: exit 0 after 1431 s\n"}
+,{"stream_name":"stdout","time":5694.369891157,"data":"[job1] === anti_s2: /usr/bin/python3 -u scripts/train_motion_lora.py --cut-free --data-dir input/vdprobe-hmdb51 --variant anti --seed 2 --out /kaggle/working/out/job1/anti_s2\n"}
+,{"stream_name":"stdout","time":5694.369905379,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":5754.370817919,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":5754.370859104,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":5754.370865734,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 890.98it/s]\n"}
+,{"stream_name":"stdout","time":5754.370871046,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":5754.370875214,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":5754.370879877,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1388.28it/s]\n"}
+,{"stream_name":"stdout","time":5754.370885321,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":5754.370891124,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":5754.370895474,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":5754.370899317,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":5754.370903376,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:01,  4.15it/s]\n"}
+,{"stream_name":"stdout","time":5754.370907669,"data":"[job1] Loading pipeline components...:  50%|█████     | 3/6 [00:00\u003c00:00,  8.67it/s]\n"}
+,{"stream_name":"stdout","time":5754.370912424,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":5754.370916337,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":5754.370920422,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2968.51it/s]\n"}
+,{"stream_name":"stdout","time":5754.370924929,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":5754.37092901,"data":"[job1] Loading pipeline components...:  67%|██████▋   | 4/6 [00:00\u003c00:00,  7.11it/s]\n"}
+,{"stream_name":"stdout","time":5754.370933646,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  9.30it/s]\n"}
+,{"stream_name":"stdout","time":5754.370938165,"data":"[job1]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.5 s\n"}
+,{"stream_name":"stdout","time":5754.370942255,"data":"[job1] anti: 2.62 M trainable LoRA parameters, 21 motion modules checkpointed\n"}
+,{"stream_name":"stdout","time":5754.370952153,"data":"[job1] cut-free shots: {'run_20060723sfjffbartsinger_ru': [np.int64(25)], 'run_20060723sfjffsomelikeitwar': [np.int64(56)], 'run_Age13_1_run_f_nm_np1_fr_me': [133], 'run_BLACK_HAWK_DOWN_run_f_nm_n': [np.int64(14)], 'walk_20060723sfjffjewcy_walk_f': [np.int64(108)], 'walk_20070723_sfjff_waitingfor': [np.int64(46)], 'walk_AgriculturalAviation_walk': [np.int64(63)], 'walk_AmericanGangster_walk_f_n': [74], 'jump_Arrasando_no_Le_Parkour_j': [np.int64(46)], 'jump_DONNIE_DARKO_jump_f_nm_np': [np.int64(164)], 'jump_Faith_Rewarded_jump_f_nm_': [102], 'turn_KUNG_FU_HUSTLE_turn_f_nm_': [52], 'turn_NOVA_ELEGANTUNIVERSE2_tur': [np.int64(48)], 'turn_OldSchool_turn_f_nm_np1_f': [50], 'turn_eddieizzardcircle_turn_f_': [74], 'run_HP_PRISONER_OF_AZKABAN_run': [np.int64(39)], 'walk_BIG_FISH_walk_f_nm_np1_fr': [137], 'jump_prelinger_ControlY1950_ju': [36], 'turn_likebeckam_turn_f_nm_np1_': [49]}\n"}
+,{"stream_name":"stdout","time":5754.370975964,"data":"[job1] step    0  val 0.09818\n"}
+,{"stream_name":"stdout","time":5934.372796053,"data":"[job0] step  100  train(avg100) 0.08372  val 0.07671  184 s (1.84 s/step)\n"}
+,{"stream_name":"stdout","time":5934.372964677,"data":"[job1] step  100  train(avg100) 0.09746  val 0.06838  172 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":6114.375078069,"data":"[job0] step  200  train(avg100) 0.07723  val 0.06543  366 s (1.83 s/step)\n"}
+,{"stream_name":"stdout","time":6114.375159241,"data":"[job1] step  200  train(avg100) 0.05795  val 0.06409  344 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":6294.377374582,"data":"[job0] step  300  train(avg100) 0.06197  val 0.06477  547 s (1.82 s/step)\n"}
+,{"stream_name":"stdout","time":6294.378096413,"data":"[job1] step  300  train(avg100) 0.07763  val 0.06381  516 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":6474.380386794,"data":"[job0] step  400  train(avg100) 0.05312  val 0.06448  727 s (1.82 s/step)\n"}
+,{"stream_name":"stdout","time":6474.380424958,"data":"[job1] step  400  train(avg100) 0.07415  val 0.06368  688 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":6654.382241759,"data":"[job0] step  500  train(avg100) 0.04656  val 0.06428  908 s (1.82 s/step)\n"}
+,{"stream_name":"stdout","time":6654.382641374,"data":"[job1] step  500  train(avg100) 0.07117  val 0.06360  859 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":6774.384211721,"data":"[job1] step  600  train(avg100) 0.06508  val 0.06356  1031 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":6834.384619609,"data":"[job0] step  600  train(avg100) 0.06966  val 0.06422  1089 s (1.81 s/step)\n"}
+,{"stream_name":"stdout","time":6954.386431176,"data":"[job1] step  700  train(avg100) 0.06128  val 0.06355  1204 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":7014.386924432,"data":"[job0] step  700  train(avg100) 0.07810  val 0.06413  1270 s (1.81 s/step)\n"}
+,{"stream_name":"stdout","time":7134.388485309,"data":"[job1] step  800  train(avg100) 0.05052  val 0.06352  1376 s (1.72 s/step)\n"}
+,{"stream_name":"stdout","time":7134.388520509,"data":"[job1] wrote /kaggle/working/out/job1/anti_s2/anti/train_log.json\n"}
+,{"stream_name":"stdout","time":7134.388527229,"data":"[job1] === anti_s2: exit 0 after 1430 s\n"}
+,{"stream_name":"stdout","time":7134.388532816,"data":"[job1] === sweep: /usr/bin/python3 -u scripts/edit_sweep.py --split test --arms lora --lora-dir /kaggle/working/out --lora-wait 9 --shard 1/2 --out /kaggle/working/out/job1/sweep\n"}
+,{"stream_name":"stdout","time":7194.388997717,"data":"[job0] step  800  train(avg100) 0.06008  val 0.06406  1450 s (1.81 s/step)\n"}
+,{"stream_name":"stdout","time":7194.389036294,"data":"[job0] wrote /kaggle/working/out/job0/probe_s0/probe/train_log.json\n"}
+,{"stream_name":"stdout","time":7194.389041942,"data":"[job0] === probe_s0: exit 0 after 1506 s\n"}
+,{"stream_name":"stdout","time":7194.389046615,"data":"[job0] === sweep: /usr/bin/python3 -u scripts/edit_sweep.py --split test --arms lora --lora-dir /kaggle/working/out --lora-wait 9 --shard 0/2 --out /kaggle/working/out/job0/sweep\n"}
+,{"stream_name":"stdout","time":7194.389051672,"data":"[job0] 9 LoRAs ready after 0 s wait\n"}
+,{"stream_name":"stdout","time":7194.389055839,"data":"[job0] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":7194.389060187,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":7194.389064268,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":7194.389068982,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 1020.64it/s]\n"}
+,{"stream_name":"stdout","time":7194.389074486,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":7194.389109026,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":7194.389113353,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1386.76it/s]\n"}
+,{"stream_name":"stdout","time":7194.389117816,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":7194.389123661,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":7194.389127747,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":7194.389131319,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":7194.389135707,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:01,  4.14it/s]\n"}
+,{"stream_name":"stdout","time":7194.389139825,"data":"[job0] Loading pipeline components...:  50%|█████     | 3/6 [00:00\u003c00:00,  8.95it/s]\n"}
+,{"stream_name":"stdout","time":7194.389144001,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":7194.389147502,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":7194.389167919,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2718.36it/s]\n"}
+,{"stream_name":"stdout","time":7194.389172309,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":7194.389176396,"data":"[job0] Loading pipeline components...:  83%|████████▎ | 5/6 [00:00\u003c00:00,  8.38it/s]\n"}
+,{"stream_name":"stdout","time":7194.389403249,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  9.56it/s]\n"}
+,{"stream_name":"stdout","time":7194.389410502,"data":"[job0]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 13.7 s\n"}
+,{"stream_name":"stdout","time":7194.389414695,"data":"[job0] /usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!\n"}
+,{"stream_name":"stdout","time":7194.389420959,"data":"[job0]   warnings.warn(\n"}
+,{"stream_name":"stdout","time":7194.389424837,"data":"[job0] [1/6] 42__on-a-beach__golden-retriever-running__horse-walking: source + 12 arms\n"}
+,{"stream_name":"stdout","time":7194.389428231,"data":"[job1] 9 LoRAs ready after 60 s wait\n"}
+,{"stream_name":"stdout","time":7194.389432019,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":7194.389435667,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":7194.389439029,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":7194.389442668,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 812.77it/s]\n"}
+,{"stream_name":"stdout","time":7194.389446279,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":7194.389449459,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":7194.389453149,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1299.88it/s]\n"}
+,{"stream_name":"stdout","time":7194.389456776,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":7194.389505918,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":7194.389510545,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":7194.389513889,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":7194.38951741,"data":"[job1] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:00,  6.40it/s]\n"}
+,{"stream_name":"stdout","time":7194.389521091,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":7194.389524331,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":7194.389528009,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2864.87it/s]\n"}
+,{"stream_name":"stdout","time":7194.389531799,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":7194.389535027,"data":"[job1] Loading pipeline components...:  67%|██████▋   | 4/6 [00:00\u003c00:00,  7.69it/s]\n"}
+,{"stream_name":"stdout","time":7194.389538897,"data":"[job1] Loading pipeline components...:  83%|████████▎ | 5/6 [00:00\u003c00:00,  8.09it/s]\n"}
+,{"stream_name":"stdout","time":7194.389542653,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  9.30it/s]\n"}
+,{"stream_name":"stdout","time":7254.390106471,"data":"[job1]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 14.2 s\n"}
+,{"stream_name":"stdout","time":7254.390152093,"data":"[job1] /usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!\n"}
+,{"stream_name":"stdout","time":7254.390160398,"data":"[job1]   warnings.warn(\n"}
+,{"stream_name":"stdout","time":7254.390165767,"data":"[job1] [1/6] 1337__in-a-forest__german-shepherd-walking__wolf-jumping: source + 12 arms\n"}
+,{"stream_name":"stdout","time":7434.392116969,"data":"[job0]     step  5/25    226.8 s  (3.49 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7434.392270596,"data":"[job1]     step  5/25    181.8 s  (2.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7614.394470888,"data":"[job1]     step 10/25    370.6 s  (2.85 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7674.394912735,"data":"[job0]     step 10/25    448.0 s  (3.45 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7794.396530463,"data":"[job1]     step 15/25    559.7 s  (2.87 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7854.397092549,"data":"[job0]     step 15/25    666.3 s  (3.42 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7974.398957195,"data":"[job1]     step 20/25    749.1 s  (2.88 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8094.399833156,"data":"[job0]     step 20/25    884.0 s  (3.40 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8214.401586166,"data":"[job1]     step 25/25    938.2 s  (2.89 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8274.402208093,"data":"[job1] wrote /kaggle/working/out/job1/sweep/1337__in-a-forest__german-shepherd-walking__wolf-jumping/manifest.json\n"}
+,{"stream_name":"stdout","time":8274.402243332,"data":"[job1]   938 s (72.2 s per clip)\n"}
+,{"stream_name":"stdout","time":8274.402249748,"data":"[job1] [2/6] 42__in-a-forest__deer-spinning__brown-bear-running: source + 12 arms\n"}
+,{"stream_name":"stdout","time":8334.402812088,"data":"[job0]     step 25/25   1104.8 s  (3.40 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8394.403646956,"data":"[job0] wrote /kaggle/working/out/job0/sweep/42__on-a-beach__golden-retriever-running__horse-walking/manifest.json\n"}
+,{"stream_name":"stdout","time":8394.403706876,"data":"[job0]   1105 s (85.0 s per clip)\n"}
+,{"stream_name":"stdout","time":8394.40371223,"data":"[job0] [2/6] 2024__on-a-beach__tiger-jumping__fox-spinning: source + 12 arms\n"}
+,{"stream_name":"stdout","time":8454.404672435,"data":"[job1]     step  5/25    188.4 s  (2.90 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8574.406068083,"data":"[job0]     step  5/25    214.4 s  (3.30 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8634.407334847,"data":"[job1]     step 10/25    377.6 s  (2.90 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8814.410041864,"data":"[job0]     step 10/25    431.8 s  (3.32 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8814.4102148,"data":"[job1]     step 15/25    566.7 s  (2.91 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8994.412571528,"data":"[job1]     step 20/25    755.9 s  (2.91 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9054.413097715,"data":"[job0]     step 15/25    649.9 s  (3.33 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9174.414756893,"data":"[job1]     step 25/25    945.0 s  (2.91 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9234.415207728,"data":"[job0]     step 20/25    867.5 s  (3.34 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9234.415451814,"data":"[job1] wrote /kaggle/working/out/job1/sweep/42__in-a-forest__deer-spinning__brown-bear-running/manifest.json\n"}
+,{"stream_name":"stdout","time":9234.415472829,"data":"[job1]   945 s (72.7 s per clip)\n"}
+,{"stream_name":"stdout","time":9234.415479231,"data":"[job1] [3/6] 2024__in-a-forest__wolf-walking__deer-spinning: source + 12 arms\n"}
+,{"stream_name":"stdout","time":9474.418025128,"data":"[job0]     step 25/25   1091.6 s  (3.36 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9474.41819974,"data":"[job1]     step  5/25    187.7 s  (2.89 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9534.418664625,"data":"[job0] wrote /kaggle/working/out/job0/sweep/2024__on-a-beach__tiger-jumping__fox-spinning/manifest.json\n"}
+,{"stream_name":"stdout","time":9534.418706746,"data":"[job0]   1092 s (84.0 s per clip)\n"}
+,{"stream_name":"stdout","time":9534.418713585,"data":"[job0] [3/6] 1337__on-a-beach__horse-running__tiger-jumping: source + 12 arms\n"}
+,{"stream_name":"stdout","time":9654.420404528,"data":"[job1]     step 10/25    376.7 s  (2.90 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9774.422019631,"data":"[job0]     step  5/25    214.0 s  (3.29 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9834.422495653,"data":"[job1]     step 15/25    565.8 s  (2.90 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9954.423960094,"data":"[job0]     step 10/25    431.7 s  (3.32 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10014.424846725,"data":"[job1]     step 20/25    755.1 s  (2.90 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10194.426802514,"data":"[job0]     step 15/25    649.5 s  (3.33 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10194.427281556,"data":"[job1]     step 25/25    944.1 s  (2.91 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10254.428468921,"data":"[job1] wrote /kaggle/working/out/job1/sweep/2024__in-a-forest__wolf-walking__deer-spinning/manifest.json\n"}
+,{"stream_name":"stdout","time":10254.428566221,"data":"[job1]   944 s (72.6 s per clip)\n"}
+,{"stream_name":"stdout","time":10254.428574856,"data":"[job1] [4/6] 1337__in-a-forest__athlete-walking__soldier-jumping: source + 12 arms\n"}
+,{"stream_name":"stdout","time":10434.430161371,"data":"[job0]     step 20/25    873.1 s  (3.36 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10434.430315312,"data":"[job1]     step  5/25    188.0 s  (2.89 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10614.43233738,"data":"[job0]     step 25/25   1092.1 s  (3.36 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10614.432535922,"data":"[job1]     step 10/25    377.0 s  (2.90 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10674.432987653,"data":"[job0] wrote /kaggle/working/out/job0/sweep/1337__on-a-beach__horse-running__tiger-jumping/manifest.json\n"}
+,{"stream_name":"stdout","time":10674.433032511,"data":"[job0]   1092 s (84.0 s per clip)\n"}
+,{"stream_name":"stdout","time":10674.433039897,"data":"[job0] [4/6] 42__on-a-beach__young-man-running__young-woman-walking: source + 12 arms\n"}
+,{"stream_name":"stdout","time":10854.435279433,"data":"[job1]     step 15/25    566.1 s  (2.90 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10914.435955284,"data":"[job0]     step  5/25    213.1 s  (3.28 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11034.437464159,"data":"[job1]     step 20/25    755.6 s  (2.91 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11154.438784979,"data":"[job0]     step 10/25    430.8 s  (3.31 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11214.439465354,"data":"[job1]     step 25/25    944.9 s  (2.91 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11274.440060686,"data":"[job1] wrote /kaggle/working/out/job1/sweep/1337__in-a-forest__athlete-walking__soldier-jumping/manifest.json\n"}
+,{"stream_name":"stdout","time":11274.440094944,"data":"[job1]   945 s (72.7 s per clip)\n"}
+,{"stream_name":"stdout","time":11274.440100246,"data":"[job1] [5/6] 42__in-a-forest__elderly-man-spinning__young-man-running: source + 12 arms\n"}
+,{"stream_name":"stdout","time":11334.440710721,"data":"[job0]     step 15/25    652.3 s  (3.34 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11454.442552432,"data":"[job1]     step  5/25    188.0 s  (2.89 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11574.443778088,"data":"[job0]     step 20/25    873.3 s  (3.36 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11634.444846574,"data":"[job1]     step 10/25    376.8 s  (2.90 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11814.446995335,"data":"[job0]     step 25/25   1090.9 s  (3.36 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11814.44702991,"data":"[job1]     step 15/25    565.9 s  (2.90 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11874.44768882,"data":"[job0] wrote /kaggle/working/out/job0/sweep/42__on-a-beach__young-man-running__young-woman-walking/manifest.json\n"}
+,{"stream_name":"stdout","time":11874.447764809,"data":"[job0]   1091 s (83.9 s per clip)\n"}
+,{"stream_name":"stdout","time":11874.447770704,"data":"[job0] [5/6] 2024__on-a-beach__dancer-jumping__child-spinning: source + 12 arms\n"}
+,{"stream_name":"stdout","time":12054.449494372,"data":"[job0]     step  5/25    214.2 s  (3.30 s per clip-step)\n"}
+,{"stream_name":"stdout","time":12054.449808883,"data":"[job1]     step 20/25    755.3 s  (2.91 s per clip-step)\n"}
+,{"stream_name":"stdout","time":12234.451845067,"data":"[job1]     step 25/25    944.8 s  (2.91 s per clip-step)\n"}
+,{"stream_name":"stdout","time":12294.45232702,"data":"[job0]     step 10/25    432.2 s  (3.32 s per clip-step)\n"}
+,{"stream_name":"stdout","time":12294.452521714,"data":"[job1] wrote /kaggle/working/out/job1/sweep/42__in-a-forest__elderly-man-spinning__young-man-running/manifest.json\n"}
+,{"stream_name":"stdout","time":12294.452534472,"data":"[job1]   945 s (72.7 s per clip)\n"}
+,{"stream_name":"stdout","time":12294.452540635,"data":"[job1] [6/6] 2024__on-a-beach__soldier-walking__dancer-spinning: source + 12 arms\n"}
+,{"stream_name":"stdout","time":12474.45443176,"data":"[job0]     step 15/25    655.8 s  (3.36 s per clip-step)\n"}
+,{"stream_name":"stdout","time":12474.454617329,"data":"[job1]     step  5/25    187.9 s  (2.89 s per clip-step)\n"}
+,{"stream_name":"stdout","time":12654.457065122,"data":"[job1]     step 10/25    377.1 s  (2.90 s per clip-step)\n"}
+,{"stream_name":"stdout","time":12714.457525991,"data":"[job0]     step 20/25    875.2 s  (3.37 s per clip-step)\n"}
+,{"stream_name":"stdout","time":12834.458991687,"data":"[job1]     step 15/25    566.6 s  (2.91 s per clip-step)\n"}
+,{"stream_name":"stdout","time":12954.460294269,"data":"[job0]     step 25/25   1093.3 s  (3.36 s per clip-step)\n"}
+,{"stream_name":"stdout","time":13014.461175422,"data":"[job0] wrote /kaggle/working/out/job0/sweep/2024__on-a-beach__dancer-jumping__child-spinning/manifest.json\n"}
+,{"stream_name":"stdout","time":13014.461213957,"data":"[job0]   1093 s (84.1 s per clip)\n"}
+,{"stream_name":"stdout","time":13014.461220598,"data":"[job0] [6/6] 1337__in-a-forest__young-woman-running__athlete-jumping: source + 12 arms\n"}
+,{"stream_name":"stdout","time":13014.461654756,"data":"[job1]     step 20/25    755.8 s  (2.91 s per clip-step)\n"}
+,{"stream_name":"stdout","time":13194.463790001,"data":"[job0]     step  5/25    213.3 s  (3.28 s per clip-step)\n"}
+,{"stream_name":"stdout","time":13254.464759767,"data":"[job1]     step 25/25    945.1 s  (2.91 s per clip-step)\n"}
+,{"stream_name":"stdout","time":13314.465432598,"data":"[job1] wrote /kaggle/working/out/job1/sweep/2024__on-a-beach__soldier-walking__dancer-spinning/manifest.json\n"}
+,{"stream_name":"stdout","time":13314.465463496,"data":"[job1]   945 s (72.7 s per clip)\n"}
+,{"stream_name":"stdout","time":13314.465469022,"data":"[job1] === sweep: exit 0 after 6138 s\n"}
+,{"stream_name":"stdout","time":13434.466526562,"data":"[job0]     step 10/25    437.4 s  (3.36 s per clip-step)\n"}
+,{"stream_name":"stdout","time":13674.46947402,"data":"[job0]     step 15/25    663.4 s  (3.40 s per clip-step)\n"}
+,{"stream_name":"stdout","time":13914.472926978,"data":"[job0]     step 20/25    890.2 s  (3.42 s per clip-step)\n"}
+,{"stream_name":"stdout","time":14094.475205942,"data":"[job0]     step 25/25   1116.7 s  (3.44 s per clip-step)\n"}
+,{"stream_name":"stdout","time":14214.476738033,"data":"[job0] wrote /kaggle/working/out/job0/sweep/1337__in-a-forest__young-woman-running__athlete-jumping/manifest.json\n"}
+,{"stream_name":"stdout","time":14214.476786511,"data":"[job0]   1117 s (85.9 s per clip)\n"}
+,{"stream_name":"stdout","time":14214.476793643,"data":"[job0] === sweep: exit 0 after 7023 s\n"}
+,{"stream_name":"stdout","time":14214.477405068,"data":"exit codes [0, 0]\n"}
+,{"stream_name":"stderr","time":14216.538731413,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":14216.538773791,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":14216.809684459,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":14216.809711283,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":14217.595588837,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":14218.638788607,"data":"[NbConvertApp] Writing 405407 bytes to __results__.html\n"}
+]
