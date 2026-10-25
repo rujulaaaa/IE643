@@ -1,10 +1,11 @@
 """GPU check of every interface path, headless (no browser): what scripts/app.py runs on a click.
 
-    python -u scripts/interface_check.py [--variant sd15_mm2] [--video <mp4>]
+    python -u scripts/interface_check.py [--variant sd15_mm2] [--video <mp4>] [--only edit_lit]
 
   live edit, motion direction, selected component patch (+ B reference, D)
   live edit, content direction, selected component patch
   live edit, motion direction, probe-guided LoRA
+  live edit, both directions, the Stage 6b attention edits (lit_single, lit_dual)
   upload: a real HMDB51 clip inverted, attention injection at all steps onto a new subject
   cross-attention maps for a typed prompt
   the Gradio app builds with this engine (not launched)
@@ -28,6 +29,7 @@ def main():
     p.add_argument("--assets", type=Path, default=None, help="directory laid out like the repo (results/, data/)")
     p.add_argument("--video", type=Path,
                    default=REPO_ROOT / "data" / "hmdb51_lora" / "jump" / "jump_Faith_Rewarded_jump_f_nm_np1_ri_med_89.mp4")
+    p.add_argument("--only", nargs="*", default=None, help="run only the checks whose names start with these")
     args = p.parse_args()
     if args.assets:
         print("linked", link_assets(args.assets), "asset files", flush=True)
@@ -46,10 +48,15 @@ def main():
         "edit_motion_lora_probe": lambda: eng.edit(EditRequest("golden retriever", "running", "tiger", "running",
                                                                "in a forest", 1337, "motion", "lora_probe",
                                                                with_reference=False)),
+        **{f"edit_lit_{d}_{m[4:]}": (lambda d=d, m=m: eng.edit(EditRequest("golden retriever", "running", "horse",
+                                                                          "walking", "on a beach", 42, d, m)))
+           for d in ("motion", "content") for m in ("lit_dual", "lit_single")},
         "upload_attn_all": lambda: eng.upload_edit(str(args.video), "a man jumping, high quality, detailed",
                                                    "a tiger jumping, high quality, detailed"),
         "cross_attention": lambda: eng.cross_attention("red fox", "jumping", "in a snowy forest", 7, progress=prog),
     }
+    if args.only:
+        checks = {k: v for k, v in checks.items() if k.startswith(tuple(args.only))}
     for name, fn in checks.items():
         t1 = time.perf_counter()
         try:
@@ -74,7 +81,8 @@ def main():
         spec.loader.exec_module(app)
         app.build(eng)
         from vdprobe.demo import playable
-        res["playable_mp4"] = playable(res["checks"]["edit_motion_selected"].get("files", {}).get("edit"))
+        first = next(iter(res["checks"].values()), {})
+        res["playable_mp4"] = playable(first.get("files", {}).get("edit"))
         res["checks"]["app_builds"] = {"ok": True}
         print("app_builds: OK", flush=True)
     except Exception as e:
