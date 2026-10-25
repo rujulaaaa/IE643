@@ -200,10 +200,13 @@ map-placed LoRA sits, and the same probing is then repeated on four other model 
 \end{figure}
 
 \begin{itemize}
-\item \textbf{Problem framing (before 21 Sep).} We fixed working definitions of content and motion
-  from the brief, chose AnimateDiff as the model, and wrote a roadmap with a register of
-  decisions (D-01 to D-22) so that later choices could not be made after seeing results.
-\item \textbf{Pilots before the prep review (Sep).} Three Kaggle notebooks: E1 measured cost per
+\item \textbf{Problem framing:} Problem was to find out which layers store content and which of them
+store motion of a video diffusion U-net model. Then use this information to edit a clip so that one 
+of these is kept intact and the other is changed.
+\item \textbf{Planning:} We defined what content meant and what motion meant so we could measure it 
+properly. We chose AnimateDiff as our model over ModelScope and Stable Video Diffusion because it has
+explicit spatial and temporal split and takes text prompts as input. 
+\item \textbf{Pilots before the prep review:} Three Kaggle notebooks: E1 measured cost per
   clip and memory, E2 checked whether a fixed noise tensor isolates a one-word change, E3 hooked
   all 95 temporal and spatial coordinates and measured what storing activations would cost.
   E2's motion control failed, and that changed the design (Section~\ref{sec:before}).
