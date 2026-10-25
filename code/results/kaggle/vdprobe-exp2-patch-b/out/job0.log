@@ -1,0 +1,26 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 945.51it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1206.19it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:02,  1.51it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:01<00:00,  3.06it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 3068.46it/s]
+Loading pipeline components...:  83%|████████▎ | 5/6 [00:01<00:00,  3.45it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.32it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.0 s
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 7898.47it/s]
+Downloading: "https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth
+  0%|          | 0.00/20.1M [00:00<?, ?B/s] 17%|█▋        | 3.38M/20.1M [00:00<00:00, 34.2MB/s]100%|██████████| 20.1M/20.1M [00:00<00:00, 108MB/s] 
+pair 1/12 motion s2024__german-shepherd__running__on-a-beach -> s2024__german-shepherd__spinning__on-a-beach  1311 s
+pair 2/12 motion s2024__wolf__running__in-a-forest -> s2024__wolf__jumping__in-a-forest  2627 s
+pair 3/12 motion s2024__brown-bear__running__in-a-forest -> s2024__brown-bear__jumping__in-a-forest  3945 s
+pair 4/12 motion s2024__athlete__running__in-a-forest -> s2024__athlete__spinning__in-a-forest  5230 s
+pair 5/12 motion s2024__dancer__running__in-a-forest -> s2024__dancer__spinning__in-a-forest  6514 s
+pair 6/12 motion s2024__child__running__in-a-forest -> s2024__child__spinning__in-a-forest  7799 s
+pair 7/12 content s2024__golden-retriever__spinning__on-a-beach -> s2024__german-shepherd__spinning__on-a-beach  9086 s
+pair 8/12 content s2024__golden-retriever__spinning__in-a-forest -> s2024__wolf__spinning__in-a-forest  10377 s
+pair 9/12 content s2024__golden-retriever__jumping__on-a-beach -> s2024__fox__jumping__on-a-beach  11667 s
+pair 10/12 content s2024__golden-retriever__running__in-a-forest -> s2024__brown-bear__running__in-a-forest  12955 s
+pair 11/12 content s2024__young-man__walking__in-a-forest -> s2024__athlete__walking__in-a-forest  14246 s
+pair 12/12 content s2024__young-man__spinning__in-a-forest -> s2024__dancer__spinning__in-a-forest  15535 s
+wrote /kaggle/working/out/s2/manifest.json

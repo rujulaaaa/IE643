@@ -1,3 +1,16 @@
-2026-10-25 19:34:27 all four cells analysed
-2026-10-25 19:34:27 primary cell sd15_mm2, ladder verbs [walking, running]
-2026-10-25 19:34:35 queueing vdprobe-exp2-ladder
+2026-10-25 23:33:04 all four cells analysed
+2026-10-25 23:33:04 primary cell sd15_mm2, ladder verbs [walking, running]
+2026-10-25 23:33:10 queueing vdprobe-exp2-ladder
+2026-10-26 00:44:15 patching and erasure downloaded
+exp1_region          uses (necessary)                 S +0.374 [+0.333, +0.417]  N +0.331 [+0.253, +0.406]  E False
+rsa_motion_peak      uses (necessary)                 S +0.037 [+0.016, +0.062]  N +0.056 [+0.027, +0.090]  E True
+up1_motion_modules   uses (sufficient and necessary)  S +0.739 [+0.698, +0.783]  N +0.687 [+0.629, +0.747]  E True
+rsa_content_peak     encodes but does not use         S +0.046 [-0.026, +0.145]  N -0.012 [-0.037, +0.009]  E True
+{
+ "exp1_region": "uses (necessary)",
+ "rsa_motion_peak": "uses (necessary)",
+ "up1_motion_modules": "uses (sufficient and necessary)",
+ "rsa_content_peak": "encodes but does not use"
+}
+dissociation: {'exp1_region vs rsa_content_peak': False, 'rsa_motion_peak vs rsa_content_peak': False, 'up1_motion_modules vs rsa_content_peak': False}
+2026-10-26 00:44:48 verdict written

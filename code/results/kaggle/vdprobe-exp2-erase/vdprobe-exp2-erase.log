@@ -1,0 +1,123 @@
+[{"stream_name":"stdout","time":32.372569031,"data":"2\n"}
+,{"stream_name":"stdout","time":32.372623818,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":32.372629059,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":32.372632304,"data":"2.11.0+cu128\n"}
+,{"stream_name":"stdout","time":32.372635576,"data":" \n"}
+,{"stream_name":"stderr","time":41.229878624,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  8.51it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:05\u003c00:00,  3.21s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:05\u003c00:00,  2.74s/it]\n"}
+,{"stream_name":"stderr","time":41.462263014,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":52.197473361,"data":"\rFetching 13 files:  15%|█▌        | 2/13 [00:00\u003c00:00, 16.16it/s]\rFetching 13 files:  69%|██████▉   | 9/13 [00:00\u003c00:00, 44.72it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:10\u003c00:00,  1.20it/s]\n"}
+,{"stream_name":"stderr","time":60.035861878,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:  17%|█▋        | 2/12 [00:00\u003c00:00, 15.14it/s]\rFetching 12 files:  67%|██████▋   | 8/12 [00:00\u003c00:00, 31.60it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:07\u003c00:00,  1.27it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:07\u003c00:00,  1.64it/s]\n"}
+,{"stream_name":"stdout","time":67.919285367,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/exp2_erasure.py --coord up_blocks.0.motion_modules.2 --steps 0 1 2 --out /kaggle/working/out/c1\n"}
+,{"stream_name":"stdout","time":67.920127305,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/exp2_erasure.py --coord up_blocks.0.motion_modules.2.transformer_blocks.0.attn2 --steps 22 23 24 --out /kaggle/working/out/c2\n"}
+,{"stream_name":"stdout","time":127.92155425,"data":"[job0] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":127.921727401,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":127.921738221,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":127.921744361,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 958.48it/s]\n"}
+,{"stream_name":"stdout","time":127.921750756,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":127.921756198,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":127.921826635,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1297.25it/s]\n"}
+,{"stream_name":"stdout","time":127.921833805,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":127.921841016,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":127.921846965,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":127.921851671,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":127.921856641,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:00,  7.58it/s]\n"}
+,{"stream_name":"stdout","time":127.921862588,"data":"[job0] Loading pipeline components...:  50%|█████     | 3/6 [00:01\u003c00:01,  1.55it/s]\n"}
+,{"stream_name":"stdout","time":127.921894371,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":127.921897977,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":127.921929792,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2546.40it/s]\n"}
+,{"stream_name":"stdout","time":127.921933478,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":127.921936614,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:02\u003c00:01,  1.95it/s]\n"}
+,{"stream_name":"stdout","time":127.921944638,"data":"[job0] Loading pipeline components...:  83%|████████▎ | 5/6 [00:02\u003c00:00,  2.63it/s]\n"}
+,{"stream_name":"stdout","time":127.921948602,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.72it/s]\n"}
+,{"stream_name":"stdout","time":127.92195735,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":127.921961076,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":127.921964209,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":127.921967645,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 1017.42it/s]\n"}
+,{"stream_name":"stdout","time":127.921971763,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":127.921974991,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":127.921978319,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1368.49it/s]\n"}
+,{"stream_name":"stdout","time":127.921982332,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":127.921986119,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":127.921989612,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":127.922009069,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":127.922012689,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:01\u003c00:08,  1.78s/it]\n"}
+,{"stream_name":"stdout","time":127.922016206,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":127.922019352,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":127.922023414,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2686.57it/s]\n"}
+,{"stream_name":"stdout","time":127.922026992,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":127.9220301,"data":"[job1] Loading pipeline components...:  50%|█████     | 3/6 [00:02\u003c00:01,  1.71it/s]\n"}
+,{"stream_name":"stdout","time":127.92204505,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.72it/s]\n"}
+,{"stream_name":"stdout","time":187.922253265,"data":"[job0]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.4 s\n"}
+,{"stream_name":"stdout","time":187.92238118,"data":"[job1]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.3 s\n"}
+,{"stream_name":"stdout","time":2347.937713372,"data":"[job0] fitted on 32 clips, 24576 samples, ranks {'leace_verb': 3, 'random_verb': 3, 'leace_subject': 13, 'random_subject': 13}, 2200 s\n"}
+,{"stream_name":"stdout","time":2347.937776346,"data":"[job0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":2347.937781546,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":2347.937846527,"data":"[job0] Loading weights:   0%|          | 0/591 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":2347.937860327,"data":"[job0] Loading weights:  42%|████▏     | 249/591 [00:00\u003c00:00, 2484.78it/s]\n"}
+,{"stream_name":"stdout","time":2347.937926987,"data":"[job0] Loading weights: 100%|██████████| 591/591 [00:00\u003c00:00, 3851.76it/s]\n"}
+,{"stream_name":"stdout","time":2467.939065385,"data":"[job0] Downloading: \"https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth\" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth\n"}
+,{"stream_name":"stdout","time":2467.93915799,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":2467.939166684,"data":"[job0]   0%|          | 0.00/20.1M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stdout","time":2467.93917259,"data":"[job0]  42%|████▏     | 8.38M/20.1M [00:00\u003c00:00, 87.8MB/s]\n"}
+,{"stream_name":"stdout","time":2467.939178617,"data":"[job0] 100%|██████████| 20.1M/20.1M [00:00\u003c00:00, 143MB/s] \n"}
+,{"stream_name":"stdout","time":2467.939185473,"data":"[job0] /usr/local/lib/python3.13/dist-packages/transformers/image_processing_backends.py:135: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)\n"}
+,{"stream_name":"stdout","time":2467.939196816,"data":"[job0]   image = torch.from_numpy(image).contiguous()\n"}
+,{"stream_name":"stdout","time":2527.939645901,"data":"[job1] fitted on 32 clips, 24576 samples, ranks {'leace_verb': 3, 'random_verb': 3, 'leace_subject': 13, 'random_subject': 13}, 2388 s\n"}
+,{"stream_name":"stdout","time":2527.939881235,"data":"[job1] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":2527.939891121,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":2527.939895828,"data":"[job1] Loading weights:   0%|          | 0/591 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":2527.93990069,"data":"[job1] Loading weights:  46%|████▌     | 273/591 [00:00\u003c00:00, 2727.28it/s]\n"}
+,{"stream_name":"stdout","time":2527.939905875,"data":"[job1] Loading weights:  96%|█████████▌| 566/591 [00:00\u003c00:00, 2835.66it/s]\n"}
+,{"stream_name":"stdout","time":2527.939910415,"data":"[job1] Loading weights: 100%|██████████| 591/591 [00:00\u003c00:00, 2847.15it/s]\n"}
+,{"stream_name":"stdout","time":2647.940502569,"data":"[job1] /usr/local/lib/python3.13/dist-packages/transformers/image_processing_backends.py:135: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)\n"}
+,{"stream_name":"stdout","time":2647.940553518,"data":"[job1]   image = torch.from_numpy(image).contiguous()\n"}
+,{"stream_name":"stdout","time":2767.941440331,"data":"[job0] test 1/20 s2024__german-shepherd__running__on-a-beach  2587 s\n"}
+,{"stream_name":"stdout","time":2947.942800459,"data":"[job1] test 1/20 s2024__german-shepherd__running__on-a-beach  2795 s\n"}
+,{"stream_name":"stdout","time":3127.944020422,"data":"[job0] test 2/20 s2024__german-shepherd__running__in-a-forest  2964 s\n"}
+,{"stream_name":"stdout","time":3367.945716226,"data":"[job1] test 2/20 s2024__german-shepherd__running__in-a-forest  3202 s\n"}
+,{"stream_name":"stdout","time":3487.946441449,"data":"[job0] test 3/20 s2024__german-shepherd__spinning__in-a-forest  3330 s\n"}
+,{"stream_name":"stdout","time":3787.948751325,"data":"[job1] test 3/20 s2024__german-shepherd__spinning__in-a-forest  3598 s\n"}
+,{"stream_name":"stdout","time":3847.949333791,"data":"[job0] test 4/20 s2024__horse__walking__in-a-forest  3696 s\n"}
+,{"stream_name":"stdout","time":4147.951431255,"data":"[job1] test 4/20 s2024__horse__walking__in-a-forest  3994 s\n"}
+,{"stream_name":"stdout","time":4207.951826535,"data":"[job0] test 5/20 s2024__horse__jumping__on-a-beach  4062 s\n"}
+,{"stream_name":"stdout","time":4567.954377581,"data":"[job0] test 6/20 s2024__horse__spinning__on-a-beach  4428 s\n"}
+,{"stream_name":"stdout","time":4567.954414172,"data":"[job1] test 5/20 s2024__horse__jumping__on-a-beach  4389 s\n"}
+,{"stream_name":"stdout","time":4927.957120821,"data":"[job1] test 6/20 s2024__horse__spinning__on-a-beach  4785 s\n"}
+,{"stream_name":"stdout","time":4987.957563696,"data":"[job0] test 7/20 s2024__wolf__running__on-a-beach  4794 s\n"}
+,{"stream_name":"stdout","time":5347.960057737,"data":"[job0] test 8/20 s2024__wolf__spinning__in-a-forest  5160 s\n"}
+,{"stream_name":"stdout","time":5347.96010974,"data":"[job1] test 7/20 s2024__wolf__running__on-a-beach  5180 s\n"}
+,{"stream_name":"stdout","time":5707.962567615,"data":"[job0] test 9/20 s2024__tiger__running__on-a-beach  5526 s\n"}
+,{"stream_name":"stdout","time":5767.962955459,"data":"[job1] test 8/20 s2024__wolf__spinning__in-a-forest  5577 s\n"}
+,{"stream_name":"stdout","time":6067.965768801,"data":"[job0] test 10/20 s2024__tiger__running__in-a-forest  5893 s\n"}
+,{"stream_name":"stdout","time":6127.966284068,"data":"[job1] test 9/20 s2024__tiger__running__on-a-beach  5973 s\n"}
+,{"stream_name":"stdout","time":6427.968516779,"data":"[job0] test 11/20 s2024__fox__walking__on-a-beach  6259 s\n"}
+,{"stream_name":"stdout","time":6547.969454102,"data":"[job1] test 10/20 s2024__tiger__running__in-a-forest  6369 s\n"}
+,{"stream_name":"stdout","time":6787.971197236,"data":"[job0] test 12/20 s2024__young-man__jumping__on-a-beach  6624 s\n"}
+,{"stream_name":"stdout","time":6907.972009524,"data":"[job1] test 11/20 s2024__fox__walking__on-a-beach  6765 s\n"}
+,{"stream_name":"stdout","time":7147.973731867,"data":"[job0] test 13/20 s2024__athlete__spinning__on-a-beach  6991 s\n"}
+,{"stream_name":"stdout","time":7327.975256179,"data":"[job1] test 12/20 s2024__young-man__jumping__on-a-beach  7162 s\n"}
+,{"stream_name":"stdout","time":7507.976481796,"data":"[job0] test 14/20 s2024__dancer__running__in-a-forest  7357 s\n"}
+,{"stream_name":"stdout","time":7747.978293435,"data":"[job1] test 13/20 s2024__athlete__spinning__on-a-beach  7558 s\n"}
+,{"stream_name":"stdout","time":7867.97916025,"data":"[job0] test 15/20 s2024__dancer__walking__on-a-beach  7723 s\n"}
+,{"stream_name":"stdout","time":8107.981047793,"data":"[job1] test 14/20 s2024__dancer__running__in-a-forest  7954 s\n"}
+,{"stream_name":"stdout","time":8227.981900503,"data":"[job0] test 16/20 s2024__dancer__walking__in-a-forest  8089 s\n"}
+,{"stream_name":"stdout","time":8527.984143043,"data":"[job1] test 15/20 s2024__dancer__walking__on-a-beach  8351 s\n"}
+,{"stream_name":"stdout","time":8647.985004985,"data":"[job0] test 17/20 s2024__child__walking__on-a-beach  8455 s\n"}
+,{"stream_name":"stdout","time":8887.986920099,"data":"[job1] test 16/20 s2024__dancer__walking__in-a-forest  8747 s\n"}
+,{"stream_name":"stdout","time":9007.988076703,"data":"[job0] test 18/20 s2024__child__jumping__in-a-forest  8821 s\n"}
+,{"stream_name":"stdout","time":9307.990314147,"data":"[job1] test 17/20 s2024__child__walking__on-a-beach  9144 s\n"}
+,{"stream_name":"stdout","time":9367.990754517,"data":"[job0] test 19/20 s2024__elderly-man__running__in-a-forest  9188 s\n"}
+,{"stream_name":"stdout","time":9727.994377582,"data":"[job0] test 20/20 s2024__elderly-man__spinning__in-a-forest  9554 s\n"}
+,{"stream_name":"stdout","time":9727.994425759,"data":"[job0] wrote /kaggle/working/out/c1/manifest.json\n"}
+,{"stream_name":"stdout","time":9727.994445923,"data":"[job1] test 18/20 s2024__child__jumping__in-a-forest  9540 s\n"}
+,{"stream_name":"stdout","time":10087.997449936,"data":"[job1] test 19/20 s2024__elderly-man__running__in-a-forest  9937 s\n"}
+,{"stream_name":"stdout","time":10508.000592483,"data":"[job1] test 20/20 s2024__elderly-man__spinning__in-a-forest  10334 s\n"}
+,{"stream_name":"stdout","time":10508.000627111,"data":"[job1] wrote /kaggle/working/out/c2/manifest.json\n"}
+,{"stream_name":"stdout","time":10508.000847882,"data":"exit codes [0, 0]\n"}
+,{"stream_name":"stderr","time":10510.469977009,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":10510.470008706,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":10510.901324214,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":10510.90134519,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":10511.830983557,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":10513.305143281,"data":"[NbConvertApp] Writing 496310 bytes to __results__.html\n"}
+]

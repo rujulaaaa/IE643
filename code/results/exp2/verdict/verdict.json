@@ -1,0 +1,229 @@
+{
+ "delta": 0.1,
+ "n_pairs": 50,
+ "candidates": {
+  "exp1_region": {
+   "own_channel": "motion",
+   "S": {
+    "mean": 0.3740050794034189,
+    "lo": 0.3328849732234891,
+    "hi": 0.41663700792005254,
+    "n": 14
+   },
+   "S_minus_control": {
+    "mean": -0.019175900152094534,
+    "lo": -0.05322331514726069,
+    "hi": 0.01690268499395974,
+    "n": 14
+   },
+   "N": {
+    "mean": 0.3312927656554578,
+    "lo": 0.2531204592259953,
+    "hi": 0.40596150300577083,
+    "n": 14
+   },
+   "other_channel_PE": {
+    "mean": 0.038448589812718405,
+    "lo": 0.007420445695630718,
+    "hi": 0.07628637409899218,
+    "n": 13
+   },
+   "S_pass": false,
+   "N_pass": true,
+   "erasure_leace_minus_random": {
+    "mean": 0.0075915772509243945,
+    "lo": -0.02531028723551167,
+    "hi": 0.037053025337246574,
+    "n": 10
+   },
+   "other_within_delta": true,
+   "presence": {
+    "rsa_unique_max": 0.012132276288664201,
+    "rsa_p_fwer_min": 0.24,
+    "rsa_significant": false,
+    "decode_gain_max": 0.04648044080918157,
+    "decode_positive": false,
+    "E": false
+   },
+   "probe": {
+    "target": "verb",
+    "acc_max": 0.9875,
+    "control_at_max": 0.6083333333333334,
+    "selectivity_max": 0.4624999999999999,
+    "chance": 0.25
+   },
+   "label": "uses (necessary)"
+  },
+  "rsa_motion_peak": {
+   "own_channel": "motion",
+   "S": {
+    "mean": 0.03663183378407834,
+    "lo": 0.016338026756168304,
+    "hi": 0.06207038422722499,
+    "n": 14
+   },
+   "S_minus_control": {
+    "mean": -0.003809391678380496,
+    "lo": -0.017405151017406292,
+    "hi": 0.0071601990569289155,
+    "n": 14
+   },
+   "N": {
+    "mean": 0.05568923752437349,
+    "lo": 0.026699408270692507,
+    "hi": 0.0895512444063006,
+    "n": 14
+   },
+   "other_channel_PE": {
+    "mean": -0.0013894296589305481,
+    "lo": -0.004758469025989651,
+    "hi": 0.0005840741760040696,
+    "n": 13
+   },
+   "S_pass": false,
+   "N_pass": true,
+   "erasure_leace_minus_random": {
+    "mean": -0.0003088347210238516,
+    "lo": -0.013633784986527946,
+    "hi": 0.011048932209455704,
+    "n": 10
+   },
+   "other_within_delta": true,
+   "presence": {
+    "rsa_unique_max": 0.17479622344461185,
+    "rsa_p_fwer_min": 0.02,
+    "rsa_significant": true,
+    "decode_gain_max": 0.09752452847668103,
+    "decode_positive": true,
+    "E": true
+   },
+   "probe": {
+    "target": "verb",
+    "acc_max": 0.32499999999999996,
+    "control_at_max": 0.26249999999999996,
+    "selectivity_max": 0.0625,
+    "chance": 0.25
+   },
+   "label": "uses (necessary)"
+  },
+  "up1_motion_modules": {
+   "own_channel": "motion",
+   "S": {
+    "mean": 0.7386593552691825,
+    "lo": 0.6984195240755855,
+    "hi": 0.7828031567708427,
+    "n": 14
+   },
+   "S_minus_control": {
+    "mean": 0.170928314382993,
+    "lo": 0.12326743029312057,
+    "hi": 0.22299384784322768,
+    "n": 14
+   },
+   "N": {
+    "mean": 0.6873213158021644,
+    "lo": 0.6286128095630044,
+    "hi": 0.7467863499581355,
+    "n": 14
+   },
+   "other_channel_PE": {
+    "mean": 0.17291850433511466,
+    "lo": 0.11006573597437462,
+    "hi": 0.2401185773041213,
+    "n": 13
+   },
+   "S_pass": true,
+   "N_pass": true,
+   "other_within_delta": false,
+   "presence": {
+    "rsa_unique_max": 0.052781368159225545,
+    "rsa_p_fwer_min": 0.02,
+    "rsa_significant": true,
+    "decode_gain_max": 0.09266582972825455,
+    "decode_positive": true,
+    "E": true
+   },
+   "probe": {
+    "target": "verb",
+    "acc_max": 0.8374999999999999,
+    "control_at_max": 0.42916666666666664,
+    "selectivity_max": 0.40833333333333327,
+    "chance": 0.25
+   },
+   "label": "uses (sufficient and necessary)"
+  },
+  "rsa_content_peak": {
+   "own_channel": "content",
+   "S": {
+    "mean": 0.045824585959011996,
+    "lo": -0.026419421478432993,
+    "hi": 0.1449385839273652,
+    "n": 13
+   },
+   "S_minus_control": {
+    "mean": 0.09747876871489433,
+    "lo": 0.002639640303221701,
+    "hi": 0.2086262489220481,
+    "n": 13
+   },
+   "N": {
+    "mean": -0.011735538798537904,
+    "lo": -0.036718761242561564,
+    "hi": 0.009205891966053587,
+    "n": 13
+   },
+   "other_channel_PE": {
+    "mean": 0.29234888167593553,
+    "lo": 0.2367616404479614,
+    "hi": 0.3472488824394287,
+    "n": 14
+   },
+   "S_pass": false,
+   "N_pass": false,
+   "other_within_delta": false,
+   "presence": {
+    "rsa_unique_max": 0.19898074885806064,
+    "rsa_p_fwer_min": 0.02,
+    "rsa_significant": true,
+    "E": true
+   },
+   "probe": {
+    "target": "subject",
+    "acc_max": 0.5125,
+    "control_at_max": 0.1375,
+    "selectivity_max": 0.37499999999999994,
+    "chance": 0.06666666666666667
+   },
+   "label": "encodes but does not use"
+  }
+ },
+ "dissociation": {
+  "exp1_region vs rsa_content_peak": {
+   "interaction": {
+    "mean": 0.05059666258596431,
+    "lo": 0.01898990411018057,
+    "hi": 0.08311759990713062,
+    "n": 15
+   },
+   "double_dissociation": false
+  },
+  "rsa_motion_peak vs rsa_content_peak": {
+   "interaction": {
+    "mean": -0.1140075428186468,
+    "lo": -0.16782750594285137,
+    "hi": -0.0618116296837516,
+    "n": 15
+   },
+   "double_dissociation": false
+  },
+  "up1_motion_modules vs rsa_content_peak": {
+   "interaction": {
+    "mean": 0.19075036308329865,
+    "lo": 0.08921531376382656,
+    "hi": 0.30753676774511235,
+    "n": 15
+   },
+   "double_dissociation": false
+  }
+ }
+}

@@ -1,0 +1,66 @@
+{
+  "experiment": "exp2_erasure",
+  "date": "2026-10-25",
+  "python": "3.13.15",
+  "torch": "2.11.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.16.1",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": [
+    0,
+    1,
+    2
+  ],
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "coord": "up_blocks.0.motion_modules.2",
+  "n_fit": 32,
+  "n_samples": 24576,
+  "ranks": {
+    "leace_verb": 3,
+    "random_verb": 3,
+    "leace_subject": 13,
+    "random_subject": 13
+  },
+  "summary": {
+    "motion_change": {
+      "leace_subject": 0.22588536867250997,
+      "leace_verb": 0.17830004474769037,
+      "random_subject": 0.18488978531211614,
+      "random_verb": 0.17086540212233864
+    },
+    "verb_drop": {
+      "leace_subject": -0.009374166280031205,
+      "leace_verb": -0.0026001349091529847,
+      "random_subject": 0.0009705685079097748,
+      "random_verb": -0.0023009952157735823
+    }
+  },
+  "leace_minus_random": {
+    "verb": {
+      "motion_change": 0.0074346426253517565,
+      "verb_drop": -0.00029913969337940215
+    },
+    "subject": {
+      "motion_change": 0.04099558336039384,
+      "verb_drop": -0.01034473478794098
+    }
+  },
+  "seconds": 9554.208392101
+}
