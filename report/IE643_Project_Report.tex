@@ -117,10 +117,26 @@ interface for live edits, uploaded videos and browsing every scored clip.
 
 Recent text-to-video diffusion models can easily turn a prompt into a short, realistic clip. Every such clip combines two things i.e. its \emph{content} which denotes
 what is present in the frames, like a dog etc. , and its \emph{motion} which denotes how the content present in the frames is moving.  In principle the two are independent in the sense that
-the same motion could be performed by a different object. For example instead of a dog running along a road you could have a horse running along the road. This project asks
+the same motion could be performed by a different object. For example instead of a dog running along a road you could have a horse running along the road. This project asks that at
 whether a video diffusion model keeps them apart internally and if it does then in which layers and at which
-denoising steps does it decide  content and motion, and whether that knowledge is precise enough to
+denoising steps does it decide content and and ata which steps does it decide the motion, and whether that knowledge is precise enough to
 change one while keeping the other.
+\n
+
+Answering this question is important because people increasingly want to edit a generated clip rather than regenrating it because changing the prompt changes the subject, the background and motion all at once. 
+Recent video diffusion models are built on image diffusion models by adding temporal layers to them, as AnimateDiff
+\citep{guo2024animatediff} does with Stable Diffusion \citep{rombach2022ldm}. Recent editing
+methods \citep{wu2023tav,zhao2024motiondirector,ling2025motionclone,xiao2024moft} intervene on
+chosen layers or features to transfer or customise motion, but they chose those places by design or by ablation. The obvious reading by archtecture stating spatial and temporal layers 
+is usually assumed rather than measured. A measured mapping of where the content lies and where the motion lies 
+
+
+and. Recent editing
+methods \citep{wu2023tav,zhao2024motiondirector,ling2025motionclone,xiao2024moft} intervene on
+chosen layers or features to transfer or customise motion, but they choose those places by design
+or by ablation. The obvious architectural reading, spatial layers for content and temporal layers
+for motion, is usually assumed rather than measured.
+
 
 Text-to-video models are now good enough that people want to edit their output rather than
 regenerate it: keep a dog's run and make it a horse, or keep the dog and make it walk. Both
