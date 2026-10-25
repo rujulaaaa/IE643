@@ -121,10 +121,34 @@ def select(summary: pd.DataFrame, root: Path) -> dict:
     return sel
 
 
+def select_lit(summary: pd.DataFrame, root: Path) -> dict:
+    """D-37 (Stage 6b, fixed before any of these arms ran): per direction and per family ("single" reads
+    clip A only, "dual" also reads B_ref), the literature arm with the highest median ΔD on the dev pairs
+    among arms passing the consistency guard; ties go to fewer injected modules."""
+    # one level down first: a merged run links its pair directories, and rglob does not follow links
+    first = next(iter(sorted(root.glob("*/arms.json"))), None) or next(root.rglob("arms.json"))
+    arms = json.loads(first.read_text())["arms"]
+    label = {a["id"]: a["label"] for a in arms}
+    size = {a["id"]: len(a.get("attn", {}).get("modules", [])) + len(a.get("kv", {}).get("modules", [])) for a in arms}
+    sel = {"motion": {}, "content": {}, "dev_median_dD": {}}
+    for d in ("motion", "content"):
+        for fam in ("single", "dual"):
+            s = summary[(summary.direction == d) & summary.arm.map(label).eq(fam) & summary.guard_ok].copy()
+            if s.empty:
+                continue
+            s["size"] = s.arm.map(size)
+            best = s.sort_values(["median_dD", "size"], ascending=[False, True]).iloc[0]
+            sel[d][fam] = best.arm
+            sel["dev_median_dD"][best.arm] = float(best.median_dD)
+    return sel
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("run", type=Path)
     ap.add_argument("--select", action="store_true")
+    ap.add_argument("--out", type=Path, default=None, help="ignored (run_seq.py appends it); outputs go to <run>")
+    ap.add_argument("--select-lit", action="store_true", help="Stage 6b selection (D-37) -> lit_selection.json")
     ap.add_argument("--profile", default=None)
     ap.add_argument("--config", type=Path, default=runio.REPO_ROOT / "configs" / "generation.yaml")
     args = ap.parse_args()
@@ -147,6 +171,10 @@ def main():
         res["selection"] = select(summary, args.run)
         (args.run / "selection.json").write_text(json.dumps(res["selection"], indent=1))
         print("selection:", json.dumps(res["selection"]))
+    if args.select_lit:
+        res["lit_selection"] = select_lit(summary, args.run)
+        (args.run / "lit_selection.json").write_text(json.dumps(res["lit_selection"], indent=1))
+        print("lit selection:", json.dumps(res["lit_selection"]))
     runio.write_json(args.run / "score_summary.json", res)
 
 

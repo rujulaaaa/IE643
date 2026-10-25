@@ -185,3 +185,71 @@ Design: `reports/Content motion probing experiment design.md`; code: `scripts/pr
   cartwheels come from 4 films and only 5 are cut-free, so the target set is those 5 (4 train,
   1 validation). Training: debiased loss (β = 1), lr 1e-4, 1,000 steps, 256 px, frame stride ≤ 6.
 **Reason.** The report's plan, with each free choice fixed before seeing the data it is applied to.
+
+### D-36 · 2026-10-25 · Experiment 2 analysis corrections after the first cell (before any selection)
+**Decision.** (1) Flow decoding: ridge alphas 10^-1 … 10^6 (was 10^-1 … 10^3), the ridge strength chosen
+by grouped 4-fold CV over the training subjects (was sklearn's leave-one-clip-out, which leaks through the
+± residual pairs of a prompt's two seeds and always picked the weakest ridge), and
+G = max(R²_layer, 0) − max(R²_latent, 0). (2) RSA: the prompt's text-embedding RDM (CLIP text) is added as a
+third model RDM, as the design report specifies ("CLIP-content, flow-motion, scene and text-embedding models";
+scene is constant within a group); the unique motion share is now flow's share beyond content *and* prompt.
+**Reason.** On `sd15_mm2` both held-out R² were mostly negative (median −0.18 / −0.39: the ridge could not shrink
+far enough with 240 clips and 512 features), so "gains" up to 1.34 were differences of two negative numbers; and
+without the text RDM the motion share was "significant" in 82 % of cells because the verb word reaches every
+layer through the text — the leakage the design warned about. Both are corrections to implement the design as
+written; they were made after seeing exploratory maps of one cell and before any candidate was selected. The
+selection rules (D-35) are unchanged and read the corrected maps.
+(3) *Added 15:20, after all four cells were analysed.* `exp2.channel_selectivity` now computes in float64. The
+sweeps store channel energies in fp16, where the squared sums over- and underflow and the 1e-12 floor rounds to
+0. Constant channels came out as `nan`, which `argsort` ranks first, so the MOFT-style "top 4 %" channels
+included dead ones. Only the `channels` section of `exp2_analysis.json` is affected. Selection (D-35) and the
+verdict read the RSA and decoding maps, and the head summary already cast to float32. The section is recomputed
+for all four cells (`results/exp2/logs/recompute_channels.py`) with every other section untouched. Test:
+`test_channel_selectivity_on_fp16_energies`.
+
+### D-37 · 2026-10-25 · Stage 6b: attention-level operators from the editing literature (fixed before any of them ran)
+**Context.** D-16 failed for the selected component patches (§22 of the log); the only arm whose CI excluded 0
+was temporal attention injection. D-16's verdict on Stage 6 stands as recorded. Stage 6b is a **post-hoc,
+exploratory** addition: it asks whether the attention-level operators the editing literature uses do better,
+under the same pairs, metrics, guard and statistic.
+**Decision.**
+- Operators (`edit.KVSpec`, `AttnSpec.source`): spatial self-attention K/V injection (MasaCtrl, Cao et al. 2023;
+  UniEdit's content branch), framewise or frame-0 (Text2Video-Zero-style); temporal attention injection over the
+  whole trajectory (UniEdit's SA-T branch). "Dual" arms also read B_ref (motion direction: temporal attention
+  from A + K/V from B_ref; content direction: K/V from A + temporal attention from B_ref).
+- Dev arm set = `edit_plan.literature_specs` (5 motion, 6 content), placements from the papers' defaults
+  (K/V at up_blocks.2–3 or all decoder blocks, from step 2 or 5; temporal attention at all modules, up_blocks.0
+  = probe peak, or up_blocks.1 = MotionClone/MOFT block), plus three **probe-placed** arms whose placement
+  comes from our own maps instead of a paper: temporal attention at up_blocks.0 + mid_block (H1's motion-leaning
+  blocks) at steps 0–2 (H2's window) and at all steps; K/V at down_blocks.2 (strongest S_stat content
+  selectivity). Run on the 4 dev pairs only. The probe-placed arms compete in the "single" family.
+- Selection (`score_edits.py --select-lit`): per direction and per family (single / dual), the arm with the
+  highest median ΔD on dev among arms with consistency ratio ≥ 0.9; ties to fewer injected modules.
+- Test: the selected arms on the 12 D-30 test pairs, in one pool with the Stage 6 selected component patches
+  and attention injection over the first third (`edit_plan.literature_test_arms`). Success = D-16's criterion
+  (median ΔD > 0 with the 95 % paired-bootstrap CI excluding 0, guard held), reported per arm.
+**Reason.** The test pairs were already used once (Stage 6). Nothing in Stage 6b is chosen on them; they are
+reused so the new arms sit in the same pool as the old ones. Results are reported as exploratory, separately
+from the pre-registered Stage 6 verdict.
+
+### D-38 · 2026-10-25 · Stage 6c: probe-timed prompt switching, gated by the subject mask (fixed before any of it ran)
+**Decision.** A third edit family that uses the probing result directly instead of activation surgery
+(`switching.py`, `scripts/switch_sweep.py`). Every track starts from the pair's shared noise.
+- **Switch at τ:** denoise with one prompt for steps < τ and another from step τ on. Motion direction:
+  A's prompt, then (B.subject, A.verb). Content direction: (A.subject, B.verb), then A's prompt.
+- **Masked switch** (motion direction; after EIDT-V's per-region switch time, Jagpal, Chen & Namboodiri,
+  CVPR 2025): from step τ on, z ← M·z + (1 − M)·z_A, where M is A's DAAM subject mask
+  (`harness.CrossAttentionMaps` over A's whole run, threshold 0.4 × per-frame max, max-pool dilation
+  7 latent px). Outside the subject the clip stays A's.
+- **Pre-registered arms:** τ = 2, the H2 changepoint from the probing sweep (§14; 95 % CI [1, 3]). Nothing
+  is selected on dev: τ comes from independent data. That gives `motion.switch.t2`, `content.switch.t2` and
+  `motion.switchmask.t2`. The others (τ ∈ {1, 3, 5, 8}, masked τ = 3) are exploratory and trace the
+  switch-time curve.
+- **Test:** the 12 D-30 test pairs, in one pool with the prompt-only baselines, the Stage 6 selected
+  component patches and attention injection over the first third, all re-run in the same job. Metrics,
+  guard and statistic as D-16: median ΔD > 0 with the 95 % paired-bootstrap CI excluding 0, guard held,
+  reported per pre-registered arm.
+**Reason.** H2 says motion is fixed in the first two steps. If that is causal, a prompt switch at τ = 2
+should keep the first prompt's motion and take the second prompt's content, and the switch-time curve
+should turn near τ = 2. This makes H2 an intervention test and an edit method at the same time. The test
+pairs were used once before (Stage 6); nothing here is chosen on them.

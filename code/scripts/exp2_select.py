@@ -28,7 +28,7 @@ def main():
     an = json.loads((args.cell / "exp2_analysis.json").read_text())
     m = np.load(args.cell / "maps.npz")
     all_coords = [str(c) for c in m["all_coords"]]
-    uniq = m["rsa_unique"]                       # (L, T, 2): [content, motion]
+    uniq = m["rsa_unique"]                       # (L, T, 3): [content, motion, text] (D-36)
     n_steps = uniq.shape[1]
     refined = [c for c in all_coords if c.split(".")[0] == "up_blocks" and c.split(".")[1] in ("0", "1")]
     ri = [all_coords.index(c) for c in refined]

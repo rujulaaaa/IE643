@@ -136,16 +136,39 @@ def within_prompt_residual(X: np.ndarray, prompt_ids: np.ndarray) -> np.ndarray:
     return X - df.groupby(prompt_ids).transform("mean").to_numpy()
 
 
-def _cv_r2(X: np.ndarray, Y: np.ndarray, groups: np.ndarray, alphas=(0.1, 1, 10, 100, 1000)) -> float:
-    from sklearn.linear_model import RidgeCV
-    from sklearn.preprocessing import StandardScaler
+# up to 1e6: with ~240 clips and 512 features the ridge must be able to shrink to "predict the mean" (R^2 ~ 0);
+# the first grid stopped at 1e3 and overfit to R^2 << 0 (session 6 of the log)
+RIDGE_ALPHAS = tuple(np.logspace(-1, 6, 15))
 
-    pred = np.zeros_like(Y)
+
+def _ridge_path(Xtr: np.ndarray, Ytr: np.ndarray, Xte: np.ndarray, alphas) -> np.ndarray:
+    """Predictions on Xte for every alpha, from one SVD of the (centred, standardised) training data:
+    W(a) = V diag(s / (s^2 + a)) U' Y.  Returns (n_alphas, n_test, n_targets)."""
+    mx, sx = Xtr.mean(0), Xtr.std(0) + 1e-8
+    my = Ytr.mean(0)
+    U, sv, Vt = np.linalg.svd((Xtr - mx) / sx, full_matrices=False)
+    UtY = U.T @ (Ytr - my)
+    Z = ((Xte - mx) / sx) @ Vt.T                                  # test data in the right-singular basis
+    return np.stack([Z @ ((sv / (sv ** 2 + a))[:, None] * UtY) + my for a in alphas])
+
+
+def _cv_r2(X: np.ndarray, Y: np.ndarray, groups: np.ndarray, alphas=RIDGE_ALPHAS, inner_folds: int = 4) -> float:
+    """Held-out R^2 of ridge regression, leave-one-group-out. The ridge strength is chosen *inside* each
+    training set by grouped K-fold over its groups — never by leave-one-clip-out: the within-prompt residuals
+    come in exact +/- pairs (the two seeds of a prompt, same subject), so a clip's partner left in the training
+    set predicts it perfectly and leave-one-out would always pick the weakest ridge (session 6 of the log)."""
+    pred = np.zeros_like(Y, dtype=float)
     for g in np.unique(groups):
         te = groups == g
-        sc = StandardScaler().fit(X[~te])
-        m = RidgeCV(alphas=alphas).fit(sc.transform(X[~te]), Y[~te])
-        pred[te] = m.predict(sc.transform(X[te]))
+        Xtr, Ytr, gtr = X[~te], Y[~te], groups[~te]
+        ug = np.unique(gtr)
+        err = np.zeros(len(alphas))
+        for k in range(min(inner_folds, len(ug))):
+            iv = np.isin(gtr, ug[k::inner_folds])
+            P = _ridge_path(Xtr[~iv], Ytr[~iv], Xtr[iv], alphas)
+            err += ((P - Ytr[iv][None]) ** 2).sum(axis=(1, 2))
+        best = alphas[int(np.argmin(err))]
+        pred[te] = _ridge_path(Xtr, Ytr, X[te], [best])[0]
     ss = ((Y - Y.mean(0)) ** 2).sum()
     return float(1 - ((Y - pred) ** 2).sum() / max(ss, 1e-12))
 
@@ -153,15 +176,17 @@ def _cv_r2(X: np.ndarray, Y: np.ndarray, groups: np.ndarray, alphas=(0.1, 1, 10,
 def decoding_gain(X_layer: np.ndarray, X_latent: np.ndarray, Y: np.ndarray, prompt_ids: np.ndarray,
                   groups: np.ndarray) -> dict:
     """Within-prompt residual flow Y decoded from the layer and from the noisy latent, leave-one-group-out
-    (groups = subjects). G = R^2(layer) - R^2(latent); G > 0: the layer carries generated motion beyond
-    what is already in its input latent."""
+    (groups = subjects). G = max(R^2(layer), 0) - max(R^2(latent), 0); G > 0: the layer carries generated
+    motion beyond what is already in its input latent."""
     Xl, Xz, Yr = (within_prompt_residual(a, prompt_ids) for a in (X_layer, X_latent, Y))
     r_layer, r_lat = _cv_r2(Xl, Yr, groups), _cv_r2(Xz, Yr, groups)
-    return {"r2_layer": r_layer, "r2_latent": r_lat, "gain": r_layer - r_lat}
+    # a held-out R^2 below 0 means "no better than the mean": both are floored at 0 before the difference
+    return {"r2_layer": r_layer, "r2_latent": r_lat, "gain": max(r_layer, 0.0) - max(r_lat, 0.0)}
 
 
 def channel_selectivity(energy: np.ndarray, labels: np.ndarray) -> np.ndarray:
     """energy: (n_clips, C) per-channel dynamic energy; eta^2 of `labels` per channel."""
+    energy = np.asarray(energy, dtype=np.float64)     # stored fp16: squares over- and underflow, the floor rounds to 0
     e = energy - energy.mean(0)
     g = pd.DataFrame(e).groupby(labels).transform("mean").to_numpy()
     return (g ** 2).sum(0) / np.maximum((e ** 2).sum(0), 1e-12)

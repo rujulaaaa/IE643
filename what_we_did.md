@@ -935,3 +935,139 @@ To resume:
   `vdprobe-app-assets`; prints a public gradio.live URL. Its CPU-only run found both datasets.
 - Still missing on this machine: the dev/test sweep outputs, so the browser shows only the local
   smoke pair and D uses the 1-pair smoke pool until they are copied in.
+
+### 31. Interface redesign with the apple-design skill (2026-10-25, early morning)
+
+Skill: `github.com/dickwu/apple-design-skill` (HIG reviewer; read in an isolated clone, nothing executed).
+For a web app it applies the principles and foundations only. Read: accessibility, layout, typography, color,
+dark-mode, writing, loading, feedback, progress-indicators, charting-data, branding.
+- **Findings (measured):** subdued text #BBBBC2 on white 1.91:1 (needs 4.5:1); white on the orange
+  primary button 2.8:1 (bold needs 3:1); orange meant both "button" and "motion" (color › one colour, one
+  meaning); flickering clips looped as GIFs with no control (accessibility › Cognitive); 4–5 min edits with no
+  progress (progress indicators › determinate); blue/orange lines told apart by colour alone; jargon labels
+  (`sc_A`, `motion.dynamic.up_blocks.0.ft`); unreadable 16-row attention grid and contact sheet.
+- **Changes:** tokens with contrast checked in light and dark (text ≥ 5.4:1, data graphics ≥ 3.3:1); neutral ink
+  controls, colour reserved for the two channels (■ content blue, ▲ motion orange, always with the shape);
+  clips as MP4 with play/pause (`demo.playable`, ffmpeg); determinate progress per denoising step
+  (`demo.StepProgress` → `gr.Progress`); plain-language names (`arm_label`, `pretty_scores`); chart with a
+  headline, line styles, markers and direct labels; scores formulas moved into "How the scores work";
+  wide attention grid (rows = step windows); readable contact sheet; selected tab in ink (slate-500 was 3.6:1
+  on dark). Checked in the browser, light and dark. **74 passed.**
+- Kaggle: `vdprobe-code` dataset re-versioned; GPU check rebuilt with progress ticks; cross-attention re-run
+  queued for the new grids.
+
+## 2026-10-25 · Session 6 (Stage 6b)
+
+### 32. Stage 6b: attention-level editing operators from the literature (D-37), 11:45–13:00
+
+**Why.** The editing demonstration has to work. Stage 6's verdict stands as recorded (D-16 not met for
+the component patches; only temporal attention injection's CI excluded 0). Literature check:
+- MotionClone (ICLR 2025) and MOFT (NeurIPS 2024) work through *guidance* on temporal attention or on
+  the frame-mean-removed feature (our x̃), at up_blocks.1, not by copying activations.
+- UniEdit injects temporal attention Q/K at all layers and steps (motion), and replaces spatial
+  self-attention values from a reconstruction branch (content).
+- MasaCtrl (ICCV 2023): the target's spatial self-attention queries the source's K/V from step 4/50 in
+  decoder layers 10–15. Appearance transfers; layout and motion stay the target's own (its queries).
+Our x̄ patch failed because it overwrites the residual stream, which carries motion too (H3).
+Attention-level operators keep the target's own queries.
+
+**Code.**
+- `edit.KVSpec`, `edit.KVInjectingProcessor`: spatial attn1 K/V injection, framewise or frame-0,
+  optionally extended.
+- `AttnSpec.source` / `KVSpec.source`: any earlier unedited track (e.g. `B_ref`) can be a source, so
+  "dual" arms take appearance from one clip and motion from another.
+- `run_arms` now runs one controller per operator, with recordings keyed by (track, module).
+- `edit_plan.literature_specs/literature_arms/literature_test_arms`; `edit_sweep.py --arms lit [--lit-sel]`;
+  `score_edits.py --select-lit` (D-37 rule) and `--out` (for `run_seq.py`).
+- `demo` methods `lit_single` / `lit_dual` (read `configs/lit_selection.json`, papers' defaults until it
+  exists); labels in `arm_label`.
+- Three **probe-placed** arms (the other session's suggestion, user approved): temporal attention at
+  up_blocks.0 + mid at steps 0–2 (H1 + H2) and at all steps; K/V at down_blocks.2.
+- Decision number: D-36 was already taken by the Experiment 2 corrections, so this is **D-37**.
+**Tests.** `tests/test_kv.py`, 7 tests:
+- recording is read-only, and self-injection of K/V is bit-exact;
+- the injected source is the named track (end to end through `run_arms` on the tiny UNet with a fake
+  pipeline: A's prompt + A's own K/V == A; B's prompt + B_ref's temporal attention == B_ref);
+- source-order validation; the arm builders; the demo methods.
+Full suite: **81 passed, 1 skipped** (before the demo test was added).
+
+**Run.** Kaggle `shivanshisme/vdprobe-lit-dev` (T4 ×2), pushed ~12:55 IST: `edit_sweep.py --split dev
+--arms lit` sharded 0/2, 1/2 (source + 3 refs + 14 arms per pair), then `score_edits.py` per shard.
+Scores are merged locally before the D-37 selection.
+
+### 33. Experiment 2 steps 2-8: analysis fixes and restarts (2026-10-25, 09:00-13:20)
+
+**Analysis corrections (D-36, made before any selection).**
+- Flow decoding: the ridge strength was chosen by leave-one-clip-out CV, which leaks through the ± residual
+  pair of each prompt (the left-out clip's partner predicts it exactly). Replaced by grouped 4-fold inner CV
+  over subjects with an SVD ridge path (`exp2._cv_r2`, `_ridge_path`), alphas 10^-1…10^6, and the gain floored
+  in `exp2_analysis.py` (G = max(R²_layer, 0) − max(R²_latent, 0)). Test:
+  `test_paired_residuals_do_not_leak_into_the_ridge_choice`. Before: median R² −0.18/−0.39, gains up to 1.34.
+- RSA: the CLIP text-embedding RDM added as the third model RDM, as the design report specifies.
+- `exp2_verdict.py` reads patching CSVs with `keep_default_na=False` ("null" is a scene name, not NA).
+
+**Runs.** Per-cell analyses (local CPU, ~50 min each, `--n-jobs 4` because 8 workers exceeded 7 GB RAM):
+| cell | Exp 1 site replicates? (one-sided p) | best decoding gain over latent |
+|---|---|---|
+| sd15_mm2 | no (0.189) | 0.138, mid_block.resnets.0, step 19 |
+| epicrealism_mm2 | no (0.063) | 0.253, down_blocks.3.motion_modules.0…attn2, step 12 |
+| sd15_mm3 | no (0.167) | (rerun after the shutdown) |
+
+**Interruptions.**
+- 12:28 the machine was powered off (clean shutdown) and came back at 13:08; the sd15_mm3 analysis was lost
+  minutes before finishing and `/tmp` (the queue/wait helpers and logs) was wiped.
+- The helpers now live in the repo (`scripts/kaggle_queue.sh`, `scripts/kaggle_wait.sh`; the wait helper
+  touches `.download_ok`), and `exp2_orchestrate.sh` logs to `results/exp2/logs/` (survives a reboot).
+  Restarted 13:13; it resumes from the first missing output.
+- Disk: 5.3 GB free before the Kaggle step; freed the uv cache and Chrome cache (7.2 GB free), so the
+  orchestrator's prune of `latents.pt` / `sketches_refined.pt` does not trigger.
+
+**Shared Kaggle account.** The Stage 6b session's kernels (`vdprobe-lit-dev`, `vdprobe-switch-a`) occupy both
+GPU slots; the Experiment 2 kernels wait in the queue helper (retry every 5 min) and share the weekly quota.
+Full test suite after the other session's `edit.run_arms` changes: 87 passed, 1 skipped.
+
+### 33. Stage 6b dev results and the D-37 selection (13:25–13:45)
+
+**Dev kernel** `vdprobe-lit-dev`: exit 0 on both shards. Per pair: source + 17 arms, ~1,520 s (84.5 s per clip),
+then scoring ~160 s per shard. The two shards' raw `scores.csv` were merged into one pool
+(`results/kaggle/vdprobe-lit-dev/merged/`) before D and the selection. `score_edits.select_lit` first looked for
+`arms.json` with `rglob`, which does not follow the merged directory's symlinks; it now looks one level down first.
+
+**Dev, 4 pairs, merged pool** (median ΔD over prompt-only; CIs from 4 pairs are wide):
+
+| arm | family | median ΔD | frac > 0 | sm_A | sc_B | sm_B | sc_A |
+|---|---|---|---|---|---|---|---|
+| motion.attn.all.all | single | **+0.152** | 3/4 | 0.823 | 0.806 | 0.392 | 0.777 |
+| motion.dual.up23.from2 | dual | +0.147 | 4/4 | 0.660 | 0.922 | 0.475 | 0.761 |
+| motion.dual.dec.from2 | dual | +0.095 | 3/4 | | | | |
+| motion.attn.up1.all (MotionClone block) | single | +0.024 | 2/4 | | | | |
+| motion.attn.up0.all / probe.early / probe.all | single | −0.002 / −0.005 / −0.020 | | | | | |
+| content.dual.all | dual | **+0.121** | 3/4 | 0.546 | 0.774 | 0.601 | 0.930 |
+| content.kv.probe.from2 (down_blocks.2, probe-placed) | single | **+0.056** | 3/4 | 0.272 | 0.738 | 0.321 | 0.864 |
+| content.kv.up23.from2.first | single | +0.019 | 3/4 | | | | |
+| content.kv.up23.from2 / from5 / dec.from2 (MasaCtrl defaults) | single | −0.007 / −0.003 / −0.032 | | | | | |
+| content.dual.ft | dual | −0.014 | | | | | |
+
+**D-37 selection** (`configs/lit_selection.json`):
+- motion: single `motion.attn.all.all`, dual `motion.dual.up23.from2`;
+- content: single `content.kv.probe.from2`, dual `content.dual.all`.
+
+Observations (dev only, not results):
+- Content: the MasaCtrl placements (up_blocks.2–3 / all decoder, framewise) raise sc_A but also raise sm_A
+  (0.35 → 0.63–0.86). Framewise K/V carries A's per-frame layout, so motion comes along with appearance:
+  the same entanglement as the x̄ patch. The frame-0 variant halves that leak. The probe-placed down_blocks.2 K/V
+  leaks no motion (sm_A 0.27, same as prompt-only) and is the only positive single-source content arm.
+- Motion: the probe-placed temporal attention arms (up0 + mid, steps 0–2 or all) do nothing. The probe's
+  *location* of motion selectivity is not where motion can be *injected*, which repeats Stage 5's presence-vs-use
+  gap. Injection must cover all temporal attention to transfer motion.
+- **Looked at the clips** (contact sheets `results/figures/stage6b_dev_*.png`):
+  - motion.attn.all.all works on the woman→soldier and fox→German shepherd pairs: B's subject follows A's path
+    and composition.
+  - On child→elderly man it reproduces A's child: the content leaks.
+  - On the bear pair it gives a ghosted, semi-transparent retriever.
+- **Caveat on the dual family:** dual arms inject from B_ref, the clip they are then scored against (sc_B for
+  motion, sm_B for content). Part of their D is therefore by construction. They answer a different question:
+  compositing two clips, not editing from a prompt.
+  - On the bear pair B_ref is itself broken (sand texture, no dog), and motion.dual copies that broken look.
+  - So dual arms are reported separately from single-source arms and are not compared with the prompt-only
+    baseline as if they were the same kind of edit.

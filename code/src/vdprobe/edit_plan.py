@@ -19,7 +19,7 @@ import yaml
 
 from .config import CONFIG_DIR, GenerationConfig
 from .coords import Coordinate, block_order
-from .edit import Arm, AttnSpec, EditSpec
+from .edit import Arm, AttnSpec, EditSpec, KVSpec
 from .patching import PatchSpec, window
 
 
@@ -140,5 +140,95 @@ def describe(arm: Arm) -> dict:
         d["patch"] = {"coords": list(s.patch.coords), "steps": list(s.patch.steps), "alpha": s.patch.alpha,
                       "component": s.patch.component, "branches": s.patch.branches}
     if s.attn is not None:
-        d["attn"] = {"modules": list(s.attn.modules), "steps": list(s.attn.steps), "alpha": s.attn.alpha}
+        d["attn"] = {"modules": list(s.attn.modules), "steps": list(s.attn.steps), "alpha": s.attn.alpha,
+                     "source": s.attn.source}
+    if s.kv is not None:
+        d["kv"] = {"modules": list(s.kv.modules), "steps": list(s.kv.steps), "source": s.kv.source,
+                   "frames": s.kv.frames, "keep_own": s.kv.keep_own}
     return d
+
+
+# --- Stage 6b: operators from the editing literature (D-37) ----------------------------------
+
+def spatial_self_attention(coords: list[Coordinate], blocks=None) -> tuple[str, ...]:
+    return tuple(c.name for c in coords if c.kind == "spatial_attn1" and (blocks is None or c.block in blocks))
+
+
+KV_BLOCKS = {"up23": ("up_blocks.2", "up_blocks.3"),                  # MasaCtrl: self-attention layers 10-15 of 16
+             "dec": ("up_blocks.1", "up_blocks.2", "up_blocks.3"),   # every decoder self-attention layer
+             "probe": ("down_blocks.2",)}                            # strongest S_stat content selectivity (§14)
+KV_WINDOWS = {"from2": tuple(range(2, 25)),     # MasaCtrl starts at step 4 of 50 (8 % of the trajectory)
+              "from5": tuple(range(5, 25))}
+ATTN_BLOCKS = {"all": None, "up0": ("up_blocks.0",), "up1": ("up_blocks.1",),
+               "probe": ("up_blocks.0", "mid_block")}               # the motion-leaning blocks of the probing map
+PROBE_STEPS = (0, 1, 2)     # H2: motion selectivity on up0.mm2 is confined to steps 0-2 (tau = 2, CI [1, 3])
+
+
+def _tattn(coords, blocks: str, w: str, source: str = "source") -> AttnSpec:
+    b = ATTN_BLOCKS[blocks]
+    mods = temporal_attention(coords) if b is None else tuple(m for x in b for m in temporal_attention(coords, x))
+    return AttnSpec(mods, PROBE_STEPS if w == "early" else WINDOWS[w], source=source)
+
+
+def _kv(coords, blocks: str, w: str, source: str = "source", frames: str = "framewise") -> KVSpec:
+    return KVSpec(spatial_self_attention(coords, KV_BLOCKS[blocks]), KV_WINDOWS[w], source=source, frames=frames)
+
+
+def literature_specs(coords: list[Coordinate]) -> dict[str, EditSpec]:
+    """Every Stage 6b arm by id. "single" arms read clip A only (plus the target prompt); "dual" arms
+    also read B_ref, the clip whose content (motion direction) or motion (content direction) the edit
+    should take, as UniEdit's reconstruction / motion-reference branches do."""
+    return {
+        # motion direction: keep A's motion (temporal attention, UniEdit SA-T), content from the prompt
+        "motion.attn.all.all": EditSpec(attn=_tattn(coords, "all", "all"), label="single"),
+        "motion.attn.up0.all": EditSpec(attn=_tattn(coords, "up0", "all"), label="single"),   # probe peak (H1)
+        "motion.attn.up1.all": EditSpec(attn=_tattn(coords, "up1", "all"), label="single"),   # MotionClone / MOFT block
+        #   ... placed by our probing results instead of a paper's default (blocks from H1's map, steps from H2)
+        "motion.attn.probe.early": EditSpec(attn=_tattn(coords, "probe", "early"), label="single"),
+        "motion.attn.probe.all": EditSpec(attn=_tattn(coords, "probe", "all"), label="single"),
+        #   ... plus B_ref's appearance through spatial K/V (UniEdit's content branch)
+        "motion.dual.up23.from2": EditSpec(attn=_tattn(coords, "all", "all"), kv=_kv(coords, "up23", "from2", "B_ref"),
+                                           label="dual"),
+        "motion.dual.dec.from2": EditSpec(attn=_tattn(coords, "all", "all"), kv=_kv(coords, "dec", "from2", "B_ref"),
+                                          label="dual"),
+        # content direction: keep A's appearance (spatial K/V, MasaCtrl), motion from the prompt
+        "content.kv.up23.from2": EditSpec(kv=_kv(coords, "up23", "from2"), label="single"),
+        "content.kv.up23.from5": EditSpec(kv=_kv(coords, "up23", "from5"), label="single"),
+        "content.kv.dec.from2": EditSpec(kv=_kv(coords, "dec", "from2"), label="single"),
+        "content.kv.up23.from2.first": EditSpec(kv=_kv(coords, "up23", "from2", frames="first"), label="single"),
+        "content.kv.probe.from2": EditSpec(kv=_kv(coords, "probe", "from2"), label="single"),        # probe-placed
+        #   ... plus B_ref's motion through temporal attention
+        "content.dual.all": EditSpec(kv=_kv(coords, "up23", "from2"), attn=_tattn(coords, "all", "all", "B_ref"),
+                                     label="dual"),
+        "content.dual.ft": EditSpec(kv=_kv(coords, "up23", "from2"), attn=_tattn(coords, "all", "ft", "B_ref"),
+                                    label="dual"),
+    }
+
+
+def literature_arms(pair: EditPair, cfg: GenerationConfig, coords: list[Coordinate], only=None) -> list[Arm]:
+    """Stage 6b: the reference arms plus the literature operators (all of them on dev, `only` on test).
+    B_ref comes first, so it has run before any dual arm reads it."""
+    p = pair.prompts(cfg)
+    arms = reference_arms(pair, cfg)
+    for k, s in literature_specs(coords).items():
+        if only is None or k in only:
+            arms.append(Arm(k, p[k.split(".")[0]], s))
+    return arms
+
+
+def literature_test_arms(pair: EditPair, cfg: GenerationConfig, coords: list[Coordinate], sel: dict,
+                         lit_sel: dict) -> list[Arm]:
+    """Stage 6b test arms: the arms D-37 selected on dev, next to the Stage 6 arms they are compared
+    with (selected component patch, attention injection over the first third), all in one pool."""
+    p = pair.prompts(cfg)
+    chosen = {a for d in ("motion", "content") for a in lit_sel[d].values()}
+    arms = literature_arms(pair, cfg, coords, only=chosen)
+    for d in ("motion", "content"):
+        s = sel[d]
+        mods = motion_modules(coords) if s["blocks"] == "all" else \
+            tuple(m for b in s["blocks"] for m in motion_modules(coords, b))
+        arms.append(Arm(f"{d}.sel", p[d], EditSpec(PatchSpec(mods, WINDOWS[s["window"]], component=_component(d)),
+                                                   label="selected")))
+    if "motion.attn.all.ft" not in chosen:
+        arms.append(Arm("motion.attn.all.ft", p["motion"], EditSpec(attn=_tattn(coords, "all", "ft"))))
+    return arms

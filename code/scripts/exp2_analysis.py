@@ -105,43 +105,54 @@ def section_anova(sk, meta, coords, n_steps):
     return out
 
 
-def _rsa_group(Xg, Dc, Dm, n_perm, seed):
-    """Xg: (n, L, T, dim) x_tilde sketches of one group. Returns observed unique shares (L, T, 2)
-    and the permutation draws (R, L, T, 2) with one shared permutation per draw."""
+RSA_PREDICTORS = ("content", "motion", "text")
+
+
+def _rsa_group(Xg, Dc, Dm, Dt, n_perm, seed):
+    """Xg: (n, L, T, dim) x_tilde sketches of one group. Model RDMs as in the design report: content (CLIP image),
+    motion (masked, camera-compensated flow) and the prompt's text embedding, so the unique motion share is what
+    flow explains beyond both what is shown and what the prompt says (the verb reaches every layer through the
+    text). Returns observed unique shares (L, T, 3) and permutation draws (R, L, T, 3), one shared permutation
+    per draw."""
     from vdprobe.analysis import rsa_commonality
 
     n, L, T, _ = Xg.shape
     iu = np.triu_indices(n, 1)
-    preds = {"content": Dc[iu], "motion": Dm[iu]}
+    preds = {"content": Dc[iu], "motion": Dm[iu], "text": Dt[iu]}
     rng = np.random.default_rng(seed)
     perms = [np.arange(n)] + [rng.permutation(n) for _ in range(n_perm)]
-    res = np.zeros((len(perms), L, T, 2))
+    res = np.zeros((len(perms), L, T, len(RSA_PREDICTORS)))
     for li in range(L):
         for t in range(T):
             D = E.cosine_rdm(Xg[:, li, t])
             for r, pm in enumerate(perms):
                 u = rsa_commonality(D[np.ix_(pm, pm)][iu], preds)["unique"]
-                res[r, li, t] = u["content"], u["motion"]
+                res[r, li, t] = [u[k] for k in RSA_PREDICTORS]
     return res[0], res[1:]
 
 
 def section_rsa(groups, sk, flows, emb, masks, coords, n_steps, n_perm, n_jobs):
     from joblib import Parallel, delayed
 
+    from vdprobe.metrics import ClipScorer
+
+    clip_text = ClipScorer(device="cpu")
     obs, null = [], []
     for g in groups:
         clips = g.manifest["clips"]
         Xg = np.stack([sk[c][:, :, 0] for c in clips])        # x_tilde
         Dc = E.content_rdm(np.stack([emb[c] for c in clips]))
         Dm = E.flow_rdm(np.stack([flows[c] for c in clips]), np.stack([masks[c] for c in clips]))
+        Dt = E.cosine_rdm(clip_text.text([g.manifest["prompts"][c] for c in clips]).numpy())
         # split the coordinates across workers; every worker uses the same permutations (same seed)
         chunks = np.array_split(np.arange(Xg.shape[1]), max(1, n_jobs))
-        res = Parallel(n_jobs=n_jobs)(delayed(_rsa_group)(Xg[:, ch], Dc, Dm, n_perm, 643) for ch in chunks if len(ch))
+        res = Parallel(n_jobs=n_jobs)(delayed(_rsa_group)(Xg[:, ch], Dc, Dm, Dt, n_perm, 643)
+                                      for ch in chunks if len(ch))
         obs.append(np.concatenate([r[0] for r in res], axis=0))
         null.append(np.concatenate([r[1] for r in res], axis=1))
     o, nl = np.mean(obs, 0), np.mean(null, 0)                 # averaged over groups, per permutation draw
     p = (1 + (nl >= o[None] - 1e-12).sum(0)) / (1 + n_perm)
-    mx = nl.reshape(n_perm, -1, 2).max(1)                     # max over the map, per draw and predictor
+    mx = nl.reshape(n_perm, -1, nl.shape[-1]).max(1)          # max over the map, per draw and predictor
     p_fwer = (1 + (mx[:, None, None, :] >= o[None] - 1e-12).sum(0)) / (1 + n_perm)
     return {"unique": o, "p": p, "p_fwer": p_fwer}
 
@@ -165,7 +176,8 @@ def section_decode(sk, lat, flows, masks, meta, coords, n_steps, n_jobs):
 
     res = Parallel(n_jobs=n_jobs)(delayed(cell)(li, t) for li in range(len(coords)) for t in range(n_steps))
     res = np.array(res).reshape(len(coords), n_steps, 2)
-    return {"r2_layer": res[..., 0], "r2_latent": res[..., 1], "gain": res[..., 0] - res[..., 1]}
+    return {"r2_layer": res[..., 0], "r2_latent": res[..., 1],
+            "gain": np.maximum(res[..., 0], 0) - np.maximum(res[..., 1], 0)}     # floored as in exp2.decoding_gain
 
 
 def section_channels(groups, meta, top: float = 0.04):
@@ -268,6 +280,8 @@ def main():
         res["rsa"] = {"n_perm": args.n_perm,
                       "motion_cells_fwer_05": int((r["p_fwer"][..., 1] < .05).sum()),
                       "content_cells_fwer_05": int((r["p_fwer"][..., 0] < .05).sum()),
+                      "text_cells_fwer_05": int((r["p_fwer"][..., 2] < .05).sum()),
+                      "predictors": list(RSA_PREDICTORS),
                       "best_motion": all_coords[int(np.unravel_index(r["unique"][..., 1].argmax(), r["unique"].shape[:2])[0])]}
         print("rsa:", res["rsa"], flush=True)
     if "decode" not in args.skip:

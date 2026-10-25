@@ -30,3 +30,6 @@ kernels are queued. The cartwheel clips are the private dataset `<account>/vdpro
   `metrics` (RAFT, camera removal, masked flow fidelity, CLIP text), `analysis` (probe controls,
   debiased CKA, RSA commonality), `lora` (module sets, parameter counts, matched random subsets),
   `edit.run_arms(extra_probes=...)`.
+
+## Report notes
+  Limitations and context for the report (temporal identity drift, recent video models): `docs/report_notes.md`.
