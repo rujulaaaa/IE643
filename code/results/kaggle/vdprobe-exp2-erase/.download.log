@@ -1,0 +1,75 @@
+s2024__german-shepherd__running__in-a-forest__leace_subject.gif: Skipping, found more recently modified local copy (use --force to force download)
+s2024__german-shepherd__running__in-a-forest__leace_verb.gif: Skipping, found more recently modified local copy (use --force to force download)
+s2024__german-shepherd__running__in-a-forest__none.gif: Skipping, found more recently modified local copy (use --force to force download)
+s2024__german-shepherd__running__in-a-forest__random_subject.gif: Skipping, found more recently modified local copy (use --force to force download)
+s2024__german-shepherd__running__in-a-forest__random_verb.gif: Skipping, found more recently modified local copy (use --force to force download)
+s2024__german-shepherd__running__on-a-beach__leace_subject.gif: Skipping, found more recently modified local copy (use --force to force download)
+s2024__german-shepherd__running__on-a-beach__leace_verb.gif: Skipping, found more recently modified local copy (use --force to force download)
+s2024__german-shepherd__running__on-a-beach__none.gif: Skipping, found more recently modified local copy (use --force to force download)
+s2024__german-shepherd__running__on-a-beach__random_subject.gif: Skipping, found more recently modified local copy (use --force to force download)
+s2024__german-shepherd__running__on-a-beach__random_verb.gif: Skipping, found more recently modified local copy (use --force to force download)
+Downloading manifest.json to results/kaggle/vdprobe-exp2-erase/out/c1
+  0%|          | 0.00/1.59k [00:00<?, ?B/s]100%|██████████| 1.59k/1.59k [00:00<00:00, 3.22MB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c1/manifest.json
+Downloading rows.csv to results/kaggle/vdprobe-exp2-erase/out/c1
+  0%|          | 0.00/8.64k [00:00<?, ?B/s]100%|██████████| 8.64k/8.64k [00:00<00:00, 796kB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c1/rows.csv
+Downloading s2024__german-shepherd__running__in-a-forest__leace_subject.gif to results/kaggle/vdprobe-exp2-erase/out/c2/gifs
+  0%|          | 0.00/830k [00:00<?, ?B/s]100%|██████████| 830k/830k [00:00<00:00, 3.71MB/s]100%|██████████| 830k/830k [00:00<00:00, 3.70MB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c2/gifs/s2024__german-shepherd__running__in-a-forest__leace_subject.gif
+Downloading s2024__german-shepherd__running__in-a-forest__leace_verb.gif to results/kaggle/vdprobe-exp2-erase/out/c2/gifs
+  0%|          | 0.00/830k [00:00<?, ?B/s]100%|██████████| 830k/830k [00:01<00:00, 568kB/s]100%|██████████| 830k/830k [00:01<00:00, 568kB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c2/gifs/s2024__german-shepherd__running__in-a-forest__leace_verb.gif
+Downloading s2024__german-shepherd__running__in-a-forest__none.gif to results/kaggle/vdprobe-exp2-erase/out/c2/gifs
+  0%|          | 0.00/830k [00:00<?, ?B/s]100%|██████████| 830k/830k [00:01<00:00, 546kB/s]100%|██████████| 830k/830k [00:01<00:00, 543kB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c2/gifs/s2024__german-shepherd__running__in-a-forest__none.gif
+Downloading s2024__german-shepherd__running__in-a-forest__random_subject.gif to results/kaggle/vdprobe-exp2-erase/out/c2/gifs
+  0%|          | 0.00/830k [00:00<?, ?B/s]100%|██████████| 830k/830k [00:00<00:00, 2.72MB/s]100%|██████████| 830k/830k [00:00<00:00, 2.72MB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c2/gifs/s2024__german-shepherd__running__in-a-forest__random_subject.gif
+Downloading s2024__german-shepherd__running__in-a-forest__random_verb.gif to results/kaggle/vdprobe-exp2-erase/out/c2/gifs
+  0%|          | 0.00/830k [00:00<?, ?B/s]100%|██████████| 830k/830k [00:01<00:00, 509kB/s]100%|██████████| 830k/830k [00:01<00:00, 509kB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c2/gifs/s2024__german-shepherd__running__in-a-forest__random_verb.gif
+Downloading s2024__german-shepherd__running__on-a-beach__leace_subject.gif to results/kaggle/vdprobe-exp2-erase/out/c2/gifs
+  0%|          | 0.00/791k [00:00<?, ?B/s]100%|██████████| 791k/791k [00:01<00:00, 573kB/s]100%|██████████| 791k/791k [00:01<00:00, 572kB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c2/gifs/s2024__german-shepherd__running__on-a-beach__leace_subject.gif
+Downloading s2024__german-shepherd__running__on-a-beach__leace_verb.gif to results/kaggle/vdprobe-exp2-erase/out/c2/gifs
+  0%|          | 0.00/790k [00:00<?, ?B/s]100%|██████████| 790k/790k [00:01<00:00, 535kB/s]100%|██████████| 790k/790k [00:01<00:00, 535kB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c2/gifs/s2024__german-shepherd__running__on-a-beach__leace_verb.gif
+Downloading s2024__german-shepherd__running__on-a-beach__none.gif to results/kaggle/vdprobe-exp2-erase/out/c2/gifs
+  0%|          | 0.00/791k [00:00<?, ?B/s]100%|██████████| 791k/791k [00:00<00:00, 1.18MB/s]100%|██████████| 791k/791k [00:00<00:00, 1.17MB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c2/gifs/s2024__german-shepherd__running__on-a-beach__none.gif
+Downloading s2024__german-shepherd__running__on-a-beach__random_subject.gif to results/kaggle/vdprobe-exp2-erase/out/c2/gifs
+  0%|          | 0.00/790k [00:00<?, ?B/s]100%|██████████| 790k/790k [00:01<00:00, 542kB/s]100%|██████████| 790k/790k [00:01<00:00, 542kB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c2/gifs/s2024__german-shepherd__running__on-a-beach__random_subject.gif
+Downloading s2024__german-shepherd__running__on-a-beach__random_verb.gif to results/kaggle/vdprobe-exp2-erase/out/c2/gifs
+  0%|          | 0.00/790k [00:00<?, ?B/s]100%|██████████| 790k/790k [00:00<00:00, 1.03MB/s]100%|██████████| 790k/790k [00:00<00:00, 1.03MB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c2/gifs/s2024__german-shepherd__running__on-a-beach__random_verb.gif
+Downloading manifest.json to results/kaggle/vdprobe-exp2-erase/out/c2
+  0%|          | 0.00/1.62k [00:00<?, ?B/s]100%|██████████| 1.62k/1.62k [00:00<00:00, 4.86MB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c2/manifest.json
+Downloading rows.csv to results/kaggle/vdprobe-exp2-erase/out/c2
+  0%|          | 0.00/8.79k [00:00<?, ?B/s]100%|██████████| 8.79k/8.79k [00:00<00:00, 14.3MB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/c2/rows.csv
+Downloading job0.log to results/kaggle/vdprobe-exp2-erase/out
+  0%|          | 0.00/3.81k [00:00<?, ?B/s]100%|██████████| 3.81k/3.81k [00:00<00:00, 10.1MB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/job0.log
+Downloading job1.log to results/kaggle/vdprobe-exp2-erase/out
+  0%|          | 0.00/3.38k [00:00<?, ?B/s]100%|██████████| 3.38k/3.38k [00:00<00:00, 7.90MB/s]
+
+Output file downloaded to results/kaggle/vdprobe-exp2-erase/out/job1.log
+Kernel log downloaded to results/kaggle/vdprobe-exp2-erase/vdprobe-exp2-erase.log 
