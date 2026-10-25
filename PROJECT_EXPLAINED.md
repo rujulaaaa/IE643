@@ -9,7 +9,7 @@
 >
 > **This is not report text.** The course gives zero marks for AI-written report content. Use this to understand the work, and write the report yourselves.
 >
-> Last updated 2026-10-25, ~16:00 IST. Stage 6b test results are pending (see §6.5).
+> Last updated 2026-10-25, ~16:30 IST.
 
 ---
 
@@ -36,7 +36,8 @@ flowchart LR
 4. **Editing:**
    - Our own surgical edits (copying one part of a layer) helped on average but **missed the pre-set success bar**.
    - Copying the model's **temporal attention** (how each pixel looks across frames) is what works for motion transfer.
-   - The literature methods we added today (Stage 6b) do clearly better on the dev pairs. The held-out test is running.
+   - Swapping motion and appearance **between two clips** (Stage 6b "dual" edits) **passes the bar on all 12 test pairs**,
+     in both directions. Editing from one clip plus a prompt transfers the motion but also leaks some of A's look.
 5. **Lesson:** *where information can be read* (probes) and *where it can be used to edit* (patching) are **different places**. This shows up again and again.
 
 ---
@@ -385,7 +386,30 @@ flowchart LR
 - **Probe-placed motion arms did nothing.** Motion transfer needs *all* temporal attention, not just where the probe points. This is the same presence-vs-use gap again.
 - ⚠️ **Dual arms are partly circular:** they inject from clip B and are then scored against clip B. They are reported separately, as "compositing two clips", not as prompt-only editing.
 
-**Test (12 held-out pairs):** ⏳ **running on Kaggle now (`vdprobe-lit-test`).** It puts the 4 selected arms, the old selected patches and the old attention baseline in one comparison pool. Results get added here and in `what_we_did.md` when it finishes.
+**Test (12 held-out pairs, one comparison pool with the old arms):**
+
+| Method | Family | Gain | Pairs better | Passes the bar? |
+|---|---|---|---|---|
+| Keep motion: temporal attention, all steps | from A only | +0.097 | 10/12 | ❌ (CI [−0.02, 0.19]) |
+| Keep motion + B's look via K/V | **dual** | **+0.173** | **12/12** | ✅ CI [0.11, 0.27] |
+| Keep content: K/V at `down_blocks.2` (probe-placed) | from A only | +0.022 | 8/12 | ❌ |
+| Keep content + B's motion via temporal attention | **dual** | **+0.145** | **12/12** | ✅ CI [0.10, 0.28] |
+| Old attention baseline (first third) | from A only | +0.096 | 9/12 | ❌ in this pool |
+
+In plain words:
+- **Swapping motion and appearance between two clips works**, reliably, in both directions, on every test pair.
+- **Editing from clip A plus a new prompt transfers the motion well but still drags some of A's look along**, so it
+  doesn't clear the bar.
+- Pictures are in `code/results/figures/stage6b_test/` (one sheet per pair). Pick demo clips **by eye**: one pair scores
+  high D while the clip is just sand and a boot. Clean examples are athlete→soldier (test), and woman→soldier and
+  fox→German shepherd (dev).
+
+![Stage 6b test example](code/results/figures/stage6b_test/1337__in-a-forest__athlete-walking__soldier-jumping.png)
+*Test pair athlete (walking) → soldier. Row 4 ("motion.attn.all.all"): a soldier walking away along exactly the athlete's path.*
+
+**A note on the score:** D is rescaled within each run's pool of clips, so the *same* clip can score differently
+in a different run. For example, the old content patch clears the bar in this pool but not in the Stage 6 pool. The
+Stage 6 verdict stays as originally recorded.
 
 ### 6.6 Stage 6c · Prompt switching timed by H2 (other session, D-38)
 
@@ -408,7 +432,7 @@ The motion kept from A rises smoothly with τ, with **no sharp turn at τ = 2**.
 
 **Status / left / ideas for editing:**
 - ✅ Stages 5, 6, 6b dev, 6c test.
-- ⏳ Stage 6b test (running), then choosing demo clips.
+- ✅ Stage 6b test: dual-source passes in both directions (12/12); single-source does not.
 - 💡 Looked into, not built:
   - **gradient guidance** (MotionClone/MOFT style: nudge the noise each step so the edit's temporal attention matches A's). Most likely to beat injection, but needs backpropagation through the U-Net at each step (memory and time).
   - **DAAM-masked attention injection** (inject motion only on the subject's pixels). This could fix the "motion lands on the scene, not the subject" problem from the upload tab.
@@ -473,7 +497,7 @@ flowchart TB
 
 | Priority | Item | Status | Needs |
 |---|---|---|---|
-| 🔴 | Stage 6b test results → score, verdict, pick the best demo clips | running (Kaggle) | ~1 h |
+| ✅ | Stage 6b test results → score, verdict, demo clips | done (§6.5) | – |
 | 🔴 | Run the new methods once live in the interface (GPU check) | not done | ~15 min GPU |
 | 🔴 | Final README pass + submission packaging | partly done | CPU |
 | 🟠 | Experiment 2: quality gate → patching → erasure → content ladder → LoRA pilot | quality gate running; rest queued | many GPU hours (the quota is the limit) |
