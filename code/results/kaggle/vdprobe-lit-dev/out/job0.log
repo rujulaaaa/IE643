@@ -1,0 +1,60 @@
+=== edit: /usr/bin/python3 -u scripts/edit_sweep.py --split dev --arms lit --shard 0/2 --out /kaggle/working/out/job0/edit
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 926.41it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1254.28it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:01<00:06,  1.24s/it]Loading pipeline components...:  67%|██████▋   | 4/6 [00:01<00:00,  3.71it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 3686.26it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  4.64it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.61it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 15.5 s
+[1/2] 2024__in-a-forest__fox-running__german-shepherd-jumping: source + 17 arms
+    step  5/25    301.5 s  (3.35 s per clip-step)
+    step 10/25    609.2 s  (3.38 s per clip-step)
+    step 15/25    915.1 s  (3.39 s per clip-step)
+    step 20/25   1217.7 s  (3.38 s per clip-step)
+    step 25/25   1519.5 s  (3.38 s per clip-step)
+wrote /kaggle/working/out/job0/edit/2024__in-a-forest__fox-running__german-shepherd-jumping/manifest.json
+  1519 s (84.4 s per clip)
+[2/2] 1337__on-a-beach__child-running__elderly-man-jumping: source + 17 arms
+    step  5/25    304.8 s  (3.39 s per clip-step)
+    step 10/25    609.0 s  (3.38 s per clip-step)
+    step 15/25    911.0 s  (3.37 s per clip-step)
+    step 20/25   1215.9 s  (3.38 s per clip-step)
+    step 25/25   1522.6 s  (3.38 s per clip-step)
+wrote /kaggle/working/out/job0/edit/1337__on-a-beach__child-running__elderly-man-jumping/manifest.json
+  1523 s (84.6 s per clip)
+=== edit: exit 0 after 3293 s
+=== score: /usr/bin/python3 -u scripts/score_edits.py /kaggle/working/out/job0/edit --out /kaggle/working/out/job0/score
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 863.65it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1393.21it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00,  6.57it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:00<00:00,  9.49it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2950.61it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 10.23it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  9.57it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 13.7 s
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 9946.16it/s]
+scored 1337__on-a-beach__child-running__elderly-man-jumping: 18 clips
+scored 2024__in-a-forest__fox-running__german-shepherd-jumping: 18 clips
+direction                         arm  median_D  median_dD  frac_dD_pos  d16_ci_lo  d16_ci_hi  consistency_ratio  sm_A  sc_B  sm_B  sc_A
+  content            content.dual.all     0.283      0.136          1.0      0.079      0.192              1.000 0.546 0.802 0.601 0.942
+  content      content.kv.probe.from2     0.204      0.057          0.5     -0.007      0.120              0.994 0.228 0.779 0.256 0.884
+  content                content.base     0.147      0.000          0.0      0.000      0.000              1.001 0.354 0.764 0.320 0.858
+  content             content.dual.ft     0.139     -0.009          0.5     -0.069      0.052              1.001 0.728 0.790 0.468 0.953
+  content       content.kv.up23.from5     0.133     -0.014          0.5     -0.034      0.006              0.976 0.628 0.766 0.380 0.922
+  content content.kv.up23.from2.first     0.133     -0.014          0.5     -0.050      0.022              0.971 0.525 0.752 0.361 0.880
+  content       content.kv.up23.from2     0.123     -0.024          0.5     -0.092      0.043              0.968 0.705 0.763 0.421 0.925
+  content        content.kv.dec.from2     0.075     -0.073          0.0     -0.094     -0.052              0.994 0.856 0.780 0.386 0.976
+   motion      motion.dual.up23.from2     0.341      0.162          1.0      0.087      0.236              0.997 0.660 0.928 0.471 0.799
+   motion         motion.attn.all.all     0.339      0.160          1.0      0.087      0.233              1.006 0.823 0.894 0.392 0.846
+   motion       motion.dual.dec.from2     0.285      0.106          1.0      0.074      0.137              0.979 0.593 0.941 0.532 0.801
+   motion         motion.attn.up1.all     0.196      0.016          0.5     -0.034      0.067              0.978 0.367 0.836 0.353 0.731
+   motion                 motion.base     0.179      0.000          0.0      0.000      0.000              0.993 0.246 0.855 0.280 0.744
+   motion         motion.attn.up0.all     0.147     -0.032          0.5     -0.093      0.029              1.006 0.298 0.855 0.359 0.752
+   motion     motion.attn.probe.early     0.132     -0.048          0.0     -0.095     -0.001              1.002 0.277 0.871 0.361 0.770
+   motion       motion.attn.probe.all     0.117     -0.063          0.0     -0.102     -0.024              1.014 0.276 0.854 0.383 0.754
+wrote /kaggle/working/out/job0/edit/score_summary.json
+=== score: exit 0 after 161 s
