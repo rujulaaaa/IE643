@@ -1,0 +1,18 @@
+linked 91 asset files
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1030.29it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1528.75it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2755.72it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00, 10.64it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:01<00:00,  3.02it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.90it/s]
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 13046.05it/s]
+edit_lit_motion_dual: OK  402 s
+edit_lit_motion_single: OK  394 s
+edit_lit_content_dual: OK  404 s
+edit_lit_content_single: OK  355 s
+app_builds: OK
+wrote /kaggle/working/out/job0/interface_check.json

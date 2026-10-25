@@ -9,7 +9,7 @@
 >
 > **This is not report text.** The course gives zero marks for AI-written report content. Use this to understand the work, and write the report yourselves.
 >
-> Last updated 2026-10-25, ~16:30 IST.
+> Last updated 2026-10-25, ~19:50 IST.
 
 ---
 
@@ -488,7 +488,13 @@ flowchart TB
 
 **Status / left:**
 - ✅ Built; all tabs checked in a browser.
-- ⏳ The new Stage 6b methods have not been run live on a GPU yet (unit-tested only).
+- ✅ The new Stage 6b methods ran live on a Kaggle T4 (golden retriever → horse, both directions, ~6.5 min per edit with B). The two-clip edit is now the **default method** in the live tab.
+  - Motion, two-clip: a clean horse moving like the dog; the best-looking result.
+  - Motion, from A only: right motion, but the horse picks up the dog's blond mane and tail (the leak seen on test).
+  - Content, two-clip: scores well, but by eye the dog mostly stays as in A; B's motion is hard to see.
+  - Frames: `code/results/figures/interface_check_lit.png`.
+
+![Live interface check of the Stage 6b methods](code/results/figures/interface_check_lit.png)
 - ⏳ The old Stage 6 dev/test runs are not on this machine (they are on the previous Kaggle account), so the browser shows the Stage 6b runs and a local smoke pair.
 
 ---
@@ -498,7 +504,7 @@ flowchart TB
 | Priority | Item | Status | Needs |
 |---|---|---|---|
 | ✅ | Stage 6b test results → score, verdict, demo clips | done (§6.5) | – |
-| 🔴 | Run the new methods once live in the interface (GPU check) | not done | ~15 min GPU |
+| ✅ | Run the new methods once live in the interface (GPU check) | done (§8) | – |
 | 🔴 | Final README pass + submission packaging | partly done | CPU |
 | 🟠 | Experiment 2: quality gate → patching → erasure → content ladder → LoRA pilot | quality gate running; rest queued | many GPU hours (the quota is the limit) |
 | 🟠 | Copy the old sweep outputs from the previous Kaggle account (needed for the D-34 probe controls on real data, and for the results browser's Stage 6 runs) | not done | account access |

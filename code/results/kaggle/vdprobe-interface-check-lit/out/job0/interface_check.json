@@ -1,0 +1,232 @@
+{
+  "variant": "sd15_mm2",
+  "load_seconds": 48.791822188,
+  "loras": [
+    "lora_probe",
+    "lora_full",
+    "lora_anti"
+  ],
+  "lora_skipped": {},
+  "checks": {
+    "edit_lit_motion_dual": {
+      "ok": true,
+      "seconds": 402.43023822199996,
+      "table": [
+        {
+          "clip": "source",
+          "sc_A": 1.0,
+          "sm_A": 1.0,
+          "motion_magnitude": 3.1319,
+          "consistency_ratio": 1.0,
+          "sc_B": 0.757,
+          "sm_B": 0.2744,
+          "D": null
+        },
+        {
+          "clip": "B_ref",
+          "sc_A": 0.757,
+          "sm_A": 0.2744,
+          "motion_magnitude": 1.3395,
+          "consistency_ratio": 1.0228,
+          "sc_B": 1.0,
+          "sm_B": 1.0,
+          "D": null
+        },
+        {
+          "clip": "base",
+          "sc_A": 0.7838,
+          "sm_A": 0.3772,
+          "motion_magnitude": 3.2394,
+          "consistency_ratio": 1.0097,
+          "sc_B": 0.9602,
+          "sm_B": 0.3493,
+          "D": 0.3448
+        },
+        {
+          "clip": "edit",
+          "sc_A": 0.7727,
+          "sm_A": 0.5512,
+          "motion_magnitude": 1.4265,
+          "consistency_ratio": 1.0096,
+          "sc_B": 0.9705,
+          "sm_B": 0.4372,
+          "D": 0.4537
+        }
+      ],
+      "pool": "local smoke",
+      "files": {
+        "source": "/kaggle/working/out/job0/interface/20261025-134407_42__on-a-beach__golden-retriever-running__horse-walking__motion__lit_dual/source.gif",
+        "B_ref": "/kaggle/working/out/job0/interface/20261025-134407_42__on-a-beach__golden-retriever-running__horse-walking__motion__lit_dual/B_ref.gif",
+        "base": "/kaggle/working/out/job0/interface/20261025-134407_42__on-a-beach__golden-retriever-running__horse-walking__motion__lit_dual/base.gif",
+        "edit": "/kaggle/working/out/job0/interface/20261025-134407_42__on-a-beach__golden-retriever-running__horse-walking__motion__lit_dual/edit.gif"
+      },
+      "progress_ticks": 0
+    },
+    "edit_lit_motion_single": {
+      "ok": true,
+      "seconds": 393.7760437389999,
+      "table": [
+        {
+          "clip": "source",
+          "sc_A": 1.0,
+          "sm_A": 1.0,
+          "motion_magnitude": 3.1319,
+          "consistency_ratio": 1.0,
+          "sc_B": 0.757,
+          "sm_B": 0.2744,
+          "D": null
+        },
+        {
+          "clip": "B_ref",
+          "sc_A": 0.757,
+          "sm_A": 0.2744,
+          "motion_magnitude": 1.3395,
+          "consistency_ratio": 1.0228,
+          "sc_B": 1.0,
+          "sm_B": 1.0,
+          "D": null
+        },
+        {
+          "clip": "base",
+          "sc_A": 0.7838,
+          "sm_A": 0.3772,
+          "motion_magnitude": 3.2394,
+          "consistency_ratio": 1.0097,
+          "sc_B": 0.9602,
+          "sm_B": 0.3493,
+          "D": 0.3448
+        },
+        {
+          "clip": "edit",
+          "sc_A": 0.82,
+          "sm_A": 0.7629,
+          "motion_magnitude": 2.5386,
+          "consistency_ratio": 0.9952,
+          "sc_B": 0.9144,
+          "sm_B": 0.2938,
+          "D": 0.5528
+        }
+      ],
+      "pool": "local smoke",
+      "files": {
+        "source": "/kaggle/working/out/job0/interface/20261025-135040_42__on-a-beach__golden-retriever-running__horse-walking__motion__lit_single/source.gif",
+        "B_ref": "/kaggle/working/out/job0/interface/20261025-135040_42__on-a-beach__golden-retriever-running__horse-walking__motion__lit_single/B_ref.gif",
+        "base": "/kaggle/working/out/job0/interface/20261025-135040_42__on-a-beach__golden-retriever-running__horse-walking__motion__lit_single/base.gif",
+        "edit": "/kaggle/working/out/job0/interface/20261025-135040_42__on-a-beach__golden-retriever-running__horse-walking__motion__lit_single/edit.gif"
+      },
+      "progress_ticks": 0
+    },
+    "edit_lit_content_dual": {
+      "ok": true,
+      "seconds": 403.9126507850001,
+      "table": [
+        {
+          "clip": "source",
+          "sc_A": 1.0,
+          "sm_A": 1.0,
+          "motion_magnitude": 3.1319,
+          "consistency_ratio": 1.0,
+          "sc_B": 0.757,
+          "sm_B": 0.2744,
+          "D": null
+        },
+        {
+          "clip": "B_ref",
+          "sc_A": 0.757,
+          "sm_A": 0.2744,
+          "motion_magnitude": 1.3395,
+          "consistency_ratio": 1.0228,
+          "sc_B": 1.0,
+          "sm_B": 1.0,
+          "D": null
+        },
+        {
+          "clip": "base",
+          "sc_A": 0.8699,
+          "sm_A": 0.4054,
+          "motion_magnitude": 2.5809,
+          "consistency_ratio": 1.0082,
+          "sc_B": 0.7389,
+          "sm_B": 0.38,
+          "D": 0.2186
+        },
+        {
+          "clip": "edit",
+          "sc_A": 0.9452,
+          "sm_A": 0.5318,
+          "motion_magnitude": 1.6614,
+          "consistency_ratio": 1.0127,
+          "sc_B": 0.7637,
+          "sm_B": 0.6353,
+          "D": 0.4155
+        }
+      ],
+      "pool": "local smoke",
+      "files": {
+        "source": "/kaggle/working/out/job0/interface/20261025-135725_42__on-a-beach__golden-retriever-running__horse-walking__content__lit_dual/source.gif",
+        "B_ref": "/kaggle/working/out/job0/interface/20261025-135725_42__on-a-beach__golden-retriever-running__horse-walking__content__lit_dual/B_ref.gif",
+        "base": "/kaggle/working/out/job0/interface/20261025-135725_42__on-a-beach__golden-retriever-running__horse-walking__content__lit_dual/base.gif",
+        "edit": "/kaggle/working/out/job0/interface/20261025-135725_42__on-a-beach__golden-retriever-running__horse-walking__content__lit_dual/edit.gif"
+      },
+      "progress_ticks": 0
+    },
+    "edit_lit_content_single": {
+      "ok": true,
+      "seconds": 355.19969138500005,
+      "table": [
+        {
+          "clip": "source",
+          "sc_A": 1.0,
+          "sm_A": 1.0,
+          "motion_magnitude": 3.1319,
+          "consistency_ratio": 1.0,
+          "sc_B": 0.757,
+          "sm_B": 0.2744,
+          "D": null
+        },
+        {
+          "clip": "B_ref",
+          "sc_A": 0.757,
+          "sm_A": 0.2744,
+          "motion_magnitude": 1.3395,
+          "consistency_ratio": 1.0228,
+          "sc_B": 1.0,
+          "sm_B": 1.0,
+          "D": null
+        },
+        {
+          "clip": "base",
+          "sc_A": 0.8699,
+          "sm_A": 0.4054,
+          "motion_magnitude": 2.5809,
+          "consistency_ratio": 1.0082,
+          "sc_B": 0.7389,
+          "sm_B": 0.38,
+          "D": 0.2186
+        },
+        {
+          "clip": "edit",
+          "sc_A": 0.8949,
+          "sm_A": 0.3892,
+          "motion_magnitude": 2.3259,
+          "consistency_ratio": 1.0109,
+          "sc_B": 0.7521,
+          "sm_B": 0.4059,
+          "D": 0.2742
+        }
+      ],
+      "pool": "local smoke",
+      "files": {
+        "source": "/kaggle/working/out/job0/interface/20261025-140321_42__on-a-beach__golden-retriever-running__horse-walking__content__lit_single/source.gif",
+        "B_ref": "/kaggle/working/out/job0/interface/20261025-140321_42__on-a-beach__golden-retriever-running__horse-walking__content__lit_single/B_ref.gif",
+        "base": "/kaggle/working/out/job0/interface/20261025-140321_42__on-a-beach__golden-retriever-running__horse-walking__content__lit_single/base.gif",
+        "edit": "/kaggle/working/out/job0/interface/20261025-140321_42__on-a-beach__golden-retriever-running__horse-walking__content__lit_single/edit.gif"
+      },
+      "progress_ticks": 0
+    },
+    "app_builds": {
+      "ok": true
+    }
+  },
+  "playable_mp4": "/kaggle/working/out/job0/interface/20261025-134407_42__on-a-beach__golden-retriever-running__horse-walking__motion__lit_dual/edit.mp4"
+}

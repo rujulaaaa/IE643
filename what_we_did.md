@@ -1247,3 +1247,37 @@ Reading:
 - TinyTeX lacked `footmisc` (needed by ragged2e); installed from the TeX Live 2025 frozen repository.
 - Open: roll numbers in the header; the team must read and rewrite the prose in its own words
   before submission (the instructions give zero for AI-generated report content).
+
+## 2026-10-25 · Session 6 (Stage 6b, continued after the merged log)
+
+### 35. Interface default, live GPU check of the Stage 6b methods, branch sync (19:00–19:50)
+
+- **Interface default**: the live-edit tab opens on `lit_dual` (two-clip attention edit, the only method that
+  passed D-16 on test); `lit_single` is second. `scripts/interface_check.py` gained the four Stage 6b checks
+  (`edit_lit_<direction>_<dual|single>`) and `--only`.
+- **Live check** `vdprobe-interface-check-lit` (shivanshisme, launched 19:08, before the rule that nothing more
+  runs on that account was known; let finish at the user's choice). T4, sd15_mm2, golden retriever running →
+  horse walking, on a beach, seed 42. All four edits OK (355–404 s each, 4 clips with B), app builds.
+  D uses the 1-pair "local smoke" pool (the app-assets dataset has no Stage 6b runs), so D is not comparable
+  with the test numbers.
+
+  | direction | method | prompt-only D | edit D | what changed |
+  |---|---|---|---|---|
+  | motion | lit_dual | 0.345 | 0.454 | sm_A 0.38 → 0.55, sc_B 0.96 → 0.97 |
+  | motion | lit_single | 0.345 | 0.553 | sm_A 0.38 → 0.76, sc_B 0.96 → 0.91 |
+  | content | lit_dual | 0.219 | 0.415 | sc_A 0.87 → 0.95, sm_B 0.38 → 0.64 |
+  | content | lit_single | 0.219 | 0.274 | sc_A 0.87 → 0.90, sm_B 0.38 → 0.41 |
+
+- **Looked at the clips** (`code/results/figures/interface_check_lit.png`, frames 0/5/10/15):
+  - motion lit_dual: a clean horse splashing through the water along the dog's path; no dog features. Good demo.
+  - motion lit_single: the dog's motion, but the horse gets a blond mane and tail and an orange smear in frame 10
+    (A's appearance leaking in, as on test).
+  - content lit_dual: the dog looks almost like A itself (same water, splashing, pose); B's slow walk is hard
+    to see despite sm_B 0.64.
+  - content lit_single: close to the prompt-only clip.
+- **Branches**: a teammate merged `main` into `final-submission` (19:19; old Stage 6 / LoRA / sweep outputs,
+  the report). The auto-snapshot at 19:21 committed my in-progress merge with conflict markers in this file;
+  fixed in the next commit, and the loop now skips merges and merges teammate pushes before pushing.
+  `main` 69ad4d6 ("my end done") is a reduced copy with older code (no Stage 6b operators in `edit.py` /
+  `demo.py`); only its new `slides/IE643_Presentation.*` was brought over. Port 22 to GitHub is blocked
+  on this network; pushes go through `ssh.github.com:443`.
