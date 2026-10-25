@@ -66,7 +66,7 @@ LIT_DEFAULT = {"motion": {"single": "motion.attn.all.all", "dual": "motion.dual.
 
 def lit_selection() -> dict:
     return json.loads(LIT_SELECTION.read_text()) if LIT_SELECTION.exists() else LIT_DEFAULT
-SEC_PER_CLIP = 65          # laptop RTX 4060, CPU-side cache (patch controls, §16 of the log)
+SEC_PER_CLIP = 105         # laptop RTX 4060, CPU-side cache, live edit incl. scoring: 68-105 s (22 / 24 Oct)
 
 
 def link_assets(root: Path) -> int:

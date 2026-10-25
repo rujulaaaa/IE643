@@ -1,0 +1,36 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 866.77it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1355.96it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:00,  9.05it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:03,  1.14it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2333.38it/s]
+Loading pipeline components...:  83%|████████▎ | 5/6 [00:01<00:00,  3.09it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.70it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.07it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 17.0 s
+
+=== seed 42 · on a beach: 60 clips, 125 pairs (52 content, 45 motion, 28 cross-family), 21 anchors
+    step  5/25   1149.3 s  (3.83 s per clip-step)
+    step 10/25   2308.1 s  (3.85 s per clip-step)
+    step 15/25   3466.4 s  (3.85 s per clip-step)
+    step 20/25   4625.7 s  (3.85 s per clip-step)
+    step 25/25   5788.8 s  (3.86 s per clip-step)
+  denoised in 96.5 min (96.5 s per clip), peak host RSS 8.3 GB
+wrote /kaggle/working/out/job0/s42__on-a-beach/manifest.json
+
+=== seed 1337 · on a beach: 60 clips, 125 pairs (52 content, 45 motion, 28 cross-family), 21 anchors
+    step  5/25   1161.6 s  (3.87 s per clip-step)
+    step 10/25   2320.4 s  (3.87 s per clip-step)
+    step 15/25   3478.9 s  (3.87 s per clip-step)
+    step 20/25   4637.3 s  (3.86 s per clip-step)
+    step 25/25   5799.7 s  (3.87 s per clip-step)
+  denoised in 96.7 min (96.7 s per clip), peak host RSS 8.3 GB
+wrote /kaggle/working/out/job0/s1337__on-a-beach/manifest.json
+
+=== seed 2024 · on a beach: 60 clips, 125 pairs (52 content, 45 motion, 28 cross-family), 21 anchors
+    step  5/25   1160.5 s  (3.87 s per clip-step)
+    step 10/25   2317.9 s  (3.86 s per clip-step)
+    step 15/25   3476.3 s  (3.86 s per clip-step)
+    step 20/25   4634.6 s  (3.86 s per clip-step)
+    step 25/25   5797.2 s  (3.86 s per clip-step)
+  denoised in 96.6 min (96.6 s per clip), peak host RSS 8.3 GB
+wrote /kaggle/working/out/job0/s2024__on-a-beach/manifest.json

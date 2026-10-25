@@ -1,0 +1,25 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 872.90it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1401.16it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:01<00:07,  1.52s/it]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2597.30it/s]
+Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:03,  1.33it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:01<00:00,  3.10it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  5.01it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.01it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.9 s
+[1/2] 2024__in-a-forest__fox-running__german-shepherd-jumping: source + 51 arms
+    step  5/25    895.7 s  (3.45 s per clip-step)
+    step 10/25   1801.6 s  (3.46 s per clip-step)
+    step 15/25   2703.3 s  (3.47 s per clip-step)
+    step 20/25   3606.6 s  (3.47 s per clip-step)
+    step 25/25   4508.3 s  (3.47 s per clip-step)
+wrote /kaggle/working/out/job0/2024__in-a-forest__fox-running__german-shepherd-jumping/manifest.json
+  4508 s (86.7 s per clip)
+[2/2] 1337__on-a-beach__child-running__elderly-man-jumping: source + 51 arms
+    step  5/25    904.7 s  (3.48 s per clip-step)
+    step 10/25   1805.1 s  (3.47 s per clip-step)
+    step 15/25   2708.2 s  (3.47 s per clip-step)
+    step 20/25   3611.5 s  (3.47 s per clip-step)
+    step 25/25   4510.5 s  (3.47 s per clip-step)
+wrote /kaggle/working/out/job0/1337__on-a-beach__child-running__elderly-man-jumping/manifest.json
+  4510 s (86.7 s per clip)
