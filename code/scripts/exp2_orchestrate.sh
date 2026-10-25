@@ -5,6 +5,8 @@
 #
 # Without KAGGLE_USER it runs the local steps (analysis, quality gate, selection, grid) and stops before
 # building any kernel; no account is assumed. The Kaggle CLI must be logged in as that account.
+# ELSEWHERE="<slug> ..." names kernels run on another account and downloaded separately (into
+# results/kaggle/<slug>/ with .download_ok): they are neither built nor pushed, only waited for.
 #
 # Safe to re-run: every step is skipped when its output exists, and a kernel that already exists on Kaggle is
 # never pushed again (a second push would start a new version and discard the running one). It stops with
@@ -22,6 +24,8 @@ R=$C/results/kaggle
 E=$C/results/exp2
 PY="env -u PYTHONPATH PYTHONPATH=$C/src $C/.venv/bin/python"
 USER_K=${KAGGLE_USER:-}
+ELSEWHERE=" ${ELSEWHERE:-} "
+elsewhere() { [[ "$ELSEWHERE" == *" $1 "* ]]; }
 CELLS=(sd15_mm2 epicrealism_mm2 sd15_mm3 epicrealism_mm3)
 cd "$C"
 log() { echo "$(date '+%F %T') $*"; }
@@ -90,7 +94,7 @@ PATCH="scripts/exp2_patching.py --candidates configs/exp2_candidates.json $CFG"
 declare -A NEED=([vdprobe-exp2-patch-a]=2 [vdprobe-exp2-patch-b]=2 [vdprobe-exp2-erase]=2 [vdprobe-exp2-ladder]=2)
 TOPUSH=()
 for s in vdprobe-exp2-patch-a vdprobe-exp2-patch-b vdprobe-exp2-erase vdprobe-exp2-ladder; do
-  if [ -f "$R/$s/.download_ok" ] || exists "$s"; then continue; fi
+  if [ -f "$R/$s/.download_ok" ] || elsewhere "$s" || exists "$s"; then continue; fi
   case $s in
     vdprobe-exp2-patch-a) build --slug $s --job "$PATCH --shard 0/4 --out /kaggle/working/out/s0" \
                                           --job "$PATCH --shard 1/4 --out /kaggle/working/out/s1" ;;
@@ -115,6 +119,7 @@ fi
 [ ${#TOPUSH[@]} -gt 0 ] && { log "queueing ${TOPUSH[*]}"; "$QUEUE" "${TOPUSH[@]}" > "$SCR/queue_exp2.log" 2>&1 & }
 waitfor() {   # slug -> 0 when its download is verified, 1 when the kernel errored or the download failed
   [ -f "$R/$1/.download_ok" ] && return 0
+  if elsewhere "$1"; then until [ -f "$R/$1/.download_ok" ]; do sleep 120; done; return 0; fi
   until exists "$1"; do sleep 120; done
   "$WAIT" "$1" "$R/$1" "${NEED[$1]}" > "$SCR/wait_$1.log" 2>&1 || return 1
   case "$(kstatus "$1")" in *COMPLETE*) return 0;; *) return 1;; esac

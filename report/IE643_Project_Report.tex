@@ -114,33 +114,77 @@ interface for live edits, uploaded videos and browsing every scored clip.
 
 \section{Introduction}
 
-Text-to-video models are now good enough that people want to edit their output rather than
-regenerate it: keep a dog's run and make it a horse, or keep the dog and make it walk. Both
-edits assume that the model keeps \emph{what} is in the clip and \emph{how} it moves in
-separable places. The architecture suggests it might. A video diffusion U-Net built on an image
-model, such as AnimateDiff \citep{guo2024animatediff}, keeps the image model's spatial
-layers, which process every frame on its own, and inserts temporal layers that attend across
-frames. It is tempting to read the spatial layers as ``content'' and the temporal ones as
-``motion''. That reading is structural, not causal. A temporal layer can carry appearance
-(its output is added back into the residual stream) and a spatial layer can carry motion
-(the prompt's verb reaches it through cross-attention).
+\textbf{The problem.} A text-to-video diffusion model turns a prompt such as ``a golden retriever
+running across a beach'' into a short clip. Every such clip has two parts that we can talk about
+separately. Its \emph{content} is what is depicted: the dog, its fur colour, the beach and the sky.
+Its \emph{motion} is how things change over time: the running gait and the path the dog takes
+across the frame. The two are independent in principle. The same run could be performed by a horse,
+and the same dog could walk instead. This project asks whether the model treats them as independent
+too. Concretely, it asks where inside the network, in which layers and at which denoising steps,
+content and motion are decided, and whether that knowledge is precise enough to change one of them
+while keeping the other.
 
-The project brief asks for four things: a probing setup for a small open video diffusion
-model, an analysis of which layers and timesteps carry content and which carry motion, an
-activation-patching framework that moves one of them between samples, and an editing
-demonstration in both directions. Deep learning enters twice. The object of study is a deep
-generative network whose internal activations we measure and modify, and the tools we use on
-it (linear probes, low-rank adaptation, CLIP features for scoring) are learned models too.
-The questions are the kind that mechanistic interpretability asks of language models
-\citep{meng2022rome,wang2023ioi,zhang2024patching}: not ``can the model do X'' but ``which
-component does X, and does changing that component change X''.
+\textbf{Why it matters now.} Open video diffusion models are now small enough to run on a single
+GPU. Most of them are built by extending a pretrained image model rather than training from
+scratch. AnimateDiff \citep{guo2024animatediff}, the model we use, adds a trainable motion module
+to Stable Diffusion 1.5 \citep{rombach2022ldm}, and Video LDM \citep{blattmann2023align} does the
+same for latent diffusion. As these models get better, the practical question shifts from
+generating a clip to editing one. Regenerating with a changed prompt is not an edit. A new sample
+changes the subject, the background and the motion together, so a user who wants ``the same run,
+but a horse'' has no direct way to ask for it. A line of recent methods tries to fill this gap by
+reaching inside the network: Tune-A-Video \citep{wu2023tav} and MotionDirector
+\citep{zhao2024motiondirector} fine-tune selected layers, while MotionClone
+\citep{ling2025motionclone}, diffusion motion transfer \citep{yatim2024dmt} and MOFT
+\citep{xiao2024moft} reuse attention maps or intermediate features from a reference video. Each of
+these methods chooses \emph{where} to intervene by design intuition or ablation. None starts from
+a measurement of where motion actually lives. The architecture invites an easy answer: spatial
+layers process one frame at a time, so they must hold content, and temporal layers attend across
+frames, so they must hold motion. That reading is structural, not causal. A temporal layer can
+carry appearance, because its output is added back into the same residual stream. A spatial layer
+can carry motion, because the verb in the prompt reaches it through cross-attention. The split has
+to be measured.
 
-Our contribution is a measurement and an honest test of it. We fix the noise tensor so that
-two clips differ in one word only, measure how far each layer moves when the subject changes
-versus when the verb changes, and split every activation into a static part and a
-frame-varying part before measuring. The same split becomes the intervention. We pre-registered
-the hypotheses, the edit metric and the success criterion, and we report the result when it
-fails.
+\textbf{Significance.} A measured map of content and motion inside the network is useful in three
+ways. First, it makes \emph{targeted editing} possible. If motion is decided in a few layers and
+steps, an edit can copy those activations from one generation into another and leave everything
+else alone. This needs no retraining and no per-video optimisation. Second, it makes
+\emph{fine-tuning cheaper}. Low-rank adaptation (LoRA) \citep{hu2022lora} trains only a small
+number of added parameters, and a map tells us where to place them instead of spreading them over
+the whole motion module. Third, it adds to our \emph{understanding} of generative models.
+Mechanistic interpretability has located specific behaviours in language models, such as factual
+recall \citep{meng2022rome} and indirect-object identification \citep{wang2023ioi}, by patching
+activations and watching what changes. Comparable causal maps for video diffusion models are rare.
+A negative answer would also be informative: if there is no clean split, the editing methods that
+assume one are working for reasons that still need explaining.
+
+\textbf{Why deep learning, and how.} The system under study is itself a deep network, a U-Net
+denoiser that combines residual convolution blocks, spatial self- and cross-attention, and temporal
+attention, trained to predict the noise added to a video latent. Content and motion are not
+explicit variables anywhere in it. They exist only as patterns spread across high-dimensional
+activations; a single layer output can have 1280 channels for each of 16 frames at every spatial
+position. Patterns of that size cannot be read off by inspection, and classical video tools such as
+optical flow can measure motion in the output pixels but cannot change what the generator
+produces. The disentanglement has to be found and used inside the network, with deep learning tools.
+We use four. \emph{Activation recording and patching} attach forward hooks to the U-Net's modules,
+record their outputs at every denoising step, and overwrite chosen outputs in a second generation.
+Because the network is an explicit layer-by-layer computation, every such intervention has a
+well-defined causal effect. \emph{Linear probes} trained on the recorded activations test whether
+the verb is decodable even where the measured effect is small. \emph{LoRA fine-tuning} of selected
+temporal layers tests whether the map is a good guide for training. \emph{Learned evaluation
+models} score the results: CLIP \citep{radford2021clip} image--text similarity measures the content
+of a clip, and optical flow \citep{farneback2003} measures its motion.
+
+\textbf{What we did.} We generated controlled pairs of clips from the same initial noise, so that
+the two clips in a pair differ in a single prompt word: either the subject (content) or the verb
+(motion). For each of 16 layers and 25 denoising steps we measured how far the activations move
+under each kind of change, after splitting every activation into a static part (its mean over
+frames) and a frame-varying residual. The same split then became an editing intervention, a
+\emph{component patch} that transplants only one of the two parts. We compared it with
+prompt-only editing, with patching the whole activation, and with temporal-attention injection, a
+training-free baseline from the literature. We also trained motion LoRAs placed according to the
+map and, as a control, in the wrong place. The hypotheses, edit metric and success criterion were
+fixed before the data were generated, and we report the results where they fail. A Gradio
+interface lets a user run the edits live, upload a video, and browse every scored clip.
 
 The report is organised as follows. Section~\ref{sec:workflow} lists how the work progressed.
 Section~\ref{sec:litsurvey} surveys the work we built on. Section~\ref{sec:our_proj} describes
