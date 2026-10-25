@@ -77,10 +77,10 @@
   node[below, lbl] {repeat $T$ times} ($(unet.south east)+(-0.5,0)$);
 
 % text conditioning
-\node[lbl, align=center] (prompt) at (14.85,0.25) {``a golden retriever\\running on a beach''};
-\node[gbox, minimum width=2.1cm] (clip) at (14.85,-1.05) {CLIP text encoder\\(frozen)};
+\node[lbl, align=center] (prompt) at (15.15,0.45) {``a golden retriever\\running on a beach''};
+\node[gbox, minimum width=2.1cm] (clip) at (15.15,-1.05) {CLIP text encoder\\(frozen)};
 \draw[flow] (prompt) -- (clip);
-\draw[flow] (clip.south) -- (14.85,-2.20) -- node[above, lbl] {$c$: 77 tokens} (unet.east |- 0,-2.20);
+\draw[flow] (clip.south) -- (15.15,-2.20) -- node[above, lbl] {$c$: 77 tokens} (unet.east |- 0,-2.20);
 
 \end{tikzpicture}
 \end{document}
