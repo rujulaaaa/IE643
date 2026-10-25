@@ -23,6 +23,17 @@ Granularities (roadmap §5.3):
        (our training-free baseline in place     probabilities are replaced by the source's,
        of MotionClone, D-17 as amended)         P_t <- (1 - a) P_t + a P_s, then P_t @ V_t
     4  scaled injection                     PatchSpec(alpha < 1)
+
+Attention-level operators from the editing literature (Stage 6b, D-37), added after the
+component patches failed D-16:
+    spatial K/V injection                   KVSpec: the target's spatial self-attention (attn1)
+       (MasaCtrl, Cao et al. ICCV 2023;         queries the source's keys and values, frame by
+        UniEdit's content branch)                frame. Appearance comes from the source, layout
+                                                 and motion stay the target's own (its queries).
+    temporal attention at all steps          AttnSpec over the whole trajectory (UniEdit's
+       (UniEdit, Bai et al. 2024)               motion branch: SA-T Q/K from the motion source)
+Any earlier track can be the source of either operator (AttnSpec.source / KVSpec.source), so
+one target can take its appearance from clip A and its motion from clip B ("dual source").
 """
 
 from __future__ import annotations
@@ -47,17 +58,36 @@ class AttnSpec:
     modules: tuple[str, ...]        # temporal attention module paths (…motion_modules.k….attn1/attn2)
     steps: tuple[int, ...]
     alpha: float = 1.0
+    source: str = "source"          # id of the track whose probabilities are injected
+
+
+@dataclass(frozen=True)
+class KVSpec:
+    """Spatial self-attention K/V injection (MasaCtrl): target queries attend to the source's keys/values."""
+    modules: tuple[str, ...]        # spatial attn1 module paths
+    steps: tuple[int, ...]
+    source: str = "source"
+    frames: str = "framewise"       # "framewise": frame f reads source frame f; "first": every frame reads frame 0
+    keep_own: bool = False          # also keep the target's own keys/values (extended attention)
+
+    def __post_init__(self):
+        if self.frames not in ("framewise", "first"):
+            raise ValueError(self.frames)
 
 
 class AttnController:
-    """Shared state for the injecting processors: which track is running and what was recorded."""
+    """Shared state for the injecting processors: which track is running and what was recorded.
 
-    def __init__(self, spec: AttnSpec | None, store_device: str | None = None):
+    Recordings are keyed by (track id, module), so several tracks can act as sources."""
+
+    def __init__(self, spec: AttnSpec | KVSpec | None, store_device: str | None = None):
         self.spec = spec
         self.store_device = store_device    # None: keep recorded probabilities where they are
         self.mode: str | None = None    # None | "record" | "inject"
         self.step = -1
-        self.store: dict[str, torch.Tensor] = {}
+        self.track = "source"           # id of the running track
+        self.frames = 16                # frames per CFG branch (KVSpec frames="first")
+        self.store: dict[tuple[str, str], torch.Tensor] = {}
         self.applied = 0
 
     def active(self, name: str) -> bool:
@@ -99,22 +129,78 @@ class InjectingProcessor:
         if self.ctl.mode == "record":
             # recording is read-only: keep a copy of the probabilities, return the stock output
             p = probs if self.ctl.store_device is None else probs.to(self.ctl.store_device)
-            self.ctl.store[self.name] = p
+            self.ctl.store[(self.ctl.track, self.name)] = p
             return stock
         # lerp(P, P_src, a) @ V = P @ V + a (P_src - P) @ V: add only the change to the stock
         # output, so injecting a clip's own probabilities adds exactly zero (D-11)
-        d_probs = self.ctl.spec.alpha * (self.ctl.store[self.name].to(probs.device) - probs)
+        p_src = self.ctl.store[(self.ctl.spec.source, self.name)]
+        d_probs = self.ctl.spec.alpha * (p_src.to(probs.device) - probs)
         self.ctl.applied += 1
         delta = torch.matmul(d_probs.to(v.dtype), v).transpose(1, 2).reshape(b, -1, attn.heads * d)
         delta = F.linear(delta, attn.to_out[0].weight)        # out-projection without its bias
         return stock + delta / attn.rescale_output_factor
 
 
-class attention_injection:
-    """Context manager installing InjectingProcessors on the named modules, restoring on exit."""
+class KVInjectingProcessor:
+    """`AttnProcessor2_0` for spatial self-attention whose keys/values can come from another track.
 
-    def __init__(self, unet, ctl: AttnController):
+    record: store this track's K and V, return the stock output.
+    inject: Q from this track, K/V from the source track (MasaCtrl's mutual self-attention), per
+            CFG branch and frame; `frames="first"` gives every frame the source's frame 0, so no
+            frame-to-frame (motion) information travels with the appearance; `keep_own` appends the
+            target's own K/V (extended attention). Injecting a track's own K/V framewise reproduces
+            the stock output exactly.
+    """
+
+    def __init__(self, name: str, ctl: AttnController, default):
+        self.name, self.ctl, self.default = name, ctl, default
+
+    def __call__(self, attn, hidden_states, encoder_hidden_states=None, attention_mask=None, temb=None, **kw):
+        if not self.ctl.active(self.name):
+            return self.default(attn, hidden_states, encoder_hidden_states, attention_mask, temb, **kw)
+        if encoder_hidden_states is not None or attn.spatial_norm is not None or attn.group_norm is not None \
+                or attention_mask is not None or hidden_states.ndim != 3:
+            raise NotImplementedError("spatial self-attention in SD1.5 has none of these")
+        if self.ctl.mode == "record":
+            k, v = attn.to_k(hidden_states), attn.to_v(hidden_states)
+            if self.ctl.store_device is not None:
+                k, v = k.to(self.ctl.store_device), v.to(self.ctl.store_device)
+            self.ctl.store[(self.ctl.track, self.name)] = (k, v)
+            return self.default(attn, hidden_states, encoder_hidden_states, attention_mask, temb, **kw)
+        spec = self.ctl.spec
+        b = hidden_states.shape[0]
+        q = attn.to_q(hidden_states)
+        k, v = (x.to(q.device) for x in self.ctl.store[(spec.source, self.name)])
+        if spec.frames == "first":
+            f = self.ctl.frames
+            k, v = (x.view(b // f, f, *x.shape[1:])[:, :1].expand(-1, f, -1, -1).reshape(x.shape) for x in (k, v))
+        if spec.keep_own:
+            k = torch.cat([attn.to_k(hidden_states), k], dim=1)
+            v = torch.cat([attn.to_v(hidden_states), v], dim=1)
+        d = k.shape[-1] // attn.heads
+        q, k, v = (x.view(b, -1, attn.heads, d).transpose(1, 2) for x in (q, k, v))
+        if attn.norm_q is not None:
+            q = attn.norm_q(q)
+        if attn.norm_k is not None:
+            k = attn.norm_k(k)
+        out = F.scaled_dot_product_attention(q, k, v, dropout_p=0.0, is_causal=False)
+        out = out.transpose(1, 2).reshape(b, -1, attn.heads * d).to(q.dtype)
+        out = attn.to_out[1](attn.to_out[0](out))
+        if attn.residual_connection:
+            out = out + hidden_states
+        self.ctl.applied += 1
+        return out / attn.rescale_output_factor
+
+
+class attention_injection:
+    """Context manager installing injecting processors on the named modules, restoring on exit.
+
+    `processor` is InjectingProcessor (temporal attention weights) or KVInjectingProcessor
+    (spatial self-attention keys/values)."""
+
+    def __init__(self, unet, ctl: AttnController, processor=None):
         self.unet, self.ctl, self.saved = unet, ctl, {}
+        self.processor = processor or InjectingProcessor
 
     def __enter__(self):
         from diffusers.models.attention_processor import AttnProcessor2_0
@@ -125,7 +211,7 @@ class attention_injection:
         for name in self.ctl.spec.modules:
             m = mods[name]
             self.saved[name] = m.processor
-            m.set_processor(InjectingProcessor(name, self.ctl, AttnProcessor2_0()))
+            m.set_processor(self.processor(name, self.ctl, AttnProcessor2_0()))
         return self.ctl
 
     def __exit__(self, *exc):
@@ -144,10 +230,11 @@ class EditSpec:
     patch: PatchSpec | None = None      # granularities 1, 2, 4
     attn: AttnSpec | None = None        # granularity 3
     label: str = ""
+    kv: KVSpec | None = None            # spatial K/V injection (D-37)
 
     @property
     def is_baseline(self) -> bool:
-        return self.patch is None and self.attn is None
+        return self.patch is None and self.attn is None and self.kv is None
 
 
 @dataclass
@@ -181,15 +268,41 @@ class ArmsResult:
     seconds: float = 0.0
     n_patched: dict = field(default_factory=dict)
     n_attn_injected: dict = field(default_factory=dict)
+    n_kv_injected: dict = field(default_factory=dict)
 
 
-def _union_attn(arms: list[Arm]) -> AttnSpec | None:
-    specs = [a.spec.attn for a in arms if a.spec.attn is not None]
+def _union_modules(specs, source: str = "source") -> AttnSpec | None:
+    specs = [s for s in specs if s is not None]
     if not specs:
         return None
     mods = tuple(sorted({m for s in specs for m in s.modules}))
     steps = tuple(sorted({t for s in specs for t in s.steps}))
-    return AttnSpec(mods, steps)
+    return AttnSpec(mods, steps, source=source)
+
+
+def _union_attn(arms: list[Arm], source: str = "source", kind: str = "attn") -> AttnSpec | None:
+    """What `source` must record: the union of the modules/steps of every arm that reads it."""
+    specs = [getattr(a.spec, kind) for a in arms]
+    return _union_modules([s for s in specs if s is not None and s.source == source], source)
+
+
+def _recording_specs(arms: list[Arm], kind: str) -> dict:
+    """{track id: spec to record} for every track some arm reads with this operator. A source must
+    be "source" or an unedited arm that runs before every arm reading it."""
+    order = {a.id: i for i, a in enumerate(arms)}
+    out = {}
+    for a in arms:
+        s = getattr(a.spec, kind)
+        if s is None or s.source in out:
+            continue
+        if s.source != "source":
+            src = next((x for x in arms if x.id == s.source), None)
+            if src is None or order[src.id] >= order[a.id]:
+                raise ValueError(f"arm {a.id} reads {s.source}, which must be an earlier arm")
+            if not src.spec.is_baseline:
+                raise ValueError(f"{s.source} is a source, so it cannot itself be edited")
+        out[s.source] = _union_attn(arms, s.source, kind)
+    return out
 
 
 @torch.no_grad()
@@ -226,16 +339,21 @@ def run_arms(loaded: Loaded, coords: list[Coordinate], source_prompt: str, arms:
     extra_probes = extra_probes or {}
     tracks = [Track("source", source_prompt, ([cache] if cache else []) + list(extra_probes.get("source", [])),
                     start=None if source_trajectory is None else source_trajectory[0].half())]
-    patchers, specs = {}, {"source": _union_attn(arms)}
+    patchers = {}
     for a in arms:
         probes = []
         if a.spec.patch is not None:
             patchers[a.id] = Patcher(cache, a.spec.patch, step_offset=a.step_offset)
             probes.append(patchers[a.id])
         tracks.append(Track(a.id, a.prompt, probes + list(extra_probes.get(a.id, []))))
-        specs[a.id] = a.spec.attn
-    ctl = AttnController(specs["source"], store_device=cache_device)      # processors are installed on the union of modules;
+    # per operator: what each source track records, and what each arm injects
+    record = {"attn": _recording_specs(arms, "attn"), "kv": _recording_specs(arms, "kv")}
+    own = {k: {a.id: getattr(a.spec, k) for a in arms} for k in ("attn", "kv")}
+    ctls = {k: AttnController(_union_modules(own[k].values()), store_device=cache_device)  # processors on the union
+            for k in own}                                                                    # of every arm's modules;
+    ctls["kv"].frames = loaded.cfg.frames
     applied = {a.id: 0 for a in arms}
+    applied_kv = {a.id: 0 for a in arms}
 
     use_lora = any(a.lora for a in arms)
     lora_of = {a.id: (a.lora, a.lora_scale) for a in arms}
@@ -248,32 +366,41 @@ def run_arms(loaded: Loaded, coords: list[Coordinate], source_prompt: str, arms:
                 loaded.unet.set_adapters([name], weights=[scale])
             else:
                 loaded.unet.disable_adapters()
-        ctl.step = step
-        ctl.spec = specs[tr.id]                # then each track activates only its own
-        ctl.mode = "record" if tr.id == "source" else ("inject" if ctl.spec else None)
+        for k, ctl in ctls.items():            # then each track activates only its own
+            ctl.step, ctl.track = step, tr.id
+            if tr.id in record[k]:
+                ctl.spec, ctl.mode = record[k][tr.id], "record"
+            else:
+                ctl.spec = own[k].get(tr.id)
+                ctl.mode = "inject" if ctl.spec else None
 
     def after_track(step, tr):
         if tr.id == "source" and source_trajectory is not None:
             tr.latents = source_trajectory[step + 1].to(tr.latents.device, tr.latents.dtype)
         if tr.id != "source":
-            applied[tr.id] += ctl.applied
+            applied[tr.id] += ctls["attn"].applied
+            applied_kv[tr.id] += ctls["kv"].applied
+        for ctl in ctls.values():
             ctl.applied = 0
 
     def after_step(step):
         if cache is not None:
             for k in [k for k in cache.store if k[1] <= step - keep + 1]:
                 del cache.store[k]
-        ctl.store.clear()
+        for ctl in ctls.values():
+            ctl.store.clear()
 
     try:
-        with attention_injection(loaded.unet, ctl):
+        with attention_injection(loaded.unet, ctls["attn"]), \
+                attention_injection(loaded.unet, ctls["kv"], KVInjectingProcessor):
             t = run_lockstep(loaded, coords, tracks, noise, before_track=before_track,
                              after_track=after_track, after_step=after_step, log_every=log_every)
     finally:
         if use_lora:
             loaded.unet.disable_adapters()
     res = ArmsResult(tracks[0].latents, {tr.id: tr.latents for tr in tracks[1:]}, seconds=t["seconds"],
-                     n_patched={k: len(p.applied) for k, p in patchers.items()}, n_attn_injected=applied)
+                     n_patched={k: len(p.applied) for k, p in patchers.items()}, n_attn_injected=applied,
+                     n_kv_injected=applied_kv)
     if decode_frames:
         for tr in tracks:
             res.frames[tr.id] = decode(loaded, tr.latents)

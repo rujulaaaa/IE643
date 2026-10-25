@@ -63,3 +63,43 @@ def test_channel_selectivity():
     e[:, 2] += lab * 3                                           # channel 2 tracks the verb
     eta = E.channel_selectivity(e, lab)
     assert eta.argmax() == 2 and eta[2] > 0.8
+
+
+def test_channel_selectivity_on_fp16_energies():
+    """The sweeps store channel energies in fp16: tiny and large channels must give the fp64 answer."""
+    rng = np.random.default_rng(4)
+    lab = np.repeat(np.arange(4), 30)
+    e = rng.normal(0, 1, (120, 6))
+    e[:, 2] += lab * 3
+    e[:, 0] *= 1e-4                                              # squares underflow in fp16
+    e[:, 1] = e[:, 1] * 30 + 100                                 # squares overflow in fp16
+    e[:, 5] = 0.5                                                # constant channel: eta 0, not inf/nan
+    ref = E.channel_selectivity(e, lab)
+    eta = E.channel_selectivity(e.astype(np.float16), lab)
+    assert np.isfinite(eta).all() and eta.argmax() == 2 and eta[5] == 0
+    np.testing.assert_allclose(eta[:5], ref[:5], rtol=0.05, atol=1e-3)
+
+
+def test_decoding_gain_is_not_inflated_by_an_overfitting_baseline():
+    """Pure noise in, pure noise out: both held-out R^2 near or below 0, so the floored gain stays ~0 (the
+    first version subtracted a badly negative latent R^2 and reported gains above 1)."""
+    rng = np.random.default_rng(4)
+    pid = np.repeat(np.arange(120), 2)
+    groups = pid % 13
+    g = E.decoding_gain(rng.normal(size=(240, 512)), rng.normal(size=(240, 512)), rng.normal(size=(240, 128)),
+                        pid, groups)
+    assert abs(g["gain"]) < 0.05 and g["r2_layer"] < 0.05 and g["r2_latent"] < 0.05
+
+
+def test_paired_residuals_do_not_leak_into_the_ridge_choice():
+    """+/- residual pairs (two seeds of one prompt) with an X that only memorises the pair: a leaky
+    leave-one-clip-out choice would fit it; the grouped inner CV must not claim held-out signal."""
+    rng = np.random.default_rng(5)
+    n_p = 120
+    pid = np.repeat(np.arange(n_p), 2)
+    groups = pid % 13
+    pair_code = rng.normal(size=(n_p, 512))[pid]                     # identical within a pair
+    X = pair_code + 0.01 * rng.normal(size=(2 * n_p, 512))
+    Y = rng.normal(size=(2 * n_p, 16))
+    g = E.decoding_gain(X, rng.normal(size=(2 * n_p, 512)), Y, pid, groups)
+    assert g["r2_layer"] < 0.05 and abs(g["gain"]) < 0.05

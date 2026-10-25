@@ -4,7 +4,7 @@
         [--config configs/variants/<primary cell>.yaml] [--pairs N]
 
 Pairs: 25 motion + 25 content pairs of the probing set at the held-out seed 2024, drawn with
-numpy.default_rng(2024). For each pair (A = anchor clip, B = partner) and each candidate
+numpy.default_rng(2024), each with the unrelated-clip control (D-35). For each pair (A = anchor clip, B = partner) and each candidate
 {name, coords, steps, component}:
     B<-A   B's prompt receiving A's activations      sufficiency
     A<-B   A's prompt receiving B's activations      necessity
@@ -63,7 +63,9 @@ def mask_probe(loaded, clip: Clip, coords):
 def main():
     ap = runio.parser(__doc__, "exp2_patching")
     ap.add_argument("--candidates", type=Path, required=True)
-    ap.add_argument("--pairs", type=int, default=25, help="pairs per kind")
+    ap.add_argument("--pairs", type=int, default=25, help="pairs per kind (D-35)")
+    ap.add_argument("--ctrl-pairs", type=int, default=25,
+                    help="pairs per kind that also get the unrelated-clip control (D-35: all of them)")
     ap.add_argument("--shard", default="0/1")
     args = ap.parse_args()
     i, n = map(int, args.shard.split("/"))
@@ -72,7 +74,9 @@ def main():
     cfg = loaded.cfg
     coords = enumerate_coordinates(loaded.unet, resnets=True)   # a candidate may be a ResNet block
     ps = ProbingSet()
-    pairs = draw_pairs(ps, args.pairs)[i::n]
+    drawn = draw_pairs(ps, args.pairs)
+    with_ctrl = {id(p) for kind in ("motion", "content") for p in [q for q in drawn if q.kind == kind][:args.ctrl_pairs]}
+    pairs = drawn[i::n]
     clip_scorer = M.ClipScorer(device=loaded.device)
     attn_mods = temporal_attention_modules(coords)
     first_third = window("first_third", cfg.steps)
@@ -91,6 +95,8 @@ def main():
             "BtoA": (pb, [Arm(f"A<-B|{cd['name']}", pa, spec(cd)) for cd in cands]),
             "CtoB": (pc, [Arm(f"B<-C|{cd['name']}", pb, spec(cd)) for cd in cands]),
         }
+        if id(p) not in with_ctrl:
+            del runs["CtoB"]
         frames, masks = {}, {}
         for run, (src_prompt, arms) in runs.items():
             extra = {}
@@ -116,6 +122,8 @@ def main():
             for direction, key, f in (("suff", f"B<-A|{nm}", lambda D, x: (D[x] - D["B"])),
                                       ("nec", f"A<-B|{nm}", lambda D, x: (D["A"] - D[x])),
                                       ("ctrl", f"B<-C|{nm}", lambda D, x: (D[x] - D["B"]))):
+                if key not in frames:
+                    continue
                 out_rows.append({"pair": f"{a.id}->{b.id}", "kind": p.kind, "subject_b": b.subject, "family": b.family,
                                  "candidate": nm, "direction": direction,
                                  "eff_c": f(Dc, key) / den["c"] if abs(den["c"]) > 1e-6 else np.nan,

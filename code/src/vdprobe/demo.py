@@ -28,15 +28,18 @@ import yaml
 
 from .config import CONFIG_DIR, REPO_ROOT
 from .edit import Arm, AttnSpec, EditSpec, run_arms
-from .edit_plan import WINDOWS, EditPair, motion_modules, temporal_attention, temporal_blocks
+from .edit_plan import WINDOWS, EditPair, literature_specs, motion_modules, temporal_attention, temporal_blocks
 from .metrics import (content_fidelity, disentanglement, flow_fields, motion_fidelity, motion_magnitude,
                       subject_consistency)
+from .harness import Probe
 from .patching import PatchSpec
 
 RESULTS = REPO_ROOT / "results"
 LORA_DIR = RESULTS / "local" / "motion_lora"
 SELECTION = CONFIG_DIR / "edit_selection.json"
-SCORED_RUNS = {"test": RESULTS / "kaggle" / "vdprobe-test" / "out",
+SCORED_RUNS = {"stage 6b test": RESULTS / "kaggle" / "vdprobe-lit-test" / "out",   # attention-level edits (D-37)
+               "test": RESULTS / "kaggle" / "vdprobe-test" / "out",
+               "stage 6b dev": RESULTS / "kaggle" / "vdprobe-lit-dev" / "out",
                "dev": RESULTS / "kaggle" / "vdprobe-dev" / "out",
                "local smoke": RESULTS / "local" / "edit_smoke"}
 POOL_SNAPSHOT = CONFIG_DIR / "d_pool.json"     # frozen copy of a scored run's pool, for machines without it
@@ -52,7 +55,17 @@ METHODS = {
     "lora_probe": "prompt + probe-guided motion LoRA (up_blocks.0)",
     "lora_full": "prompt + full motion LoRA (all motion modules)",
     "lora_anti": "prompt + wrong-place LoRA control (down_blocks.2-3)",
+    "lit_single": "attention-level edit selected on dev (D-37), reads clip A only",
+    "lit_dual": "attention-level edit selected on dev (D-37), reads A and B (appearance from one, motion from the other)",
 }
+LIT_SELECTION = CONFIG_DIR / "lit_selection.json"      # written from the Stage 6b dev run (D-37)
+# used until that file exists: the papers' defaults (UniEdit SA-T; MasaCtrl K/V at up_blocks.2-3 from step 2)
+LIT_DEFAULT = {"motion": {"single": "motion.attn.all.all", "dual": "motion.dual.up23.from2"},
+               "content": {"single": "content.kv.up23.from2", "dual": "content.dual.all"}}
+
+
+def lit_selection() -> dict:
+    return json.loads(LIT_SELECTION.read_text()) if LIT_SELECTION.exists() else LIT_DEFAULT
 SEC_PER_CLIP = 65          # laptop RTX 4060, CPU-side cache (patch controls, §16 of the log)
 
 
@@ -66,9 +79,106 @@ def link_assets(root: Path) -> int:
             dst = REPO_ROOT / f.relative_to(root)
             if not dst.exists():
                 dst.parent.mkdir(parents=True, exist_ok=True)
-                dst.symlink_to(f.resolve())
-                n += 1
+                try:
+                    dst.symlink_to(f.resolve())
+                    n += 1
+                except FileExistsError:       # another process linked it first (parallel Kaggle jobs)
+                    pass
     return n
+
+
+# --- presentation helpers (plain-language names, playable clips, progress) -----------------
+
+WINDOW_NAMES = {"ft": "steps 0-8", "all": "all 25 steps", "one0": "step 0", "five1": "steps 0-3",
+                "from2": "steps 2-24", "from5": "steps 5-24", "early": "steps 0-2", "first": "frame 0 only"}
+SCORE_NAMES = {"clip": "Clip", "sc_A": "■ Looks like A", "sc_B": "■ Looks like B", "sm_A": "▲ Moves like A",
+               "sm_B": "▲ Moves like B", "D": "Disentanglement D", "consistency_ratio": "Identity stability",
+               "motion_magnitude": "Motion amount (px)", "sm_video": "▲ Moves like the video",
+               "sc_video": "■ Looks like the video", "clip_text_target": "Matches target prompt"}
+CLIP_NAMES = {"source": "A · source", "B_ref": "B · as generated", "base": "Prompt only", "edit": "Edit",
+              "video": "Your video", "motion.base": "Prompt only (keep motion)",
+              "content.base": "Prompt only (keep content)"}
+
+
+def arm_label(arm_id: str) -> str:
+    """'motion.dynamic.up_blocks.0.ft' -> 'Keep motion · frame-varying patch · up_blocks.0 · steps 0-8'."""
+    import re
+
+    if arm_id in CLIP_NAMES:
+        return CLIP_NAMES[arm_id]
+    m = re.search(r"\.a(\d+(?:\.\d+)?)$", arm_id)
+    strength = f"strength {m.group(1)}" if m else None
+    parts = (arm_id[:m.start()] if m else arm_id).split(".")
+    head = {"motion": "Keep motion", "content": "Keep content"}.get(parts[0], parts[0])
+    what = {"dynamic": "frame-varying patch", "static": "frame-mean patch", "tensor": "whole-tensor patch",
+            "attn": "attention injection", "sel": "selected patch", "kv": "key/value injection (MasaCtrl)",
+            "dual": "A + B dual source (UniEdit)"}
+    rest, out = parts[1:], [head]
+    if rest and rest[0] in what:
+        out.append(what[rest.pop(0)])
+    if rest and rest[-1] in WINDOW_NAMES:
+        win = WINDOW_NAMES[rest.pop()]
+    else:
+        win = None
+    loras = {"lora_probe": "probe-guided motion LoRA", "lora_full": "full motion LoRA",
+             "lora_anti": "wrong-place LoRA (control)"}
+    for r in list(rest):
+        if r in loras:
+            out.append("prompt + " + loras[r])
+            rest.remove(r)
+    if rest:
+        place = ".".join(rest)
+        out.append({"allmm": "all motion modules", "all": "all temporal attention", "up23": "up_blocks.2-3",
+                    "dec": "all decoder blocks", "probe": "probe-placed", "all.all": "all temporal attention",
+                    "up0.all": "up_blocks.0", "up1.all": "up_blocks.1"}.get(place, place))
+    if win:
+        out.append(win)
+    if strength:
+        out.append(strength)
+    return " · ".join(out)
+
+
+def pretty_scores(df: pd.DataFrame) -> pd.DataFrame:
+    """Scores table with plain-language headers and clip names (■ = content measure, ▲ = motion)."""
+    out = df.copy()
+    if "clip" in out.columns:
+        out["clip"] = out["clip"].map(arm_label)
+    if "arm" in out.columns:
+        out["arm"] = out["arm"].map(arm_label)
+    return out.rename(columns={**SCORE_NAMES, "arm": "Clip"}).round(3)
+
+
+def playable(path: str | None) -> str | None:
+    """An H.264 MP4 next to a GIF (made once with ffmpeg), so clips get play / pause controls instead
+    of looping on their own. Falls back to the GIF when ffmpeg is missing or fails."""
+    import shutil
+    import subprocess
+
+    if not path or not str(path).endswith(".gif") or shutil.which("ffmpeg") is None:
+        return path
+    mp4 = Path(str(path)[:-4] + ".mp4")
+    if not mp4.exists():
+        try:
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(path), "-movflags", "+faststart",
+                            "-pix_fmt", "yuv420p", "-vf", "scale=trunc(iw/2)*2:trunc(ih/2)*2", str(mp4)],
+                           check=True, timeout=60)
+        except Exception:
+            return path
+    return str(mp4)
+
+
+class StepProgress(Probe):
+    """Reports denoising progress once per step: hooked on one coordinate of one track."""
+
+    def __init__(self, coord: str, n_steps: int, callback, label: str):
+        super().__init__([coord], None)
+        self.n, self.cb, self.label, self.last = n_steps, callback, label, -1
+
+    def __call__(self, ctx, coord, module, output, args, kwargs):
+        if ctx.step != self.last:
+            self.last = ctx.step
+            self.cb((ctx.step + 1) / self.n, f"{self.label} · step {ctx.step + 1} of {self.n}")
+        return None
 
 
 def vocabulary() -> dict:
@@ -138,6 +248,10 @@ def edit_arm(arm_id: str, prompt: str, direction: str, method: str, coords, sel:
         if direction != "motion":
             raise ValueError("the motion LoRAs only apply to the motion direction")
         return Arm(arm_id, prompt, EditSpec(label=METHODS[method]), lora=method)
+    if method.startswith("lit_"):
+        name = lit_selection()[direction][method[4:]]
+        spec = literature_specs(coords)[name]
+        return Arm(arm_id, prompt, EditSpec(spec.patch, spec.attn, label=f"{METHODS[method]}: {name}", kv=spec.kv))
     if method == "custom":
         blocks, win = ("all" if block == "all" else [block]), window
     else:
@@ -163,6 +277,8 @@ def build_arms(req: EditRequest, cfg, coords, sel: dict) -> tuple[str, list[Arm]
     d = req.direction
     if d not in ("motion", "content"):
         raise ValueError(d)
+    if req.method == "lit_dual" and not req.with_reference:
+        raise ValueError("the dual-source edit reads clip B: tick 'Also generate B'")
     arms = [Arm("B_ref", p["B"], EditSpec(label="B, unpatched"))] if req.with_reference else []
     arms.append(Arm("base", p[d], EditSpec(label="prompt only")))
     arms.append(edit_arm("edit", p[d], d, req.method, coords, sel, req.block, req.window, req.alpha))
@@ -255,7 +371,13 @@ class Engine:
         (d / "request.json").write_text(json.dumps(record, indent=1, default=str))
         return {k: str(v) for k, v in gifs.items()}
 
-    def edit(self, req: EditRequest) -> dict:
+    def _progress(self, cb, label: str, n_clips: int):
+        """A StepProgress for the last track of a lockstep group (None without a callback)."""
+        if cb is None:
+            return None
+        return StepProgress(self.coords[0].name, self.loaded.cfg.steps, cb, f"{label} ({n_clips} clips together)")
+
+    def edit(self, req: EditRequest, progress=None) -> dict:
         from .pipeline import make_noise
 
         self.ensure()
@@ -263,8 +385,11 @@ class Engine:
             raise ValueError(f"{req.method} is not available (no file in {LORA_DIR})")
         src, arms = build_arms(req, self.loaded.cfg, self.coords, selection())
         t0 = time.perf_counter()
+        sp = self._progress(progress, "Generating", len(arms) + 1)
         r = run_arms(self.loaded, self.coords, src, arms, make_noise(self.loaded.cfg, req.seed),
-                     cache_device=self.cache_device)
+                     cache_device=self.cache_device, extra_probes={arms[-1].id: [sp]} if sp else None)
+        if progress:
+            progress(1.0, "Scoring the clips (CLIP and optical flow)")
         frames = {"source": r.frames["source"], **{a.id: r.frames[a.id] for a in arms}}
         try:
             pool_name, pool = reference_pool()
@@ -279,7 +404,7 @@ class Engine:
         return {"gifs": gifs, "table": table, "prompts": prompts, "pool": pool_name, "seconds": rec["seconds"]}
 
     def upload_edit(self, video: str, source_prompt: str, target_prompt: str, method: str = "attn_all",
-                    alpha: float = 1.0, seed: int = 42, start: str = "blend") -> dict:
+                    alpha: float = 1.0, seed: int = 42, start: str = "blend", progress=None) -> dict:
         """Clip A = an uploaded video, inverted onto the sampler's trajectory; motion direction only.
 
         `start` is the latent the new clips start from (§22 of the log, checked 2026-10-22):
@@ -298,12 +423,18 @@ class Engine:
         cfg = self.loaded.cfg
         frames_in = read_video(video, frames=cfg.frames, size=cfg.height)
         t0 = time.perf_counter()
+        if progress:
+            progress(0.0, "Inverting your video onto the 25 denoising steps")
         traj = invert(self.loaded, frames_in, source_prompt)
         t_inv = time.perf_counter() - t0
         arms = [Arm("base", target_prompt, EditSpec(label="prompt only")),
                 edit_arm("edit", target_prompt, "motion", method, self.coords, selection(), alpha=alpha)]
+        sp = self._progress(progress, "Generating", len(arms) + 1)
         r = run_arms(self.loaded, self.coords, source_prompt, arms, upload_start(traj[0], make_noise(cfg, seed), start),
-                     cache_device=self.cache_device, source_trajectory=traj)
+                     cache_device=self.cache_device, source_trajectory=traj,
+                     extra_probes={arms[-1].id: [sp]} if sp else None)
+        if progress:
+            progress(1.0, "Scoring the clips")
         frames = {"video": frames_in, "source": r.frames["source"], **{a.id: r.frames[a.id] for a in arms}}
         feats = self._features(frames)
         txt = self.clip_text(target_prompt)
@@ -319,7 +450,8 @@ class Engine:
         gifs = self._save("upload__" + method, frames, table, rec)
         return {"gifs": gifs, "table": table, "seconds": rec["seconds"]}
 
-    def cross_attention(self, subject: str, verb: str, scene: str, seed: int = 42, tau: float = 0.4) -> dict:
+    def cross_attention(self, subject: str, verb: str, scene: str, seed: int = 42, tau: float = 0.4,
+                        progress=None) -> dict:
         """One clip with DAAM-style per-frame cross-attention maps for its subject, verb and scene
         (harness.CrossAttentionMaps); overlay GIFs and the layer x step-window grid per phrase."""
         import importlib.util
@@ -338,8 +470,11 @@ class Engine:
         tokens = phrase_token_positions(self.loaded.pipe.tokenizer, prompt, clip.phrases)
         rec = CrossAttentionMaps(list(clip.phrases), coords=[c for c in self.coords if c.kind == "spatial_attn2"])
         t0 = time.perf_counter()
-        with Harness(self.loaded.unet, self.coords, [rec], token_index=tokens):
+        probes = [rec] + ([StepProgress(self.coords[0].name, cfg.steps, progress, "Generating")] if progress else [])
+        with Harness(self.loaded.unet, self.coords, probes, token_index=tokens):
             gen = generate(self.loaded, prompt, make_noise(cfg, clip.seed))
+        if progress:
+            progress(1.0, "Drawing the attention maps")
         d = self.out / f"{time.strftime('%Y%m%d-%H%M%S')}_xattn__{self.variant}__{clip.id}"
         d.mkdir(parents=True, exist_ok=True)
         from .runio import save_gif

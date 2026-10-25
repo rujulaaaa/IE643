@@ -41,26 +41,30 @@ def overlay(frames, heat: torch.Tensor, alpha: float = 0.55, size: int = 256) ->
 
 
 def grid_figure(rec: CrossAttentionMaps, coords, phrase: str, path, n_steps: int):
+    """Step windows as rows, the 16 cross-attention layers as columns in network order (wide, so it fits a
+    page); each cell is the frame-mean map, scaled to its own maximum."""
     import matplotlib.pyplot as plt
 
     order = {b: i for i, b in enumerate(block_order(coords))}
     names = sorted((c for c in coords if c.kind == "spatial_attn2"), key=lambda c: (order[c.block], c.name))
-    fig, axes = plt.subplots(len(names), len(WINDOWS), figsize=(1.6 * len(WINDOWS), 1.6 * len(names)),
+    fig, axes = plt.subplots(len(WINDOWS), len(names), figsize=(1.05 * len(names) + 1.2, 1.05 * len(WINDOWS) + 0.9),
                              squeeze=False)
-    for i, c in enumerate(names):
-        for j, (a, b) in enumerate(WINDOWS):
+    for j, c in enumerate(names):
+        for i, (a, b) in enumerate(WINDOWS):
             ms = [rec.cells[(c.name, t)][phrase] for t in range(a, min(b, n_steps)) if (c.name, t) in rec.cells]
             ax = axes[i, j]
             ax.imshow(torch.stack(ms).mean(0).numpy() if ms else np.zeros((rec.grid, rec.grid)), cmap="inferno")
             ax.set_xticks([]), ax.set_yticks([])
+            for sp in ax.spines.values():
+                sp.set_visible(False)
             if i == 0:
-                ax.set_title(f"steps {a}-{b - 1}", fontsize=8)
+                ax.set_title(c.short.replace(".sp.a2", " · "), fontsize=9)
             if j == 0:
-                ax.set_ylabel(c.name.replace(".transformer_blocks.0.attn2", "").replace("attentions.", "a"),
-                              fontsize=6)
-    fig.suptitle(f"cross-attention on '{phrase}' (frame mean, per layer and step window)", fontsize=9)
-    fig.tight_layout(rect=(0, 0, 1, 0.985))
-    fig.savefig(path, dpi=120)
+                ax.set_ylabel(f"steps {a}-{b - 1}", fontsize=10)
+    fig.suptitle(f"Where '{phrase}' looks, by layer (columns, network order) and denoising steps (rows)",
+                 fontsize=11, x=0.01, ha="left")
+    fig.tight_layout(rect=(0, 0, 1, 0.94))
+    fig.savefig(path, dpi=110, facecolor="#FFFFFF")
     plt.close(fig)
 
 

@@ -1,0 +1,40 @@
+2026-10-25 13:13:30 analysis sd15_mm3
+confirm: {'coord': 'up_blocks.0.motion_modules.2', 'steps': [0, 1, 2], 'mean_S_dyn': -0.0729399332252904, 't': -0.9918466472416612, 'p_one_sided': 0.166748046875, 'n_subjects': 13, 'n_patterns': 8192, 'replicates': False, 'rule': 'per-subject mean S_dyn over the region < 0, exact sign flip, one-sided p < 0.05'}
+smap: {'dyn': {'n_subjects': 13, 'n_patterns': 8192, 'cells_fwer_05': 21, 'motion_cells_fwer_05': 0, 'content_cells_fwer_05': 21}, 'stat': {'n_subjects': 13, 'n_patterns': 8192, 'cells_fwer_05': 47, 'motion_cells_fwer_05': 0, 'content_cells_fwer_05': 47}}
+anova: {'subject': {'max_tilde': 0.3580851274463916, 'mean_tilde': 0.07264138151029319, 'mean_bar': 0.14752891779359253}, 'verb': {'max_tilde': 0.2423631349131392, 'mean_tilde': 0.023748902521189753, 'mean_bar': 0.0471963618745351}, 'scene': {'max_tilde': 0.23743717678736304, 'mean_tilde': 0.03596566621048944, 'mean_bar': 0.11073542212832152}, 'seed': {'max_tilde': 1.0000001105053087, 'mean_tilde': 0.2753908020889418, 'mean_bar': 0.20075636753058484}, 'subjectxverb': {'max_tilde': 0.16818225464983866, 'mean_tilde': 0.09611548682478378, 'mean_bar': 0.08241850313619763}, 'residual': {'max_tilde': 0.728392962964241, 'mean_tilde': 0.49613776084430206, 'mean_bar': 0.41136442753676833}}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 28575.66it/s]
+rsa: {'n_perm': 49, 'motion_cells_fwer_05': 2280, 'content_cells_fwer_05': 2778, 'text_cells_fwer_05': 812, 'predictors': ['content', 'motion', 'text'], 'best_motion': 'down_blocks.3.motion_modules.0.transformer_blocks.0.attn2'}
+decode: {'best_gain': 0.12510285899461038, 'best_coord': 'mid_block.attentions.0.transformer_blocks.0.attn1', 'best_step': 15, 'cells_gain_pos': 1765}
+/home/shivi/IE643/code/src/vdprobe/exp2.py:191: RuntimeWarning: divide by zero encountered in divide
+  return (g ** 2).sum(0) / np.maximum((e ** 2).sum(0), 1e-12)
+wrote /home/shivi/IE643/code/results/exp2/sd15_mm3 in 3817 s
+2026-10-25 14:17:17 analysis epicrealism_mm3
+confirm: {'coord': 'up_blocks.0.motion_modules.2', 'steps': [0, 1, 2], 'mean_S_dyn': -0.09504330912704659, 't': -1.6655577839187072, 'p_one_sided': 0.0611572265625, 'n_subjects': 13, 'n_patterns': 8192, 'replicates': False, 'rule': 'per-subject mean S_dyn over the region < 0, exact sign flip, one-sided p < 0.05'}
+smap: {'dyn': {'n_subjects': 13, 'n_patterns': 8192, 'cells_fwer_05': 10, 'motion_cells_fwer_05': 0, 'content_cells_fwer_05': 10}, 'stat': {'n_subjects': 13, 'n_patterns': 8192, 'cells_fwer_05': 44, 'motion_cells_fwer_05': 12, 'content_cells_fwer_05': 32}}
+anova: {'subject': {'max_tilde': 0.3557420875727859, 'mean_tilde': 0.07493372786382249, 'mean_bar': 0.1308277720291784}, 'verb': {'max_tilde': 0.2838392812562501, 'mean_tilde': 0.02780092505151518, 'mean_bar': 0.04800929829494469}, 'scene': {'max_tilde': 0.29592641503500405, 'mean_tilde': 0.06732236825636281, 'mean_bar': 0.17261429885252882}, 'seed': {'max_tilde': 1.0, 'mean_tilde': 0.2129518773450963, 'mean_bar': 0.1505062098256147}, 'subjectxverb': {'max_tilde': 0.16656126636798815, 'mean_tilde': 0.10403629740752297, 'mean_bar': 0.084801538354038}, 'residual': {'max_tilde': 0.7226706963616729, 'mean_tilde': 0.5129548040756803, 'mean_bar': 0.4132408826436954}}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 30734.86it/s]
+rsa: {'n_perm': 49, 'motion_cells_fwer_05': 2499, 'content_cells_fwer_05': 1774, 'text_cells_fwer_05': 573, 'predictors': ['content', 'motion', 'text'], 'best_motion': 'up_blocks.3.motion_modules.0.transformer_blocks.0.attn2'}
+decode: {'best_gain': 0.26504726073184315, 'best_coord': 'down_blocks.1.motion_modules.0.transformer_blocks.0.attn1', 'best_step': 12, 'cells_gain_pos': 2266}
+/home/shivi/IE643/code/src/vdprobe/exp2.py:191: RuntimeWarning: divide by zero encountered in divide
+  return (g ** 2).sum(0) / np.maximum((e ** 2).sum(0), 1e-12)
+/home/shivi/IE643/code/src/vdprobe/exp2.py:191: RuntimeWarning: divide by zero encountered in divide
+  return (g ** 2).sum(0) / np.maximum((e ** 2).sum(0), 1e-12)
+/home/shivi/IE643/code/src/vdprobe/exp2.py:191: RuntimeWarning: divide by zero encountered in divide
+  return (g ** 2).sum(0) / np.maximum((e ** 2).sum(0), 1e-12)
+/home/shivi/IE643/code/src/vdprobe/exp2.py:191: RuntimeWarning: divide by zero encountered in divide
+  return (g ** 2).sum(0) / np.maximum((e ** 2).sum(0), 1e-12)
+/home/shivi/IE643/code/src/vdprobe/exp2.py:191: RuntimeWarning: divide by zero encountered in divide
+  return (g ** 2).sum(0) / np.maximum((e ** 2).sum(0), 1e-12)
+/home/shivi/IE643/code/src/vdprobe/exp2.py:191: RuntimeWarning: divide by zero encountered in divide
+  return (g ** 2).sum(0) / np.maximum((e ** 2).sum(0), 1e-12)
+wrote /home/shivi/IE643/code/results/exp2/epicrealism_mm3 in 3264 s
+2026-10-25 15:11:50 all four cells analysed
+2026-10-25 15:11:50 quality gate
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/198 [00:00<?, ?it/s]Loading weights: 100%|██████████| 198/198 [00:00<00:00, 34654.99it/s]
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 27588.18it/s]
+Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 10679.38it/s]
+/home/shivi/IE643/code/.venv/lib/python3.10/site-packages/transformers/image_processing_backends.py:135: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  image = torch.from_numpy(image).contiguous()

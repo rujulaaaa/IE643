@@ -36,9 +36,11 @@ def main():
     eng.ensure()
     res = {"variant": args.variant, "load_seconds": time.perf_counter() - t0, "loras": eng.loras,
            "lora_skipped": eng.lora_skipped, "checks": {}}
+    ticks = []        # what the app's progress bar would receive
+    prog = lambda frac, desc="": ticks.append((round(float(frac), 3), desc))
     checks = {
         "edit_motion_selected": lambda: eng.edit(EditRequest("golden retriever", "running", "horse", "walking",
-                                                             "on a beach", 42, "motion", "selected")),
+                                                             "on a beach", 42, "motion", "selected"), progress=prog),
         "edit_content_selected": lambda: eng.edit(EditRequest("golden retriever", "running", "horse", "jumping",
                                                               "on a beach", 42, "content", "selected")),
         "edit_motion_lora_probe": lambda: eng.edit(EditRequest("golden retriever", "running", "tiger", "running",
@@ -46,7 +48,7 @@ def main():
                                                                with_reference=False)),
         "upload_attn_all": lambda: eng.upload_edit(str(args.video), "a man jumping, high quality, detailed",
                                                    "a tiger jumping, high quality, detailed"),
-        "cross_attention": lambda: eng.cross_attention("red fox", "jumping", "in a snowy forest", 7),
+        "cross_attention": lambda: eng.cross_attention("red fox", "jumping", "in a snowy forest", 7, progress=prog),
     }
     for name, fn in checks.items():
         t1 = time.perf_counter()
@@ -60,6 +62,10 @@ def main():
         except Exception as e:
             out = {"ok": False, "seconds": time.perf_counter() - t1, "error": f"{type(e).__name__}: {e}",
                    "trace": traceback.format_exc()[-3000:]}
+        out["progress_ticks"] = len(ticks)
+        if ticks:
+            out["progress_last"] = ticks[-1]
+        ticks.clear()
         res["checks"][name] = out
         print(f"{name}: {'OK' if out['ok'] else 'FAILED ' + out['error']}  {out['seconds']:.0f} s", flush=True)
     try:
@@ -67,6 +73,8 @@ def main():
         app = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(app)
         app.build(eng)
+        from vdprobe.demo import playable
+        res["playable_mp4"] = playable(res["checks"]["edit_motion_selected"].get("files", {}).get("edit"))
         res["checks"]["app_builds"] = {"ok": True}
         print("app_builds: OK", flush=True)
     except Exception as e:
