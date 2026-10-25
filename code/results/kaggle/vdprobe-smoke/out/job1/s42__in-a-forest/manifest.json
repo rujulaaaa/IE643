@@ -1,0 +1,78 @@
+{
+  "experiment": "probe_sweep",
+  "date": "2026-10-19",
+  "python": "3.13.15",
+  "torch": "2.11.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.16.1",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "seed": 42,
+  "scene": "in a forest",
+  "n_clips": 8,
+  "n_pairs": 12,
+  "coords": [
+    "down_blocks.0.motion_modules.1",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.1.motion_modules.1",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.2.motion_modules.1",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.3.motion_modules.1",
+    "mid_block.motion_modules.0",
+    "mid_block.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.2",
+    "up_blocks.1.motion_modules.2",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.2",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.2",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2"
+  ],
+  "sketch_dim": 512,
+  "clips": [
+    "s42__golden-retriever__running__in-a-forest",
+    "s42__golden-retriever__walking__in-a-forest",
+    "s42__german-shepherd__running__in-a-forest",
+    "s42__german-shepherd__walking__in-a-forest",
+    "s42__young-man__running__in-a-forest",
+    "s42__young-man__walking__in-a-forest",
+    "s42__young-woman__running__in-a-forest",
+    "s42__young-woman__walking__in-a-forest"
+  ],
+  "prompts": {
+    "s42__golden-retriever__running__in-a-forest": "a golden retriever running in a forest, high quality, detailed",
+    "s42__golden-retriever__walking__in-a-forest": "a golden retriever walking in a forest, high quality, detailed",
+    "s42__german-shepherd__running__in-a-forest": "a german shepherd running in a forest, high quality, detailed",
+    "s42__german-shepherd__walking__in-a-forest": "a german shepherd walking in a forest, high quality, detailed",
+    "s42__young-man__running__in-a-forest": "a young man running in a forest, high quality, detailed",
+    "s42__young-man__walking__in-a-forest": "a young man walking in a forest, high quality, detailed",
+    "s42__young-woman__running__in-a-forest": "a young woman running in a forest, high quality, detailed",
+    "s42__young-woman__walking__in-a-forest": "a young woman walking in a forest, high quality, detailed"
+  },
+  "denoise_seconds": 781.5502184170001,
+  "decode_seconds": 49.95039538799983,
+  "peak_rss_gb": 8.286323547363281,
+  "subset": {
+    "subjects": 2,
+    "verbs": 2
+  }
+}

@@ -5,4 +5,8 @@ __pycache__/
 # per-clip activation stores are regenerable and large; results JSONs and figures are kept
 results/**/store/
 build/
-results/kaggle/
+# Kaggle runs: keep records, scores and logs; generated clips and tensors are ~1.8 GB
+results/kaggle/**/*.gif
+results/kaggle/**/*.pt
+# live edits made in the interface
+results/interface/

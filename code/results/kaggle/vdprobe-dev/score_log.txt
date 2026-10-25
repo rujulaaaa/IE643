@@ -1,0 +1,69 @@
+building pipeline (profile=gpu) ...
+[transformers] `CLIPImageProcessor` requires torchvision (not installed); falling back to `CLIPImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `CLIPImageProcessorPil` directly to silence this warning.
+[transformers] `SiglipImageProcessor` requires torchvision (not installed); falling back to `SiglipImageProcessorPil` for backward compatibility. Install torchvision to use the default backend, or import `SiglipImageProcessorPil` directly to silence this warning.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 705.22it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1148.42it/s]
+/home/rujula/MI_DiffusionModels/.venv/lib/python3.10/site-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 3179.91it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00, 15.19it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:00<00:00, 12.02it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 13.49it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 10.3 s
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 23214.52it/s]
+scored 1337__on-a-beach__child-running__elderly-man-jumping: 52 clips
+scored 2024__in-a-forest__fox-running__german-shepherd-jumping: 52 clips
+scored 1337__on-a-beach__brown-bear-walking__golden-retriever-spinning: 52 clips
+scored 2024__in-a-forest__young-woman-walking__soldier-spinning: 52 clips
+direction                              arm  median_D  median_dD  frac_dD_pos  d16_ci_lo  d16_ci_hi  consistency_ratio  sm_A  sc_B  sm_B  sc_A
+  content  content.static.down_blocks.3.ft     0.199      0.015         0.50     -0.014      0.407              0.970 0.447 0.734 0.415 0.902
+  content content.static.down_blocks.3.all     0.225      0.014         1.00      0.005      0.402              0.980 0.469 0.730 0.432 0.910
+  content    content.static.up_blocks.2.ft     0.167      0.014         0.50     -0.068      0.294              0.986 0.653 0.711 0.414 0.939
+  content   content.static.up_blocks.1.all     0.159      0.000         0.50     -0.100      0.234              0.990 0.760 0.716 0.392 0.966
+  content                     content.base     0.114      0.000         0.00      0.000      0.000              0.977 0.354 0.759 0.320 0.835
+  content   content.static.up_blocks.2.all     0.182     -0.011         0.50     -0.066      0.258              0.989 0.741 0.712 0.395 0.956
+  content   content.static.up_blocks.0.all     0.196     -0.014         0.50     -0.048      0.284              0.992 0.673 0.713 0.319 0.964
+  content    content.static.up_blocks.1.ft     0.163     -0.016         0.25     -0.073      0.292              0.992 0.719 0.714 0.394 0.961
+  content     content.static.mid_block.all     0.192     -0.018         0.25     -0.045      0.259              0.992 0.694 0.717 0.372 0.962
+  content      content.static.mid_block.ft     0.190     -0.020         0.25     -0.070      0.247              0.995 0.703 0.714 0.369 0.962
+  content    content.static.up_blocks.0.ft     0.186     -0.024         0.50     -0.088      0.298              0.992 0.701 0.715 0.316 0.960
+  content    content.static.up_blocks.3.ft     0.155     -0.026         0.25     -0.073      0.326              0.983 0.636 0.730 0.373 0.932
+  content content.static.down_blocks.2.all     0.143     -0.029         0.25     -0.094      0.367              0.981 0.690 0.731 0.399 0.937
+  content       content.static.allmm.five1     0.121     -0.031         0.50     -0.099      0.387              0.996 0.641 0.718 0.383 0.935
+  content   content.static.up_blocks.3.all     0.171     -0.032         0.25     -0.064      0.305              0.987 0.693 0.726 0.364 0.942
+  content  content.static.down_blocks.2.ft     0.125     -0.034         0.50     -0.089      0.388              0.990 0.560 0.735 0.398 0.922
+  content content.static.down_blocks.1.all     0.152     -0.037         0.25     -0.066      0.346              0.988 0.629 0.731 0.399 0.941
+  content         content.static.allmm.all     0.103     -0.040         0.25     -0.102      0.010              0.999 0.942 0.715 0.411 0.994
+  content          content.static.allmm.ft     0.134     -0.048         0.25     -0.088      0.053              0.999 0.873 0.709 0.393 0.980
+  content        content.static.allmm.one0     0.155     -0.050         0.25     -0.066      0.303              0.985 0.424 0.742 0.320 0.863
+  content content.static.down_blocks.0.all     0.156     -0.054         0.25     -0.088      0.315              0.959 0.658 0.730 0.372 0.933
+  content          content.tensor.allmm.ft     0.098     -0.057         0.25     -0.108      0.005              1.002 0.925 0.712 0.395 0.984
+  content  content.static.down_blocks.0.ft     0.140     -0.068         0.25     -0.082      0.338              0.972 0.611 0.741 0.378 0.918
+  content  content.static.down_blocks.1.ft     0.135     -0.069         0.25     -0.082      0.316              0.983 0.565 0.740 0.378 0.929
+   motion              motion.attn.all.all     0.174      0.151         0.75     -0.021      0.253              0.996 0.823 0.806 0.391 0.777
+   motion    motion.dynamic.up_blocks.3.ft     0.137      0.080         0.75     -0.039      0.121              0.986 0.691 0.824 0.355 0.809
+   motion    motion.dynamic.up_blocks.2.ft     0.110      0.079         0.75     -0.073      0.143              0.964 0.645 0.754 0.386 0.769
+   motion          motion.dynamic.allmm.ft     0.122      0.070         0.75     -0.208      0.194              0.994 0.792 0.802 0.358 0.872
+   motion motion.dynamic.down_blocks.2.all     0.149      0.069         0.75     -0.037      0.139              0.984 0.661 0.814 0.358 0.792
+   motion  motion.dynamic.down_blocks.2.ft     0.149      0.066         0.75     -0.033      0.132              0.994 0.566 0.807 0.329 0.773
+   motion               motion.attn.all.ft     0.142      0.057         0.75     -0.041      0.187              0.999 0.679 0.797 0.379 0.749
+   motion motion.dynamic.down_blocks.1.all     0.139      0.036         0.50     -0.080      0.119              0.958 0.751 0.796 0.357 0.838
+   motion    motion.dynamic.up_blocks.1.ft     0.050      0.035         0.50     -0.145      0.145              0.970 0.613 0.766 0.358 0.800
+   motion           motion.tensor.allmm.ft     0.103      0.033         0.75     -0.330      0.165              0.992 0.829 0.786 0.383 0.898
+   motion  motion.dynamic.down_blocks.3.ft     0.104      0.031         0.50     -0.039      0.108              0.972 0.396 0.771 0.332 0.747
+   motion    motion.dynamic.up_blocks.0.ft     0.094      0.030         0.50     -0.041      0.131              0.986 0.434 0.759 0.333 0.764
+   motion   motion.dynamic.up_blocks.0.all     0.125      0.029         0.50     -0.054      0.174              0.978 0.415 0.764 0.338 0.761
+   motion motion.dynamic.down_blocks.3.all     0.089      0.028         0.50     -0.114      0.079              0.993 0.353 0.766 0.297 0.747
+   motion  motion.dynamic.down_blocks.0.ft     0.090      0.009         0.50     -0.064      0.066              0.987 0.365 0.793 0.352 0.765
+   motion      motion.dynamic.mid_block.ft     0.107      0.009         0.50     -0.057      0.057              0.984 0.269 0.749 0.271 0.746
+   motion        motion.dynamic.allmm.one0     0.136      0.006         0.50     -0.030      0.030              0.987 0.319 0.768 0.310 0.728
+   motion       motion.dynamic.allmm.five1     0.056      0.002         0.50     -0.141      0.054              0.990 0.509 0.815 0.431 0.804
+   motion                      motion.base     0.135      0.000         0.00      0.000      0.000              0.965 0.247 0.752 0.269 0.725
+   motion     motion.dynamic.mid_block.all     0.094     -0.003         0.50     -0.076      0.093              0.988 0.313 0.745 0.311 0.745
+   motion  motion.dynamic.down_blocks.1.ft     0.117     -0.004         0.50     -0.024      0.071              0.992 0.408 0.806 0.361 0.767
+   motion motion.dynamic.down_blocks.0.all     0.068     -0.067         0.50     -0.141      0.033              0.960 0.655 0.788 0.344 0.878
+   motion   motion.dynamic.up_blocks.2.all    -0.026     -0.084         0.50     -0.335      0.050              0.974 0.911 0.735 0.376 0.958
+   motion   motion.dynamic.up_blocks.1.all     0.006     -0.092         0.50     -0.277      0.108              0.964 0.816 0.750 0.424 0.904
+   motion   motion.dynamic.up_blocks.3.all    -0.051     -0.115         0.50     -0.352      0.013              0.990 0.911 0.738 0.370 0.984
+   motion         motion.dynamic.allmm.all    -0.073     -0.156         0.25     -0.336      0.037              0.995 0.981 0.728 0.398 0.995
+selection: {"motion": {"arm": "motion.dynamic.up_blocks.3.ft", "blocks": ["up_blocks.3"], "window": "ft", "median_dD_dev": 0.08017621374684199}, "content": {"arm": "content.static.down_blocks.3.ft", "blocks": ["down_blocks.3"], "window": "ft", "median_dD_dev": 0.015208449185717371}}
+wrote results/kaggle/vdprobe-dev/out/score_summary.json

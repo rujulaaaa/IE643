@@ -137,3 +137,16 @@ fp16 autocast with fp32 LoRA weights, gradient checkpointing. The appearance LoR
 **Reason.** Roadmap §5.5 values where they exist (rank, lr, top of the step range); 16 frames
 instead of 8 because AnimateDiff's motion modules are trained at 16; no camera motion because a
 LoRA trained on panning shots learns the pan.
+
+### D-34 · 2026-10-24 · Cut-free LoRA retrain, three seeds, scored with the test run
+**Decision.** The three motion LoRAs are retrained with every 16-frame window drawn inside one
+shot (`train_motion_lora.py --cut-free`; shots from `inversion.shot_bounds`, shots of ≥ 16
+frames chosen with probability ∝ length, else the longest shot with its last frame repeated;
+validation window = centre of the longest shot), at seeds 0, 1, 2, otherwise the D-33 recipe.
+On the 12 test pairs, one prompt-only arm per LoRA (9) plus attention injection over all 25
+steps (`edit_plan.lora_arms`), scored in one pool with the Stage 6 test run
+(`score_edits.py --with`). The D-33 LoRAs and their test-run numbers stay on record.
+**Reason.** 11 of the 19 clips contain a hard cut (found 2026-10-21 while debugging the upload
+path), so part of what the first LoRAs fit was the cut. Seeds give the variant comparison an
+error bar it did not have. Attention injection over all steps was the best motion arm of the
+dev sweep but outside the D-31 selection rule, so it had no test-set number.

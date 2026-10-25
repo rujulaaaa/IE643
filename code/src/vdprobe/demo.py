@@ -48,7 +48,7 @@ METHODS = {
     "lora_full": "prompt + full motion LoRA (all motion modules)",
     "lora_anti": "prompt + wrong-place LoRA control (down_blocks.2-3)",
 }
-SEC_PER_CLIP = 65          # laptop RTX 4060, CPU-side cache (patch controls, §16 of the log)
+SEC_PER_CLIP = 105         # laptop RTX 4060, CPU-side cache, live edit incl. scoring: 68-105 s (22 / 24 Oct)
 
 
 def vocabulary() -> dict:

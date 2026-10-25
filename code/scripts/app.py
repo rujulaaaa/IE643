@@ -6,7 +6,7 @@
   Results browser   the scored Kaggle dev/test sweeps, every arm of every pair (no GPU needed)
   Where motion lives  the Stage 4 selectivity maps, per coordinate, and the H1-H3 verdicts
 
-A live edit costs about 65 s per generated clip on the laptop GPU (4 clips with the reference),
+A live edit costs 70-105 s per generated clip on the laptop GPU (4 clips with the reference),
 so the results browser is the fast path during the viva.
 
     python scripts/app.py                 # http://127.0.0.1:7860

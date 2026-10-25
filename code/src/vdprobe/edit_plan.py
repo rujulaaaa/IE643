@@ -131,6 +131,26 @@ def selected_arms(pair: EditPair, cfg: GenerationConfig, coords: list[Coordinate
     return arms
 
 
+def lora_arms(pair: EditPair, cfg: GenerationConfig, coords: list[Coordinate],
+              loras: tuple[str, ...]) -> list[Arm]:
+    """Stage 6 add-on (D-34) on the test pairs: the motion-direction references, attention
+    injection over all 25 steps (the best motion arm of the dev sweep, not in the selected set),
+    and one prompt-only arm per motion LoRA (cut-free retrain, several seeds per variant).
+    Scored in one pool with the selected-arm run of the same pairs (score_edits.py --with)."""
+    p = pair.prompts(cfg)
+    arms = [a for a in reference_arms(pair, cfg) if a.id != "content.base"]
+    arms.append(Arm("motion.attn_all", p["motion"],
+                    EditSpec(attn=AttnSpec(temporal_attention(coords), WINDOWS["all"]), label="attention, all steps")))
+    for name in loras:
+        arms.append(Arm(f"motion.{name}", p["motion"], EditSpec(label=f"prompt only + {name}"), lora=name))
+    return arms
+
+
+def adapter_name(meta: dict) -> str:
+    """lora_<variant> for the first three LoRAs; lora_<variant>_s<seed> for the cut-free seeds."""
+    return f"lora_{meta['variant']}" + (f"_s{meta['seed']}" if "seed" in meta else "")
+
+
 def describe(arm: Arm) -> dict:
     s = arm.spec
     d = {"id": arm.id, "prompt": arm.prompt, "label": s.label}
