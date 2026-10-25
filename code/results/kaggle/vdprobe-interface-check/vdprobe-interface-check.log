@@ -1,0 +1,67 @@
+[{"stream_name":"stdout","time":8.792610393,"data":"dataset vdprobe-app-assets -\u003e /kaggle/input/vdprobe-app-assets ['data', 'results']\n"}
+,{"stream_name":"stdout","time":26.07831356,"data":"2\n"}
+,{"stream_name":"stdout","time":26.078352578,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":26.078357609,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":26.07836158,"data":"2.11.0+cu128\n"}
+,{"stream_name":"stdout","time":26.078364963,"data":" \n"}
+,{"stream_name":"stderr","time":29.209632639,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":35.961839839,"data":"\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  8.19it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:06\u003c00:00,  4.00s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:06\u003c00:00,  3.42s/it]\n"}
+,{"stream_name":"stderr","time":43.581469373,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:   8%|▊         | 1/13 [00:00\u003c00:01,  7.51it/s]\rFetching 13 files:  62%|██████▏   | 8/13 [00:00\u003c00:00, 38.76it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:07\u003c00:00,  1.42it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:07\u003c00:00,  1.75it/s]\n"}
+,{"stream_name":"stderr","time":52.809850425,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:   8%|▊         | 1/12 [00:00\u003c00:01,  8.30it/s]\rFetching 12 files:  58%|█████▊    | 7/12 [00:00\u003c00:00, 29.15it/s]\rFetching 12 files:  83%|████████▎ | 10/12 [00:09\u003c00:02,  1.16s/it]\rFetching 12 files: 100%|██████████| 12/12 [00:09\u003c00:00,  1.33it/s]\n"}
+,{"stream_name":"stdout","time":60.698008232,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/interface_check.py --assets input/vdprobe-app-assets --out /kaggle/working/out/sd15_mm2\n"}
+,{"stream_name":"stdout","time":60.69900246,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/interface_check.py --assets input/vdprobe-app-assets --variant epicrealism_mm3 --out /kaggle/working/out/epicrealism_mm3\n"}
+,{"stream_name":"stdout","time":120.699973978,"data":"[job0] linked 91 asset files\n"}
+,{"stream_name":"stdout","time":120.700002752,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":120.700009091,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":120.700014524,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 996.75it/s]\n"}
+,{"stream_name":"stdout","time":120.700020629,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":120.700025157,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":120.700029984,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1384.05it/s]\n"}
+,{"stream_name":"stdout","time":120.700034951,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":120.700041129,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":120.700046191,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":120.700051311,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":120.700056264,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":120.700072207,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":120.700076748,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2542.61it/s]\n"}
+,{"stream_name":"stdout","time":120.700081107,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":120.700084681,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:00,  9.78it/s]\n"}
+,{"stream_name":"stdout","time":120.700088959,"data":"[job0] Loading pipeline components...:  50%|█████     | 3/6 [00:01\u003c00:01,  1.71it/s]\n"}
+,{"stream_name":"stdout","time":120.700093196,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:01\u003c00:00,  2.48it/s]\n"}
+,{"stream_name":"stdout","time":120.700097309,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  4.30it/s]\n"}
+,{"stream_name":"stdout","time":120.70010173,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  3.51it/s]\n"}
+,{"stream_name":"stdout","time":120.700106071,"data":"[job0] /usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!\n"}
+,{"stream_name":"stdout","time":120.700110564,"data":"[job0]   warnings.warn(\n"}
+,{"stream_name":"stdout","time":120.700114649,"data":"[job0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":120.700119154,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":120.700122834,"data":"[job0] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":120.700126972,"data":"[job0] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 13130.09it/s]\n"}
+,{"stream_name":"stdout","time":120.700143544,"data":"[job1] Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":120.700147137,"data":"[job1]   File \"/kaggle/working/repo/scripts/interface_check.py\", line 89, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":120.700150793,"data":"[job1]     main()\n"}
+,{"stream_name":"stdout","time":120.700154224,"data":"[job1]     ~~~~^^\n"}
+,{"stream_name":"stdout","time":120.700157991,"data":"[job1]   File \"/kaggle/working/repo/scripts/interface_check.py\", line 33, in main\n"}
+,{"stream_name":"stdout","time":120.700161517,"data":"[job1]     print(\"linked\", link_assets(args.assets), \"asset files\", flush=True)\n"}
+,{"stream_name":"stdout","time":120.700165508,"data":"[job1]                     ~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":120.700169276,"data":"[job1]   File \"/kaggle/working/repo/src/vdprobe/demo.py\", line 70, in link_assets\n"}
+,{"stream_name":"stdout","time":120.700173121,"data":"[job1]     dst.symlink_to(f.resolve())\n"}
+,{"stream_name":"stdout","time":120.700176489,"data":"[job1]     ~~~~~~~~~~~~~~^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":120.700179695,"data":"[job1]   File \"/usr/lib/python3.13/pathlib/_local.py\", line 789, in symlink_to\n"}
+,{"stream_name":"stdout","time":120.700183219,"data":"[job1]     os.symlink(target, self, target_is_directory)\n"}
+,{"stream_name":"stdout","time":120.700186445,"data":"[job1]     ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":120.700189772,"data":"[job1] FileExistsError: [Errno 17] File exists: '/kaggle/input/vdprobe-app-assets/results/analysis/analysis.json' -\u003e '/kaggle/working/repo/results/analysis/analysis.json'\n"}
+,{"stream_name":"stdout","time":480.70284748,"data":"[job0] edit_motion_selected: OK  336 s\n"}
+,{"stream_name":"stdout","time":840.705588816,"data":"[job0] edit_content_selected: OK  342 s\n"}
+,{"stream_name":"stdout","time":1080.707704858,"data":"[job0] edit_motion_lora_probe: OK  258 s\n"}
+,{"stream_name":"stdout","time":1440.710345034,"data":"[job0] upload_attn_all: OK  339 s\n"}
+,{"stream_name":"stdout","time":1500.710655171,"data":"[job0] cross_attention: OK  102 s\n"}
+,{"stream_name":"stdout","time":1560.711014773,"data":"[job0] app_builds: OK\n"}
+,{"stream_name":"stdout","time":1560.711047896,"data":"[job0] wrote /kaggle/working/out/sd15_mm2/interface_check.json\n"}
+,{"stream_name":"stdout","time":1560.711379264,"data":"exit codes [0, 1]\n"}
+,{"stream_name":"stderr","time":1562.70375923,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1562.703788401,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1562.961150562,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1562.961190527,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1563.712233469,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1564.21213029,"data":"[NbConvertApp] Writing 466292 bytes to __results__.html\n"}
+]

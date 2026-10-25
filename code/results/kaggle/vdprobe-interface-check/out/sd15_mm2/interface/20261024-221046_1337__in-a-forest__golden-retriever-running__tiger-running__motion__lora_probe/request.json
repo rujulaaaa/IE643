@@ -1,0 +1,32 @@
+{
+ "request": {
+  "subject_a": "golden retriever",
+  "verb_a": "running",
+  "subject_b": "tiger",
+  "verb_b": "running",
+  "scene": "in a forest",
+  "seed": 1337,
+  "direction": "motion",
+  "method": "lora_probe",
+  "block": "up_blocks.3",
+  "window": "ft",
+  "alpha": 1.0,
+  "with_reference": false
+ },
+ "prompts": {
+  "source": "a golden retriever running in a forest, high quality, detailed",
+  "base": "a tiger running in a forest, high quality, detailed",
+  "edit": "a tiger running in a forest, high quality, detailed"
+ },
+ "arms": [
+  "base",
+  "edit"
+ ],
+ "seconds": 252.15391733299998,
+ "pool": "local smoke",
+ "n_patched": {},
+ "n_attn_injected": {
+  "base": 0,
+  "edit": 0
+ }
+}
