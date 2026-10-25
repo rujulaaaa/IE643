@@ -133,44 +133,18 @@ desired ones rather than entire regeneration of the clip. It would show us where
 A negative answer is also useful because if the split is not clean then the editing methods that assume this clean split are working for some other reasons that need further invetsigation. 
 \n 
 
-haha
-
-To find such a map, we experiment with the model. The model is a u-net architecture that turns noise into video over a sequence of denoising steps. It was trained on just the input and the output and was never told 
+To find such a map, we experiment with the model. The model is a U-net architecture that turns noise into video over a sequence of denoising steps. It was trained on just the input and the output and was never told 
 as to which part of the model should carry the motion and which should carry the content. So any
 such seperation should be something that it learned on its own and has to be located emperically.
 To do this we generate pairs of clips whose prompts differ only in either the content or the motion
-and record how each layers output changes  
-
-
-
-
-and. Recent editing
-methods \citep{wu2023tav,zhao2024motiondirector,ling2025motionclone,xiao2024moft} intervene on
-chosen layers or features to transfer or customise motion, but they choose those places by design
-or by ablation. The obvious architectural reading, spatial layers for content and temporal layers
-for motion, is usually assumed rather than measured.
-
-
-Text-to-video models are now good enough that people want to edit their output rather than
-regenerate it: keep a dog's run and make it a horse, or keep the dog and make it walk. Both
-edits assume that the model keeps \emph{what} is in the clip and \emph{how} it moves in
-separable places. The architecture suggests it might. A video diffusion U-Net built on an image
-model, such as AnimateDiff \citep{guo2024animatediff}, keeps the image model's spatial
-layers, which process every frame on its own, and inserts temporal layers that attend across
-frames. It is tempting to read the spatial layers as ``content'' and the temporal ones as
-``motion''. That reading is structural, not causal. A temporal layer can carry appearance
-(its output is added back into the residual stream) and a spatial layer can carry motion
-(the prompt's verb reaches it through cross-attention).
-
-The project brief asks for four things: a probing setup for a small open video diffusion
-model, an analysis of which layers and timesteps carry content and which carry motion, an
-activation-patching framework that moves one of them between samples, and an editing
-demonstration in both directions. Deep learning enters twice. The object of study is a deep
-generative network whose internal activations we measure and modify, and the tools we use on
-it (linear probes, low-rank adaptation, CLIP features for scoring) are learned models too.
-The questions are the kind that mechanistic interpretability asks of language models
-\citep{meng2022rome,wang2023ioi,zhang2024patching}: not ``can the model do X'' but ``which
-component does X, and does changing that component change X''.
+and record how each layers output changes at each step correspondingly. This gives us the map that we
+are looking for. To verify our results we copy the output of one layer from one clip to the same layer
+of another clip during its generation and see if the change is as we expected it to be or not.
+To judge what is a successful edit we use CLIP \citep{radford2021learning}, that compares the frames
+with the text of the prompt and gives us a score of how well the edit was done, and optical flow 
+\citep{farneback2003} records how the pixels move between frames to give us a score of how 
+well the motiono was preserved.
+\n
 
 Our contribution is a measurement and an honest test of it. We fix the noise tensor so that
 two clips differ in one word only, measure how far each layer moves when the subject changes
