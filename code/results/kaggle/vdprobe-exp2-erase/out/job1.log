@@ -1,0 +1,35 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1017.42it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1368.49it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:01<00:08,  1.78s/it]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2686.57it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:02<00:01,  1.71it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.72it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.3 s
+fitted on 32 clips, 24576 samples, ranks {'leace_verb': 3, 'random_verb': 3, 'leace_subject': 13, 'random_subject': 13}, 2388 s
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights:  46%|████▌     | 273/591 [00:00<00:00, 2727.28it/s]Loading weights:  96%|█████████▌| 566/591 [00:00<00:00, 2835.66it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 2847.15it/s]
+/usr/local/lib/python3.13/dist-packages/transformers/image_processing_backends.py:135: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  image = torch.from_numpy(image).contiguous()
+test 1/20 s2024__german-shepherd__running__on-a-beach  2795 s
+test 2/20 s2024__german-shepherd__running__in-a-forest  3202 s
+test 3/20 s2024__german-shepherd__spinning__in-a-forest  3598 s
+test 4/20 s2024__horse__walking__in-a-forest  3994 s
+test 5/20 s2024__horse__jumping__on-a-beach  4389 s
+test 6/20 s2024__horse__spinning__on-a-beach  4785 s
+test 7/20 s2024__wolf__running__on-a-beach  5180 s
+test 8/20 s2024__wolf__spinning__in-a-forest  5577 s
+test 9/20 s2024__tiger__running__on-a-beach  5973 s
+test 10/20 s2024__tiger__running__in-a-forest  6369 s
+test 11/20 s2024__fox__walking__on-a-beach  6765 s
+test 12/20 s2024__young-man__jumping__on-a-beach  7162 s
+test 13/20 s2024__athlete__spinning__on-a-beach  7558 s
+test 14/20 s2024__dancer__running__in-a-forest  7954 s
+test 15/20 s2024__dancer__walking__on-a-beach  8351 s
+test 16/20 s2024__dancer__walking__in-a-forest  8747 s
+test 17/20 s2024__child__walking__on-a-beach  9144 s
+test 18/20 s2024__child__jumping__in-a-forest  9540 s
+test 19/20 s2024__elderly-man__running__in-a-forest  9937 s
+test 20/20 s2024__elderly-man__spinning__in-a-forest  10334 s
+wrote /kaggle/working/out/c2/manifest.json

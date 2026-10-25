@@ -1,0 +1,81 @@
+clip,subject,verb,eraser,motion_change,verb_drop,applied
+s2024__german-shepherd__running__on-a-beach,german shepherd,running,leace_verb,0.25081008374691005,0.0022230148315429688,3
+s2024__german-shepherd__running__on-a-beach,german shepherd,running,random_verb,0.2151226182778676,0.0015835165977478027,3
+s2024__german-shepherd__running__on-a-beach,german shepherd,running,leace_subject,0.27982667734225586,-0.006781667470932007,3
+s2024__german-shepherd__running__on-a-beach,german shepherd,running,random_subject,0.3282421012719472,0.006177857518196106,3
+s2024__german-shepherd__running__in-a-forest,german shepherd,running,leace_verb,0.13888957699139914,0.0041131675243377686,3
+s2024__german-shepherd__running__in-a-forest,german shepherd,running,random_verb,0.06570827166239424,0.0072002112865448,3
+s2024__german-shepherd__running__in-a-forest,german shepherd,running,leace_subject,0.11617319186528519,-0.02708229422569275,3
+s2024__german-shepherd__running__in-a-forest,german shepherd,running,random_subject,0.20711623827616377,0.0010393857955932617,3
+s2024__german-shepherd__spinning__in-a-forest,german shepherd,spinning,leace_verb,0.04225415388743081,-0.0023385733366012573,3
+s2024__german-shepherd__spinning__in-a-forest,german shepherd,spinning,random_verb,0.051426815986633345,-0.0024152174592018127,3
+s2024__german-shepherd__spinning__in-a-forest,german shepherd,spinning,leace_subject,0.05235157012939451,-0.0015075281262397766,3
+s2024__german-shepherd__spinning__in-a-forest,german shepherd,spinning,random_subject,0.04480100870132442,0.002119027078151703,3
+s2024__horse__walking__in-a-forest,horse,walking,leace_verb,0.024220275878906294,-0.014028757810592651,3
+s2024__horse__walking__in-a-forest,horse,walking,random_verb,0.04246575832366939,-0.0025583207607269287,3
+s2024__horse__walking__in-a-forest,horse,walking,leace_subject,0.061463435490926144,-0.010737985372543335,3
+s2024__horse__walking__in-a-forest,horse,walking,random_subject,0.03821473519007368,-0.012540370225906372,3
+s2024__horse__jumping__on-a-beach,horse,jumping,leace_verb,0.024622551600138376,-0.008864909410476685,3
+s2024__horse__jumping__on-a-beach,horse,jumping,random_verb,0.06397264997164409,-0.01838153600692749,3
+s2024__horse__jumping__on-a-beach,horse,jumping,leace_subject,0.09599442780017853,-0.02577066421508789,3
+s2024__horse__jumping__on-a-beach,horse,jumping,random_subject,0.07155287663141885,-0.0011794716119766235,3
+s2024__horse__spinning__on-a-beach,horse,spinning,leace_verb,0.16000449657440186,0.03424905240535736,3
+s2024__horse__spinning__on-a-beach,horse,spinning,random_verb,0.1685238381226858,-0.011053204536437988,3
+s2024__horse__spinning__on-a-beach,horse,spinning,leace_subject,0.2832198987404505,-0.039148688316345215,3
+s2024__horse__spinning__on-a-beach,horse,spinning,random_subject,0.17898728847503664,0.00483289361000061,3
+s2024__wolf__running__on-a-beach,wolf,running,leace_verb,0.5001794323325157,0.001632094383239746,3
+s2024__wolf__running__on-a-beach,wolf,running,random_verb,0.7348976055781047,0.012185782194137573,3
+s2024__wolf__running__on-a-beach,wolf,running,leace_subject,0.5811258964240551,0.007030993700027466,3
+s2024__wolf__running__on-a-beach,wolf,running,random_subject,0.5682106698552767,0.03177851438522339,3
+s2024__wolf__spinning__in-a-forest,wolf,spinning,leace_verb,0.33220781534910204,-0.050197720527648926,3
+s2024__wolf__spinning__in-a-forest,wolf,spinning,random_verb,0.2971129526694616,-0.05542054772377014,3
+s2024__wolf__spinning__in-a-forest,wolf,spinning,leace_subject,0.12731801470120752,0.012729890644550323,3
+s2024__wolf__spinning__in-a-forest,wolf,spinning,random_subject,0.09146670103073118,0.022206373512744904,3
+s2024__tiger__running__on-a-beach,tiger,running,leace_verb,0.20846842924753828,0.041121140122413635,3
+s2024__tiger__running__on-a-beach,tiger,running,random_verb,0.25824559330940244,0.005769059062004089,3
+s2024__tiger__running__on-a-beach,tiger,running,leace_subject,0.571217155456543,0.029139921069145203,3
+s2024__tiger__running__on-a-beach,tiger,running,random_subject,0.10461124976476033,0.011282920837402344,3
+s2024__tiger__running__in-a-forest,tiger,running,leace_verb,0.11222685302297275,-0.003574460744857788,3
+s2024__tiger__running__in-a-forest,tiger,running,random_verb,0.05616138776143387,0.01608748733997345,3
+s2024__tiger__running__in-a-forest,tiger,running,leace_subject,0.20224556674559913,0.027668043971061707,3
+s2024__tiger__running__in-a-forest,tiger,running,random_subject,0.055993827184041334,-0.002435028553009033,3
+s2024__fox__walking__on-a-beach,fox,walking,leace_verb,0.090380601088206,-0.006772637367248535,3
+s2024__fox__walking__on-a-beach,fox,walking,random_verb,0.0670798261960347,-0.0031836628913879395,3
+s2024__fox__walking__on-a-beach,fox,walking,leace_subject,0.06146616538365679,-0.006798267364501953,3
+s2024__fox__walking__on-a-beach,fox,walking,random_subject,0.12415552337964375,0.003152906894683838,3
+s2024__young-man__jumping__on-a-beach,young man,jumping,leace_verb,0.22457455595334375,0.018503129482269287,3
+s2024__young-man__jumping__on-a-beach,young man,jumping,random_verb,0.1466672122478485,-0.011451482772827148,3
+s2024__young-man__jumping__on-a-beach,young man,jumping,leace_subject,0.23651286363601687,0.010349512100219727,3
+s2024__young-man__jumping__on-a-beach,young man,jumping,random_subject,0.14928983847300215,-0.028121769428253174,3
+s2024__athlete__spinning__on-a-beach,athlete,spinning,leace_verb,0.3011742989222209,-0.07511498034000397,3
+s2024__athlete__spinning__on-a-beach,athlete,spinning,random_verb,0.34392848660548525,-0.03484703600406647,3
+s2024__athlete__spinning__on-a-beach,athlete,spinning,leace_subject,0.4622755537430445,-0.021122947335243225,3
+s2024__athlete__spinning__on-a-beach,athlete,spinning,random_subject,0.43484965165456135,-0.05491356551647186,3
+s2024__dancer__running__in-a-forest,dancer,running,leace_verb,0.08544553518295284,0.026652216911315918,3
+s2024__dancer__running__in-a-forest,dancer,running,random_verb,0.09002799987792964,-0.017245769500732422,3
+s2024__dancer__running__in-a-forest,dancer,running,leace_subject,0.2371243422230085,-0.1087302565574646,3
+s2024__dancer__running__in-a-forest,dancer,running,random_subject,0.2475484589735667,-0.054770976305007935,3
+s2024__dancer__walking__on-a-beach,dancer,walking,leace_verb,0.5131550967693329,-0.004795968532562256,3
+s2024__dancer__walking__on-a-beach,dancer,walking,random_verb,0.3944951698184014,0.025162100791931152,3
+s2024__dancer__walking__on-a-beach,dancer,walking,leace_subject,0.4035626113414764,0.02137058973312378,3
+s2024__dancer__walking__on-a-beach,dancer,walking,random_subject,0.5113780344525973,0.08347856998443604,3
+s2024__dancer__walking__in-a-forest,dancer,walking,leace_verb,0.06658812761306765,0.00680851936340332,3
+s2024__dancer__walking__in-a-forest,dancer,walking,random_verb,0.04830106099446618,-0.006491273641586304,3
+s2024__dancer__walking__in-a-forest,dancer,walking,leace_subject,0.22848142385482784,0.03430891036987305,3
+s2024__dancer__walking__in-a-forest,dancer,walking,random_subject,0.10475961764653519,0.020964384078979492,3
+s2024__child__walking__on-a-beach,child,walking,leace_verb,0.3423156748215358,0.007662653923034668,3
+s2024__child__walking__on-a-beach,child,walking,random_verb,0.2334766983985901,-0.008340418338775635,3
+s2024__child__walking__on-a-beach,child,walking,leace_subject,0.3319534530242284,-0.00013244152069091797,3
+s2024__child__walking__on-a-beach,child,walking,random_subject,0.2984548670550188,0.028563082218170166,3
+s2024__child__jumping__in-a-forest,child,jumping,leace_verb,0.10163085460662846,-0.10371586680412292,3
+s2024__child__jumping__in-a-forest,child,jumping,random_verb,0.09911387960116069,-0.048326581716537476,3
+s2024__child__jumping__in-a-forest,child,jumping,leace_subject,0.12788076003392534,-0.07828477025032043,3
+s2024__child__jumping__in-a-forest,child,jumping,random_subject,0.08153182665506997,-0.07683813571929932,3
+s2024__elderly-man__running__in-a-forest,elderly man,running,leace_verb,0.009255290031433105,0.0003126859664916992,3
+s2024__elderly-man__running__in-a-forest,elderly man,running,random_verb,0.00837795734405522,-0.0004762411117553711,3
+s2024__elderly-man__running__in-a-forest,elderly man,running,leace_subject,0.014867862065633175,-0.0033960938453674316,3
+s2024__elderly-man__running__in-a-forest,elderly man,running,random_subject,0.02030105590820308,-0.002263367176055908,3
+s2024__elderly-man__spinning__in-a-forest,elderly man,spinning,leace_verb,0.03759719133377071,0.07412350177764893,3
+s2024__elderly-man__spinning__in-a-forest,elderly man,spinning,random_verb,0.03220225969950363,0.10618323087692261,3
+s2024__elderly-man__spinning__in-a-forest,elderly man,spinning,leace_subject,0.042646503448486306,-0.0005875825881958008,3
+s2024__elderly-man__spinning__in-a-forest,elderly man,spinning,random_subject,0.036330135663350416,0.03687813878059387,3
