@@ -246,3 +246,5 @@
 04:17:04 rujularahate/vdprobe-exp2-ladder has status "KernelWorkerStatus.RUNNING"
 04:18:05 rujularahate/vdprobe-exp2-ladder has status "KernelWorkerStatus.RUNNING"
 04:19:07 rujularahate/vdprobe-exp2-ladder has status "KernelWorkerStatus.COMPLETE"
+04:36:05 download attempt 1: exit 0, 284 files, 2 manifests
+DOWNLOAD OK vdprobe-exp2-ladder

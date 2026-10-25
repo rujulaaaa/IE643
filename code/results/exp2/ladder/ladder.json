@@ -1,0 +1,76 @@
+{
+ "n_pairs": 224,
+ "rung_means": {
+  "breed": {
+   "dc": 0.1206,
+   "df": 0.7519
+  },
+  "coat": {
+   "dc": 0.0931,
+   "df": 0.8312
+  },
+  "colour": {
+   "dc": 0.1058,
+   "df": 0.7525
+  },
+  "lighting": {
+   "dc": 0.0883,
+   "df": 0.7164
+  },
+  "null": {
+   "dc": 0.0269,
+   "df": 0.3403
+  },
+  "scene": {
+   "dc": 0.2081,
+   "df": 0.8783
+  },
+  "species": {
+   "dc": 0.2186,
+   "df": 0.867
+  }
+ },
+ "validity_spearman_rung1to4_vs_dc": {
+  "mean": 0.5381259180493638,
+  "per_base": [
+   -0.06063390625908324,
+   0.48507125007266594,
+   0.48507125007266594,
+   0.7397336563608156,
+   0.7033533126053656,
+   0.6790997501017324,
+   0.8731282501307989,
+   0.4001837813099494
+  ]
+ },
+ "dose": {
+  "d_dynamic_beta": {
+   "cells_fwer_05": 189,
+   "n_bases": 8
+  },
+  "d_dynamic_gamma": {
+   "cells_fwer_05": 0,
+   "n_bases": 8
+  },
+  "d_dynamic_pplus_colour_over_species_64_minus_8": {
+   "mean": -0.04123863074111195,
+   "p_one_sided": 0.90234375,
+   "n_bases": 8,
+   "prediction": "> 0: colour loads relatively more on fine (64x64) layers than on coarse (8x8)"
+  },
+  "d_static_beta": {
+   "cells_fwer_05": 316,
+   "n_bases": 8
+  },
+  "d_static_gamma": {
+   "cells_fwer_05": 0,
+   "n_bases": 8
+  },
+  "d_static_pplus_colour_over_species_64_minus_8": {
+   "mean": -0.027408922610701485,
+   "p_one_sided": 0.81640625,
+   "n_bases": 8,
+   "prediction": "> 0: colour loads relatively more on fine (64x64) layers than on coarse (8x8)"
+  }
+ }
+}
