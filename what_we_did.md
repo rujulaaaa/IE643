@@ -1071,3 +1071,41 @@ Observations (dev only, not results):
   - On the bear pair B_ref is itself broken (sand texture, no dog), and motion.dual copies that broken look.
   - So dual arms are reported separately from single-source arms and are not compared with the prompt-only
     baseline as if they were the same kind of edit.
+
+### 34. Stage 6b test results (16:07–16:30)
+
+**Kernel** `vdprobe-lit-test`: exit 0 on both shards (6,117 s and 6,674 s for 6 pairs each, 11 tracks per pair),
+scoring 280 s and 310 s. The shards were merged into one pool (`results/kaggle/vdprobe-lit-test/merged/`, copied to `out/`).
+
+| arm | family | median ΔD | frac > 0 | 95% CI | D-16 | sm_A | sc_B | sm_B | sc_A |
+|---|---|---|---|---|---|---|---|---|---|
+| motion.base | — | 0 | — | — | — | 0.234 | 0.850 | 0.172 | 0.769 |
+| motion.attn.all.all | single | +0.097 | 10/12 | [−0.019, 0.185] | ✗ | 0.761 | 0.811 | 0.094 | 0.830 |
+| motion.dual.up23.from2 | dual | **+0.173** | 12/12 | **[0.111, 0.266]** | ✓ | 0.570 | 0.891 | 0.218 | 0.762 |
+| motion.attn.all.ft (Stage 6 baseline) | — | +0.096 | 9/12 | [−0.030, 0.213] | ✗ | 0.641 | 0.828 | 0.098 | 0.793 |
+| motion.sel (Stage 6 x̃ patch) | — | +0.028 | 8/12 | [−0.057, 0.123] | ✗ | 0.673 | 0.809 | 0.119 | 0.829 |
+| content.base | — | 0 | — | — | — | 0.118 | 0.776 | 0.259 | 0.830 |
+| content.kv.probe.from2 | single | +0.022 | 8/12 | [−0.027, 0.151] | ✗ | 0.279 | 0.783 | 0.204 | 0.867 |
+| content.dual.all | dual | **+0.145** | 12/12 | **[0.102, 0.279]** | ✓ | 0.251 | 0.765 | 0.562 | 0.898 |
+| content.sel (Stage 6 x̄ patch) | — | +0.092 | 11/12 | [0.004, 0.191] | (✓ in this pool) | 0.313 | 0.760 | 0.182 | 0.894 |
+
+Reading:
+- **Single-source attention edits do not pass on test.**
+  - Temporal attention over all steps transfers A's motion strongly (sm_A 0.23 → 0.76), but A's appearance comes
+    along (sc_A 0.77 → 0.83, sc_B 0.85 → 0.81), and the metric charges for that.
+  - The probe-placed K/V content arm adds little on test (+0.022; it was +0.056 on dev).
+- **Dual-source edits pass, 12/12 in both directions.**
+  - Motion: A's motion (sm_A 0.23 → 0.57) with B's look (sc_B 0.85 → 0.89), without copying B's motion
+    (sm_B 0.17 → 0.22).
+  - Content: A's look (sc_A 0.83 → 0.90) with B's motion (sm_B 0.26 → 0.56).
+  - They need clip B and read it directly, so they answer "swap motion and appearance between two clips". They do
+    not answer "edit from a prompt".
+- The same Stage 6 clips score differently in this pool (content.sel now excludes 0). D is min-max normalised
+  over each run's pool, so cross-pool comparisons of CIs are fragile. The Stage 6 verdict stands as recorded.
+- **Looked at the clips** (`results/figures/stage6b_test/<pair>.png`, rows = arms with their D, columns = frames
+  0/5/10/15):
+  - athlete→soldier: motion.attn.all.all and the dual arm give a soldier walking away along the athlete's path.
+    It is the clearest single-source success on test.
+  - deer→bear: the bear holds the deer's standing pose.
+  - soldier→dancer: content.dual.all scores D = 0.39, but the clip is sand and a boot. A high per-pair D does not
+    guarantee a good edit, so demo clips are chosen by eye.

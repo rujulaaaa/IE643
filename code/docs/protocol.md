@@ -264,3 +264,11 @@ content.switch.t5 +0.096 [0.032, 0.132], 11/12. Motion kept from A rises with τ
 reliable; subject-mask area ranged 0.23–1.0 (two pairs 1.0, where it reduces to the plain switch).
 For reference on the same 12 pairs, motion.attn +0.123 [−0.013, 0.204] and content.sel +0.105
 [−0.011, 0.157] do not exclude 0 either (motion.attn did on the first 6 pairs: [0.021, 0.222]).
+
+**D-37 outcome (2026-10-25, 12 test pairs, one pool, `results/kaggle/vdprobe-lit-test/merged/`).**
+Single-source arms do not meet D-16: motion.attn.all.all +0.097 [−0.019, 0.185], 10/12;
+content.kv.probe.from2 +0.022 [−0.027, 0.151], 8/12. Dual-source arms meet it: motion.dual.up23.from2 +0.173
+[0.111, 0.266], 12/12; content.dual.all +0.145 [0.102, 0.279], 12/12. Dual arms read B_ref, the clip they are
+scored against, so they are reported as two-clip compositing, not as prompt-only editing. In this pool,
+content.sel (Stage 6's x̄ patch, the same clips as Stage 6) reaches +0.092 [0.004, 0.191]. Only the D
+normalisation pool differs, so this does not change the Stage 6 verdict.
