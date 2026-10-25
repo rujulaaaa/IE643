@@ -1,0 +1,29 @@
+{
+  "pool": {
+    "sc": [
+      0.6705275774002075,
+      0.9922650456428528
+    ],
+    "sm": [
+      0.0642840340733528,
+      0.9944671392440796
+    ]
+  },
+  "n_pairs": 4,
+  "lit_selection": {
+    "motion": {
+      "single": "motion.attn.all.all",
+      "dual": "motion.dual.up23.from2"
+    },
+    "content": {
+      "single": "content.kv.probe.from2",
+      "dual": "content.dual.all"
+    },
+    "dev_median_dD": {
+      "motion.attn.all.all": 0.152457694064227,
+      "motion.dual.up23.from2": 0.14737443634507935,
+      "content.kv.probe.from2": 0.056100089201416375,
+      "content.dual.all": 0.12057870521588415
+    }
+  }
+}
