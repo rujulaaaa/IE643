@@ -237,7 +237,7 @@ Video is a stack of static frames that contain content. A video model hence woul
 one that is spatial in nature that stores the content and one that is temporal in nature and stores the motion.
 
 Video Diffusion Models \citep{ho2022vdm} built a video model this way. They 
-extended the image U-Net architecture to a video generation architecture by factorising 
+extended the image U-Net to video generation by factorising 
 attention into a spatial part
 and a temporal part. Video LDM \citep{blattmann2023align}
 did the same in the latent space of Stable Diffusion \citep{rombach2022ldm} by keeping its weights fixed
@@ -260,13 +260,11 @@ He aimed to train the motion module once and then attach it to any image model t
 	\label{fig:animatediff}
 \end{figure}
 
-The working of the model can be studied in three seprate parts:
-\textbf{Motion module} This refers to a small attention block that is added after the spatial layers
-of the U-Net. It takes 16 frames at one pixel position and applies attention to it with other frames at the same position.
-A position encoder here helps the model know which is the first frame and what is their order. 
-The output of this module gets added back to its input using a skip connection and its last layer 
+\textbf{Motion module} This refers to a small attention block after the spatial layer. It takes 16 frames at one pixel position and applies attention to it with other frames at the same position.
+A position encoder here helps the model know the order of frames. 
+The output gets added back to its input and its last layer 
 starts with all zero weights so that when the model is being trained it behaves excatly like an image model.
-During training only the motion modules are trained on a large video dataset. The image models weights never change.
+During training only the motion modules are trained not changing the image models weights.
 \textbf{Domain adapter} Web videos are blurry and they might carry watermarks. Before training the motion module.
 they trained a small add-on to the image layers that soaks up this look so the motion module would not learn those things. 
 That portion is switched off during inference.
@@ -283,16 +281,10 @@ Now knowing which layers are temporal tells us where the motion could be stored 
 actually have there. To find that out we needed a way to pull out the motion activation 
 which MOFT gave us. 
 
-
-
-is a stack of temporal transformers trained once on video and then plugged into any
-personalised Stable Diffusion 1.5 checkpoint without further tuning. This is why we chose it.
-Content and motion sit in separate parameter sets by construction, so the structural
-hypothesis ``spatial = content, temporal = motion'' is as clean as it can be in any open model,
-and if it fails here it will not hold elsewhere. The catch is that the backbone never saw video
-during training, so part of any separation we find may be a product of the recipe rather than
-something a jointly trained model would learn. We return to this in
-Section~\ref{sec:Plan for Novelty Assessment}.
+Xiao et al.\ \citep{xiao2024moft} found that features of video diffusion U-net mix content and motion
+with most of the channels carrying content. They extract motion in two steps: first they subtract the mean over the frames
+$X - \frac{1}{F}\sum_{i=1}^{F} X_i$, which removes the part the remains constant over the frames,
+and then keep the top 4\% channels 
 
 \textbf{Activation patching.} Meng et al.\ \citep{meng2022rome} located factual associations in
 GPT by running the model on a corrupted input and restoring one hidden state at a time from a
