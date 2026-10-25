@@ -215,9 +215,11 @@ properly, chose AnimateDiff as our model over ModelScope and Stable Video Diffus
   during generation itself.
   \end{itemize}
 \item \textbf{Probing Tools:} Built a package that hooks into 95 modules of the U-net, wrote a sampler
-that generated groups of clips thata were bit identical to the diffusers pipeline
-\item \textbf{Probing sweep (20 Oct).} A lockstep sampler that denoises a whole group of clips
-  step by step, verified bit-identical to the diffusers pipeline; 360 clips on Kaggle in 5.2 h.
+that generated groups of clips thata were bit identical to the diffusers pipeline and built a runner 
+for the Kaggle T4s.
+\item \textbf{Locating content and motion:} Generated 360 clips that formed 750 pairs with the one word
+swaped in the prompt. Then selectivity mas were created for each layer and steps. We tested Our
+3 hypothesis and trained the linear probes. 
 \item \textbf{Analysis.} Selectivity maps, the three pre-registered tests, linear probes, and
   robustness checks.
 \item \textbf{Intervention.} Component patches and temporal-attention injection, with null and
