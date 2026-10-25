@@ -233,16 +233,20 @@ see if the map is specific to the diffusion model we used or does it apply in ge
 
 \section{Literature Survey} \label{sec:litsurvey}
 
-Video Diffusion Models \citep{ho2022vdm}
-extended the image U-Net architecture to a video generation architecture by factorising attention into a spatial part (within a frame)
-and a temporal part (across frames at the same position). Video LDM \citep{blattmann2023align}
-did the same in the latent space of Stable Diffusion \citep{rombach2022ldm} and then inserted the
-temporal layers into a pretrained and frozen image model and trained only
+Video is a stack of static frames that contain content. A video model hence would require two kinds of layers,
+one that is spatial in nature that stores the content and one that is temporal in nature and stores the motion.
+
+Video Diffusion Models \citep{ho2022vdm} built a video model this way. They 
+extended the image U-Net architecture to a video generation architecture by factorising 
+attention into a spatial part
+and a temporal part. Video LDM \citep{blattmann2023align}
+did the same in the latent space of Stable Diffusion \citep{rombach2022ldm} by keeping its weights fixed
+and then inserted the temporal layers and trained only
 the new layers. 
 
-AnimateDiff \citep{guo2024animatediff} further built on this idea. He wanted to animate 
-personalised text-to-image models without training 
-
+AnimateDiff \citep{guo2024animatediff} further built on this idea. People have their own fine tuned
+image models each of which generated images in a particular style. AnimateDiff's goal was to make all of 
+these image models produce 
 its motion module
 is a stack of temporal transformers trained once on video and then plugged into any
 personalised Stable Diffusion 1.5 checkpoint without further tuning. This is why we chose it.
