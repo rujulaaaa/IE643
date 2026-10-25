@@ -1137,6 +1137,65 @@ Reading:
   - The CLI can take a second account's token through `KAGGLE_API_TOKEN` without touching `~/.kaggle/access_token`.
 - The machine rebooted again at 19:00; nothing was lost (all steps resume from their outputs).
 
+### 36. Kaggle stage, verdict and ladder: Experiment 2 steps 1-8 done (2026-10-25 19:20 - 10-26 04:36)
+
+- **Accounts:**
+  - patch-a, patch-b and the ladder ran on the second account (rujularahate). Its token is passed via
+    `KAGGLE_API_TOKEN` from a private file and is never logged (`results/exp2/logs/run_kaggle.sh`).
+  - Erasure ran on shivanshisme, which the user allowed for this one kernel, so it would run in parallel.
+    It is listed in `ELSEWHERE`: the orchestrator skips building it and waits for its `.download_ok`
+    (`results/exp2/logs/run_erase_wait.sh`).
+- **Reboot 21:31-23:29:** the local waiters died; the Kaggle kernels kept running.
+  - Restarted at 23:33. Nothing was re-pushed.
+  - Free disk was 5.8 GB, under the 6 GB prune threshold. The Chrome cache was cleared again instead of
+    pruning latents and sketches.
+- **Timings:**
+  - erase complete before 23:33, downloaded 23:37;
+  - patch-a/b downloaded 00:44;
+  - ladder pushed 00:03 (once a slot freed), complete 04:19, downloaded 04:36.
+- **Verdict** (`results/exp2/verdict/verdict.json`; sd15_mm2, 50 pairs, 14 subjects, delta 0.1):
+
+  | candidate | label | S [95 % CI] | S - control | N [95 % CI] | other channel | E |
+  |---|---|---|---|---|---|---|
+  | up1_motion_modules | uses (sufficient and necessary) | +0.739 [0.698, 0.783] | +0.171 [0.123, 0.223] | +0.687 [0.629, 0.747] | +0.173 | yes |
+  | exp1_region | uses (necessary) | +0.374 [0.333, 0.417] | -0.019 [-0.053, 0.017] | +0.331 [0.253, 0.406] | +0.038 | no (RSA p_FWER 0.24, decode gain 0.046 not positive) |
+  | rsa_motion_peak | uses (necessary) | +0.037 [0.016, 0.062] | -0.004 [-0.017, 0.007] | +0.056 [0.027, 0.090] | -0.001 | yes |
+  | rsa_content_peak | encodes but does not use | +0.046 [-0.026, 0.145] | +0.097 [0.003, 0.209] | -0.012 [-0.037, 0.009] | +0.292 | yes (subject probe selectivity 0.375) |
+
+  - No double dissociation: the rule needs both sides to pass S and stay within delta on the other channel.
+    rsa_content_peak fails S, and up1_motion_modules exceeds delta (+0.173).
+  - Interactions (motion candidate vs content peak):
+    - exp1_region: +0.051 [0.019, 0.083];
+    - rsa_motion_peak: -0.114 [-0.168, -0.062];
+    - up1_motion_modules: +0.191 [0.089, 0.308].
+  - LEACE minus random erasure includes 0 for both erased coordinates (exp1_region +0.008, rsa_motion_peak -0.000).
+- **Ladder** (`results/exp2/ladder/`; 224 measured pairs, 8 bases):
+  - Rung means:
+
+    | rung | dc (content change) | df (motion change) |
+    |---|---|---|
+    | null | 0.027 | 0.340 |
+    | lighting | 0.088 | 0.716 |
+    | coat | 0.093 | 0.831 |
+    | colour | 0.106 | 0.753 |
+    | breed | 0.121 | 0.752 |
+    | scene | 0.208 | 0.878 |
+    | species | 0.219 | 0.867 |
+
+    Every one-slot content swap changes the generated motion a lot (df 0.72-0.88). Even the null rung, a
+    determiner change, gives df 0.34.
+  - Ladder validity (Spearman of rungs 1-4 with dc): mean 0.54. The alpine goat base gives -0.06; the
+    other seven give 0.40-0.87.
+  - Dose (FWER < 0.05 over 43 coordinates x 25 steps = 1075 cells):
+    - beta, content sensitivity: static 316 cells, all positive, at every step, densest at steps 0-4.
+      Dynamic: 189 cells, all positive, steps 0-15 only. Both mostly in up_blocks.1 and up_blocks.0.
+    - gamma, motion side effect after dc: 0 cells for both parts.
+  - P+ prediction (colour over species ratio larger at 64x64 than at 8x8): not supported.
+    Dynamic -0.041, one-sided p 0.90; static -0.027, p 0.82.
+- **GitHub:** CC-Shivansh-Gupta now has push rights; results are on `final-submission` (`fff6214`, `54d0d66` and
+  the auto-snapshots). The `.pt` files stay git-ignored and remain on Kaggle.
+- Not run: the LoRA timing pilot and the LoRA arms (Phases 4 and 6).
+
 ---
 
 > **Merged log (2026-10-25).** The two sessions below were logged on the `main` branch, in parallel
