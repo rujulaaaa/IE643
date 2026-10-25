@@ -1,0 +1,84 @@
+2026-10-25 19:08:01 all four cells analysed
+2026-10-25 19:08:01 primary cell sd15_mm2, ladder verbs [walking, running]
+[
+ {
+  "name": "exp1_region",
+  "coords": [
+   "up_blocks.0.motion_modules.2"
+  ],
+  "steps": [
+   0,
+   1,
+   2
+  ],
+  "component": "dynamic",
+  "why": "Experiment 1's motion site (pre-registered region)"
+ },
+ {
+  "name": "rsa_motion_peak",
+  "coords": [
+   "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2"
+  ],
+  "steps": [
+   22,
+   23,
+   24
+  ],
+  "component": "dynamic",
+  "why": "highest RSA unique motion share among refined coordinates, peak step 24"
+ },
+ {
+  "name": "up1_motion_modules",
+  "coords": [
+   "up_blocks.1.motion_modules.0",
+   "up_blocks.1.motion_modules.1",
+   "up_blocks.1.motion_modules.2"
+  ],
+  "steps": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "component": "dynamic",
+  "why": "the literature's motion site (MOFT, MotionClone, DMT)"
+ },
+ {
+  "name": "rsa_content_peak",
+  "coords": [
+   "mid_block.attentions.0.transformer_blocks.0.attn1"
+  ],
+  "steps": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "component": "static",
+  "why": "highest RSA unique content share, peak step 1"
+ }
+]
+LoRA target: ['up_blocks.0.motion_modules.2', 'up_blocks.0.motion_modules.1', 'up_blocks.1.motion_modules.2']
+base_at_mm2 {'cells': ['epicrealism_mm2', 'sd15_mm2'], 'n_subjects': 13, 'cells_fwer_05': 36, 'more_motion_cells': 36, 'more_content_cells': 0}
+base_at_mm3 {'cells': ['epicrealism_mm3', 'sd15_mm3'], 'n_subjects': 13, 'cells_fwer_05': 30, 'more_motion_cells': 30, 'more_content_cells': 0}
+adapter_at_sd15 {'cells': ['sd15_mm3', 'sd15_mm2'], 'n_subjects': 13, 'cells_fwer_05': 7, 'more_motion_cells': 2, 'more_content_cells': 5}
+adapter_at_epic {'cells': ['epicrealism_mm3', 'epicrealism_mm2'], 'n_subjects': 13, 'cells_fwer_05': 8, 'more_motion_cells': 6, 'more_content_cells': 2}
+diagonal {'cells': ['epicrealism_mm3', 'sd15_mm2'], 'n_subjects': 13, 'cells_fwer_05': 46, 'more_motion_cells': 46, 'more_content_cells': 0}
+Traceback (most recent call last):
+  File "/home/shivi/IE643/code/scripts/exp2_grid.py", line 97, in <module>
+    main()
+  File "/home/shivi/IE643/code/scripts/exp2_grid.py", line 53, in main
+    for cname, (a, b) in list(CONTRASTS.items()) + [("interaction", None)]:
+TypeError: cannot unpack non-iterable NoneType object
+2026-10-25 19:08:45 grid failed (non-blocking; re-run scripts/exp2_grid.py by hand)
+2026-10-25 19:08:45 local steps done; set KAGGLE_USER=<account> to build and queue the Kaggle kernels
+sd15_mm2 recomputed 120 entries; old eta_top_mean median 0.2971455156803131 new 0.29700433741727944
+epicrealism_mm2 recomputed 120 entries; old eta_top_mean median 0.3443082869052887 new 0.344314427564503
+sd15_mm3 recomputed 120 entries; old eta_top_mean median 0.3803955614566803 new 0.38030667625404274
+epicrealism_mm3 recomputed 120 entries; old eta_top_mean median 0.31056129932403564 new 0.3088536995960978
+CHANNELS RECOMPUTED
+LOCAL STEPS DONE

@@ -50,7 +50,7 @@ def main():
     n_steps = mans[next(iter(mans))]["steps"]
     S = {n: E.subject_means(u, "dyn", scored, range(n_steps)) for n, u in units.items()}
     res, maps = {"scored_coords": scored, "contrasts": {}}, {}
-    for cname, (a, b) in list(CONTRASTS.items()) + [("interaction", None)]:
+    for cname, (a, b) in list(CONTRASTS.items()) + [("interaction", (None, None))]:
         if cname == "interaction":
             need = ["epicrealism_mm3", "sd15_mm3", "epicrealism_mm2", "sd15_mm2"]
             if not all(n in S for n in need):

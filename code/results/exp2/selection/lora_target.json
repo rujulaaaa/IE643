@@ -1,21 +1,22 @@
 {
  "rule": "D-35",
- "cell": "epicrealism_mm3",
+ "cell": "sd15_mm2",
  "target": [
   "up_blocks.0.motion_modules.2",
   "up_blocks.0.motion_modules.1",
-  "down_blocks.3.motion_modules.0"
+  "up_blocks.1.motion_modules.2"
  ],
  "scores": {
-  "down_blocks.2.motion_modules.0": 0.03251288293180613,
-  "down_blocks.2.motion_modules.1": 0.03057228615648512,
-  "down_blocks.3.motion_modules.0": 0.0447229667029838,
-  "down_blocks.3.motion_modules.1": 0.044058628906030885,
-  "up_blocks.0.motion_modules.0": 0.03969600980068385,
-  "up_blocks.0.motion_modules.1": 0.05596578280749867,
-  "up_blocks.0.motion_modules.2": 0.05632035722907494,
-  "up_blocks.1.motion_modules.0": 0.03350140350319382,
-  "up_blocks.1.motion_modules.1": 0.029332318862913705,
-  "up_blocks.1.motion_modules.2": 0.03246183059468867
+  "down_blocks.2.motion_modules.0": 0.030918447317787316,
+  "down_blocks.2.motion_modules.1": 0.03961525100235807,
+  "down_blocks.3.motion_modules.0": 0.039748506159350085,
+  "down_blocks.3.motion_modules.1": 0.03923375957755843,
+  "up_blocks.0.motion_modules.0": 0.03899224842487771,
+  "up_blocks.0.motion_modules.1": 0.04336440604091865,
+  "up_blocks.0.motion_modules.2": 0.0542245378685116,
+  "up_blocks.1.motion_modules.0": 0.03553599827412106,
+  "up_blocks.1.motion_modules.1": 0.03454247464571492,
+  "up_blocks.1.motion_modules.2": 0.0414233331617913,
+  "mid_block.motion_modules.0": 0.03933951123722267
  }
 }

@@ -1,0 +1,8 @@
+base_at_mm2 {'cells': ['epicrealism_mm2', 'sd15_mm2'], 'n_subjects': 13, 'cells_fwer_05': 36, 'more_motion_cells': 36, 'more_content_cells': 0}
+base_at_mm3 {'cells': ['epicrealism_mm3', 'sd15_mm3'], 'n_subjects': 13, 'cells_fwer_05': 30, 'more_motion_cells': 30, 'more_content_cells': 0}
+adapter_at_sd15 {'cells': ['sd15_mm3', 'sd15_mm2'], 'n_subjects': 13, 'cells_fwer_05': 7, 'more_motion_cells': 2, 'more_content_cells': 5}
+adapter_at_epic {'cells': ['epicrealism_mm3', 'epicrealism_mm2'], 'n_subjects': 13, 'cells_fwer_05': 8, 'more_motion_cells': 6, 'more_content_cells': 2}
+diagonal {'cells': ['epicrealism_mm3', 'sd15_mm2'], 'n_subjects': 13, 'cells_fwer_05': 46, 'more_motion_cells': 46, 'more_content_cells': 0}
+interaction {'cells': 'dd', 'n_subjects': 13, 'cells_fwer_05': 2, 'more_motion_cells': 0, 'more_content_cells': 2}
+wrote results/exp2/grid
+GRID DONE

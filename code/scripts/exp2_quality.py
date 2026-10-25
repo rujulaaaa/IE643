@@ -6,7 +6,9 @@ For every clip of every group: VBench subject consistency (DINO), dynamic degree
 text alignment, X-CLIP zero-shot verb recognition (vdprobe.quality). Writes per-clip rows
 (quality.csv), a per-cell / per-verb summary (quality.json) and the Phase 1 decision:
   primary cell   highest median subject consistency among cells whose dynamic share is >= 0.5
-                 and whose CLIP-T is within 0.01 of the best cell (fixed before the run)
+                 and whose CLIP-T is within 0.01 of the best cell (fixed before the run); when no cell
+                 passes both, the CLIP-T tolerance is dropped and the dynamic-share requirement kept
+                 (D-39: subject consistency alone favours near-static videos)
   ladder verbs   the two verbs with the highest X-CLIP hit rate on the primary cell
 """
 
@@ -24,11 +26,16 @@ from vdprobe import quality as Q
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("cells", nargs="+", type=Path, help="one directory per model cell, holding group dirs")
+    p.add_argument("cells", nargs="*", type=Path, help="one directory per model cell, holding group dirs")
     p.add_argument("--out", type=Path, default=Path("results/exp2/quality"))
     p.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    p.add_argument("--from-csv", action="store_true",
+                   help="re-derive the summary and decision from <out>/quality.csv without re-scoring")
     args = p.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
+    if args.from_csv:
+        summarise(pd.read_csv(args.out / "quality.csv"), args.out)
+        return
 
     dino, clip = Q.Dino(args.device), M.ClipScorer(device=args.device)
     rows, xclip = [], None
@@ -56,22 +63,37 @@ def main():
 
     df = pd.DataFrame(rows)
     df.to_csv(args.out / "quality.csv", index=False)
+    summarise(df, args.out)
+
+
+def decide(df: pd.DataFrame) -> dict:
+    s = df.groupby("cell").agg(sc=("subject_consistency", "median"), dyn=("dynamic", "mean"), ct=("clip_t", "median"))
+    moving = s[s.dyn >= 0.5]
+    ok = moving[moving.ct >= s.ct.max() - 0.01]
+    if len(ok):
+        pool, rule = ok, "D-35"
+    elif len(moving):
+        pool, rule = moving, "D-39 (no cell within the CLIP-T tolerance: dynamic share >= 0.5 kept, CLIP-T dropped)"
+    else:
+        pool, rule = s, "D-39 (no cell with dynamic share >= 0.5: highest subject consistency overall)"
+    primary = pool.sc.idxmax()
+    vr = df[df.cell == primary].groupby("verb").verb_hit.mean().sort_values(ascending=False)
+    return {"primary_cell": primary, "ladder_verbs": list(vr.index[:2]), "applied": rule,
+            "rule": "max median subject consistency among cells with dynamic share >= 0.5 and CLIP-T within "
+                    "0.01 of the best; ladder verbs = top-2 X-CLIP hit rate on the primary cell",
+            "eligible": list(ok.index), "moving": list(moving.index)}
+
+
+def summarise(df: pd.DataFrame, out: Path):
     cols = ["subject_consistency", "dynamic", "flow_top5", "clip_t", "verb_prob", "verb_hit"]
     by_cell = df.groupby("cell")[cols].agg(["median", "mean"]).round(4)
     by_verb = df.groupby(["cell", "verb"])[["verb_hit", "verb_prob", "flow_top5"]].mean().round(4)
-    s = df.groupby("cell").agg(sc=("subject_consistency", "median"), dyn=("dynamic", "mean"), ct=("clip_t", "median"))
-    ok = s[(s.dyn >= 0.5) & (s.ct >= s.ct.max() - 0.01)]
-    primary = (ok if len(ok) else s).sc.idxmax()
-    vr = df[df.cell == primary].groupby("verb").verb_hit.mean().sort_values(ascending=False)
-    decision = {"primary_cell": primary, "ladder_verbs": list(vr.index[:2]),
-                "rule": "max median subject consistency among cells with dynamic share >= 0.5 and CLIP-T within "
-                        "0.01 of the best; ladder verbs = top-2 X-CLIP hit rate on the primary cell",
-                "eligible": list(ok.index)}
+    decision = decide(df)
     by_cell.columns = [f"{a}_{b}" for a, b in by_cell.columns]
-    out = {"by_cell": json.loads(by_cell.to_json(orient="index")),
+    res = {"by_cell": json.loads(by_cell.to_json(orient="index")),
            "by_cell_verb": json.loads(by_verb.reset_index().to_json(orient="records")),
            "decision": decision, "n_clips": len(df)}
-    (args.out / "quality.json").write_text(json.dumps(out, indent=2))
+    (out / "quality.json").write_text(json.dumps(res, indent=2))
     print(by_cell.to_string())
     print(by_verb.to_string())
     print("decision:", decision)
