@@ -1,0 +1,1303 @@
+{
+  "experiment": "probe_sweep",
+  "date": "2026-10-25",
+  "python": "3.13.15",
+  "torch": "2.11.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.16.1",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "seed": 1337,
+  "scene": "ladder",
+  "n_clips": 128,
+  "n_pairs": 112,
+  "coords": [
+    "down_blocks.0.motion_modules.1",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.1.motion_modules.1",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.2.motion_modules.1",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.3.motion_modules.1",
+    "mid_block.motion_modules.0",
+    "mid_block.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.2",
+    "up_blocks.1.motion_modules.2",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.2",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.2",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2"
+  ],
+  "scored_coords": [
+    "down_blocks.0.motion_modules.1",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.1.motion_modules.1",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.2.motion_modules.1",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.3.motion_modules.1",
+    "mid_block.motion_modules.0",
+    "mid_block.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.2",
+    "up_blocks.1.motion_modules.2",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.2",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.2",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.0.resnets.0",
+    "up_blocks.0.resnets.1",
+    "up_blocks.0.resnets.2",
+    "up_blocks.0.motion_modules.0",
+    "up_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.1",
+    "up_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn1",
+    "up_blocks.1.resnets.0",
+    "up_blocks.1.resnets.1",
+    "up_blocks.1.resnets.2",
+    "up_blocks.1.motion_modules.0",
+    "up_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.1.motion_modules.1",
+    "up_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.1.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.2.transformer_blocks.0.attn2"
+  ],
+  "refined_coords": [
+    "up_blocks.0.resnets.0",
+    "up_blocks.0.resnets.1",
+    "up_blocks.0.resnets.2",
+    "up_blocks.0.motion_modules.0",
+    "up_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.1",
+    "up_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.2",
+    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.1.resnets.0",
+    "up_blocks.1.resnets.1",
+    "up_blocks.1.resnets.2",
+    "up_blocks.1.motion_modules.0",
+    "up_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.1.motion_modules.1",
+    "up_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.1.motion_modules.2",
+    "up_blocks.1.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.2.transformer_blocks.0.attn2"
+  ],
+  "all_coords": [
+    "down_blocks.0.attentions.0.transformer_blocks.0.attn1",
+    "down_blocks.0.attentions.0.transformer_blocks.0.attn2",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn1",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.0.resnets.0",
+    "down_blocks.0.resnets.1",
+    "down_blocks.0.motion_modules.0",
+    "down_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+    "down_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+    "down_blocks.0.motion_modules.1",
+    "down_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+    "down_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+    "down_blocks.1.attentions.0.transformer_blocks.0.attn1",
+    "down_blocks.1.attentions.0.transformer_blocks.0.attn2",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn1",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.1.resnets.0",
+    "down_blocks.1.resnets.1",
+    "down_blocks.1.motion_modules.0",
+    "down_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+    "down_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+    "down_blocks.1.motion_modules.1",
+    "down_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+    "down_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+    "down_blocks.2.attentions.0.transformer_blocks.0.attn1",
+    "down_blocks.2.attentions.0.transformer_blocks.0.attn2",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn1",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.2.resnets.0",
+    "down_blocks.2.resnets.1",
+    "down_blocks.2.motion_modules.0",
+    "down_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+    "down_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+    "down_blocks.2.motion_modules.1",
+    "down_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+    "down_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+    "down_blocks.3.resnets.0",
+    "down_blocks.3.resnets.1",
+    "down_blocks.3.motion_modules.0",
+    "down_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+    "down_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+    "down_blocks.3.motion_modules.1",
+    "down_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+    "down_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.0.resnets.0",
+    "up_blocks.0.resnets.1",
+    "up_blocks.0.resnets.2",
+    "up_blocks.0.motion_modules.0",
+    "up_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.1",
+    "up_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.2",
+    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.1.resnets.0",
+    "up_blocks.1.resnets.1",
+    "up_blocks.1.resnets.2",
+    "up_blocks.1.motion_modules.0",
+    "up_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.1.motion_modules.1",
+    "up_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.1.motion_modules.2",
+    "up_blocks.1.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.2.transformer_blocks.0.attn2",
+    "up_blocks.2.attentions.0.transformer_blocks.0.attn1",
+    "up_blocks.2.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.2.attentions.1.transformer_blocks.0.attn1",
+    "up_blocks.2.attentions.1.transformer_blocks.0.attn2",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn1",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.2.resnets.0",
+    "up_blocks.2.resnets.1",
+    "up_blocks.2.resnets.2",
+    "up_blocks.2.motion_modules.0",
+    "up_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.1",
+    "up_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.2",
+    "up_blocks.2.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.2.motion_modules.2.transformer_blocks.0.attn2",
+    "up_blocks.3.attentions.0.transformer_blocks.0.attn1",
+    "up_blocks.3.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.3.attentions.1.transformer_blocks.0.attn1",
+    "up_blocks.3.attentions.1.transformer_blocks.0.attn2",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn1",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.3.resnets.0",
+    "up_blocks.3.resnets.1",
+    "up_blocks.3.resnets.2",
+    "up_blocks.3.motion_modules.0",
+    "up_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.1",
+    "up_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.2",
+    "up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.3.motion_modules.2.transformer_blocks.0.attn2",
+    "mid_block.attentions.0.transformer_blocks.0.attn1",
+    "mid_block.attentions.0.transformer_blocks.0.attn2",
+    "mid_block.resnets.0",
+    "mid_block.resnets.1",
+    "mid_block.motion_modules.0",
+    "mid_block.motion_modules.0.transformer_blocks.0.attn1",
+    "mid_block.motion_modules.0.transformer_blocks.0.attn2"
+  ],
+  "set": "ladder",
+  "sketch_dim": 512,
+  "refined_sketch_dim": 2048,
+  "refined_steps": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "clips": [
+    "s1337__smooth-coated-brown-labrador__walking__on-a-beach",
+    "s1337__smooth-coated-brown-labrador__walking__on-the-beach",
+    "s1337__smooth-coated-black-labrador__walking__on-a-beach",
+    "s1337__shaggy-brown-labrador__walking__on-a-beach",
+    "s1337__smooth-coated-brown-dalmatian__walking__on-a-beach",
+    "s1337__smooth-coated-brown-wolf__walking__on-a-beach",
+    "s1337__smooth-coated-brown-labrador__walking__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-labrador__walking__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-labrador__running__on-a-beach",
+    "s1337__smooth-coated-brown-labrador__running__on-the-beach",
+    "s1337__smooth-coated-black-labrador__running__on-a-beach",
+    "s1337__shaggy-brown-labrador__running__on-a-beach",
+    "s1337__smooth-coated-brown-dalmatian__running__on-a-beach",
+    "s1337__smooth-coated-brown-wolf__running__on-a-beach",
+    "s1337__smooth-coated-brown-labrador__running__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-labrador__running__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-german-shepherd__walking__on-a-beach",
+    "s1337__smooth-coated-brown-german-shepherd__walking__on-the-beach",
+    "s1337__smooth-coated-black-german-shepherd__walking__on-a-beach",
+    "s1337__shaggy-brown-german-shepherd__walking__on-a-beach",
+    "s1337__smooth-coated-brown-husky__walking__on-a-beach",
+    "s1337__smooth-coated-brown-fox__walking__on-a-beach",
+    "s1337__smooth-coated-brown-german-shepherd__walking__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-german-shepherd__walking__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-german-shepherd__running__on-a-beach",
+    "s1337__smooth-coated-brown-german-shepherd__running__on-the-beach",
+    "s1337__smooth-coated-black-german-shepherd__running__on-a-beach",
+    "s1337__shaggy-brown-german-shepherd__running__on-a-beach",
+    "s1337__smooth-coated-brown-husky__running__on-a-beach",
+    "s1337__smooth-coated-brown-fox__running__on-a-beach",
+    "s1337__smooth-coated-brown-german-shepherd__running__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-german-shepherd__running__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-house-cat__walking__on-a-beach",
+    "s1337__smooth-coated-brown-house-cat__walking__on-the-beach",
+    "s1337__smooth-coated-black-house-cat__walking__on-a-beach",
+    "s1337__shaggy-brown-house-cat__walking__on-a-beach",
+    "s1337__smooth-coated-brown-siamese-cat__walking__on-a-beach",
+    "s1337__smooth-coated-brown-lynx__walking__on-a-beach",
+    "s1337__smooth-coated-brown-house-cat__walking__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-house-cat__walking__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-house-cat__running__on-a-beach",
+    "s1337__smooth-coated-brown-house-cat__running__on-the-beach",
+    "s1337__smooth-coated-black-house-cat__running__on-a-beach",
+    "s1337__shaggy-brown-house-cat__running__on-a-beach",
+    "s1337__smooth-coated-brown-siamese-cat__running__on-a-beach",
+    "s1337__smooth-coated-brown-lynx__running__on-a-beach",
+    "s1337__smooth-coated-brown-house-cat__running__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-house-cat__running__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-persian-cat__walking__on-a-beach",
+    "s1337__smooth-coated-brown-persian-cat__walking__on-the-beach",
+    "s1337__smooth-coated-black-persian-cat__walking__on-a-beach",
+    "s1337__shaggy-brown-persian-cat__walking__on-a-beach",
+    "s1337__smooth-coated-brown-bengal-cat__walking__on-a-beach",
+    "s1337__smooth-coated-brown-ocelot__walking__on-a-beach",
+    "s1337__smooth-coated-brown-persian-cat__walking__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-persian-cat__walking__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-persian-cat__running__on-a-beach",
+    "s1337__smooth-coated-brown-persian-cat__running__on-the-beach",
+    "s1337__smooth-coated-black-persian-cat__running__on-a-beach",
+    "s1337__shaggy-brown-persian-cat__running__on-a-beach",
+    "s1337__smooth-coated-brown-bengal-cat__running__on-a-beach",
+    "s1337__smooth-coated-brown-ocelot__running__on-a-beach",
+    "s1337__smooth-coated-brown-persian-cat__running__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-persian-cat__running__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-arabian-horse__walking__on-a-beach",
+    "s1337__smooth-coated-brown-arabian-horse__walking__on-the-beach",
+    "s1337__smooth-coated-black-arabian-horse__walking__on-a-beach",
+    "s1337__shaggy-brown-arabian-horse__walking__on-a-beach",
+    "s1337__smooth-coated-brown-clydesdale-horse__walking__on-a-beach",
+    "s1337__smooth-coated-brown-zebra__walking__on-a-beach",
+    "s1337__smooth-coated-brown-arabian-horse__walking__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-arabian-horse__walking__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-arabian-horse__running__on-a-beach",
+    "s1337__smooth-coated-brown-arabian-horse__running__on-the-beach",
+    "s1337__smooth-coated-black-arabian-horse__running__on-a-beach",
+    "s1337__shaggy-brown-arabian-horse__running__on-a-beach",
+    "s1337__smooth-coated-brown-clydesdale-horse__running__on-a-beach",
+    "s1337__smooth-coated-brown-zebra__running__on-a-beach",
+    "s1337__smooth-coated-brown-arabian-horse__running__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-arabian-horse__running__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-thoroughbred-horse__walking__on-a-beach",
+    "s1337__smooth-coated-brown-thoroughbred-horse__walking__on-the-beach",
+    "s1337__smooth-coated-black-thoroughbred-horse__walking__on-a-beach",
+    "s1337__shaggy-brown-thoroughbred-horse__walking__on-a-beach",
+    "s1337__smooth-coated-brown-shetland-pony__walking__on-a-beach",
+    "s1337__smooth-coated-brown-donkey__walking__on-a-beach",
+    "s1337__smooth-coated-brown-thoroughbred-horse__walking__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-thoroughbred-horse__walking__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-thoroughbred-horse__running__on-a-beach",
+    "s1337__smooth-coated-brown-thoroughbred-horse__running__on-the-beach",
+    "s1337__smooth-coated-black-thoroughbred-horse__running__on-a-beach",
+    "s1337__shaggy-brown-thoroughbred-horse__running__on-a-beach",
+    "s1337__smooth-coated-brown-shetland-pony__running__on-a-beach",
+    "s1337__smooth-coated-brown-donkey__running__on-a-beach",
+    "s1337__smooth-coated-brown-thoroughbred-horse__running__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-thoroughbred-horse__running__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-holstein-cow__walking__on-a-beach",
+    "s1337__smooth-coated-brown-holstein-cow__walking__on-the-beach",
+    "s1337__smooth-coated-black-holstein-cow__walking__on-a-beach",
+    "s1337__shaggy-brown-holstein-cow__walking__on-a-beach",
+    "s1337__smooth-coated-brown-highland-cow__walking__on-a-beach",
+    "s1337__smooth-coated-brown-bison__walking__on-a-beach",
+    "s1337__smooth-coated-brown-holstein-cow__walking__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-holstein-cow__walking__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-holstein-cow__running__on-a-beach",
+    "s1337__smooth-coated-brown-holstein-cow__running__on-the-beach",
+    "s1337__smooth-coated-black-holstein-cow__running__on-a-beach",
+    "s1337__shaggy-brown-holstein-cow__running__on-a-beach",
+    "s1337__smooth-coated-brown-highland-cow__running__on-a-beach",
+    "s1337__smooth-coated-brown-bison__running__on-a-beach",
+    "s1337__smooth-coated-brown-holstein-cow__running__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-holstein-cow__running__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-alpine-goat__walking__on-a-beach",
+    "s1337__smooth-coated-brown-alpine-goat__walking__on-the-beach",
+    "s1337__smooth-coated-black-alpine-goat__walking__on-a-beach",
+    "s1337__shaggy-brown-alpine-goat__walking__on-a-beach",
+    "s1337__smooth-coated-brown-pygmy-goat__walking__on-a-beach",
+    "s1337__smooth-coated-brown-sheep__walking__on-a-beach",
+    "s1337__smooth-coated-brown-alpine-goat__walking__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-alpine-goat__walking__on-a-beach-at-sunset",
+    "s1337__smooth-coated-brown-alpine-goat__running__on-a-beach",
+    "s1337__smooth-coated-brown-alpine-goat__running__on-the-beach",
+    "s1337__smooth-coated-black-alpine-goat__running__on-a-beach",
+    "s1337__shaggy-brown-alpine-goat__running__on-a-beach",
+    "s1337__smooth-coated-brown-pygmy-goat__running__on-a-beach",
+    "s1337__smooth-coated-brown-sheep__running__on-a-beach",
+    "s1337__smooth-coated-brown-alpine-goat__running__in-a-snowy-forest",
+    "s1337__smooth-coated-brown-alpine-goat__running__on-a-beach-at-sunset"
+  ],
+  "clip_meta": {
+    "s1337__smooth-coated-brown-labrador__walking__on-a-beach": {
+      "subject": "smooth-coated brown labrador",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-labrador__walking__on-the-beach": {
+      "subject": "smooth-coated brown labrador",
+      "verb": "walking",
+      "scene": "on the beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-black-labrador__walking__on-a-beach": {
+      "subject": "smooth-coated black labrador",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__shaggy-brown-labrador__walking__on-a-beach": {
+      "subject": "shaggy brown labrador",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-dalmatian__walking__on-a-beach": {
+      "subject": "smooth-coated brown dalmatian",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-wolf__walking__on-a-beach": {
+      "subject": "smooth-coated brown wolf",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-labrador__walking__in-a-snowy-forest": {
+      "subject": "smooth-coated brown labrador",
+      "verb": "walking",
+      "scene": "in a snowy forest",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-labrador__walking__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown labrador",
+      "verb": "walking",
+      "scene": "on a beach at sunset",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-labrador__running__on-a-beach": {
+      "subject": "smooth-coated brown labrador",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-labrador__running__on-the-beach": {
+      "subject": "smooth-coated brown labrador",
+      "verb": "running",
+      "scene": "on the beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-black-labrador__running__on-a-beach": {
+      "subject": "smooth-coated black labrador",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__shaggy-brown-labrador__running__on-a-beach": {
+      "subject": "shaggy brown labrador",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-dalmatian__running__on-a-beach": {
+      "subject": "smooth-coated brown dalmatian",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-wolf__running__on-a-beach": {
+      "subject": "smooth-coated brown wolf",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-labrador__running__in-a-snowy-forest": {
+      "subject": "smooth-coated brown labrador",
+      "verb": "running",
+      "scene": "in a snowy forest",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-labrador__running__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown labrador",
+      "verb": "running",
+      "scene": "on a beach at sunset",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-german-shepherd__walking__on-a-beach": {
+      "subject": "smooth-coated brown german shepherd",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-german-shepherd__walking__on-the-beach": {
+      "subject": "smooth-coated brown german shepherd",
+      "verb": "walking",
+      "scene": "on the beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-black-german-shepherd__walking__on-a-beach": {
+      "subject": "smooth-coated black german shepherd",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__shaggy-brown-german-shepherd__walking__on-a-beach": {
+      "subject": "shaggy brown german shepherd",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-husky__walking__on-a-beach": {
+      "subject": "smooth-coated brown husky",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-fox__walking__on-a-beach": {
+      "subject": "smooth-coated brown fox",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-german-shepherd__walking__in-a-snowy-forest": {
+      "subject": "smooth-coated brown german shepherd",
+      "verb": "walking",
+      "scene": "in a snowy forest",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-german-shepherd__walking__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown german shepherd",
+      "verb": "walking",
+      "scene": "on a beach at sunset",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-german-shepherd__running__on-a-beach": {
+      "subject": "smooth-coated brown german shepherd",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-german-shepherd__running__on-the-beach": {
+      "subject": "smooth-coated brown german shepherd",
+      "verb": "running",
+      "scene": "on the beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-black-german-shepherd__running__on-a-beach": {
+      "subject": "smooth-coated black german shepherd",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__shaggy-brown-german-shepherd__running__on-a-beach": {
+      "subject": "shaggy brown german shepherd",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-husky__running__on-a-beach": {
+      "subject": "smooth-coated brown husky",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-fox__running__on-a-beach": {
+      "subject": "smooth-coated brown fox",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-german-shepherd__running__in-a-snowy-forest": {
+      "subject": "smooth-coated brown german shepherd",
+      "verb": "running",
+      "scene": "in a snowy forest",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-german-shepherd__running__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown german shepherd",
+      "verb": "running",
+      "scene": "on a beach at sunset",
+      "family": "canid"
+    },
+    "s1337__smooth-coated-brown-house-cat__walking__on-a-beach": {
+      "subject": "smooth-coated brown house cat",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-house-cat__walking__on-the-beach": {
+      "subject": "smooth-coated brown house cat",
+      "verb": "walking",
+      "scene": "on the beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-black-house-cat__walking__on-a-beach": {
+      "subject": "smooth-coated black house cat",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__shaggy-brown-house-cat__walking__on-a-beach": {
+      "subject": "shaggy brown house cat",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-siamese-cat__walking__on-a-beach": {
+      "subject": "smooth-coated brown siamese cat",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-lynx__walking__on-a-beach": {
+      "subject": "smooth-coated brown lynx",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-house-cat__walking__in-a-snowy-forest": {
+      "subject": "smooth-coated brown house cat",
+      "verb": "walking",
+      "scene": "in a snowy forest",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-house-cat__walking__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown house cat",
+      "verb": "walking",
+      "scene": "on a beach at sunset",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-house-cat__running__on-a-beach": {
+      "subject": "smooth-coated brown house cat",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-house-cat__running__on-the-beach": {
+      "subject": "smooth-coated brown house cat",
+      "verb": "running",
+      "scene": "on the beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-black-house-cat__running__on-a-beach": {
+      "subject": "smooth-coated black house cat",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__shaggy-brown-house-cat__running__on-a-beach": {
+      "subject": "shaggy brown house cat",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-siamese-cat__running__on-a-beach": {
+      "subject": "smooth-coated brown siamese cat",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-lynx__running__on-a-beach": {
+      "subject": "smooth-coated brown lynx",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-house-cat__running__in-a-snowy-forest": {
+      "subject": "smooth-coated brown house cat",
+      "verb": "running",
+      "scene": "in a snowy forest",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-house-cat__running__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown house cat",
+      "verb": "running",
+      "scene": "on a beach at sunset",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-persian-cat__walking__on-a-beach": {
+      "subject": "smooth-coated brown persian cat",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-persian-cat__walking__on-the-beach": {
+      "subject": "smooth-coated brown persian cat",
+      "verb": "walking",
+      "scene": "on the beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-black-persian-cat__walking__on-a-beach": {
+      "subject": "smooth-coated black persian cat",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__shaggy-brown-persian-cat__walking__on-a-beach": {
+      "subject": "shaggy brown persian cat",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-bengal-cat__walking__on-a-beach": {
+      "subject": "smooth-coated brown bengal cat",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-ocelot__walking__on-a-beach": {
+      "subject": "smooth-coated brown ocelot",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-persian-cat__walking__in-a-snowy-forest": {
+      "subject": "smooth-coated brown persian cat",
+      "verb": "walking",
+      "scene": "in a snowy forest",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-persian-cat__walking__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown persian cat",
+      "verb": "walking",
+      "scene": "on a beach at sunset",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-persian-cat__running__on-a-beach": {
+      "subject": "smooth-coated brown persian cat",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-persian-cat__running__on-the-beach": {
+      "subject": "smooth-coated brown persian cat",
+      "verb": "running",
+      "scene": "on the beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-black-persian-cat__running__on-a-beach": {
+      "subject": "smooth-coated black persian cat",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__shaggy-brown-persian-cat__running__on-a-beach": {
+      "subject": "shaggy brown persian cat",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-bengal-cat__running__on-a-beach": {
+      "subject": "smooth-coated brown bengal cat",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-ocelot__running__on-a-beach": {
+      "subject": "smooth-coated brown ocelot",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-persian-cat__running__in-a-snowy-forest": {
+      "subject": "smooth-coated brown persian cat",
+      "verb": "running",
+      "scene": "in a snowy forest",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-persian-cat__running__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown persian cat",
+      "verb": "running",
+      "scene": "on a beach at sunset",
+      "family": "felid"
+    },
+    "s1337__smooth-coated-brown-arabian-horse__walking__on-a-beach": {
+      "subject": "smooth-coated brown arabian horse",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-arabian-horse__walking__on-the-beach": {
+      "subject": "smooth-coated brown arabian horse",
+      "verb": "walking",
+      "scene": "on the beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-black-arabian-horse__walking__on-a-beach": {
+      "subject": "smooth-coated black arabian horse",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__shaggy-brown-arabian-horse__walking__on-a-beach": {
+      "subject": "shaggy brown arabian horse",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-clydesdale-horse__walking__on-a-beach": {
+      "subject": "smooth-coated brown clydesdale horse",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-zebra__walking__on-a-beach": {
+      "subject": "smooth-coated brown zebra",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-arabian-horse__walking__in-a-snowy-forest": {
+      "subject": "smooth-coated brown arabian horse",
+      "verb": "walking",
+      "scene": "in a snowy forest",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-arabian-horse__walking__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown arabian horse",
+      "verb": "walking",
+      "scene": "on a beach at sunset",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-arabian-horse__running__on-a-beach": {
+      "subject": "smooth-coated brown arabian horse",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-arabian-horse__running__on-the-beach": {
+      "subject": "smooth-coated brown arabian horse",
+      "verb": "running",
+      "scene": "on the beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-black-arabian-horse__running__on-a-beach": {
+      "subject": "smooth-coated black arabian horse",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__shaggy-brown-arabian-horse__running__on-a-beach": {
+      "subject": "shaggy brown arabian horse",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-clydesdale-horse__running__on-a-beach": {
+      "subject": "smooth-coated brown clydesdale horse",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-zebra__running__on-a-beach": {
+      "subject": "smooth-coated brown zebra",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-arabian-horse__running__in-a-snowy-forest": {
+      "subject": "smooth-coated brown arabian horse",
+      "verb": "running",
+      "scene": "in a snowy forest",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-arabian-horse__running__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown arabian horse",
+      "verb": "running",
+      "scene": "on a beach at sunset",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-thoroughbred-horse__walking__on-a-beach": {
+      "subject": "smooth-coated brown thoroughbred horse",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-thoroughbred-horse__walking__on-the-beach": {
+      "subject": "smooth-coated brown thoroughbred horse",
+      "verb": "walking",
+      "scene": "on the beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-black-thoroughbred-horse__walking__on-a-beach": {
+      "subject": "smooth-coated black thoroughbred horse",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__shaggy-brown-thoroughbred-horse__walking__on-a-beach": {
+      "subject": "shaggy brown thoroughbred horse",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-shetland-pony__walking__on-a-beach": {
+      "subject": "smooth-coated brown shetland pony",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-donkey__walking__on-a-beach": {
+      "subject": "smooth-coated brown donkey",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-thoroughbred-horse__walking__in-a-snowy-forest": {
+      "subject": "smooth-coated brown thoroughbred horse",
+      "verb": "walking",
+      "scene": "in a snowy forest",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-thoroughbred-horse__walking__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown thoroughbred horse",
+      "verb": "walking",
+      "scene": "on a beach at sunset",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-thoroughbred-horse__running__on-a-beach": {
+      "subject": "smooth-coated brown thoroughbred horse",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-thoroughbred-horse__running__on-the-beach": {
+      "subject": "smooth-coated brown thoroughbred horse",
+      "verb": "running",
+      "scene": "on the beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-black-thoroughbred-horse__running__on-a-beach": {
+      "subject": "smooth-coated black thoroughbred horse",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__shaggy-brown-thoroughbred-horse__running__on-a-beach": {
+      "subject": "shaggy brown thoroughbred horse",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-shetland-pony__running__on-a-beach": {
+      "subject": "smooth-coated brown shetland pony",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-donkey__running__on-a-beach": {
+      "subject": "smooth-coated brown donkey",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-thoroughbred-horse__running__in-a-snowy-forest": {
+      "subject": "smooth-coated brown thoroughbred horse",
+      "verb": "running",
+      "scene": "in a snowy forest",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-thoroughbred-horse__running__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown thoroughbred horse",
+      "verb": "running",
+      "scene": "on a beach at sunset",
+      "family": "equid"
+    },
+    "s1337__smooth-coated-brown-holstein-cow__walking__on-a-beach": {
+      "subject": "smooth-coated brown holstein cow",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-holstein-cow__walking__on-the-beach": {
+      "subject": "smooth-coated brown holstein cow",
+      "verb": "walking",
+      "scene": "on the beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-black-holstein-cow__walking__on-a-beach": {
+      "subject": "smooth-coated black holstein cow",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__shaggy-brown-holstein-cow__walking__on-a-beach": {
+      "subject": "shaggy brown holstein cow",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-highland-cow__walking__on-a-beach": {
+      "subject": "smooth-coated brown highland cow",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-bison__walking__on-a-beach": {
+      "subject": "smooth-coated brown bison",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-holstein-cow__walking__in-a-snowy-forest": {
+      "subject": "smooth-coated brown holstein cow",
+      "verb": "walking",
+      "scene": "in a snowy forest",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-holstein-cow__walking__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown holstein cow",
+      "verb": "walking",
+      "scene": "on a beach at sunset",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-holstein-cow__running__on-a-beach": {
+      "subject": "smooth-coated brown holstein cow",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-holstein-cow__running__on-the-beach": {
+      "subject": "smooth-coated brown holstein cow",
+      "verb": "running",
+      "scene": "on the beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-black-holstein-cow__running__on-a-beach": {
+      "subject": "smooth-coated black holstein cow",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__shaggy-brown-holstein-cow__running__on-a-beach": {
+      "subject": "shaggy brown holstein cow",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-highland-cow__running__on-a-beach": {
+      "subject": "smooth-coated brown highland cow",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-bison__running__on-a-beach": {
+      "subject": "smooth-coated brown bison",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-holstein-cow__running__in-a-snowy-forest": {
+      "subject": "smooth-coated brown holstein cow",
+      "verb": "running",
+      "scene": "in a snowy forest",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-holstein-cow__running__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown holstein cow",
+      "verb": "running",
+      "scene": "on a beach at sunset",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-alpine-goat__walking__on-a-beach": {
+      "subject": "smooth-coated brown alpine goat",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-alpine-goat__walking__on-the-beach": {
+      "subject": "smooth-coated brown alpine goat",
+      "verb": "walking",
+      "scene": "on the beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-black-alpine-goat__walking__on-a-beach": {
+      "subject": "smooth-coated black alpine goat",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__shaggy-brown-alpine-goat__walking__on-a-beach": {
+      "subject": "shaggy brown alpine goat",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-pygmy-goat__walking__on-a-beach": {
+      "subject": "smooth-coated brown pygmy goat",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-sheep__walking__on-a-beach": {
+      "subject": "smooth-coated brown sheep",
+      "verb": "walking",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-alpine-goat__walking__in-a-snowy-forest": {
+      "subject": "smooth-coated brown alpine goat",
+      "verb": "walking",
+      "scene": "in a snowy forest",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-alpine-goat__walking__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown alpine goat",
+      "verb": "walking",
+      "scene": "on a beach at sunset",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-alpine-goat__running__on-a-beach": {
+      "subject": "smooth-coated brown alpine goat",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-alpine-goat__running__on-the-beach": {
+      "subject": "smooth-coated brown alpine goat",
+      "verb": "running",
+      "scene": "on the beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-black-alpine-goat__running__on-a-beach": {
+      "subject": "smooth-coated black alpine goat",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__shaggy-brown-alpine-goat__running__on-a-beach": {
+      "subject": "shaggy brown alpine goat",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-pygmy-goat__running__on-a-beach": {
+      "subject": "smooth-coated brown pygmy goat",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-sheep__running__on-a-beach": {
+      "subject": "smooth-coated brown sheep",
+      "verb": "running",
+      "scene": "on a beach",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-alpine-goat__running__in-a-snowy-forest": {
+      "subject": "smooth-coated brown alpine goat",
+      "verb": "running",
+      "scene": "in a snowy forest",
+      "family": "bovid"
+    },
+    "s1337__smooth-coated-brown-alpine-goat__running__on-a-beach-at-sunset": {
+      "subject": "smooth-coated brown alpine goat",
+      "verb": "running",
+      "scene": "on a beach at sunset",
+      "family": "bovid"
+    }
+  },
+  "prompts": {
+    "s1337__smooth-coated-brown-labrador__walking__on-a-beach": "a smooth-coated brown labrador walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-labrador__walking__on-the-beach": "a smooth-coated brown labrador walking on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-labrador__walking__on-a-beach": "a smooth-coated black labrador walking on a beach, high quality, detailed",
+    "s1337__shaggy-brown-labrador__walking__on-a-beach": "a shaggy brown labrador walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-dalmatian__walking__on-a-beach": "a smooth-coated brown dalmatian walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-wolf__walking__on-a-beach": "a smooth-coated brown wolf walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-labrador__walking__in-a-snowy-forest": "a smooth-coated brown labrador walking in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-labrador__walking__on-a-beach-at-sunset": "a smooth-coated brown labrador walking on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-labrador__running__on-a-beach": "a smooth-coated brown labrador running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-labrador__running__on-the-beach": "a smooth-coated brown labrador running on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-labrador__running__on-a-beach": "a smooth-coated black labrador running on a beach, high quality, detailed",
+    "s1337__shaggy-brown-labrador__running__on-a-beach": "a shaggy brown labrador running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-dalmatian__running__on-a-beach": "a smooth-coated brown dalmatian running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-wolf__running__on-a-beach": "a smooth-coated brown wolf running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-labrador__running__in-a-snowy-forest": "a smooth-coated brown labrador running in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-labrador__running__on-a-beach-at-sunset": "a smooth-coated brown labrador running on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-german-shepherd__walking__on-a-beach": "a smooth-coated brown german shepherd walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-german-shepherd__walking__on-the-beach": "a smooth-coated brown german shepherd walking on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-german-shepherd__walking__on-a-beach": "a smooth-coated black german shepherd walking on a beach, high quality, detailed",
+    "s1337__shaggy-brown-german-shepherd__walking__on-a-beach": "a shaggy brown german shepherd walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-husky__walking__on-a-beach": "a smooth-coated brown husky walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-fox__walking__on-a-beach": "a smooth-coated brown fox walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-german-shepherd__walking__in-a-snowy-forest": "a smooth-coated brown german shepherd walking in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-german-shepherd__walking__on-a-beach-at-sunset": "a smooth-coated brown german shepherd walking on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-german-shepherd__running__on-a-beach": "a smooth-coated brown german shepherd running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-german-shepherd__running__on-the-beach": "a smooth-coated brown german shepherd running on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-german-shepherd__running__on-a-beach": "a smooth-coated black german shepherd running on a beach, high quality, detailed",
+    "s1337__shaggy-brown-german-shepherd__running__on-a-beach": "a shaggy brown german shepherd running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-husky__running__on-a-beach": "a smooth-coated brown husky running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-fox__running__on-a-beach": "a smooth-coated brown fox running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-german-shepherd__running__in-a-snowy-forest": "a smooth-coated brown german shepherd running in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-german-shepherd__running__on-a-beach-at-sunset": "a smooth-coated brown german shepherd running on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-house-cat__walking__on-a-beach": "a smooth-coated brown house cat walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-house-cat__walking__on-the-beach": "a smooth-coated brown house cat walking on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-house-cat__walking__on-a-beach": "a smooth-coated black house cat walking on a beach, high quality, detailed",
+    "s1337__shaggy-brown-house-cat__walking__on-a-beach": "a shaggy brown house cat walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-siamese-cat__walking__on-a-beach": "a smooth-coated brown siamese cat walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-lynx__walking__on-a-beach": "a smooth-coated brown lynx walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-house-cat__walking__in-a-snowy-forest": "a smooth-coated brown house cat walking in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-house-cat__walking__on-a-beach-at-sunset": "a smooth-coated brown house cat walking on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-house-cat__running__on-a-beach": "a smooth-coated brown house cat running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-house-cat__running__on-the-beach": "a smooth-coated brown house cat running on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-house-cat__running__on-a-beach": "a smooth-coated black house cat running on a beach, high quality, detailed",
+    "s1337__shaggy-brown-house-cat__running__on-a-beach": "a shaggy brown house cat running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-siamese-cat__running__on-a-beach": "a smooth-coated brown siamese cat running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-lynx__running__on-a-beach": "a smooth-coated brown lynx running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-house-cat__running__in-a-snowy-forest": "a smooth-coated brown house cat running in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-house-cat__running__on-a-beach-at-sunset": "a smooth-coated brown house cat running on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-persian-cat__walking__on-a-beach": "a smooth-coated brown persian cat walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-persian-cat__walking__on-the-beach": "a smooth-coated brown persian cat walking on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-persian-cat__walking__on-a-beach": "a smooth-coated black persian cat walking on a beach, high quality, detailed",
+    "s1337__shaggy-brown-persian-cat__walking__on-a-beach": "a shaggy brown persian cat walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-bengal-cat__walking__on-a-beach": "a smooth-coated brown bengal cat walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-ocelot__walking__on-a-beach": "a smooth-coated brown ocelot walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-persian-cat__walking__in-a-snowy-forest": "a smooth-coated brown persian cat walking in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-persian-cat__walking__on-a-beach-at-sunset": "a smooth-coated brown persian cat walking on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-persian-cat__running__on-a-beach": "a smooth-coated brown persian cat running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-persian-cat__running__on-the-beach": "a smooth-coated brown persian cat running on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-persian-cat__running__on-a-beach": "a smooth-coated black persian cat running on a beach, high quality, detailed",
+    "s1337__shaggy-brown-persian-cat__running__on-a-beach": "a shaggy brown persian cat running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-bengal-cat__running__on-a-beach": "a smooth-coated brown bengal cat running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-ocelot__running__on-a-beach": "a smooth-coated brown ocelot running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-persian-cat__running__in-a-snowy-forest": "a smooth-coated brown persian cat running in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-persian-cat__running__on-a-beach-at-sunset": "a smooth-coated brown persian cat running on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-arabian-horse__walking__on-a-beach": "a smooth-coated brown arabian horse walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-arabian-horse__walking__on-the-beach": "a smooth-coated brown arabian horse walking on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-arabian-horse__walking__on-a-beach": "a smooth-coated black arabian horse walking on a beach, high quality, detailed",
+    "s1337__shaggy-brown-arabian-horse__walking__on-a-beach": "a shaggy brown arabian horse walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-clydesdale-horse__walking__on-a-beach": "a smooth-coated brown clydesdale horse walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-zebra__walking__on-a-beach": "a smooth-coated brown zebra walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-arabian-horse__walking__in-a-snowy-forest": "a smooth-coated brown arabian horse walking in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-arabian-horse__walking__on-a-beach-at-sunset": "a smooth-coated brown arabian horse walking on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-arabian-horse__running__on-a-beach": "a smooth-coated brown arabian horse running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-arabian-horse__running__on-the-beach": "a smooth-coated brown arabian horse running on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-arabian-horse__running__on-a-beach": "a smooth-coated black arabian horse running on a beach, high quality, detailed",
+    "s1337__shaggy-brown-arabian-horse__running__on-a-beach": "a shaggy brown arabian horse running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-clydesdale-horse__running__on-a-beach": "a smooth-coated brown clydesdale horse running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-zebra__running__on-a-beach": "a smooth-coated brown zebra running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-arabian-horse__running__in-a-snowy-forest": "a smooth-coated brown arabian horse running in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-arabian-horse__running__on-a-beach-at-sunset": "a smooth-coated brown arabian horse running on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-thoroughbred-horse__walking__on-a-beach": "a smooth-coated brown thoroughbred horse walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-thoroughbred-horse__walking__on-the-beach": "a smooth-coated brown thoroughbred horse walking on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-thoroughbred-horse__walking__on-a-beach": "a smooth-coated black thoroughbred horse walking on a beach, high quality, detailed",
+    "s1337__shaggy-brown-thoroughbred-horse__walking__on-a-beach": "a shaggy brown thoroughbred horse walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-shetland-pony__walking__on-a-beach": "a smooth-coated brown shetland pony walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-donkey__walking__on-a-beach": "a smooth-coated brown donkey walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-thoroughbred-horse__walking__in-a-snowy-forest": "a smooth-coated brown thoroughbred horse walking in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-thoroughbred-horse__walking__on-a-beach-at-sunset": "a smooth-coated brown thoroughbred horse walking on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-thoroughbred-horse__running__on-a-beach": "a smooth-coated brown thoroughbred horse running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-thoroughbred-horse__running__on-the-beach": "a smooth-coated brown thoroughbred horse running on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-thoroughbred-horse__running__on-a-beach": "a smooth-coated black thoroughbred horse running on a beach, high quality, detailed",
+    "s1337__shaggy-brown-thoroughbred-horse__running__on-a-beach": "a shaggy brown thoroughbred horse running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-shetland-pony__running__on-a-beach": "a smooth-coated brown shetland pony running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-donkey__running__on-a-beach": "a smooth-coated brown donkey running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-thoroughbred-horse__running__in-a-snowy-forest": "a smooth-coated brown thoroughbred horse running in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-thoroughbred-horse__running__on-a-beach-at-sunset": "a smooth-coated brown thoroughbred horse running on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-holstein-cow__walking__on-a-beach": "a smooth-coated brown holstein cow walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-holstein-cow__walking__on-the-beach": "a smooth-coated brown holstein cow walking on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-holstein-cow__walking__on-a-beach": "a smooth-coated black holstein cow walking on a beach, high quality, detailed",
+    "s1337__shaggy-brown-holstein-cow__walking__on-a-beach": "a shaggy brown holstein cow walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-highland-cow__walking__on-a-beach": "a smooth-coated brown highland cow walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-bison__walking__on-a-beach": "a smooth-coated brown bison walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-holstein-cow__walking__in-a-snowy-forest": "a smooth-coated brown holstein cow walking in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-holstein-cow__walking__on-a-beach-at-sunset": "a smooth-coated brown holstein cow walking on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-holstein-cow__running__on-a-beach": "a smooth-coated brown holstein cow running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-holstein-cow__running__on-the-beach": "a smooth-coated brown holstein cow running on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-holstein-cow__running__on-a-beach": "a smooth-coated black holstein cow running on a beach, high quality, detailed",
+    "s1337__shaggy-brown-holstein-cow__running__on-a-beach": "a shaggy brown holstein cow running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-highland-cow__running__on-a-beach": "a smooth-coated brown highland cow running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-bison__running__on-a-beach": "a smooth-coated brown bison running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-holstein-cow__running__in-a-snowy-forest": "a smooth-coated brown holstein cow running in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-holstein-cow__running__on-a-beach-at-sunset": "a smooth-coated brown holstein cow running on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-alpine-goat__walking__on-a-beach": "a smooth-coated brown alpine goat walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-alpine-goat__walking__on-the-beach": "a smooth-coated brown alpine goat walking on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-alpine-goat__walking__on-a-beach": "a smooth-coated black alpine goat walking on a beach, high quality, detailed",
+    "s1337__shaggy-brown-alpine-goat__walking__on-a-beach": "a shaggy brown alpine goat walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-pygmy-goat__walking__on-a-beach": "a smooth-coated brown pygmy goat walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-sheep__walking__on-a-beach": "a smooth-coated brown sheep walking on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-alpine-goat__walking__in-a-snowy-forest": "a smooth-coated brown alpine goat walking in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-alpine-goat__walking__on-a-beach-at-sunset": "a smooth-coated brown alpine goat walking on a beach at sunset, high quality, detailed",
+    "s1337__smooth-coated-brown-alpine-goat__running__on-a-beach": "a smooth-coated brown alpine goat running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-alpine-goat__running__on-the-beach": "a smooth-coated brown alpine goat running on the beach, high quality, detailed",
+    "s1337__smooth-coated-black-alpine-goat__running__on-a-beach": "a smooth-coated black alpine goat running on a beach, high quality, detailed",
+    "s1337__shaggy-brown-alpine-goat__running__on-a-beach": "a shaggy brown alpine goat running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-pygmy-goat__running__on-a-beach": "a smooth-coated brown pygmy goat running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-sheep__running__on-a-beach": "a smooth-coated brown sheep running on a beach, high quality, detailed",
+    "s1337__smooth-coated-brown-alpine-goat__running__in-a-snowy-forest": "a smooth-coated brown alpine goat running in a snowy forest, high quality, detailed",
+    "s1337__smooth-coated-brown-alpine-goat__running__on-a-beach-at-sunset": "a smooth-coated brown alpine goat running on a beach at sunset, high quality, detailed"
+  },
+  "denoise_seconds": 13564.260576405,
+  "decode_seconds": 1138.0654625450006,
+  "peak_rss_gb": 8.262020111083984,
+  "subset": {
+    "subjects": 0,
+    "verbs": 0
+  }
+}
