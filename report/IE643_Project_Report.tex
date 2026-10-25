@@ -441,6 +441,10 @@ at each frame with a residual connection. The denoising step enters as a sinusoi
 passed through a MLP and added to the features after the first convolution. This is the reson why 
 onel ayer can do differnt jobs at different steps and why our map needs to run over both layers and 
 steps and not just layers. 
+\item\textbf{Spatial Transformer} Each has a self attenition layer where each position is given 
+attention wrt other in the frame and a cross attention layer where image positions attend to text token.
+and a FFN with residual connections. Frames are bacthed so these cannot see other frames. 
+Self attention keeps appearance consistent within a frame  
 
 \subsection{Work done before the prep-presentation review} \label{sec:before}
 
