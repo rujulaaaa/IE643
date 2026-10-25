@@ -284,7 +284,13 @@ which MOFT gave us.
 Xiao et al.\ \citep{xiao2024moft} found that features of video diffusion U-net mix content and motion
 with most of the channels carrying content. They extract motion in two steps: first they subtract the mean over the frames
 $X - \frac{1}{F}\sum_{i=1}^{F} X_i$, which removes the part the remains constant over the frames,
-and then keep the top 4\% channels 
+and then keep the top 4\% channels chosen by PCA. The result is called MOFT and it encodes the 
+direction of motion. They read it after the decoder block and use it to guide the generation 
+of a new video without training by guiding the latents untill their MOFt matches a refrence. 
+Our split is thier first step and our hypothesis comes from this paper. 
+Our component patch copies the frame-varying part of the activation from one generation to another.
+MOFT shows where the motion can be read from the features but not whether the model actually uses it there. 
+To test that we use activation patching. 
 
 \textbf{Activation patching.} Meng et al.\ \citep{meng2022rome} located factual associations in
 GPT by running the model on a corrupted input and restoring one hidden state at a time from a
