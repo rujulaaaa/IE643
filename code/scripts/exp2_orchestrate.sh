@@ -1,7 +1,10 @@
 #!/bin/bash
 # Experiment 2, steps 2-8 after the Phase 2 sweeps (docs/experiment2.md).
 #
-#   bash scripts/exp2_orchestrate.sh [log dir, default results/exp2/logs]
+#   [KAGGLE_USER=<account>] bash scripts/exp2_orchestrate.sh [log dir, default results/exp2/logs]
+#
+# Without KAGGLE_USER it runs the local steps (analysis, quality gate, selection, grid) and stops before
+# building any kernel; no account is assumed. The Kaggle CLI must be logged in as that account.
 #
 # Safe to re-run: every step is skipped when its output exists, and a kernel that already exists on Kaggle is
 # never pushed again (a second push would start a new version and discard the running one). It stops with
@@ -18,7 +21,7 @@ K=~/kaggle/.venv/bin/kaggle
 R=$C/results/kaggle
 E=$C/results/exp2
 PY="env -u PYTHONPATH PYTHONPATH=$C/src $C/.venv/bin/python"
-USER_K=shivanshisme
+USER_K=${KAGGLE_USER:-}
 CELLS=(sd15_mm2 epicrealism_mm2 sd15_mm3 epicrealism_mm3)
 cd "$C"
 log() { echo "$(date '+%F %T') $*"; }
@@ -36,7 +39,8 @@ while [ ${#pending[@]} -gt 0 ]; do
   left=()
   for c in "${pending[@]}"; do
     d=$(celldir "$c")
-    case "$(kstatus "$(slug "$c")")" in *ERROR*|*CANCEL*) fail "sweep kernel $(slug "$c") ended in error";; esac
+    [ -f "$R/$(slug "$c")/.download_ok" ] || case "$(kstatus "$(slug "$c")")" in
+      *ERROR*|*CANCEL*) fail "sweep kernel $(slug "$c") ended in error";; esac
     if [ -f "$R/$(slug "$c")/.download_ok" ] && [ "$(ls "$d"/*/manifest.json 2>/dev/null | wc -l)" -ge 4 ]; then
       if [ ! -f "$E/$c/exp2_analysis.json" ]; then
         log "analysis $c"
@@ -70,6 +74,8 @@ if [ ! -f "$E/grid/grid.json" ]; then
   $PY scripts/exp2_grid.py --cells $(for c in "${CELLS[@]}"; do echo "$c=$(celldir "$c")"; done) --out "$E/grid" \
     || log "grid failed (non-blocking; re-run scripts/exp2_grid.py by hand)"
 fi
+
+[ -n "$USER_K" ] || { log "local steps done; set KAGGLE_USER=<account> to build and queue the Kaggle kernels"; exit 0; }
 
 # 6. build the patching, erasure and ladder kernels on the primary cell (only those not yet on Kaggle)
 CFG=$(cellcfg "$PRIMARY")

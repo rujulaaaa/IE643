@@ -13,15 +13,22 @@ ID before citing it.
   - SD1.5 + v1-5-3: the head's shape and size change, and the framing jumps.
   - epiCRealism + v1-5-3: the dog is nearly identical across frames, but it barely moves (trade-off
     between consistency and motion).
-- Quantitative: VBench subject consistency (DINO) per cell, from `results/exp2/quality/quality.json`
-  (Phase 1 quality gate). Fill in when the gate has run:
+- Quantitative, from the Phase 1 quality gate over 960 clips (`results/exp2/quality/quality.json`).
+  Columns: VBench subject consistency (DINO, median); dynamic share (fraction of clips VBench's RAFT
+  dynamic degree counts as moving); median top-5 % flow magnitude in px; CLIP-T (median).
 
-  | cell | subject consistency (median) | dynamic share | CLIP-T |
-  |---|---|---|---|
-  | sd15_mm2 | | | |
-  | epicrealism_mm2 | | | |
-  | sd15_mm3 | | | |
-  | epicrealism_mm3 | | | |
+  | cell | subject consistency | dynamic share | top-5 % flow (px) | CLIP-T |
+  |---|---|---|---|---|
+  | sd15_mm2 | 0.865 | 0.833 | 24.8 | 0.3317 |
+  | sd15_mm3 | 0.858 | 0.929 | 16.8 | 0.3332 |
+  | epicrealism_mm2 | 0.961 | 0.021 | 1.9 | 0.3442 |
+  | epicrealism_mm3 | 0.970 | 0.004 | 1.1 | 0.3436 |
+
+  - The trade-off in numbers: the cells that keep the dog's identity (epiCRealism) are the ones that
+    hardly move. The SD1.5 cells move but drift.
+  - High subject consistency on near-static video is a known property of this metric: VBench reports
+    subject consistency next to dynamic degree for this reason.
+  - The primary cell (sd15_mm2) is chosen per D-39.
 
 **Why AnimateDiff drifts (mechanism).**
 - AnimateDiff = a frozen SD1.5 image U-Net plus inserted motion modules (Guo et al., ICLR 2024,

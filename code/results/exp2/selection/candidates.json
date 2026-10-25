@@ -1,6 +1,6 @@
 {
  "rule": "D-35",
- "cell": "epicrealism_mm3",
+ "cell": "sd15_mm2",
  "candidates": [
   {
    "name": "exp1_region",
@@ -18,17 +18,15 @@
   {
    "name": "rsa_motion_peak",
    "coords": [
-    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1"
+    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2"
    ],
    "steps": [
-    16,
-    17,
-    18,
-    19,
-    20
+    22,
+    23,
+    24
    ],
    "component": "dynamic",
-   "why": "highest RSA unique motion share among refined coordinates, peak step 18"
+   "why": "highest RSA unique motion share among refined coordinates, peak step 24"
   },
   {
    "name": "up1_motion_modules",
@@ -53,17 +51,16 @@
   {
    "name": "rsa_content_peak",
    "coords": [
-    "up_blocks.2.attentions.2.transformer_blocks.0.attn2"
+    "mid_block.attentions.0.transformer_blocks.0.attn1"
    ],
    "steps": [
-    4,
-    5,
-    6,
-    7,
-    8
+    0,
+    1,
+    2,
+    3
    ],
    "component": "static",
-   "why": "highest RSA unique content share, peak step 6"
+   "why": "highest RSA unique content share, peak step 1"
   }
  ]
 }

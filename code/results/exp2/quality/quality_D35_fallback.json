@@ -1,0 +1,184 @@
+{
+  "by_cell": {
+    "epicrealism_mm2": {
+      "subject_consistency_median": 0.9611,
+      "subject_consistency_mean": 0.9551,
+      "dynamic_median": 0.0,
+      "dynamic_mean": 0.0208,
+      "flow_top5_median": 1.8976,
+      "flow_top5_mean": 2.0502,
+      "clip_t_median": 0.3442,
+      "clip_t_mean": 0.3425,
+      "verb_prob_median": 0.4517,
+      "verb_prob_mean": 0.459,
+      "verb_hit_median": 1.0,
+      "verb_hit_mean": 0.55
+    },
+    "epicrealism_mm3": {
+      "subject_consistency_median": 0.9701,
+      "subject_consistency_mean": 0.9658,
+      "dynamic_median": 0.0,
+      "dynamic_mean": 0.0042,
+      "flow_top5_median": 1.0919,
+      "flow_top5_mean": 1.3617,
+      "clip_t_median": 0.3436,
+      "clip_t_mean": 0.3441,
+      "verb_prob_median": 0.498,
+      "verb_prob_mean": 0.4816,
+      "verb_hit_median": 1.0,
+      "verb_hit_mean": 0.625
+    },
+    "sd15_mm2": {
+      "subject_consistency_median": 0.8653,
+      "subject_consistency_mean": 0.8631,
+      "dynamic_median": 1.0,
+      "dynamic_mean": 0.8333,
+      "flow_top5_median": 24.7591,
+      "flow_top5_mean": 46.0294,
+      "clip_t_median": 0.3317,
+      "clip_t_mean": 0.3285,
+      "verb_prob_median": 0.4054,
+      "verb_prob_mean": 0.4379,
+      "verb_hit_median": 1.0,
+      "verb_hit_mean": 0.575
+    },
+    "sd15_mm3": {
+      "subject_consistency_median": 0.8582,
+      "subject_consistency_mean": 0.8491,
+      "dynamic_median": 1.0,
+      "dynamic_mean": 0.9292,
+      "flow_top5_median": 16.841,
+      "flow_top5_mean": 38.676,
+      "clip_t_median": 0.3332,
+      "clip_t_mean": 0.332,
+      "verb_prob_median": 0.4044,
+      "verb_prob_mean": 0.4315,
+      "verb_hit_median": 1.0,
+      "verb_hit_mean": 0.5333
+    }
+  },
+  "by_cell_verb": [
+    {
+      "cell": "epicrealism_mm2",
+      "verb": "jumping",
+      "verb_hit": 0.5333,
+      "verb_prob": 0.4346,
+      "flow_top5": 1.9482
+    },
+    {
+      "cell": "epicrealism_mm2",
+      "verb": "running",
+      "verb_hit": 0.4833,
+      "verb_prob": 0.4725,
+      "flow_top5": 1.9217
+    },
+    {
+      "cell": "epicrealism_mm2",
+      "verb": "spinning",
+      "verb_hit": 0.2333,
+      "verb_prob": 0.2495,
+      "flow_top5": 2.2909
+    },
+    {
+      "cell": "epicrealism_mm2",
+      "verb": "walking",
+      "verb_hit": 0.95,
+      "verb_prob": 0.6794,
+      "flow_top5": 2.0401
+    },
+    {
+      "cell": "epicrealism_mm3",
+      "verb": "jumping",
+      "verb_hit": 0.6833,
+      "verb_prob": 0.498,
+      "flow_top5": 1.5397
+    },
+    {
+      "cell": "epicrealism_mm3",
+      "verb": "running",
+      "verb_hit": 0.5833,
+      "verb_prob": 0.5275,
+      "flow_top5": 1.3933
+    },
+    {
+      "cell": "epicrealism_mm3",
+      "verb": "spinning",
+      "verb_hit": 0.2667,
+      "verb_prob": 0.2616,
+      "flow_top5": 1.5717
+    },
+    {
+      "cell": "epicrealism_mm3",
+      "verb": "walking",
+      "verb_hit": 0.9667,
+      "verb_prob": 0.6392,
+      "flow_top5": 0.9422
+    },
+    {
+      "cell": "sd15_mm2",
+      "verb": "jumping",
+      "verb_hit": 0.4667,
+      "verb_prob": 0.3815,
+      "flow_top5": 49.5039
+    },
+    {
+      "cell": "sd15_mm2",
+      "verb": "running",
+      "verb_hit": 0.5167,
+      "verb_prob": 0.4641,
+      "flow_top5": 61.1286
+    },
+    {
+      "cell": "sd15_mm2",
+      "verb": "spinning",
+      "verb_hit": 0.4,
+      "verb_prob": 0.2804,
+      "flow_top5": 39.0899
+    },
+    {
+      "cell": "sd15_mm2",
+      "verb": "walking",
+      "verb_hit": 0.9167,
+      "verb_prob": 0.6258,
+      "flow_top5": 34.395
+    },
+    {
+      "cell": "sd15_mm3",
+      "verb": "jumping",
+      "verb_hit": 0.4167,
+      "verb_prob": 0.3548,
+      "flow_top5": 33.8526
+    },
+    {
+      "cell": "sd15_mm3",
+      "verb": "running",
+      "verb_hit": 0.6167,
+      "verb_prob": 0.5288,
+      "flow_top5": 50.9914
+    },
+    {
+      "cell": "sd15_mm3",
+      "verb": "spinning",
+      "verb_hit": 0.2167,
+      "verb_prob": 0.2437,
+      "flow_top5": 45.9097
+    },
+    {
+      "cell": "sd15_mm3",
+      "verb": "walking",
+      "verb_hit": 0.8833,
+      "verb_prob": 0.5987,
+      "flow_top5": 23.9502
+    }
+  ],
+  "decision": {
+    "primary_cell": "epicrealism_mm3",
+    "ladder_verbs": [
+      "walking",
+      "jumping"
+    ],
+    "rule": "max median subject consistency among cells with dynamic share >= 0.5 and CLIP-T within 0.01 of the best; ladder verbs = top-2 X-CLIP hit rate on the primary cell",
+    "eligible": []
+  },
+  "n_clips": 960
+}

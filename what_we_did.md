@@ -1109,3 +1109,30 @@ Reading:
   - deer→bear: the bear holds the deer's standing pose.
   - soldier→dancer: content.dual.all scores D = 0.39, but the clip is sand and a boot. A high per-pair D does not
     guarantee a good edit, so demo clips are chosen by eye.
+
+### 34. Quality gate, primary cell (D-39), local steps done (2026-10-25, 15:11-19:20)
+
+- **Quality gate** (local CPU, 2 h 15 min, 960 clips). No cell met both D-35 criteria:
+  - The epiCRealism cells are nearly static (dynamic share 0.021 / 0.004; median top-5 % flow 1.9 / 1.1 px).
+  - The SD1.5 cells move (0.83 / 0.93; 25 / 17 px) but miss the CLIP-T tolerance by 0.001–0.002.
+  - The code's unwritten fallback picked epicrealism_mm3 (highest subject consistency). I stopped the
+    orchestrator after selection, before any kernel was built, and nothing was pushed.
+- **D-39** (decided by me at the user's request): drop the CLIP-T tolerance and keep dynamic share ≥ 0.5.
+  The primary cell is **sd15_mm2**; the ladder verbs are walking and running.
+  - `exp2_quality.decide` implements it; `--from-csv` re-derives the decision from `quality.csv`.
+  - The superseded selection is kept in `results/exp2/selection_superseded_epicrealism_mm3/`, and the
+    original gate output in `quality_D35_fallback.json`.
+- **Candidates** on sd15_mm2 (D-35 rules):
+  - exp1_region (up0.mm2, steps 0–2);
+  - rsa_motion_peak (up0.mm2…attn2, steps 22–24);
+  - up1_motion_modules (steps 0–7);
+  - rsa_content_peak (mid attn1, steps 0–3, static).
+  - LoRA target: up0.mm2, up0.mm1, up1.mm2.
+- **Fixes:**
+  - `exp2_grid.py` failed unpacking the interaction contrast; fixed.
+  - The channels section was recomputed in fp64 (D-36 item 3). Medians barely moved: sd15_mm2 0.2971 → 0.2970.
+- **Kaggle account:** the user asked that nothing more run on shivanshisme; another account will be provided.
+  - The orchestrator now needs `KAGGLE_USER=<account>`. Without it, it stops after the local steps.
+  - `kaggle_wait.sh` takes the account from the same variable; no account name is hardcoded.
+  - The CLI can take a second account's token through `KAGGLE_API_TOKEN` without touching `~/.kaggle/access_token`.
+- The machine rebooted again at 19:00; nothing was lost (all steps resume from their outputs).

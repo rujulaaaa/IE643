@@ -272,3 +272,38 @@ content.kv.probe.from2 +0.022 [−0.027, 0.151], 8/12. Dual-source arms meet it:
 scored against, so they are reported as two-clip compositing, not as prompt-only editing. In this pool,
 content.sel (Stage 6's x̄ patch, the same clips as Stage 6) reaches +0.092 [0.004, 0.191]. Only the D
 normalisation pool differs, so this does not change the Stage 6 verdict.
+
+### D-39 · 2026-10-25 · Experiment 2 primary cell when no cell passes the quality gate (before any Phase 5 run)
+**Decision.** If no cell meets both D-35 criteria, the CLIP-T tolerance is dropped and the dynamic-share
+requirement (≥ 0.5) kept. The primary cell is the cell with the highest median subject consistency among
+the cells that move. Applied: primary cell **sd15_mm2**, ladder verbs **walking, running** (top-2 X-CLIP
+hit rate on sd15_mm2). `exp2_quality.decide` implements this, and `--from-csv` re-derives it from the
+saved per-clip scores.
+**What the gate found** (`results/exp2/quality/quality.json`, 960 clips):
+
+| cell | dynamic share | subject consistency (median) | CLIP-T (median) |
+|---|---|---|---|
+| sd15_mm2 | 0.833 | 0.865 | 0.3317 |
+| sd15_mm3 | 0.929 | 0.858 | 0.3332 |
+| epicrealism_mm2 | 0.021 | 0.961 | 0.3442 |
+| epicrealism_mm3 | 0.004 | 0.970 | 0.3436 |
+
+- **Who passed what:** no cell met both criteria. Both epiCRealism cells are nearly static: the median
+  top-5 % flow is 1.1–1.9 px against 17–25 px for SD1.5. Both SD1.5 cells miss the CLIP-T tolerance by
+  0.001–0.002: their gap to the best cell is 0.0124 [0.0077, 0.0182] and 0.0110 [0.0055, 0.0166], bootstrap
+  95 % CI of the median difference.
+- **The unwritten fallback:** with no eligible cell, the code fell back to the highest subject consistency
+  overall and chose epicrealism_mm3. Selection ran on it, and the run was stopped before any kernel was built.
+  That output is kept as `results/exp2/selection_superseded_epicrealism_mm3/` and the gate's original
+  output as `quality_D35_fallback.json`.
+
+**Reason.** D-35 did not say what happens when no cell is eligible.
+- **Why not epicrealism_mm3:** subject consistency on its own rewards videos that do not move. That cell
+  would leave motion patching and erasure with almost no motion to transfer, and the motion denominators
+  D_m(A) − D_m(B) near 0.
+- **Why the motion requirement is kept:** motion is the object of the study. CLIP-T is a prompt-alignment
+  check that the SD1.5 cells miss by a margin smaller than the tolerance itself.
+- **Why sd15_mm2 over sd15_mm3:** it has the higher subject consistency, as the rule ranks, and it is also
+  Experiment 1's model.
+- **Two readings left open:** the near-static epiCRealism videos are a finding in their own right, and the
+  epiCRealism decoding gains (0.25–0.27) come from very small within-prompt flows.
