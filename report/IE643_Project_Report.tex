@@ -140,25 +140,11 @@ it is spread across many high-dimensional layers and across many denoising steps
 by weights alone nor by the architecture diagram. 
 Architectural diagrams labelling layers as spatial and temporal tells us what each layer \emph{can}
 see not what it actually ends up encoding. 
-Finding the seperation would require us to actually 
-To do this we generate pairs of clips whose prompts differ only in either the content or the motion
-and record how each layers output changes at each step correspondingly. This gives us the map that we
-are looking for. To verify our results we copy the output of one layer from one clip to the same layer
-of another clip during its generation and see if the change is as we expected it to be or not.
-To judge what is a successful edit we use CLIP \citep{radford2021learning}, that compares the frames
-with the text of the prompt and gives us a score of how well the edit was done, and optical flow 
-\citep{farneback2003} records how the pixels move between frames to give us a score of how 
-well the motiono was preserved.
+Finding the seperation would require us to actually study the trained network by changing the input
+in a controlled way and then observing how the activations are responding to those changes and then
+testing whether the places we found really control the desired properties or by intervening on them
+midst generation. We then use evalutations to judge whether the edits were successful or not.
 \n
-
-Our contribution is a measurement and an honest test of it. We fix the noise tensor so that
-two clips differ in one word only, measure how far each layer moves when the subject changes
-versus when the verb changes, and split every activation into a static part and a
-frame-varying part before measuring. The same split becomes the intervention. We pre-registered
-the hypotheses, the edit metric and the success criterion, and we report the result when it
-fails.
-
-
 
 The report is organised as follows. Section~\ref{sec:workflow} lists how the work progressed.
 Section~\ref{sec:litsurvey} surveys the work we built on. Section~\ref{sec:our_proj} describes
@@ -193,6 +179,18 @@ gives the plan for novelty assessment and Section~\ref{sec:conclusion} concludes
 prep-presentation review. Each stage fixes something the next one uses: the maps decide where
 the dev sweep patches and where the probe-guided LoRA sits, and the dev sweep picks the one
 configuration the test sweep is allowed to use.}
+
+To do this we generate pairs of clips whose prompts differ only in either the content or the motion
+and record how each layers output changes at each step correspondingly. This gives us the map that we
+are looking for. To verify our results we copy the output of one layer from one clip to the same layer
+of another clip during its generation and see if the change is as we expected it to be or not.
+To judge what is a successful edit we use CLIP \citep{radford2021learning}, that compares the frames
+with the text of the prompt and gives us a score of how well the edit was done, and optical flow 
+\citep{farneback2003} records how the pixels move between frames to give us a score of how 
+well the motiono was preserved.
+\n
+
+
 \label{fig:workflow}
 \end{figure}
 
