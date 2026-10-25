@@ -1,0 +1,21 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 998.52it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1401.95it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00, 13.66it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:01<00:00,  2.78it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2428.70it/s]
+Loading pipeline components...:  83%|████████▎ | 5/6 [00:01<00:00,  3.04it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.77it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.66it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.2 s
+117 coordinates, coarse 16
+
+=== s42__ladder: 128 clips, 112 pairs {'null': 16, 'colour': 16, 'coat': 16, 'breed': 16, 'species': 16, 'scene': 16, 'lighting': 16}, 16 anchors, 43 scored coordinates (30 refined)
+    step  5/25   2828.0 s  (4.42 s per clip-step)
+    step 10/25   5657.5 s  (4.42 s per clip-step)
+    step 15/25   8488.1 s  (4.42 s per clip-step)
+    step 20/25  11273.1 s  (4.40 s per clip-step)
+    step 25/25  14080.7 s  (4.40 s per clip-step)
+  denoised in 234.7 min (110.0 s per clip), peak host RSS 8.3 GB
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 10561.99it/s]
+wrote /kaggle/working/out/sd15_mm2/s42__ladder/manifest.json
