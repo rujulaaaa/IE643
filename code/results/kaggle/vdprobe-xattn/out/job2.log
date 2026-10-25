@@ -1,0 +1,16 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 967.77it/s]
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 1380.30it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1461.98it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:02,  2.26it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights:  69%|██████▉   | 136/196 [00:00<00:00, 1351.19it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 1430.26it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00,  4.64it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.01it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.11it/s]
+  base emilianJR/epiCRealism@6522cf856b, adapter @6167b88ffe, 15.5 s
+'a golden retriever running on a beach, high quality, detailed': 77 s with cross-attention recording
+  subject  mask area 0.160  IoU across frames 0.718
+  verb     mask area 0.448  IoU across frames 0.663
+  scene    mask area 1.000  IoU across frames 1.000
+wrote /kaggle/working/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach/cross_attention.json

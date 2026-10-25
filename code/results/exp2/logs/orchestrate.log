@@ -38,3 +38,5 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 Loading weights:   0%|          | 0/591 [00:00<?, ?it/s]Loading weights: 100%|██████████| 591/591 [00:00<00:00, 10679.38it/s]
 /home/shivi/IE643/code/.venv/lib/python3.10/site-packages/transformers/image_processing_backends.py:135: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
   image = torch.from_numpy(image).contiguous()
+sd15_mm2/s1337__in-a-forest: 60 clips
+sd15_mm2/s1337__on-a-beach: 60 clips

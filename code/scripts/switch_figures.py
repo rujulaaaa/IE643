@@ -48,11 +48,17 @@ def curve(df: pd.DataFrame, out: Path):
         ax.text(H2_TAU + 0.1, 1.0, "H2 changepoint τ = 2\n(95% CI shaded)", fontsize=7, color=INK2, va="top")
         keep_c = MOTION if keep.startswith("sm") else CONTENT
         take_c = CONTENT if keep_c == MOTION else MOTION
+        ends = med.iloc[-1]
+        gap = 0.06 - abs(ends[keep] - ends[take])          # nudge the two end labels apart when they collide
+        nudge = {keep: 0.0, take: 0.0}
+        if gap > 0:
+            hi, lo = (keep, take) if ends[keep] >= ends[take] else (take, keep)
+            nudge[hi], nudge[lo] = gap / 2, -gap / 2
         for col, c, lbl, ls, mk in ((keep, keep_c, keep_lbl, "-", "o"), (take, take_c, take_lbl, (0, (4, 2)), "s")):
             ax.plot(med.index, med[col], color=c, linewidth=2, linestyle=ls, marker=mk, markersize=6,
                     markeredgecolor="white", markeredgewidth=1.2, zorder=3)
             ax.axhline(base[col], color=c, linewidth=0.8, linestyle=(0, (1, 2)), zorder=2)
-            ax.annotate(lbl, (med.index[-1], med[col].iloc[-1]), xytext=(6, 0), textcoords="offset points",
+            ax.annotate(lbl, (med.index[-1], med[col].iloc[-1] + nudge[col]), xytext=(6, 0), textcoords="offset points",
                         fontsize=7.5, color=INK2, va="center")
         if d == "motion":
             mk = df[df.arm.str.startswith("motion.switchmask.t")].copy()
@@ -103,7 +109,7 @@ def gain(summary: pd.DataFrame, out: Path, n_pairs: int):
         ax.set_yticks(y, [name(a) + ("  (pre-registered)" if p else "") for a, p in zip(g.arm, pre)], fontsize=7.5)
         ax.set_title({"motion": "Keep motion, change subject", "content": "Keep subject, change motion"}[d],
                      loc="left", fontsize=9, color=INK)
-        ax.set_xlabel("median D(arm) − median D(prompt only), 95% CI")
+    fig.supxlabel("median D(arm) − median D(prompt only), with 95% CI", fontsize=9, color=INK2, y=0.02)
     fig.text(0.0, -0.03, f"{n_pairs} held-out test pairs. A CI that excludes 0 is D-16's success criterion. Dark dots: "
              "the arms fixed in advance (D-38).", fontsize=7, color=INK3)
     fig.tight_layout()

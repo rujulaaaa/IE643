@@ -1,0 +1,100 @@
+=== switch: /usr/bin/python3 -u scripts/switch_sweep.py --split test --shard 1/4 --out /kaggle/working/out/job1/switch
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 872.81it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1306.42it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:01<00:06,  1.25s/it]Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:02,  1.73it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:01<00:01,  2.74it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2572.17it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  5.66it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.51it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.1 s
+[1/3] 1337__in-a-forest__german-shepherd-walking__wolf-jumping: source + 6 reference arms + 12 switch arms
+    step  5/25    100.4 s  (2.87 s per clip-step)
+    step 10/25    205.2 s  (2.93 s per clip-step)
+    step 15/25    306.7 s  (2.92 s per clip-step)
+    step 20/25    408.5 s  (2.92 s per clip-step)
+    step 25/25    510.2 s  (2.92 s per clip-step)
+    step  5/25    159.9 s  (2.91 s per clip-step)
+    step 10/25    319.8 s  (2.91 s per clip-step)
+    step 15/25    479.5 s  (2.91 s per clip-step)
+    step 20/25    639.8 s  (2.91 s per clip-step)
+    step 25/25    799.5 s  (2.91 s per clip-step)
+    step  5/25     28.9 s  (2.89 s per clip-step)
+    step 10/25     58.0 s  (2.90 s per clip-step)
+    step 15/25     87.2 s  (2.91 s per clip-step)
+    step 20/25    116.3 s  (2.91 s per clip-step)
+    step 25/25    145.5 s  (2.91 s per clip-step)
+wrote /kaggle/working/out/job1/switch/1337__in-a-forest__german-shepherd-walking__wolf-jumping/manifest.json
+  1455 s (72.8 s per clip), mask area 0.232666015625, source diff between groups 0.00e+00
+[2/3] 2024__in-a-forest__wolf-walking__deer-spinning: source + 6 reference arms + 12 switch arms
+    step  5/25    105.7 s  (3.02 s per clip-step)
+    step 10/25    210.7 s  (3.01 s per clip-step)
+    step 15/25    312.1 s  (2.97 s per clip-step)
+    step 20/25    414.0 s  (2.96 s per clip-step)
+    step 25/25    515.9 s  (2.95 s per clip-step)
+    step  5/25    159.9 s  (2.91 s per clip-step)
+    step 10/25    319.7 s  (2.91 s per clip-step)
+    step 15/25    480.0 s  (2.91 s per clip-step)
+    step 20/25    640.0 s  (2.91 s per clip-step)
+    step 25/25    799.6 s  (2.91 s per clip-step)
+    step  5/25     28.9 s  (2.89 s per clip-step)
+    step 10/25     57.9 s  (2.90 s per clip-step)
+    step 15/25     86.9 s  (2.90 s per clip-step)
+    step 20/25    116.1 s  (2.90 s per clip-step)
+    step 25/25    145.2 s  (2.90 s per clip-step)
+wrote /kaggle/working/out/job1/switch/2024__in-a-forest__wolf-walking__deer-spinning/manifest.json
+  1461 s (73.0 s per clip), mask area 0.31036376953125, source diff between groups 0.00e+00
+[3/3] 42__in-a-forest__elderly-man-spinning__young-man-running: source + 6 reference arms + 12 switch arms
+    step  5/25    105.5 s  (3.01 s per clip-step)
+    step 10/25    210.7 s  (3.01 s per clip-step)
+    step 15/25    311.9 s  (2.97 s per clip-step)
+    step 20/25    413.6 s  (2.95 s per clip-step)
+    step 25/25    515.0 s  (2.94 s per clip-step)
+    step  5/25    159.6 s  (2.90 s per clip-step)
+    step 10/25    319.0 s  (2.90 s per clip-step)
+    step 15/25    479.0 s  (2.90 s per clip-step)
+    step 20/25    638.8 s  (2.90 s per clip-step)
+    step 25/25    799.1 s  (2.91 s per clip-step)
+    step  5/25     28.9 s  (2.89 s per clip-step)
+    step 10/25     57.9 s  (2.89 s per clip-step)
+    step 15/25     86.8 s  (2.89 s per clip-step)
+    step 20/25    115.8 s  (2.89 s per clip-step)
+    step 25/25    144.7 s  (2.89 s per clip-step)
+wrote /kaggle/working/out/job1/switch/42__in-a-forest__elderly-man-spinning__young-man-running/manifest.json
+  1459 s (72.9 s per clip), mask area 0.7097625732421875, source diff between groups 0.00e+00
+=== switch: exit 0 after 4728 s
+=== score: /usr/bin/python3 -u scripts/score_edits.py /kaggle/working/out/job1/switch --out /kaggle/working/out/job1/score
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 912.20it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 793.50it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:01,  3.92it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00,  9.19it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:00<00:00, 12.15it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2690.59it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  8.82it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 13.9 s
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 7925.09it/s]
+scored 1337__in-a-forest__german-shepherd-walking__wolf-jumping: 19 clips
+scored 2024__in-a-forest__wolf-walking__deer-spinning: 19 clips
+scored 42__in-a-forest__elderly-man-spinning__young-man-running: 19 clips
+direction                  arm  median_D  median_dD  frac_dD_pos  d16_ci_lo  d16_ci_hi  consistency_ratio  sm_A  sc_B  sm_B  sc_A
+  content    content.switch.t3     0.194      0.070        1.000      0.013      0.074              1.021 0.040 0.782 0.246 0.858
+  content          content.sel     0.181      0.045        0.667     -0.142      0.238              0.999 0.195 0.732 0.112 0.904
+  content    content.switch.t1     0.080      0.035        0.667     -0.268      0.127              1.012 0.754 0.746 0.139 0.971
+  content    content.switch.t8     0.150      0.026        1.000      0.002      0.043              0.994 0.112 0.778 0.330 0.840
+  content    content.switch.t5     0.149      0.025        0.667     -0.012      0.040              1.007 0.057 0.787 0.272 0.840
+  content         content.base     0.124      0.000        0.000      0.000      0.000              0.984 0.083 0.779 0.326 0.818
+  content    content.switch.t2     0.137     -0.098        0.333     -0.186      0.051              1.011 0.379 0.767 0.137 0.873
+   motion          motion.attn     0.349      0.188        1.000      0.187      0.191              0.979 0.649 0.834 0.102 0.759
+   motion     motion.switch.t8     0.227      0.065        0.667     -0.043      0.144              0.988 0.788 0.779 0.144 0.808
+   motion     motion.switch.t5     0.215      0.058        0.667     -0.030      0.183              0.997 0.631 0.791 0.092 0.784
+   motion           motion.sel     0.207      0.032        1.000      0.024      0.122              0.984 0.633 0.792 0.101 0.808
+   motion     motion.switch.t3     0.203      0.027        1.000      0.006      0.089              1.008 0.447 0.813 0.152 0.762
+   motion motion.switchmask.t3     0.163      0.001        0.667     -0.062      0.155              0.968 0.714 0.764 0.168 0.777
+   motion          motion.base     0.161      0.000        0.000      0.000      0.000              1.009 0.133 0.852 0.170 0.756
+   motion     motion.switch.t1     0.140     -0.021        0.333     -0.160      0.082              1.001 0.162 0.823 0.049 0.750
+   motion motion.switchmask.t2     0.133     -0.028        0.333     -0.104      0.215              0.978 0.681 0.770 0.123 0.770
+   motion     motion.switch.t2     0.110     -0.052        0.333     -0.173      0.072              1.006 0.211 0.837 0.148 0.764
+wrote /kaggle/working/out/job1/switch/score_summary.json
+=== score: exit 0 after 233 s

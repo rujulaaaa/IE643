@@ -253,3 +253,14 @@ from the pre-registered Stage 6 verdict.
 should keep the first prompt's motion and take the second prompt's content, and the switch-time curve
 should turn near τ = 2. This makes H2 an intervention test and an edit method at the same time. The test
 pairs were used once before (Stage 6); nothing here is chosen on them.
+
+**Outcome (2026-10-25, 12 test pairs, `results/switch_test`, figures in `results/figures/switch/`).**
+Pre-registered τ = 2 arms do not meet D-16: motion.switch.t2 +0.040 [−0.099, 0.103]; content.switch.t2
++0.064 [−0.085, 0.144]; motion.switchmask.t2 +0.011 [−0.099, 0.163]. Exploratory arms that meet D-16 (CI
+excludes 0, consistency ratio ≥ 0.9): content.switch.t3 +0.076 [0.038, 0.086], 11/12 pairs positive;
+content.switch.t5 +0.096 [0.032, 0.132], 11/12. Motion kept from A rises with τ without a knee at 2
+(sm_A 0.38, 0.39, 0.46, 0.59, 0.77 at τ = 1, 2, 3, 5, 8); B's motion takes only from τ = 3 (sm_B 0.12 at 2,
+0.24 at 3). The masked arm raises sm_A at τ = 2 (0.61 vs 0.39) at equal sc_B, but its D gain is not
+reliable; subject-mask area ranged 0.23–1.0 (two pairs 1.0, where it reduces to the plain switch).
+For reference on the same 12 pairs, motion.attn +0.123 [−0.013, 0.204] and content.sel +0.105
+[−0.011, 0.157] do not exclude 0 either (motion.attn did on the first 6 pairs: [0.021, 0.222]).
