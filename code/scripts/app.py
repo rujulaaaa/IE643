@@ -42,6 +42,8 @@ BLOCKS = ["down_blocks.0", "down_blocks.1", "down_blocks.2", "down_blocks.3", "m
           "up_blocks.0", "up_blocks.1", "up_blocks.2", "up_blocks.3", "all"]
 WINDOW_LABELS = {"Steps 0-8 (first third)": "ft", "All 25 steps": "all", "Step 0 only": "one0", "Steps 0-3": "five1"}
 METHOD_LABELS = {
+    "lit_dual": "Attention edit, appearance from one clip + motion from the other (needs B; passed on test)",
+    "lit_single": "Attention edit, from A only (MasaCtrl / UniEdit, chosen on dev)",
     "selected": "Selected patch (chosen on the dev pairs)",
     "custom": "Patch a block and window of your choice",
     "attn": "Temporal attention injection, steps 0-8",
@@ -50,8 +52,6 @@ METHOD_LABELS = {
     "lora_probe": "Prompt + probe-guided motion LoRA",
     "lora_full": "Prompt + full motion LoRA",
     "lora_anti": "Prompt + wrong-place LoRA (control)",
-    "lit_single": "Attention edit, from A only (MasaCtrl / UniEdit, chosen on dev)",
-    "lit_dual": "Attention edit, appearance from one clip + motion from the other (needs B)",
 }
 SYSTEM_FONT = ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"]
 MONO_FONT = ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "monospace"]
@@ -164,7 +164,7 @@ def edit_tab(engine: Engine | None, vocab: dict):
             direction = gr.Radio([("▲ Keep A's motion, give it B's subject", "motion"),
                                   ("■ Keep A's subject, give it B's motion", "content")],
                                  value="motion", label="What to keep from A")
-            method = gr.Dropdown([(v, k) for k, v in METHOD_LABELS.items()], value="selected", label="Method")
+            method = gr.Dropdown([(v, k) for k, v in METHOD_LABELS.items()], value="lit_dual", label="Method")
         with gr.Accordion("Advanced settings", open=False):
             gr.Markdown(f"The selected patch was fixed on the dev pairs before the test run (rule D-31): "
                         f"keep motion = `{arm_label(sel['motion']['arm'])}`, keep content = "
