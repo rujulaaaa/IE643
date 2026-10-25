@@ -121,7 +121,7 @@ the same motion could be performed by a different object. For example instead of
 whether a video diffusion model keeps them apart internally and if it does then in which layers and at which
 denoising steps does it decide content and and ata which steps does it decide the motion, and whether that knowledge is precise enough to
 change one while keeping the other.
-\n
+
 
 Answering this question is important because people increasingly want to edit a generated clip rather than regenrating it because changing the prompt changes the subject, the background and motion all at once. 
 Recent video diffusion models are built on image diffusion models by adding temporal layers to them, as AnimateDiff
@@ -131,7 +131,7 @@ chosen layers or features to transfer or customise motion, but they chose those 
 is usually assumed rather than measured. A measured mapping of where the content lies and where the motion lies would allow targetted edits, changing only certain parts of the clip and retaining the other 
 desired ones rather than entire regeneration of the clip. It would show us where to place the few trainable parameters of LoRA \citep{hu2022lora} when teaching the model a new motion. 
 A negative answer is also useful because if the split is not clean then the editing methods that assume this clean split are working for some other reasons that need further invetsigation. 
-\n 
+
 
 To find such a map, we experiment with the model. The model is a U-net architecture that turns noise into video over a sequence of denoising steps. It was trained on just the input and the output and was never told 
 as to which part of the model should carry the motion and which should carry the content. So any
@@ -144,7 +144,7 @@ Finding the seperation would require us to actually study the trained network by
 in a controlled way and then observing how the activations are responding to those changes and then
 testing whether the places we found really control the desired properties or by intervening on them
 midst generation. We then use evalutations to judge whether the edits were successful or not.
-\n
+
 
 The report is organised as follows. Section~\ref{sec:workflow} lists how the work progressed.
 Section~\ref{sec:litsurvey} surveys the work we built on. Section~\ref{sec:our_proj} describes
@@ -163,45 +163,40 @@ that move also change depending on the object performing the motion. We develope
 the model when it generated clips and used those measurements to gauge where is content stored and
 where is motion stored. And based on those observations we tried to edit the model mid generation to validate
 our hypthesised places of residence of content/motion. Some of our predictions were correct
-and some of them turned out to be false that told us what to try out next. 
+and some of them turned out to be false that told us what to try out next.
 
 \begin{figure}[!h]
 \centering
 \begin{tikzpicture}[
-  box/.style={draw=black!60, rounded corners=2pt, align=center, font=\footnotesize,
-              minimum height=1.05cm, text width=2.35cm, fill=#1},
-  box/.default=white, >={Stealth[length=2mm]}, node distance=0.42cm]
-\node[box=black!5] (p) {Pilots E1--E3\\cost, control,\\activation size};
-\node[box=blue!8, right=of p] (s) {Probing sweep\\360 clips,\\750 pairs};
-\node[box=blue!8, right=of s] (m) {Selectivity maps\\H1--H3 tests,\\linear probes};
-\node[box=orange!12, right=of m] (d) {Dev sweep\\51 arms $\times$ 4 pairs\\$\to$ patch site};
-\node[box=orange!12, right=of d] (t) {Test sweep\\12 held-out\\pairs};
-\node[box=black!5, below=0.55cm of m] (l) {Motion LoRAs\\full / probe / anti};
-\node[box=black!5, below=0.55cm of t] (i) {Interface\\live, upload,\\browser};
-\draw[->] (p) -- (s); \draw[->] (s) -- (m); \draw[->] (m) -- (d); \draw[->] (d) -- (t);
-\draw[->] (m) -- node[right, font=\scriptsize]{placement} (l);
-\draw[->] (l) -| ([xshift=-3mm]t.south);
-\draw[->] (t) -- (i);
-\draw[dashed, black!50] ([xshift=-1mm,yshift=8mm]s.north west) -- ([xshift=-1mm,yshift=-22mm]s.south west)
-   node[below, font=\scriptsize, black!70, align=center]{prep review\\(21 Sep)};
+  wf/.style={draw=black!60, rounded corners=2pt, align=center, font=\footnotesize,
+             minimum height=1.25cm, text width=2.45cm, fill=#1},
+  wf/.default=white, >={Stealth[length=2mm]}, node distance=0.55cm]
+\node[wf=black!5] (q) {\textbf{Problem statement}\\where do content\\and motion live?};
+\node[wf=black!5, right=of q] (pl) {\textbf{Planning}\\model,\\hypotheses,\\tests fixed early};
+\node[wf=black!5, right=of pl] (pi) {\textbf{Pilot}\\\textbf{experiments}\\cost, motion\\confound, storage};
+\node[wf=blue!8, right=of pi] (to) {\textbf{Probing tools}\\95 hooks,\\lockstep sampler};
+\node[wf=blue!8, right=of to] (lo) {\textbf{Locating content}\\\textbf{and motion}\\360 clips, maps};
+\node[wf=blue!8, below=1.1cm of q] (va) {\textbf{Other models}\\same probing on\\4 variants};
+\node[wf=black!5, right=of va] (lr) {\textbf{Motion LoRAs}\\full / map-placed\\/ wrong place};
+\node[wf=orange!12, right=of lr] (iv) {\textbf{Intervention}\\patches, attention\\injection, controls};
+\node[wf=orange!12, right=of iv] (ed) {\textbf{Editing}\\4 dev pairs $\to$\\12 held-out pairs};
+\node[wf=black!5, right=of ed] (in) {\textbf{Interface}\\live edit, upload,\\browser};
+\draw[->] (q) -- (pl); \draw[->] (pl) -- (pi); \draw[->] (pi) -- (to); \draw[->] (to) -- (lo);
+\coordinate (bus) at ([yshift=-0.55cm]lo.south);
+\draw (lo.south) -- (bus);
+\draw[->] (bus) -| (iv.north);
+\draw[->] (bus) -| (lr.north);
+\draw[->] (bus) -| (va.north);
+\draw[->] (iv) -- (ed); \draw[->] (ed) -- (in);
+\draw[->] (lr.south) -- ++(0,-0.35) -| (ed.south);
+\path (pi.east) -- coordinate[midway] (rv) (to.west);
+\draw[dashed, black!50] ([yshift=0.95cm]rv) -- ([yshift=-0.8cm]rv)
+   node[pos=0, above, font=\scriptsize, black!70] {prep review (21 Sep)};
 \end{tikzpicture}
-\caption{How the work was ordered. Everything left of the dashed line was done before the
-prep-presentation review. Each stage fixes something the next one uses: the maps decide where
-the dev sweep patches and where the probe-guided LoRA sits, and the dev sweep picks the one
-configuration the test sweep is allowed to use.}
-
-To do this we generate pairs of clips whose prompts differ only in either the content or the motion
-and record how each layers output changes at each step correspondingly. This gives us the map that we
-are looking for. To verify our results we copy the output of one layer from one clip to the same layer
-of another clip during its generation and see if the change is as we expected it to be or not.
-To judge what is a successful edit we use CLIP \citep{radford2021learning}, that compares the frames
-with the text of the prompt and gives us a score of how well the edit was done, and optical flow 
-\citep{farneback2003} records how the pixels move between frames to give us a score of how 
-well the motiono was preserved.
-\n
-
-
-\label{fig:workflow}
+\caption{Order of the work. Everything left of the dashed line was done before the
+prep-presentation review. The maps from the probing decide where we intervene and where the
+map-placed LoRA sits, and the same probing is then repeated on four other model variants.}
+\label{fig:workflow_diagram}
 \end{figure}
 
 \begin{itemize}
