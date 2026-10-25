@@ -228,17 +228,22 @@ Added attention level edits and prompt switching.
 After finding scene cuts in training clips we retrained.
 \item \textbf{Check findings on other models:} We repeated the probing on 4 other model variants to
 see if the map is specific to the diffusion model we used or does it apply in general.  
-\item \textbf{Interface:} A live app where we can edit an uploaded video and view the maps and cross-attention.
+\item \textbf{Interface:} A live app where we can edit an uploaded video and view the maps and cross-attention
 \end{itemize}
 
 \section{Literature Survey} \label{sec:litsurvey}
 
-\textbf{Video diffusion with factorised space and time.} Video Diffusion Models \citep{ho2022vdm}
-extended the image U-Net to video by factorising attention into a spatial part (within a frame)
+Video Diffusion Models \citep{ho2022vdm}
+extended the image U-Net architecture to a video generation architecture by factorising attention into a spatial part (within a frame)
 and a temporal part (across frames at the same position). Video LDM \citep{blattmann2023align}
-did the same in the latent space of Stable Diffusion \citep{rombach2022ldm} and, importantly for
-us, inserted the temporal layers into a \emph{pretrained, frozen} image model and trained only
-the new layers. AnimateDiff \citep{guo2024animatediff} pushed this furthest: its motion module
+did the same in the latent space of Stable Diffusion \citep{rombach2022ldm} and then inserted the
+temporal layers into a pretrained and frozen image model and trained only
+the new layers. 
+
+AnimateDiff \citep{guo2024animatediff} further built on this idea. He wanted to animate 
+personalised text-to-image models without training 
+
+its motion module
 is a stack of temporal transformers trained once on video and then plugged into any
 personalised Stable Diffusion 1.5 checkpoint without further tuning. This is why we chose it.
 Content and motion sit in separate parameter sets by construction, so the structural
