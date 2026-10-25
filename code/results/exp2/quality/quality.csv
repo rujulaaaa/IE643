@@ -1,0 +1,961 @@
+cell,group,clip,subject,verb,scene,family,subject_consistency,dynamic,flow_top5,clip_t,verb_prob,verb_hit
+sd15_mm2,s1337__in-a-forest,s1337__golden-retriever__running__in-a-forest,golden retriever,running,in a forest,Q,0.7477120737234751,True,46.97028350830078,0.35688620805740356,0.5256678462028503,True
+sd15_mm2,s1337__in-a-forest,s1337__golden-retriever__walking__in-a-forest,golden retriever,walking,in a forest,Q,0.7435351053873698,True,41.61250686645508,0.35098981857299805,0.3001408874988556,False
+sd15_mm2,s1337__in-a-forest,s1337__golden-retriever__jumping__in-a-forest,golden retriever,jumping,in a forest,Q,0.7380723635355632,True,29.980188369750977,0.37430310249328613,0.7547451257705688,True
+sd15_mm2,s1337__in-a-forest,s1337__golden-retriever__spinning__in-a-forest,golden retriever,spinning,in a forest,Q,0.7278829216957092,True,36.522884368896484,0.3694877624511719,0.07526613026857376,False
+sd15_mm2,s1337__in-a-forest,s1337__german-shepherd__running__in-a-forest,german shepherd,running,in a forest,Q,0.7527104775110881,True,31.41326332092285,0.35244330763816833,0.3765445649623871,False
+sd15_mm2,s1337__in-a-forest,s1337__german-shepherd__walking__in-a-forest,german shepherd,walking,in a forest,Q,0.8487921158472697,True,27.247331619262695,0.35106542706489563,0.5562904477119446,True
+sd15_mm2,s1337__in-a-forest,s1337__german-shepherd__jumping__in-a-forest,german shepherd,jumping,in a forest,Q,0.7834936459859212,True,40.48633575439453,0.3432787358760834,0.3907431960105896,True
+sd15_mm2,s1337__in-a-forest,s1337__german-shepherd__spinning__in-a-forest,german shepherd,spinning,in a forest,Q,0.770050972700119,True,35.32316207885742,0.3379122018814087,0.13480491936206818,False
+sd15_mm2,s1337__in-a-forest,s1337__horse__running__in-a-forest,horse,running,in a forest,Q,0.8224101742108663,True,19.730091094970703,0.3382217288017273,0.3954707980155945,False
+sd15_mm2,s1337__in-a-forest,s1337__horse__walking__in-a-forest,horse,walking,in a forest,Q,0.885251506169637,True,9.428729057312012,0.33692798018455505,0.4586290121078491,True
+sd15_mm2,s1337__in-a-forest,s1337__horse__jumping__in-a-forest,horse,jumping,in a forest,Q,0.7932798206806183,True,18.36742401123047,0.33913224935531616,0.3204748332500458,False
+sd15_mm2,s1337__in-a-forest,s1337__horse__spinning__in-a-forest,horse,spinning,in a forest,Q,0.8719352185726166,True,8.646038055419922,0.3291844427585602,0.05678268149495125,False
+sd15_mm2,s1337__in-a-forest,s1337__wolf__running__in-a-forest,wolf,running,in a forest,Q,0.7579827149709065,True,21.67475700378418,0.33868587017059326,0.5291551947593689,True
+sd15_mm2,s1337__in-a-forest,s1337__wolf__walking__in-a-forest,wolf,walking,in a forest,Q,0.8480264286200205,True,4.679535865783691,0.340642511844635,0.5022192001342773,True
+sd15_mm2,s1337__in-a-forest,s1337__wolf__jumping__in-a-forest,wolf,jumping,in a forest,Q,0.740868616104126,True,37.500423431396484,0.32357627153396606,0.37272021174430847,True
+sd15_mm2,s1337__in-a-forest,s1337__wolf__spinning__in-a-forest,wolf,spinning,in a forest,Q,0.7199147343635559,True,33.103031158447266,0.32921794056892395,0.24914014339447021,False
+sd15_mm2,s1337__in-a-forest,s1337__tiger__running__in-a-forest,tiger,running,in a forest,Q,0.897230080763499,True,109.10929107666016,0.31377488374710083,0.16912256181240082,False
+sd15_mm2,s1337__in-a-forest,s1337__tiger__walking__in-a-forest,tiger,walking,in a forest,Q,0.9558660964171092,True,98.46742248535156,0.31869715452194214,0.8587764501571655,True
+sd15_mm2,s1337__in-a-forest,s1337__tiger__jumping__in-a-forest,tiger,jumping,in a forest,Q,0.8757512470086416,True,19.58842658996582,0.3525041937828064,0.234500914812088,False
+sd15_mm2,s1337__in-a-forest,s1337__tiger__spinning__in-a-forest,tiger,spinning,in a forest,Q,0.920689461628596,True,12.989960670471191,0.3477124571800232,0.10647106170654297,False
+sd15_mm2,s1337__in-a-forest,s1337__fox__running__in-a-forest,fox,running,in a forest,Q,0.7965134104092916,True,18.500070571899414,0.34547698497772217,0.30742964148521423,False
+sd15_mm2,s1337__in-a-forest,s1337__fox__walking__in-a-forest,fox,walking,in a forest,Q,0.8430688142776489,True,7.108768939971924,0.35729849338531494,0.5587071776390076,True
+sd15_mm2,s1337__in-a-forest,s1337__fox__jumping__in-a-forest,fox,jumping,in a forest,Q,0.8304332395394644,True,36.166019439697266,0.3617440164089203,0.2759440541267395,False
+sd15_mm2,s1337__in-a-forest,s1337__fox__spinning__in-a-forest,fox,spinning,in a forest,Q,0.7667844235897064,True,41.48380661010742,0.3528003990650177,0.14353542029857635,False
+sd15_mm2,s1337__in-a-forest,s1337__deer__running__in-a-forest,deer,running,in a forest,Q,0.7931852241357168,True,12.703027725219727,0.32603490352630615,0.17291294038295746,False
+sd15_mm2,s1337__in-a-forest,s1337__deer__walking__in-a-forest,deer,walking,in a forest,Q,0.8109536985556285,True,11.571711540222168,0.3116568326950073,0.48774266242980957,True
+sd15_mm2,s1337__in-a-forest,s1337__deer__jumping__in-a-forest,deer,jumping,in a forest,Q,0.7579368968804677,True,16.70102310180664,0.3290010690689087,0.35163500905036926,True
+sd15_mm2,s1337__in-a-forest,s1337__deer__spinning__in-a-forest,deer,spinning,in a forest,Q,0.7890508453051249,True,19.434478759765625,0.31109946966171265,0.11371368914842606,False
+sd15_mm2,s1337__in-a-forest,s1337__brown-bear__running__in-a-forest,brown bear,running,in a forest,Q,0.8628734648227692,True,27.764575958251953,0.3272719979286194,0.19899103045463562,False
+sd15_mm2,s1337__in-a-forest,s1337__brown-bear__walking__in-a-forest,brown bear,walking,in a forest,Q,0.9185108840465546,True,20.850683212280273,0.3334518373012543,0.7156481742858887,True
+sd15_mm2,s1337__in-a-forest,s1337__brown-bear__jumping__in-a-forest,brown bear,jumping,in a forest,Q,0.8654838025569915,True,21.54886817932129,0.33381202816963196,0.14911513030529022,False
+sd15_mm2,s1337__in-a-forest,s1337__brown-bear__spinning__in-a-forest,brown bear,spinning,in a forest,Q,0.8871737043062846,True,31.80371856689453,0.30093610286712646,0.06794572621583939,False
+sd15_mm2,s1337__in-a-forest,s1337__young-man__running__in-a-forest,young man,running,in a forest,H,0.7928902824719747,True,73.02799987792969,0.3008672297000885,0.9010384678840637,True
+sd15_mm2,s1337__in-a-forest,s1337__young-man__walking__in-a-forest,young man,walking,in a forest,H,0.90457750360171,True,18.494892120361328,0.2980303168296814,0.7172372937202454,True
+sd15_mm2,s1337__in-a-forest,s1337__young-man__jumping__in-a-forest,young man,jumping,in a forest,H,0.819564030567805,True,13.726747512817383,0.33080992102622986,0.9100848436355591,True
+sd15_mm2,s1337__in-a-forest,s1337__young-man__spinning__in-a-forest,young man,spinning,in a forest,H,0.8600849469502767,True,26.579288482666016,0.29865434765815735,0.5661329627037048,True
+sd15_mm2,s1337__in-a-forest,s1337__young-woman__running__in-a-forest,young woman,running,in a forest,H,0.8347879230976105,True,58.47236251831055,0.3117578327655792,0.9218654036521912,True
+sd15_mm2,s1337__in-a-forest,s1337__young-woman__walking__in-a-forest,young woman,walking,in a forest,H,0.8628475467363993,True,36.281253814697266,0.3119458258152008,0.9181209206581116,True
+sd15_mm2,s1337__in-a-forest,s1337__young-woman__jumping__in-a-forest,young woman,jumping,in a forest,H,0.8359265307585398,True,27.485965728759766,0.3528491258621216,0.7723202109336853,True
+sd15_mm2,s1337__in-a-forest,s1337__young-woman__spinning__in-a-forest,young woman,spinning,in a forest,H,0.8743431250254313,True,20.24773597717285,0.3152111768722534,0.644587516784668,True
+sd15_mm2,s1337__in-a-forest,s1337__athlete__running__in-a-forest,athlete,running,in a forest,H,0.8074371874332428,True,57.46305847167969,0.3162615895271301,0.796899676322937,True
+sd15_mm2,s1337__in-a-forest,s1337__athlete__walking__in-a-forest,athlete,walking,in a forest,H,0.8415301084518433,True,64.02345275878906,0.2999476194381714,0.4069293439388275,False
+sd15_mm2,s1337__in-a-forest,s1337__athlete__jumping__in-a-forest,athlete,jumping,in a forest,H,0.8369349340597788,True,25.439729690551758,0.33172518014907837,0.3320883512496948,False
+sd15_mm2,s1337__in-a-forest,s1337__athlete__spinning__in-a-forest,athlete,spinning,in a forest,H,0.8657918592294057,True,38.8316764831543,0.3083588480949402,0.8694115877151489,True
+sd15_mm2,s1337__in-a-forest,s1337__soldier__running__in-a-forest,soldier,running,in a forest,H,0.799287211894989,True,39.911537170410156,0.30978327989578247,0.9053921103477478,True
+sd15_mm2,s1337__in-a-forest,s1337__soldier__walking__in-a-forest,soldier,walking,in a forest,H,0.8760798831780752,True,13.372845649719238,0.35181623697280884,0.4399455487728119,True
+sd15_mm2,s1337__in-a-forest,s1337__soldier__jumping__in-a-forest,soldier,jumping,in a forest,H,0.8269635518391927,True,11.042478561401367,0.3224640190601349,0.611470103263855,True
+sd15_mm2,s1337__in-a-forest,s1337__soldier__spinning__in-a-forest,soldier,spinning,in a forest,H,0.7994949003060658,True,23.522489547729492,0.30483004450798035,0.4037758409976959,True
+sd15_mm2,s1337__in-a-forest,s1337__dancer__running__in-a-forest,dancer,running,in a forest,H,0.8179891665776571,True,58.77257537841797,0.335726797580719,0.6055006980895996,True
+sd15_mm2,s1337__in-a-forest,s1337__dancer__walking__in-a-forest,dancer,walking,in a forest,H,0.8538420140743256,True,29.886533737182617,0.33100980520248413,0.22770752012729645,False
+sd15_mm2,s1337__in-a-forest,s1337__dancer__jumping__in-a-forest,dancer,jumping,in a forest,H,0.8420970916748047,True,29.873323440551758,0.3309105932712555,0.16546595096588135,False
+sd15_mm2,s1337__in-a-forest,s1337__dancer__spinning__in-a-forest,dancer,spinning,in a forest,H,0.8631045977274577,True,21.259714126586914,0.32641810178756714,0.4220290780067444,True
+sd15_mm2,s1337__in-a-forest,s1337__child__running__in-a-forest,child,running,in a forest,H,0.8480401674906413,True,75.60310363769531,0.30709245800971985,0.5865899920463562,True
+sd15_mm2,s1337__in-a-forest,s1337__child__walking__in-a-forest,child,walking,in a forest,H,0.8968947271505991,True,32.328548431396484,0.3012389540672302,0.7228310704231262,True
+sd15_mm2,s1337__in-a-forest,s1337__child__jumping__in-a-forest,child,jumping,in a forest,H,0.843381271759669,True,22.683156967163086,0.351911723613739,0.39952951669692993,True
+sd15_mm2,s1337__in-a-forest,s1337__child__spinning__in-a-forest,child,spinning,in a forest,H,0.8184994002183278,True,28.82204818725586,0.32503512501716614,0.3713495433330536,True
+sd15_mm2,s1337__in-a-forest,s1337__elderly-man__running__in-a-forest,elderly man,running,in a forest,H,0.8909682909647624,True,71.72216796875,0.33030250668525696,0.9211595058441162,True
+sd15_mm2,s1337__in-a-forest,s1337__elderly-man__walking__in-a-forest,elderly man,walking,in a forest,H,0.9058904310067495,True,22.06140899658203,0.34437820315361023,0.5912071466445923,True
+sd15_mm2,s1337__in-a-forest,s1337__elderly-man__jumping__in-a-forest,elderly man,jumping,in a forest,H,0.8137029826641082,True,12.759510040283203,0.3450963795185089,0.7706241011619568,True
+sd15_mm2,s1337__in-a-forest,s1337__elderly-man__spinning__in-a-forest,elderly man,spinning,in a forest,H,0.8691117326418559,True,16.943233489990234,0.32347550988197327,0.47799474000930786,True
+sd15_mm2,s1337__on-a-beach,s1337__golden-retriever__running__on-a-beach,golden retriever,running,on a beach,Q,0.7951375603675842,True,101.44728088378906,0.3433794677257538,0.31083932518959045,False
+sd15_mm2,s1337__on-a-beach,s1337__golden-retriever__walking__on-a-beach,golden retriever,walking,on a beach,Q,0.7410177369912465,True,65.38685607910156,0.3318793773651123,0.6038612127304077,True
+sd15_mm2,s1337__on-a-beach,s1337__golden-retriever__jumping__on-a-beach,golden retriever,jumping,on a beach,Q,0.8168194353580475,True,27.791038513183594,0.3559039235115051,0.7056383490562439,True
+sd15_mm2,s1337__on-a-beach,s1337__golden-retriever__spinning__on-a-beach,golden retriever,spinning,on a beach,Q,0.7535257180531819,True,190.56344604492188,0.3085635006427765,0.16928543150424957,False
+sd15_mm2,s1337__on-a-beach,s1337__german-shepherd__running__on-a-beach,german shepherd,running,on a beach,Q,0.8092753688494364,True,129.76773071289062,0.3436679542064667,0.17306804656982422,False
+sd15_mm2,s1337__on-a-beach,s1337__german-shepherd__walking__on-a-beach,german shepherd,walking,on a beach,Q,0.8315882563591004,True,30.16561508178711,0.34014105796813965,0.7106500267982483,True
+sd15_mm2,s1337__on-a-beach,s1337__german-shepherd__jumping__on-a-beach,german shepherd,jumping,on a beach,Q,0.775075227022171,True,137.28964233398438,0.3398940861225128,0.30714893341064453,False
+sd15_mm2,s1337__on-a-beach,s1337__german-shepherd__spinning__on-a-beach,german shepherd,spinning,on a beach,Q,0.7750933587551116,True,160.3304901123047,0.33593493700027466,0.13027185201644897,False
+sd15_mm2,s1337__on-a-beach,s1337__horse__running__on-a-beach,horse,running,on a beach,Q,0.8413444956143697,True,24.30838394165039,0.34378424286842346,0.18366555869579315,False
+sd15_mm2,s1337__on-a-beach,s1337__horse__walking__on-a-beach,horse,walking,on a beach,Q,0.9046249429384867,True,17.670795440673828,0.33554309606552124,0.6140722036361694,True
+sd15_mm2,s1337__on-a-beach,s1337__horse__jumping__on-a-beach,horse,jumping,on a beach,Q,0.8649072547753652,True,22.677976608276367,0.3325173854827881,0.3737623691558838,True
+sd15_mm2,s1337__on-a-beach,s1337__horse__spinning__on-a-beach,horse,spinning,on a beach,Q,0.9050442496935527,False,4.719285488128662,0.30692780017852783,0.23543468117713928,False
+sd15_mm2,s1337__on-a-beach,s1337__wolf__running__on-a-beach,wolf,running,on a beach,Q,0.7877914011478424,True,173.71597290039062,0.334110826253891,0.2890152931213379,False
+sd15_mm2,s1337__on-a-beach,s1337__wolf__walking__on-a-beach,wolf,walking,on a beach,Q,0.8337701479593913,True,153.1554412841797,0.3331760764122009,0.595029890537262,True
+sd15_mm2,s1337__on-a-beach,s1337__wolf__jumping__on-a-beach,wolf,jumping,on a beach,Q,0.8384862124919892,True,91.79380798339844,0.31690558791160583,0.18381565809249878,False
+sd15_mm2,s1337__on-a-beach,s1337__wolf__spinning__on-a-beach,wolf,spinning,on a beach,Q,0.8919039110342661,True,181.1361846923828,0.22626173496246338,0.3196313679218292,True
+sd15_mm2,s1337__on-a-beach,s1337__tiger__running__on-a-beach,tiger,running,on a beach,Q,0.916819421450297,True,119.89547729492188,0.35209810733795166,0.2702542245388031,False
+sd15_mm2,s1337__on-a-beach,s1337__tiger__walking__on-a-beach,tiger,walking,on a beach,Q,0.9400303641955058,True,82.34779357910156,0.3313853144645691,0.856691837310791,True
+sd15_mm2,s1337__on-a-beach,s1337__tiger__jumping__on-a-beach,tiger,jumping,on a beach,Q,0.8973769644896189,True,64.82917022705078,0.37355542182922363,0.15703701972961426,False
+sd15_mm2,s1337__on-a-beach,s1337__tiger__spinning__on-a-beach,tiger,spinning,on a beach,Q,0.919575979312261,True,105.50812530517578,0.3233872354030609,0.04009066894650459,False
+sd15_mm2,s1337__on-a-beach,s1337__fox__running__on-a-beach,fox,running,on a beach,Q,0.7787945667902628,True,214.36782836914062,0.3653215765953064,0.20365095138549805,False
+sd15_mm2,s1337__on-a-beach,s1337__fox__walking__on-a-beach,fox,walking,on a beach,Q,0.8298889915148417,True,195.7580108642578,0.36454153060913086,0.7274160385131836,True
+sd15_mm2,s1337__on-a-beach,s1337__fox__jumping__on-a-beach,fox,jumping,on a beach,Q,0.8142845670382182,True,165.39254760742188,0.3678108751773834,0.12601876258850098,False
+sd15_mm2,s1337__on-a-beach,s1337__fox__spinning__on-a-beach,fox,spinning,on a beach,Q,0.8180469254652659,True,42.99517059326172,0.3728587329387665,0.09805870801210403,False
+sd15_mm2,s1337__on-a-beach,s1337__deer__running__on-a-beach,deer,running,on a beach,Q,0.8683432241280874,True,172.31211853027344,0.32316404581069946,0.17666155099868774,False
+sd15_mm2,s1337__on-a-beach,s1337__deer__walking__on-a-beach,deer,walking,on a beach,Q,0.8749523440996806,True,32.41553497314453,0.33639177680015564,0.6209666132926941,True
+sd15_mm2,s1337__on-a-beach,s1337__deer__jumping__on-a-beach,deer,jumping,on a beach,Q,0.8436586101849873,True,123.4963150024414,0.34437912702560425,0.14259907603263855,False
+sd15_mm2,s1337__on-a-beach,s1337__deer__spinning__on-a-beach,deer,spinning,on a beach,Q,0.8460471232732137,True,60.17955780029297,0.29833877086639404,0.105142742395401,False
+sd15_mm2,s1337__on-a-beach,s1337__brown-bear__running__on-a-beach,brown bear,running,on a beach,Q,0.8755760033925374,True,27.7956600189209,0.3455235958099365,0.21208900213241577,False
+sd15_mm2,s1337__on-a-beach,s1337__brown-bear__walking__on-a-beach,brown bear,walking,on a beach,Q,0.9006877024968465,True,123.89509582519531,0.3383411765098572,0.7033641934394836,True
+sd15_mm2,s1337__on-a-beach,s1337__brown-bear__jumping__on-a-beach,brown bear,jumping,on a beach,Q,0.8525279978911082,True,19.913665771484375,0.34145092964172363,0.20069745182991028,False
+sd15_mm2,s1337__on-a-beach,s1337__brown-bear__spinning__on-a-beach,brown bear,spinning,on a beach,Q,0.8120654920736948,True,60.90842056274414,0.31755611300468445,0.2504657506942749,False
+sd15_mm2,s1337__on-a-beach,s1337__young-man__running__on-a-beach,young man,running,on a beach,H,0.7807756106058756,True,58.47834777832031,0.28334689140319824,0.2399265021085739,False
+sd15_mm2,s1337__on-a-beach,s1337__young-man__walking__on-a-beach,young man,walking,on a beach,H,0.8720393975575765,True,38.29733657836914,0.2792305052280426,0.8607107400894165,True
+sd15_mm2,s1337__on-a-beach,s1337__young-man__jumping__on-a-beach,young man,jumping,on a beach,H,0.8195316851139068,True,140.43577575683594,0.3016875386238098,0.34486743807792664,False
+sd15_mm2,s1337__on-a-beach,s1337__young-man__spinning__on-a-beach,young man,spinning,on a beach,H,0.8378892322381337,True,27.716691970825195,0.2957957983016968,0.256998747587204,False
+sd15_mm2,s1337__on-a-beach,s1337__young-woman__running__on-a-beach,young woman,running,on a beach,H,0.8626915832360585,True,38.921199798583984,0.2967321276664734,0.6032366752624512,True
+sd15_mm2,s1337__on-a-beach,s1337__young-woman__walking__on-a-beach,young woman,walking,on a beach,H,0.881219224135081,True,135.30140686035156,0.2706138789653778,0.7739645838737488,True
+sd15_mm2,s1337__on-a-beach,s1337__young-woman__jumping__on-a-beach,young woman,jumping,on a beach,H,0.8842519064744313,True,84.38510131835938,0.3061756193637848,0.8677576780319214,True
+sd15_mm2,s1337__on-a-beach,s1337__young-woman__spinning__on-a-beach,young woman,spinning,on a beach,H,0.8327344020207723,True,124.69630432128906,0.29569658637046814,0.5964217185974121,True
+sd15_mm2,s1337__on-a-beach,s1337__athlete__running__on-a-beach,athlete,running,on a beach,H,0.7928989410400391,True,99.07298278808594,0.29107993841171265,0.2584054470062256,False
+sd15_mm2,s1337__on-a-beach,s1337__athlete__walking__on-a-beach,athlete,walking,on a beach,H,0.8757243057092031,True,46.40504455566406,0.28064921498298645,0.7940449118614197,True
+sd15_mm2,s1337__on-a-beach,s1337__athlete__jumping__on-a-beach,athlete,jumping,on a beach,H,0.8171383539835612,True,59.78425216674805,0.307473748922348,0.23417198657989502,False
+sd15_mm2,s1337__on-a-beach,s1337__athlete__spinning__on-a-beach,athlete,spinning,on a beach,H,0.7518907268842061,True,136.39031982421875,0.2950316071510315,0.09641000628471375,False
+sd15_mm2,s1337__on-a-beach,s1337__soldier__running__on-a-beach,soldier,running,on a beach,H,0.7830806771914164,True,92.55753326416016,0.31795600056648254,0.5141787528991699,True
+sd15_mm2,s1337__on-a-beach,s1337__soldier__walking__on-a-beach,soldier,walking,on a beach,H,0.898642486333847,True,25.503795623779297,0.3352932035923004,0.6051046252250671,True
+sd15_mm2,s1337__on-a-beach,s1337__soldier__jumping__on-a-beach,soldier,jumping,on a beach,H,0.7531221846739451,True,120.10110473632812,0.3000297248363495,0.5513540506362915,True
+sd15_mm2,s1337__on-a-beach,s1337__soldier__spinning__on-a-beach,soldier,spinning,on a beach,H,0.734936386346817,True,79.53809356689453,0.31514450907707214,0.33507993817329407,True
+sd15_mm2,s1337__on-a-beach,s1337__dancer__running__on-a-beach,dancer,running,on a beach,H,0.7880018095175425,True,156.19699096679688,0.2911449372768402,0.6736721992492676,True
+sd15_mm2,s1337__on-a-beach,s1337__dancer__walking__on-a-beach,dancer,walking,on a beach,H,0.7697017669677735,True,181.51173400878906,0.2780846357345581,0.6158910393714905,True
+sd15_mm2,s1337__on-a-beach,s1337__dancer__jumping__on-a-beach,dancer,jumping,on a beach,H,0.8655899743239085,True,140.4150390625,0.28420501947402954,0.5219224691390991,True
+sd15_mm2,s1337__on-a-beach,s1337__dancer__spinning__on-a-beach,dancer,spinning,on a beach,H,0.8133925517400106,True,21.862462997436523,0.3156242072582245,0.3924146592617035,True
+sd15_mm2,s1337__on-a-beach,s1337__child__running__on-a-beach,child,running,on a beach,H,0.8399007936318715,True,125.63893127441406,0.29185932874679565,0.1461058408021927,False
+sd15_mm2,s1337__on-a-beach,s1337__child__walking__on-a-beach,child,walking,on a beach,H,0.8577873984972636,True,132.13717651367188,0.2687518000602722,0.9021334648132324,True
+sd15_mm2,s1337__on-a-beach,s1337__child__jumping__on-a-beach,child,jumping,on a beach,H,0.8399159332116445,True,151.31088256835938,0.31000855565071106,0.21044954657554626,False
+sd15_mm2,s1337__on-a-beach,s1337__child__spinning__on-a-beach,child,spinning,on a beach,H,0.8205472707748414,True,122.77351379394531,0.3060888648033142,0.008322450332343578,False
+sd15_mm2,s1337__on-a-beach,s1337__elderly-man__running__on-a-beach,elderly man,running,on a beach,H,0.8680683831373851,True,122.47350311279297,0.3471216857433319,0.7642728686332703,True
+sd15_mm2,s1337__on-a-beach,s1337__elderly-man__walking__on-a-beach,elderly man,walking,on a beach,H,0.8945357282956441,True,14.25382137298584,0.3360137939453125,0.769370973110199,True
+sd15_mm2,s1337__on-a-beach,s1337__elderly-man__jumping__on-a-beach,elderly man,jumping,on a beach,H,0.8154524823029836,True,76.0521240234375,0.2884543538093567,0.3601401746273041,True
+sd15_mm2,s1337__on-a-beach,s1337__elderly-man__spinning__on-a-beach,elderly man,spinning,on a beach,H,0.8411133686701456,True,67.82876586914062,0.336328387260437,0.1463472545146942,False
+sd15_mm2,s42__in-a-forest,s42__golden-retriever__running__in-a-forest,golden retriever,running,in a forest,Q,0.8013302087783813,True,8.210773468017578,0.3636229336261749,0.5955556035041809,True
+sd15_mm2,s42__in-a-forest,s42__golden-retriever__walking__in-a-forest,golden retriever,walking,in a forest,Q,0.8931672851244609,False,4.163168907165527,0.36400720477104187,0.4812448024749756,True
+sd15_mm2,s42__in-a-forest,s42__golden-retriever__jumping__in-a-forest,golden retriever,jumping,in a forest,Q,0.8190851549307505,True,11.50408935546875,0.3752942681312561,0.7516072988510132,True
+sd15_mm2,s42__in-a-forest,s42__golden-retriever__spinning__in-a-forest,golden retriever,spinning,in a forest,Q,0.70113245844841,True,27.455480575561523,0.3611488342285156,0.1539963185787201,False
+sd15_mm2,s42__in-a-forest,s42__german-shepherd__running__in-a-forest,german shepherd,running,in a forest,Q,0.796227769056956,True,6.351174831390381,0.3616625964641571,0.5261416435241699,True
+sd15_mm2,s42__in-a-forest,s42__german-shepherd__walking__in-a-forest,german shepherd,walking,in a forest,Q,0.8687985658645629,False,4.346323013305664,0.34398308396339417,0.5339111685752869,True
+sd15_mm2,s42__in-a-forest,s42__german-shepherd__jumping__in-a-forest,german shepherd,jumping,in a forest,Q,0.8348153690497081,True,17.37689208984375,0.36432766914367676,0.290103018283844,False
+sd15_mm2,s42__in-a-forest,s42__german-shepherd__spinning__in-a-forest,german shepherd,spinning,in a forest,Q,0.7542997757593791,True,42.46872329711914,0.34077441692352295,0.2669941186904907,True
+sd15_mm2,s42__in-a-forest,s42__horse__running__in-a-forest,horse,running,in a forest,Q,0.918580029408137,True,7.97326135635376,0.3503810167312622,0.36351752281188965,False
+sd15_mm2,s42__in-a-forest,s42__horse__walking__in-a-forest,horse,walking,in a forest,Q,0.9597327828407287,False,2.22013783454895,0.3525122106075287,0.5997744798660278,True
+sd15_mm2,s42__in-a-forest,s42__horse__jumping__in-a-forest,horse,jumping,in a forest,Q,0.8868988613287608,True,9.818875312805176,0.3568520247936249,0.2574728727340698,False
+sd15_mm2,s42__in-a-forest,s42__horse__spinning__in-a-forest,horse,spinning,in a forest,Q,0.9690332969029745,False,0.8374494910240173,0.34374237060546875,0.13721583783626556,False
+sd15_mm2,s42__in-a-forest,s42__wolf__running__in-a-forest,wolf,running,in a forest,Q,0.8982957621415456,False,3.9613864421844482,0.33653175830841064,0.618029773235321,True
+sd15_mm2,s42__in-a-forest,s42__wolf__walking__in-a-forest,wolf,walking,in a forest,Q,0.9240705331166585,False,0.9245271682739258,0.3360390067100525,0.5792841911315918,True
+sd15_mm2,s42__in-a-forest,s42__wolf__jumping__in-a-forest,wolf,jumping,in a forest,Q,0.8013449172178905,True,7.957167148590088,0.3274000287055969,0.48968181014060974,True
+sd15_mm2,s42__in-a-forest,s42__wolf__spinning__in-a-forest,wolf,spinning,in a forest,Q,0.7701524456342062,True,32.49388885498047,0.336319237947464,0.43143850564956665,True
+sd15_mm2,s42__in-a-forest,s42__tiger__running__in-a-forest,tiger,running,in a forest,Q,0.9269633730252583,True,18.678537368774414,0.3244739770889282,0.1883033961057663,False
+sd15_mm2,s42__in-a-forest,s42__tiger__walking__in-a-forest,tiger,walking,in a forest,Q,0.9683662950992584,False,4.679135322570801,0.298663854598999,0.8480085134506226,True
+sd15_mm2,s42__in-a-forest,s42__tiger__jumping__in-a-forest,tiger,jumping,in a forest,Q,0.9734013835589092,False,1.958916187286377,0.34971925616264343,0.07407272607088089,False
+sd15_mm2,s42__in-a-forest,s42__tiger__spinning__in-a-forest,tiger,spinning,in a forest,Q,0.9914986491203308,False,0.14949314296245575,0.3497394025325775,0.04499535635113716,False
+sd15_mm2,s42__in-a-forest,s42__fox__running__in-a-forest,fox,running,in a forest,Q,0.8656693716843923,True,16.156524658203125,0.3453078269958496,0.4366353750228882,True
+sd15_mm2,s42__in-a-forest,s42__fox__walking__in-a-forest,fox,walking,in a forest,Q,0.9892592052618663,False,0.08688948303461075,0.32903409004211426,0.6511128544807434,True
+sd15_mm2,s42__in-a-forest,s42__fox__jumping__in-a-forest,fox,jumping,in a forest,Q,0.9908306856950124,False,0.12697647511959076,0.34168022871017456,0.10031823813915253,False
+sd15_mm2,s42__in-a-forest,s42__fox__spinning__in-a-forest,fox,spinning,in a forest,Q,0.8630223294099172,True,8.246264457702637,0.31547486782073975,0.13339382410049438,False
+sd15_mm2,s42__in-a-forest,s42__deer__running__in-a-forest,deer,running,in a forest,Q,0.9669576903184255,False,1.477932333946228,0.3075312376022339,0.16411373019218445,False
+sd15_mm2,s42__in-a-forest,s42__deer__walking__in-a-forest,deer,walking,in a forest,Q,0.9850949287414551,False,0.16193808615207672,0.3074702024459839,0.5427030920982361,True
+sd15_mm2,s42__in-a-forest,s42__deer__jumping__in-a-forest,deer,jumping,in a forest,Q,0.9616293251514435,False,1.905861496925354,0.34220218658447266,0.3621804714202881,True
+sd15_mm2,s42__in-a-forest,s42__deer__spinning__in-a-forest,deer,spinning,in a forest,Q,0.9849302709102631,False,0.17871585488319397,0.3121780455112457,0.11367707699537277,False
+sd15_mm2,s42__in-a-forest,s42__brown-bear__running__in-a-forest,brown bear,running,in a forest,Q,0.9142902274926503,True,11.372678756713867,0.3172439932823181,0.2157507687807083,False
+sd15_mm2,s42__in-a-forest,s42__brown-bear__walking__in-a-forest,brown bear,walking,in a forest,Q,0.951068784793218,True,8.58869743347168,0.3188469111919403,0.7068467140197754,True
+sd15_mm2,s42__in-a-forest,s42__brown-bear__jumping__in-a-forest,brown bear,jumping,in a forest,Q,0.8619087636470795,True,10.189443588256836,0.3389945924282074,0.20168252289295197,False
+sd15_mm2,s42__in-a-forest,s42__brown-bear__spinning__in-a-forest,brown bear,spinning,in a forest,Q,0.8637936075528463,True,16.612871170043945,0.3034720718860626,0.062077976763248444,False
+sd15_mm2,s42__in-a-forest,s42__young-man__running__in-a-forest,young man,running,in a forest,H,0.9156635959943136,False,3.073225498199463,0.3062998950481415,0.8528332710266113,True
+sd15_mm2,s42__in-a-forest,s42__young-man__walking__in-a-forest,young man,walking,in a forest,H,0.9372911830743154,False,0.5763217210769653,0.29283082485198975,0.6282053589820862,True
+sd15_mm2,s42__in-a-forest,s42__young-man__jumping__in-a-forest,young man,jumping,in a forest,H,0.87487753033638,True,9.061511039733887,0.3449414372444153,0.7956138849258423,True
+sd15_mm2,s42__in-a-forest,s42__young-man__spinning__in-a-forest,young man,spinning,in a forest,H,0.8603501478830974,True,14.63576889038086,0.3092195391654968,0.2045331746339798,False
+sd15_mm2,s42__in-a-forest,s42__young-woman__running__in-a-forest,young woman,running,in a forest,H,0.9220664997895559,False,1.8063594102859497,0.300951212644577,0.7119792103767395,True
+sd15_mm2,s42__in-a-forest,s42__young-woman__walking__in-a-forest,young woman,walking,in a forest,H,0.9051118731498718,False,0.9239257574081421,0.2793734669685364,0.5972933769226074,True
+sd15_mm2,s42__in-a-forest,s42__young-woman__jumping__in-a-forest,young woman,jumping,in a forest,H,0.8821086049079895,True,11.320587158203125,0.32784777879714966,0.7225399613380432,True
+sd15_mm2,s42__in-a-forest,s42__young-woman__spinning__in-a-forest,young woman,spinning,in a forest,H,0.8391222675641378,True,29.51117515563965,0.31468743085861206,0.8049933314323425,True
+sd15_mm2,s42__in-a-forest,s42__athlete__running__in-a-forest,athlete,running,in a forest,H,0.9321578045686086,False,2.405963897705078,0.3219820559024811,0.7125670313835144,True
+sd15_mm2,s42__in-a-forest,s42__athlete__walking__in-a-forest,athlete,walking,in a forest,H,0.9335858841737111,False,2.07218074798584,0.3026978075504303,0.34840884804725647,False
+sd15_mm2,s42__in-a-forest,s42__athlete__jumping__in-a-forest,athlete,jumping,in a forest,H,0.9329886972904206,False,4.458950996398926,0.3379814624786377,0.286406546831131,False
+sd15_mm2,s42__in-a-forest,s42__athlete__spinning__in-a-forest,athlete,spinning,in a forest,H,0.9023566206296285,False,2.2515952587127686,0.3336358666419983,0.9279745817184448,True
+sd15_mm2,s42__in-a-forest,s42__soldier__running__in-a-forest,soldier,running,in a forest,H,0.9010978837807974,True,4.683344841003418,0.3487139344215393,0.7093133330345154,True
+sd15_mm2,s42__in-a-forest,s42__soldier__walking__in-a-forest,soldier,walking,in a forest,H,0.9401117901007334,False,2.512462854385376,0.3215163052082062,0.4827696979045868,True
+sd15_mm2,s42__in-a-forest,s42__soldier__jumping__in-a-forest,soldier,jumping,in a forest,H,0.9186204055945079,True,10.873865127563477,0.3385757803916931,0.2617209851741791,False
+sd15_mm2,s42__in-a-forest,s42__soldier__spinning__in-a-forest,soldier,spinning,in a forest,H,0.9163814703623454,True,8.955342292785645,0.316179484128952,0.44815191626548767,True
+sd15_mm2,s42__in-a-forest,s42__dancer__running__in-a-forest,dancer,running,in a forest,H,0.8720866044362386,True,6.996277809143066,0.3372914791107178,0.4766497313976288,True
+sd15_mm2,s42__in-a-forest,s42__dancer__walking__in-a-forest,dancer,walking,in a forest,H,0.8574369132518769,False,4.784706115722656,0.33296680450439453,0.2963934540748596,False
+sd15_mm2,s42__in-a-forest,s42__dancer__jumping__in-a-forest,dancer,jumping,in a forest,H,0.8937598903973897,True,7.337347984313965,0.33689984679222107,0.19775334000587463,False
+sd15_mm2,s42__in-a-forest,s42__dancer__spinning__in-a-forest,dancer,spinning,in a forest,H,0.82668217420578,True,34.796077728271484,0.33639422059059143,0.418639212846756,True
+sd15_mm2,s42__in-a-forest,s42__child__running__in-a-forest,child,running,in a forest,H,0.8774140059947968,False,1.8701757192611694,0.30783647298812866,0.42757606506347656,True
+sd15_mm2,s42__in-a-forest,s42__child__walking__in-a-forest,child,walking,in a forest,H,0.9478940705458323,False,1.1790995597839355,0.30196458101272583,0.6746627688407898,True
+sd15_mm2,s42__in-a-forest,s42__child__jumping__in-a-forest,child,jumping,in a forest,H,0.849804280201594,True,17.417268753051758,0.3399266004562378,0.24754029512405396,False
+sd15_mm2,s42__in-a-forest,s42__child__spinning__in-a-forest,child,spinning,in a forest,H,0.6535158336162568,True,34.27757263183594,0.3110543191432953,0.544502854347229,True
+sd15_mm2,s42__in-a-forest,s42__elderly-man__running__in-a-forest,elderly man,running,in a forest,H,0.8988776822884877,True,5.91278076171875,0.33525651693344116,0.7200337052345276,True
+sd15_mm2,s42__in-a-forest,s42__elderly-man__walking__in-a-forest,elderly man,walking,in a forest,H,0.9144806702931721,False,3.287928581237793,0.3424740135669708,0.5351811647415161,True
+sd15_mm2,s42__in-a-forest,s42__elderly-man__jumping__in-a-forest,elderly man,jumping,in a forest,H,0.8252028862635294,True,20.33550453186035,0.3723647892475128,0.639058530330658,True
+sd15_mm2,s42__in-a-forest,s42__elderly-man__spinning__in-a-forest,elderly man,spinning,in a forest,H,0.8981026152769724,True,18.818920135498047,0.3454221189022064,0.495828777551651,True
+sd15_mm2,s42__on-a-beach,s42__golden-retriever__running__on-a-beach,golden retriever,running,on a beach,Q,0.8967337667942047,True,50.76747131347656,0.3694840967655182,0.295550674200058,False
+sd15_mm2,s42__on-a-beach,s42__golden-retriever__walking__on-a-beach,golden retriever,walking,on a beach,Q,0.8932623267173767,True,15.6528902053833,0.33644387125968933,0.6760550737380981,True
+sd15_mm2,s42__on-a-beach,s42__golden-retriever__jumping__on-a-beach,golden retriever,jumping,on a beach,Q,0.8448583285013834,True,150.20083618164062,0.3651438057422638,0.6160421371459961,True
+sd15_mm2,s42__on-a-beach,s42__golden-retriever__spinning__on-a-beach,golden retriever,spinning,on a beach,Q,0.7649444997310638,True,22.070911407470703,0.350210577249527,0.09297936409711838,False
+sd15_mm2,s42__on-a-beach,s42__german-shepherd__running__on-a-beach,german shepherd,running,on a beach,Q,0.8724203169345855,True,10.714720726013184,0.36324965953826904,0.3347485363483429,False
+sd15_mm2,s42__on-a-beach,s42__german-shepherd__walking__on-a-beach,german shepherd,walking,on a beach,Q,0.9165364841620127,True,13.486660957336426,0.3380092680454254,0.6701472401618958,True
+sd15_mm2,s42__on-a-beach,s42__german-shepherd__jumping__on-a-beach,german shepherd,jumping,on a beach,Q,0.8575979948043824,True,14.225870132446289,0.3619109094142914,0.14239223301410675,False
+sd15_mm2,s42__on-a-beach,s42__german-shepherd__spinning__on-a-beach,german shepherd,spinning,on a beach,Q,0.9357119162877401,False,3.345477819442749,0.3172084391117096,0.12184831500053406,False
+sd15_mm2,s42__on-a-beach,s42__horse__running__on-a-beach,horse,running,on a beach,Q,0.9279109001159668,True,27.62204360961914,0.3460730314254761,0.14576338231563568,False
+sd15_mm2,s42__on-a-beach,s42__horse__walking__on-a-beach,horse,walking,on a beach,Q,0.9490803221861521,True,8.710927963256836,0.34566518664360046,0.7366998791694641,True
+sd15_mm2,s42__on-a-beach,s42__horse__jumping__on-a-beach,horse,jumping,on a beach,Q,0.9215929587682088,True,7.617522239685059,0.33937007188796997,0.08579617738723755,False
+sd15_mm2,s42__on-a-beach,s42__horse__spinning__on-a-beach,horse,spinning,on a beach,Q,0.9402150591214498,False,4.673986434936523,0.32388725876808167,0.07417786866426468,False
+sd15_mm2,s42__on-a-beach,s42__wolf__running__on-a-beach,wolf,running,on a beach,Q,0.8232056498527527,True,158.75149536132812,0.3297141194343567,0.3877067267894745,True
+sd15_mm2,s42__on-a-beach,s42__wolf__walking__on-a-beach,wolf,walking,on a beach,Q,0.8958791534105937,True,59.98820114135742,0.3062003254890442,0.6115391254425049,True
+sd15_mm2,s42__on-a-beach,s42__wolf__jumping__on-a-beach,wolf,jumping,on a beach,Q,0.8855773786703746,True,192.66854858398438,0.3329375386238098,0.10358721017837524,False
+sd15_mm2,s42__on-a-beach,s42__wolf__spinning__on-a-beach,wolf,spinning,on a beach,Q,0.961040327946345,False,0.32065173983573914,0.28396597504615784,0.3140357732772827,False
+sd15_mm2,s42__on-a-beach,s42__tiger__running__on-a-beach,tiger,running,on a beach,Q,0.9466133654117584,True,156.4398651123047,0.37328144907951355,0.2871345579624176,False
+sd15_mm2,s42__on-a-beach,s42__tiger__walking__on-a-beach,tiger,walking,on a beach,Q,0.9667680700620015,False,4.901461124420166,0.37239545583724976,0.927344560623169,True
+sd15_mm2,s42__on-a-beach,s42__tiger__jumping__on-a-beach,tiger,jumping,on a beach,Q,0.9569537401199341,True,50.10945129394531,0.3608992397785187,0.09433475136756897,False
+sd15_mm2,s42__on-a-beach,s42__tiger__spinning__on-a-beach,tiger,spinning,on a beach,Q,0.9616057058175405,False,3.2884345054626465,0.37182581424713135,0.014036801643669605,False
+sd15_mm2,s42__on-a-beach,s42__fox__running__on-a-beach,fox,running,on a beach,Q,0.8597795844078064,True,91.60282897949219,0.35160377621650696,0.2724536061286926,False
+sd15_mm2,s42__on-a-beach,s42__fox__walking__on-a-beach,fox,walking,on a beach,Q,0.9252839088439941,True,13.997614860534668,0.3185688853263855,0.6191114783287048,True
+sd15_mm2,s42__on-a-beach,s42__fox__jumping__on-a-beach,fox,jumping,on a beach,Q,0.8574566225210826,True,13.754257202148438,0.3564707636833191,0.08227885514497757,False
+sd15_mm2,s42__on-a-beach,s42__fox__spinning__on-a-beach,fox,spinning,on a beach,Q,0.7803281962871551,True,16.78727149963379,0.30952486395835876,0.3072555363178253,False
+sd15_mm2,s42__on-a-beach,s42__deer__running__on-a-beach,deer,running,on a beach,Q,0.9260660270849864,True,32.05518341064453,0.34429043531417847,0.1455385684967041,False
+sd15_mm2,s42__on-a-beach,s42__deer__walking__on-a-beach,deer,walking,on a beach,Q,0.9781813820203146,False,0.8854934573173523,0.355695903301239,0.5616639256477356,True
+sd15_mm2,s42__on-a-beach,s42__deer__jumping__on-a-beach,deer,jumping,on a beach,Q,0.9574609359105428,True,18.257314682006836,0.36424675583839417,0.26932492852211,False
+sd15_mm2,s42__on-a-beach,s42__deer__spinning__on-a-beach,deer,spinning,on a beach,Q,0.971464478969574,False,0.3149733245372772,0.32763671875,0.24331408739089966,False
+sd15_mm2,s42__on-a-beach,s42__brown-bear__running__on-a-beach,brown bear,running,on a beach,Q,0.887402371565501,True,181.0382843017578,0.33641740679740906,0.2359534502029419,False
+sd15_mm2,s42__on-a-beach,s42__brown-bear__walking__on-a-beach,brown bear,walking,on a beach,Q,0.8858644922574361,True,110.0787582397461,0.34885621070861816,0.7613365054130554,True
+sd15_mm2,s42__on-a-beach,s42__brown-bear__jumping__on-a-beach,brown bear,jumping,on a beach,Q,0.9003232260545094,True,69.75180053710938,0.33218029141426086,0.22134430706501007,False
+sd15_mm2,s42__on-a-beach,s42__brown-bear__spinning__on-a-beach,brown bear,spinning,on a beach,Q,0.8657575031121572,True,169.93118286132812,0.312283992767334,0.09196045994758606,False
+sd15_mm2,s42__on-a-beach,s42__young-man__running__on-a-beach,young man,running,on a beach,H,0.8801142076651255,True,71.13485717773438,0.3171842694282532,0.7461037039756775,True
+sd15_mm2,s42__on-a-beach,s42__young-man__walking__on-a-beach,young man,walking,on a beach,H,0.9217995762825012,True,7.91286563873291,0.3150590658187866,0.8693164587020874,True
+sd15_mm2,s42__on-a-beach,s42__young-man__jumping__on-a-beach,young man,jumping,on a beach,H,0.8541135688622793,True,107.48001861572266,0.3128613829612732,0.3666338622570038,True
+sd15_mm2,s42__on-a-beach,s42__young-man__spinning__on-a-beach,young man,spinning,on a beach,H,0.947662870089213,True,16.827131271362305,0.2951374650001526,0.4112716019153595,True
+sd15_mm2,s42__on-a-beach,s42__young-woman__running__on-a-beach,young woman,running,on a beach,H,0.8970858375231425,True,73.43043518066406,0.32507002353668213,0.788960337638855,True
+sd15_mm2,s42__on-a-beach,s42__young-woman__walking__on-a-beach,young woman,walking,on a beach,H,0.9438910285631815,True,12.40059757232666,0.2992827594280243,0.7493126392364502,True
+sd15_mm2,s42__on-a-beach,s42__young-woman__jumping__on-a-beach,young woman,jumping,on a beach,H,0.8670615514119466,True,62.75667190551758,0.33865684270858765,0.8413926959037781,True
+sd15_mm2,s42__on-a-beach,s42__young-woman__spinning__on-a-beach,young woman,spinning,on a beach,H,0.8419955909252167,True,6.775357246398926,0.30192244052886963,0.46339577436447144,True
+sd15_mm2,s42__on-a-beach,s42__athlete__running__on-a-beach,athlete,running,on a beach,H,0.8845524330933888,True,28.763526916503906,0.29926422238349915,0.7126715779304504,True
+sd15_mm2,s42__on-a-beach,s42__athlete__walking__on-a-beach,athlete,walking,on a beach,H,0.9309749841690064,True,12.693252563476562,0.2729962170124054,0.3842962384223938,True
+sd15_mm2,s42__on-a-beach,s42__athlete__jumping__on-a-beach,athlete,jumping,on a beach,H,0.7989012658596039,True,116.7838134765625,0.30462646484375,0.656984269618988,True
+sd15_mm2,s42__on-a-beach,s42__athlete__spinning__on-a-beach,athlete,spinning,on a beach,H,0.9680149137973786,False,2.0128800868988037,0.3110240697860718,0.41808566451072693,True
+sd15_mm2,s42__on-a-beach,s42__soldier__running__on-a-beach,soldier,running,on a beach,H,0.8580375552177429,True,35.04088592529297,0.32931578159332275,0.649669885635376,True
+sd15_mm2,s42__on-a-beach,s42__soldier__walking__on-a-beach,soldier,walking,on a beach,H,0.9360827565193176,False,4.656237602233887,0.3600130081176758,0.4702826142311096,True
+sd15_mm2,s42__on-a-beach,s42__soldier__jumping__on-a-beach,soldier,jumping,on a beach,H,0.8079328934351603,True,59.28938674926758,0.3334493935108185,0.5227071642875671,True
+sd15_mm2,s42__on-a-beach,s42__soldier__spinning__on-a-beach,soldier,spinning,on a beach,H,0.9466364562511445,False,0.691866934299469,0.3329471945762634,0.35361233353614807,True
+sd15_mm2,s42__on-a-beach,s42__dancer__running__on-a-beach,dancer,running,on a beach,H,0.8432527720928192,True,202.38934326171875,0.3039616346359253,0.6251810193061829,True
+sd15_mm2,s42__on-a-beach,s42__dancer__walking__on-a-beach,dancer,walking,on a beach,H,0.8360820134480794,True,25.209749221801758,0.31404122710227966,0.3257041871547699,True
+sd15_mm2,s42__on-a-beach,s42__dancer__jumping__on-a-beach,dancer,jumping,on a beach,H,0.8914016882578532,True,13.29874324798584,0.3317745327949524,0.3189544379711151,True
+sd15_mm2,s42__on-a-beach,s42__dancer__spinning__on-a-beach,dancer,spinning,on a beach,H,0.8301320294539134,True,28.274202346801758,0.3223850131034851,0.30342817306518555,False
+sd15_mm2,s42__on-a-beach,s42__child__running__on-a-beach,child,running,on a beach,H,0.9074581205844879,True,18.975688934326172,0.3211934566497803,0.4417669475078583,False
+sd15_mm2,s42__on-a-beach,s42__child__walking__on-a-beach,child,walking,on a beach,H,0.9313386042912801,True,10.01849365234375,0.32202422618865967,0.8057950735092163,True
+sd15_mm2,s42__on-a-beach,s42__child__jumping__on-a-beach,child,jumping,on a beach,H,0.8475734313329061,True,101.70265197753906,0.3057280480861664,0.24316023290157318,False
+sd15_mm2,s42__on-a-beach,s42__child__spinning__on-a-beach,child,spinning,on a beach,H,0.8650599698225657,False,2.055999279022217,0.3053954839706421,0.18629854917526245,False
+sd15_mm2,s42__on-a-beach,s42__elderly-man__running__on-a-beach,elderly man,running,on a beach,H,0.8938509364922841,True,48.27345657348633,0.36269351840019226,0.7237738966941833,True
+sd15_mm2,s42__on-a-beach,s42__elderly-man__walking__on-a-beach,elderly man,walking,on a beach,H,0.9077040235201518,True,10.980825424194336,0.34940406680107117,0.6571523547172546,True
+sd15_mm2,s42__on-a-beach,s42__elderly-man__jumping__on-a-beach,elderly man,jumping,on a beach,H,0.8453106085459391,True,61.67407989501953,0.3517979085445404,0.5485365390777588,True
+sd15_mm2,s42__on-a-beach,s42__elderly-man__spinning__on-a-beach,elderly man,spinning,on a beach,H,0.9008430143197378,True,13.674979209899902,0.3302960693836212,0.3583952486515045,True
+epicrealism_mm2,s1337__in-a-forest,s1337__golden-retriever__running__in-a-forest,golden retriever,running,in a forest,Q,0.9422719796498616,False,2.044743299484253,0.36695989966392517,0.3809645473957062,False
+epicrealism_mm2,s1337__in-a-forest,s1337__golden-retriever__walking__in-a-forest,golden retriever,walking,in a forest,Q,0.9412816286087036,False,4.461940288543701,0.35900676250457764,0.6886177062988281,True
+epicrealism_mm2,s1337__in-a-forest,s1337__golden-retriever__jumping__in-a-forest,golden retriever,jumping,in a forest,Q,0.8535526017347972,False,4.163319110870361,0.36779865622520447,0.8926325440406799,True
+epicrealism_mm2,s1337__in-a-forest,s1337__golden-retriever__spinning__in-a-forest,golden retriever,spinning,in a forest,Q,0.9429532368977864,False,2.371868848800659,0.34972500801086426,0.06083736568689346,False
+epicrealism_mm2,s1337__in-a-forest,s1337__german-shepherd__running__in-a-forest,german shepherd,running,in a forest,Q,0.9479197343190511,False,2.380160331726074,0.3555994927883148,0.42490437626838684,False
+epicrealism_mm2,s1337__in-a-forest,s1337__german-shepherd__walking__in-a-forest,german shepherd,walking,in a forest,Q,0.9373122711976369,False,2.270655870437622,0.35387420654296875,0.6803750991821289,True
+epicrealism_mm2,s1337__in-a-forest,s1337__german-shepherd__jumping__in-a-forest,german shepherd,jumping,in a forest,Q,0.91731831630071,False,4.538741588592529,0.35680145025253296,0.11121012270450592,False
+epicrealism_mm2,s1337__in-a-forest,s1337__german-shepherd__spinning__in-a-forest,german shepherd,spinning,in a forest,Q,0.9033316592375438,True,6.4291229248046875,0.33592820167541504,0.15808801352977753,False
+epicrealism_mm2,s1337__in-a-forest,s1337__horse__running__in-a-forest,horse,running,in a forest,Q,0.9557185570398966,False,4.807185649871826,0.3356266915798187,0.22397401928901672,False
+epicrealism_mm2,s1337__in-a-forest,s1337__horse__walking__in-a-forest,horse,walking,in a forest,Q,0.9494303166866302,False,3.795306921005249,0.3551132082939148,0.6086287498474121,True
+epicrealism_mm2,s1337__in-a-forest,s1337__horse__jumping__in-a-forest,horse,jumping,in a forest,Q,0.9605487724145253,False,2.203965425491333,0.34234124422073364,0.5048155188560486,True
+epicrealism_mm2,s1337__in-a-forest,s1337__horse__spinning__in-a-forest,horse,spinning,in a forest,Q,0.9528864661852519,False,3.485107898712158,0.34316980838775635,0.1958341896533966,False
+epicrealism_mm2,s1337__in-a-forest,s1337__wolf__running__in-a-forest,wolf,running,in a forest,Q,0.9085281590620676,False,2.2833776473999023,0.3428511321544647,0.3630756139755249,False
+epicrealism_mm2,s1337__in-a-forest,s1337__wolf__walking__in-a-forest,wolf,walking,in a forest,Q,0.9265487750371297,False,0.2943428158760071,0.3526023328304291,0.44478878378868103,True
+epicrealism_mm2,s1337__in-a-forest,s1337__wolf__jumping__in-a-forest,wolf,jumping,in a forest,Q,0.9069415549437205,False,1.125525712966919,0.3501458466053009,0.6469346880912781,True
+epicrealism_mm2,s1337__in-a-forest,s1337__wolf__spinning__in-a-forest,wolf,spinning,in a forest,Q,0.8772904972235361,False,2.8567440509796143,0.33159583806991577,0.042661864310503006,False
+epicrealism_mm2,s1337__in-a-forest,s1337__tiger__running__in-a-forest,tiger,running,in a forest,Q,0.9735775669415792,False,3.122793436050415,0.3499581515789032,0.2797966003417969,False
+epicrealism_mm2,s1337__in-a-forest,s1337__tiger__walking__in-a-forest,tiger,walking,in a forest,Q,0.9794176816940308,False,1.9230951070785522,0.34388190507888794,0.8054319620132446,True
+epicrealism_mm2,s1337__in-a-forest,s1337__tiger__jumping__in-a-forest,tiger,jumping,in a forest,Q,0.9657320300738017,False,3.0254974365234375,0.36345475912094116,0.33433419466018677,False
+epicrealism_mm2,s1337__in-a-forest,s1337__tiger__spinning__in-a-forest,tiger,spinning,in a forest,Q,0.9658912440141042,False,4.763708114624023,0.3519521653652191,0.04374227300286293,False
+epicrealism_mm2,s1337__in-a-forest,s1337__fox__running__in-a-forest,fox,running,in a forest,Q,0.908127502600352,False,1.9155079126358032,0.34157952666282654,0.2829400897026062,False
+epicrealism_mm2,s1337__in-a-forest,s1337__fox__walking__in-a-forest,fox,walking,in a forest,Q,0.9251968999703725,False,0.6641774773597717,0.34659543633461,0.6805955171585083,True
+epicrealism_mm2,s1337__in-a-forest,s1337__fox__jumping__in-a-forest,fox,jumping,in a forest,Q,0.9316765546798706,False,2.161315679550171,0.33453893661499023,0.05897557735443115,False
+epicrealism_mm2,s1337__in-a-forest,s1337__fox__spinning__in-a-forest,fox,spinning,in a forest,Q,0.8725117365519206,False,2.5386722087860107,0.3462686836719513,0.03624271601438522,False
+epicrealism_mm2,s1337__in-a-forest,s1337__deer__running__in-a-forest,deer,running,in a forest,Q,0.9564847687880198,False,2.0778462886810303,0.33748722076416016,0.25182822346687317,False
+epicrealism_mm2,s1337__in-a-forest,s1337__deer__walking__in-a-forest,deer,walking,in a forest,Q,0.9246797303358714,False,1.083099126815796,0.3393697738647461,0.5525162816047668,True
+epicrealism_mm2,s1337__in-a-forest,s1337__deer__jumping__in-a-forest,deer,jumping,in a forest,Q,0.9401103516419729,False,1.0303306579589844,0.3253400921821594,0.2584223449230194,False
+epicrealism_mm2,s1337__in-a-forest,s1337__deer__spinning__in-a-forest,deer,spinning,in a forest,Q,0.9304141382376353,False,1.7924267053604126,0.33059877157211304,0.12869678437709808,False
+epicrealism_mm2,s1337__in-a-forest,s1337__brown-bear__running__in-a-forest,brown bear,running,in a forest,Q,0.9705501953760783,False,2.7140347957611084,0.3364863097667694,0.1918720155954361,False
+epicrealism_mm2,s1337__in-a-forest,s1337__brown-bear__walking__in-a-forest,brown bear,walking,in a forest,Q,0.9625362197558085,False,4.760013103485107,0.33751219511032104,0.7502319812774658,True
+epicrealism_mm2,s1337__in-a-forest,s1337__brown-bear__jumping__in-a-forest,brown bear,jumping,in a forest,Q,0.9578778306643169,False,2.0499374866485596,0.3286745846271515,0.03488538786768913,False
+epicrealism_mm2,s1337__in-a-forest,s1337__brown-bear__spinning__in-a-forest,brown bear,spinning,in a forest,Q,0.9467956940333049,True,3.9009053707122803,0.3153364360332489,0.02347242832183838,False
+epicrealism_mm2,s1337__in-a-forest,s1337__young-man__running__in-a-forest,young man,running,in a forest,H,0.9621813396612803,False,0.45864972472190857,0.30878251791000366,0.822241485118866,True
+epicrealism_mm2,s1337__in-a-forest,s1337__young-man__walking__in-a-forest,young man,walking,in a forest,H,0.9786005914211273,False,2.8315088748931885,0.3167198896408081,0.8330934643745422,True
+epicrealism_mm2,s1337__in-a-forest,s1337__young-man__jumping__in-a-forest,young man,jumping,in a forest,H,0.9406660199165344,False,3.636451244354248,0.3529828190803528,0.4705340564250946,True
+epicrealism_mm2,s1337__in-a-forest,s1337__young-man__spinning__in-a-forest,young man,spinning,in a forest,H,0.9317826330661774,False,1.8095074892044067,0.2991761267185211,0.8151826858520508,True
+epicrealism_mm2,s1337__in-a-forest,s1337__young-woman__running__in-a-forest,young woman,running,in a forest,H,0.9408347984155019,False,1.2149759531021118,0.3376719355583191,0.7610573172569275,True
+epicrealism_mm2,s1337__in-a-forest,s1337__young-woman__walking__in-a-forest,young woman,walking,in a forest,H,0.9515200694402058,False,3.1955068111419678,0.3314722776412964,0.8607694506645203,True
+epicrealism_mm2,s1337__in-a-forest,s1337__young-woman__jumping__in-a-forest,young woman,jumping,in a forest,H,0.9388591945171356,False,2.5744998455047607,0.3555285930633545,0.927203357219696,True
+epicrealism_mm2,s1337__in-a-forest,s1337__young-woman__spinning__in-a-forest,young woman,spinning,in a forest,H,0.9011332472165425,False,1.8322409391403198,0.3273948132991791,0.8766075968742371,True
+epicrealism_mm2,s1337__in-a-forest,s1337__athlete__running__in-a-forest,athlete,running,in a forest,H,0.9716742138067881,False,0.34866756200790405,0.3331003189086914,0.7208917737007141,True
+epicrealism_mm2,s1337__in-a-forest,s1337__athlete__walking__in-a-forest,athlete,walking,in a forest,H,0.9685779889424642,False,3.701737403869629,0.313427597284317,0.35904136300086975,False
+epicrealism_mm2,s1337__in-a-forest,s1337__athlete__jumping__in-a-forest,athlete,jumping,in a forest,H,0.9310785134633383,False,2.1465251445770264,0.34566786885261536,0.4351983666419983,True
+epicrealism_mm2,s1337__in-a-forest,s1337__athlete__spinning__in-a-forest,athlete,spinning,in a forest,H,0.9604706168174744,False,1.3517931699752808,0.3399733006954193,0.9122679233551025,True
+epicrealism_mm2,s1337__in-a-forest,s1337__soldier__running__in-a-forest,soldier,running,in a forest,H,0.94767418106397,False,0.667202353477478,0.34845584630966187,0.7272138595581055,True
+epicrealism_mm2,s1337__in-a-forest,s1337__soldier__walking__in-a-forest,soldier,walking,in a forest,H,0.9673537969589233,False,0.8133271336555481,0.3451569676399231,0.5414738655090332,True
+epicrealism_mm2,s1337__in-a-forest,s1337__soldier__jumping__in-a-forest,soldier,jumping,in a forest,H,0.9362291852633159,False,2.206653356552124,0.363229900598526,0.3804280161857605,True
+epicrealism_mm2,s1337__in-a-forest,s1337__soldier__spinning__in-a-forest,soldier,spinning,in a forest,H,0.9347859402497609,False,1.8760069608688354,0.3475019037723541,0.45286664366722107,True
+epicrealism_mm2,s1337__in-a-forest,s1337__dancer__running__in-a-forest,dancer,running,in a forest,H,0.9476249833901723,False,3.3306820392608643,0.34420526027679443,0.8632981181144714,True
+epicrealism_mm2,s1337__in-a-forest,s1337__dancer__walking__in-a-forest,dancer,walking,in a forest,H,0.951667332649231,False,2.7106902599334717,0.3406912088394165,0.36587098240852356,False
+epicrealism_mm2,s1337__in-a-forest,s1337__dancer__jumping__in-a-forest,dancer,jumping,in a forest,H,0.9419004201889039,False,2.144130229949951,0.33989110589027405,0.1190866008400917,False
+epicrealism_mm2,s1337__in-a-forest,s1337__dancer__spinning__in-a-forest,dancer,spinning,in a forest,H,0.9273385087649028,False,1.6644361019134521,0.35125479102134705,0.4697430729866028,True
+epicrealism_mm2,s1337__in-a-forest,s1337__child__running__in-a-forest,child,running,in a forest,H,0.9511185646057129,False,2.3037238121032715,0.3282575309276581,0.352644681930542,False
+epicrealism_mm2,s1337__in-a-forest,s1337__child__walking__in-a-forest,child,walking,in a forest,H,0.97668932278951,False,4.051998615264893,0.34008321166038513,0.7123713493347168,True
+epicrealism_mm2,s1337__in-a-forest,s1337__child__jumping__in-a-forest,child,jumping,in a forest,H,0.9120459894339243,False,1.8005614280700684,0.3542898893356323,0.47667431831359863,True
+epicrealism_mm2,s1337__in-a-forest,s1337__child__spinning__in-a-forest,child,spinning,in a forest,H,0.9514763196309407,False,1.2825840711593628,0.3467339277267456,0.4616917073726654,True
+epicrealism_mm2,s1337__in-a-forest,s1337__elderly-man__running__in-a-forest,elderly man,running,in a forest,H,0.9558801194032033,False,0.391519159078598,0.32305675745010376,0.7347723245620728,True
+epicrealism_mm2,s1337__in-a-forest,s1337__elderly-man__walking__in-a-forest,elderly man,walking,in a forest,H,0.973999704917272,False,1.4408721923828125,0.3632446229457855,0.6356390714645386,True
+epicrealism_mm2,s1337__in-a-forest,s1337__elderly-man__jumping__in-a-forest,elderly man,jumping,in a forest,H,0.9376140713691712,False,4.196518421173096,0.4016455113887787,0.7833191752433777,True
+epicrealism_mm2,s1337__in-a-forest,s1337__elderly-man__spinning__in-a-forest,elderly man,spinning,in a forest,H,0.958508183558782,False,4.08157205581665,0.3424437642097473,0.5173653960227966,True
+epicrealism_mm2,s1337__on-a-beach,s1337__golden-retriever__running__on-a-beach,golden retriever,running,on a beach,Q,0.9490740756193797,False,2.6412553787231445,0.36866921186447144,0.356825590133667,False
+epicrealism_mm2,s1337__on-a-beach,s1337__golden-retriever__walking__on-a-beach,golden retriever,walking,on a beach,Q,0.9564739624659221,False,2.631119966506958,0.36326372623443604,0.7517860531806946,True
+epicrealism_mm2,s1337__on-a-beach,s1337__golden-retriever__jumping__on-a-beach,golden retriever,jumping,on a beach,Q,0.9339566250642141,False,3.234734296798706,0.3627476692199707,0.28022637963294983,False
+epicrealism_mm2,s1337__on-a-beach,s1337__golden-retriever__spinning__on-a-beach,golden retriever,spinning,on a beach,Q,0.9503270785013834,False,3.700183153152466,0.36659765243530273,0.02690933831036091,False
+epicrealism_mm2,s1337__on-a-beach,s1337__german-shepherd__running__on-a-beach,german shepherd,running,on a beach,Q,0.9469234049320221,False,3.764404296875,0.3703944981098175,0.46617579460144043,True
+epicrealism_mm2,s1337__on-a-beach,s1337__german-shepherd__walking__on-a-beach,german shepherd,walking,on a beach,Q,0.9681251049041748,False,3.0120091438293457,0.3436550199985504,0.7018924355506897,True
+epicrealism_mm2,s1337__on-a-beach,s1337__german-shepherd__jumping__on-a-beach,german shepherd,jumping,on a beach,Q,0.9542194763819377,False,3.1221189498901367,0.34052473306655884,0.17075149714946747,False
+epicrealism_mm2,s1337__on-a-beach,s1337__german-shepherd__spinning__on-a-beach,german shepherd,spinning,on a beach,Q,0.962360018491745,False,2.7197961807250977,0.3406316936016083,0.09240073710680008,False
+epicrealism_mm2,s1337__on-a-beach,s1337__horse__running__on-a-beach,horse,running,on a beach,Q,0.9610778113206228,False,2.721177577972412,0.3204188048839569,0.12898576259613037,False
+epicrealism_mm2,s1337__on-a-beach,s1337__horse__walking__on-a-beach,horse,walking,on a beach,Q,0.9698185304800669,False,2.326777219772339,0.32527562975883484,0.5633779764175415,True
+epicrealism_mm2,s1337__on-a-beach,s1337__horse__jumping__on-a-beach,horse,jumping,on a beach,Q,0.9629176874955495,False,2.297069549560547,0.30132678151130676,0.13052479922771454,False
+epicrealism_mm2,s1337__on-a-beach,s1337__horse__spinning__on-a-beach,horse,spinning,on a beach,Q,0.9586097439130147,False,1.988661527633667,0.3424369990825653,0.08364249765872955,False
+epicrealism_mm2,s1337__on-a-beach,s1337__wolf__running__on-a-beach,wolf,running,on a beach,Q,0.9661829590797424,False,3.0302987098693848,0.35485774278640747,0.39534062147140503,False
+epicrealism_mm2,s1337__on-a-beach,s1337__wolf__walking__on-a-beach,wolf,walking,on a beach,Q,0.9711384197076162,False,2.152651071548462,0.35648584365844727,0.6929278373718262,True
+epicrealism_mm2,s1337__on-a-beach,s1337__wolf__jumping__on-a-beach,wolf,jumping,on a beach,Q,0.9616971711317698,False,1.8764647245407104,0.3500024378299713,0.7190332412719727,True
+epicrealism_mm2,s1337__on-a-beach,s1337__wolf__spinning__on-a-beach,wolf,spinning,on a beach,Q,0.8674983024597168,True,6.327764987945557,0.33188241720199585,0.028643198311328888,False
+epicrealism_mm2,s1337__on-a-beach,s1337__tiger__running__on-a-beach,tiger,running,on a beach,Q,0.9750534534454346,False,3.590095043182373,0.37470829486846924,0.20047692954540253,False
+epicrealism_mm2,s1337__on-a-beach,s1337__tiger__walking__on-a-beach,tiger,walking,on a beach,Q,0.9700877169768015,False,2.4202170372009277,0.38152408599853516,0.9490976333618164,True
+epicrealism_mm2,s1337__on-a-beach,s1337__tiger__jumping__on-a-beach,tiger,jumping,on a beach,Q,0.9767617682615916,True,4.342935562133789,0.3670697808265686,0.025744032114744186,False
+epicrealism_mm2,s1337__on-a-beach,s1337__tiger__spinning__on-a-beach,tiger,spinning,on a beach,Q,0.9771775643030802,False,3.9028561115264893,0.365314245223999,0.02170291729271412,False
+epicrealism_mm2,s1337__on-a-beach,s1337__fox__running__on-a-beach,fox,running,on a beach,Q,0.9570453564325968,False,1.2091033458709717,0.3595461845397949,0.24317005276679993,False
+epicrealism_mm2,s1337__on-a-beach,s1337__fox__walking__on-a-beach,fox,walking,on a beach,Q,0.9307752748330435,False,2.123952627182007,0.3827679455280304,0.8081368207931519,True
+epicrealism_mm2,s1337__on-a-beach,s1337__fox__jumping__on-a-beach,fox,jumping,on a beach,Q,0.9574014107386272,False,2.79536771774292,0.3645176887512207,0.15067532658576965,False
+epicrealism_mm2,s1337__on-a-beach,s1337__fox__spinning__on-a-beach,fox,spinning,on a beach,Q,0.929078859090805,False,1.3354547023773193,0.36488789319992065,0.029499700292944908,False
+epicrealism_mm2,s1337__on-a-beach,s1337__deer__running__on-a-beach,deer,running,on a beach,Q,0.926529053846995,False,2.7220685482025146,0.3477509915828705,0.1345679759979248,False
+epicrealism_mm2,s1337__on-a-beach,s1337__deer__walking__on-a-beach,deer,walking,on a beach,Q,0.9453372041384379,False,1.5138098001480103,0.3563116192817688,0.5887523889541626,True
+epicrealism_mm2,s1337__on-a-beach,s1337__deer__jumping__on-a-beach,deer,jumping,on a beach,Q,0.9505666136741638,False,1.082705020904541,0.35656845569610596,0.35988274216651917,False
+epicrealism_mm2,s1337__on-a-beach,s1337__deer__spinning__on-a-beach,deer,spinning,on a beach,Q,0.9491119305292766,False,0.7876123785972595,0.36924439668655396,0.11253418773412704,False
+epicrealism_mm2,s1337__on-a-beach,s1337__brown-bear__running__on-a-beach,brown bear,running,on a beach,Q,0.948084008693695,False,3.8930811882019043,0.3598620295524597,0.19989807903766632,False
+epicrealism_mm2,s1337__on-a-beach,s1337__brown-bear__walking__on-a-beach,brown bear,walking,on a beach,Q,0.9590490341186524,False,4.3099212646484375,0.34980684518814087,0.7737043499946594,True
+epicrealism_mm2,s1337__on-a-beach,s1337__brown-bear__jumping__on-a-beach,brown bear,jumping,on a beach,Q,0.9440318087736765,False,1.7079241275787354,0.33560919761657715,0.13686557114124298,False
+epicrealism_mm2,s1337__on-a-beach,s1337__brown-bear__spinning__on-a-beach,brown bear,spinning,on a beach,Q,0.8751155495643616,True,7.745255470275879,0.3576073944568634,0.07859840244054794,False
+epicrealism_mm2,s1337__on-a-beach,s1337__young-man__running__on-a-beach,young man,running,on a beach,H,0.9653659939765931,False,1.42105233669281,0.3263097405433655,0.7627910375595093,True
+epicrealism_mm2,s1337__on-a-beach,s1337__young-man__walking__on-a-beach,young man,walking,on a beach,H,0.9775736073652903,False,2.4769575595855713,0.30869758129119873,0.8527668714523315,True
+epicrealism_mm2,s1337__on-a-beach,s1337__young-man__jumping__on-a-beach,young man,jumping,on a beach,H,0.9631203452746073,False,1.948138952255249,0.3290172219276428,0.7859978675842285,True
+epicrealism_mm2,s1337__on-a-beach,s1337__young-man__spinning__on-a-beach,young man,spinning,on a beach,H,0.9822349965572357,False,3.425185203552246,0.31764015555381775,0.22575920820236206,False
+epicrealism_mm2,s1337__on-a-beach,s1337__young-woman__running__on-a-beach,young woman,running,on a beach,H,0.9506743729114533,False,2.0129361152648926,0.33384469151496887,0.6588277816772461,True
+epicrealism_mm2,s1337__on-a-beach,s1337__young-woman__walking__on-a-beach,young woman,walking,on a beach,H,0.9768732726573944,False,3.539747476577759,0.3141769766807556,0.8537521362304688,True
+epicrealism_mm2,s1337__on-a-beach,s1337__young-woman__jumping__on-a-beach,young woman,jumping,on a beach,H,0.971264100074768,False,3.097632646560669,0.30929017066955566,0.8823117613792419,True
+epicrealism_mm2,s1337__on-a-beach,s1337__young-woman__spinning__on-a-beach,young woman,spinning,on a beach,H,0.9759655157725017,False,2.803169012069702,0.3024660348892212,0.22755852341651917,False
+epicrealism_mm2,s1337__on-a-beach,s1337__athlete__running__on-a-beach,athlete,running,on a beach,H,0.9556631882985432,False,2.680384397506714,0.32529503107070923,0.7037281394004822,True
+epicrealism_mm2,s1337__on-a-beach,s1337__athlete__walking__on-a-beach,athlete,walking,on a beach,H,0.9689272920290629,False,1.8690314292907715,0.3068152070045471,0.8365744352340698,True
+epicrealism_mm2,s1337__on-a-beach,s1337__athlete__jumping__on-a-beach,athlete,jumping,on a beach,H,0.9583590686321258,False,1.4511001110076904,0.2984462380409241,0.7219386696815491,True
+epicrealism_mm2,s1337__on-a-beach,s1337__athlete__spinning__on-a-beach,athlete,spinning,on a beach,H,0.9756530781586965,False,3.049457311630249,0.3057096302509308,0.3332673907279968,False
+epicrealism_mm2,s1337__on-a-beach,s1337__soldier__running__on-a-beach,soldier,running,on a beach,H,0.9529390335083008,False,2.286351203918457,0.3657967448234558,0.6230462193489075,True
+epicrealism_mm2,s1337__on-a-beach,s1337__soldier__walking__on-a-beach,soldier,walking,on a beach,H,0.9730818788210551,False,2.502642869949341,0.3698713481426239,0.5989548563957214,True
+epicrealism_mm2,s1337__on-a-beach,s1337__soldier__jumping__on-a-beach,soldier,jumping,on a beach,H,0.9141682068506877,False,1.7522093057632446,0.3477104604244232,0.8867321610450745,True
+epicrealism_mm2,s1337__on-a-beach,s1337__soldier__spinning__on-a-beach,soldier,spinning,on a beach,H,0.9343386272589366,False,2.3197314739227295,0.33732450008392334,0.333882600069046,True
+epicrealism_mm2,s1337__on-a-beach,s1337__dancer__running__on-a-beach,dancer,running,on a beach,H,0.9706746220588685,False,3.469428062438965,0.32134929299354553,0.4138408303260803,True
+epicrealism_mm2,s1337__on-a-beach,s1337__dancer__walking__on-a-beach,dancer,walking,on a beach,H,0.9720700263977051,False,1.9112725257873535,0.31564202904701233,0.6003997921943665,True
+epicrealism_mm2,s1337__on-a-beach,s1337__dancer__jumping__on-a-beach,dancer,jumping,on a beach,H,0.9602011203765869,False,3.290512800216675,0.29178282618522644,0.26576927304267883,False
+epicrealism_mm2,s1337__on-a-beach,s1337__dancer__spinning__on-a-beach,dancer,spinning,on a beach,H,0.9642824868361155,False,2.573125123977661,0.2905006408691406,0.2898738384246826,False
+epicrealism_mm2,s1337__on-a-beach,s1337__child__running__on-a-beach,child,running,on a beach,H,0.9465770383675893,False,1.9758391380310059,0.32137730717658997,0.1721530258655548,False
+epicrealism_mm2,s1337__on-a-beach,s1337__child__walking__on-a-beach,child,walking,on a beach,H,0.9623020033041636,False,4.428385257720947,0.33577391505241394,0.9087855815887451,True
+epicrealism_mm2,s1337__on-a-beach,s1337__child__jumping__on-a-beach,child,jumping,on a beach,H,0.9713652491569519,False,1.8115622997283936,0.32595545053482056,0.7026705741882324,True
+epicrealism_mm2,s1337__on-a-beach,s1337__child__spinning__on-a-beach,child,spinning,on a beach,H,0.9605538725852967,False,1.1499881744384766,0.3087533712387085,0.18180590867996216,False
+epicrealism_mm2,s1337__on-a-beach,s1337__elderly-man__running__on-a-beach,elderly man,running,on a beach,H,0.9696244458357494,False,2.5774214267730713,0.37665876746177673,0.9185685515403748,True
+epicrealism_mm2,s1337__on-a-beach,s1337__elderly-man__walking__on-a-beach,elderly man,walking,on a beach,H,0.9699637651443481,False,2.4315664768218994,0.34964749217033386,0.7819790244102478,True
+epicrealism_mm2,s1337__on-a-beach,s1337__elderly-man__jumping__on-a-beach,elderly man,jumping,on a beach,H,0.962941958506902,False,1.8970458507537842,0.36230430006980896,0.568244993686676,True
+epicrealism_mm2,s1337__on-a-beach,s1337__elderly-man__spinning__on-a-beach,elderly man,spinning,on a beach,H,0.980109449227651,False,1.9489364624023438,0.3592676520347595,0.30518221855163574,False
+epicrealism_mm2,s42__in-a-forest,s42__golden-retriever__running__in-a-forest,golden retriever,running,in a forest,Q,0.9297770162423452,False,1.266873836517334,0.3809078335762024,0.3609301447868347,False
+epicrealism_mm2,s42__in-a-forest,s42__golden-retriever__walking__in-a-forest,golden retriever,walking,in a forest,Q,0.9285350183645884,False,2.942324161529541,0.35923537611961365,0.657139241695404,True
+epicrealism_mm2,s42__in-a-forest,s42__golden-retriever__jumping__in-a-forest,golden retriever,jumping,in a forest,Q,0.9576842983563741,False,0.7626320719718933,0.3523672819137573,0.3910119831562042,False
+epicrealism_mm2,s42__in-a-forest,s42__golden-retriever__spinning__in-a-forest,golden retriever,spinning,in a forest,Q,0.929078096151352,False,0.692963182926178,0.35722920298576355,0.04047596827149391,False
+epicrealism_mm2,s42__in-a-forest,s42__german-shepherd__running__in-a-forest,german shepherd,running,in a forest,Q,0.9619687060515086,False,1.2282750606536865,0.355384886264801,0.3682219982147217,False
+epicrealism_mm2,s42__in-a-forest,s42__german-shepherd__walking__in-a-forest,german shepherd,walking,in a forest,Q,0.9615795612335205,False,2.571288585662842,0.3660188913345337,0.6275464296340942,True
+epicrealism_mm2,s42__in-a-forest,s42__german-shepherd__jumping__in-a-forest,german shepherd,jumping,in a forest,Q,0.9523162186145783,False,1.3983330726623535,0.3328455090522766,0.05591985210776329,False
+epicrealism_mm2,s42__in-a-forest,s42__german-shepherd__spinning__in-a-forest,german shepherd,spinning,in a forest,Q,0.9649660646915436,False,1.316590428352356,0.32781165838241577,0.055350229144096375,False
+epicrealism_mm2,s42__in-a-forest,s42__horse__running__in-a-forest,horse,running,in a forest,Q,0.949766610066096,False,1.8306525945663452,0.34750762581825256,0.2426024228334427,False
+epicrealism_mm2,s42__in-a-forest,s42__horse__walking__in-a-forest,horse,walking,in a forest,Q,0.981006634235382,False,0.21933719515800476,0.3579021990299225,0.609294056892395,True
+epicrealism_mm2,s42__in-a-forest,s42__horse__jumping__in-a-forest,horse,jumping,in a forest,Q,0.9634495476881663,False,0.6738660931587219,0.34158048033714294,0.46710005402565,True
+epicrealism_mm2,s42__in-a-forest,s42__horse__spinning__in-a-forest,horse,spinning,in a forest,Q,0.9672461986541748,False,2.378692388534546,0.34929990768432617,0.14908868074417114,False
+epicrealism_mm2,s42__in-a-forest,s42__wolf__running__in-a-forest,wolf,running,in a forest,Q,0.9585134208202362,False,0.4836200475692749,0.33374935388565063,0.4127199053764343,True
+epicrealism_mm2,s42__in-a-forest,s42__wolf__walking__in-a-forest,wolf,walking,in a forest,Q,0.9739375491937001,False,1.946921467781067,0.34632325172424316,0.5825653076171875,True
+epicrealism_mm2,s42__in-a-forest,s42__wolf__jumping__in-a-forest,wolf,jumping,in a forest,Q,0.9605821251869202,False,0.7643795609474182,0.325756311416626,0.36901646852493286,False
+epicrealism_mm2,s42__in-a-forest,s42__wolf__spinning__in-a-forest,wolf,spinning,in a forest,Q,0.9061822831630707,False,0.9954056143760681,0.3229284882545471,0.049823880195617676,False
+epicrealism_mm2,s42__in-a-forest,s42__tiger__running__in-a-forest,tiger,running,in a forest,Q,0.9861194312572479,False,1.3234378099441528,0.3519233465194702,0.14999492466449738,False
+epicrealism_mm2,s42__in-a-forest,s42__tiger__walking__in-a-forest,tiger,walking,in a forest,Q,0.9774113317330678,False,0.4760674834251404,0.3598441183567047,0.8764664530754089,True
+epicrealism_mm2,s42__in-a-forest,s42__tiger__jumping__in-a-forest,tiger,jumping,in a forest,Q,0.9811674515406291,False,1.682741403579712,0.34927472472190857,0.10836589336395264,False
+epicrealism_mm2,s42__in-a-forest,s42__tiger__spinning__in-a-forest,tiger,spinning,in a forest,Q,0.9721230645974477,False,2.522803544998169,0.32830896973609924,0.026639899238944054,False
+epicrealism_mm2,s42__in-a-forest,s42__fox__running__in-a-forest,fox,running,in a forest,Q,0.9587366819381714,False,1.2679903507232666,0.3432936668395996,0.30613458156585693,False
+epicrealism_mm2,s42__in-a-forest,s42__fox__walking__in-a-forest,fox,walking,in a forest,Q,0.9620341897010803,False,0.22985798120498657,0.3609057366847992,0.40036746859550476,True
+epicrealism_mm2,s42__in-a-forest,s42__fox__jumping__in-a-forest,fox,jumping,in a forest,Q,0.9519534548123677,False,0.5898491740226746,0.358293354511261,0.18618249893188477,False
+epicrealism_mm2,s42__in-a-forest,s42__fox__spinning__in-a-forest,fox,spinning,in a forest,Q,0.8859269837538402,False,1.9377033710479736,0.33219456672668457,0.08231449127197266,False
+epicrealism_mm2,s42__in-a-forest,s42__deer__running__in-a-forest,deer,running,in a forest,Q,0.9752126395702362,False,0.48495545983314514,0.32430192828178406,0.16273854672908783,False
+epicrealism_mm2,s42__in-a-forest,s42__deer__walking__in-a-forest,deer,walking,in a forest,Q,0.9816282689571381,False,0.162933349609375,0.33655259013175964,0.5355011820793152,True
+epicrealism_mm2,s42__in-a-forest,s42__deer__jumping__in-a-forest,deer,jumping,in a forest,Q,0.972229144970576,False,0.40465936064720154,0.32356518507003784,0.13075432181358337,False
+epicrealism_mm2,s42__in-a-forest,s42__deer__spinning__in-a-forest,deer,spinning,in a forest,Q,0.9666837612787883,False,0.5815540552139282,0.3090999126434326,0.12621918320655823,False
+epicrealism_mm2,s42__in-a-forest,s42__brown-bear__running__in-a-forest,brown bear,running,in a forest,Q,0.9702510158220927,False,0.7572435140609741,0.3375367820262909,0.22103984653949738,False
+epicrealism_mm2,s42__in-a-forest,s42__brown-bear__walking__in-a-forest,brown bear,walking,in a forest,Q,0.9558185140291849,False,0.9335210919380188,0.3577040135860443,0.7624940872192383,True
+epicrealism_mm2,s42__in-a-forest,s42__brown-bear__jumping__in-a-forest,brown bear,jumping,in a forest,Q,0.9601315200328827,False,1.1586474180221558,0.34905242919921875,0.6696050763130188,True
+epicrealism_mm2,s42__in-a-forest,s42__brown-bear__spinning__in-a-forest,brown bear,spinning,in a forest,Q,0.9576553523540496,False,1.4202848672866821,0.3159811198711395,0.02496160753071308,False
+epicrealism_mm2,s42__in-a-forest,s42__young-man__running__in-a-forest,young man,running,in a forest,H,0.9584364791711172,False,0.8888128995895386,0.3319095969200134,0.8482736945152283,True
+epicrealism_mm2,s42__in-a-forest,s42__young-man__walking__in-a-forest,young man,walking,in a forest,H,0.9655247946580251,False,1.4362372159957886,0.32745304703712463,0.8358623385429382,True
+epicrealism_mm2,s42__in-a-forest,s42__young-man__jumping__in-a-forest,young man,jumping,in a forest,H,0.9519833286603292,False,1.823548436164856,0.35234323143959045,0.6176448464393616,True
+epicrealism_mm2,s42__in-a-forest,s42__young-man__spinning__in-a-forest,young man,spinning,in a forest,H,0.9797857960065206,False,0.9870929718017578,0.3113357722759247,0.6794493198394775,True
+epicrealism_mm2,s42__in-a-forest,s42__young-woman__running__in-a-forest,young woman,running,in a forest,H,0.9470939437548319,False,1.6213561296463013,0.3329203426837921,0.6854488253593445,True
+epicrealism_mm2,s42__in-a-forest,s42__young-woman__walking__in-a-forest,young woman,walking,in a forest,H,0.9703085462252299,False,1.9838060140609741,0.33010196685791016,0.8283782005310059,True
+epicrealism_mm2,s42__in-a-forest,s42__young-woman__jumping__in-a-forest,young woman,jumping,in a forest,H,0.9718649129072825,False,0.8799063563346863,0.370327889919281,0.7315043807029724,True
+epicrealism_mm2,s42__in-a-forest,s42__young-woman__spinning__in-a-forest,young woman,spinning,in a forest,H,0.9642660637696584,False,0.8006401658058167,0.3353748619556427,0.7763077616691589,True
+epicrealism_mm2,s42__in-a-forest,s42__athlete__running__in-a-forest,athlete,running,in a forest,H,0.9664522727330526,False,1.6283825635910034,0.33409255743026733,0.7277022004127502,True
+epicrealism_mm2,s42__in-a-forest,s42__athlete__walking__in-a-forest,athlete,walking,in a forest,H,0.9757520079612731,False,2.7257590293884277,0.3318738043308258,0.380074143409729,False
+epicrealism_mm2,s42__in-a-forest,s42__athlete__jumping__in-a-forest,athlete,jumping,in a forest,H,0.9533061305681865,False,1.2868770360946655,0.343953937292099,0.6121752262115479,True
+epicrealism_mm2,s42__in-a-forest,s42__athlete__spinning__in-a-forest,athlete,spinning,in a forest,H,0.9707134346167247,False,1.2294068336486816,0.33712756633758545,0.9164735674858093,True
+epicrealism_mm2,s42__in-a-forest,s42__soldier__running__in-a-forest,soldier,running,in a forest,H,0.9442025820414225,False,0.7796746492385864,0.352780818939209,0.7448252439498901,True
+epicrealism_mm2,s42__in-a-forest,s42__soldier__walking__in-a-forest,soldier,walking,in a forest,H,0.979708445072174,False,1.0438153743743896,0.3548348546028137,0.5523760318756104,True
+epicrealism_mm2,s42__in-a-forest,s42__soldier__jumping__in-a-forest,soldier,jumping,in a forest,H,0.9710947136084239,False,1.2604068517684937,0.3574550151824951,0.37645214796066284,True
+epicrealism_mm2,s42__in-a-forest,s42__soldier__spinning__in-a-forest,soldier,spinning,in a forest,H,0.9596992393334707,False,1.7740483283996582,0.32145240902900696,0.7345109581947327,True
+epicrealism_mm2,s42__in-a-forest,s42__dancer__running__in-a-forest,dancer,running,in a forest,H,0.949202956755956,False,2.310725212097168,0.36201637983322144,0.8284540176391602,True
+epicrealism_mm2,s42__in-a-forest,s42__dancer__walking__in-a-forest,dancer,walking,in a forest,H,0.9784952123959859,False,2.3299624919891357,0.33496806025505066,0.5548592209815979,True
+epicrealism_mm2,s42__in-a-forest,s42__dancer__jumping__in-a-forest,dancer,jumping,in a forest,H,0.9459545413653055,False,0.7260950803756714,0.3427762985229492,0.15619736909866333,False
+epicrealism_mm2,s42__in-a-forest,s42__dancer__spinning__in-a-forest,dancer,spinning,in a forest,H,0.9740158160527547,False,0.20392189919948578,0.3441011905670166,0.36802470684051514,True
+epicrealism_mm2,s42__in-a-forest,s42__child__running__in-a-forest,child,running,in a forest,H,0.9687194049358367,False,1.8994265794754028,0.3508830666542053,0.40897244215011597,False
+epicrealism_mm2,s42__in-a-forest,s42__child__walking__in-a-forest,child,walking,in a forest,H,0.9813016295433045,False,2.1446802616119385,0.3493661880493164,0.7691344618797302,True
+epicrealism_mm2,s42__in-a-forest,s42__child__jumping__in-a-forest,child,jumping,in a forest,H,0.9734645148118337,False,0.893027126789093,0.35430899262428284,0.7514013051986694,True
+epicrealism_mm2,s42__in-a-forest,s42__child__spinning__in-a-forest,child,spinning,in a forest,H,0.954539813597997,False,0.8793143630027771,0.3242471218109131,0.12767483294010162,False
+epicrealism_mm2,s42__in-a-forest,s42__elderly-man__running__in-a-forest,elderly man,running,in a forest,H,0.9617840568224589,False,0.8102141618728638,0.33241960406303406,0.7731695175170898,True
+epicrealism_mm2,s42__in-a-forest,s42__elderly-man__walking__in-a-forest,elderly man,walking,in a forest,H,0.9650330821673075,False,2.2873733043670654,0.3499244749546051,0.5398158431053162,True
+epicrealism_mm2,s42__in-a-forest,s42__elderly-man__jumping__in-a-forest,elderly man,jumping,in a forest,H,0.9628553887208303,False,1.745272159576416,0.3826196789741516,0.5883129835128784,True
+epicrealism_mm2,s42__in-a-forest,s42__elderly-man__spinning__in-a-forest,elderly man,spinning,in a forest,H,0.9563604931036631,False,1.6502513885498047,0.3445524573326111,0.7836064100265503,True
+epicrealism_mm2,s42__on-a-beach,s42__golden-retriever__running__on-a-beach,golden retriever,running,on a beach,Q,0.9490015566349029,False,1.9745838642120361,0.3672398030757904,0.4482904374599457,True
+epicrealism_mm2,s42__on-a-beach,s42__golden-retriever__walking__on-a-beach,golden retriever,walking,on a beach,Q,0.9547962705294292,False,1.961883544921875,0.36670735478401184,0.6803215146064758,True
+epicrealism_mm2,s42__on-a-beach,s42__golden-retriever__jumping__on-a-beach,golden retriever,jumping,on a beach,Q,0.9653786261876424,False,1.3877036571502686,0.35588976740837097,0.11807049810886383,False
+epicrealism_mm2,s42__on-a-beach,s42__golden-retriever__spinning__on-a-beach,golden retriever,spinning,on a beach,Q,0.9395140985647837,False,2.9434664249420166,0.3517707586288452,0.04741644859313965,False
+epicrealism_mm2,s42__on-a-beach,s42__german-shepherd__running__on-a-beach,german shepherd,running,on a beach,Q,0.9628699600696564,False,2.541217565536499,0.3649749159812927,0.5175957679748535,True
+epicrealism_mm2,s42__on-a-beach,s42__german-shepherd__walking__on-a-beach,german shepherd,walking,on a beach,Q,0.9634402831395467,False,1.2959845066070557,0.348063200712204,0.6256629824638367,True
+epicrealism_mm2,s42__on-a-beach,s42__german-shepherd__jumping__on-a-beach,german shepherd,jumping,on a beach,Q,0.9306863049666086,False,4.221506118774414,0.3309045732021332,0.06326191127300262,False
+epicrealism_mm2,s42__on-a-beach,s42__german-shepherd__spinning__on-a-beach,german shepherd,spinning,on a beach,Q,0.9583186189333598,False,2.845606565475464,0.33885711431503296,0.04510140419006348,False
+epicrealism_mm2,s42__on-a-beach,s42__horse__running__on-a-beach,horse,running,on a beach,Q,0.9614303270975749,False,1.6241756677627563,0.3481588065624237,0.21631252765655518,False
+epicrealism_mm2,s42__on-a-beach,s42__horse__walking__on-a-beach,horse,walking,on a beach,Q,0.9640851815541586,False,0.9176172018051147,0.3475435972213745,0.7185392379760742,True
+epicrealism_mm2,s42__on-a-beach,s42__horse__jumping__on-a-beach,horse,jumping,on a beach,Q,0.9628726780414582,False,1.1226149797439575,0.3015495538711548,0.08272720873355865,False
+epicrealism_mm2,s42__on-a-beach,s42__horse__spinning__on-a-beach,horse,spinning,on a beach,Q,0.9532788117726644,False,1.0675309896469116,0.33501574397087097,0.19232842326164246,False
+epicrealism_mm2,s42__on-a-beach,s42__wolf__running__on-a-beach,wolf,running,on a beach,Q,0.9719496389230092,False,4.621031761169434,0.3593843877315521,0.47290369868278503,True
+epicrealism_mm2,s42__on-a-beach,s42__wolf__walking__on-a-beach,wolf,walking,on a beach,Q,0.9688009440898895,False,1.8930704593658447,0.35554999113082886,0.7056282758712769,True
+epicrealism_mm2,s42__on-a-beach,s42__wolf__jumping__on-a-beach,wolf,jumping,on a beach,Q,0.9647127787272135,False,3.199230432510376,0.35578927397727966,0.6090014576911926,True
+epicrealism_mm2,s42__on-a-beach,s42__wolf__spinning__on-a-beach,wolf,spinning,on a beach,Q,0.9298634012540181,False,1.8907074928283691,0.34017911553382874,0.09388180822134018,False
+epicrealism_mm2,s42__on-a-beach,s42__tiger__running__on-a-beach,tiger,running,on a beach,Q,0.9710206508636474,False,2.4630675315856934,0.3923149108886719,0.12181205302476883,False
+epicrealism_mm2,s42__on-a-beach,s42__tiger__walking__on-a-beach,tiger,walking,on a beach,Q,0.9845549722512563,False,1.9913921356201172,0.3876951336860657,0.8891507387161255,True
+epicrealism_mm2,s42__on-a-beach,s42__tiger__jumping__on-a-beach,tiger,jumping,on a beach,Q,0.9698086440563202,False,4.411779403686523,0.3819230794906616,0.05544024333357811,False
+epicrealism_mm2,s42__on-a-beach,s42__tiger__spinning__on-a-beach,tiger,spinning,on a beach,Q,0.9661052028338114,False,3.316499948501587,0.38549503684043884,0.03238137066364288,False
+epicrealism_mm2,s42__on-a-beach,s42__fox__running__on-a-beach,fox,running,on a beach,Q,0.9689641217390697,False,1.442832112312317,0.373827189207077,0.22485299408435822,False
+epicrealism_mm2,s42__on-a-beach,s42__fox__walking__on-a-beach,fox,walking,on a beach,Q,0.9693950215975443,False,0.9549838304519653,0.37648117542266846,0.7150866389274597,True
+epicrealism_mm2,s42__on-a-beach,s42__fox__jumping__on-a-beach,fox,jumping,on a beach,Q,0.974325160185496,False,0.5658770203590393,0.36899009346961975,0.10116877406835556,False
+epicrealism_mm2,s42__on-a-beach,s42__fox__spinning__on-a-beach,fox,spinning,on a beach,Q,0.9072684566179912,False,1.4561585187911987,0.3475854992866516,0.020494000986218452,False
+epicrealism_mm2,s42__on-a-beach,s42__deer__running__on-a-beach,deer,running,on a beach,Q,0.9664661566416423,False,0.7132426500320435,0.348413348197937,0.1159014031291008,False
+epicrealism_mm2,s42__on-a-beach,s42__deer__walking__on-a-beach,deer,walking,on a beach,Q,0.9774945060412089,False,0.4903861880302429,0.363038569688797,0.6245245933532715,True
+epicrealism_mm2,s42__on-a-beach,s42__deer__jumping__on-a-beach,deer,jumping,on a beach,Q,0.9610708693663279,False,0.5328667759895325,0.3447573184967041,0.18319876492023468,False
+epicrealism_mm2,s42__on-a-beach,s42__deer__spinning__on-a-beach,deer,spinning,on a beach,Q,0.972415441274643,False,0.412038654088974,0.34950846433639526,0.10749984532594681,False
+epicrealism_mm2,s42__on-a-beach,s42__brown-bear__running__on-a-beach,brown bear,running,on a beach,Q,0.9697240889072418,False,0.8688538074493408,0.346367746591568,0.19748564064502716,False
+epicrealism_mm2,s42__on-a-beach,s42__brown-bear__walking__on-a-beach,brown bear,walking,on a beach,Q,0.9619744737943013,False,0.8804975748062134,0.35049349069595337,0.7729758620262146,True
+epicrealism_mm2,s42__on-a-beach,s42__brown-bear__jumping__on-a-beach,brown bear,jumping,on a beach,Q,0.917734932899475,False,2.252926826477051,0.3396376073360443,0.1124197393655777,False
+epicrealism_mm2,s42__on-a-beach,s42__brown-bear__spinning__on-a-beach,brown bear,spinning,on a beach,Q,0.9011658648649852,False,4.292937278747559,0.3402562439441681,0.32485854625701904,False
+epicrealism_mm2,s42__on-a-beach,s42__young-man__running__on-a-beach,young man,running,on a beach,H,0.9775351226329804,False,1.3133262395858765,0.33864694833755493,0.7675573825836182,True
+epicrealism_mm2,s42__on-a-beach,s42__young-man__walking__on-a-beach,young man,walking,on a beach,H,0.9761915345986684,False,1.2861799001693726,0.2969003915786743,0.7945044040679932,True
+epicrealism_mm2,s42__on-a-beach,s42__young-man__jumping__on-a-beach,young man,jumping,on a beach,H,0.9580895880858104,False,1.0801868438720703,0.35141801834106445,0.7710975408554077,True
+epicrealism_mm2,s42__on-a-beach,s42__young-man__spinning__on-a-beach,young man,spinning,on a beach,H,0.9647882521152497,False,1.4111742973327637,0.32313549518585205,0.12490052729845047,False
+epicrealism_mm2,s42__on-a-beach,s42__young-woman__running__on-a-beach,young woman,running,on a beach,H,0.9650520761807759,False,1.2777981758117676,0.32371458411216736,0.8437792062759399,True
+epicrealism_mm2,s42__on-a-beach,s42__young-woman__walking__on-a-beach,young woman,walking,on a beach,H,0.9814985493818918,False,1.1519101858139038,0.31291136145591736,0.8104605078697205,True
+epicrealism_mm2,s42__on-a-beach,s42__young-woman__jumping__on-a-beach,young woman,jumping,on a beach,H,0.933478057384491,False,1.5366233587265015,0.3368294835090637,0.9720785021781921,True
+epicrealism_mm2,s42__on-a-beach,s42__young-woman__spinning__on-a-beach,young woman,spinning,on a beach,H,0.9611299236615499,False,3.1607182025909424,0.31710928678512573,0.24029743671417236,False
+epicrealism_mm2,s42__on-a-beach,s42__athlete__running__on-a-beach,athlete,running,on a beach,H,0.9611972391605377,False,1.2328084707260132,0.31535133719444275,0.7229102849960327,True
+epicrealism_mm2,s42__on-a-beach,s42__athlete__walking__on-a-beach,athlete,walking,on a beach,H,0.9760309636592865,False,1.9603294134140015,0.2991665303707123,0.7895050644874573,True
+epicrealism_mm2,s42__on-a-beach,s42__athlete__jumping__on-a-beach,athlete,jumping,on a beach,H,0.9769381701946258,False,0.37569740414619446,0.3263527452945709,0.8607805967330933,True
+epicrealism_mm2,s42__on-a-beach,s42__athlete__spinning__on-a-beach,athlete,spinning,on a beach,H,0.9753092447916667,False,1.7567291259765625,0.2858128547668457,0.16406022012233734,False
+epicrealism_mm2,s42__on-a-beach,s42__soldier__running__on-a-beach,soldier,running,on a beach,H,0.9627423584461212,False,1.622308611869812,0.3680855333805084,0.832969605922699,True
+epicrealism_mm2,s42__on-a-beach,s42__soldier__walking__on-a-beach,soldier,walking,on a beach,H,0.971231997013092,False,1.9751543998718262,0.3548585772514343,0.5165418386459351,True
+epicrealism_mm2,s42__on-a-beach,s42__soldier__jumping__on-a-beach,soldier,jumping,on a beach,H,0.9106659710407257,False,0.9173697829246521,0.3368789553642273,0.7131528258323669,True
+epicrealism_mm2,s42__on-a-beach,s42__soldier__spinning__on-a-beach,soldier,spinning,on a beach,H,0.9532780945301056,False,1.299474835395813,0.3469541668891907,0.29508230090141296,False
+epicrealism_mm2,s42__on-a-beach,s42__dancer__running__on-a-beach,dancer,running,on a beach,H,0.9777716557184856,False,1.3792675733566284,0.31189727783203125,0.6329912543296814,True
+epicrealism_mm2,s42__on-a-beach,s42__dancer__walking__on-a-beach,dancer,walking,on a beach,H,0.9710226277510325,False,0.7968044877052307,0.30672216415405273,0.4160119593143463,True
+epicrealism_mm2,s42__on-a-beach,s42__dancer__jumping__on-a-beach,dancer,jumping,on a beach,H,0.9790439327557882,False,1.0618207454681396,0.3088081181049347,0.6784788966178894,True
+epicrealism_mm2,s42__on-a-beach,s42__dancer__spinning__on-a-beach,dancer,spinning,on a beach,H,0.9567298471927643,False,1.3631165027618408,0.302199125289917,0.3425336182117462,False
+epicrealism_mm2,s42__on-a-beach,s42__child__running__on-a-beach,child,running,on a beach,H,0.9605546057224273,False,1.692288875579834,0.3170824646949768,0.3569200336933136,False
+epicrealism_mm2,s42__on-a-beach,s42__child__walking__on-a-beach,child,walking,on a beach,H,0.9734451711177826,False,1.5041087865829468,0.3202553987503052,0.7713521122932434,True
+epicrealism_mm2,s42__on-a-beach,s42__child__jumping__on-a-beach,child,jumping,on a beach,H,0.9706499616305033,False,0.9527908563613892,0.3233903646469116,0.45062142610549927,True
+epicrealism_mm2,s42__on-a-beach,s42__child__spinning__on-a-beach,child,spinning,on a beach,H,0.965233039855957,False,0.92786705493927,0.30252325534820557,0.14899033308029175,False
+epicrealism_mm2,s42__on-a-beach,s42__elderly-man__running__on-a-beach,elderly man,running,on a beach,H,0.953924584388733,False,1.8981679677963257,0.37087661027908325,0.8754902482032776,True
+epicrealism_mm2,s42__on-a-beach,s42__elderly-man__walking__on-a-beach,elderly man,walking,on a beach,H,0.9714223563671112,False,2.260878801345825,0.3697430193424225,0.6394893527030945,True
+epicrealism_mm2,s42__on-a-beach,s42__elderly-man__jumping__on-a-beach,elderly man,jumping,on a beach,H,0.9655875762303671,False,2.5096218585968018,0.3564808964729309,0.8727755546569824,True
+epicrealism_mm2,s42__on-a-beach,s42__elderly-man__spinning__on-a-beach,elderly man,spinning,on a beach,H,0.9774219473203023,False,2.124708652496338,0.35512781143188477,0.2842198610305786,False
+sd15_mm3,s1337__in-a-forest,s1337__golden-retriever__running__in-a-forest,golden retriever,running,in a forest,Q,0.7142157793045044,True,167.52188110351562,0.35733500123023987,0.6163390874862671,True
+sd15_mm3,s1337__in-a-forest,s1337__golden-retriever__walking__in-a-forest,golden retriever,walking,in a forest,Q,0.788869321346283,True,22.624616622924805,0.336564838886261,0.4606154263019562,False
+sd15_mm3,s1337__in-a-forest,s1337__golden-retriever__jumping__in-a-forest,golden retriever,jumping,in a forest,Q,0.7237335582574208,True,34.06614685058594,0.3636854290962219,0.7201957702636719,True
+sd15_mm3,s1337__in-a-forest,s1337__golden-retriever__spinning__in-a-forest,golden retriever,spinning,in a forest,Q,0.7746990044911702,True,38.27082443237305,0.3509776294231415,0.09161948412656784,False
+sd15_mm3,s1337__in-a-forest,s1337__german-shepherd__running__in-a-forest,german shepherd,running,in a forest,Q,0.7948207338651021,True,57.35356521606445,0.35250985622406006,0.31175822019577026,False
+sd15_mm3,s1337__in-a-forest,s1337__german-shepherd__walking__in-a-forest,german shepherd,walking,in a forest,Q,0.8312929073969523,True,6.882035732269287,0.3212166428565979,0.6184467673301697,True
+sd15_mm3,s1337__in-a-forest,s1337__german-shepherd__jumping__in-a-forest,german shepherd,jumping,in a forest,Q,0.7191653629144033,True,93.6039047241211,0.3486561179161072,0.20302797853946686,False
+sd15_mm3,s1337__in-a-forest,s1337__german-shepherd__spinning__in-a-forest,german shepherd,spinning,in a forest,Q,0.7620647092660268,True,188.93170166015625,0.3131406009197235,0.09058944135904312,False
+sd15_mm3,s1337__in-a-forest,s1337__horse__running__in-a-forest,horse,running,in a forest,Q,0.8206704596678416,True,14.197234153747559,0.3457927703857422,0.24861079454421997,False
+sd15_mm3,s1337__in-a-forest,s1337__horse__walking__in-a-forest,horse,walking,in a forest,Q,0.8706777413686116,True,8.698752403259277,0.34488674998283386,0.5337557792663574,True
+sd15_mm3,s1337__in-a-forest,s1337__horse__jumping__in-a-forest,horse,jumping,in a forest,Q,0.7700990855693817,True,12.652036666870117,0.33236050605773926,0.03643694147467613,False
+sd15_mm3,s1337__in-a-forest,s1337__horse__spinning__in-a-forest,horse,spinning,in a forest,Q,0.8472871840000152,True,10.645718574523926,0.34356024861335754,0.11862140148878098,False
+sd15_mm3,s1337__in-a-forest,s1337__wolf__running__in-a-forest,wolf,running,in a forest,Q,0.7966287553310394,True,8.53966236114502,0.3077623248100281,0.46223294734954834,True
+sd15_mm3,s1337__in-a-forest,s1337__wolf__walking__in-a-forest,wolf,walking,in a forest,Q,0.7961922427018483,True,9.930837631225586,0.3087807595729828,0.3260728716850281,False
+sd15_mm3,s1337__in-a-forest,s1337__wolf__jumping__in-a-forest,wolf,jumping,in a forest,Q,0.7113883316516876,True,15.474079132080078,0.30158159136772156,0.29163238406181335,False
+sd15_mm3,s1337__in-a-forest,s1337__wolf__spinning__in-a-forest,wolf,spinning,in a forest,Q,0.7139126360416412,True,21.658531188964844,0.32179686427116394,0.2674753665924072,False
+sd15_mm3,s1337__in-a-forest,s1337__tiger__running__in-a-forest,tiger,running,in a forest,Q,0.9258814414342245,True,17.071706771850586,0.30394038558006287,0.19672457873821259,False
+sd15_mm3,s1337__in-a-forest,s1337__tiger__walking__in-a-forest,tiger,walking,in a forest,Q,0.9498823165893555,True,10.832387924194336,0.3257351219654083,0.6417357325553894,True
+sd15_mm3,s1337__in-a-forest,s1337__tiger__jumping__in-a-forest,tiger,jumping,in a forest,Q,0.9151407301425933,True,12.05620288848877,0.312773197889328,0.1563389152288437,False
+sd15_mm3,s1337__in-a-forest,s1337__tiger__spinning__in-a-forest,tiger,spinning,in a forest,Q,0.9056197285652161,True,19.501855850219727,0.31669172644615173,0.11581899970769882,False
+sd15_mm3,s1337__in-a-forest,s1337__fox__running__in-a-forest,fox,running,in a forest,Q,0.8513679464658102,True,9.799287796020508,0.34328120946884155,0.4489634037017822,True
+sd15_mm3,s1337__in-a-forest,s1337__fox__walking__in-a-forest,fox,walking,in a forest,Q,0.842636360724767,True,8.708765983581543,0.3358067274093628,0.49468889832496643,True
+sd15_mm3,s1337__in-a-forest,s1337__fox__jumping__in-a-forest,fox,jumping,in a forest,Q,0.8255346675713857,True,24.562828063964844,0.33827874064445496,0.24644456803798676,False
+sd15_mm3,s1337__in-a-forest,s1337__fox__spinning__in-a-forest,fox,spinning,in a forest,Q,0.8148653864860534,True,16.545175552368164,0.33976197242736816,0.049921296536922455,False
+sd15_mm3,s1337__in-a-forest,s1337__deer__running__in-a-forest,deer,running,in a forest,Q,0.8215804040431977,True,14.81489372253418,0.31018713116645813,0.25011077523231506,False
+sd15_mm3,s1337__in-a-forest,s1337__deer__walking__in-a-forest,deer,walking,in a forest,Q,0.9015670617421468,True,5.495237827301025,0.3237270712852478,0.49623456597328186,True
+sd15_mm3,s1337__in-a-forest,s1337__deer__jumping__in-a-forest,deer,jumping,in a forest,Q,0.8783792833487193,True,7.524600028991699,0.32500773668289185,0.13952229917049408,False
+sd15_mm3,s1337__in-a-forest,s1337__deer__spinning__in-a-forest,deer,spinning,in a forest,Q,0.8273785213629404,True,7.375051975250244,0.321142315864563,0.14015164971351624,False
+sd15_mm3,s1337__in-a-forest,s1337__brown-bear__running__in-a-forest,brown bear,running,in a forest,Q,0.8542868773142497,True,28.561241149902344,0.32747170329093933,0.2849012017250061,False
+sd15_mm3,s1337__in-a-forest,s1337__brown-bear__walking__in-a-forest,brown bear,walking,in a forest,Q,0.9050321320692698,True,7.6884074211120605,0.3505934774875641,0.7013062834739685,True
+sd15_mm3,s1337__in-a-forest,s1337__brown-bear__jumping__in-a-forest,brown bear,jumping,in a forest,Q,0.75218599041303,True,18.83559226989746,0.3474007248878479,0.4997578263282776,True
+sd15_mm3,s1337__in-a-forest,s1337__brown-bear__spinning__in-a-forest,brown bear,spinning,in a forest,Q,0.7374688347180685,True,16.318944931030273,0.30777284502983093,0.12060336023569107,False
+sd15_mm3,s1337__in-a-forest,s1337__young-man__running__in-a-forest,young man,running,in a forest,H,0.7842373232046763,True,185.8808135986328,0.30977314710617065,0.9393694996833801,True
+sd15_mm3,s1337__in-a-forest,s1337__young-man__walking__in-a-forest,young man,walking,in a forest,H,0.8901993056138356,True,9.328431129455566,0.2898975908756256,0.7991280555725098,True
+sd15_mm3,s1337__in-a-forest,s1337__young-man__jumping__in-a-forest,young man,jumping,in a forest,H,0.7307381490866344,True,28.768892288208008,0.32593274116516113,0.7811684608459473,True
+sd15_mm3,s1337__in-a-forest,s1337__young-man__spinning__in-a-forest,young man,spinning,in a forest,H,0.7520679374535878,True,125.98513793945312,0.29212555289268494,0.624100923538208,True
+sd15_mm3,s1337__in-a-forest,s1337__young-woman__running__in-a-forest,young woman,running,in a forest,H,0.6625477929910024,True,200.35096740722656,0.3174608051776886,0.8820698857307434,True
+sd15_mm3,s1337__in-a-forest,s1337__young-woman__walking__in-a-forest,young woman,walking,in a forest,H,0.7674610118071238,True,15.504251480102539,0.2990806996822357,0.40584906935691833,True
+sd15_mm3,s1337__in-a-forest,s1337__young-woman__jumping__in-a-forest,young woman,jumping,in a forest,H,0.688279249270757,True,58.4765510559082,0.3300997018814087,0.8043575882911682,True
+sd15_mm3,s1337__in-a-forest,s1337__young-woman__spinning__in-a-forest,young woman,spinning,in a forest,H,0.7311648726463318,True,18.13327407836914,0.3144320249557495,0.5875522494316101,True
+sd15_mm3,s1337__in-a-forest,s1337__athlete__running__in-a-forest,athlete,running,in a forest,H,0.8154283006985982,True,62.42259979248047,0.32023441791534424,0.7981245517730713,True
+sd15_mm3,s1337__in-a-forest,s1337__athlete__walking__in-a-forest,athlete,walking,in a forest,H,0.8577493349711101,True,30.12993621826172,0.3022798001766205,0.5014603137969971,True
+sd15_mm3,s1337__in-a-forest,s1337__athlete__jumping__in-a-forest,athlete,jumping,in a forest,H,0.6907563249270121,True,25.353837966918945,0.32969141006469727,0.3952450156211853,True
+sd15_mm3,s1337__in-a-forest,s1337__athlete__spinning__in-a-forest,athlete,spinning,in a forest,H,0.7494255344072978,True,166.38082885742188,0.31498920917510986,0.8673676252365112,True
+sd15_mm3,s1337__in-a-forest,s1337__soldier__running__in-a-forest,soldier,running,in a forest,H,0.8343220512072246,True,20.372587203979492,0.33540505170822144,0.9160069227218628,True
+sd15_mm3,s1337__in-a-forest,s1337__soldier__walking__in-a-forest,soldier,walking,in a forest,H,0.8683955649534861,True,6.191804885864258,0.3342745304107666,0.4579538404941559,True
+sd15_mm3,s1337__in-a-forest,s1337__soldier__jumping__in-a-forest,soldier,jumping,in a forest,H,0.7100500384966533,True,85.80294799804688,0.32191768288612366,0.3385905921459198,True
+sd15_mm3,s1337__in-a-forest,s1337__soldier__spinning__in-a-forest,soldier,spinning,in a forest,H,0.7752788245677948,True,83.78992462158203,0.3169732987880707,0.3020167052745819,False
+sd15_mm3,s1337__in-a-forest,s1337__dancer__running__in-a-forest,dancer,running,in a forest,H,0.7844068507353464,True,27.536914825439453,0.30854475498199463,0.3478650748729706,True
+sd15_mm3,s1337__in-a-forest,s1337__dancer__walking__in-a-forest,dancer,walking,in a forest,H,0.8229310154914856,True,11.535337448120117,0.3178172707557678,0.32075145840644836,False
+sd15_mm3,s1337__in-a-forest,s1337__dancer__jumping__in-a-forest,dancer,jumping,in a forest,H,0.7463483115037283,True,13.657105445861816,0.31663525104522705,0.41634783148765564,True
+sd15_mm3,s1337__in-a-forest,s1337__dancer__spinning__in-a-forest,dancer,spinning,in a forest,H,0.7782435715198517,True,19.731088638305664,0.32789474725723267,0.5366967916488647,True
+sd15_mm3,s1337__in-a-forest,s1337__child__running__in-a-forest,child,running,in a forest,H,0.7866357505321503,True,166.7099609375,0.3249860107898712,0.506801962852478,True
+sd15_mm3,s1337__in-a-forest,s1337__child__walking__in-a-forest,child,walking,in a forest,H,0.8510449171066284,True,27.431690216064453,0.3093091547489166,0.6271492838859558,True
+sd15_mm3,s1337__in-a-forest,s1337__child__jumping__in-a-forest,child,jumping,in a forest,H,0.7539133330186208,True,39.24810028076172,0.3223848342895508,0.5633367300033569,True
+sd15_mm3,s1337__in-a-forest,s1337__child__spinning__in-a-forest,child,spinning,in a forest,H,0.682226546605428,True,28.853260040283203,0.30968204140663147,0.08771833777427673,False
+sd15_mm3,s1337__in-a-forest,s1337__elderly-man__running__in-a-forest,elderly man,running,in a forest,H,0.8224522848924001,True,16.616744995117188,0.3372817635536194,0.9405741095542908,True
+sd15_mm3,s1337__in-a-forest,s1337__elderly-man__walking__in-a-forest,elderly man,walking,in a forest,H,0.8836602210998535,True,8.773833274841309,0.32690688967704773,0.5879684090614319,True
+sd15_mm3,s1337__in-a-forest,s1337__elderly-man__jumping__in-a-forest,elderly man,jumping,in a forest,H,0.694512830177943,True,35.6641731262207,0.326529860496521,0.6864793300628662,True
+sd15_mm3,s1337__in-a-forest,s1337__elderly-man__spinning__in-a-forest,elderly man,spinning,in a forest,H,0.7692268013954162,True,55.582096099853516,0.31667041778564453,0.5679906010627747,True
+sd15_mm3,s1337__on-a-beach,s1337__golden-retriever__running__on-a-beach,golden retriever,running,on a beach,Q,0.7906069537003835,True,142.84815979003906,0.3441668152809143,0.40289780497550964,True
+sd15_mm3,s1337__on-a-beach,s1337__golden-retriever__walking__on-a-beach,golden retriever,walking,on a beach,Q,0.7395310292641322,True,17.67784309387207,0.31738191843032837,0.5343436598777771,True
+sd15_mm3,s1337__on-a-beach,s1337__golden-retriever__jumping__on-a-beach,golden retriever,jumping,on a beach,Q,0.8760637919108073,True,12.567838668823242,0.3421405553817749,0.5778312087059021,True
+sd15_mm3,s1337__on-a-beach,s1337__golden-retriever__spinning__on-a-beach,golden retriever,spinning,on a beach,Q,0.7708950658639272,True,102.23583221435547,0.3572193384170532,0.06752675026655197,False
+sd15_mm3,s1337__on-a-beach,s1337__german-shepherd__running__on-a-beach,german shepherd,running,on a beach,Q,0.8641402880350749,True,68.31368255615234,0.36254703998565674,0.24877071380615234,False
+sd15_mm3,s1337__on-a-beach,s1337__german-shepherd__walking__on-a-beach,german shepherd,walking,on a beach,Q,0.9090616007645925,True,20.84549331665039,0.3623168468475342,0.7698240280151367,True
+sd15_mm3,s1337__on-a-beach,s1337__german-shepherd__jumping__on-a-beach,german shepherd,jumping,on a beach,Q,0.8757709741592408,True,12.54501724243164,0.3555503487586975,0.04991837963461876,False
+sd15_mm3,s1337__on-a-beach,s1337__german-shepherd__spinning__on-a-beach,german shepherd,spinning,on a beach,Q,0.8608099957307179,True,78.79298400878906,0.35484814643859863,0.10388374328613281,False
+sd15_mm3,s1337__on-a-beach,s1337__horse__running__on-a-beach,horse,running,on a beach,Q,0.8738103926181793,True,14.444856643676758,0.3131617605686188,0.38115692138671875,False
+sd15_mm3,s1337__on-a-beach,s1337__horse__walking__on-a-beach,horse,walking,on a beach,Q,0.8762736479441325,True,10.105490684509277,0.35393935441970825,0.541600227355957,True
+sd15_mm3,s1337__on-a-beach,s1337__horse__jumping__on-a-beach,horse,jumping,on a beach,Q,0.8754146814346313,True,10.493306159973145,0.3090379238128662,0.39199572801589966,True
+sd15_mm3,s1337__on-a-beach,s1337__horse__spinning__on-a-beach,horse,spinning,on a beach,Q,0.8174552977085113,True,7.714012145996094,0.34381258487701416,0.05677220970392227,False
+sd15_mm3,s1337__on-a-beach,s1337__wolf__running__on-a-beach,wolf,running,on a beach,Q,0.7859572807947794,True,18.995363235473633,0.33845987915992737,0.4762180745601654,True
+sd15_mm3,s1337__on-a-beach,s1337__wolf__walking__on-a-beach,wolf,walking,on a beach,Q,0.8586714227994283,True,41.46745300292969,0.3545972406864166,0.5305204391479492,True
+sd15_mm3,s1337__on-a-beach,s1337__wolf__jumping__on-a-beach,wolf,jumping,on a beach,Q,0.8429985622564952,True,182.86764526367188,0.30475205183029175,0.34223660826683044,False
+sd15_mm3,s1337__on-a-beach,s1337__wolf__spinning__on-a-beach,wolf,spinning,on a beach,Q,0.8444023152192434,True,27.193105697631836,0.2615630030632019,0.038734953850507736,False
+sd15_mm3,s1337__on-a-beach,s1337__tiger__running__on-a-beach,tiger,running,on a beach,Q,0.9323434909184773,True,110.13954162597656,0.35314851999282837,0.25504830479621887,False
+sd15_mm3,s1337__on-a-beach,s1337__tiger__walking__on-a-beach,tiger,walking,on a beach,Q,0.9454769333203633,True,9.411240577697754,0.3612915575504303,0.8044285774230957,True
+sd15_mm3,s1337__on-a-beach,s1337__tiger__jumping__on-a-beach,tiger,jumping,on a beach,Q,0.9461078027884166,True,6.915367603302002,0.34227922558784485,0.060887061059474945,False
+sd15_mm3,s1337__on-a-beach,s1337__tiger__spinning__on-a-beach,tiger,spinning,on a beach,Q,0.9359014908472697,True,8.984441757202148,0.3780936300754547,0.021272603422403336,False
+sd15_mm3,s1337__on-a-beach,s1337__fox__running__on-a-beach,fox,running,on a beach,Q,0.8345025281111399,True,39.8693733215332,0.34290650486946106,0.43237414956092834,False
+sd15_mm3,s1337__on-a-beach,s1337__fox__walking__on-a-beach,fox,walking,on a beach,Q,0.8267040391763051,True,32.74562072753906,0.34852299094200134,0.5501230955123901,True
+sd15_mm3,s1337__on-a-beach,s1337__fox__jumping__on-a-beach,fox,jumping,on a beach,Q,0.8413395921389262,True,112.57493591308594,0.340874582529068,0.3487096428871155,False
+sd15_mm3,s1337__on-a-beach,s1337__fox__spinning__on-a-beach,fox,spinning,on a beach,Q,0.8827916284402212,True,104.41504669189453,0.33969029784202576,0.04692915081977844,False
+sd15_mm3,s1337__on-a-beach,s1337__deer__running__on-a-beach,deer,running,on a beach,Q,0.8287846803665161,True,226.8343963623047,0.3520466387271881,0.18960441648960114,False
+sd15_mm3,s1337__on-a-beach,s1337__deer__walking__on-a-beach,deer,walking,on a beach,Q,0.8854965190092723,True,38.07652282714844,0.37221696972846985,0.7054972052574158,True
+sd15_mm3,s1337__on-a-beach,s1337__deer__jumping__on-a-beach,deer,jumping,on a beach,Q,0.8342450300852458,True,77.19654846191406,0.3540109395980835,0.1206202507019043,False
+sd15_mm3,s1337__on-a-beach,s1337__deer__spinning__on-a-beach,deer,spinning,on a beach,Q,0.8519167939821879,True,86.62760162353516,0.34883207082748413,0.06290018558502197,False
+sd15_mm3,s1337__on-a-beach,s1337__brown-bear__running__on-a-beach,brown bear,running,on a beach,Q,0.9116099993387858,True,13.792217254638672,0.3619208335876465,0.3774266541004181,True
+sd15_mm3,s1337__on-a-beach,s1337__brown-bear__walking__on-a-beach,brown bear,walking,on a beach,Q,0.9102089206377665,True,28.38241195678711,0.35594087839126587,0.7469522953033447,True
+sd15_mm3,s1337__on-a-beach,s1337__brown-bear__jumping__on-a-beach,brown bear,jumping,on a beach,Q,0.91856689453125,True,5.269524574279785,0.36138466000556946,0.18750721216201782,False
+sd15_mm3,s1337__on-a-beach,s1337__brown-bear__spinning__on-a-beach,brown bear,spinning,on a beach,Q,0.9317368030548095,True,8.558223724365234,0.3163009285926819,0.21412891149520874,False
+sd15_mm3,s1337__on-a-beach,s1337__young-man__running__on-a-beach,young man,running,on a beach,H,0.8228872736295064,True,64.48892974853516,0.3136717677116394,0.8971365690231323,True
+sd15_mm3,s1337__on-a-beach,s1337__young-man__walking__on-a-beach,young man,walking,on a beach,H,0.9053201496601104,True,9.391408920288086,0.31028807163238525,0.7219588756561279,True
+sd15_mm3,s1337__on-a-beach,s1337__young-man__jumping__on-a-beach,young man,jumping,on a beach,H,0.8931413988272349,True,44.17144775390625,0.3332683742046356,0.7840296626091003,True
+sd15_mm3,s1337__on-a-beach,s1337__young-man__spinning__on-a-beach,young man,spinning,on a beach,H,0.8407715380191803,True,87.14431762695312,0.28920865058898926,0.6334105134010315,True
+sd15_mm3,s1337__on-a-beach,s1337__young-woman__running__on-a-beach,young woman,running,on a beach,H,0.7979627211888631,True,245.72283935546875,0.3418430984020233,0.8851996064186096,True
+sd15_mm3,s1337__on-a-beach,s1337__young-woman__walking__on-a-beach,young woman,walking,on a beach,H,0.8196454842885336,True,52.83833694458008,0.3020130693912506,0.8598694801330566,True
+sd15_mm3,s1337__on-a-beach,s1337__young-woman__jumping__on-a-beach,young woman,jumping,on a beach,H,0.7993990838527679,True,10.825520515441895,0.3186102509498596,0.21094992756843567,False
+sd15_mm3,s1337__on-a-beach,s1337__young-woman__spinning__on-a-beach,young woman,spinning,on a beach,H,0.8197944859663645,True,101.10957336425781,0.31263670325279236,0.5985977053642273,True
+sd15_mm3,s1337__on-a-beach,s1337__athlete__running__on-a-beach,athlete,running,on a beach,H,0.820665854215622,True,126.52748107910156,0.3245764374732971,0.6233516931533813,True
+sd15_mm3,s1337__on-a-beach,s1337__athlete__walking__on-a-beach,athlete,walking,on a beach,H,0.7977282285690308,True,129.81919860839844,0.2840203046798706,0.7352837324142456,True
+sd15_mm3,s1337__on-a-beach,s1337__athlete__jumping__on-a-beach,athlete,jumping,on a beach,H,0.7922525505224863,True,40.379825592041016,0.29734909534454346,0.24217157065868378,False
+sd15_mm3,s1337__on-a-beach,s1337__athlete__spinning__on-a-beach,athlete,spinning,on a beach,H,0.7910160422325134,True,50.18428039550781,0.30771949887275696,0.3794768154621124,False
+sd15_mm3,s1337__on-a-beach,s1337__soldier__running__on-a-beach,soldier,running,on a beach,H,0.8497046887874603,True,25.272768020629883,0.37969493865966797,0.8012403249740601,True
+sd15_mm3,s1337__on-a-beach,s1337__soldier__walking__on-a-beach,soldier,walking,on a beach,H,0.8926079213619232,True,8.968976974487305,0.3613412380218506,0.4706082046031952,True
+sd15_mm3,s1337__on-a-beach,s1337__soldier__jumping__on-a-beach,soldier,jumping,on a beach,H,0.7915139297644297,True,24.682783126831055,0.27364301681518555,0.07412488758563995,False
+sd15_mm3,s1337__on-a-beach,s1337__soldier__spinning__on-a-beach,soldier,spinning,on a beach,H,0.884258492787679,True,11.464200973510742,0.3406308889389038,0.28397136926651,False
+sd15_mm3,s1337__on-a-beach,s1337__dancer__running__on-a-beach,dancer,running,on a beach,H,0.8012867013613383,True,141.24209594726562,0.3163447976112366,0.49084243178367615,True
+sd15_mm3,s1337__on-a-beach,s1337__dancer__walking__on-a-beach,dancer,walking,on a beach,H,0.8415974835554759,True,109.10258483886719,0.32797548174858093,0.30006611347198486,False
+sd15_mm3,s1337__on-a-beach,s1337__dancer__jumping__on-a-beach,dancer,jumping,on a beach,H,0.832678371667862,True,8.806882858276367,0.33722764253616333,0.23134343326091766,False
+sd15_mm3,s1337__on-a-beach,s1337__dancer__spinning__on-a-beach,dancer,spinning,on a beach,H,0.8263172666231792,True,8.453386306762695,0.34174874424934387,0.3642306625843048,True
+sd15_mm3,s1337__on-a-beach,s1337__child__running__on-a-beach,child,running,on a beach,H,0.8445825457572937,True,224.90126037597656,0.32950282096862793,0.5753017067909241,True
+sd15_mm3,s1337__on-a-beach,s1337__child__walking__on-a-beach,child,walking,on a beach,H,0.8633900006612142,True,155.0930938720703,0.3126090466976166,0.8500291705131531,True
+sd15_mm3,s1337__on-a-beach,s1337__child__jumping__on-a-beach,child,jumping,on a beach,H,0.7970072011152903,True,187.02523803710938,0.3176189661026001,0.3073185384273529,False
+sd15_mm3,s1337__on-a-beach,s1337__child__spinning__on-a-beach,child,spinning,on a beach,H,0.8477082312107086,True,176.75502014160156,0.3169858753681183,0.05190194770693779,False
+sd15_mm3,s1337__on-a-beach,s1337__elderly-man__running__on-a-beach,elderly man,running,on a beach,H,0.8965615272521973,True,10.821511268615723,0.3676518499851227,0.841995358467102,True
+sd15_mm3,s1337__on-a-beach,s1337__elderly-man__walking__on-a-beach,elderly man,walking,on a beach,H,0.8984391291936239,True,8.868022918701172,0.3330397605895996,0.6456634402275085,True
+sd15_mm3,s1337__on-a-beach,s1337__elderly-man__jumping__on-a-beach,elderly man,jumping,on a beach,H,0.7854763885339101,True,175.24649047851562,0.33465421199798584,0.49718695878982544,True
+sd15_mm3,s1337__on-a-beach,s1337__elderly-man__spinning__on-a-beach,elderly man,spinning,on a beach,H,0.9008153676986694,True,85.05106353759766,0.34918075799942017,0.19202741980552673,False
+sd15_mm3,s42__in-a-forest,s42__golden-retriever__running__in-a-forest,golden retriever,running,in a forest,Q,0.7846369802951813,True,24.924837112426758,0.36618465185165405,0.5381943583488464,True
+sd15_mm3,s42__in-a-forest,s42__golden-retriever__walking__in-a-forest,golden retriever,walking,in a forest,Q,0.8448741197586059,True,13.23533821105957,0.35481467843055725,0.47419583797454834,True
+sd15_mm3,s42__in-a-forest,s42__golden-retriever__jumping__in-a-forest,golden retriever,jumping,in a forest,Q,0.7568374812602997,True,21.768564224243164,0.3601472079753876,0.6423115134239197,True
+sd15_mm3,s42__in-a-forest,s42__golden-retriever__spinning__in-a-forest,golden retriever,spinning,in a forest,Q,0.7233524203300477,True,85.84194946289062,0.3468993604183197,0.08203817158937454,False
+sd15_mm3,s42__in-a-forest,s42__german-shepherd__running__in-a-forest,german shepherd,running,in a forest,Q,0.7171451767285665,True,13.435983657836914,0.3398093581199646,0.3786889612674713,False
+sd15_mm3,s42__in-a-forest,s42__german-shepherd__walking__in-a-forest,german shepherd,walking,in a forest,Q,0.8660587827364604,False,5.256285667419434,0.35830605030059814,0.6236020922660828,True
+sd15_mm3,s42__in-a-forest,s42__german-shepherd__jumping__in-a-forest,german shepherd,jumping,in a forest,Q,0.7410700023174286,True,22.82918357849121,0.34093979001045227,0.26083073019981384,False
+sd15_mm3,s42__in-a-forest,s42__german-shepherd__spinning__in-a-forest,german shepherd,spinning,in a forest,Q,0.7166315416495005,True,27.901819229125977,0.329544335603714,0.11753632873296738,False
+sd15_mm3,s42__in-a-forest,s42__horse__running__in-a-forest,horse,running,in a forest,Q,0.8833516935507456,True,53.88353729248047,0.34252655506134033,0.20422889292240143,False
+sd15_mm3,s42__in-a-forest,s42__horse__walking__in-a-forest,horse,walking,in a forest,Q,0.9253491262594858,True,6.0202813148498535,0.3486318588256836,0.48932820558547974,True
+sd15_mm3,s42__in-a-forest,s42__horse__jumping__in-a-forest,horse,jumping,in a forest,Q,0.8358800013860067,True,11.004122734069824,0.3308122754096985,0.28663092851638794,False
+sd15_mm3,s42__in-a-forest,s42__horse__spinning__in-a-forest,horse,spinning,in a forest,Q,0.9244002242883046,False,4.4822163581848145,0.3411182165145874,0.1992446780204773,False
+sd15_mm3,s42__in-a-forest,s42__wolf__running__in-a-forest,wolf,running,in a forest,Q,0.8094200392564138,True,10.140700340270996,0.3078523874282837,0.38634803891181946,True
+sd15_mm3,s42__in-a-forest,s42__wolf__walking__in-a-forest,wolf,walking,in a forest,Q,0.8817888557910919,True,6.689470291137695,0.32724663615226746,0.46613529324531555,True
+sd15_mm3,s42__in-a-forest,s42__wolf__jumping__in-a-forest,wolf,jumping,in a forest,Q,0.7841003576914469,True,10.262285232543945,0.33068931102752686,0.6480399370193481,True
+sd15_mm3,s42__in-a-forest,s42__wolf__spinning__in-a-forest,wolf,spinning,in a forest,Q,0.7888685524463653,True,11.7871675491333,0.3354296386241913,0.18128487467765808,False
+sd15_mm3,s42__in-a-forest,s42__tiger__running__in-a-forest,tiger,running,in a forest,Q,0.9500568250815074,True,46.16217041015625,0.31303495168685913,0.19222931563854218,False
+sd15_mm3,s42__in-a-forest,s42__tiger__walking__in-a-forest,tiger,walking,in a forest,Q,0.9587038358052572,True,8.047778129577637,0.3115883767604828,0.8627928495407104,True
+sd15_mm3,s42__in-a-forest,s42__tiger__jumping__in-a-forest,tiger,jumping,in a forest,Q,0.9588090240955353,False,3.9260923862457275,0.33198752999305725,0.14547866582870483,False
+sd15_mm3,s42__in-a-forest,s42__tiger__spinning__in-a-forest,tiger,spinning,in a forest,Q,0.9583787937959035,False,2.8608930110931396,0.3418440818786621,0.056625548750162125,False
+sd15_mm3,s42__in-a-forest,s42__fox__running__in-a-forest,fox,running,in a forest,Q,0.9089458326498667,True,35.265254974365234,0.33730417490005493,0.44923555850982666,True
+sd15_mm3,s42__in-a-forest,s42__fox__walking__in-a-forest,fox,walking,in a forest,Q,0.9622676889101665,False,2.462200403213501,0.35063299536705017,0.5187318921089172,True
+sd15_mm3,s42__in-a-forest,s42__fox__jumping__in-a-forest,fox,jumping,in a forest,Q,0.9002331634362538,True,9.028449058532715,0.33261775970458984,0.23966096341609955,False
+sd15_mm3,s42__in-a-forest,s42__fox__spinning__in-a-forest,fox,spinning,in a forest,Q,0.9796572824319204,False,1.9775408506393433,0.34091538190841675,0.04268352687358856,False
+sd15_mm3,s42__in-a-forest,s42__deer__running__in-a-forest,deer,running,in a forest,Q,0.8209274848302205,True,35.292724609375,0.31553786993026733,0.23372133076190948,False
+sd15_mm3,s42__in-a-forest,s42__deer__walking__in-a-forest,deer,walking,in a forest,Q,0.9582372168699901,False,2.0994925498962402,0.3501693606376648,0.46410977840423584,True
+sd15_mm3,s42__in-a-forest,s42__deer__jumping__in-a-forest,deer,jumping,in a forest,Q,0.9475963274637859,True,4.6815009117126465,0.33228638768196106,0.20700068771839142,False
+sd15_mm3,s42__in-a-forest,s42__deer__spinning__in-a-forest,deer,spinning,in a forest,Q,0.8938146114349366,False,4.739532947540283,0.3336784541606903,0.21005220711231232,False
+sd15_mm3,s42__in-a-forest,s42__brown-bear__running__in-a-forest,brown bear,running,in a forest,Q,0.9060912350813548,True,14.65401840209961,0.3236222565174103,0.34282398223876953,False
+sd15_mm3,s42__in-a-forest,s42__brown-bear__walking__in-a-forest,brown bear,walking,in a forest,Q,0.9328335742155711,True,8.090188980102539,0.3203769028186798,0.6754670739173889,True
+sd15_mm3,s42__in-a-forest,s42__brown-bear__jumping__in-a-forest,brown bear,jumping,in a forest,Q,0.7976929326852162,True,7.5086774826049805,0.3454050123691559,0.3549855351448059,False
+sd15_mm3,s42__in-a-forest,s42__brown-bear__spinning__in-a-forest,brown bear,spinning,in a forest,Q,0.8967825551827748,True,6.667529582977295,0.3064937889575958,0.06407713145017624,False
+sd15_mm3,s42__in-a-forest,s42__young-man__running__in-a-forest,young man,running,in a forest,H,0.8520773470401763,True,10.172492027282715,0.316057950258255,0.8897016644477844,True
+sd15_mm3,s42__in-a-forest,s42__young-man__walking__in-a-forest,young man,walking,in a forest,H,0.9241190552711487,False,2.79034161567688,0.2766055762767792,0.5092559456825256,True
+sd15_mm3,s42__in-a-forest,s42__young-man__jumping__in-a-forest,young man,jumping,in a forest,H,0.7573694467544556,True,13.703879356384277,0.3235853612422943,0.7569751143455505,True
+sd15_mm3,s42__in-a-forest,s42__young-man__spinning__in-a-forest,young man,spinning,in a forest,H,0.7465450386206309,True,31.809389114379883,0.29008948802948,0.30117037892341614,False
+sd15_mm3,s42__in-a-forest,s42__young-woman__running__in-a-forest,young woman,running,in a forest,H,0.8010843435923258,True,27.790828704833984,0.3287621736526489,0.7518762350082397,True
+sd15_mm3,s42__in-a-forest,s42__young-woman__walking__in-a-forest,young woman,walking,in a forest,H,0.8739083091417948,True,6.271276473999023,0.3170936703681946,0.7627283334732056,True
+sd15_mm3,s42__in-a-forest,s42__young-woman__jumping__in-a-forest,young woman,jumping,in a forest,H,0.6951085329055786,True,23.396615982055664,0.3379857838153839,0.8781223297119141,True
+sd15_mm3,s42__in-a-forest,s42__young-woman__spinning__in-a-forest,young woman,spinning,in a forest,H,0.8153365472952525,True,16.898761749267578,0.2990424633026123,0.32526740431785583,False
+sd15_mm3,s42__in-a-forest,s42__athlete__running__in-a-forest,athlete,running,in a forest,H,0.8679870506127675,True,8.76197338104248,0.3213108479976654,0.7588737607002258,True
+sd15_mm3,s42__in-a-forest,s42__athlete__walking__in-a-forest,athlete,walking,in a forest,H,0.90939794977506,True,15.464340209960938,0.3027273416519165,0.40653371810913086,False
+sd15_mm3,s42__in-a-forest,s42__athlete__jumping__in-a-forest,athlete,jumping,in a forest,H,0.8382054030895233,True,8.68996810913086,0.3421113193035126,0.4185374081134796,True
+sd15_mm3,s42__in-a-forest,s42__athlete__spinning__in-a-forest,athlete,spinning,in a forest,H,0.8381190856297811,True,18.560009002685547,0.335883229970932,0.9167491793632507,True
+sd15_mm3,s42__in-a-forest,s42__soldier__running__in-a-forest,soldier,running,in a forest,H,0.8744129220644633,True,5.683933734893799,0.3576982021331787,0.7447164058685303,True
+sd15_mm3,s42__in-a-forest,s42__soldier__walking__in-a-forest,soldier,walking,in a forest,H,0.8983316401640574,True,12.133163452148438,0.3415696918964386,0.5031823515892029,True
+sd15_mm3,s42__in-a-forest,s42__soldier__jumping__in-a-forest,soldier,jumping,in a forest,H,0.8683088739713033,True,5.884627342224121,0.35954663157463074,0.4769763648509979,True
+sd15_mm3,s42__in-a-forest,s42__soldier__spinning__in-a-forest,soldier,spinning,in a forest,H,0.747406417131424,True,17.281328201293945,0.30565911531448364,0.26564452052116394,False
+sd15_mm3,s42__in-a-forest,s42__dancer__running__in-a-forest,dancer,running,in a forest,H,0.8565475364526113,True,11.616241455078125,0.341969758272171,0.5667827725410461,True
+sd15_mm3,s42__in-a-forest,s42__dancer__walking__in-a-forest,dancer,walking,in a forest,H,0.866780291001002,True,21.560319900512695,0.31662073731422424,0.2659144401550293,False
+sd15_mm3,s42__in-a-forest,s42__dancer__jumping__in-a-forest,dancer,jumping,in a forest,H,0.8506862998008728,True,17.659297943115234,0.34569329023361206,0.3809168040752411,True
+sd15_mm3,s42__in-a-forest,s42__dancer__spinning__in-a-forest,dancer,spinning,in a forest,H,0.8284597575664521,True,18.024242401123047,0.32647863030433655,0.468018501996994,True
+sd15_mm3,s42__in-a-forest,s42__child__running__in-a-forest,child,running,in a forest,H,0.8458998322486877,True,25.2365665435791,0.3502478003501892,0.324522465467453,False
+sd15_mm3,s42__in-a-forest,s42__child__walking__in-a-forest,child,walking,in a forest,H,0.8728345533212026,True,15.18642520904541,0.2967209219932556,0.5658365488052368,True
+sd15_mm3,s42__in-a-forest,s42__child__jumping__in-a-forest,child,jumping,in a forest,H,0.7864922146002452,True,13.948941230773926,0.34766489267349243,0.6267393231391907,True
+sd15_mm3,s42__in-a-forest,s42__child__spinning__in-a-forest,child,spinning,in a forest,H,0.711761345465978,True,55.405113220214844,0.28322234749794006,0.12663429975509644,False
+sd15_mm3,s42__in-a-forest,s42__elderly-man__running__in-a-forest,elderly man,running,in a forest,H,0.863656097650528,True,8.10395622253418,0.35287103056907654,0.8853105902671814,True
+sd15_mm3,s42__in-a-forest,s42__elderly-man__walking__in-a-forest,elderly man,walking,in a forest,H,0.9267350594202678,False,3.042501926422119,0.3146902024745941,0.6614834666252136,True
+sd15_mm3,s42__in-a-forest,s42__elderly-man__jumping__in-a-forest,elderly man,jumping,in a forest,H,0.7754645347595215,True,27.05202293395996,0.35772597789764404,0.813906192779541,True
+sd15_mm3,s42__in-a-forest,s42__elderly-man__spinning__in-a-forest,elderly man,spinning,in a forest,H,0.8304239869117737,True,24.506011962890625,0.34284913539886475,0.1556694209575653,False
+sd15_mm3,s42__on-a-beach,s42__golden-retriever__running__on-a-beach,golden retriever,running,on a beach,Q,0.8939620375633239,True,19.017072677612305,0.3587411940097809,0.44374069571495056,True
+sd15_mm3,s42__on-a-beach,s42__golden-retriever__walking__on-a-beach,golden retriever,walking,on a beach,Q,0.878903736670812,True,13.957836151123047,0.3418450653553009,0.641828715801239,True
+sd15_mm3,s42__on-a-beach,s42__golden-retriever__jumping__on-a-beach,golden retriever,jumping,on a beach,Q,0.9035030980904897,True,10.140753746032715,0.36966609954833984,0.4606502652168274,True
+sd15_mm3,s42__on-a-beach,s42__golden-retriever__spinning__on-a-beach,golden retriever,spinning,on a beach,Q,0.75364897052447,True,44.95139694213867,0.3565306067466736,0.08025775849819183,False
+sd15_mm3,s42__on-a-beach,s42__german-shepherd__running__on-a-beach,german shepherd,running,on a beach,Q,0.8790754775206248,True,13.28594970703125,0.36569899320602417,0.3715533912181854,False
+sd15_mm3,s42__on-a-beach,s42__german-shepherd__walking__on-a-beach,german shepherd,walking,on a beach,Q,0.8901948948701223,True,13.922103881835938,0.3519383370876312,0.6907311677932739,True
+sd15_mm3,s42__on-a-beach,s42__german-shepherd__jumping__on-a-beach,german shepherd,jumping,on a beach,Q,0.8905479609966278,True,11.779349327087402,0.37419554591178894,0.18254314363002777,False
+sd15_mm3,s42__on-a-beach,s42__german-shepherd__spinning__on-a-beach,german shepherd,spinning,on a beach,Q,0.8321908394495646,True,85.10319519042969,0.3584788739681244,0.10724008828401566,False
+sd15_mm3,s42__on-a-beach,s42__horse__running__on-a-beach,horse,running,on a beach,Q,0.9513293107350668,True,5.2657670974731445,0.3441128134727478,0.17159368097782135,False
+sd15_mm3,s42__on-a-beach,s42__horse__walking__on-a-beach,horse,walking,on a beach,Q,0.9631210029125213,False,3.174851894378662,0.33445990085601807,0.6097521185874939,True
+sd15_mm3,s42__on-a-beach,s42__horse__jumping__on-a-beach,horse,jumping,on a beach,Q,0.9016766508420309,True,6.903753280639648,0.3125227391719818,0.13199304044246674,False
+sd15_mm3,s42__on-a-beach,s42__horse__spinning__on-a-beach,horse,spinning,on a beach,Q,0.9379700024922689,False,3.9618325233459473,0.3389192819595337,0.12298233807086945,False
+sd15_mm3,s42__on-a-beach,s42__wolf__running__on-a-beach,wolf,running,on a beach,Q,0.8760651826858521,True,12.128457069396973,0.3563331663608551,0.38485491275787354,False
+sd15_mm3,s42__on-a-beach,s42__wolf__walking__on-a-beach,wolf,walking,on a beach,Q,0.9064934233824412,True,5.268744945526123,0.3623756170272827,0.5238139033317566,True
+sd15_mm3,s42__on-a-beach,s42__wolf__jumping__on-a-beach,wolf,jumping,on a beach,Q,0.8823176503181458,True,43.1102294921875,0.3281227946281433,0.1289757639169693,False
+sd15_mm3,s42__on-a-beach,s42__wolf__spinning__on-a-beach,wolf,spinning,on a beach,Q,0.7520354727904002,True,131.68397521972656,0.2708589434623718,0.12373911589384079,False
+sd15_mm3,s42__on-a-beach,s42__tiger__running__on-a-beach,tiger,running,on a beach,Q,0.9634284059206645,False,2.9548678398132324,0.3536108434200287,0.218769371509552,False
+sd15_mm3,s42__on-a-beach,s42__tiger__walking__on-a-beach,tiger,walking,on a beach,Q,0.9731408059597015,False,2.3804101943969727,0.3726949095726013,0.8754902482032776,True
+sd15_mm3,s42__on-a-beach,s42__tiger__jumping__on-a-beach,tiger,jumping,on a beach,Q,0.9592244366804759,False,3.99692440032959,0.35607653856277466,0.07306913286447525,False
+sd15_mm3,s42__on-a-beach,s42__tiger__spinning__on-a-beach,tiger,spinning,on a beach,Q,0.9699025094509125,False,2.6713979244232178,0.3847845196723938,0.05070294812321663,False
+sd15_mm3,s42__on-a-beach,s42__fox__running__on-a-beach,fox,running,on a beach,Q,0.8890400131543478,True,35.98466110229492,0.3478100299835205,0.3644125163555145,False
+sd15_mm3,s42__on-a-beach,s42__fox__walking__on-a-beach,fox,walking,on a beach,Q,0.9477467954158783,True,96.01083374023438,0.3457992970943451,0.612008273601532,True
+sd15_mm3,s42__on-a-beach,s42__fox__jumping__on-a-beach,fox,jumping,on a beach,Q,0.9046043356259664,True,160.62026977539062,0.37663593888282776,0.1252799779176712,False
+sd15_mm3,s42__on-a-beach,s42__fox__spinning__on-a-beach,fox,spinning,on a beach,Q,0.8288696726163228,True,203.25733947753906,0.34420111775398254,0.08227209001779556,False
+sd15_mm3,s42__on-a-beach,s42__deer__running__on-a-beach,deer,running,on a beach,Q,0.9241210480531057,True,5.9881272315979,0.37468186020851135,0.16122666001319885,False
+sd15_mm3,s42__on-a-beach,s42__deer__walking__on-a-beach,deer,walking,on a beach,Q,0.9671453297138214,True,31.0743350982666,0.35637545585632324,0.7138761878013611,True
+sd15_mm3,s42__on-a-beach,s42__deer__jumping__on-a-beach,deer,jumping,on a beach,Q,0.9290791034698487,True,9.719677925109863,0.37668824195861816,0.37636861205101013,True
+sd15_mm3,s42__on-a-beach,s42__deer__spinning__on-a-beach,deer,spinning,on a beach,Q,0.9223930537700653,True,20.18562889099121,0.3601830005645752,0.1253654807806015,False
+sd15_mm3,s42__on-a-beach,s42__brown-bear__running__on-a-beach,brown bear,running,on a beach,Q,0.9327295859654744,True,10.07418155670166,0.3375675082206726,0.22600947320461273,False
+sd15_mm3,s42__on-a-beach,s42__brown-bear__walking__on-a-beach,brown bear,walking,on a beach,Q,0.925159506003062,True,7.144497394561768,0.36043280363082886,0.7800484299659729,True
+sd15_mm3,s42__on-a-beach,s42__brown-bear__jumping__on-a-beach,brown bear,jumping,on a beach,Q,0.9174394567807516,False,4.767045497894287,0.3644137382507324,0.2473740577697754,False
+sd15_mm3,s42__on-a-beach,s42__brown-bear__spinning__on-a-beach,brown bear,spinning,on a beach,Q,0.9358095765113831,True,7.865043640136719,0.3171066343784332,0.19300761818885803,False
+sd15_mm3,s42__on-a-beach,s42__young-man__running__on-a-beach,young man,running,on a beach,H,0.9079913397630056,True,15.19287395477295,0.30992552638053894,0.929323136806488,True
+sd15_mm3,s42__on-a-beach,s42__young-man__walking__on-a-beach,young man,walking,on a beach,H,0.9263629039128621,True,25.156818389892578,0.29951539635658264,0.8297306299209595,True
+sd15_mm3,s42__on-a-beach,s42__young-man__jumping__on-a-beach,young man,jumping,on a beach,H,0.898555705944697,True,8.340041160583496,0.3314909338951111,0.21443793177604675,False
+sd15_mm3,s42__on-a-beach,s42__young-man__spinning__on-a-beach,young man,spinning,on a beach,H,0.869721140464147,True,17.5042781829834,0.29632440209388733,0.4938201606273651,True
+sd15_mm3,s42__on-a-beach,s42__young-woman__running__on-a-beach,young woman,running,on a beach,H,0.8987791657447814,True,14.656590461730957,0.3194793164730072,0.91513991355896,True
+sd15_mm3,s42__on-a-beach,s42__young-woman__walking__on-a-beach,young woman,walking,on a beach,H,0.898239529132843,True,58.492916107177734,0.31136900186538696,0.39648911356925964,True
+sd15_mm3,s42__on-a-beach,s42__young-woman__jumping__on-a-beach,young woman,jumping,on a beach,H,0.8814115663369496,True,10.492106437683105,0.33633697032928467,0.32826659083366394,False
+sd15_mm3,s42__on-a-beach,s42__young-woman__spinning__on-a-beach,young woman,spinning,on a beach,H,0.8241717318693796,True,15.373322486877441,0.28407785296440125,0.5110339522361755,True
+sd15_mm3,s42__on-a-beach,s42__athlete__running__on-a-beach,athlete,running,on a beach,H,0.8858170469601949,True,13.16348934173584,0.30443766713142395,0.732797384262085,True
+sd15_mm3,s42__on-a-beach,s42__athlete__walking__on-a-beach,athlete,walking,on a beach,H,0.8778960585594178,True,29.416486740112305,0.2644910514354706,0.9049936532974243,True
+sd15_mm3,s42__on-a-beach,s42__athlete__jumping__on-a-beach,athlete,jumping,on a beach,H,0.8909453789393107,True,6.884546756744385,0.31685662269592285,0.15154136717319489,False
+sd15_mm3,s42__on-a-beach,s42__athlete__spinning__on-a-beach,athlete,spinning,on a beach,H,0.8898959537347158,True,12.532482147216797,0.3057043254375458,0.36247777938842773,False
+sd15_mm3,s42__on-a-beach,s42__soldier__running__on-a-beach,soldier,running,on a beach,H,0.8966020286083222,True,22.29435920715332,0.34896141290664673,0.8359878659248352,True
+sd15_mm3,s42__on-a-beach,s42__soldier__walking__on-a-beach,soldier,walking,on a beach,H,0.9233683983484904,True,42.127601623535156,0.3324655294418335,0.538428008556366,True
+sd15_mm3,s42__on-a-beach,s42__soldier__jumping__on-a-beach,soldier,jumping,on a beach,H,0.8243274033069611,True,27.115800857543945,0.3378446698188782,0.07874075323343277,False
+sd15_mm3,s42__on-a-beach,s42__soldier__spinning__on-a-beach,soldier,spinning,on a beach,H,0.8029390871524811,True,64.05140686035156,0.33035609126091003,0.3240959644317627,False
+sd15_mm3,s42__on-a-beach,s42__dancer__running__on-a-beach,dancer,running,on a beach,H,0.8766897201538086,True,11.696075439453125,0.3102741241455078,0.6400497555732727,True
+sd15_mm3,s42__on-a-beach,s42__dancer__walking__on-a-beach,dancer,walking,on a beach,H,0.9152494271596273,True,40.71766662597656,0.3003062605857849,0.3102262020111084,False
+sd15_mm3,s42__on-a-beach,s42__dancer__jumping__on-a-beach,dancer,jumping,on a beach,H,0.8722808400789896,True,12.195371627807617,0.32091426849365234,0.10619612783193588,False
+sd15_mm3,s42__on-a-beach,s42__dancer__spinning__on-a-beach,dancer,spinning,on a beach,H,0.8616783956686656,True,20.929433822631836,0.3084484338760376,0.3272441327571869,False
+sd15_mm3,s42__on-a-beach,s42__child__running__on-a-beach,child,running,on a beach,H,0.8991335093975067,True,61.546321868896484,0.32842081785202026,0.7905334830284119,True
+sd15_mm3,s42__on-a-beach,s42__child__walking__on-a-beach,child,walking,on a beach,H,0.910370655854543,True,68.01307678222656,0.3219267427921295,0.7938898801803589,True
+sd15_mm3,s42__on-a-beach,s42__child__jumping__on-a-beach,child,jumping,on a beach,H,0.9254820585250855,True,80.80177307128906,0.33098170161247253,0.3806683123111725,False
+sd15_mm3,s42__on-a-beach,s42__child__spinning__on-a-beach,child,spinning,on a beach,H,0.8336756428082784,True,16.596181869506836,0.3098396062850952,0.06855852901935577,False
+sd15_mm3,s42__on-a-beach,s42__elderly-man__running__on-a-beach,elderly man,running,on a beach,H,0.909561957915624,True,13.147479057312012,0.36066946387290955,0.8652398586273193,True
+sd15_mm3,s42__on-a-beach,s42__elderly-man__walking__on-a-beach,elderly man,walking,on a beach,H,0.9276028414567311,True,9.253238677978516,0.35488569736480713,0.7120296359062195,True
+sd15_mm3,s42__on-a-beach,s42__elderly-man__jumping__on-a-beach,elderly man,jumping,on a beach,H,0.8604765057563781,True,15.630156517028809,0.36215606331825256,0.4620659649372101,True
+sd15_mm3,s42__on-a-beach,s42__elderly-man__spinning__on-a-beach,elderly man,spinning,on a beach,H,0.9210875550905864,True,16.783233642578125,0.3430657386779785,0.4499053359031677,True
+epicrealism_mm3,s1337__in-a-forest,s1337__golden-retriever__running__in-a-forest,golden retriever,running,in a forest,Q,0.9365622937679291,False,2.2220051288604736,0.3617066740989685,0.6673411726951599,True
+epicrealism_mm3,s1337__in-a-forest,s1337__golden-retriever__walking__in-a-forest,golden retriever,walking,in a forest,Q,0.9654825409253438,False,0.16734719276428223,0.3518899083137512,0.5489543676376343,True
+epicrealism_mm3,s1337__in-a-forest,s1337__golden-retriever__jumping__in-a-forest,golden retriever,jumping,in a forest,Q,0.9536854267120362,False,1.4595489501953125,0.37029367685317993,0.7146722078323364,True
+epicrealism_mm3,s1337__in-a-forest,s1337__golden-retriever__spinning__in-a-forest,golden retriever,spinning,in a forest,Q,0.9568740268548329,False,2.8687164783477783,0.35580360889434814,0.06134449690580368,False
+epicrealism_mm3,s1337__in-a-forest,s1337__german-shepherd__running__in-a-forest,german shepherd,running,in a forest,Q,0.9526191234588623,False,0.5729418992996216,0.3504062592983246,0.4764339029788971,True
+epicrealism_mm3,s1337__in-a-forest,s1337__german-shepherd__walking__in-a-forest,german shepherd,walking,in a forest,Q,0.9566760043303172,False,0.9868692755699158,0.34795325994491577,0.551959216594696,True
+epicrealism_mm3,s1337__in-a-forest,s1337__german-shepherd__jumping__in-a-forest,german shepherd,jumping,in a forest,Q,0.9605691611766816,False,1.7778407335281372,0.35001900792121887,0.13532783091068268,False
+epicrealism_mm3,s1337__in-a-forest,s1337__german-shepherd__spinning__in-a-forest,german shepherd,spinning,in a forest,Q,0.9335849424203236,False,4.335343360900879,0.3450745940208435,0.1609881967306137,False
+epicrealism_mm3,s1337__in-a-forest,s1337__horse__running__in-a-forest,horse,running,in a forest,Q,0.9679028570652009,False,2.8067193031311035,0.3504069149494171,0.2990923225879669,False
+epicrealism_mm3,s1337__in-a-forest,s1337__horse__walking__in-a-forest,horse,walking,in a forest,Q,0.9631211598714192,False,2.494192600250244,0.35212287306785583,0.48511484265327454,True
+epicrealism_mm3,s1337__in-a-forest,s1337__horse__jumping__in-a-forest,horse,jumping,in a forest,Q,0.9647728562355041,False,0.9596706628799438,0.33481982350349426,0.36481034755706787,True
+epicrealism_mm3,s1337__in-a-forest,s1337__horse__spinning__in-a-forest,horse,spinning,in a forest,Q,0.9596990386644999,False,2.841438055038452,0.3433156907558441,0.26430487632751465,False
+epicrealism_mm3,s1337__in-a-forest,s1337__wolf__running__in-a-forest,wolf,running,in a forest,Q,0.9554246664047241,False,2.5817794799804688,0.3403502404689789,0.5629280805587769,True
+epicrealism_mm3,s1337__in-a-forest,s1337__wolf__walking__in-a-forest,wolf,walking,in a forest,Q,0.9101639211177825,False,0.508758008480072,0.3319227397441864,0.49767792224884033,True
+epicrealism_mm3,s1337__in-a-forest,s1337__wolf__jumping__in-a-forest,wolf,jumping,in a forest,Q,0.9642328321933746,False,0.510712742805481,0.35044029355049133,0.4345007538795471,True
+epicrealism_mm3,s1337__in-a-forest,s1337__wolf__spinning__in-a-forest,wolf,spinning,in a forest,Q,0.9252598126729329,False,3.6238603591918945,0.33314990997314453,0.11108852177858353,False
+epicrealism_mm3,s1337__in-a-forest,s1337__tiger__running__in-a-forest,tiger,running,in a forest,Q,0.9831941942373912,False,2.364952802658081,0.34225043654441833,0.36467674374580383,False
+epicrealism_mm3,s1337__in-a-forest,s1337__tiger__walking__in-a-forest,tiger,walking,in a forest,Q,0.9440613667170207,False,0.19595906138420105,0.32815107703208923,0.8419904708862305,True
+epicrealism_mm3,s1337__in-a-forest,s1337__tiger__jumping__in-a-forest,tiger,jumping,in a forest,Q,0.9800589819749196,False,1.6850682497024536,0.34834742546081543,0.07462820410728455,False
+epicrealism_mm3,s1337__in-a-forest,s1337__tiger__spinning__in-a-forest,tiger,spinning,in a forest,Q,0.9704631725947063,False,2.2037997245788574,0.33802878856658936,0.12140215188264847,False
+epicrealism_mm3,s1337__in-a-forest,s1337__fox__running__in-a-forest,fox,running,in a forest,Q,0.9760678748289744,False,0.6303975582122803,0.3352687656879425,0.4708821475505829,True
+epicrealism_mm3,s1337__in-a-forest,s1337__fox__walking__in-a-forest,fox,walking,in a forest,Q,0.9467497110366822,False,0.29868555068969727,0.3479807376861572,0.5132511854171753,True
+epicrealism_mm3,s1337__in-a-forest,s1337__fox__jumping__in-a-forest,fox,jumping,in a forest,Q,0.9364299794038137,False,1.5740814208984375,0.3656640946865082,0.49835172295570374,True
+epicrealism_mm3,s1337__in-a-forest,s1337__fox__spinning__in-a-forest,fox,spinning,in a forest,Q,0.9354394694169362,False,4.035409927368164,0.32079583406448364,0.07479491829872131,False
+epicrealism_mm3,s1337__in-a-forest,s1337__deer__running__in-a-forest,deer,running,in a forest,Q,0.9468754927317301,False,0.2772974371910095,0.33302658796310425,0.19128592312335968,False
+epicrealism_mm3,s1337__in-a-forest,s1337__deer__walking__in-a-forest,deer,walking,in a forest,Q,0.9702017605304718,False,0.11165402084589005,0.359027624130249,0.517858624458313,True
+epicrealism_mm3,s1337__in-a-forest,s1337__deer__jumping__in-a-forest,deer,jumping,in a forest,Q,0.95860502521197,False,1.0246820449829102,0.349689245223999,0.2645266354084015,False
+epicrealism_mm3,s1337__in-a-forest,s1337__deer__spinning__in-a-forest,deer,spinning,in a forest,Q,0.9708104868729909,False,0.8908608555793762,0.3425217568874359,0.10479994863271713,False
+epicrealism_mm3,s1337__in-a-forest,s1337__brown-bear__running__in-a-forest,brown bear,running,in a forest,Q,0.9793715258439382,False,2.190072774887085,0.3398028016090393,0.35310593247413635,False
+epicrealism_mm3,s1337__in-a-forest,s1337__brown-bear__walking__in-a-forest,brown bear,walking,in a forest,Q,0.9703901092211406,False,1.7580444812774658,0.3537014424800873,0.7171857953071594,True
+epicrealism_mm3,s1337__in-a-forest,s1337__brown-bear__jumping__in-a-forest,brown bear,jumping,in a forest,Q,0.9742821455001831,False,1.9899054765701294,0.3262462913990021,0.030655469745397568,False
+epicrealism_mm3,s1337__in-a-forest,s1337__brown-bear__spinning__in-a-forest,brown bear,spinning,in a forest,Q,0.9711539765199025,False,2.074913263320923,0.3127131462097168,0.03818030282855034,False
+epicrealism_mm3,s1337__in-a-forest,s1337__young-man__running__in-a-forest,young man,running,in a forest,H,0.9550110201040903,False,0.5706958770751953,0.3203936815261841,0.802189290523529,True
+epicrealism_mm3,s1337__in-a-forest,s1337__young-man__walking__in-a-forest,young man,walking,in a forest,H,0.9783761163552602,False,0.15319949388504028,0.3157367408275604,0.7852470874786377,True
+epicrealism_mm3,s1337__in-a-forest,s1337__young-man__jumping__in-a-forest,young man,jumping,in a forest,H,0.9483619153499603,False,1.9074463844299316,0.354186475276947,0.4773963987827301,True
+epicrealism_mm3,s1337__in-a-forest,s1337__young-man__spinning__in-a-forest,young man,spinning,in a forest,H,0.9746496419111887,False,1.7126184701919556,0.3262268602848053,0.6072276830673218,True
+epicrealism_mm3,s1337__in-a-forest,s1337__young-woman__running__in-a-forest,young woman,running,in a forest,H,0.9396712462107341,False,1.0383771657943726,0.32027867436408997,0.764765202999115,True
+epicrealism_mm3,s1337__in-a-forest,s1337__young-woman__walking__in-a-forest,young woman,walking,in a forest,H,0.9587621927261353,False,0.37704795598983765,0.3300163447856903,0.637969434261322,True
+epicrealism_mm3,s1337__in-a-forest,s1337__young-woman__jumping__in-a-forest,young woman,jumping,in a forest,H,0.9459243635336558,False,1.73615300655365,0.3467267155647278,0.8625199198722839,True
+epicrealism_mm3,s1337__in-a-forest,s1337__young-woman__spinning__in-a-forest,young woman,spinning,in a forest,H,0.9615174472332001,False,1.7412259578704834,0.29407066106796265,0.3856658637523651,True
+epicrealism_mm3,s1337__in-a-forest,s1337__athlete__running__in-a-forest,athlete,running,in a forest,H,0.9554473062356313,False,0.6288102269172668,0.3345048427581787,0.7536109685897827,True
+epicrealism_mm3,s1337__in-a-forest,s1337__athlete__walking__in-a-forest,athlete,walking,in a forest,H,0.975596425930659,False,0.11571740359067917,0.3107626140117645,0.41826021671295166,False
+epicrealism_mm3,s1337__in-a-forest,s1337__athlete__jumping__in-a-forest,athlete,jumping,in a forest,H,0.9179436683654785,False,2.1194334030151367,0.3513571321964264,0.27587398886680603,False
+epicrealism_mm3,s1337__in-a-forest,s1337__athlete__spinning__in-a-forest,athlete,spinning,in a forest,H,0.9737917264302571,False,0.8844897747039795,0.3332313299179077,0.9028847217559814,True
+epicrealism_mm3,s1337__in-a-forest,s1337__soldier__running__in-a-forest,soldier,running,in a forest,H,0.9720743974049886,False,1.7339121103286743,0.36626505851745605,0.7152377367019653,True
+epicrealism_mm3,s1337__in-a-forest,s1337__soldier__walking__in-a-forest,soldier,walking,in a forest,H,0.9733259081840515,False,0.16625571250915527,0.34916311502456665,0.6444569826126099,True
+epicrealism_mm3,s1337__in-a-forest,s1337__soldier__jumping__in-a-forest,soldier,jumping,in a forest,H,0.9487280229727427,False,2.391356945037842,0.3539621829986572,0.6255912780761719,True
+epicrealism_mm3,s1337__in-a-forest,s1337__soldier__spinning__in-a-forest,soldier,spinning,in a forest,H,0.9530015508333842,False,1.696049451828003,0.3057405650615692,0.2546572983264923,False
+epicrealism_mm3,s1337__in-a-forest,s1337__dancer__running__in-a-forest,dancer,running,in a forest,H,0.9441582381725311,False,1.9290741682052612,0.33907079696655273,0.739323079586029,True
+epicrealism_mm3,s1337__in-a-forest,s1337__dancer__walking__in-a-forest,dancer,walking,in a forest,H,0.9211024840672811,False,0.7863314151763916,0.3239995539188385,0.27809226512908936,True
+epicrealism_mm3,s1337__in-a-forest,s1337__dancer__jumping__in-a-forest,dancer,jumping,in a forest,H,0.9407826423645019,False,3.846665143966675,0.3570672869682312,0.15275979042053223,False
+epicrealism_mm3,s1337__in-a-forest,s1337__dancer__spinning__in-a-forest,dancer,spinning,in a forest,H,0.9307382424672445,False,1.0739065408706665,0.3551611602306366,0.5277286171913147,True
+epicrealism_mm3,s1337__in-a-forest,s1337__child__running__in-a-forest,child,running,in a forest,H,0.9714435636997223,False,0.5995540618896484,0.3524742126464844,0.38559380173683167,False
+epicrealism_mm3,s1337__in-a-forest,s1337__child__walking__in-a-forest,child,walking,in a forest,H,0.9740266561508178,False,0.2600366473197937,0.35071688890457153,0.7895655632019043,True
+epicrealism_mm3,s1337__in-a-forest,s1337__child__jumping__in-a-forest,child,jumping,in a forest,H,0.9429013232390085,False,3.454935312271118,0.3406129777431488,0.40190592408180237,True
+epicrealism_mm3,s1337__in-a-forest,s1337__child__spinning__in-a-forest,child,spinning,in a forest,H,0.9388276477654774,False,1.405497670173645,0.308467298746109,0.5894027352333069,True
+epicrealism_mm3,s1337__in-a-forest,s1337__elderly-man__running__in-a-forest,elderly man,running,in a forest,H,0.9407843430836995,False,2.758030891418457,0.3251872658729553,0.6288314461708069,True
+epicrealism_mm3,s1337__in-a-forest,s1337__elderly-man__walking__in-a-forest,elderly man,walking,in a forest,H,0.9796884795029958,False,0.16625744104385376,0.3295894265174866,0.6321057081222534,True
+epicrealism_mm3,s1337__in-a-forest,s1337__elderly-man__jumping__in-a-forest,elderly man,jumping,in a forest,H,0.9590710639953614,False,2.1186485290527344,0.3832779824733734,0.4904548227787018,True
+epicrealism_mm3,s1337__in-a-forest,s1337__elderly-man__spinning__in-a-forest,elderly man,spinning,in a forest,H,0.9590467949708302,False,2.7443044185638428,0.3373343348503113,0.866085410118103,True
+epicrealism_mm3,s1337__on-a-beach,s1337__golden-retriever__running__on-a-beach,golden retriever,running,on a beach,Q,0.9659973740577698,False,1.5253044366836548,0.37190213799476624,0.42138421535491943,False
+epicrealism_mm3,s1337__on-a-beach,s1337__golden-retriever__walking__on-a-beach,golden retriever,walking,on a beach,Q,0.9572657227516175,False,1.716471791267395,0.35548192262649536,0.62619948387146,True
+epicrealism_mm3,s1337__on-a-beach,s1337__golden-retriever__jumping__on-a-beach,golden retriever,jumping,on a beach,Q,0.9644130071004232,False,0.6394099593162537,0.3665735721588135,0.7708889245986938,True
+epicrealism_mm3,s1337__on-a-beach,s1337__golden-retriever__spinning__on-a-beach,golden retriever,spinning,on a beach,Q,0.9614008724689483,False,1.8095639944076538,0.35716119408607483,0.04483354464173317,False
+epicrealism_mm3,s1337__on-a-beach,s1337__german-shepherd__running__on-a-beach,german shepherd,running,on a beach,Q,0.9707560002803802,False,2.3658132553100586,0.35211992263793945,0.42111262679100037,True
+epicrealism_mm3,s1337__on-a-beach,s1337__german-shepherd__walking__on-a-beach,german shepherd,walking,on a beach,Q,0.9649254441261291,False,1.3028112649917603,0.34211665391921997,0.6841344237327576,True
+epicrealism_mm3,s1337__on-a-beach,s1337__german-shepherd__jumping__on-a-beach,german shepherd,jumping,on a beach,Q,0.9705564479033152,False,1.965368628501892,0.3778151869773865,0.6148449182510376,True
+epicrealism_mm3,s1337__on-a-beach,s1337__german-shepherd__spinning__on-a-beach,german shepherd,spinning,on a beach,Q,0.9418139358361562,False,4.5637664794921875,0.3460273742675781,0.11112614721059799,False
+epicrealism_mm3,s1337__on-a-beach,s1337__horse__running__on-a-beach,horse,running,on a beach,Q,0.9615868270397187,False,2.538238048553467,0.34743669629096985,0.19994787871837616,False
+epicrealism_mm3,s1337__on-a-beach,s1337__horse__walking__on-a-beach,horse,walking,on a beach,Q,0.9743319928646088,False,2.9336929321289062,0.353900283575058,0.7098976969718933,True
+epicrealism_mm3,s1337__on-a-beach,s1337__horse__jumping__on-a-beach,horse,jumping,on a beach,Q,0.9673263370990753,False,1.7652593851089478,0.32764023542404175,0.20148628950119019,False
+epicrealism_mm3,s1337__on-a-beach,s1337__horse__spinning__on-a-beach,horse,spinning,on a beach,Q,0.9584047396977743,False,2.4123480319976807,0.3165042996406555,0.19716499745845795,False
+epicrealism_mm3,s1337__on-a-beach,s1337__wolf__running__on-a-beach,wolf,running,on a beach,Q,0.9714402198791504,False,2.506127119064331,0.35611993074417114,0.5489227771759033,True
+epicrealism_mm3,s1337__on-a-beach,s1337__wolf__walking__on-a-beach,wolf,walking,on a beach,Q,0.9621959586938222,False,2.0274393558502197,0.35149410367012024,0.6055704355239868,True
+epicrealism_mm3,s1337__on-a-beach,s1337__wolf__jumping__on-a-beach,wolf,jumping,on a beach,Q,0.9742488145828248,False,1.358450174331665,0.3418298065662384,0.7548683881759644,True
+epicrealism_mm3,s1337__on-a-beach,s1337__wolf__spinning__on-a-beach,wolf,spinning,on a beach,Q,0.9263105670611064,False,4.068588733673096,0.3430594801902771,0.11880079656839371,False
+epicrealism_mm3,s1337__on-a-beach,s1337__tiger__running__on-a-beach,tiger,running,on a beach,Q,0.9816720982392629,False,1.840146541595459,0.383158802986145,0.2738450765609741,False
+epicrealism_mm3,s1337__on-a-beach,s1337__tiger__walking__on-a-beach,tiger,walking,on a beach,Q,0.9877749065558116,False,1.7020820379257202,0.3992028534412384,0.8957264423370361,True
+epicrealism_mm3,s1337__on-a-beach,s1337__tiger__jumping__on-a-beach,tiger,jumping,on a beach,Q,0.979177325963974,False,1.71807062625885,0.4033031761646271,0.12157700210809708,False
+epicrealism_mm3,s1337__on-a-beach,s1337__tiger__spinning__on-a-beach,tiger,spinning,on a beach,Q,0.9813542902469635,False,1.7567728757858276,0.3836483359336853,0.03956162929534912,False
+epicrealism_mm3,s1337__on-a-beach,s1337__fox__running__on-a-beach,fox,running,on a beach,Q,0.9493477940559387,False,1.133083701133728,0.36391863226890564,0.25251978635787964,False
+epicrealism_mm3,s1337__on-a-beach,s1337__fox__walking__on-a-beach,fox,walking,on a beach,Q,0.9558694998423258,False,1.5774128437042236,0.3469766080379486,0.5619478225708008,True
+epicrealism_mm3,s1337__on-a-beach,s1337__fox__jumping__on-a-beach,fox,jumping,on a beach,Q,0.9717509051163992,False,1.2247602939605713,0.4000053107738495,0.5397503972053528,True
+epicrealism_mm3,s1337__on-a-beach,s1337__fox__spinning__on-a-beach,fox,spinning,on a beach,Q,0.9160891175270081,False,1.7926429510116577,0.31593483686447144,0.07360032200813293,False
+epicrealism_mm3,s1337__on-a-beach,s1337__deer__running__on-a-beach,deer,running,on a beach,Q,0.9766011118888855,False,1.0127018690109253,0.3581736087799072,0.13975270092487335,False
+epicrealism_mm3,s1337__on-a-beach,s1337__deer__walking__on-a-beach,deer,walking,on a beach,Q,0.9653570612271627,False,0.7260910272598267,0.37088438868522644,0.682576596736908,True
+epicrealism_mm3,s1337__on-a-beach,s1337__deer__jumping__on-a-beach,deer,jumping,on a beach,Q,0.9561094979445139,False,0.9816052913665771,0.3874462842941284,0.7787715792655945,True
+epicrealism_mm3,s1337__on-a-beach,s1337__deer__spinning__on-a-beach,deer,spinning,on a beach,Q,0.95145117243131,False,1.3132820129394531,0.36015984416007996,0.10260838270187378,False
+epicrealism_mm3,s1337__on-a-beach,s1337__brown-bear__running__on-a-beach,brown bear,running,on a beach,Q,0.9716580828030904,False,2.969292163848877,0.3730521500110626,0.2857929468154907,False
+epicrealism_mm3,s1337__on-a-beach,s1337__brown-bear__walking__on-a-beach,brown bear,walking,on a beach,Q,0.9464272220929464,False,1.2400627136230469,0.36183106899261475,0.6609438061714172,True
+epicrealism_mm3,s1337__on-a-beach,s1337__brown-bear__jumping__on-a-beach,brown bear,jumping,on a beach,Q,0.9420325756072998,False,1.7962608337402344,0.37494564056396484,0.5919747352600098,True
+epicrealism_mm3,s1337__on-a-beach,s1337__brown-bear__spinning__on-a-beach,brown bear,spinning,on a beach,Q,0.9550280352433522,False,2.253159523010254,0.34845975041389465,0.08871450275182724,False
+epicrealism_mm3,s1337__on-a-beach,s1337__young-man__running__on-a-beach,young man,running,on a beach,H,0.968509829044342,False,2.200016498565674,0.34397006034851074,0.8647685050964355,True
+epicrealism_mm3,s1337__on-a-beach,s1337__young-man__walking__on-a-beach,young man,walking,on a beach,H,0.9753654976685842,False,0.9365093111991882,0.31139177083969116,0.8738573789596558,True
+epicrealism_mm3,s1337__on-a-beach,s1337__young-man__jumping__on-a-beach,young man,jumping,on a beach,H,0.9761866152286529,False,4.025288105010986,0.3348970413208008,0.8535497784614563,True
+epicrealism_mm3,s1337__on-a-beach,s1337__young-man__spinning__on-a-beach,young man,spinning,on a beach,H,0.9754921913146972,False,1.659663438796997,0.3282396197319031,0.3902936577796936,False
+epicrealism_mm3,s1337__on-a-beach,s1337__young-woman__running__on-a-beach,young woman,running,on a beach,H,0.9645395696163177,False,3.533566474914551,0.3376584053039551,0.9031199812889099,True
+epicrealism_mm3,s1337__on-a-beach,s1337__young-woman__walking__on-a-beach,young woman,walking,on a beach,H,0.9744649211565654,False,1.085348129272461,0.31920480728149414,0.6944608688354492,True
+epicrealism_mm3,s1337__on-a-beach,s1337__young-woman__jumping__on-a-beach,young woman,jumping,on a beach,H,0.9605882147947947,False,3.5076804161071777,0.34100645780563354,0.9434865713119507,True
+epicrealism_mm3,s1337__on-a-beach,s1337__young-woman__spinning__on-a-beach,young woman,spinning,on a beach,H,0.9672087788581848,False,1.9684975147247314,0.32452592253685,0.18114355206489563,False
+epicrealism_mm3,s1337__on-a-beach,s1337__athlete__running__on-a-beach,athlete,running,on a beach,H,0.9685066362222036,False,3.366412401199341,0.32735389471054077,0.681107223033905,True
+epicrealism_mm3,s1337__on-a-beach,s1337__athlete__walking__on-a-beach,athlete,walking,on a beach,H,0.9815488994121552,False,1.1358375549316406,0.2964155972003937,0.6955918073654175,True
+epicrealism_mm3,s1337__on-a-beach,s1337__athlete__jumping__on-a-beach,athlete,jumping,on a beach,H,0.9766992330551147,False,2.7612524032592773,0.32922855019569397,0.8821571469306946,True
+epicrealism_mm3,s1337__on-a-beach,s1337__athlete__spinning__on-a-beach,athlete,spinning,on a beach,H,0.987828665971756,False,1.8637702465057373,0.3082895874977112,0.8345037698745728,True
+epicrealism_mm3,s1337__on-a-beach,s1337__soldier__running__on-a-beach,soldier,running,on a beach,H,0.9655127068360646,False,1.9983519315719604,0.36462435126304626,0.8545781970024109,True
+epicrealism_mm3,s1337__on-a-beach,s1337__soldier__walking__on-a-beach,soldier,walking,on a beach,H,0.9793162484963734,False,1.6779781579971313,0.3564399182796478,0.5600588321685791,True
+epicrealism_mm3,s1337__on-a-beach,s1337__soldier__jumping__on-a-beach,soldier,jumping,on a beach,H,0.9410562256971995,True,5.084493160247803,0.3858320713043213,0.7925316691398621,True
+epicrealism_mm3,s1337__on-a-beach,s1337__soldier__spinning__on-a-beach,soldier,spinning,on a beach,H,0.9745050251483918,False,1.5679789781570435,0.33221107721328735,0.048033107072114944,False
+epicrealism_mm3,s1337__on-a-beach,s1337__dancer__running__on-a-beach,dancer,running,on a beach,H,0.9655736943085989,False,2.0815207958221436,0.3462359309196472,0.7248350977897644,True
+epicrealism_mm3,s1337__on-a-beach,s1337__dancer__walking__on-a-beach,dancer,walking,on a beach,H,0.9616465111573537,False,1.5830967426300049,0.3297751545906067,0.5796374082565308,True
+epicrealism_mm3,s1337__on-a-beach,s1337__dancer__jumping__on-a-beach,dancer,jumping,on a beach,H,0.9500059465567271,False,2.2604708671569824,0.32251572608947754,0.8565815687179565,True
+epicrealism_mm3,s1337__on-a-beach,s1337__dancer__spinning__on-a-beach,dancer,spinning,on a beach,H,0.964989693959554,False,2.2058379650115967,0.31594595313072205,0.28906580805778503,False
+epicrealism_mm3,s1337__on-a-beach,s1337__child__running__on-a-beach,child,running,on a beach,H,0.9582209289073944,False,1.5870012044906616,0.3092576861381531,0.3645877242088318,False
+epicrealism_mm3,s1337__on-a-beach,s1337__child__walking__on-a-beach,child,walking,on a beach,H,0.9663084407647451,False,1.1066889762878418,0.3101055920124054,0.7703587412834167,True
+epicrealism_mm3,s1337__on-a-beach,s1337__child__jumping__on-a-beach,child,jumping,on a beach,H,0.9575833300749461,False,3.2022178173065186,0.3341108560562134,0.8133851885795593,True
+epicrealism_mm3,s1337__on-a-beach,s1337__child__spinning__on-a-beach,child,spinning,on a beach,H,0.9510932683944702,False,3.8610594272613525,0.31896570324897766,0.10006064921617508,False
+epicrealism_mm3,s1337__on-a-beach,s1337__elderly-man__running__on-a-beach,elderly man,running,on a beach,H,0.9683946351210276,False,1.8931149244308472,0.3782704770565033,0.9116212129592896,True
+epicrealism_mm3,s1337__on-a-beach,s1337__elderly-man__walking__on-a-beach,elderly man,walking,on a beach,H,0.9777640342712403,False,1.8178989887237549,0.33313828706741333,0.6219989061355591,True
+epicrealism_mm3,s1337__on-a-beach,s1337__elderly-man__jumping__on-a-beach,elderly man,jumping,on a beach,H,0.9730671981970469,False,3.458423614501953,0.38713112473487854,0.7108649611473083,True
+epicrealism_mm3,s1337__on-a-beach,s1337__elderly-man__spinning__on-a-beach,elderly man,spinning,on a beach,H,0.9788210769494374,False,1.112254023551941,0.351319283246994,0.4451247453689575,True
+epicrealism_mm3,s42__in-a-forest,s42__golden-retriever__running__in-a-forest,golden retriever,running,in a forest,Q,0.9422745664914449,False,1.056310772895813,0.3624231517314911,0.5912879705429077,True
+epicrealism_mm3,s42__in-a-forest,s42__golden-retriever__walking__in-a-forest,golden retriever,walking,in a forest,Q,0.9511245310306549,False,0.4651549756526947,0.352292537689209,0.6586582064628601,True
+epicrealism_mm3,s42__in-a-forest,s42__golden-retriever__jumping__in-a-forest,golden retriever,jumping,in a forest,Q,0.9310272554556529,False,0.8255511522293091,0.38010066747665405,0.7708050608634949,True
+epicrealism_mm3,s42__in-a-forest,s42__golden-retriever__spinning__in-a-forest,golden retriever,spinning,in a forest,Q,0.9491744458675384,False,1.6386312246322632,0.35825660824775696,0.11096527427434921,False
+epicrealism_mm3,s42__in-a-forest,s42__german-shepherd__running__in-a-forest,german shepherd,running,in a forest,Q,0.9514395515124003,False,0.47806060314178467,0.3437701463699341,0.39851680397987366,False
+epicrealism_mm3,s42__in-a-forest,s42__german-shepherd__walking__in-a-forest,german shepherd,walking,in a forest,Q,0.9744086782137553,False,0.7585232853889465,0.3082670271396637,0.6705621480941772,True
+epicrealism_mm3,s42__in-a-forest,s42__german-shepherd__jumping__in-a-forest,german shepherd,jumping,in a forest,Q,0.9646272559960684,False,0.6395899057388306,0.3567294180393219,0.2939017713069916,True
+epicrealism_mm3,s42__in-a-forest,s42__german-shepherd__spinning__in-a-forest,german shepherd,spinning,in a forest,Q,0.9760639866193136,False,0.6048697829246521,0.32152417302131653,0.04161667823791504,False
+epicrealism_mm3,s42__in-a-forest,s42__horse__running__in-a-forest,horse,running,in a forest,Q,0.9758247991402944,False,0.7555013298988342,0.34427380561828613,0.22499001026153564,False
+epicrealism_mm3,s42__in-a-forest,s42__horse__walking__in-a-forest,horse,walking,in a forest,Q,0.982179190715154,False,0.8071737885475159,0.3522305488586426,0.683408260345459,True
+epicrealism_mm3,s42__in-a-forest,s42__horse__jumping__in-a-forest,horse,jumping,in a forest,Q,0.9744678417841593,False,0.13194642961025238,0.35391342639923096,0.4438911974430084,True
+epicrealism_mm3,s42__in-a-forest,s42__horse__spinning__in-a-forest,horse,spinning,in a forest,Q,0.9820704778035482,False,0.5902574062347412,0.3413302004337311,0.29544952511787415,False
+epicrealism_mm3,s42__in-a-forest,s42__wolf__running__in-a-forest,wolf,running,in a forest,Q,0.9442074596881866,False,0.5037471055984497,0.3271678686141968,0.28893041610717773,False
+epicrealism_mm3,s42__in-a-forest,s42__wolf__walking__in-a-forest,wolf,walking,in a forest,Q,0.9852601925532023,False,0.7077972292900085,0.3085625469684601,0.5228212475776672,True
+epicrealism_mm3,s42__in-a-forest,s42__wolf__jumping__in-a-forest,wolf,jumping,in a forest,Q,0.9876235107580821,False,0.20532430708408356,0.33912765979766846,0.7130619287490845,True
+epicrealism_mm3,s42__in-a-forest,s42__wolf__spinning__in-a-forest,wolf,spinning,in a forest,Q,0.968020087480545,False,0.4847540259361267,0.3355286419391632,0.09859948605298996,False
+epicrealism_mm3,s42__in-a-forest,s42__tiger__running__in-a-forest,tiger,running,in a forest,Q,0.9794798215230306,False,2.045292615890503,0.3531213402748108,0.3951694369316101,False
+epicrealism_mm3,s42__in-a-forest,s42__tiger__walking__in-a-forest,tiger,walking,in a forest,Q,0.9310858309268951,False,0.3448165953159332,0.3514477014541626,0.8142510652542114,True
+epicrealism_mm3,s42__in-a-forest,s42__tiger__jumping__in-a-forest,tiger,jumping,in a forest,Q,0.9788673182328542,False,0.8300558924674988,0.3555249869823456,0.24018676578998566,False
+epicrealism_mm3,s42__in-a-forest,s42__tiger__spinning__in-a-forest,tiger,spinning,in a forest,Q,0.9787619392077128,False,0.8871623277664185,0.35852310061454773,0.09027210623025894,False
+epicrealism_mm3,s42__in-a-forest,s42__fox__running__in-a-forest,fox,running,in a forest,Q,0.978446239233017,False,0.6469274759292603,0.3318990170955658,0.39600566029548645,False
+epicrealism_mm3,s42__in-a-forest,s42__fox__walking__in-a-forest,fox,walking,in a forest,Q,0.9788437485694885,False,0.6974457502365112,0.32026350498199463,0.4642251431941986,True
+epicrealism_mm3,s42__in-a-forest,s42__fox__jumping__in-a-forest,fox,jumping,in a forest,Q,0.9609530746936799,False,0.33851158618927,0.37048619985580444,0.6854174137115479,True
+epicrealism_mm3,s42__in-a-forest,s42__fox__spinning__in-a-forest,fox,spinning,in a forest,Q,0.9555478115876516,False,0.26378458738327026,0.33379319310188293,0.09801580011844635,False
+epicrealism_mm3,s42__in-a-forest,s42__deer__running__in-a-forest,deer,running,in a forest,Q,0.9733743111292521,False,0.1231536716222763,0.342976450920105,0.14716632664203644,False
+epicrealism_mm3,s42__in-a-forest,s42__deer__walking__in-a-forest,deer,walking,in a forest,Q,0.9887033760547638,False,0.3112322986125946,0.3504410684108734,0.5094460248947144,True
+epicrealism_mm3,s42__in-a-forest,s42__deer__jumping__in-a-forest,deer,jumping,in a forest,Q,0.9753285666306813,False,0.1615532487630844,0.33400246500968933,0.18405991792678833,False
+epicrealism_mm3,s42__in-a-forest,s42__deer__spinning__in-a-forest,deer,spinning,in a forest,Q,0.977312437693278,False,0.17065630853176117,0.33023542165756226,0.08226246386766434,False
+epicrealism_mm3,s42__in-a-forest,s42__brown-bear__running__in-a-forest,brown bear,running,in a forest,Q,0.9802215337753296,False,1.0440858602523804,0.3347494900226593,0.34006935358047485,False
+epicrealism_mm3,s42__in-a-forest,s42__brown-bear__walking__in-a-forest,brown bear,walking,in a forest,Q,0.9858154733975728,False,0.3764733672142029,0.3567655384540558,0.7131170034408569,True
+epicrealism_mm3,s42__in-a-forest,s42__brown-bear__jumping__in-a-forest,brown bear,jumping,in a forest,Q,0.9737727463245391,False,0.517886221408844,0.3558819890022278,0.317274272441864,False
+epicrealism_mm3,s42__in-a-forest,s42__brown-bear__spinning__in-a-forest,brown bear,spinning,in a forest,Q,0.985882560412089,False,0.5807138085365295,0.32595765590667725,0.1078101098537445,False
+epicrealism_mm3,s42__in-a-forest,s42__young-man__running__in-a-forest,young man,running,in a forest,H,0.9721208969751994,False,1.1132102012634277,0.33005180954933167,0.7003238797187805,True
+epicrealism_mm3,s42__in-a-forest,s42__young-man__walking__in-a-forest,young man,walking,in a forest,H,0.9730275750160218,False,0.8676829934120178,0.30765780806541443,0.7022227048873901,True
+epicrealism_mm3,s42__in-a-forest,s42__young-man__jumping__in-a-forest,young man,jumping,in a forest,H,0.949477763970693,False,1.596739649772644,0.3450424075126648,0.638538122177124,True
+epicrealism_mm3,s42__in-a-forest,s42__young-man__spinning__in-a-forest,young man,spinning,in a forest,H,0.9632429401079814,False,0.793615996837616,0.32583555579185486,0.7544840574264526,True
+epicrealism_mm3,s42__in-a-forest,s42__young-woman__running__in-a-forest,young woman,running,in a forest,H,0.9594009141127269,False,0.7402525544166565,0.3311053514480591,0.8557717800140381,True
+epicrealism_mm3,s42__in-a-forest,s42__young-woman__walking__in-a-forest,young woman,walking,in a forest,H,0.9621725797653198,False,0.8774086833000183,0.32854801416397095,0.8239971995353699,True
+epicrealism_mm3,s42__in-a-forest,s42__young-woman__jumping__in-a-forest,young woman,jumping,in a forest,H,0.9543019910653432,False,2.1991095542907715,0.3400370180606842,0.7270412445068359,True
+epicrealism_mm3,s42__in-a-forest,s42__young-woman__spinning__in-a-forest,young woman,spinning,in a forest,H,0.9748366892337799,False,0.36624327301979065,0.3262404501438141,0.22446021437644958,False
+epicrealism_mm3,s42__in-a-forest,s42__athlete__running__in-a-forest,athlete,running,in a forest,H,0.9731783052285512,False,0.98377925157547,0.34249016642570496,0.7848471403121948,True
+epicrealism_mm3,s42__in-a-forest,s42__athlete__walking__in-a-forest,athlete,walking,in a forest,H,0.9700954914093017,False,0.6577058434486389,0.2950934171676636,0.3634253144264221,True
+epicrealism_mm3,s42__in-a-forest,s42__athlete__jumping__in-a-forest,athlete,jumping,in a forest,H,0.9750432292620341,False,0.29149681329727173,0.3413267731666565,0.3780609667301178,True
+epicrealism_mm3,s42__in-a-forest,s42__athlete__spinning__in-a-forest,athlete,spinning,in a forest,H,0.9815431654453277,False,0.42813003063201904,0.33090776205062866,0.939105212688446,True
+epicrealism_mm3,s42__in-a-forest,s42__soldier__running__in-a-forest,soldier,running,in a forest,H,0.9676324407259623,False,0.4732773005962372,0.36165937781333923,0.5869841575622559,True
+epicrealism_mm3,s42__in-a-forest,s42__soldier__walking__in-a-forest,soldier,walking,in a forest,H,0.9663998305797576,False,0.6717583537101746,0.33529937267303467,0.5798279047012329,True
+epicrealism_mm3,s42__in-a-forest,s42__soldier__jumping__in-a-forest,soldier,jumping,in a forest,H,0.966631946961085,False,0.6450825333595276,0.37208092212677,0.5866513252258301,True
+epicrealism_mm3,s42__in-a-forest,s42__soldier__spinning__in-a-forest,soldier,spinning,in a forest,H,0.9744354685147604,False,0.599372148513794,0.33561384677886963,0.25572389364242554,False
+epicrealism_mm3,s42__in-a-forest,s42__dancer__running__in-a-forest,dancer,running,in a forest,H,0.9481597959995269,False,0.8216562867164612,0.3389155864715576,0.7198694944381714,True
+epicrealism_mm3,s42__in-a-forest,s42__dancer__walking__in-a-forest,dancer,walking,in a forest,H,0.9753892064094544,False,0.3195899426937103,0.32566189765930176,0.3685062825679779,True
+epicrealism_mm3,s42__in-a-forest,s42__dancer__jumping__in-a-forest,dancer,jumping,in a forest,H,0.9711715161800385,False,0.45801791548728943,0.3663865327835083,0.18124255537986755,False
+epicrealism_mm3,s42__in-a-forest,s42__dancer__spinning__in-a-forest,dancer,spinning,in a forest,H,0.9659940759340923,False,0.25019514560699463,0.3321433663368225,0.32775068283081055,True
+epicrealism_mm3,s42__in-a-forest,s42__child__running__in-a-forest,child,running,in a forest,H,0.9615959445635478,False,0.3875729739665985,0.35360291600227356,0.4027044177055359,False
+epicrealism_mm3,s42__in-a-forest,s42__child__walking__in-a-forest,child,walking,in a forest,H,0.9684442341327667,False,0.8911888599395752,0.3210355043411255,0.7725697755813599,True
+epicrealism_mm3,s42__in-a-forest,s42__child__jumping__in-a-forest,child,jumping,in a forest,H,0.9496179580688476,False,1.5655059814453125,0.3532842695713043,0.48868247866630554,True
+epicrealism_mm3,s42__in-a-forest,s42__child__spinning__in-a-forest,child,spinning,in a forest,H,0.9545741856098175,False,0.7640506625175476,0.32922226190567017,0.6636380553245544,True
+epicrealism_mm3,s42__in-a-forest,s42__elderly-man__running__in-a-forest,elderly man,running,in a forest,H,0.9697589675585429,False,0.6911270022392273,0.3433487117290497,0.8788682222366333,True
+epicrealism_mm3,s42__in-a-forest,s42__elderly-man__walking__in-a-forest,elderly man,walking,in a forest,H,0.9452968180179596,False,0.29583740234375,0.32716307044029236,0.48453304171562195,True
+epicrealism_mm3,s42__in-a-forest,s42__elderly-man__jumping__in-a-forest,elderly man,jumping,in a forest,H,0.9603286147117615,False,2.873344898223877,0.3805859386920929,0.44405272603034973,False
+epicrealism_mm3,s42__in-a-forest,s42__elderly-man__spinning__in-a-forest,elderly man,spinning,in a forest,H,0.9836200038592021,False,0.3773910105228424,0.31111496686935425,0.7472219467163086,True
+epicrealism_mm3,s42__on-a-beach,s42__golden-retriever__running__on-a-beach,golden retriever,running,on a beach,Q,0.9777855296929677,False,1.138593077659607,0.3738343119621277,0.5174310803413391,True
+epicrealism_mm3,s42__on-a-beach,s42__golden-retriever__walking__on-a-beach,golden retriever,walking,on a beach,Q,0.9707867801189423,False,0.9270321726799011,0.35957735776901245,0.6391357183456421,True
+epicrealism_mm3,s42__on-a-beach,s42__golden-retriever__jumping__on-a-beach,golden retriever,jumping,on a beach,Q,0.9693758368492127,False,0.963647723197937,0.3662407398223877,0.4893321990966797,True
+epicrealism_mm3,s42__on-a-beach,s42__golden-retriever__spinning__on-a-beach,golden retriever,spinning,on a beach,Q,0.9655747870604198,False,1.1115375757217407,0.3611534833908081,0.05561218038201332,False
+epicrealism_mm3,s42__on-a-beach,s42__german-shepherd__running__on-a-beach,german shepherd,running,on a beach,Q,0.9627796610196432,False,1.919962763786316,0.36098986864089966,0.43885746598243713,True
+epicrealism_mm3,s42__on-a-beach,s42__german-shepherd__walking__on-a-beach,german shepherd,walking,on a beach,Q,0.9589376807212829,False,2.2232203483581543,0.3577260971069336,0.7129958271980286,True
+epicrealism_mm3,s42__on-a-beach,s42__german-shepherd__jumping__on-a-beach,german shepherd,jumping,on a beach,Q,0.963256820042928,False,2.1484415531158447,0.36402517557144165,0.3802102208137512,True
+epicrealism_mm3,s42__on-a-beach,s42__german-shepherd__spinning__on-a-beach,german shepherd,spinning,on a beach,Q,0.981819502512614,False,1.615626573562622,0.33360886573791504,0.07841598242521286,False
+epicrealism_mm3,s42__on-a-beach,s42__horse__running__on-a-beach,horse,running,on a beach,Q,0.9790169258912405,False,0.580306351184845,0.32917076349258423,0.15869975090026855,False
+epicrealism_mm3,s42__on-a-beach,s42__horse__walking__on-a-beach,horse,walking,on a beach,Q,0.9855714639027914,False,0.6896945834159851,0.34488847851753235,0.6648318767547607,True
+epicrealism_mm3,s42__on-a-beach,s42__horse__jumping__on-a-beach,horse,jumping,on a beach,Q,0.9663865387439727,False,0.790538489818573,0.33278825879096985,0.2903056740760803,False
+epicrealism_mm3,s42__on-a-beach,s42__horse__spinning__on-a-beach,horse,spinning,on a beach,Q,0.9665342231591543,False,0.6859780550003052,0.31821098923683167,0.22220478951931,False
+epicrealism_mm3,s42__on-a-beach,s42__wolf__running__on-a-beach,wolf,running,on a beach,Q,0.976460212469101,False,1.4822815656661987,0.35280823707580566,0.4652445614337921,True
+epicrealism_mm3,s42__on-a-beach,s42__wolf__walking__on-a-beach,wolf,walking,on a beach,Q,0.9855943143367767,False,1.1272834539413452,0.34626007080078125,0.6596003174781799,True
+epicrealism_mm3,s42__on-a-beach,s42__wolf__jumping__on-a-beach,wolf,jumping,on a beach,Q,0.972952804962794,False,0.9053851366043091,0.3495933711528778,0.19453473389148712,False
+epicrealism_mm3,s42__on-a-beach,s42__wolf__spinning__on-a-beach,wolf,spinning,on a beach,Q,0.9587007244427999,False,0.8359020352363586,0.31153514981269836,0.20162980258464813,False
+epicrealism_mm3,s42__on-a-beach,s42__tiger__running__on-a-beach,tiger,running,on a beach,Q,0.9834733764330547,False,1.0983994007110596,0.4017789959907532,0.2942013442516327,False
+epicrealism_mm3,s42__on-a-beach,s42__tiger__walking__on-a-beach,tiger,walking,on a beach,Q,0.9910984873771668,False,0.7646303176879883,0.39239248633384705,0.861323356628418,True
+epicrealism_mm3,s42__on-a-beach,s42__tiger__jumping__on-a-beach,tiger,jumping,on a beach,Q,0.9842433869838715,False,0.9685065150260925,0.39820441603660583,0.14308607578277588,False
+epicrealism_mm3,s42__on-a-beach,s42__tiger__spinning__on-a-beach,tiger,spinning,on a beach,Q,0.9801588336626689,False,1.1868385076522827,0.3911997973918915,0.0549841970205307,False
+epicrealism_mm3,s42__on-a-beach,s42__fox__running__on-a-beach,fox,running,on a beach,Q,0.9505567967891693,False,1.169118881225586,0.3486371338367462,0.18374596536159515,False
+epicrealism_mm3,s42__on-a-beach,s42__fox__walking__on-a-beach,fox,walking,on a beach,Q,0.9608779867490133,False,1.526996374130249,0.37610524892807007,0.6929218173027039,True
+epicrealism_mm3,s42__on-a-beach,s42__fox__jumping__on-a-beach,fox,jumping,on a beach,Q,0.9579658329486846,False,0.7033107876777649,0.3795158863067627,0.5626618266105652,True
+epicrealism_mm3,s42__on-a-beach,s42__fox__spinning__on-a-beach,fox,spinning,on a beach,Q,0.9436247150103251,False,0.8760141134262085,0.3365551233291626,0.025499064475297928,False
+epicrealism_mm3,s42__on-a-beach,s42__deer__running__on-a-beach,deer,running,on a beach,Q,0.9782770931720733,False,0.4363633990287781,0.349478155374527,0.13673055171966553,False
+epicrealism_mm3,s42__on-a-beach,s42__deer__walking__on-a-beach,deer,walking,on a beach,Q,0.9841913998126983,False,0.6460136771202087,0.3715989589691162,0.67848801612854,True
+epicrealism_mm3,s42__on-a-beach,s42__deer__jumping__on-a-beach,deer,jumping,on a beach,Q,0.9766988714536031,False,0.522928774356842,0.3714304566383362,0.21623127162456512,False
+epicrealism_mm3,s42__on-a-beach,s42__deer__spinning__on-a-beach,deer,spinning,on a beach,Q,0.9748453736305237,False,0.8901854157447815,0.3628404140472412,0.07303110510110855,False
+epicrealism_mm3,s42__on-a-beach,s42__brown-bear__running__on-a-beach,brown bear,running,on a beach,Q,0.9752315223217011,False,0.7602419257164001,0.3608601689338684,0.3048129081726074,False
+epicrealism_mm3,s42__on-a-beach,s42__brown-bear__walking__on-a-beach,brown bear,walking,on a beach,Q,0.9721072117487589,False,0.947119951248169,0.36424994468688965,0.737091064453125,True
+epicrealism_mm3,s42__on-a-beach,s42__brown-bear__jumping__on-a-beach,brown bear,jumping,on a beach,Q,0.9762861092885335,False,0.786774754524231,0.38253241777420044,0.40209218859672546,True
+epicrealism_mm3,s42__on-a-beach,s42__brown-bear__spinning__on-a-beach,brown bear,spinning,on a beach,Q,0.9718140463034312,False,0.5350860953330994,0.33183175325393677,0.02895241416990757,False
+epicrealism_mm3,s42__on-a-beach,s42__young-man__running__on-a-beach,young man,running,on a beach,H,0.9781372328599294,False,0.9352841973304749,0.3266998827457428,0.818794846534729,True
+epicrealism_mm3,s42__on-a-beach,s42__young-man__walking__on-a-beach,young man,walking,on a beach,H,0.9807072122891743,False,1.3004040718078613,0.31002077460289,0.7408632040023804,True
+epicrealism_mm3,s42__on-a-beach,s42__young-man__jumping__on-a-beach,young man,jumping,on a beach,H,0.9829521695772807,False,0.9518699645996094,0.3467569351196289,0.913526713848114,True
+epicrealism_mm3,s42__on-a-beach,s42__young-man__spinning__on-a-beach,young man,spinning,on a beach,H,0.9822647054990132,False,1.0658493041992188,0.29986563324928284,0.4776207506656647,True
+epicrealism_mm3,s42__on-a-beach,s42__young-woman__running__on-a-beach,young woman,running,on a beach,H,0.9711889942487081,False,1.616771936416626,0.3381184935569763,0.8415848612785339,True
+epicrealism_mm3,s42__on-a-beach,s42__young-woman__walking__on-a-beach,young woman,walking,on a beach,H,0.9825352311134339,False,1.4856019020080566,0.3198310136795044,0.8230156898498535,True
+epicrealism_mm3,s42__on-a-beach,s42__young-woman__jumping__on-a-beach,young woman,jumping,on a beach,H,0.972944297393163,False,1.6470515727996826,0.3456874489784241,0.933151364326477,True
+epicrealism_mm3,s42__on-a-beach,s42__young-woman__spinning__on-a-beach,young woman,spinning,on a beach,H,0.9722343007723491,False,1.1002509593963623,0.328797310590744,0.4536944031715393,True
+epicrealism_mm3,s42__on-a-beach,s42__athlete__running__on-a-beach,athlete,running,on a beach,H,0.9807091931502024,False,0.5628184676170349,0.32332780957221985,0.7291086316108704,True
+epicrealism_mm3,s42__on-a-beach,s42__athlete__walking__on-a-beach,athlete,walking,on a beach,H,0.9767810384432475,False,0.7292525172233582,0.2987738251686096,0.5425649285316467,True
+epicrealism_mm3,s42__on-a-beach,s42__athlete__jumping__on-a-beach,athlete,jumping,on a beach,H,0.981480747461319,False,0.5061008930206299,0.3150423467159271,0.5834126472473145,True
+epicrealism_mm3,s42__on-a-beach,s42__athlete__spinning__on-a-beach,athlete,spinning,on a beach,H,0.971586940685908,False,0.7008615732192993,0.30577608942985535,0.11344718933105469,False
+epicrealism_mm3,s42__on-a-beach,s42__soldier__running__on-a-beach,soldier,running,on a beach,H,0.9728250940640767,False,0.9292715191841125,0.3671507239341736,0.8320518136024475,True
+epicrealism_mm3,s42__on-a-beach,s42__soldier__walking__on-a-beach,soldier,walking,on a beach,H,0.9669667541980743,False,1.1957550048828125,0.35683557391166687,0.6817050576210022,True
+epicrealism_mm3,s42__on-a-beach,s42__soldier__jumping__on-a-beach,soldier,jumping,on a beach,H,0.9781621297200521,False,0.8267441987991333,0.3683985471725464,0.047619421035051346,False
+epicrealism_mm3,s42__on-a-beach,s42__soldier__spinning__on-a-beach,soldier,spinning,on a beach,H,0.9732845624287924,False,0.7579257488250732,0.33714306354522705,0.2348811775445938,False
+epicrealism_mm3,s42__on-a-beach,s42__dancer__running__on-a-beach,dancer,running,on a beach,H,0.9762410740057628,False,0.9250918626785278,0.32033824920654297,0.8129393458366394,True
+epicrealism_mm3,s42__on-a-beach,s42__dancer__walking__on-a-beach,dancer,walking,on a beach,H,0.9868713239828746,False,0.49913138151168823,0.30953752994537354,0.3523890972137451,False
+epicrealism_mm3,s42__on-a-beach,s42__dancer__jumping__on-a-beach,dancer,jumping,on a beach,H,0.9845720589160919,False,0.43077775835990906,0.33936774730682373,0.6047215461730957,True
+epicrealism_mm3,s42__on-a-beach,s42__dancer__spinning__on-a-beach,dancer,spinning,on a beach,H,0.9726272920767466,False,2.1634714603424072,0.30371397733688354,0.3419865369796753,True
+epicrealism_mm3,s42__on-a-beach,s42__child__running__on-a-beach,child,running,on a beach,H,0.9759398798147837,False,1.4432919025421143,0.32276540994644165,0.6418318152427673,True
+epicrealism_mm3,s42__on-a-beach,s42__child__walking__on-a-beach,child,walking,on a beach,H,0.9736216982205709,False,1.348881483078003,0.3179064691066742,0.7947997450828552,True
+epicrealism_mm3,s42__on-a-beach,s42__child__jumping__on-a-beach,child,jumping,on a beach,H,0.9819049199422201,False,1.6890381574630737,0.3482201099395752,0.6884801983833313,True
+epicrealism_mm3,s42__on-a-beach,s42__child__spinning__on-a-beach,child,spinning,on a beach,H,0.9614717821280162,False,2.4860970973968506,0.3249295949935913,0.10474029928445816,False
+epicrealism_mm3,s42__on-a-beach,s42__elderly-man__running__on-a-beach,elderly man,running,on a beach,H,0.9791577855745951,False,1.2803279161453247,0.3726045787334442,0.7382482886314392,True
+epicrealism_mm3,s42__on-a-beach,s42__elderly-man__walking__on-a-beach,elderly man,walking,on a beach,H,0.9779029349486034,False,0.9564937949180603,0.3505108654499054,0.5583125352859497,True
+epicrealism_mm3,s42__on-a-beach,s42__elderly-man__jumping__on-a-beach,elderly man,jumping,on a beach,H,0.9852551579475403,False,0.9547883868217468,0.3940335512161255,0.30759507417678833,False
+epicrealism_mm3,s42__on-a-beach,s42__elderly-man__spinning__on-a-beach,elderly man,spinning,on a beach,H,0.9737154146035513,False,1.1492362022399902,0.33825600147247314,0.2587932348251343,False

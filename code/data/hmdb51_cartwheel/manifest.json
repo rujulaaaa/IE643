@@ -1,0 +1,57 @@
+{
+ "source": "https://huggingface.co/datasets/divm/hmdb51",
+ "revision": "0b7ec9fef2ce1809ebc7a669227b99f731075683",
+ "classes": {
+  "cartwheel": "doing a cartwheel"
+ },
+ "rule": "(deterministic, applied to HMDB51's own annotation tags in the file name):\n    body fully visible (f), no camera motion (nm), one person (np1), quality not \"bad\";\n    sorted by file name, at most one clip per source film, first 5 per class.\nA static camera matters: with camera motion the LoRA would learn panning, not the action.",
+ "per_film": 3,
+ "cut_free": true,
+ "dropped_for_cuts": [
+  "test/cartwheel_Ein_guter_Radschlag_cartwheel_f_nm_np1_ba_med_0.mp4",
+  "test/cartwheel_How_to_do_a_Cartwheel_cartwheel_f_nm_np1_le_med_2.mp4",
+  "train/cartwheel_Ein_guter_Radschlag_cartwheel_f_nm_np1_ba_med_3.mp4"
+ ],
+ "clips": [
+  {
+   "class": "cartwheel",
+   "verb": "doing a cartwheel",
+   "split": "test",
+   "path": "cartwheel/cartwheel_Ein_guter_Radschlag_cartwheel_f_nm_np1_le_med_4.mp4",
+   "bytes": 92429,
+   "sha256": "c81c86eb36046dbef48743bc25fde1b1a831633ccbd98b8f1000a43ffe1bfcca"
+  },
+  {
+   "class": "cartwheel",
+   "verb": "doing a cartwheel",
+   "split": "test",
+   "path": "cartwheel/cartwheel_Gymnastics__-_Steps_to_Do_a_Cartwheel_cartwheel_f_nm_np1_le_med_0.mp4",
+   "bytes": 169857,
+   "sha256": "23e6cce3b06cf102ceec5e50805c30700664bc895245483214ff49f76126030b"
+  },
+  {
+   "class": "cartwheel",
+   "verb": "doing a cartwheel",
+   "split": "test",
+   "path": "cartwheel/cartwheel_How_to_do_a_Cartwheel_cartwheel_f_nm_np1_ri_med_0.mp4",
+   "bytes": 109833,
+   "sha256": "0907606204753f935da953b681d14ddf9c3fd2e3cb28008bcdaa6414816c2787"
+  },
+  {
+   "class": "cartwheel",
+   "verb": "doing a cartwheel",
+   "split": "train",
+   "path": "cartwheel/cartwheel_Aerial_Cartwheel_Tutorial_By_Jujimufu_cartwheel_f_nm_np1_ri_med_0.mp4",
+   "bytes": 72122,
+   "sha256": "a188d7176ecce6b8ba9b9a2f8deae66356d35a1b5c1130a23292908b6903fc63"
+  },
+  {
+   "class": "cartwheel",
+   "verb": "doing a cartwheel",
+   "split": "train",
+   "path": "cartwheel/cartwheel_How_to_do_a_Cartwheel_cartwheel_f_nm_np1_le_med_1.mp4",
+   "bytes": 120710,
+   "sha256": "729fee65908576c267fa715992b82fe26c2e7cbcb9e030088cdda622d7531162"
+  }
+ ]
+}

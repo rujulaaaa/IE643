@@ -1,0 +1,33 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 824.19it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1208.38it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:01<00:06,  1.39s/it]Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:02,  1.55it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 4727.42it/s]
+Loading pipeline components...:  83%|████████▎ | 5/6 [00:01<00:00,  4.05it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.37it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.2 s
+117 coordinates, coarse 16
+
+=== s42__on-a-beach: 60 clips, 125 pairs {'content': 52, 'motion': 45, 'cross_family': 28}, 21 anchors, 43 scored coordinates (30 refined)
+    step  5/25   1408.2 s  (4.69 s per clip-step)
+    step 10/25   2807.9 s  (4.68 s per clip-step)
+    step 15/25   4211.1 s  (4.68 s per clip-step)
+    step 20/25   5593.0 s  (4.66 s per clip-step)
+    step 25/25   6981.4 s  (4.65 s per clip-step)
+  denoised in 116.4 min (116.4 s per clip), peak host RSS 8.3 GB
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 9421.47it/s]
+Downloading: "https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth
+  0%|          | 0.00/20.1M [00:00<?, ?B/s] 48%|████▊     | 9.62M/20.1M [00:00<00:00, 100MB/s]100%|██████████| 20.1M/20.1M [00:00<00:00, 149MB/s]
+wrote /kaggle/working/out/sd15_mm2/s42__on-a-beach/manifest.json
+
+=== s1337__on-a-beach: 60 clips, 125 pairs {'content': 52, 'motion': 45, 'cross_family': 28}, 21 anchors, 43 scored coordinates (30 refined)
+    step  5/25   1408.9 s  (4.70 s per clip-step)
+    step 10/25   2812.5 s  (4.69 s per clip-step)
+    step 15/25   4215.8 s  (4.68 s per clip-step)
+    step 20/25   5599.7 s  (4.67 s per clip-step)
+    step 25/25   6991.4 s  (4.66 s per clip-step)
+  denoised in 116.5 min (116.5 s per clip), peak host RSS 8.3 GB
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 10568.41it/s]
+wrote /kaggle/working/out/sd15_mm2/s1337__on-a-beach/manifest.json

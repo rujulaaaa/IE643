@@ -1,0 +1,33 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 997.46it/s]
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 10 files:  10%|█         | 1/10 [00:00<00:01,  7.42it/s]Fetching 10 files:  90%|█████████ | 9/10 [00:00<00:00, 39.22it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 35.85it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files:  85%|████████▍ | 11/13 [00:02<00:00,  5.48it/s]Fetching 13 files:  92%|█████████▏| 12/13 [00:04<00:00,  2.24it/s]Fetching 13 files: 100%|██████████| 13/13 [00:07<00:00,  1.20it/s]Fetching 13 files: 100%|██████████| 13/13 [00:07<00:00,  1.69it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:02<00:13,  2.77s/it]Loading pipeline components...:  33%|███▎      | 2/6 [00:03<00:05,  1.32s/it]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights:  70%|███████   | 138/196 [00:00<00:00, 1234.93it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 1237.79it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:03<00:02,  1.10it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:03<00:00,  1.68it/s]
+  base emilianJR/epiCRealism@6522cf856b, adapter @6167b88ffe, 40.5 s
+117 coordinates, coarse 16
+
+=== s42__in-a-forest: 60 clips, 125 pairs {'content': 52, 'motion': 45, 'cross_family': 28}, 21 anchors, 43 scored coordinates (30 refined)
+    step  5/25   1672.6 s  (5.58 s per clip-step)
+    step 10/25   3341.0 s  (5.57 s per clip-step)
+    step 15/25   5010.6 s  (5.57 s per clip-step)
+    step 20/25   6657.0 s  (5.55 s per clip-step)
+    step 25/25   8311.3 s  (5.54 s per clip-step)
+  denoised in 138.5 min (138.5 s per clip), peak host RSS 8.7 GB
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 10223.87it/s]
+wrote /kaggle/working/out/epicrealism_mm2/s42__in-a-forest/manifest.json
+
+=== s1337__in-a-forest: 60 clips, 125 pairs {'content': 52, 'motion': 45, 'cross_family': 28}, 21 anchors, 43 scored coordinates (30 refined)
+    step  5/25   1670.5 s  (5.57 s per clip-step)
+    step 10/25   3342.6 s  (5.57 s per clip-step)
+    step 15/25   5013.9 s  (5.57 s per clip-step)
+    step 20/25   6661.2 s  (5.55 s per clip-step)
+    step 25/25   8316.2 s  (5.54 s per clip-step)
+  denoised in 138.6 min (138.6 s per clip), peak host RSS 8.7 GB
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 14286.12it/s]
+wrote /kaggle/working/out/epicrealism_mm2/s1337__in-a-forest/manifest.json

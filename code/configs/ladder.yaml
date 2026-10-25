@@ -1,0 +1,33 @@
+# Experiment 2 content ladder (docs/experiment2.md, report §"A seven-rung content ladder").
+# Every pair changes exactly one slot of the prompt against its base clip; the base subject is
+# "{coat} {colour} {breed}". Rungs 1-4 change the subject, 5-6 the context, 0 is the text floor.
+# Frozen before the run; changes get a dated entry in docs/protocol.md.
+
+frozen_on: "2026-10-24"
+
+coat: smooth-coated          # rung 2 swaps it for `coat_swap`
+coat_swap: shaggy
+colour: brown                # rung 1 swaps it for `colour_swap`
+colour_swap: black
+scene: on a beach
+scene_null: on the beach     # rung 0: a determiner change, no content change intended
+scene_swap: in a snowy forest   # rung 5
+lighting_swap: on a beach at sunset   # rung 6
+
+# 8 bases from 4 families (canid, felid, equid, bovid): breed -> (breed swap, species swap)
+bases:
+  - {family: canid, breed: labrador, breed_swap: dalmatian, species_swap: wolf}
+  - {family: canid, breed: german shepherd, breed_swap: husky, species_swap: fox}
+  - {family: felid, breed: house cat, breed_swap: siamese cat, species_swap: lynx}
+  - {family: felid, breed: persian cat, breed_swap: bengal cat, species_swap: ocelot}
+  - {family: equid, breed: arabian horse, breed_swap: clydesdale horse, species_swap: zebra}
+  - {family: equid, breed: thoroughbred horse, breed_swap: shetland pony, species_swap: donkey}
+  - {family: bovid, breed: holstein cow, breed_swap: highland cow, species_swap: bison}
+  - {family: bovid, breed: alpine goat, breed_swap: pygmy goat, species_swap: sheep}
+
+verbs: [running, walking]     # replace with the two best-rendered verbs of the Phase 1 pilot
+seeds: [42, 1337]
+
+expected_counts:
+  clips_per_seed: 128        # 8 bases x 2 verbs x (1 base + 7 variants)
+  pairs_per_seed: 112        # 8 x 2 x 7

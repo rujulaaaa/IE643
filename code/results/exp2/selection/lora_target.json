@@ -1,0 +1,21 @@
+{
+ "rule": "D-35",
+ "cell": "epicrealism_mm3",
+ "target": [
+  "up_blocks.0.motion_modules.2",
+  "up_blocks.0.motion_modules.1",
+  "down_blocks.3.motion_modules.0"
+ ],
+ "scores": {
+  "down_blocks.2.motion_modules.0": 0.03251288293180613,
+  "down_blocks.2.motion_modules.1": 0.03057228615648512,
+  "down_blocks.3.motion_modules.0": 0.0447229667029838,
+  "down_blocks.3.motion_modules.1": 0.044058628906030885,
+  "up_blocks.0.motion_modules.0": 0.03969600980068385,
+  "up_blocks.0.motion_modules.1": 0.05596578280749867,
+  "up_blocks.0.motion_modules.2": 0.05632035722907494,
+  "up_blocks.1.motion_modules.0": 0.03350140350319382,
+  "up_blocks.1.motion_modules.1": 0.029332318862913705,
+  "up_blocks.1.motion_modules.2": 0.03246183059468867
+ }
+}

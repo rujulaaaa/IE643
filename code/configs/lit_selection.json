@@ -1,0 +1,16 @@
+{
+ "motion": {
+  "single": "motion.attn.all.all",
+  "dual": "motion.dual.up23.from2"
+ },
+ "content": {
+  "single": "content.kv.probe.from2",
+  "dual": "content.dual.all"
+ },
+ "dev_median_dD": {
+  "motion.attn.all.all": 0.152457694064227,
+  "motion.dual.up23.from2": 0.14737443634507935,
+  "content.kv.probe.from2": 0.056100089201416375,
+  "content.dual.all": 0.12057870521588415
+ }
+}
