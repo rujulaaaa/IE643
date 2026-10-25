@@ -1,0 +1,35 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:  50%|█████     | 1/2 [00:00<00:00,  5.48it/s]Fetching 2 files: 100%|██████████| 2/2 [00:05<00:00,  3.22s/it]Fetching 2 files: 100%|██████████| 2/2 [00:05<00:00,  2.77s/it]
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  10%|█         | 1/10 [00:00<00:01,  6.69it/s]Fetching 10 files:  40%|████      | 4/10 [00:00<00:00, 16.18it/s]Fetching 10 files:  90%|█████████ | 9/10 [00:00<00:00, 27.45it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 15.34it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files:  85%|████████▍ | 11/13 [00:05<00:00,  2.10it/s]Fetching 13 files:  92%|█████████▏| 12/13 [00:07<00:00,  1.53it/s]Fetching 13 files: 100%|██████████| 13/13 [00:18<00:00,  2.18s/it]Fetching 13 files: 100%|██████████| 13/13 [00:18<00:00,  1.44s/it]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:01<00:06,  1.36s/it]Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:02,  1.48it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights:  69%|██████▉   | 136/196 [00:00<00:00, 1337.30it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 1394.70it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:02<00:01,  1.65it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:03<00:02,  1.03s/it]Loading pipeline components...: 100%|██████████| 6/6 [00:03<00:00,  1.57it/s]
+  base emilianJR/epiCRealism@6522cf856b, adapter @2e8139b1d1, 47.8 s
+114 coordinates, coarse 15
+
+=== s42__in-a-forest: 60 clips, 125 pairs {'content': 52, 'motion': 45, 'cross_family': 28}, 21 anchors, 42 scored coordinates (30 refined)
+    step  5/25   1462.2 s  (4.87 s per clip-step)
+    step 10/25   2923.9 s  (4.87 s per clip-step)
+    step 15/25   4386.3 s  (4.87 s per clip-step)
+    step 20/25   5826.8 s  (4.86 s per clip-step)
+    step 25/25   7275.1 s  (4.85 s per clip-step)
+  denoised in 121.3 min (121.3 s per clip), peak host RSS 8.5 GB
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 8356.65it/s]
+Downloading: "https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth
+  0%|          | 0.00/20.1M [00:00<?, ?B/s] 61%|██████    | 12.2M/20.1M [00:00<00:00, 128MB/s]100%|██████████| 20.1M/20.1M [00:00<00:00, 154MB/s]
+wrote /kaggle/working/out/epicrealism_mm3/s42__in-a-forest/manifest.json
+
+=== s1337__in-a-forest: 60 clips, 125 pairs {'content': 52, 'motion': 45, 'cross_family': 28}, 21 anchors, 42 scored coordinates (30 refined)
+    step  5/25   1468.6 s  (4.90 s per clip-step)
+    step 10/25   2929.9 s  (4.88 s per clip-step)
+    step 15/25   4391.4 s  (4.88 s per clip-step)
+    step 20/25   5830.5 s  (4.86 s per clip-step)
+    step 25/25   7277.3 s  (4.85 s per clip-step)
+  denoised in 121.3 min (121.3 s per clip), peak host RSS 8.5 GB
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 9862.42it/s]
+wrote /kaggle/working/out/epicrealism_mm3/s1337__in-a-forest/manifest.json

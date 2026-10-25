@@ -1,0 +1,139 @@
+[{"stream_name":"stdout","time":19.298382901,"data":"2\n"}
+,{"stream_name":"stdout","time":19.298445661,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":19.298451236,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":19.298454595,"data":"2.11.0+cu128\n"}
+,{"stream_name":"stdout","time":19.298457856,"data":" \n"}
+,{"stream_name":"stderr","time":22.443777566,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":29.272721129,"data":"\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  9.15it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:06\u003c00:00,  4.05s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:06\u003c00:00,  3.46s/it]\n"}
+,{"stream_name":"stderr","time":42.776234987,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:   8%|▊         | 1/13 [00:00\u003c00:01,  9.51it/s]\rFetching 13 files:  54%|█████▍    | 7/13 [00:07\u003c00:06,  1.05s/it]\rFetching 13 files:  85%|████████▍ | 11/13 [00:08\u003c00:01,  1.27it/s]\rFetching 13 files:  92%|█████████▏| 12/13 [00:10\u003c00:00,  1.08it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:13\u003c00:00,  1.19s/it]\rFetching 13 files: 100%|██████████| 13/13 [00:13\u003c00:00,  1.02s/it]\n"}
+,{"stream_name":"stderr","time":46.564017589,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:   8%|▊         | 1/12 [00:00\u003c00:01,  8.91it/s]\rFetching 12 files:  58%|█████▊    | 7/12 [00:00\u003c00:00, 31.02it/s]\rFetching 12 files:  83%|████████▎ | 10/12 [00:03\u003c00:00,  2.30it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:03\u003c00:00,  2.99it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:03\u003c00:00,  3.36it/s]\n"}
+,{"stream_name":"stdout","time":57.409819892,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/probe_sweep.py --exp2 --config configs/variants/epicrealism_mm3.yaml --seeds 42 1337 --scenes on a beach --out /kaggle/working/out/epicrealism_mm3\n"}
+,{"stream_name":"stdout","time":57.410988968,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/probe_sweep.py --exp2 --config configs/variants/epicrealism_mm3.yaml --seeds 42 1337 --scenes in a forest --out /kaggle/working/out/epicrealism_mm3\n"}
+,{"stream_name":"stdout","time":117.412234688,"data":"[job0] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":117.412269548,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":117.412275911,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":117.412281526,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":117.412286109,"data":"[job0] Fetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  5.85it/s]\n"}
+,{"stream_name":"stdout","time":117.412291082,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:05\u003c00:00,  3.21s/it]\n"}
+,{"stream_name":"stdout","time":117.412295706,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:05\u003c00:00,  2.76s/it]\n"}
+,{"stream_name":"stdout","time":117.412300457,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":117.41230528,"data":"[job0] Fetching 10 files:   0%|          | 0/10 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":117.412310547,"data":"[job0] Fetching 10 files: 100%|██████████| 10/10 [00:00\u003c00:00, 1108.69it/s]\n"}
+,{"stream_name":"stdout","time":117.412332174,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":117.412336367,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":117.41234974,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":117.412353491,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":117.412357562,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":117.412362319,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":117.412366409,"data":"[job1] Fetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  5.48it/s]\n"}
+,{"stream_name":"stdout","time":117.412371267,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:05\u003c00:00,  3.22s/it]\n"}
+,{"stream_name":"stdout","time":117.412375789,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:05\u003c00:00,  2.77s/it]\n"}
+,{"stream_name":"stdout","time":117.412381136,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":117.412384867,"data":"[job1] Fetching 10 files:   0%|          | 0/10 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":117.412388831,"data":"[job1] Fetching 10 files:  10%|█         | 1/10 [00:00\u003c00:01,  6.69it/s]\n"}
+,{"stream_name":"stdout","time":117.412393199,"data":"[job1] Fetching 10 files:  40%|████      | 4/10 [00:00\u003c00:00, 16.18it/s]\n"}
+,{"stream_name":"stdout","time":117.412397113,"data":"[job1] Fetching 10 files:  90%|█████████ | 9/10 [00:00\u003c00:00, 27.45it/s]\n"}
+,{"stream_name":"stdout","time":117.412402095,"data":"[job1] Fetching 10 files: 100%|██████████| 10/10 [00:00\u003c00:00, 15.34it/s]\n"}
+,{"stream_name":"stdout","time":117.412406763,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":117.412410716,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":117.412415144,"data":"[job1] Fetching 13 files:  85%|████████▍ | 11/13 [00:05\u003c00:00,  2.10it/s]\n"}
+,{"stream_name":"stdout","time":117.41243646,"data":"[job1] Fetching 13 files:  92%|█████████▏| 12/13 [00:07\u003c00:00,  1.53it/s]\n"}
+,{"stream_name":"stdout","time":177.413004282,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:11\u003c00:00,  1.13it/s]\n"}
+,{"stream_name":"stdout","time":177.413147468,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:11\u003c00:00,  1.13it/s]\n"}
+,{"stream_name":"stdout","time":177.413155428,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":177.41316064,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":177.413165336,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":177.413169447,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":177.413173965,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:02\u003c00:13,  2.73s/it]\n"}
+,{"stream_name":"stdout","time":177.413178322,"data":"[job0] Loading pipeline components...:  50%|█████     | 3/6 [00:02\u003c00:02,  1.25it/s]\n"}
+,{"stream_name":"stdout","time":177.413182821,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":177.413225503,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":177.413229693,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":177.41323288,"data":"[job0] Loading weights:  71%|███████▏  | 140/196 [00:00\u003c00:00, 1347.48it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":177.413236796,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 1463.80it/s]\n"}
+,{"stream_name":"stdout","time":177.413240473,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":177.413243699,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:03\u003c00:01,  1.43it/s]\n"}
+,{"stream_name":"stdout","time":177.413247316,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:03\u003c00:00,  2.42it/s]\n"}
+,{"stream_name":"stdout","time":177.413250931,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:03\u003c00:00,  1.61it/s]\n"}
+,{"stream_name":"stdout","time":177.413254622,"data":"[job0]   base emilianJR/epiCRealism@6522cf856b, adapter @2e8139b1d1, 47.6 s\n"}
+,{"stream_name":"stdout","time":177.413258116,"data":"[job0] 114 coordinates, coarse 15\n"}
+,{"stream_name":"stdout","time":177.41326145,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":177.413264699,"data":"[job0] === s42__on-a-beach: 60 clips, 125 pairs {'content': 52, 'motion': 45, 'cross_family': 28}, 21 anchors, 42 scored coordinates (30 refined)\n"}
+,{"stream_name":"stdout","time":177.413287762,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:18\u003c00:00,  2.18s/it]\n"}
+,{"stream_name":"stdout","time":177.413291809,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:18\u003c00:00,  1.44s/it]\n"}
+,{"stream_name":"stdout","time":177.413295411,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":177.41329913,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":177.413302843,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":177.413306056,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":177.413309503,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:01\u003c00:06,  1.36s/it]\n"}
+,{"stream_name":"stdout","time":177.413312985,"data":"[job1] Loading pipeline components...:  33%|███▎      | 2/6 [00:01\u003c00:02,  1.48it/s]\n"}
+,{"stream_name":"stdout","time":177.413316494,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":177.41332348,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":177.413327061,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":177.413330263,"data":"[job1] Loading weights:  69%|██████▉   | 136/196 [00:00\u003c00:00, 1337.30it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":177.413334002,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 1394.70it/s]\n"}
+,{"stream_name":"stdout","time":177.413337632,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":177.413340743,"data":"[job1] Loading pipeline components...:  50%|█████     | 3/6 [00:02\u003c00:01,  1.65it/s]\n"}
+,{"stream_name":"stdout","time":177.413344428,"data":"[job1] Loading pipeline components...:  67%|██████▋   | 4/6 [00:03\u003c00:02,  1.03s/it]\n"}
+,{"stream_name":"stdout","time":177.413366174,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:03\u003c00:00,  1.57it/s]\n"}
+,{"stream_name":"stdout","time":177.413370325,"data":"[job1]   base emilianJR/epiCRealism@6522cf856b, adapter @2e8139b1d1, 47.8 s\n"}
+,{"stream_name":"stdout","time":177.413373834,"data":"[job1] 114 coordinates, coarse 15\n"}
+,{"stream_name":"stdout","time":177.413377163,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":177.413380345,"data":"[job1] === s42__in-a-forest: 60 clips, 125 pairs {'content': 52, 'motion': 45, 'cross_family': 28}, 21 anchors, 42 scored coordinates (30 refined)\n"}
+,{"stream_name":"stdout","time":1617.424039571,"data":"[job1]     step  5/25   1462.2 s  (4.87 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1677.424439549,"data":"[job0]     step  5/25   1496.7 s  (4.99 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3117.434409327,"data":"[job1]     step 10/25   2923.9 s  (4.87 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3177.434770788,"data":"[job0]     step 10/25   2995.5 s  (4.99 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4557.444246538,"data":"[job1]     step 15/25   4386.3 s  (4.87 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4677.444983734,"data":"[job0]     step 15/25   4497.9 s  (5.00 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5997.45426017,"data":"[job1]     step 20/25   5826.8 s  (4.86 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6117.455146285,"data":"[job0]     step 20/25   5977.5 s  (4.98 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7437.465077166,"data":"[job1]     step 25/25   7275.1 s  (4.85 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7437.465142106,"data":"[job1]   denoised in 121.3 min (121.3 s per clip), peak host RSS 8.5 GB\n"}
+,{"stream_name":"stdout","time":7437.465147845,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":7437.465151898,"data":"[job1] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":7437.465156315,"data":"[job1] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 8356.65it/s]\n"}
+,{"stream_name":"stdout","time":7437.465161418,"data":"[job1] Downloading: \"https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth\" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth\n"}
+,{"stream_name":"stdout","time":7437.465166068,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":7437.465169747,"data":"[job1]   0%|          | 0.00/20.1M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stdout","time":7437.46517371,"data":"[job1]  61%|██████    | 12.2M/20.1M [00:00\u003c00:00, 128MB/s]\n"}
+,{"stream_name":"stdout","time":7437.465178005,"data":"[job1] 100%|██████████| 20.1M/20.1M [00:00\u003c00:00, 154MB/s]\n"}
+,{"stream_name":"stdout","time":7617.46632613,"data":"[job0]     step 25/25   7465.3 s  (4.98 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7617.466365827,"data":"[job0]   denoised in 124.4 min (124.4 s per clip), peak host RSS 8.4 GB\n"}
+,{"stream_name":"stdout","time":7617.46637106,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":7617.466375142,"data":"[job0] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":7617.466379523,"data":"[job0] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 8663.04it/s]\n"}
+,{"stream_name":"stdout","time":7977.469307096,"data":"[job1] wrote /kaggle/working/out/epicrealism_mm3/s42__in-a-forest/manifest.json\n"}
+,{"stream_name":"stdout","time":7977.46934564,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":7977.469351204,"data":"[job1] === s1337__in-a-forest: 60 clips, 125 pairs {'content': 52, 'motion': 45, 'cross_family': 28}, 21 anchors, 42 scored coordinates (30 refined)\n"}
+,{"stream_name":"stdout","time":8157.470518152,"data":"[job0] wrote /kaggle/working/out/epicrealism_mm3/s42__on-a-beach/manifest.json\n"}
+,{"stream_name":"stdout","time":8157.470568598,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":8157.470576046,"data":"[job0] === s1337__on-a-beach: 60 clips, 125 pairs {'content': 52, 'motion': 45, 'cross_family': 28}, 21 anchors, 42 scored coordinates (30 refined)\n"}
+,{"stream_name":"stdout","time":9417.480036373,"data":"[job1]     step  5/25   1468.6 s  (4.90 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9657.481710099,"data":"[job0]     step  5/25   1509.9 s  (5.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10917.490606091,"data":"[job1]     step 10/25   2929.9 s  (4.88 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11157.492937248,"data":"[job0]     step 10/25   3013.6 s  (5.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":12357.502442863,"data":"[job1]     step 15/25   4391.4 s  (4.88 s per clip-step)\n"}
+,{"stream_name":"stdout","time":12657.504660146,"data":"[job0]     step 15/25   4517.5 s  (5.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":13797.513718067,"data":"[job1]     step 20/25   5830.5 s  (4.86 s per clip-step)\n"}
+,{"stream_name":"stdout","time":14157.51618658,"data":"[job0]     step 20/25   5999.1 s  (5.00 s per clip-step)\n"}
+,{"stream_name":"stdout","time":15237.524388136,"data":"[job1]     step 25/25   7277.3 s  (4.85 s per clip-step)\n"}
+,{"stream_name":"stdout","time":15237.524435171,"data":"[job1]   denoised in 121.3 min (121.3 s per clip), peak host RSS 8.5 GB\n"}
+,{"stream_name":"stdout","time":15237.524441957,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":15237.524447488,"data":"[job1] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":15237.524453977,"data":"[job1] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 9862.42it/s]\n"}
+,{"stream_name":"stdout","time":15597.527111528,"data":"[job0]     step 25/25   7488.1 s  (4.99 s per clip-step)\n"}
+,{"stream_name":"stdout","time":15597.52714747,"data":"[job0]   denoised in 124.8 min (124.8 s per clip), peak host RSS 8.4 GB\n"}
+,{"stream_name":"stdout","time":15657.527497315,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":15657.527543975,"data":"[job0] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":15657.527564299,"data":"[job0] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 10377.75it/s]\n"}
+,{"stream_name":"stdout","time":15717.52805835,"data":"[job1] wrote /kaggle/working/out/epicrealism_mm3/s1337__in-a-forest/manifest.json\n"}
+,{"stream_name":"stdout","time":16137.531337277,"data":"[job0] wrote /kaggle/working/out/epicrealism_mm3/s1337__on-a-beach/manifest.json\n"}
+,{"stream_name":"stdout","time":16137.531649339,"data":"exit codes [0, 0]\n"}
+,{"stream_name":"stderr","time":16139.679115239,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":16139.679143092,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":16139.973503632,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":16139.973528053,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":16140.762374161,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":16141.818791775,"data":"[NbConvertApp] Writing 434651 bytes to __results__.html\n"}
+]
