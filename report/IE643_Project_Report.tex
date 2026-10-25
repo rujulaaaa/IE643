@@ -220,15 +220,13 @@ for the Kaggle T4s.
 \item \textbf{Locating content and motion:} Generated 360 clips that formed 750 pairs with the one word
 swaped in the prompt. Then selectivity mas were created for each layer and steps. We tested Our
 3 hypothesis and trained the linear probes. 
-\item \textbf{Analysis.} Selectivity maps, the three pre-registered tests, linear probes, and
-  robustness checks.
-\item \textbf{Intervention.} Component patches and temporal-attention injection, with null and
-  mis-indexed controls run on the real model. The controls found two bugs that unit tests had missed.
-\item \textbf{Selection, then test.} A coarse sweep of 51 patch configurations on 4 dev pairs
-  chose one configuration per direction by a rule fixed in advance; 12 frozen test pairs scored it.
-\item \textbf{Trained model.} Three motion LoRAs on 19 HMDB51 clips, placed everywhere, where the
-  map points, and where it does not; retrained cut-free with three seeds once we found that 11
-  of the 19 clips contain a scene cut.
+\item \textbf{Intervention Framework:} Built patches that transplant only the static or only the frame varying
+part of the activation from one generation to another. Also built a temporal attention injection baseline.
+\item \textbf{Editing:} Chose one configuration per direction on 4 pairs of development and scored it on 12 pairs. 
+Added attention level edits and prompt switching. 
+\item \textbf{Trained Model:} Trained motion LoRAs on where the map points and also where it does not.
+After finding scene cuts in training clips we retrained.
+\item \textbf{Check findings on other models:} We repeated the probing on 4 other model variants 
 \item \textbf{Interface.} A Gradio app for live edits, uploaded videos, and browsing every scored clip.
 \end{itemize}
 
