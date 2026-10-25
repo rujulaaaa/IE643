@@ -1,0 +1,139 @@
+[{"stream_name":"stdout","time":0.97982472,"data":"dataset vdprobe-loras -\u003e /kaggle/input/datasets/rujularahate/vdprobe-loras ['anti.safetensors', 'anti_train_log.json', 'full.safetensors', 'full_train_log.json', 'probe.safetensors', 'probe_train_log.json']\n"}
+,{"stream_name":"stdout","time":18.831656987,"data":"2\n"}
+,{"stream_name":"stdout","time":18.831700229,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":18.83170469,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":18.831708584,"data":"2.11.0+cu128\n"}
+,{"stream_name":"stdout","time":18.831712603,"data":" \n"}
+,{"stream_name":"stderr","time":26.743185732,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:04\u003c00:00,  2.38s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:04\u003c00:00,  2.38s/it]\n"}
+,{"stream_name":"stderr","time":26.879044102,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":39.650789018,"data":"\rFetching 13 files:  23%|██▎       | 3/13 [00:00\u003c00:00, 26.53it/s]\rFetching 13 files:  85%|████████▍ | 11/13 [00:08\u003c00:01,  1.24it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:12\u003c00:00,  1.14s/it]\rFetching 13 files: 100%|██████████| 13/13 [00:12\u003c00:00,  1.01it/s]\n"}
+,{"stream_name":"stderr","time":47.16693976,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:   8%|▊         | 1/12 [00:00\u003c00:04,  2.51it/s]\rFetching 12 files:  67%|██████▋   | 8/12 [00:00\u003c00:00, 18.89it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:07\u003c00:00,  1.34it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:07\u003c00:00,  1.65it/s]\n"}
+,{"stream_name":"stdout","time":54.855888588,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/edit_sweep.py --split test --arms selected --sel configs/edit_selection.json --lora input/vdprobe-loras/full.safetensors --lora input/vdprobe-loras/probe.safetensors --lora input/vdprobe-loras/anti.safetensors --shard 0/2 --out /kaggle/working/out/job0\n"}
+,{"stream_name":"stdout","time":54.856828799,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/edit_sweep.py --split test --arms selected --sel configs/edit_selection.json --lora input/vdprobe-loras/full.safetensors --lora input/vdprobe-loras/probe.safetensors --lora input/vdprobe-loras/anti.safetensors --shard 1/2 --out /kaggle/working/out/job1\n"}
+,{"stream_name":"stdout","time":114.858140231,"data":"[job0] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":114.858184461,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":114.858191267,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":114.858197716,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 837.10it/s]\n"}
+,{"stream_name":"stdout","time":114.858204518,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":114.858209817,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":114.858215343,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1318.36it/s]\n"}
+,{"stream_name":"stdout","time":114.858221149,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":114.858232249,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":114.858256123,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":114.858260156,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":114.858263721,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:01\u003c00:07,  1.47s/it]\n"}
+,{"stream_name":"stdout","time":114.858267287,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":114.858270584,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":114.858274298,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2611.93it/s]\n"}
+,{"stream_name":"stdout","time":114.858278396,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":114.858282058,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:01\u003c00:02,  1.39it/s]\n"}
+,{"stream_name":"stdout","time":114.858286183,"data":"[job0] Loading pipeline components...:  50%|█████     | 3/6 [00:01\u003c00:01,  2.26it/s]\n"}
+,{"stream_name":"stdout","time":114.858290235,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  5.74it/s]\n"}
+,{"stream_name":"stdout","time":114.858294108,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  3.18it/s]\n"}
+,{"stream_name":"stdout","time":114.858297917,"data":"[job0]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.7 s\n"}
+,{"stream_name":"stdout","time":114.858302191,"data":"[job0] Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":114.858305541,"data":"[job0]   File \"/kaggle/working/repo/scripts/edit_sweep.py\", line 97, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":114.858309283,"data":"[job0]     main()\n"}
+,{"stream_name":"stdout","time":114.858312989,"data":"[job0]     ~~~~^^\n"}
+,{"stream_name":"stdout","time":114.858316477,"data":"[job0]   File \"/kaggle/working/repo/scripts/edit_sweep.py\", line 50, in main\n"}
+,{"stream_name":"stdout","time":114.858320667,"data":"[job0]     load_motion_lora(loaded.unet, path, name=name)\n"}
+,{"stream_name":"stdout","time":114.858325038,"data":"[job0]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":114.858329163,"data":"[job0]   File \"/kaggle/working/repo/src/vdprobe/lora.py\", line 74, in load_motion_lora\n"}
+,{"stream_name":"stdout","time":114.858333847,"data":"[job0]     unet.add_adapter(cfg, adapter_name=name)\n"}
+,{"stream_name":"stdout","time":114.858337319,"data":"[job0]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":114.858342909,"data":"[job0]   File \"/usr/local/lib/python3.13/dist-packages/diffusers/loaders/peft.py\", line 528, in add_adapter\n"}
+,{"stream_name":"stdout","time":114.85834675,"data":"[job0]     inject_adapter_in_model(adapter_config, self, adapter_name)\n"}
+,{"stream_name":"stdout","time":114.858350361,"data":"[job0]     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":114.858354059,"data":"[job0]   File \"/usr/local/lib/python3.13/dist-packages/peft/mapping.py\", line 88, in inject_adapter_in_model\n"}
+,{"stream_name":"stdout","time":114.858357831,"data":"[job0]     peft_model = tuner_cls(\n"}
+,{"stream_name":"stdout","time":114.858361319,"data":"[job0]         model, peft_config, adapter_name=adapter_name, low_cpu_mem_usage=low_cpu_mem_usage, state_dict=state_dict\n"}
+,{"stream_name":"stdout","time":114.858365333,"data":"[job0]     )\n"}
+,{"stream_name":"stdout","time":114.858374128,"data":"[job0]   File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py\", line 318, in __init__\n"}
+,{"stream_name":"stdout","time":114.858378171,"data":"[job0]     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage, state_dict=state_dict)\n"}
+,{"stream_name":"stdout","time":114.858396771,"data":"[job0]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":114.858401243,"data":"[job0]   File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py\", line 917, in inject_adapter\n"}
+,{"stream_name":"stdout","time":114.858405283,"data":"[job0]     self._create_and_replace(\n"}
+,{"stream_name":"stdout","time":114.85840872,"data":"[job0]     ~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":114.858412744,"data":"[job0]         peft_config, adapter_name, target, target_name, parent, current_key=key\n"}
+,{"stream_name":"stdout","time":114.85841637,"data":"[job0]         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":114.858421101,"data":"[job0]     )\n"}
+,{"stream_name":"stdout","time":114.858427456,"data":"[job0]     ^\n"}
+,{"stream_name":"stdout","time":114.858431499,"data":"[job0]   File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py\", line 281, in _create_and_replace\n"}
+,{"stream_name":"stdout","time":114.858453016,"data":"[job0]     new_module = self._create_new_module(lora_config, adapter_name, target, device_map=device_map, **kwargs)\n"}
+,{"stream_name":"stdout","time":114.858457863,"data":"[job0]   File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py\", line 430, in _create_new_module\n"}
+,{"stream_name":"stdout","time":114.858462413,"data":"[job0]     new_module = dispatcher(target, adapter_name, config=lora_config, **kwargs)\n"}
+,{"stream_name":"stdout","time":114.858466316,"data":"[job0]   File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/torchao.py\", line 160, in dispatch_torchao\n"}
+,{"stream_name":"stdout","time":114.858470854,"data":"[job0]     if not is_torchao_available():\n"}
+,{"stream_name":"stdout","time":114.858475072,"data":"[job0]            ~~~~~~~~~~~~~~~~~~~~^^\n"}
+,{"stream_name":"stdout","time":114.858479186,"data":"[job0]   File \"/usr/local/lib/python3.13/dist-packages/peft/import_utils.py\", line 147, in is_torchao_available\n"}
+,{"stream_name":"stdout","time":114.858483774,"data":"[job0]     raise ImportError(\n"}
+,{"stream_name":"stdout","time":114.858487917,"data":"[job0]     ...\u003c2 lines\u003e...\n"}
+,{"stream_name":"stdout","time":114.858492235,"data":"[job0]     )\n"}
+,{"stream_name":"stdout","time":114.858496828,"data":"[job0] ImportError: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported\n"}
+,{"stream_name":"stdout","time":114.858520177,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":114.858524861,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":114.858529121,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":114.858533517,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 824.43it/s]\n"}
+,{"stream_name":"stdout","time":114.85853847,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":114.858542504,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":114.858546787,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1320.05it/s]\n"}
+,{"stream_name":"stdout","time":114.858556327,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":114.858561465,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":114.858565619,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":114.858581415,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":114.858586203,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":114.858590359,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":114.858594888,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2182.40it/s]\n"}
+,{"stream_name":"stdout","time":114.85859979,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":114.858603897,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:01,  3.81it/s]\n"}
+,{"stream_name":"stdout","time":114.858608469,"data":"[job1] Loading pipeline components...:  50%|█████     | 3/6 [00:00\u003c00:00,  9.04it/s]\n"}
+,{"stream_name":"stdout","time":114.858626724,"data":"[job1] Loading pipeline components...:  83%|████████▎ | 5/6 [00:01\u003c00:00,  2.83it/s]\n"}
+,{"stream_name":"stdout","time":114.858631551,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  3.79it/s]\n"}
+,{"stream_name":"stdout","time":114.858636398,"data":"[job1]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 16.6 s\n"}
+,{"stream_name":"stdout","time":114.858640899,"data":"[job1] Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":114.858645499,"data":"[job1]   File \"/kaggle/working/repo/scripts/edit_sweep.py\", line 97, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":114.858649886,"data":"[job1]     main()\n"}
+,{"stream_name":"stdout","time":114.858653848,"data":"[job1]     ~~~~^^\n"}
+,{"stream_name":"stdout","time":114.858669754,"data":"[job1]   File \"/kaggle/working/repo/scripts/edit_sweep.py\", line 50, in main\n"}
+,{"stream_name":"stdout","time":114.858674647,"data":"[job1]     load_motion_lora(loaded.unet, path, name=name)\n"}
+,{"stream_name":"stdout","time":114.858679094,"data":"[job1]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":114.858683354,"data":"[job1]   File \"/kaggle/working/repo/src/vdprobe/lora.py\", line 74, in load_motion_lora\n"}
+,{"stream_name":"stdout","time":114.858687868,"data":"[job1]     unet.add_adapter(cfg, adapter_name=name)\n"}
+,{"stream_name":"stdout","time":114.858692199,"data":"[job1]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":114.85870545,"data":"[job1]   File \"/usr/local/lib/python3.13/dist-packages/diffusers/loaders/peft.py\", line 528, in add_adapter\n"}
+,{"stream_name":"stdout","time":114.858710374,"data":"[job1]     inject_adapter_in_model(adapter_config, self, adapter_name)\n"}
+,{"stream_name":"stdout","time":114.858714744,"data":"[job1]     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":114.858719049,"data":"[job1]   File \"/usr/local/lib/python3.13/dist-packages/peft/mapping.py\", line 88, in inject_adapter_in_model\n"}
+,{"stream_name":"stdout","time":114.85872369,"data":"[job1]     peft_model = tuner_cls(\n"}
+,{"stream_name":"stdout","time":114.858727919,"data":"[job1]         model, peft_config, adapter_name=adapter_name, low_cpu_mem_usage=low_cpu_mem_usage, state_dict=state_dict\n"}
+,{"stream_name":"stdout","time":114.858750104,"data":"[job1]     )\n"}
+,{"stream_name":"stdout","time":114.858754607,"data":"[job1]   File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py\", line 318, in __init__\n"}
+,{"stream_name":"stdout","time":114.858759281,"data":"[job1]     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage, state_dict=state_dict)\n"}
+,{"stream_name":"stdout","time":114.858763958,"data":"[job1]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":114.858768475,"data":"[job1]   File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py\", line 917, in inject_adapter\n"}
+,{"stream_name":"stdout","time":114.8587731,"data":"[job1]     self._create_and_replace(\n"}
+,{"stream_name":"stdout","time":114.858788234,"data":"[job1]     ~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stdout","time":114.858792713,"data":"[job1]         peft_config, adapter_name, target, target_name, parent, current_key=key\n"}
+,{"stream_name":"stdout","time":114.858797314,"data":"[job1]         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":114.858801701,"data":"[job1]     )\n"}
+,{"stream_name":"stdout","time":114.858805654,"data":"[job1]     ^\n"}
+,{"stream_name":"stdout","time":114.858809859,"data":"[job1]   File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py\", line 281, in _create_and_replace\n"}
+,{"stream_name":"stdout","time":114.858822597,"data":"[job1]     new_module = self._create_new_module(lora_config, adapter_name, target, device_map=device_map, **kwargs)\n"}
+,{"stream_name":"stdout","time":114.858827546,"data":"[job1]   File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py\", line 430, in _create_new_module\n"}
+,{"stream_name":"stdout","time":114.858832204,"data":"[job1]     new_module = dispatcher(target, adapter_name, config=lora_config, **kwargs)\n"}
+,{"stream_name":"stdout","time":114.858836806,"data":"[job1]   File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/torchao.py\", line 160, in dispatch_torchao\n"}
+,{"stream_name":"stdout","time":114.858841425,"data":"[job1]     if not is_torchao_available():\n"}
+,{"stream_name":"stdout","time":114.858858557,"data":"[job1]            ~~~~~~~~~~~~~~~~~~~~^^\n"}
+,{"stream_name":"stdout","time":114.858862256,"data":"[job1]   File \"/usr/local/lib/python3.13/dist-packages/peft/import_utils.py\", line 147, in is_torchao_available\n"}
+,{"stream_name":"stdout","time":114.858866628,"data":"[job1]     raise ImportError(\n"}
+,{"stream_name":"stdout","time":114.858870448,"data":"[job1]     ...\u003c2 lines\u003e...\n"}
+,{"stream_name":"stdout","time":114.858873996,"data":"[job1]     )\n"}
+,{"stream_name":"stdout","time":114.858877417,"data":"[job1] ImportError: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported\n"}
+,{"stream_name":"stdout","time":114.859288352,"data":"exit codes [1, 1]\n"}
+,{"stream_name":"stderr","time":116.911732564,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":116.911758432,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":117.180555714,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":117.180580556,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":117.948129884,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":119.020480442,"data":"[NbConvertApp] Writing 382735 bytes to __results__.html\n"}
+]

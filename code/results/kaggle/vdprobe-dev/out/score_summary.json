@@ -1,0 +1,31 @@
+{
+  "pool": {
+    "sc": [
+      0.6709448099136353,
+      0.9968889951705933
+    ],
+    "sm": [
+      0.05588611215353012,
+      0.9955596923828125
+    ]
+  },
+  "n_pairs": 4,
+  "selection": {
+    "motion": {
+      "arm": "motion.dynamic.up_blocks.3.ft",
+      "blocks": [
+        "up_blocks.3"
+      ],
+      "window": "ft",
+      "median_dD_dev": 0.08017621374684199
+    },
+    "content": {
+      "arm": "content.static.down_blocks.3.ft",
+      "blocks": [
+        "down_blocks.3"
+      ],
+      "window": "ft",
+      "median_dD_dev": 0.015208449185717371
+    }
+  }
+}

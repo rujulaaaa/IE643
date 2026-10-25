@@ -8,6 +8,9 @@
   Cross-attention       per-frame maps of where each prompt word looks (saved for the four model cells, or
                         live), and Experiment 2 results when present
 
+A live edit costs 70-105 s per generated clip on the laptop GPU (4 clips with the reference),
+so the results browser is the fast path during the viva.
+
 Design (docs/experiment2.md, session 5 of the log): colour means a channel and nothing else —
 blue ■ = content, orange ▲ = motion, always with the shape too — and the controls stay neutral ink.
 Clips play as videos with controls instead of looping on their own; long runs show determinate progress.

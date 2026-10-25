@@ -1,0 +1,378 @@
+{
+ "pair": {
+  "subject_a": "dancer",
+  "verb_a": "jumping",
+  "subject_b": "child",
+  "verb_b": "spinning",
+  "scene": "on a beach",
+  "seed": 2024
+ },
+ "prompts": {
+  "A": "a dancer jumping on a beach, high quality, detailed",
+  "B": "a child spinning on a beach, high quality, detailed",
+  "motion": "a child jumping on a beach, high quality, detailed",
+  "content": "a dancer spinning on a beach, high quality, detailed"
+ },
+ "arms": [
+  {
+   "id": "B_ref",
+   "prompt": "a child spinning on a beach, high quality, detailed",
+   "label": "B, unpatched"
+  },
+  {
+   "id": "motion.base",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "prompt only"
+  },
+  {
+   "id": "content.base",
+   "prompt": "a dancer spinning on a beach, high quality, detailed",
+   "label": "prompt only"
+  },
+  {
+   "id": "motion.sel",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "selected",
+   "patch": {
+    "coords": [
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.sel.a0.25",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 0.25,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.sel.a0.5",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 0.5,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.sel.a0.75",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 0.75,
+    "component": "dynamic",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.tensor",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "up_blocks.3.motion_modules.0",
+     "up_blocks.3.motion_modules.1",
+     "up_blocks.3.motion_modules.2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "all",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.sel",
+   "prompt": "a dancer spinning on a beach, high quality, detailed",
+   "label": "selected",
+   "patch": {
+    "coords": [
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.sel.a0.25",
+   "prompt": "a dancer spinning on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 0.25,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.sel.a0.5",
+   "prompt": "a dancer spinning on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 0.5,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.sel.a0.75",
+   "prompt": "a dancer spinning on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 0.75,
+    "component": "static",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "content.tensor",
+   "prompt": "a dancer spinning on a beach, high quality, detailed",
+   "label": "",
+   "patch": {
+    "coords": [
+     "down_blocks.3.motion_modules.0",
+     "down_blocks.3.motion_modules.1"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0,
+    "component": "all",
+    "branches": "all"
+   }
+  },
+  {
+   "id": "motion.attn",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "",
+   "attn": {
+    "modules": [
+     "down_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+     "down_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+     "down_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+     "down_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+     "down_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.1.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.1.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.2.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.2.motion_modules.2.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+     "up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",
+     "up_blocks.3.motion_modules.2.transformer_blocks.0.attn2",
+     "mid_block.motion_modules.0.transformer_blocks.0.attn1",
+     "mid_block.motion_modules.0.transformer_blocks.0.attn2"
+    ],
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "alpha": 1.0
+   }
+  },
+  {
+   "id": "motion.lora_full",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "prompt only + lora_full",
+   "lora": {
+    "adapter": "lora_full",
+    "scale": 1.0
+   }
+  },
+  {
+   "id": "motion.lora_probe",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "prompt only + lora_probe",
+   "lora": {
+    "adapter": "lora_probe",
+    "scale": 1.0
+   }
+  },
+  {
+   "id": "motion.lora_anti",
+   "prompt": "a child jumping on a beach, high quality, detailed",
+   "label": "prompt only + lora_anti",
+   "lora": {
+    "adapter": "lora_anti",
+    "scale": 1.0
+   }
+  }
+ ]
+}

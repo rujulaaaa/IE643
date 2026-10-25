@@ -1,0 +1,79 @@
+[{"stream_name":"stdout","time":19.282276091,"data":"2\n"}
+,{"stream_name":"stdout","time":19.282354352,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":19.282361725,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":19.282366317,"data":"2.11.0+cu128\n"}
+,{"stream_name":"stdout","time":19.282370679,"data":" \n"}
+,{"stream_name":"stderr","time":22.800446937,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":29.456160422,"data":"\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  9.13it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:06\u003c00:00,  3.94s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:06\u003c00:00,  3.37s/it]\n"}
+,{"stream_name":"stderr","time":39.179190437,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:  15%|█▌        | 2/13 [00:00\u003c00:00, 17.50it/s]\rFetching 13 files:  85%|████████▍ | 11/13 [00:05\u003c00:01,  1.76it/s]\rFetching 13 files:  92%|█████████▏| 12/13 [00:06\u003c00:00,  1.76it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:09\u003c00:00,  1.07it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:09\u003c00:00,  1.36it/s]\n"}
+,{"stream_name":"stderr","time":45.109464331,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:  17%|█▋        | 2/12 [00:00\u003c00:00, 16.85it/s]\rFetching 12 files:  67%|██████▋   | 8/12 [00:00\u003c00:00, 34.19it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:05\u003c00:00,  1.61it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:05\u003c00:00,  2.07it/s]\n"}
+,{"stream_name":"stdout","time":53.149351932,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/probe_sweep.py --seeds 42 --scenes on a beach --subjects 2 --verbs 2 --out /kaggle/working/out/job0\n"}
+,{"stream_name":"stdout","time":53.150463336,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/probe_sweep.py --seeds 42 --scenes in a forest --subjects 2 --verbs 2 --out /kaggle/working/out/job1\n"}
+,{"stream_name":"stdout","time":113.152124614,"data":"[job0] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":113.152178888,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":113.152185313,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":113.152191577,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 797.62it/s]\n"}
+,{"stream_name":"stdout","time":113.152198525,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":113.152203574,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":113.152208859,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1200.35it/s]\n"}
+,{"stream_name":"stdout","time":113.152214311,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":113.152219848,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":113.152225692,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":113.152230632,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":113.152235815,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:01\u003c00:07,  1.57s/it]\n"}
+,{"stream_name":"stdout","time":113.152260368,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":113.152264385,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":113.152268617,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2205.53it/s]\n"}
+,{"stream_name":"stdout","time":113.152272951,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":113.152276731,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:01\u003c00:00,  2.65it/s]\n"}
+,{"stream_name":"stdout","time":113.152281071,"data":"[job0] Loading pipeline components...:  83%|████████▎ | 5/6 [00:02\u003c00:00,  3.07it/s]\n"}
+,{"stream_name":"stdout","time":113.152285404,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  3.75it/s]\n"}
+,{"stream_name":"stdout","time":113.152289855,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.75it/s]\n"}
+,{"stream_name":"stdout","time":113.152294132,"data":"[job0]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 18.0 s\n"}
+,{"stream_name":"stdout","time":113.152298339,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":113.152302119,"data":"[job0] === seed 42 · on a beach: 8 clips, 12 pairs (4 content, 4 motion, 4 cross-family), 6 anchors\n"}
+,{"stream_name":"stdout","time":113.152306327,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":113.152310302,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":113.152314022,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":113.152318117,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 906.29it/s]\n"}
+,{"stream_name":"stdout","time":113.152322654,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":113.15232636,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":113.152330414,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1273.26it/s]\n"}
+,{"stream_name":"stdout","time":113.152336234,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":113.152340699,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":113.152344971,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":113.152348682,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":113.152352679,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:01\u003c00:07,  1.54s/it]\n"}
+,{"stream_name":"stdout","time":113.152356788,"data":"[job1] Loading pipeline components...:  50%|█████     | 3/6 [00:01\u003c00:01,  2.16it/s]\n"}
+,{"stream_name":"stdout","time":113.152360982,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":113.152364798,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":113.152381023,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2433.31it/s]\n"}
+,{"stream_name":"stdout","time":113.152385164,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":113.15238877,"data":"[job1] Loading pipeline components...:  67%|██████▋   | 4/6 [00:01\u003c00:00,  2.55it/s]\n"}
+,{"stream_name":"stdout","time":113.152396384,"data":"[job1] Loading pipeline components...:  83%|████████▎ | 5/6 [00:02\u003c00:00,  3.32it/s]\n"}
+,{"stream_name":"stdout","time":113.152400572,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.87it/s]\n"}
+,{"stream_name":"stdout","time":113.152404704,"data":"[job1]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 18.0 s\n"}
+,{"stream_name":"stdout","time":113.152408715,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":113.152412399,"data":"[job1] === seed 42 · in a forest: 8 clips, 12 pairs (4 content, 4 motion, 4 cross-family), 6 anchors\n"}
+,{"stream_name":"stdout","time":293.153510367,"data":"[job0]     step  5/25    138.9 s  (3.47 s per clip-step)\n"}
+,{"stream_name":"stdout","time":293.153574929,"data":"[job1]     step  5/25    137.8 s  (3.45 s per clip-step)\n"}
+,{"stream_name":"stdout","time":413.154484176,"data":"[job0]     step 10/25    296.4 s  (3.71 s per clip-step)\n"}
+,{"stream_name":"stdout","time":413.154538397,"data":"[job1]     step 10/25    294.1 s  (3.68 s per clip-step)\n"}
+,{"stream_name":"stdout","time":593.156075915,"data":"[job0]     step 15/25    457.1 s  (3.81 s per clip-step)\n"}
+,{"stream_name":"stdout","time":593.156138822,"data":"[job1]     step 15/25    456.3 s  (3.80 s per clip-step)\n"}
+,{"stream_name":"stdout","time":773.157461394,"data":"[job0]     step 20/25    617.9 s  (3.86 s per clip-step)\n"}
+,{"stream_name":"stdout","time":773.15750287,"data":"[job1]     step 20/25    618.7 s  (3.87 s per clip-step)\n"}
+,{"stream_name":"stdout","time":893.15847229,"data":"[job0]     step 25/25    779.4 s  (3.90 s per clip-step)\n"}
+,{"stream_name":"stdout","time":893.158552961,"data":"[job0]   denoised in 13.0 min (97.4 s per clip), peak host RSS 8.3 GB\n"}
+,{"stream_name":"stdout","time":893.158562754,"data":"[job1]     step 25/25    781.5 s  (3.91 s per clip-step)\n"}
+,{"stream_name":"stdout","time":893.158569332,"data":"[job1]   denoised in 13.0 min (97.7 s per clip), peak host RSS 8.3 GB\n"}
+,{"stream_name":"stdout","time":953.159024032,"data":"[job0] wrote /kaggle/working/out/job0/s42__on-a-beach/manifest.json\n"}
+,{"stream_name":"stdout","time":953.159063706,"data":"[job1] wrote /kaggle/working/out/job1/s42__in-a-forest/manifest.json\n"}
+,{"stream_name":"stdout","time":953.159339809,"data":"exit codes [0, 0]\n"}
+,{"stream_name":"stderr","time":955.466829401,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":955.46687443,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":955.758879647,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":955.7589347,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":956.643768743,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":957.75109747,"data":"[NbConvertApp] Writing 336600 bytes to __results__.html\n"}
+]
