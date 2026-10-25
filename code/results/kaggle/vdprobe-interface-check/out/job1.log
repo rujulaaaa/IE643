@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/kaggle/working/repo/scripts/interface_check.py", line 89, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/repo/scripts/interface_check.py", line 33, in main
+    print("linked", link_assets(args.assets), "asset files", flush=True)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/kaggle/working/repo/src/vdprobe/demo.py", line 70, in link_assets
+    dst.symlink_to(f.resolve())
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/kaggle/input/vdprobe-app-assets/results/analysis/analysis.json' -> '/kaggle/working/repo/results/analysis/analysis.json'
