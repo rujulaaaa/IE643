@@ -155,7 +155,15 @@ gives the plan for novelty assessment and Section~\ref{sec:conclusion} concludes
 
 \section{Project Workflow} \label{sec:workflow}
 
-
+We started with the question of finding out where the content lives and where the motion lives.
+The architecture suggests an easy answer that the appearance would be stored in the spatial layers and 
+the motion would be stored in the temporal layers. But we wanted to test it out by measuring it. 
+Our first experiments showed that the motion was harder to measure than we expected because pixels 
+that move also change depending on the object performing the motion. We developed tools to look inside
+the model when it generated clips and used those measurements to gauge where is content stored and
+where is motion stored. And based on those observations we tried to edit the model mid generation to validate
+our hypthesised places of residence of content/motion. Some of our predictions were correct
+and some of them turned out to be false that told us what to try out next. 
 
 \begin{figure}[!h]
 \centering

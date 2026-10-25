@@ -1,0 +1,10 @@
+00:03:49 rujularahate/vdprobe-exp2-ladder has status "KernelWorkerStatus.RUNNING"
+00:04:50 rujularahate/vdprobe-exp2-ladder has status "KernelWorkerStatus.RUNNING"
+00:05:51 rujularahate/vdprobe-exp2-ladder has status "KernelWorkerStatus.RUNNING"
+00:06:59 HTTPSConnectionPool(host='api.kaggle.com', port=443): Max retries exceeded with url: /v1/kernels.KernelsApiService/GetKernelSessionStatus (Caused by SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1010)')))
+00:08:01 rujularahate/vdprobe-exp2-ladder has status "KernelWorkerStatus.RUNNING"
+00:09:03 rujularahate/vdprobe-exp2-ladder has status "KernelWorkerStatus.RUNNING"
+00:10:05 rujularahate/vdprobe-exp2-ladder has status "KernelWorkerStatus.RUNNING"
+00:11:06 rujularahate/vdprobe-exp2-ladder has status "KernelWorkerStatus.RUNNING"
+00:12:08 rujularahate/vdprobe-exp2-ladder has status "KernelWorkerStatus.RUNNING"
+00:13:09 rujularahate/vdprobe-exp2-ladder has status "KernelWorkerStatus.RUNNING"

@@ -1,0 +1,433 @@
+Downloading job0.log to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out
+  0%|          | 0.00/3.15k [00:00<?, ?B/s]100%|██████████| 3.15k/3.15k [00:00<00:00, 6.44MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/job0.log
+Downloading job1.log to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out
+  0%|          | 0.00/2.79k [00:00<?, ?B/s]100%|██████████| 2.79k/2.79k [00:00<00:00, 5.38MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/job1.log
+Downloading 00_A.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/791k [00:00<?, ?B/s]100%|██████████| 791k/791k [00:01<00:00, 614kB/s]100%|██████████| 791k/791k [00:01<00:00, 614kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_A.gif
+Downloading 00_A_from_B_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/800k [00:00<?, ?B/s]100%|██████████| 800k/800k [00:01<00:00, 575kB/s]100%|██████████| 800k/800k [00:01<00:00, 575kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_A_from_B_exp1_region.gif
+Downloading 00_A_from_B_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/797k [00:00<?, ?B/s]100%|██████████| 797k/797k [00:01<00:00, 681kB/s]100%|██████████| 797k/797k [00:01<00:00, 681kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_A_from_B_rsa_content_peak.gif
+Downloading 00_A_from_B_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/790k [00:00<?, ?B/s]100%|██████████| 790k/790k [00:01<00:00, 568kB/s]100%|██████████| 790k/790k [00:01<00:00, 568kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_A_from_B_rsa_motion_peak.gif
+Downloading 00_A_from_B_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/826k [00:00<?, ?B/s]100%|██████████| 826k/826k [00:00<00:00, 5.97MB/s]100%|██████████| 826k/826k [00:00<00:00, 5.96MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_A_from_B_up1_motion_modules.gif
+Downloading 00_B.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/858k [00:00<?, ?B/s]100%|██████████| 858k/858k [00:01<00:00, 646kB/s]100%|██████████| 858k/858k [00:01<00:00, 646kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_B.gif
+Downloading 00_B_from_A_attn.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/805k [00:00<?, ?B/s]100%|██████████| 805k/805k [00:01<00:00, 555kB/s]100%|██████████| 805k/805k [00:01<00:00, 555kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_B_from_A_attn.gif
+Downloading 00_B_from_A_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/823k [00:00<?, ?B/s]100%|██████████| 823k/823k [00:01<00:00, 580kB/s]100%|██████████| 823k/823k [00:01<00:00, 579kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_B_from_A_exp1_region.gif
+Downloading 00_B_from_A_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/815k [00:00<?, ?B/s]100%|██████████| 815k/815k [00:01<00:00, 612kB/s]100%|██████████| 815k/815k [00:01<00:00, 612kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_B_from_A_rsa_content_peak.gif
+Downloading 00_B_from_A_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/857k [00:00<?, ?B/s]100%|██████████| 857k/857k [00:01<00:00, 734kB/s]100%|██████████| 857k/857k [00:01<00:00, 734kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_B_from_A_rsa_motion_peak.gif
+Downloading 00_B_from_A_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/798k [00:00<?, ?B/s]100%|██████████| 798k/798k [00:01<00:00, 572kB/s]100%|██████████| 798k/798k [00:01<00:00, 572kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_B_from_A_up1_motion_modules.gif
+Downloading 00_B_from_C_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/835k [00:00<?, ?B/s]100%|██████████| 835k/835k [00:01<00:00, 596kB/s]100%|██████████| 835k/835k [00:01<00:00, 595kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_B_from_C_exp1_region.gif
+Downloading 00_B_from_C_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/816k [00:00<?, ?B/s]100%|██████████| 816k/816k [00:01<00:00, 565kB/s]100%|██████████| 816k/816k [00:01<00:00, 564kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_B_from_C_rsa_content_peak.gif
+Downloading 00_B_from_C_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/858k [00:00<?, ?B/s]100%|██████████| 858k/858k [00:01<00:00, 721kB/s]100%|██████████| 858k/858k [00:01<00:00, 721kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_B_from_C_rsa_motion_peak.gif
+Downloading 00_B_from_C_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/950k [00:00<?, ?B/s]100%|██████████| 950k/950k [00:00<00:00, 1.05MB/s]100%|██████████| 950k/950k [00:00<00:00, 1.04MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_B_from_C_up1_motion_modules.gif
+Downloading 00_B_src.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/858k [00:00<?, ?B/s]100%|██████████| 858k/858k [00:01<00:00, 613kB/s]100%|██████████| 858k/858k [00:01<00:00, 613kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_B_src.gif
+Downloading 00_C.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/956k [00:00<?, ?B/s]100%|██████████| 956k/956k [00:01<00:00, 696kB/s]100%|██████████| 956k/956k [00:01<00:00, 696kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/00_C.gif
+Downloading 01_A.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/1.00M [00:00<?, ?B/s]100%|██████████| 1.00M/1.00M [00:01<00:00, 682kB/s]100%|██████████| 1.00M/1.00M [00:01<00:00, 682kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_A.gif
+Downloading 01_A_from_B_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/984k [00:00<?, ?B/s]100%|██████████| 984k/984k [00:00<00:00, 2.22MB/s]100%|██████████| 984k/984k [00:00<00:00, 2.22MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_A_from_B_exp1_region.gif
+Downloading 01_A_from_B_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/0.99M [00:00<?, ?B/s]100%|██████████| 0.99M/0.99M [00:01<00:00, 670kB/s]100%|██████████| 0.99M/0.99M [00:01<00:00, 670kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_A_from_B_rsa_content_peak.gif
+Downloading 01_A_from_B_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/1.00M [00:00<?, ?B/s]100%|██████████| 1.00M/1.00M [00:01<00:00, 598kB/s]100%|██████████| 1.00M/1.00M [00:01<00:00, 598kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_A_from_B_rsa_motion_peak.gif
+Downloading 01_A_from_B_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/849k [00:00<?, ?B/s]100%|██████████| 849k/849k [00:01<00:00, 530kB/s]100%|██████████| 849k/849k [00:01<00:00, 530kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_A_from_B_up1_motion_modules.gif
+Downloading 01_B.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/916k [00:00<?, ?B/s]100%|██████████| 916k/916k [00:00<00:00, 5.07MB/s]100%|██████████| 916k/916k [00:00<00:00, 5.06MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_B.gif
+Downloading 01_B_from_A_attn.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/1.01M [00:00<?, ?B/s] 99%|█████████▉| 1.00M/1.01M [00:01<00:00, 687kB/s]100%|██████████| 1.01M/1.01M [00:01<00:00, 693kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_B_from_A_attn.gif
+Downloading 01_B_from_A_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/930k [00:00<?, ?B/s]100%|██████████| 930k/930k [00:02<00:00, 445kB/s]100%|██████████| 930k/930k [00:02<00:00, 445kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_B_from_A_exp1_region.gif
+Downloading 01_B_from_A_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/922k [00:00<?, ?B/s]100%|██████████| 922k/922k [00:00<00:00, 1.81MB/s]100%|██████████| 922k/922k [00:00<00:00, 1.81MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_B_from_A_rsa_content_peak.gif
+Downloading 01_B_from_A_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/917k [00:00<?, ?B/s]100%|██████████| 917k/917k [00:01<00:00, 850kB/s]100%|██████████| 917k/917k [00:01<00:00, 850kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_B_from_A_rsa_motion_peak.gif
+Downloading 01_B_from_A_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/1.00M [00:00<?, ?B/s]100%|██████████| 1.00M/1.00M [00:00<00:00, 1.05MB/s]100%|██████████| 1.00M/1.00M [00:00<00:00, 1.05MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_B_from_A_up1_motion_modules.gif
+Downloading 01_B_from_C_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/933k [00:00<?, ?B/s]100%|██████████| 933k/933k [00:01<00:00, 586kB/s]100%|██████████| 933k/933k [00:01<00:00, 586kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_B_from_C_exp1_region.gif
+Downloading 01_B_from_C_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/914k [00:00<?, ?B/s]100%|██████████| 914k/914k [00:01<00:00, 609kB/s]100%|██████████| 914k/914k [00:01<00:00, 608kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_B_from_C_rsa_content_peak.gif
+Downloading 01_B_from_C_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/916k [00:00<?, ?B/s]100%|██████████| 916k/916k [00:01<00:00, 545kB/s]100%|██████████| 916k/916k [00:01<00:00, 544kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_B_from_C_rsa_motion_peak.gif
+Downloading 01_B_from_C_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/984k [00:00<?, ?B/s]100%|██████████| 984k/984k [00:01<00:00, 663kB/s]100%|██████████| 984k/984k [00:01<00:00, 663kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_B_from_C_up1_motion_modules.gif
+Downloading 01_B_src.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/916k [00:00<?, ?B/s]100%|██████████| 916k/916k [00:00<00:00, 1.90MB/s]100%|██████████| 916k/916k [00:00<00:00, 1.90MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_B_src.gif
+Downloading 01_C.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/891k [00:00<?, ?B/s]100%|██████████| 891k/891k [00:00<00:00, 1.47MB/s]100%|██████████| 891k/891k [00:00<00:00, 1.47MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/01_C.gif
+Downloading 02_A.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/888k [00:00<?, ?B/s]100%|██████████| 888k/888k [00:01<00:00, 691kB/s]100%|██████████| 888k/888k [00:01<00:00, 691kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_A.gif
+Downloading 02_A_from_B_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/881k [00:00<?, ?B/s]100%|██████████| 881k/881k [00:01<00:00, 625kB/s]100%|██████████| 881k/881k [00:01<00:00, 625kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_A_from_B_exp1_region.gif
+Downloading 02_A_from_B_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/885k [00:00<?, ?B/s]100%|██████████| 885k/885k [00:01<00:00, 660kB/s]100%|██████████| 885k/885k [00:01<00:00, 660kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_A_from_B_rsa_content_peak.gif
+Downloading 02_A_from_B_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/888k [00:00<?, ?B/s]100%|██████████| 888k/888k [00:01<00:00, 534kB/s]100%|██████████| 888k/888k [00:01<00:00, 534kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_A_from_B_rsa_motion_peak.gif
+Downloading 02_A_from_B_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/908k [00:00<?, ?B/s]100%|██████████| 908k/908k [00:00<00:00, 1.75MB/s]100%|██████████| 908k/908k [00:00<00:00, 1.75MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_A_from_B_up1_motion_modules.gif
+Downloading 02_B.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/953k [00:00<?, ?B/s]100%|██████████| 953k/953k [00:00<00:00, 1.16MB/s]100%|██████████| 953k/953k [00:00<00:00, 1.16MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_B.gif
+Downloading 02_B_from_A_attn.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/936k [00:00<?, ?B/s]100%|██████████| 936k/936k [00:01<00:00, 608kB/s]100%|██████████| 936k/936k [00:01<00:00, 608kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_B_from_A_attn.gif
+Downloading 02_B_from_A_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/951k [00:00<?, ?B/s]100%|██████████| 951k/951k [00:01<00:00, 653kB/s]100%|██████████| 951k/951k [00:01<00:00, 653kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_B_from_A_exp1_region.gif
+Downloading 02_B_from_A_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/937k [00:00<?, ?B/s]100%|██████████| 937k/937k [00:00<00:00, 16.1MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_B_from_A_rsa_content_peak.gif
+Downloading 02_B_from_A_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/952k [00:00<?, ?B/s]100%|██████████| 952k/952k [00:01<00:00, 829kB/s]100%|██████████| 952k/952k [00:01<00:00, 829kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_B_from_A_rsa_motion_peak.gif
+Downloading 02_B_from_A_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/926k [00:00<?, ?B/s]100%|██████████| 926k/926k [00:00<00:00, 3.49MB/s]100%|██████████| 926k/926k [00:00<00:00, 3.48MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_B_from_A_up1_motion_modules.gif
+Downloading 02_B_from_C_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/963k [00:00<?, ?B/s]100%|██████████| 963k/963k [00:00<00:00, 1.97MB/s]100%|██████████| 963k/963k [00:00<00:00, 1.96MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_B_from_C_exp1_region.gif
+Downloading 02_B_from_C_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/957k [00:00<?, ?B/s]100%|██████████| 957k/957k [00:01<00:00, 688kB/s]100%|██████████| 957k/957k [00:01<00:00, 687kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_B_from_C_rsa_content_peak.gif
+Downloading 02_B_from_C_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/952k [00:00<?, ?B/s]100%|██████████| 952k/952k [00:01<00:00, 655kB/s]100%|██████████| 952k/952k [00:01<00:00, 655kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_B_from_C_rsa_motion_peak.gif
+Downloading 02_B_from_C_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/929k [00:00<?, ?B/s]100%|██████████| 929k/929k [00:01<00:00, 609kB/s]100%|██████████| 929k/929k [00:01<00:00, 609kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_B_from_C_up1_motion_modules.gif
+Downloading 02_B_src.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/953k [00:00<?, ?B/s]100%|██████████| 953k/953k [00:01<00:00, 660kB/s]100%|██████████| 953k/953k [00:01<00:00, 660kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_B_src.gif
+Downloading 02_C.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs
+  0%|          | 0.00/891k [00:00<?, ?B/s]100%|██████████| 891k/891k [00:01<00:00, 614kB/s]100%|██████████| 891k/891k [00:01<00:00, 614kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/gifs/02_C.gif
+Downloading manifest.json to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2
+  0%|          | 0.00/2.04k [00:00<?, ?B/s]100%|██████████| 2.04k/2.04k [00:00<00:00, 4.31MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/manifest.json
+Downloading rows.csv to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2
+  0%|          | 0.00/36.6k [00:00<?, ?B/s]100%|██████████| 36.6k/36.6k [00:00<00:00, 300kB/s]100%|██████████| 36.6k/36.6k [00:00<00:00, 299kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s2/rows.csv
+Downloading 00_A.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/868k [00:00<?, ?B/s]100%|██████████| 868k/868k [00:00<00:00, 1.02MB/s]100%|██████████| 868k/868k [00:00<00:00, 1.02MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_A.gif
+Downloading 00_A_from_B_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/892k [00:00<?, ?B/s]100%|██████████| 892k/892k [00:01<00:00, 614kB/s]100%|██████████| 892k/892k [00:01<00:00, 614kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_A_from_B_exp1_region.gif
+Downloading 00_A_from_B_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/888k [00:00<?, ?B/s]100%|██████████| 888k/888k [00:01<00:00, 625kB/s]100%|██████████| 888k/888k [00:01<00:00, 625kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_A_from_B_rsa_content_peak.gif
+Downloading 00_A_from_B_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/868k [00:00<?, ?B/s]100%|██████████| 868k/868k [00:01<00:00, 614kB/s]100%|██████████| 868k/868k [00:01<00:00, 614kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_A_from_B_rsa_motion_peak.gif
+Downloading 00_A_from_B_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/866k [00:00<?, ?B/s]100%|██████████| 866k/866k [00:01<00:00, 528kB/s]100%|██████████| 866k/866k [00:01<00:00, 528kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_A_from_B_up1_motion_modules.gif
+Downloading 00_B.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/889k [00:00<?, ?B/s]100%|██████████| 889k/889k [00:01<00:00, 602kB/s]100%|██████████| 889k/889k [00:01<00:00, 602kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_B.gif
+Downloading 00_B_from_A_attn.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/911k [00:00<?, ?B/s]100%|██████████| 911k/911k [00:01<00:00, 633kB/s]100%|██████████| 911k/911k [00:01<00:00, 633kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_B_from_A_attn.gif
+Downloading 00_B_from_A_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/888k [00:00<?, ?B/s]100%|██████████| 888k/888k [00:01<00:00, 698kB/s]100%|██████████| 888k/888k [00:01<00:00, 697kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_B_from_A_exp1_region.gif
+Downloading 00_B_from_A_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/899k [00:00<?, ?B/s]100%|██████████| 899k/899k [00:01<00:00, 489kB/s]100%|██████████| 899k/899k [00:01<00:00, 489kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_B_from_A_rsa_content_peak.gif
+Downloading 00_B_from_A_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/888k [00:00<?, ?B/s]100%|██████████| 888k/888k [00:01<00:00, 606kB/s]100%|██████████| 888k/888k [00:01<00:00, 606kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_B_from_A_rsa_motion_peak.gif
+Downloading 00_B_from_A_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/886k [00:00<?, ?B/s]100%|██████████| 886k/886k [00:00<00:00, 916kB/s]100%|██████████| 886k/886k [00:00<00:00, 916kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_B_from_A_up1_motion_modules.gif
+Downloading 00_B_from_C_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/912k [00:00<?, ?B/s]100%|██████████| 912k/912k [00:01<00:00, 667kB/s]100%|██████████| 912k/912k [00:01<00:00, 667kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_B_from_C_exp1_region.gif
+Downloading 00_B_from_C_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/887k [00:00<?, ?B/s]100%|██████████| 887k/887k [00:01<00:00, 525kB/s]100%|██████████| 887k/887k [00:01<00:00, 525kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_B_from_C_rsa_content_peak.gif
+Downloading 00_B_from_C_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/889k [00:00<?, ?B/s]100%|██████████| 889k/889k [00:01<00:00, 598kB/s]100%|██████████| 889k/889k [00:01<00:00, 597kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_B_from_C_rsa_motion_peak.gif
+Downloading 00_B_from_C_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/914k [00:00<?, ?B/s]100%|██████████| 914k/914k [00:01<00:00, 635kB/s]100%|██████████| 914k/914k [00:01<00:00, 635kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_B_from_C_up1_motion_modules.gif
+Downloading 00_B_src.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/889k [00:00<?, ?B/s]100%|██████████| 889k/889k [00:01<00:00, 608kB/s]100%|██████████| 889k/889k [00:01<00:00, 608kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_B_src.gif
+Downloading 00_C.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/937k [00:00<?, ?B/s]100%|██████████| 937k/937k [00:02<00:00, 413kB/s]100%|██████████| 937k/937k [00:02<00:00, 413kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/00_C.gif
+Downloading 01_A.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/938k [00:00<?, ?B/s]100%|██████████| 938k/938k [00:01<00:00, 703kB/s]100%|██████████| 938k/938k [00:01<00:00, 703kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_A.gif
+Downloading 01_A_from_B_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/0.98M [00:00<?, ?B/s]100%|██████████| 0.98M/0.98M [00:01<00:00, 708kB/s]100%|██████████| 0.98M/0.98M [00:01<00:00, 707kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_A_from_B_exp1_region.gif
+Downloading 01_A_from_B_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/933k [00:00<?, ?B/s]100%|██████████| 933k/933k [00:01<00:00, 657kB/s]100%|██████████| 933k/933k [00:01<00:00, 657kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_A_from_B_rsa_content_peak.gif
+Downloading 01_A_from_B_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/938k [00:00<?, ?B/s]100%|██████████| 938k/938k [00:01<00:00, 560kB/s]100%|██████████| 938k/938k [00:01<00:00, 560kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_A_from_B_rsa_motion_peak.gif
+Downloading 01_A_from_B_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/1.04M [00:00<?, ?B/s] 96%|█████████▋| 1.00M/1.04M [00:03<00:00, 294kB/s]100%|██████████| 1.04M/1.04M [00:03<00:00, 275kB/s]100%|██████████| 1.04M/1.04M [00:03<00:00, 280kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_A_from_B_up1_motion_modules.gif
+Downloading 01_B.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/994k [00:00<?, ?B/s]100%|██████████| 994k/994k [00:01<00:00, 692kB/s]100%|██████████| 994k/994k [00:01<00:00, 691kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_B.gif
+Downloading 01_B_from_A_attn.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/995k [00:00<?, ?B/s]100%|██████████| 995k/995k [00:01<00:00, 627kB/s]100%|██████████| 995k/995k [00:01<00:00, 626kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_B_from_A_attn.gif
+Downloading 01_B_from_A_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/0.99M [00:00<?, ?B/s]100%|██████████| 0.99M/0.99M [00:01<00:00, 716kB/s]100%|██████████| 0.99M/0.99M [00:01<00:00, 716kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_B_from_A_exp1_region.gif
+Downloading 01_B_from_A_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/1.00M [00:00<?, ?B/s]100%|██████████| 1.00M/1.00M [00:00<00:00, 1.33MB/s]100%|██████████| 1.00M/1.00M [00:00<00:00, 1.33MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_B_from_A_rsa_content_peak.gif
+Downloading 01_B_from_A_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/994k [00:00<?, ?B/s]100%|██████████| 994k/994k [00:01<00:00, 661kB/s]100%|██████████| 994k/994k [00:01<00:00, 661kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_B_from_A_rsa_motion_peak.gif
+Downloading 01_B_from_A_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/977k [00:00<?, ?B/s]100%|██████████| 977k/977k [00:01<00:00, 673kB/s]100%|██████████| 977k/977k [00:01<00:00, 673kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_B_from_A_up1_motion_modules.gif
+Downloading 01_B_from_C_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/0.99M [00:00<?, ?B/s]100%|██████████| 0.99M/0.99M [00:00<00:00, 3.43MB/s]100%|██████████| 0.99M/0.99M [00:00<00:00, 3.42MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_B_from_C_exp1_region.gif
+Downloading 01_B_from_C_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/1.01M [00:00<?, ?B/s] 99%|█████████▉| 1.00M/1.01M [00:01<00:00, 700kB/s]100%|██████████| 1.01M/1.01M [00:01<00:00, 706kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_B_from_C_rsa_content_peak.gif
+Downloading 01_B_from_C_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/994k [00:00<?, ?B/s]100%|██████████| 994k/994k [00:00<00:00, 3.26MB/s]100%|██████████| 994k/994k [00:00<00:00, 3.26MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_B_from_C_rsa_motion_peak.gif
+Downloading 01_B_from_C_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/1.03M [00:00<?, ?B/s] 97%|█████████▋| 1.00M/1.03M [00:01<00:00, 693kB/s]100%|██████████| 1.03M/1.03M [00:01<00:00, 710kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_B_from_C_up1_motion_modules.gif
+Downloading 01_B_src.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/994k [00:00<?, ?B/s]100%|██████████| 994k/994k [00:00<00:00, 1.53MB/s]100%|██████████| 994k/994k [00:00<00:00, 1.53MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_B_src.gif
+Downloading 01_C.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/956k [00:00<?, ?B/s]100%|██████████| 956k/956k [00:01<00:00, 665kB/s]100%|██████████| 956k/956k [00:01<00:00, 665kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/01_C.gif
+Downloading 02_A.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/937k [00:00<?, ?B/s]100%|██████████| 937k/937k [00:01<00:00, 644kB/s]100%|██████████| 937k/937k [00:01<00:00, 644kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_A.gif
+Downloading 02_A_from_B_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/960k [00:00<?, ?B/s]100%|██████████| 960k/960k [00:01<00:00, 666kB/s]100%|██████████| 960k/960k [00:01<00:00, 666kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_A_from_B_exp1_region.gif
+Downloading 02_A_from_B_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/940k [00:00<?, ?B/s]100%|██████████| 940k/940k [00:01<00:00, 950kB/s]100%|██████████| 940k/940k [00:01<00:00, 949kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_A_from_B_rsa_content_peak.gif
+Downloading 02_A_from_B_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/937k [00:00<?, ?B/s]100%|██████████| 937k/937k [00:01<00:00, 655kB/s]100%|██████████| 937k/937k [00:01<00:00, 655kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_A_from_B_rsa_motion_peak.gif
+Downloading 02_A_from_B_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/921k [00:00<?, ?B/s]100%|██████████| 921k/921k [00:01<00:00, 795kB/s]100%|██████████| 921k/921k [00:01<00:00, 795kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_A_from_B_up1_motion_modules.gif
+Downloading 02_B.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/917k [00:00<?, ?B/s]100%|██████████| 917k/917k [00:01<00:00, 649kB/s]100%|██████████| 917k/917k [00:01<00:00, 649kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_B.gif
+Downloading 02_B_from_A_attn.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/0.98M [00:00<?, ?B/s]100%|██████████| 0.98M/0.98M [00:00<00:00, 2.07MB/s]100%|██████████| 0.98M/0.98M [00:00<00:00, 2.07MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_B_from_A_attn.gif
+Downloading 02_B_from_A_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/942k [00:00<?, ?B/s]100%|██████████| 942k/942k [00:00<00:00, 4.30MB/s]100%|██████████| 942k/942k [00:00<00:00, 4.29MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_B_from_A_exp1_region.gif
+Downloading 02_B_from_A_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/908k [00:00<?, ?B/s]100%|██████████| 908k/908k [00:01<00:00, 520kB/s]100%|██████████| 908k/908k [00:01<00:00, 520kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_B_from_A_rsa_content_peak.gif
+Downloading 02_B_from_A_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/917k [00:00<?, ?B/s]100%|██████████| 917k/917k [00:00<00:00, 1.72MB/s]100%|██████████| 917k/917k [00:00<00:00, 1.72MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_B_from_A_rsa_motion_peak.gif
+Downloading 02_B_from_A_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/988k [00:00<?, ?B/s]100%|██████████| 988k/988k [00:01<00:00, 749kB/s]100%|██████████| 988k/988k [00:01<00:00, 749kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_B_from_A_up1_motion_modules.gif
+Downloading 02_B_from_C_exp1_region.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/949k [00:00<?, ?B/s]100%|██████████| 949k/949k [00:02<00:00, 442kB/s]100%|██████████| 949k/949k [00:02<00:00, 442kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_B_from_C_exp1_region.gif
+Downloading 02_B_from_C_rsa_content_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/900k [00:00<?, ?B/s]100%|██████████| 900k/900k [00:00<00:00, 3.85MB/s]100%|██████████| 900k/900k [00:00<00:00, 3.84MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_B_from_C_rsa_content_peak.gif
+Downloading 02_B_from_C_rsa_motion_peak.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/917k [00:00<?, ?B/s]100%|██████████| 917k/917k [00:02<00:00, 368kB/s]100%|██████████| 917k/917k [00:02<00:00, 368kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_B_from_C_rsa_motion_peak.gif
+Downloading 02_B_from_C_up1_motion_modules.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/992k [00:00<?, ?B/s]100%|██████████| 992k/992k [00:01<00:00, 700kB/s]100%|██████████| 992k/992k [00:01<00:00, 699kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_B_from_C_up1_motion_modules.gif
+Downloading 02_B_src.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/917k [00:00<?, ?B/s]100%|██████████| 917k/917k [00:01<00:00, 716kB/s]100%|██████████| 917k/917k [00:01<00:00, 716kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_B_src.gif
+Downloading 02_C.gif to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs
+  0%|          | 0.00/929k [00:00<?, ?B/s]100%|██████████| 929k/929k [00:01<00:00, 659kB/s]100%|██████████| 929k/929k [00:01<00:00, 659kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/gifs/02_C.gif
+Downloading manifest.json to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3
+  0%|          | 0.00/2.05k [00:00<?, ?B/s]100%|██████████| 2.05k/2.05k [00:00<00:00, 4.93MB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/manifest.json
+Downloading rows.csv to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3
+  0%|          | 0.00/35.9k [00:00<?, ?B/s]100%|██████████| 35.9k/35.9k [00:00<00:00, 213kB/s]100%|██████████| 35.9k/35.9k [00:00<00:00, 212kB/s]
+
+Output file downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/out/s3/rows.csv
+Kernel log downloaded to /home/shivi/IE643/code/results/kaggle/vdprobe-exp2-patch-b/vdprobe-exp2-patch-b.log 
