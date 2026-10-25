@@ -1,0 +1,23 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files: 100%|██████████| 2/2 [00:04<00:00,  2.11s/it]Fetching 2 files: 100%|██████████| 2/2 [00:04<00:00,  2.11s/it]
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  80%|████████  | 8/10 [00:00<00:00, 75.05it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 78.70it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files:  85%|████████▍ | 11/13 [00:04<00:00,  2.69it/s]Fetching 13 files:  92%|█████████▏| 12/13 [00:05<00:00,  1.88it/s]Fetching 13 files: 100%|██████████| 13/13 [00:08<00:00,  1.14it/s]Fetching 13 files: 100%|██████████| 13/13 [00:08<00:00,  1.47it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights:  65%|██████▍   | 127/196 [00:00<00:00, 1269.29it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 1098.43it/s]
+Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:02,  2.40it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:01,  3.43it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:01<00:01,  2.08it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:15<00:04,  4.24s/it]Loading pipeline components...: 100%|██████████| 6/6 [00:15<00:00,  2.60s/it]
+  base emilianJR/epiCRealism@6522cf856b, adapter @2e8139b1d1, 50.8 s
+114 coordinates, coarse 15
+
+=== s42__on-a-beach: 4 clips, 4 pairs {'motion': 2, 'cross_family': 2}, 3 anchors, 42 scored coordinates (30 refined)
+    step  5/25     84.1 s  (4.21 s per clip-step)
+    step 10/25    172.3 s  (4.31 s per clip-step)
+    step 15/25    261.2 s  (4.35 s per clip-step)
+    step 20/25    348.5 s  (4.36 s per clip-step)
+    step 25/25    436.4 s  (4.36 s per clip-step)
+  denoised in 7.3 min (109.1 s per clip), peak host RSS 8.5 GB
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 9421.31it/s]
+wrote /kaggle/working/out/epicrealism_mm3/s42__on-a-beach/manifest.json
