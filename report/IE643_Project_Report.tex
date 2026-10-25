@@ -411,9 +411,16 @@ Our work is different from the existing work because:
   Then we test whether the place we motion is stored is actually the place where editing will work? 
   In our results they are not the same place and that gap is important to understand.
   \item MOFT uses frame mean residual and PCA channels to guide the motion feature at a block. We apply
-  the split to every coordinate and step ($S_{dyn}$ vs $S_{stat}$) and then turn it into 
+  the split to every coordinate and step ($S_{dyn}$ vs $S_{stat}$) and then turn it into a component 
+  patch that transforms only one part. 
+  \item Causal Tracing (ROME) and its Stable Diffusion versions sstudy objects in a single frame whereas
+  we use minimal pairs and patch in both directions to see if the place we found is 
+  actually neccessary and sufficient to control the property we are interested in.
+  \item We place the LoRA by where the map tells to put it and compare it with an equal size LoRA 
+  placed where the map says motion is not present. This is different from MotionDirector which places the LoRA by design.
+\end{itemize}
 
-\subsection{Model and notation}
+\subsection{Network Architecture}
 
 AnimateDiff consists of the frozen Stable Diffusion~1.5 U-Net (about 860\,M parameters) with
 the motion adapter \code{guoyww/animatediff-motion-adapter-v1-5-2} \citep{hf_animatediff} (about 417\,M parameters) inserted after
