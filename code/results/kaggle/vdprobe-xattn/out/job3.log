@@ -1,0 +1,14 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 977.24it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1428.20it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00,  6.24it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:00<00:00,  9.33it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2624.27it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  9.97it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  9.30it/s]
+  base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @2e8139b1d1, 13.6 s
+'a golden retriever running on a beach, high quality, detailed': 72 s with cross-attention recording
+  subject  mask area 0.159  IoU across frames 0.564
+  verb     mask area 0.530  IoU across frames 0.650
+  scene    mask area 0.997  IoU across frames 0.996
+wrote /kaggle/working/out/sd15_mm3/s42__golden-retriever__running__on-a-beach/cross_attention.json

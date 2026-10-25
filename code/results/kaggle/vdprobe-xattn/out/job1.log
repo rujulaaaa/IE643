@@ -1,0 +1,17 @@
+building pipeline (profile=gpu) ...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:  50%|█████     | 1/2 [00:00<00:00,  5.31it/s]Fetching 2 files: 100%|██████████| 2/2 [00:04<00:00,  2.75s/it]Fetching 2 files: 100%|██████████| 2/2 [00:04<00:00,  2.36s/it]
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  10%|█         | 1/10 [00:05<00:52,  5.81s/it]Fetching 10 files: 100%|██████████| 10/10 [00:05<00:00,  2.32it/s]Fetching 10 files: 100%|██████████| 10/10 [00:05<00:00,  1.69it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files:  85%|████████▍ | 11/13 [00:04<00:00,  2.39it/s]Fetching 13 files:  92%|█████████▏| 12/13 [00:07<00:00,  1.35it/s]Fetching 13 files: 100%|██████████| 13/13 [00:09<00:00,  1.24it/s]Fetching 13 files: 100%|██████████| 13/13 [00:09<00:00,  1.44it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights:  78%|███████▊  | 152/196 [00:00<00:00, 1407.94it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 1637.22it/s]
+Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:02,  2.23it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:01,  2.74it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:02<00:02,  1.15it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:17<00:13,  6.55s/it]Loading pipeline components...: 100%|██████████| 6/6 [00:17<00:00,  3.11s/it]Loading pipeline components...: 100%|██████████| 6/6 [00:17<00:00,  2.93s/it]
+  base emilianJR/epiCRealism@6522cf856b, adapter @2e8139b1d1, 53.0 s
+'a golden retriever running on a beach, high quality, detailed': 71 s with cross-attention recording
+  subject  mask area 0.165  IoU across frames 0.823
+  verb     mask area 0.366  IoU across frames 0.734
+  scene    mask area 1.000  IoU across frames 1.000
+wrote /kaggle/working/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach/cross_attention.json

@@ -1,0 +1,143 @@
+[{"stream_name":"stdout","time":17.514348946,"data":"2\n"}
+,{"stream_name":"stdout","time":17.514400494,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":17.514405918,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":17.514409813,"data":"2.11.0+cu128\n"}
+,{"stream_name":"stdout","time":17.514413493,"data":" \n"}
+,{"stream_name":"stderr","time":25.30441909,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  9.73it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:04\u003c00:00,  2.76s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:04\u003c00:00,  2.36s/it]\n"}
+,{"stream_name":"stderr","time":25.502281326,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":36.982236175,"data":"\rFetching 13 files:  23%|██▎       | 3/13 [00:00\u003c00:00, 20.43it/s]\rFetching 13 files:  85%|████████▍ | 11/13 [00:07\u003c00:01,  1.34it/s]\rFetching 13 files:  92%|█████████▏| 12/13 [00:08\u003c00:00,  1.30it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:11\u003c00:00,  1.11s/it]\rFetching 13 files: 100%|██████████| 13/13 [00:11\u003c00:00,  1.13it/s]\n"}
+,{"stream_name":"stderr","time":43.054554556,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:  17%|█▋        | 2/12 [00:00\u003c00:00, 15.77it/s]\rFetching 12 files:  67%|██████▋   | 8/12 [00:01\u003c00:00,  5.38it/s]\rFetching 12 files:  75%|███████▌  | 9/12 [00:05\u003c00:02,  1.14it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:05\u003c00:00,  2.03it/s]\n"}
+,{"stream_name":"stdout","time":50.961342114,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/cross_attention_maps.py --out /kaggle/working/out/sd15_mm2\n"}
+,{"stream_name":"stdout","time":50.962110928,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/cross_attention_maps.py --config configs/variants/epicrealism_mm3.yaml --out /kaggle/working/out/epicrealism_mm3\n"}
+,{"stream_name":"stdout","time":50.963155421,"data":"job 2 on GPU 0: /usr/bin/python3 -u scripts/cross_attention_maps.py --config configs/variants/epicrealism_mm2.yaml --out /kaggle/working/out/epicrealism_mm2\n"}
+,{"stream_name":"stdout","time":223.40151256,"data":"job 3 on GPU 1: /usr/bin/python3 -u scripts/cross_attention_maps.py --config configs/variants/sd15_mm3.yaml --out /kaggle/working/out/sd15_mm3\n"}
+,{"stream_name":"stdout","time":403.082419694,"data":"[job0] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":403.082466027,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":403.082471265,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.082492389,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 950.55it/s]\n"}
+,{"stream_name":"stdout","time":403.082498358,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":403.082502806,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.082507564,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1420.28it/s]\n"}
+,{"stream_name":"stdout","time":403.082512504,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":403.082519012,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":403.08253748,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":403.082559498,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.082563667,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:02\u003c00:13,  2.66s/it]\n"}
+,{"stream_name":"stdout","time":403.082567625,"data":"[job0] Loading pipeline components...:  50%|█████     | 3/6 [00:03\u003c00:02,  1.18it/s]\n"}
+,{"stream_name":"stdout","time":403.082571502,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":403.08257494,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":403.082578588,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 7809.73it/s]\n"}
+,{"stream_name":"stdout","time":403.082582546,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":403.082585916,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:03\u003c00:01,  1.42it/s]\n"}
+,{"stream_name":"stdout","time":403.08258977,"data":"[job0] Loading pipeline components...:  83%|████████▎ | 5/6 [00:03\u003c00:00,  1.98it/s]\n"}
+,{"stream_name":"stdout","time":403.082593628,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:03\u003c00:00,  2.46it/s]\n"}
+,{"stream_name":"stdout","time":403.082597517,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:03\u003c00:00,  1.57it/s]\n"}
+,{"stream_name":"stdout","time":403.082601357,"data":"[job0]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @6167b88ffe, 43.4 s\n"}
+,{"stream_name":"stdout","time":403.082605078,"data":"[job0] 'a golden retriever running on a beach, high quality, detailed': 73 s with cross-attention recording\n"}
+,{"stream_name":"stdout","time":403.08260886,"data":"[job0]   subject  mask area 0.163  IoU across frames 0.640\n"}
+,{"stream_name":"stdout","time":403.08261244,"data":"[job0]   verb     mask area 0.568  IoU across frames 0.627\n"}
+,{"stream_name":"stdout","time":403.082616067,"data":"[job0]   scene    mask area 0.979  IoU across frames 0.977\n"}
+,{"stream_name":"stdout","time":403.082619667,"data":"[job0] wrote /kaggle/working/out/sd15_mm2/s42__golden-retriever__running__on-a-beach/cross_attention.json\n"}
+,{"stream_name":"stdout","time":403.082749572,"data":"[job1] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":403.082767717,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":403.082772806,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":403.082871699,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":403.082879183,"data":"[job1] Fetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  5.31it/s]\n"}
+,{"stream_name":"stdout","time":403.082883253,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:04\u003c00:00,  2.75s/it]\n"}
+,{"stream_name":"stdout","time":403.08288715,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:04\u003c00:00,  2.36s/it]\n"}
+,{"stream_name":"stdout","time":403.08289095,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":403.082903756,"data":"[job1] Fetching 10 files:   0%|          | 0/10 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.082907448,"data":"[job1] Fetching 10 files:  10%|█         | 1/10 [00:05\u003c00:52,  5.81s/it]\n"}
+,{"stream_name":"stdout","time":403.082918919,"data":"[job1] Fetching 10 files: 100%|██████████| 10/10 [00:05\u003c00:00,  2.32it/s]\n"}
+,{"stream_name":"stdout","time":403.082923049,"data":"[job1] Fetching 10 files: 100%|██████████| 10/10 [00:05\u003c00:00,  1.69it/s]\n"}
+,{"stream_name":"stdout","time":403.08292686,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":403.082930284,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.082933936,"data":"[job1] Fetching 13 files:  85%|████████▍ | 11/13 [00:04\u003c00:00,  2.39it/s]\n"}
+,{"stream_name":"stdout","time":403.082937853,"data":"[job1] Fetching 13 files:  92%|█████████▏| 12/13 [00:07\u003c00:00,  1.35it/s]\n"}
+,{"stream_name":"stdout","time":403.08294167,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:09\u003c00:00,  1.24it/s]\n"}
+,{"stream_name":"stdout","time":403.082945636,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:09\u003c00:00,  1.44it/s]\n"}
+,{"stream_name":"stdout","time":403.082949586,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":403.08295389,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":403.0829579,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":403.082961304,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.082965093,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":403.082968586,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":403.08297235,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":403.082975733,"data":"[job1] Loading weights:  78%|███████▊  | 152/196 [00:00\u003c00:00, 1407.94it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":403.082979648,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 1637.22it/s]\n"}
+,{"stream_name":"stdout","time":403.082988957,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":403.082992408,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:02,  2.23it/s]\n"}
+,{"stream_name":"stdout","time":403.08299621,"data":"[job1] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:01,  2.74it/s]\n"}
+,{"stream_name":"stdout","time":403.083008405,"data":"[job1] Loading pipeline components...:  50%|█████     | 3/6 [00:02\u003c00:02,  1.15it/s]\n"}
+,{"stream_name":"stdout","time":403.08301236,"data":"[job1] Loading pipeline components...:  67%|██████▋   | 4/6 [00:17\u003c00:13,  6.55s/it]\n"}
+,{"stream_name":"stdout","time":403.08301621,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:17\u003c00:00,  3.11s/it]\n"}
+,{"stream_name":"stdout","time":403.083020402,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:17\u003c00:00,  2.93s/it]\n"}
+,{"stream_name":"stdout","time":403.083024294,"data":"[job1]   base emilianJR/epiCRealism@6522cf856b, adapter @2e8139b1d1, 53.0 s\n"}
+,{"stream_name":"stdout","time":403.083027924,"data":"[job1] 'a golden retriever running on a beach, high quality, detailed': 71 s with cross-attention recording\n"}
+,{"stream_name":"stdout","time":403.083031708,"data":"[job1]   subject  mask area 0.165  IoU across frames 0.823\n"}
+,{"stream_name":"stdout","time":403.083039528,"data":"[job1]   verb     mask area 0.366  IoU across frames 0.734\n"}
+,{"stream_name":"stdout","time":403.083043306,"data":"[job1]   scene    mask area 1.000  IoU across frames 1.000\n"}
+,{"stream_name":"stdout","time":403.083046936,"data":"[job1] wrote /kaggle/working/out/epicrealism_mm3/s42__golden-retriever__running__on-a-beach/cross_attention.json\n"}
+,{"stream_name":"stdout","time":403.083119998,"data":"[job2] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":403.083125284,"data":"[job2] \n"}
+,{"stream_name":"stdout","time":403.083128764,"data":"[job2] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.083132479,"data":"[job2] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 967.77it/s]\n"}
+,{"stream_name":"stdout","time":403.083205604,"data":"[job2] \n"}
+,{"stream_name":"stdout","time":403.083210085,"data":"[job2] Fetching 10 files:   0%|          | 0/10 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.083213818,"data":"[job2] Fetching 10 files: 100%|██████████| 10/10 [00:00\u003c00:00, 1380.30it/s]\n"}
+,{"stream_name":"stdout","time":403.083220572,"data":"[job2] \n"}
+,{"stream_name":"stdout","time":403.083246615,"data":"[job2] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.083250438,"data":"[job2] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1461.98it/s]\n"}
+,{"stream_name":"stdout","time":403.083254444,"data":"[job2] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":403.083258484,"data":"[job2]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":403.083262308,"data":"[job2] \n"}
+,{"stream_name":"stdout","time":403.08326565,"data":"[job2] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.083269343,"data":"[job2] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:02,  2.26it/s]\n"}
+,{"stream_name":"stdout","time":403.083273079,"data":"[job2] \n"}
+,{"stream_name":"stdout","time":403.083276445,"data":"[job2] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":403.083280118,"data":"[job2] \n"}
+,{"stream_name":"stdout","time":403.083350623,"data":"[job2] Loading weights:  69%|██████▉   | 136/196 [00:00\u003c00:00, 1351.19it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":403.083366576,"data":"[job2] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 1430.26it/s]\n"}
+,{"stream_name":"stdout","time":403.083371434,"data":"[job2] \n"}
+,{"stream_name":"stdout","time":403.08337509,"data":"[job2] Loading pipeline components...:  50%|█████     | 3/6 [00:00\u003c00:00,  4.64it/s]\n"}
+,{"stream_name":"stdout","time":403.083379026,"data":"[job2] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  3.01it/s]\n"}
+,{"stream_name":"stdout","time":403.083382611,"data":"[job2] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  3.11it/s]\n"}
+,{"stream_name":"stdout","time":403.083386697,"data":"[job2]   base emilianJR/epiCRealism@6522cf856b, adapter @6167b88ffe, 15.5 s\n"}
+,{"stream_name":"stdout","time":403.08339069,"data":"[job2] 'a golden retriever running on a beach, high quality, detailed': 77 s with cross-attention recording\n"}
+,{"stream_name":"stdout","time":403.083406679,"data":"[job2]   subject  mask area 0.160  IoU across frames 0.718\n"}
+,{"stream_name":"stdout","time":403.083410976,"data":"[job2]   verb     mask area 0.448  IoU across frames 0.663\n"}
+,{"stream_name":"stdout","time":403.08341473,"data":"[job2]   scene    mask area 1.000  IoU across frames 1.000\n"}
+,{"stream_name":"stdout","time":403.083419107,"data":"[job2] wrote /kaggle/working/out/epicrealism_mm2/s42__golden-retriever__running__on-a-beach/cross_attention.json\n"}
+,{"stream_name":"stdout","time":403.083491256,"data":"[job3] building pipeline (profile=gpu) ...\n"}
+,{"stream_name":"stdout","time":403.083496794,"data":"[job3] \n"}
+,{"stream_name":"stdout","time":403.083501176,"data":"[job3] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.083505769,"data":"[job3] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 977.24it/s]\n"}
+,{"stream_name":"stdout","time":403.083510675,"data":"[job3] \n"}
+,{"stream_name":"stdout","time":403.083514611,"data":"[job3] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.083519356,"data":"[job3] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1428.20it/s]\n"}
+,{"stream_name":"stdout","time":403.08352432,"data":"[job3] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":403.083528972,"data":"[job3]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":403.0835337,"data":"[job3] \n"}
+,{"stream_name":"stdout","time":403.083537488,"data":"[job3] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":403.083541313,"data":"[job3] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:00,  6.24it/s]\n"}
+,{"stream_name":"stdout","time":403.083553469,"data":"[job3] Loading pipeline components...:  67%|██████▋   | 4/6 [00:00\u003c00:00,  9.33it/s]\n"}
+,{"stream_name":"stdout","time":403.083557632,"data":"[job3] \n"}
+,{"stream_name":"stdout","time":403.08356135,"data":"[job3] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":403.083565323,"data":"[job3] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2624.27it/s]\n"}
+,{"stream_name":"stdout","time":403.083569507,"data":"[job3] \n"}
+,{"stream_name":"stdout","time":403.083572923,"data":"[job3] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  9.97it/s]\n"}
+,{"stream_name":"stdout","time":403.083576534,"data":"[job3] Loading pipeline components...: 100%|██████████| 6/6 [00:00\u003c00:00,  9.30it/s]\n"}
+,{"stream_name":"stdout","time":403.083580217,"data":"[job3]   base stable-diffusion-v1-5/stable-diffusion-v1-5@451f4fe161, adapter @2e8139b1d1, 13.6 s\n"}
+,{"stream_name":"stdout","time":463.084382559,"data":"[job3] 'a golden retriever running on a beach, high quality, detailed': 72 s with cross-attention recording\n"}
+,{"stream_name":"stdout","time":463.08442694,"data":"[job3]   subject  mask area 0.159  IoU across frames 0.564\n"}
+,{"stream_name":"stdout","time":463.084432995,"data":"[job3]   verb     mask area 0.530  IoU across frames 0.650\n"}
+,{"stream_name":"stdout","time":463.084437218,"data":"[job3]   scene    mask area 0.997  IoU across frames 0.996\n"}
+,{"stream_name":"stdout","time":463.084441974,"data":"[job3] wrote /kaggle/working/out/sd15_mm3/s42__golden-retriever__running__on-a-beach/cross_attention.json\n"}
+,{"stream_name":"stdout","time":463.084462859,"data":"exit codes [0, 0, 0, 0]\n"}
+,{"stream_name":"stderr","time":465.068185613,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":465.068211436,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":465.304736195,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":465.304764871,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":466.05971739,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":467.005501314,"data":"[NbConvertApp] Writing 466902 bytes to __results__.html\n"}
+]
