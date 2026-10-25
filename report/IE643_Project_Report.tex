@@ -422,39 +422,10 @@ Our work is different from the existing work because:
 
 \subsection{Network Architecture}
 
-AnimateDiff consists of the frozen Stable Diffusion~1.5 U-Net (about 860\,M parameters) with
-the motion adapter \code{guoyww/animatediff-motion-adapter-v1-5-2} \citep{hf_animatediff} (about 417\,M parameters) inserted after
-the spatial layers of every block. The U-Net works on 4-channel latents of 64$\times$64
-(for 512$\times$512 frames) and has four encoder blocks, a middle block and four decoder
-blocks (Figure~\ref{fig:unet}). Each spatial transformer applies self-attention within a frame
-and cross-attention to the CLIP text embedding. Each motion module reshapes the activation so
-that the 16 frames become the sequence dimension, applies two temporal self-attention layers
-with sinusoidal position encoding, and adds the result back to its input. There are 21 motion
-modules (42 temporal attention layers) and 16 spatial transformer blocks. We call one hookable
-output at one denoising step a \emph{coordinate}; the model has 95 hookable modules.
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=\textwidth]{figures/unet.png}
-	\caption{The AnimateDiff U-Net. Every block pairs spatial layers (one frame at a time) with
-	a temporal motion module (all 16 frames at one position). The whole pass runs at each of the
-	25 denoising steps. Block names in the text follow diffusers (\texttt{down\_blocks.0} \ldots
-	\texttt{up\_blocks.3}); \texttt{up\_blocks.0} is the 8$\times$8 decoder block right after the bottleneck.}
-	\label{fig:unet}
-\end{figure}
-
-Generation is fixed throughout (configuration frozen before the sweep): 16 frames, 512$\times$512,
-25 DDIM steps \citep{song2021ddim}, classifier-free guidance scale 7.5, fp16, and the noise
-tensor drawn on the CPU from a seed so that it is identical across machines.
-
-For an activation at one coordinate we write it in a canonical form $x \in \R^{F\times C\times S}$
-(frames, channels, spatial positions) and split it into
-\begin{equation}
-\xs = \frac{1}{F}\sum_{f=1}^{F} x_f, \qquad \xd = x - \xs, \label{eq:split}
-\end{equation}
-the static part, identical in every frame, and the frame-varying residual. For two clips $a,b$
-generated from the same noise, with one prompt word different, the distance at a coordinate is
-$d = 1-\cos(a,b)$ on the flattened tensor, computed separately on $\xs$ and on $\xd$.
+AnimateDiff = frozen VAE + frozen CLIP text encoder + frozen SD1.5 U-Net + motion modules + DDIM sampler
+/textbf{VAE(frozen, about 84M)} Each 512*512 RBG frame is encoded seperately into a 4*64*64 latent. 
+Diffusion runs entirely in this latent space which means that every activation probe is a function of latents, not pixels.
+\textbf{CLIP(frozen, ViT-L/14)} This turns the prompt into 
 
 \subsection{Work done before the prep-presentation review} \label{sec:before}
 
