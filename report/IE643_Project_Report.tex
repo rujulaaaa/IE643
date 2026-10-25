@@ -128,7 +128,12 @@ Recent video diffusion models are built on image diffusion models by adding temp
 \citep{guo2024animatediff} does with Stable Diffusion \citep{rombach2022ldm}. Recent editing
 methods \citep{wu2023tav,zhao2024motiondirector,ling2025motionclone,xiao2024moft} intervene on
 chosen layers or features to transfer or customise motion, but they chose those places by design or by ablation. The obvious reading by archtecture stating spatial and temporal layers 
-is usually assumed rather than measured. A measured mapping of where the content lies and where the motion lies 
+is usually assumed rather than measured. A measured mapping of where the content lies and where the motion lies would allow targetted edits, changing only certain parts of the clip and retaining the other 
+desired ones rather than entire regeneration of the clip. It would show us where to place the few trainable parameters of LoRA \citep{hu2022lora} when teaching the model a new motion. 
+A negative answer is also useful because if the split is not clean then the editing methods that assume this clean split are working for some other reasons that need further invetsigation. 
+\n 
+
+
 
 
 and. Recent editing
