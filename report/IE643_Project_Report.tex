@@ -462,7 +462,9 @@ clip. It is important for our controlled pairs and for patching to work. Under C
 
 This architecture is advantageouos to us because it has clear seperation in the layers so each and can 
 be hooked and patched. Also it is text conditioned so we can make controlled pairs. On top of that
-its 
+its image weights are frozen so taht we can only learn motion so disentangling is easier. 
+The cost is that some of the seperation is buiilt into the training and we need to probe other models too. 
+
 
 \subsection{Work done before the prep-presentation review} \label{sec:before}
 
@@ -527,6 +529,15 @@ and the baseline (D-17).
 \end{figure}
 
 \subsection{Work done after the prep-presentation review} \label{sec:after}
+
+A few things changed after the prep-presentation review. The pilots showed that 
+storing activations was impossible which lead to the lockstep sampler and online scoring.
+Second the probing sweep falsified H1 and H3 so teh map did not give a clean motion layer to patch to. 
+Third the predicted component patches did not meet the criterion on test pairs. That lead us to 
+review the literature again to find attention  level operators and use H2 timings directly through
+prompt switching. We 
+
+
 
 \textbf{Lockstep sampler and online scoring.} A selectivity map needs, for every pair, the
 distance between two clips' activations at every coordinate and step. Caching the anchor clip's
