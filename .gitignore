@@ -11,3 +11,4 @@ __pycache__/
 *.synctex.gz
 *.fls
 *.fdb_latexmk
+.ipynb_checkpoints/
