@@ -1,10 +1,9 @@
-# Frozen generation protocol. Identical to the Kaggle pilots E1-E3 (roadmap §2.2).
-# Changing anything here changes the experiment; memory-saving options that do
-# not change the computation live in the --profile flag of each script instead.
-
-adapter_id: guoyww/animatediff-motion-adapter-v1-5-2      # mm_sd_v15_v2, ~417M params
-# runwayml/stable-diffusion-v1-5 was withdrawn from the Hub; these are the live
-# mirrors, tried in order. The one that resolves is written to every result (D-20).
+# These settings are to be kept fixed so experiment runs are comparable
+# Each script's --profile option to be used for memory-saving settings
+# The video model uses a Stable Diffusion base model and an AnimateDiff motion adapter
+adapter_id: guoyww/animatediff-motion-adapter-v1-5-2      # has ~417M learned parameters
+# runwayml/stable-diffusion-v1-5 was withdrawn from the Hub. These are the live mirrors tried in order.
+# These base models can be tried in order if one cannot be loaded
 base_candidates:
   - stable-diffusion-v1-5/stable-diffusion-v1-5
   - botp/stable-diffusion-v1-5
@@ -13,13 +12,11 @@ base_candidates:
 frames: 16
 height: 512
 width: 512
-steps: 25                 # DDIM, AnimateDiff reference scheduler settings
-guidance_scale: 7.5
-negative_prompt: "bad quality, worse quality, blurry"
-# Verbatim from roadmap §4.1 (so "a elderly man" stays ungrammatical; frozen is frozen).
+steps: 25                  # Number of DDIM steps used to generate a clip.
+guidance_scale: 7.5        # Controls how strongly video generation follows the prompt. 7.5 is the AnimateDiff's default
+negative_prompt: "bad quality, worse quality, blurry" # qualities the model should avoid. Here blurry and bad quality results are discouraged 
 prompt_template: "a {subject} {verb} {scene}, high quality, detailed"
 
-# Noise policy (D-04, E2): one fp16 tensor drawn on the CPU from torch.Generator
-# seeded with the clip's seed, so it is identical on any GPU. Stricter than a seed.
-noise_device: cpu
+# Noise policy settings
+noise_device: cpu #creating noise on cpu makes it consistent across GPUs, which is important for reproducibility
 noise_dtype: float16

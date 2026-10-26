@@ -1,14 +1,13 @@
-"""The coordinate system: every hookable module of AnimateDiff's UNetMotionModel.
+"""Defines the coordinate system used to probe AnimateDiff's UNetMotionModel.
 
-Temporal path: the motion modules (AnimateDiffTransformer3D) inside each down block,
-up block and the mid block, plus the two self-attention layers inside each (both
-attend across frames). Spatial path: attn1 (self) and attn2 (cross, to the text) of
-every spatial transformer block inherited from SD1.5.
-
-For SD1.5 + mm_sd_v15_v2 this is 95 coordinates (E3):
-    temporal_module 21 · temporal_attn1 21 · temporal_attn2 21 · spatial_attn1 16 · spatial_attn2 16
-
-A measurement is addressed by the triple (module path, denoising step, clip id).
+1. Identifies temporal motion modules and their two attention layers across the
+   down, middle, and up blocks.
+2. Identifies spatial self-attention (attn1) and text cross-attention (attn2)
+   layers inherited from the base model (Stable Diffusion 1.5).
+3. Enumerates 95 probe coordinates for the SD1.5 and mm_sd_v15_v2 setup:
+   21 temporal modules, 21 temporal attn1 layers, 21 temporal attn2 layers,
+   16 spatial attn1 layers, and 16 spatial attn2 layers.
+4. Represents each measurement by its module path, denoising step, and clip ID
 """
 
 from __future__ import annotations
@@ -19,8 +18,18 @@ from dataclasses import dataclass
 
 import torch
 
+# Main probe types: spatial self-attention (attn1) and text cross-attention (attn2) from SD1.5,
+# and AnimateDiff's temporal motion modules with their two temporal attention layers
+# These five kinds give the 95 coordinates that every probe, patch and selectivity map refers to
+# Experiment 1 (the probing sweep, patching and edits) used only these
 KINDS = ("spatial_attn1", "spatial_attn2", "temporal_attn1", "temporal_attn2", "temporal_module")
-RESNET = "resnet"   # optional (Experiment 2 refined pass): spatial ResNet blocks, (B*F, C, H, W) like a motion module
+
+# Optional extra kind, added for Experiment 2's refined pass: the 22 spatial ResNet blocks, so that all
+# 117 coordinates (95 + 22) could be sketched and compared. Their output has the same (B*F, C, H, W)
+# layout as a motion module. Only included when enumerate_coordinates(..., resnets=True)
+RESNET = "resnet"
+
+# Selected steps from the 25 denoising steps to be probed
 D07_STEPS = (0, 4, 8, 12, 16, 20, 24)  # full tensors and patching are limited to these (D-07)
 
 _MOTION_MODULE = re.compile(r"motion_modules\.\d+$")
@@ -30,20 +39,26 @@ _BLOCK = re.compile(r"^(down_blocks|up_blocks)\.(\d+)")
 
 @dataclass(frozen=True)
 class Coordinate:
-    name: str    # module path inside the UNet, e.g. "up_blocks.1.motion_modules.0"
-    kind: str    # one of KINDS
-    block: str   # "down_blocks.0" ... "mid_block" ... "up_blocks.3"
-    level: int   # resolution level; the latent side length is divided by 2**level
+    name: str   # U-Net module path for this probe location.
+    kind: str   # Probe type, such as spatial attention or a temporal module
+    block: str  # U-Net block containing the module
+    level: int  # Spatial downsampling level meaning how many times the original video resolution has been halved 
 
     @property
+    # Returns whether this probe location belongs to the temporal or spatial path
     def path(self) -> str:
         return "temporal" if self.kind.startswith("temporal") else "spatial"
 
     @property
+    # Returns whether this probe location is an attention layer
+    # Since attention maps can be recorded and visualized to see what the model is attending to at each step
     def is_attention(self) -> bool:
         return "attn" in self.kind
 
     @property
+    # Returns the channel axis in the raw output tensor for this probe type. Used for channel-based
+    # patching (copying only selected channels across activations): position 1 for motion modules
+    # and ResNets, (B*F, C, H, W); position -1 for attention layers, (tokens, C)
     def channel_dim(self) -> int:
         """Channel axis of the raw output tensor."""
         return 1 if self.kind in ("temporal_module", RESNET) else -1
@@ -56,7 +71,7 @@ class Coordinate:
                 "spatial_attn1": "sp.a1", "spatial_attn2": "sp.a2", RESNET: "rn"}[self.kind]
         return f"{b}.{tail}{idx[-1][1] if idx else ''}"
 
-
+# Classifies U-Net modules by type and names them as spatial or temporal probe locations
 def classify(name: str) -> str | None:
     inside_motion = ".motion_modules." in name
     if _MOTION_MODULE.search(name):
@@ -67,7 +82,7 @@ def classify(name: str) -> str | None:
         return "temporal_attn2" if inside_motion else "spatial_attn2"
     return None
 
-
+# Returns a module's U-Net block and spatial resolution level from its name
 def _block_and_level(name: str, n_levels: int) -> tuple[str, int]:
     m = _BLOCK.match(name)
     if m:
