@@ -5,7 +5,7 @@ Group 1, source A = golden retriever running (beach, seed 42). Target arms:
     null_dynamic    the same as a D-29 x̃-only component patch                     must pass D-11
     null_static     the same as an x̄-only component patch                         must pass D-11
     null_attn       A's own temporal attention probabilities, all 42 modules      must pass D-11
-                    (the probabilities are stored in fp16, so this is not bit-exact)
+                    (fp32 probabilities, injected as a change to the stock output: bit-exact)
     misindexed      null_tensor read one step late (steps 1..24)                  must FAIL D-11
     B_plain         B's prompt, no patch (= the unpatched B)
     A_to_B          B's prompt + A's up_blocks.0 motion modules, first third

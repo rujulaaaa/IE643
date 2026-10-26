@@ -6,8 +6,8 @@ and inverted with deterministic DDIM (eta = 0), text-conditional only (no CFG), 
 `alphas_cumprod` and the same 25 timesteps as `run_lockstep`. This gives one latent z_t per
 step. In the edit, the source track is then *driven* along that trajectory: at step i the
 UNet sees z_{t_i} (so the cached activations are the video's), and its own update is replaced
-by z_{t_{i+1}}. The target arms start from the inverted noise z_{t_0}, the shared noise
-tensor that patching requires.
+by z_{t_{i+1}}. The target arms start from Gaussian noise or a blend with z_{t_0} (demo.upload_start):
+sampling from z_{t_0} itself with CFG gives blotchy, grid-patterned clips (see edit.run_arms).
 
 Inversion step (from the cleaner level to the noisier one), with ε predicted at the
 cleaner latent:
