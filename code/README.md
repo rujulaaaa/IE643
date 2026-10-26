@@ -21,11 +21,6 @@ Model: AnimateDiff = Stable Diffusion 1.5 + `guoyww/animatediff-motion-adapter-v
 | Trained model | Motion LoRAs on HMDB51: full, probe-guided (placed by the Deliverable 2 map), wrong-place control | `lora.py`, `train_motion_lora.py` |
 | Interface | Gradio app: live edits, upload your own video, browse every scored clip, the selectivity maps | `scripts/app.py`, `demo.py` |
 
-Every decision that shaped an experiment is dated and justified in the register
-[docs/protocol.md](docs/protocol.md) (D-01 … D-34). The hypotheses and their test statistics,
-written before the sweep, are in [docs/hypotheses.md](docs/hypotheses.md). The pilot phase
-(E1–E3, before the prep presentation) is in [docs/pilots.md](docs/pilots.md).
-
 ## Results
 
 ### Where content and motion live (Deliverable 2)
@@ -248,7 +243,6 @@ peak memory next to its outputs.
 ```
 configs/      generation protocol, probing vocabulary, edit pairs, Stage 5 selection
 data/         HMDB51 LoRA clips + manifest
-docs/         decisions register, hypotheses, harness and patching design, pilot phase
 src/vdprobe/
   coords.py        the 95 coordinates, blocks, layouts, frame-mean split per layout
   harness.py       hooks, step counter, summary recorder
