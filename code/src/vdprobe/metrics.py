@@ -245,3 +245,48 @@ def disentanglement(sc_target, sm_target, sc_other, sm_other, sc_pool, sm_pool):
     nc = lambda v: (np.asarray(v) - sc_lo) / max(sc_hi - sc_lo, 1e-12)
     nm = lambda v: (np.asarray(v) - sm_lo) / max(sm_hi - sm_lo, 1e-12)
     return 0.5 * (nc(sc_target) + nm(sm_target)) - 0.5 * (nc(sc_other) + nm(sm_other))
+
+
+# ---------------------------------------------------------------------------
+# Camera motion (novelty phase): the scene is static and the camera moves, so the flow of a
+# clip is, to first order, a global similarity motion. Its four parameters are the signature.
+# ---------------------------------------------------------------------------
+
+_CAMERA_DESIGN: dict = {}
+
+
+def _camera_design(h: int, w: int) -> np.ndarray:
+    """Pseudo-inverse of the design matrix of u = tx + zoom*x - roll*y, v = ty + roll*x + zoom*y."""
+    if (h, w) not in _CAMERA_DESIGN:
+        half = h / 2
+        y, x = np.mgrid[0:h, 0:w].astype(np.float64)
+        x, y = ((x + 0.5 - w / 2) / half).ravel(), ((y + 0.5 - h / 2) / half).ravel()
+        one, zero = np.ones_like(x), np.zeros_like(x)
+        a = np.concatenate([np.stack([one, zero, x, -y], 1), np.stack([zero, one, y, x], 1)])     # (2N, 4)
+        _CAMERA_DESIGN[(h, w)] = np.linalg.pinv(a)
+    return _CAMERA_DESIGN[(h, w)]
+
+
+def camera_signature(flow: np.ndarray, min_flow: float = 0.05) -> np.ndarray:
+    """(tx, ty, zoom, roll) of a clip: per frame pair, the least-squares global similarity motion
+    of the flow field (F-1, H, W, 2), averaged over frame pairs.
+
+    Coordinates are centred and divided by half the frame height, and so is the flow, which makes
+    the four numbers comparable: tx = 0.1 is a pan of 5 % of the height per frame, zoom = 0.1 a
+    10 % magnification per frame, roll = 0.1 a rotation of 0.1 rad per frame (image y points down,
+    so positive roll turns the picture clockwise). Returns zeros, not NaN, when the mean flow is
+    below `min_flow` pixels (a clip in which nothing moves has no camera direction).
+    """
+    flow = np.asarray(flow, np.float64)
+    if flow.size == 0 or not np.isfinite(flow).all() or np.linalg.norm(flow, axis=-1).mean() < min_flow:
+        return np.zeros(4)
+    n, h, w, _ = flow.shape
+    pinv = _camera_design(h, w)
+    b = np.concatenate([flow[..., 0].reshape(n, -1), flow[..., 1].reshape(n, -1)], axis=1) / (h / 2)   # (n, 2N)
+    return (b @ pinv.T).mean(0)
+
+
+def camera_fidelity(sig_a: np.ndarray, sig_b: np.ndarray) -> float:
+    """Cosine of two camera signatures; 0.0 if either has (almost) no motion."""
+    na, nb = np.linalg.norm(sig_a), np.linalg.norm(sig_b)
+    return float(np.dot(sig_a, sig_b) / (na * nb)) if na >= 1e-6 and nb >= 1e-6 else 0.0

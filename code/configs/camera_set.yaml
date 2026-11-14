@@ -1,0 +1,17 @@
+frozen_on: "2026-11-14"
+scenes:
+  - a mountain lake at sunrise
+  - a medieval stone castle on a hill
+  - a city street at night with neon signs
+  - a red sandstone desert canyon
+  - a path through a pine forest
+  - a lighthouse on a rocky cliff
+  - a snowy village with wooden houses
+  - a tropical beach with palm trees
+anchor_scene: a mountain lake at sunrise
+cameras: [none, zoom-in, zoom-out, pan-left, pan-right, tilt-up, tilt-down, rolling-clockwise, rolling-anticlockwise]
+anchor_camera: none
+lora_repo: "guoyww/animatediff-motion-lora-{camera}"
+seeds: [42, 1337]
+heldout_seed: 2024
+expected_counts: {clips_per_seed: 72, camera_pairs: 64, content_pairs: 63}

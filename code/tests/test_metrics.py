@@ -78,3 +78,72 @@ def test_raft_recovers_a_translation():
     f = M.raft_flow(frames, size=128)
     assert f.shape == (2, 128, 128, 2)
     assert np.median(f[..., 0]) == pytest.approx(2, abs=0.3) and abs(np.median(f[..., 1])) < 0.3
+
+
+# --- camera signature (novelty phase) ---------------------------------------------------------
+
+def _grid(n=64, w=None):
+    w = w or n
+    y, x = np.mgrid[0:n, 0:w].astype(np.float32)
+    h = n / 2
+    return (x - w / 2 + 0.5) / h, (y - h + 0.5) / h, h
+
+
+def _camera_cases(n=64, w=None):
+    x, y, h = _grid(n, w)
+    return {0: np.stack([np.full_like(x, 2.0), np.zeros_like(x)], -1),      # pan: tx
+            1: np.stack([np.zeros_like(x), np.full_like(x, -3.0)], -1),     # tilt: ty
+            2: np.stack([x * h * 0.1, y * h * 0.1], -1),                    # zoom
+            3: np.stack([-y * h * 0.1, x * h * 0.1], -1)}                   # roll
+
+
+@pytest.mark.parametrize("w", [None, 96])
+def test_camera_signature_recovers_each_motion(w):
+    for k, f in _camera_cases(w=w).items():
+        sig = M.camera_signature(np.repeat(f[None], 5, 0))
+        assert np.argmax(np.abs(sig)) == k
+        assert np.abs(np.delete(sig, k)).max() < 1e-3
+
+
+def test_camera_signature_values_and_signs():
+    c = _camera_cases()
+    assert M.camera_signature(c[0][None])[0] == pytest.approx(2.0 / 32)
+    assert M.camera_signature(c[1][None])[1] == pytest.approx(-3.0 / 32)
+    assert M.camera_signature(c[2][None])[2] == pytest.approx(0.1)
+    assert M.camera_signature(c[3][None])[3] == pytest.approx(0.1)
+    assert M.camera_signature(-c[3][None])[3] == pytest.approx(-0.1)
+
+
+def test_camera_signature_roll_is_not_read_as_pan():
+    sig = M.camera_signature(np.repeat(_camera_cases()[3][None], 3, 0))
+    assert abs(sig[3]) > 50 * max(abs(sig[0]), abs(sig[1]))
+
+
+def test_camera_signature_is_linear_and_averages_frames():
+    c = _camera_cases()
+    mix = c[0] + 2 * c[2]
+    assert np.allclose(M.camera_signature(mix[None]), [2.0 / 32, 0, 0.2, 0], atol=1e-6)
+    two = np.stack([c[0], -c[0] * 0.5])
+    assert M.camera_signature(two)[0] == pytest.approx(0.5 * (2.0 / 32 - 1.0 / 32))       # mean over the two frame pairs
+
+
+def test_camera_signature_ignores_a_moving_object_on_a_static_background():
+    f = np.zeros((4, 64, 64, 2), np.float32)
+    f[:, 20:30, 20:30, 0] = 6.0                       # a small object moves; mean flow 0.146 px
+    sig = M.camera_signature(f)
+    assert np.abs(sig).max() < 0.01
+
+
+def test_camera_signature_static_is_zero_not_nan():
+    assert np.array_equal(M.camera_signature(np.zeros((5, 64, 64, 2), np.float32)), np.zeros(4))
+    assert np.array_equal(M.camera_signature(np.full((5, 64, 64, 2), 0.01, np.float32)), np.zeros(4))
+    assert np.array_equal(M.camera_signature(np.full((2, 8, 8, 2), np.nan)), np.zeros(4))
+    assert np.array_equal(M.camera_signature(np.zeros((0, 64, 64, 2))), np.zeros(4))
+
+
+def test_camera_fidelity_opposites():
+    a = np.array([0.1, 0, 0, 0])
+    assert M.camera_fidelity(a, -a) == pytest.approx(-1.0)
+    assert M.camera_fidelity(a, 3 * a) == pytest.approx(1.0)
+    assert M.camera_fidelity(a, np.array([0, 0, 0.2, 0])) == pytest.approx(0.0)
+    assert M.camera_fidelity(a, np.zeros(4)) == 0.0

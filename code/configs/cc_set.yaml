@@ -1,0 +1,18 @@
+# CameraCtrl version of configs/camera_set.yaml: same scenes and seeds, cameras are trajectories
+# (vdprobe.cameractrl.rays.CAMERAS) and the anchor is the adapter switched off.
+frozen_on: "2026-11-15"
+scenes:
+  - a mountain lake at sunrise
+  - a medieval stone castle on a hill
+  - a city street at night with neon signs
+  - a red sandstone desert canyon
+  - a path through a pine forest
+  - a lighthouse on a rocky cliff
+  - a snowy village with wooden houses
+  - a tropical beach with palm trees
+anchor_scene: a mountain lake at sunrise
+cameras: ["off", static, pan-left, pan-right, tilt-up, tilt-down, zoom-in, zoom-out, roll-cw, roll-ccw]
+anchor_camera: "off"
+seeds: [42, 1337]
+heldout_seed: 2024
+expected_counts: {clips_per_seed: 80, camera_pairs: 72, content_pairs: 70}
