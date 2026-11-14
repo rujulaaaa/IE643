@@ -45,3 +45,39 @@ class TinyRun:
 @pytest.fixture
 def tiny_run(tiny_unet):
     return lambda seed=0: TinyRun(tiny_unet, seed)
+
+
+@pytest.fixture(scope="session")
+def tiny_cc_unet():
+    """AnimateDiff-v3-shaped tiny UNet (no mid-block motion module) for the CameraCtrl graft."""
+    from diffusers import UNetMotionModel
+
+    torch.manual_seed(1)
+    unet = UNetMotionModel(
+        block_out_channels=(32, 64),
+        layers_per_block=1,
+        down_block_types=("CrossAttnDownBlockMotion", "DownBlockMotion"),
+        up_block_types=("UpBlockMotion", "CrossAttnUpBlockMotion"),
+        cross_attention_dim=16,
+        num_attention_heads=2,
+        motion_num_attention_heads=2,
+        motion_max_seq_length=8,
+        use_motion_mid_block=False,
+        sample_size=8,
+    )
+    return unet.eval()
+
+
+def make_tiny_adapter(unet, randomise=True, seed=0):
+    """CameraAdapter on a tiny UNet: 16x16 'pixels' -> 8x8 latent, features at 8x8 and 4x4."""
+    from vdprobe.cameractrl.adapter import CameraAdapter
+    from vdprobe.cameractrl.pose_encoder import CameraPoseEncoder
+
+    torch.manual_seed(seed)
+    enc = CameraPoseEncoder(channels=(32, 64), cin=24, downscale_factor=2, heads=2, max_len=8).eval()
+    ad = CameraAdapter(unet, enc).eval()
+    if randomise:
+        for lin in ad.merges.values():
+            torch.nn.init.normal_(lin.weight, std=0.2)
+            torch.nn.init.normal_(lin.bias, std=0.2)
+    return ad

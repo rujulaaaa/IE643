@@ -1,0 +1,1744 @@
+{
+"source": "hehao13/CameraCtrl CameraCtrl.ckpt (tensor names and shapes read from the checkpoint header)",
+"pose_encoder_state_dict": {
+"encoder_down_conv_blocks.0.0.block1.weight": [
+320,
+320,
+3,
+3
+],
+"encoder_down_conv_blocks.0.0.block1.bias": [
+320
+],
+"encoder_down_conv_blocks.0.0.block2.weight": [
+320,
+320,
+1,
+1
+],
+"encoder_down_conv_blocks.0.0.block2.bias": [
+320
+],
+"encoder_down_conv_blocks.0.1.block1.weight": [
+320,
+320,
+3,
+3
+],
+"encoder_down_conv_blocks.0.1.block1.bias": [
+320
+],
+"encoder_down_conv_blocks.0.1.block2.weight": [
+320,
+320,
+1,
+1
+],
+"encoder_down_conv_blocks.0.1.block2.bias": [
+320
+],
+"encoder_down_conv_blocks.1.0.in_conv.weight": [
+640,
+320,
+1,
+1
+],
+"encoder_down_conv_blocks.1.0.in_conv.bias": [
+640
+],
+"encoder_down_conv_blocks.1.0.block1.weight": [
+640,
+640,
+3,
+3
+],
+"encoder_down_conv_blocks.1.0.block1.bias": [
+640
+],
+"encoder_down_conv_blocks.1.0.block2.weight": [
+640,
+640,
+1,
+1
+],
+"encoder_down_conv_blocks.1.0.block2.bias": [
+640
+],
+"encoder_down_conv_blocks.1.1.block1.weight": [
+640,
+640,
+3,
+3
+],
+"encoder_down_conv_blocks.1.1.block1.bias": [
+640
+],
+"encoder_down_conv_blocks.1.1.block2.weight": [
+640,
+640,
+1,
+1
+],
+"encoder_down_conv_blocks.1.1.block2.bias": [
+640
+],
+"encoder_down_conv_blocks.2.0.in_conv.weight": [
+1280,
+640,
+1,
+1
+],
+"encoder_down_conv_blocks.2.0.in_conv.bias": [
+1280
+],
+"encoder_down_conv_blocks.2.0.block1.weight": [
+1280,
+1280,
+3,
+3
+],
+"encoder_down_conv_blocks.2.0.block1.bias": [
+1280
+],
+"encoder_down_conv_blocks.2.0.block2.weight": [
+1280,
+1280,
+1,
+1
+],
+"encoder_down_conv_blocks.2.0.block2.bias": [
+1280
+],
+"encoder_down_conv_blocks.2.1.block1.weight": [
+1280,
+1280,
+3,
+3
+],
+"encoder_down_conv_blocks.2.1.block1.bias": [
+1280
+],
+"encoder_down_conv_blocks.2.1.block2.weight": [
+1280,
+1280,
+1,
+1
+],
+"encoder_down_conv_blocks.2.1.block2.bias": [
+1280
+],
+"encoder_down_conv_blocks.3.0.block1.weight": [
+1280,
+1280,
+3,
+3
+],
+"encoder_down_conv_blocks.3.0.block1.bias": [
+1280
+],
+"encoder_down_conv_blocks.3.0.block2.weight": [
+1280,
+1280,
+1,
+1
+],
+"encoder_down_conv_blocks.3.0.block2.bias": [
+1280
+],
+"encoder_down_conv_blocks.3.1.block1.weight": [
+1280,
+1280,
+3,
+3
+],
+"encoder_down_conv_blocks.3.1.block1.bias": [
+1280
+],
+"encoder_down_conv_blocks.3.1.block2.weight": [
+1280,
+1280,
+1,
+1
+],
+"encoder_down_conv_blocks.3.1.block2.bias": [
+1280
+],
+"encoder_down_attention_blocks.0.0.attention_blocks.0.to_q.weight": [
+320,
+320
+],
+"encoder_down_attention_blocks.0.0.attention_blocks.0.to_k.weight": [
+320,
+320
+],
+"encoder_down_attention_blocks.0.0.attention_blocks.0.to_v.weight": [
+320,
+320
+],
+"encoder_down_attention_blocks.0.0.attention_blocks.0.to_out.0.weight": [
+320,
+320
+],
+"encoder_down_attention_blocks.0.0.attention_blocks.0.to_out.0.bias": [
+320
+],
+"encoder_down_attention_blocks.0.0.attention_blocks.0.pos_encoder.pe": [
+1,
+16,
+320
+],
+"encoder_down_attention_blocks.0.0.norms.0.weight": [
+320
+],
+"encoder_down_attention_blocks.0.0.norms.0.bias": [
+320
+],
+"encoder_down_attention_blocks.0.0.ff.net.0.proj.weight": [
+2560,
+320
+],
+"encoder_down_attention_blocks.0.0.ff.net.0.proj.bias": [
+2560
+],
+"encoder_down_attention_blocks.0.0.ff.net.2.weight": [
+320,
+1280
+],
+"encoder_down_attention_blocks.0.0.ff.net.2.bias": [
+320
+],
+"encoder_down_attention_blocks.0.0.ff_norm.weight": [
+320
+],
+"encoder_down_attention_blocks.0.0.ff_norm.bias": [
+320
+],
+"encoder_down_attention_blocks.0.1.attention_blocks.0.to_q.weight": [
+320,
+320
+],
+"encoder_down_attention_blocks.0.1.attention_blocks.0.to_k.weight": [
+320,
+320
+],
+"encoder_down_attention_blocks.0.1.attention_blocks.0.to_v.weight": [
+320,
+320
+],
+"encoder_down_attention_blocks.0.1.attention_blocks.0.to_out.0.weight": [
+320,
+320
+],
+"encoder_down_attention_blocks.0.1.attention_blocks.0.to_out.0.bias": [
+320
+],
+"encoder_down_attention_blocks.0.1.attention_blocks.0.pos_encoder.pe": [
+1,
+16,
+320
+],
+"encoder_down_attention_blocks.0.1.norms.0.weight": [
+320
+],
+"encoder_down_attention_blocks.0.1.norms.0.bias": [
+320
+],
+"encoder_down_attention_blocks.0.1.ff.net.0.proj.weight": [
+2560,
+320
+],
+"encoder_down_attention_blocks.0.1.ff.net.0.proj.bias": [
+2560
+],
+"encoder_down_attention_blocks.0.1.ff.net.2.weight": [
+320,
+1280
+],
+"encoder_down_attention_blocks.0.1.ff.net.2.bias": [
+320
+],
+"encoder_down_attention_blocks.0.1.ff_norm.weight": [
+320
+],
+"encoder_down_attention_blocks.0.1.ff_norm.bias": [
+320
+],
+"encoder_down_attention_blocks.1.0.attention_blocks.0.to_q.weight": [
+640,
+640
+],
+"encoder_down_attention_blocks.1.0.attention_blocks.0.to_k.weight": [
+640,
+640
+],
+"encoder_down_attention_blocks.1.0.attention_blocks.0.to_v.weight": [
+640,
+640
+],
+"encoder_down_attention_blocks.1.0.attention_blocks.0.to_out.0.weight": [
+640,
+640
+],
+"encoder_down_attention_blocks.1.0.attention_blocks.0.to_out.0.bias": [
+640
+],
+"encoder_down_attention_blocks.1.0.attention_blocks.0.pos_encoder.pe": [
+1,
+16,
+640
+],
+"encoder_down_attention_blocks.1.0.norms.0.weight": [
+640
+],
+"encoder_down_attention_blocks.1.0.norms.0.bias": [
+640
+],
+"encoder_down_attention_blocks.1.0.ff.net.0.proj.weight": [
+5120,
+640
+],
+"encoder_down_attention_blocks.1.0.ff.net.0.proj.bias": [
+5120
+],
+"encoder_down_attention_blocks.1.0.ff.net.2.weight": [
+640,
+2560
+],
+"encoder_down_attention_blocks.1.0.ff.net.2.bias": [
+640
+],
+"encoder_down_attention_blocks.1.0.ff_norm.weight": [
+640
+],
+"encoder_down_attention_blocks.1.0.ff_norm.bias": [
+640
+],
+"encoder_down_attention_blocks.1.1.attention_blocks.0.to_q.weight": [
+640,
+640
+],
+"encoder_down_attention_blocks.1.1.attention_blocks.0.to_k.weight": [
+640,
+640
+],
+"encoder_down_attention_blocks.1.1.attention_blocks.0.to_v.weight": [
+640,
+640
+],
+"encoder_down_attention_blocks.1.1.attention_blocks.0.to_out.0.weight": [
+640,
+640
+],
+"encoder_down_attention_blocks.1.1.attention_blocks.0.to_out.0.bias": [
+640
+],
+"encoder_down_attention_blocks.1.1.attention_blocks.0.pos_encoder.pe": [
+1,
+16,
+640
+],
+"encoder_down_attention_blocks.1.1.norms.0.weight": [
+640
+],
+"encoder_down_attention_blocks.1.1.norms.0.bias": [
+640
+],
+"encoder_down_attention_blocks.1.1.ff.net.0.proj.weight": [
+5120,
+640
+],
+"encoder_down_attention_blocks.1.1.ff.net.0.proj.bias": [
+5120
+],
+"encoder_down_attention_blocks.1.1.ff.net.2.weight": [
+640,
+2560
+],
+"encoder_down_attention_blocks.1.1.ff.net.2.bias": [
+640
+],
+"encoder_down_attention_blocks.1.1.ff_norm.weight": [
+640
+],
+"encoder_down_attention_blocks.1.1.ff_norm.bias": [
+640
+],
+"encoder_down_attention_blocks.2.0.attention_blocks.0.to_q.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.2.0.attention_blocks.0.to_k.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.2.0.attention_blocks.0.to_v.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.2.0.attention_blocks.0.to_out.0.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.2.0.attention_blocks.0.to_out.0.bias": [
+1280
+],
+"encoder_down_attention_blocks.2.0.attention_blocks.0.pos_encoder.pe": [
+1,
+16,
+1280
+],
+"encoder_down_attention_blocks.2.0.norms.0.weight": [
+1280
+],
+"encoder_down_attention_blocks.2.0.norms.0.bias": [
+1280
+],
+"encoder_down_attention_blocks.2.0.ff.net.0.proj.weight": [
+10240,
+1280
+],
+"encoder_down_attention_blocks.2.0.ff.net.0.proj.bias": [
+10240
+],
+"encoder_down_attention_blocks.2.0.ff.net.2.weight": [
+1280,
+5120
+],
+"encoder_down_attention_blocks.2.0.ff.net.2.bias": [
+1280
+],
+"encoder_down_attention_blocks.2.0.ff_norm.weight": [
+1280
+],
+"encoder_down_attention_blocks.2.0.ff_norm.bias": [
+1280
+],
+"encoder_down_attention_blocks.2.1.attention_blocks.0.to_q.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.2.1.attention_blocks.0.to_k.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.2.1.attention_blocks.0.to_v.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.2.1.attention_blocks.0.to_out.0.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.2.1.attention_blocks.0.to_out.0.bias": [
+1280
+],
+"encoder_down_attention_blocks.2.1.attention_blocks.0.pos_encoder.pe": [
+1,
+16,
+1280
+],
+"encoder_down_attention_blocks.2.1.norms.0.weight": [
+1280
+],
+"encoder_down_attention_blocks.2.1.norms.0.bias": [
+1280
+],
+"encoder_down_attention_blocks.2.1.ff.net.0.proj.weight": [
+10240,
+1280
+],
+"encoder_down_attention_blocks.2.1.ff.net.0.proj.bias": [
+10240
+],
+"encoder_down_attention_blocks.2.1.ff.net.2.weight": [
+1280,
+5120
+],
+"encoder_down_attention_blocks.2.1.ff.net.2.bias": [
+1280
+],
+"encoder_down_attention_blocks.2.1.ff_norm.weight": [
+1280
+],
+"encoder_down_attention_blocks.2.1.ff_norm.bias": [
+1280
+],
+"encoder_down_attention_blocks.3.0.attention_blocks.0.to_q.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.3.0.attention_blocks.0.to_k.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.3.0.attention_blocks.0.to_v.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.3.0.attention_blocks.0.to_out.0.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.3.0.attention_blocks.0.to_out.0.bias": [
+1280
+],
+"encoder_down_attention_blocks.3.0.attention_blocks.0.pos_encoder.pe": [
+1,
+16,
+1280
+],
+"encoder_down_attention_blocks.3.0.norms.0.weight": [
+1280
+],
+"encoder_down_attention_blocks.3.0.norms.0.bias": [
+1280
+],
+"encoder_down_attention_blocks.3.0.ff.net.0.proj.weight": [
+10240,
+1280
+],
+"encoder_down_attention_blocks.3.0.ff.net.0.proj.bias": [
+10240
+],
+"encoder_down_attention_blocks.3.0.ff.net.2.weight": [
+1280,
+5120
+],
+"encoder_down_attention_blocks.3.0.ff.net.2.bias": [
+1280
+],
+"encoder_down_attention_blocks.3.0.ff_norm.weight": [
+1280
+],
+"encoder_down_attention_blocks.3.0.ff_norm.bias": [
+1280
+],
+"encoder_down_attention_blocks.3.1.attention_blocks.0.to_q.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.3.1.attention_blocks.0.to_k.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.3.1.attention_blocks.0.to_v.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.3.1.attention_blocks.0.to_out.0.weight": [
+1280,
+1280
+],
+"encoder_down_attention_blocks.3.1.attention_blocks.0.to_out.0.bias": [
+1280
+],
+"encoder_down_attention_blocks.3.1.attention_blocks.0.pos_encoder.pe": [
+1,
+16,
+1280
+],
+"encoder_down_attention_blocks.3.1.norms.0.weight": [
+1280
+],
+"encoder_down_attention_blocks.3.1.norms.0.bias": [
+1280
+],
+"encoder_down_attention_blocks.3.1.ff.net.0.proj.weight": [
+10240,
+1280
+],
+"encoder_down_attention_blocks.3.1.ff.net.0.proj.bias": [
+10240
+],
+"encoder_down_attention_blocks.3.1.ff.net.2.weight": [
+1280,
+5120
+],
+"encoder_down_attention_blocks.3.1.ff.net.2.bias": [
+1280
+],
+"encoder_down_attention_blocks.3.1.ff_norm.weight": [
+1280
+],
+"encoder_down_attention_blocks.3.1.ff_norm.bias": [
+1280
+],
+"encoder_conv_in.weight": [
+320,
+384,
+3,
+3
+],
+"encoder_conv_in.bias": [
+320
+]
+},
+"attention_processor_state_dict": {
+"down_blocks.0.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+320,
+320
+],
+"down_blocks.0.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+320
+],
+"down_blocks.0.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+320,
+320
+],
+"down_blocks.0.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+320
+],
+"down_blocks.1.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+640,
+640
+],
+"down_blocks.1.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+640
+],
+"down_blocks.1.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+640,
+640
+],
+"down_blocks.1.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+640
+],
+"down_blocks.2.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+1280,
+1280
+],
+"down_blocks.2.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+1280
+],
+"down_blocks.2.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+1280,
+1280
+],
+"down_blocks.2.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+1280
+],
+"down_blocks.3.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+1280,
+1280
+],
+"down_blocks.3.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+1280
+],
+"down_blocks.3.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+1280,
+1280
+],
+"down_blocks.3.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+1280
+],
+"up_blocks.0.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+1280,
+1280
+],
+"up_blocks.0.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+1280
+],
+"up_blocks.0.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+1280,
+1280
+],
+"up_blocks.0.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+1280
+],
+"up_blocks.0.motion_modules.2.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+1280,
+1280
+],
+"up_blocks.0.motion_modules.2.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+1280
+],
+"up_blocks.1.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+1280,
+1280
+],
+"up_blocks.1.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+1280
+],
+"up_blocks.1.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+1280,
+1280
+],
+"up_blocks.1.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+1280
+],
+"up_blocks.1.motion_modules.2.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+1280,
+1280
+],
+"up_blocks.1.motion_modules.2.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+1280
+],
+"up_blocks.2.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+640,
+640
+],
+"up_blocks.2.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+640
+],
+"up_blocks.2.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+640,
+640
+],
+"up_blocks.2.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+640
+],
+"up_blocks.2.motion_modules.2.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+640,
+640
+],
+"up_blocks.2.motion_modules.2.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+640
+],
+"up_blocks.3.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+320,
+320
+],
+"up_blocks.3.motion_modules.0.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+320
+],
+"up_blocks.3.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+320,
+320
+],
+"up_blocks.3.motion_modules.1.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+320
+],
+"up_blocks.3.motion_modules.2.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.weight": [
+320,
+320
+],
+"up_blocks.3.motion_modules.2.temporal_transformer.transformer_blocks.0.attention_blocks.0.processor.qkv_merge.bias": [
+320
+]
+},
+"domain_lora": {
+"down_blocks.0.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+320
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+320
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+320
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+320
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+320
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+320
+],
+"down_blocks.0.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+320
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+320
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+320
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+320
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+320
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+320,
+128
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+320
+],
+"down_blocks.0.attentions.1.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+320,
+128
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+640
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+640
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+640
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+640
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+640
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+640
+],
+"down_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+640
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+640
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+640
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+640
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+640
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+640,
+128
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+640
+],
+"down_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+640,
+128
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+1280
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+1280
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+1280
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+1280
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+1280
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+1280
+],
+"down_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+1280
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+1280
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+1280
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+1280
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+1280
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+1280,
+128
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+1280
+],
+"down_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+1280
+],
+"up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+1280,
+128
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+640,
+128
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+640
+],
+"up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+640,
+128
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+320,
+128
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+320
+],
+"up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+320,
+128
+],
+"mid_block.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.down.weight": [
+128,
+1280
+],
+"mid_block.attentions.0.transformer_blocks.0.attn1.processor.to_q_lora.up.weight": [
+1280,
+128
+],
+"mid_block.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.down.weight": [
+128,
+1280
+],
+"mid_block.attentions.0.transformer_blocks.0.attn1.processor.to_k_lora.up.weight": [
+1280,
+128
+],
+"mid_block.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.down.weight": [
+128,
+1280
+],
+"mid_block.attentions.0.transformer_blocks.0.attn1.processor.to_v_lora.up.weight": [
+1280,
+128
+],
+"mid_block.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.down.weight": [
+128,
+1280
+],
+"mid_block.attentions.0.transformer_blocks.0.attn1.processor.to_out_lora.up.weight": [
+1280,
+128
+],
+"mid_block.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.down.weight": [
+128,
+1280
+],
+"mid_block.attentions.0.transformer_blocks.0.attn2.processor.to_q_lora.up.weight": [
+1280,
+128
+],
+"mid_block.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.down.weight": [
+128,
+768
+],
+"mid_block.attentions.0.transformer_blocks.0.attn2.processor.to_k_lora.up.weight": [
+1280,
+128
+],
+"mid_block.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.down.weight": [
+128,
+768
+],
+"mid_block.attentions.0.transformer_blocks.0.attn2.processor.to_v_lora.up.weight": [
+1280,
+128
+],
+"mid_block.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.down.weight": [
+128,
+1280
+],
+"mid_block.attentions.0.transformer_blocks.0.attn2.processor.to_out_lora.up.weight": [
+1280,
+128
+]
+}
+}
