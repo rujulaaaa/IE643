@@ -174,3 +174,46 @@ def test_resnet_coordinates_and_exp2_probes(tiny_unet, tiny_run):
         assert sk.out[(c.name, 0)].shape == (1, 16)
     t_attn = [c for c in coords if c.kind.startswith("temporal_attn")]
     assert {k[0] for k in head.out} == {c.name for c in t_attn}
+
+
+def test_token_sampler_stores_the_update_at_fixed_positions(tiny_unet, tiny_run):
+    import pytest
+
+    from vdprobe.lockstep import TokenSampler
+
+    coords = enumerate_coordinates(tiny_unet)
+    site = "down_blocks.0.motion_modules.0"
+    mod = dict(tiny_unet.named_modules())[site]
+    seen = {}
+    def record(m, a, out):                                          # returns None: a hook's return value replaces the output
+        seen.setdefault("io", (a[0].clone(), out.clone()))
+
+    h = mod.register_forward_hook(record)
+    ts = TokenSampler([site], steps=(0,), n_positions=5)
+    try:
+        with Harness(tiny_unet, coords, [ts]):
+            tiny_run()(steps=2)
+    finally:
+        h.remove()
+    assert set(ts.store) == {(site, 0)}                            # only the requested step
+    x = ts.store[(site, 0)]
+    F_, C = 4, 32
+    assert x.shape == (F_ * 5, C) and x.dtype == torch.float16
+    inp, out = seen["io"]                                           # (B*F, C, 8, 8); the hook saw step 0 first
+    upd = (out - inp)[F_:].flatten(2)                               # conditional branch = second half; (F, C, 64)
+    idx = ts.positions(site, 64)
+    assert len(idx) == 5 and len(set(idx.tolist())) == 5
+    for f in range(F_):
+        for k in range(5):
+            assert torch.allclose(x[f * 5 + k].float(), upd[f, :, idx[k]], atol=2e-3, rtol=2e-3)
+    assert upd.abs().max() > 1e-3                                   # the update is not trivially zero
+
+    again = TokenSampler([site], steps=(0,), n_positions=5)
+    assert torch.equal(again.positions(site, 64), idx)              # same places for every clip and run
+    assert not torch.equal(TokenSampler([site], (0,), 5, seed=1).positions(site, 64), idx)
+    assert not torch.equal(again.positions("up_blocks.1.motion_modules.1", 64), idx)
+    assert len(TokenSampler([site], (0,), n_positions=500).positions(site, 64)) == 64     # small maps: every position
+
+    ctx = Harness(tiny_unet, coords, []).ctx                        # a module that changes the shape is refused
+    with pytest.raises(ValueError, match="input's shape"):
+        ts(ctx, coords[0], None, torch.zeros(2, 3), (torch.zeros(2, 4),), {})

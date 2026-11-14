@@ -236,3 +236,36 @@ class HeadStats(Probe):
 
         hs = ctx.cond_rows(args[0] if args else kwargs["hidden_states"])
         self.out[(coord.name, ctx.step)] = temporal_head_stats(module, hs).half().cpu()
+
+
+class TokenSampler(Probe):
+    """Per-token samples of a module's **update** (output minus input) for dictionary learning (SAE).
+
+    For the text-conditional branch, keeps the update at `n_positions` fixed spatial positions for
+    every frame: `store[(coord name, step)]` is (F * n_positions, C) fp16 on the CPU, rows ordered
+    frame-major (row = frame * n + k). The positions depend only on the coordinate's name, `seed`
+    and the map size, so every clip is sampled at the same places and rows are comparable across
+    clips. Only for coordinates whose output has their input's shape (motion modules, transformers).
+    """
+
+    def __init__(self, coords, steps, n_positions: int = 64, seed: int = 643):
+        super().__init__(coords, steps)
+        self.n_positions, self.seed = n_positions, seed
+        self.store: dict[tuple[str, int], torch.Tensor] = {}
+        self._positions: dict[tuple[str, int], torch.Tensor] = {}
+
+    def positions(self, name: str, n_spatial: int) -> torch.Tensor:
+        key = (name, n_spatial)
+        if key not in self._positions:
+            g = torch.Generator().manual_seed(self.seed ^ zlib.crc32(name.encode()))
+            self._positions[key] = torch.randperm(n_spatial, generator=g)[:self.n_positions].sort().values
+        return self._positions[key]
+
+    @torch.no_grad()
+    def __call__(self, ctx, coord, module, output, args, kwargs):
+        inp = args[0] if args else kwargs.get("hidden_states")
+        if inp is None or inp.shape != output.shape:
+            raise ValueError(f"{coord.name}: TokenSampler needs a module whose output has its input's shape")
+        upd = ctx.cond(output - inp, coord.kind)                       # (F, C, S)
+        idx = self.positions(coord.name, upd.shape[-1]).to(upd.device)
+        self.store[(coord.name, ctx.step)] = upd[:, :, idx].permute(0, 2, 1).reshape(-1, upd.shape[1]).half().cpu()
