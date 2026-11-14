@@ -105,6 +105,15 @@ PREFETCH = (
     "c = GenerationConfig.from_yaml(); P._snapshot(c.adapter_id, P.ADAPTER_FILES); P._resolve_base(c); "
     "from huggingface_hub import snapshot_download; snapshot_download('openai/clip-vit-base-patch32')"
 )
+# --prefetch-cameractrl: the CameraCtrl cell (v3 motion adapter, domain-adapter LoRA, CameraCtrl.ckpt) and RAFT
+PREFETCH_CAMERACTRL = (
+    "from vdprobe.cameractrl.model import cameractrl_config; from vdprobe import pipeline as P; "
+    "c = cameractrl_config(); x = c.extra; P._snapshot(c.adapter_id, P.ADAPTER_FILES); P._resolve_base(c); "
+    "from huggingface_hub import hf_hub_download; "
+    "hf_hub_download(x['domain_lora_repo'], x['domain_lora_file']); "
+    "hf_hub_download(x['cameractrl_repo'], x['cameractrl_file']); "
+    "from torchvision.models.optical_flow import Raft_Large_Weights, raft_large; raft_large(weights=Raft_Large_Weights.DEFAULT)"
+)
 
 
 def kaggle(*args, check=True):
@@ -125,7 +134,7 @@ def payload(with_data=False) -> str:
     return base64.b64encode(buf.getvalue()).decode()
 
 
-def build(slug, jobs, with_data=False, datasets=()):
+def build(slug, jobs, with_data=False, datasets=(), prefetch=PREFETCH):
     kdir = ROOT / "build" / slug
     if kdir.exists():
         shutil.rmtree(kdir)
@@ -136,7 +145,7 @@ def build(slug, jobs, with_data=False, datasets=()):
         if "--out" not in argv:
             argv += ["--out", f"/kaggle/working/out/job{i}"]
         parsed.append(argv)
-    head = (f"PAYLOAD = {payload(with_data)!r}\nDIFFUSERS = {DIFFUSERS!r}\nPEFT = {PEFT!r}\nPREFETCH = {PREFETCH!r}\n"
+    head = (f"PAYLOAD = {payload(with_data)!r}\nDIFFUSERS = {DIFFUSERS!r}\nPEFT = {PEFT!r}\nPREFETCH = {prefetch!r}\n"
             f"JOBS = {json.dumps(parsed)}\nDATASETS = {list(datasets)!r}\n")
     (kdir / "script.py").write_text(head + KERNEL)
     meta = {
@@ -185,13 +194,16 @@ def main():
     p.add_argument("--data", action="store_true", help="also ship data/ (LoRA training clips)")
     p.add_argument("--dataset", action="append", default=[],
                    help="private dataset slug of this user to attach; jobs see it at input/<slug>/")
+    p.add_argument("--prefetch-cameractrl", action="store_true",
+                   help="also fetch the CameraCtrl cell's weights before the jobs start (scripts/cameractrl_*.py, cc_*.py)")
     p.add_argument("--user", help="Kaggle username (default: $KAGGLE_USER, else %s)" % USER)
     args = p.parse_args()
     if args.user:
         USER = args.user
     if args.download_only:
         return download(args.slug)
-    kdir = build(args.slug, args.job, args.data, args.dataset)
+    kdir = build(args.slug, args.job, args.data, args.dataset,
+                 PREFETCH + "; " + PREFETCH_CAMERACTRL if args.prefetch_cameractrl else PREFETCH)
     if args.build_only:
         return
     print(kaggle("kernels", "push", "-p", str(kdir)))

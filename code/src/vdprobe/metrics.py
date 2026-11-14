@@ -144,19 +144,20 @@ _RAFT: dict = {}
 
 
 @torch.no_grad()
-def raft_flow(frames: list[Image.Image], size: int = 256, device: str = "cpu", batch: int = 5) -> np.ndarray:
+def raft_flow(frames: list[Image.Image], size: int | tuple[int, int] = 256, device: str = "cpu", batch: int = 5) -> np.ndarray:
     """RAFT-large flow between consecutive frames (Teed & Deng, ECCV 2020; torchvision weights
     C_T_SKHT_V2, last of the refinement iterations), (F-1, size, size, 2), in pixels at `size`.
-    `size` must be a multiple of 8 and at least 128."""
+    `size` is a side or (height, width); each must be a multiple of 8 and at least 128."""
     from torchvision.models.optical_flow import Raft_Large_Weights, raft_large
 
-    if size % 8 or size < 128:
-        raise ValueError("RAFT needs a side that is a multiple of 8 and >= 128")
+    h, w = (size, size) if isinstance(size, int) else size
+    if h % 8 or w % 8 or min(h, w) < 128:
+        raise ValueError("RAFT needs sides that are multiples of 8 and >= 128")
     if device not in _RAFT:
         w = Raft_Large_Weights.DEFAULT
         _RAFT[device] = (raft_large(weights=w).eval().to(device), w.transforms())
     model, tf = _RAFT[device]
-    x = torch.stack([torch.from_numpy(np.asarray(f.convert("RGB").resize((size, size)), np.float32) / 255)
+    x = torch.stack([torch.from_numpy(np.asarray(f.convert("RGB").resize((w, h)), np.float32) / 255)
                      .permute(2, 0, 1) for f in frames])
     out = []
     for i in range(0, len(x) - 1, batch):
