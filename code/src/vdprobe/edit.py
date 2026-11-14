@@ -309,7 +309,8 @@ def _recording_specs(arms: list[Arm], kind: str) -> dict:
 def run_arms(loaded: Loaded, coords: list[Coordinate], source_prompt: str, arms: list[Arm],
              noise: torch.Tensor | None, decode_frames: bool = True, cache_device: str = "cuda",
              log_every: int = 0, source_trajectory: list | None = None,
-             extra_probes: dict | None = None) -> ArmsResult:
+             extra_probes: dict | None = None, source_lora: tuple[str, float] | None = None,
+             track_meta: dict | None = None, before_track=None) -> ArmsResult:
     """One source clip and N target arms in one lockstep group, sharing the source's cache.
 
     At step t the source runs first: its raw activations at the union of every arm's patch
@@ -320,6 +321,13 @@ def run_arms(loaded: Loaded, coords: list[Coordinate], source_prompt: str, arms:
 
     `extra_probes` ({"source" or arm id: [probes]}) adds recorders to individual tracks, e.g.
     cross-attention maps for subject masks.
+
+    `source_lora` ((adapter name, scale)) runs the source track with that attached LoRA, as
+    `Arm.lora` does for an arm (camera MotionLoRA on the source clip).
+
+    `track_meta` ({"source" or arm id: dict}) becomes `Track.meta`, and `before_track(step, track)`
+    is called after this function's own per-track setup. Together they let a caller condition
+    tracks on something this function does not know about (the CameraCtrl camera of each track).
 
     `source_trajectory` (from `inversion.invert`, 26 latents) drives the source along a real
     video's inverted trajectory instead of letting it denoise. The arms start from `noise`; with
@@ -337,15 +345,19 @@ def run_arms(loaded: Loaded, coords: list[Coordinate], source_prompt: str, arms:
                             mode="raw", device=cache_device)
     keep = 1 + max([-a.step_offset for a in arms] + [0])
     extra_probes = extra_probes or {}
+    track_meta = track_meta or {}
+    user_before_track = before_track
     tracks = [Track("source", source_prompt, ([cache] if cache else []) + list(extra_probes.get("source", [])),
-                    start=None if source_trajectory is None else source_trajectory[0].half())]
+                    start=None if source_trajectory is None else source_trajectory[0].half(),
+                    meta=dict(track_meta.get("source", {})))]
     patchers = {}
     for a in arms:
         probes = []
         if a.spec.patch is not None:
             patchers[a.id] = Patcher(cache, a.spec.patch, step_offset=a.step_offset)
             probes.append(patchers[a.id])
-        tracks.append(Track(a.id, a.prompt, probes + list(extra_probes.get(a.id, []))))
+        tracks.append(Track(a.id, a.prompt, probes + list(extra_probes.get(a.id, [])),
+                            meta=dict(track_meta.get(a.id, {}))))
     # per operator: what each source track records, and what each arm injects
     record = {"attn": _recording_specs(arms, "attn"), "kv": _recording_specs(arms, "kv")}
     own = {k: {a.id: getattr(a.spec, k) for a in arms} for k in ("attn", "kv")}
@@ -355,8 +367,10 @@ def run_arms(loaded: Loaded, coords: list[Coordinate], source_prompt: str, arms:
     applied = {a.id: 0 for a in arms}
     applied_kv = {a.id: 0 for a in arms}
 
-    use_lora = any(a.lora for a in arms)
+    use_lora = any(a.lora for a in arms) or source_lora is not None
     lora_of = {a.id: (a.lora, a.lora_scale) for a in arms}
+    if source_lora is not None:
+        lora_of["source"] = source_lora
 
     def before_track(step, tr):
         if use_lora:
@@ -373,6 +387,8 @@ def run_arms(loaded: Loaded, coords: list[Coordinate], source_prompt: str, arms:
             else:
                 ctl.spec = own[k].get(tr.id)
                 ctl.mode = "inject" if ctl.spec else None
+        if user_before_track is not None:
+            user_before_track(step, tr)
 
     def after_track(step, tr):
         if tr.id == "source" and source_trajectory is not None:
