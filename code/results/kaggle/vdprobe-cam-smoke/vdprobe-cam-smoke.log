@@ -1,0 +1,127 @@
+[{"stream_name":"stdout","time":23.403747731,"data":"2\n"}
+,{"stream_name":"stdout","time":23.403809718,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":23.403815629,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":23.403819305,"data":"2.11.0+cu130\n"}
+,{"stream_name":"stdout","time":23.403822875,"data":" \n"}
+,{"stream_name":"stderr","time":26.533109664,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":38.666712789,"data":"\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  9.80it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:12\u003c00:00,  7.16s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:12\u003c00:00,  6.10s/it]\n"}
+,{"stream_name":"stderr","time":51.19394284,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:  15%|█▌        | 2/13 [00:00\u003c00:00, 14.17it/s]\rFetching 13 files:  85%|████████▍ | 11/13 [00:03\u003c00:00,  2.98it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:12\u003c00:00,  1.21s/it]\rFetching 13 files: 100%|██████████| 13/13 [00:12\u003c00:00,  1.05it/s]\n"}
+,{"stream_name":"stderr","time":61.625575343,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:  17%|█▋        | 2/12 [00:00\u003c00:00, 18.17it/s]\rFetching 12 files:  58%|█████▊    | 7/12 [00:00\u003c00:00, 35.97it/s]\rFetching 12 files:  92%|█████████▏| 11/12 [00:10\u003c00:01,  1.20s/it]\rFetching 12 files: 100%|██████████| 12/12 [00:10\u003c00:00,  1.17it/s]\n"}
+,{"stream_name":"stdout","time":62.175087638,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/camera_sweep.py --seeds 42 --scenes 2 --cameras 3 --tokens --verify --out /kaggle/working/out/job0\n"}
+,{"stream_name":"stdout","time":62.176493163,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/camera_switch.py --scenes 1 --cameras 2 --taus 3 --arms switch only --out /kaggle/working/out/job1\n"}
+,{"stream_name":"stdout","time":122.177804668,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.177844298,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.177851108,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 726.73it/s]\n"}
+,{"stream_name":"stdout","time":122.177857511,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.177863766,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.177870036,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 840.80it/s]\n"}
+,{"stream_name":"stdout","time":122.177875891,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":122.177883472,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":122.177889448,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.177894249,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.177900731,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.177905617,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":122.177910913,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2285.08it/s]\n"}
+,{"stream_name":"stdout","time":122.177931289,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.177936327,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:01,  4.01it/s]\n"}
+,{"stream_name":"stdout","time":122.177941565,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:00\u003c00:00,  5.87it/s]\n"}
+,{"stream_name":"stdout","time":122.177946693,"data":"[job0] Loading pipeline components...:  50%|█████     | 3/6 [00:01\u003c00:02,  1.21it/s]\n"}
+,{"stream_name":"stdout","time":122.177951647,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:02\u003c00:01,  1.83it/s]\n"}
+,{"stream_name":"stdout","time":122.177956893,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.85it/s]\n"}
+,{"stream_name":"stdout","time":122.177962297,"data":"[job0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":122.177968266,"data":"[job0] /usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!\n"}
+,{"stream_name":"stdout","time":122.177973664,"data":"[job0]   warnings.warn(\n"}
+,{"stream_name":"stdout","time":122.177984443,"data":"[job0] model lora: 95 coordinates, coarse 16, revisions {'base_model': {'repo_id': 'stable-diffusion-v1-5/stable-diffusion-v1-5', 'commit': '451f4fe16113bff5a5d2269ed5ad43b0592e9a14', 'variant': 'fp16'}, 'motion_adapter': {'repo_id': 'guoyww/animatediff-motion-adapter-v1-5-2', 'commit': '6167b88ffe39b4441fdf2113e77b99a6f56b7906'}, 'camera_loras': {'repo_template': 'guoyww/animatediff-motion-lora-{camera}', 'cameras': ['zoom-in', 'zoom-out']}}\n"}
+,{"stream_name":"stdout","time":122.178021013,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.178026141,"data":"[job0] === s42__camera: 6 clips, 7 pairs, 4 anchors, 16 coordinates\n"}
+,{"stream_name":"stdout","time":122.178031177,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.178035527,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.178040216,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 653.17it/s]\n"}
+,{"stream_name":"stdout","time":122.178045516,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.178049859,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.178054645,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1069.16it/s]\n"}
+,{"stream_name":"stdout","time":122.17805992,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":122.178065116,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":122.178070364,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.178074959,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.17808006,"data":"[job1] Loading pipeline components...:  33%|███▎      | 2/6 [00:02\u003c00:04,  1.03s/it]\n"}
+,{"stream_name":"stdout","time":122.178100546,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.178111455,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":122.178121788,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2318.34it/s]\n"}
+,{"stream_name":"stdout","time":122.17812713,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.178130823,"data":"[job1] Loading pipeline components...:  50%|█████     | 3/6 [00:02\u003c00:02,  1.45it/s]\n"}
+,{"stream_name":"stdout","time":122.178135393,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  3.66it/s]\n"}
+,{"stream_name":"stdout","time":122.178139738,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.51it/s]\n"}
+,{"stream_name":"stdout","time":122.178143942,"data":"[job1] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":122.178147885,"data":"[job1] /usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!\n"}
+,{"stream_name":"stdout","time":122.178152346,"data":"[job1]   warnings.warn(\n"}
+,{"stream_name":"stdout","time":122.178173683,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.178186699,"data":"[job1] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.178191643,"data":"[job1] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 8350.05it/s]\n"}
+,{"stream_name":"stdout","time":122.178196292,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.178200367,"data":"[job1] === a-mountain-lake-at-sunrise__zoom-in: 10 tracks\n"}
+,{"stream_name":"stdout","time":242.179388204,"data":"[job0]     step  5/25    102.7 s  (3.42 s per clip-step)\n"}
+,{"stream_name":"stdout","time":302.17998418,"data":"[job1]     step  5/25    153.2 s  (3.06 s per clip-step)\n"}
+,{"stream_name":"stdout","time":362.180476238,"data":"[job0]     step 10/25    208.6 s  (3.48 s per clip-step)\n"}
+,{"stream_name":"stdout","time":482.181432258,"data":"[job0]     step 15/25    318.0 s  (3.53 s per clip-step)\n"}
+,{"stream_name":"stdout","time":482.181623833,"data":"[job1]     step 10/25    314.5 s  (3.15 s per clip-step)\n"}
+,{"stream_name":"stdout","time":602.182940449,"data":"[job0]     step 20/25    427.1 s  (3.56 s per clip-step)\n"}
+,{"stream_name":"stdout","time":602.182997929,"data":"[job1]     step 15/25    478.6 s  (3.19 s per clip-step)\n"}
+,{"stream_name":"stdout","time":662.183453682,"data":"[job0]     step 25/25    536.8 s  (3.58 s per clip-step)\n"}
+,{"stream_name":"stdout","time":662.183499143,"data":"[job0]   denoised in 8.9 min (89.5 s per clip), peak host RSS 8.3 GB\n"}
+,{"stream_name":"stdout","time":722.184437956,"data":"[job0] Downloading: \"https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth\" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth\n"}
+,{"stream_name":"stdout","time":722.184493913,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":722.184513422,"data":"[job0]   0%|          | 0.00/20.1M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stdout","time":722.184519246,"data":"[job0]  36%|███▌      | 7.25M/20.1M [00:00\u003c00:00, 75.6MB/s]\n"}
+,{"stream_name":"stdout","time":722.184525406,"data":"[job0] 100%|██████████| 20.1M/20.1M [00:00\u003c00:00, 121MB/s] \n"}
+,{"stream_name":"stdout","time":722.18453065,"data":"[job0]   none                   a mountain lake at sunrise     sig -0.0001 +0.0001 +0.0000 -0.0000\n"}
+,{"stream_name":"stdout","time":722.184552231,"data":"[job0]   zoom-in                a mountain lake at sunrise     sig -0.0014 -0.0005 +0.0305 -0.0009\n"}
+,{"stream_name":"stdout","time":722.184556449,"data":"[job0]   zoom-out               a mountain lake at sunrise     sig -0.0001 +0.0071 -0.0286 +0.0003\n"}
+,{"stream_name":"stdout","time":722.184560391,"data":"[job0]   none                   a medieval stone castle on a h sig -0.0086 +0.0013 +0.0015 +0.0002\n"}
+,{"stream_name":"stdout","time":722.18456428,"data":"[job0]   zoom-in                a medieval stone castle on a h sig -0.0176 +0.0230 +0.0440 +0.0091\n"}
+,{"stream_name":"stdout","time":722.184568229,"data":"[job0]   zoom-out               a medieval stone castle on a h sig -0.0076 +0.0220 -0.0078 +0.0021\n"}
+,{"stream_name":"stdout","time":782.184860612,"data":"[job1]     step 20/25    643.5 s  (3.22 s per clip-step)\n"}
+,{"stream_name":"stdout","time":902.186015968,"data":"[job0] wrote /kaggle/working/out/job0/s42__camera/verify.json\n"}
+,{"stream_name":"stdout","time":902.186059261,"data":"[job0] PASS  verify  {'clip': '42__a-mountain-lake-at-sunrise__none', 'group_vs_solo_max_abs': 0.0, 'group_vs_solo_mad': 0.0, 'group_vs_pipe_max_abs': 0.0, 'group_vs_pipe_mad': 0.0, 'pass': True}\n"}
+,{"stream_name":"stdout","time":902.18606782,"data":"[job0] wrote /kaggle/working/out/job0/s42__camera/manifest.json\n"}
+,{"stream_name":"stdout","time":962.18672227,"data":"[job1]     step 25/25    808.6 s  (3.23 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1022.187714182,"data":"[job1]   on                       retained +1.000  b +nan  clip 0.825\n"}
+,{"stream_name":"stdout","time":1022.18778141,"data":"[job1]   off                      retained +0.000  b +nan  clip 1.000\n"}
+,{"stream_name":"stdout","time":1022.187787422,"data":"[job1]   on_until_3               retained +0.763  b +nan  clip 0.847\n"}
+,{"stream_name":"stdout","time":1022.187792151,"data":"[job1]   on_from_3                retained +0.314  b +nan  clip 0.893\n"}
+,{"stream_name":"stdout","time":1022.187796857,"data":"[job1]   only_down_blocks         retained +0.592  b +nan  clip 0.834\n"}
+,{"stream_name":"stdout","time":1022.18780149,"data":"[job1]   only_mid_block           retained -0.026  b +nan  clip 0.959\n"}
+,{"stream_name":"stdout","time":1022.187806134,"data":"[job1]   only_up_blocks.0         retained -0.049  b +nan  clip 0.952\n"}
+,{"stream_name":"stdout","time":1022.187810855,"data":"[job1]   only_up_blocks.1         retained -0.017  b +nan  clip 0.969\n"}
+,{"stream_name":"stdout","time":1022.187815683,"data":"[job1]   only_up_blocks.2         retained -0.022  b +nan  clip 0.990\n"}
+,{"stream_name":"stdout","time":1022.187820184,"data":"[job1]   only_up_blocks.3         retained -0.020  b +nan  clip 0.966\n"}
+,{"stream_name":"stdout","time":1022.187824693,"data":"[job1] wrote /kaggle/working/out/job1/a-mountain-lake-at-sunrise__zoom-in/manifest.json\n"}
+,{"stream_name":"stdout","time":1022.187829326,"data":"[job1] PASS  checks {'camera_changes_clip': True}\n"}
+,{"stream_name":"stdout","time":1022.187834189,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":1022.187838689,"data":"[job1] === a-mountain-lake-at-sunrise__pan-left: 10 tracks\n"}
+,{"stream_name":"stdout","time":1202.189412564,"data":"[job1]     step  5/25    163.0 s  (3.26 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1322.190729397,"data":"[job1]     step 10/25    327.1 s  (3.27 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1502.192079374,"data":"[job1]     step 15/25    490.7 s  (3.27 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1682.193591882,"data":"[job1]     step 20/25    655.2 s  (3.28 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1862.195239108,"data":"[job1]     step 25/25    819.4 s  (3.28 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1862.195345405,"data":"[job1]   on                       retained +1.000  b +nan  clip 0.768\n"}
+,{"stream_name":"stdout","time":1862.195352095,"data":"[job1]   off                      retained +0.000  b +nan  clip 1.000\n"}
+,{"stream_name":"stdout","time":1862.195356159,"data":"[job1]   on_until_3               retained +1.525  b +nan  clip 0.795\n"}
+,{"stream_name":"stdout","time":1862.195360008,"data":"[job1]   on_from_3                retained -0.398  b +nan  clip 0.841\n"}
+,{"stream_name":"stdout","time":1862.195363867,"data":"[job1]   only_down_blocks         retained +0.148  b +nan  clip 0.769\n"}
+,{"stream_name":"stdout","time":1862.195367642,"data":"[job1]   only_mid_block           retained -0.004  b +nan  clip 0.992\n"}
+,{"stream_name":"stdout","time":1862.19537145,"data":"[job1]   only_up_blocks.0         retained -0.009  b +nan  clip 0.984\n"}
+,{"stream_name":"stdout","time":1862.195375222,"data":"[job1]   only_up_blocks.1         retained -0.004  b +nan  clip 0.974\n"}
+,{"stream_name":"stdout","time":1862.195379035,"data":"[job1]   only_up_blocks.2         retained -0.000  b +nan  clip 0.977\n"}
+,{"stream_name":"stdout","time":1862.195388383,"data":"[job1]   only_up_blocks.3         retained +0.360  b +nan  clip 0.894\n"}
+,{"stream_name":"stdout","time":1862.195392807,"data":"[job1] wrote /kaggle/working/out/job1/a-mountain-lake-at-sunrise__pan-left/manifest.json\n"}
+,{"stream_name":"stdout","time":1862.195409007,"data":"[job1] PASS  checks {'camera_changes_clip': True}\n"}
+,{"stream_name":"stdout","time":1862.19541351,"data":"[job1] 2 groups in 29.0 min\n"}
+,{"stream_name":"stdout","time":1862.195539349,"data":"exit codes [0, 0]\n"}
+,{"stream_name":"stderr","time":1864.443735275,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1864.443766615,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1864.718888565,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1864.718932209,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1865.626866246,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1866.726319968,"data":"[NbConvertApp] Writing 543492 bytes to __results__.html\n"}
+]

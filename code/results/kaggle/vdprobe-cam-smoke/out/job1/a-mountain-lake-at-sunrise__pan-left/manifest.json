@@ -1,0 +1,71 @@
+{
+  "experiment": "camera_switch",
+  "date": "2026-11-15",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.2",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    },
+    "camera_loras": {
+      "repo_template": "guoyww/animatediff-motion-lora-{camera}",
+      "cameras": [
+        "zoom-in",
+        "pan-left"
+      ]
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "model": "lora",
+  "scene": "a mountain lake at sunrise",
+  "camera": "pan-left",
+  "seed": 2024,
+  "prompt": "a mountain lake at sunrise, high quality, detailed",
+  "arms": [
+    "on",
+    "off",
+    "on_until_3",
+    "on_from_3",
+    "only_down_blocks",
+    "only_mid_block",
+    "only_up_blocks.0",
+    "only_up_blocks.1",
+    "only_up_blocks.2",
+    "only_up_blocks.3"
+  ],
+  "taus": [
+    3
+  ],
+  "blocks": [
+    "down_blocks",
+    "mid_block",
+    "up_blocks.0",
+    "up_blocks.1",
+    "up_blocks.2",
+    "up_blocks.3"
+  ],
+  "checks": {
+    "camera_changes_clip": true
+  },
+  "passed": true,
+  "weak_camera": false,
+  "denoise_seconds": 819.3802176200002,
+  "seconds_per_clip": 81.93802176200002,
+  "peak_alloc_gb": 6.490850925445557
+}

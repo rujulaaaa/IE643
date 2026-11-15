@@ -1,0 +1,50 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 653.17it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1069.16it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:02<00:04,  1.03s/it]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2318.34it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:02<00:02,  1.45it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  3.66it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.51it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 8350.05it/s]
+
+=== a-mountain-lake-at-sunrise__zoom-in: 10 tracks
+    step  5/25    153.2 s  (3.06 s per clip-step)
+    step 10/25    314.5 s  (3.15 s per clip-step)
+    step 15/25    478.6 s  (3.19 s per clip-step)
+    step 20/25    643.5 s  (3.22 s per clip-step)
+    step 25/25    808.6 s  (3.23 s per clip-step)
+  on                       retained +1.000  b +nan  clip 0.825
+  off                      retained +0.000  b +nan  clip 1.000
+  on_until_3               retained +0.763  b +nan  clip 0.847
+  on_from_3                retained +0.314  b +nan  clip 0.893
+  only_down_blocks         retained +0.592  b +nan  clip 0.834
+  only_mid_block           retained -0.026  b +nan  clip 0.959
+  only_up_blocks.0         retained -0.049  b +nan  clip 0.952
+  only_up_blocks.1         retained -0.017  b +nan  clip 0.969
+  only_up_blocks.2         retained -0.022  b +nan  clip 0.990
+  only_up_blocks.3         retained -0.020  b +nan  clip 0.966
+wrote /kaggle/working/out/job1/a-mountain-lake-at-sunrise__zoom-in/manifest.json
+PASS  checks {'camera_changes_clip': True}
+
+=== a-mountain-lake-at-sunrise__pan-left: 10 tracks
+    step  5/25    163.0 s  (3.26 s per clip-step)
+    step 10/25    327.1 s  (3.27 s per clip-step)
+    step 15/25    490.7 s  (3.27 s per clip-step)
+    step 20/25    655.2 s  (3.28 s per clip-step)
+    step 25/25    819.4 s  (3.28 s per clip-step)
+  on                       retained +1.000  b +nan  clip 0.768
+  off                      retained +0.000  b +nan  clip 1.000
+  on_until_3               retained +1.525  b +nan  clip 0.795
+  on_from_3                retained -0.398  b +nan  clip 0.841
+  only_down_blocks         retained +0.148  b +nan  clip 0.769
+  only_mid_block           retained -0.004  b +nan  clip 0.992
+  only_up_blocks.0         retained -0.009  b +nan  clip 0.984
+  only_up_blocks.1         retained -0.004  b +nan  clip 0.974
+  only_up_blocks.2         retained -0.000  b +nan  clip 0.977
+  only_up_blocks.3         retained +0.360  b +nan  clip 0.894
+wrote /kaggle/working/out/job1/a-mountain-lake-at-sunrise__pan-left/manifest.json
+PASS  checks {'camera_changes_clip': True}
+2 groups in 29.0 min

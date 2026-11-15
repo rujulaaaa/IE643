@@ -1,0 +1,480 @@
+{
+  "commit": "af45a7a0dbeedb7f6ed66aac4a9e5411a279f0d2",
+  "reference_deps": [
+    "diffusers==0.24.0",
+    "huggingface_hub==0.25.2",
+    "transformers==4.46.3",
+    "einops",
+    "omegaconf"
+  ],
+  "max_abs": 0.001,
+  "rel_l2": 0.001,
+  "passed": true,
+  "cases": {
+    "eps/off/201": {
+      "max_abs": 1.5020370483398438e-05,
+      "rel_l2": 1.5529142274317564e-06,
+      "ref_norm": 244.98565673828125,
+      "pass": true
+    },
+    "eps/off/801": {
+      "max_abs": 6.9141387939453125e-06,
+      "rel_l2": 6.257325253500312e-07,
+      "ref_norm": 315.1954345703125,
+      "pass": true
+    },
+    "eps/pan-left/201": {
+      "max_abs": 1.3560056686401367e-05,
+      "rel_l2": 1.6748629150242778e-06,
+      "ref_norm": 246.97824096679688,
+      "pass": true
+    },
+    "eps/pan-left/801": {
+      "max_abs": 6.973743438720703e-06,
+      "rel_l2": 6.265822776185814e-07,
+      "ref_norm": 314.8316345214844,
+      "pass": true
+    },
+    "eps/roll-cw/201": {
+      "max_abs": 1.0341405868530273e-05,
+      "rel_l2": 1.6203151744775823e-06,
+      "ref_norm": 246.93310546875,
+      "pass": true
+    },
+    "eps/roll-cw/801": {
+      "max_abs": 7.987022399902344e-06,
+      "rel_l2": 6.307151352302753e-07,
+      "ref_norm": 315.1069641113281,
+      "pass": true
+    },
+    "features/pan-left": {
+      "max_abs_per_level": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pass": true
+    },
+    "features/roll-cw": {
+      "max_abs_per_level": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pass": true
+    },
+    "stock_groupnorm": {
+      "case": "eps/off/801",
+      "rel_l2": 0.012696776539087296
+    },
+    "layers": [
+      {
+        "module": "time_embedding",
+        "in": 0.0,
+        "out": 0.0
+      },
+      {
+        "module": "conv_in",
+        "in": 0.0,
+        "out": 0.0
+      },
+      {
+        "module": "down_blocks.0.resnets.0.norm1",
+        "in": 0.0,
+        "out": 0.0
+      },
+      {
+        "module": "down_blocks.0.resnets.0.conv1",
+        "in": 0.0,
+        "out": 0.0
+      },
+      {
+        "module": "down_blocks.0.resnets.0.time_emb_proj",
+        "in": 0.0,
+        "out": 0.0
+      },
+      {
+        "module": "down_blocks.0.resnets.0.norm2",
+        "in": 0.0,
+        "out": 0.0
+      },
+      {
+        "module": "down_blocks.0.resnets.0.conv2",
+        "in": 0.0,
+        "out": 0.0
+      },
+      {
+        "module": "down_blocks.0.resnets.0",
+        "in": 0.0,
+        "out": 0.0
+      },
+      {
+        "module": "down_blocks.0.attentions.0",
+        "in": 0.0,
+        "out": 2.932697213964275e-07
+      },
+      {
+        "module": "down_blocks.0.motion_modules.0",
+        "in": 2.932697213964275e-07,
+        "out": 4.3856064735336986e-07
+      },
+      {
+        "module": "down_blocks.0.resnets.1",
+        "in": 4.3856064735336986e-07,
+        "out": 1.659587724134326e-06
+      },
+      {
+        "module": "down_blocks.0.attentions.1",
+        "in": 1.659587724134326e-06,
+        "out": 2.065603439405095e-06
+      },
+      {
+        "module": "down_blocks.0.motion_modules.1",
+        "in": 2.065603439405095e-06,
+        "out": 2.2816100226918934e-06
+      },
+      {
+        "module": "down_blocks.0.downsamplers.0",
+        "in": 2.2816100226918934e-06,
+        "out": 2.4815567485347856e-06
+      },
+      {
+        "module": "down_blocks.1.resnets.0",
+        "in": 2.4815567485347856e-06,
+        "out": 3.0490987228404265e-06
+      },
+      {
+        "module": "down_blocks.1.attentions.0",
+        "in": 3.0490987228404265e-06,
+        "out": 3.663458528535557e-06
+      },
+      {
+        "module": "down_blocks.1.motion_modules.0",
+        "in": 3.663458528535557e-06,
+        "out": 4.127357897232287e-06
+      },
+      {
+        "module": "down_blocks.1.resnets.1",
+        "in": 4.127357897232287e-06,
+        "out": 5.636748937831726e-06
+      },
+      {
+        "module": "down_blocks.1.attentions.1",
+        "in": 5.636748937831726e-06,
+        "out": 4.6865611693647224e-06
+      },
+      {
+        "module": "down_blocks.1.motion_modules.1",
+        "in": 4.6865611693647224e-06,
+        "out": 4.008061296190135e-06
+      },
+      {
+        "module": "down_blocks.1.downsamplers.0",
+        "in": 4.008061296190135e-06,
+        "out": 6.106355613155756e-06
+      },
+      {
+        "module": "down_blocks.2.resnets.0",
+        "in": 6.106355613155756e-06,
+        "out": 6.031316388543928e-06
+      },
+      {
+        "module": "down_blocks.2.attentions.0",
+        "in": 6.031316388543928e-06,
+        "out": 6.097404366300907e-06
+      },
+      {
+        "module": "down_blocks.2.motion_modules.0",
+        "in": 6.097404366300907e-06,
+        "out": 6.5863432610058226e-06
+      },
+      {
+        "module": "down_blocks.2.resnets.1",
+        "in": 6.5863432610058226e-06,
+        "out": 7.525910405092873e-06
+      },
+      {
+        "module": "down_blocks.2.attentions.1",
+        "in": 7.525910405092873e-06,
+        "out": 7.780891792208422e-06
+      },
+      {
+        "module": "down_blocks.2.motion_modules.1",
+        "in": 7.780891792208422e-06,
+        "out": 7.858353455958422e-06
+      },
+      {
+        "module": "down_blocks.2.downsamplers.0",
+        "in": 7.858353455958422e-06,
+        "out": 6.897334515088005e-06
+      },
+      {
+        "module": "down_blocks.3.resnets.0",
+        "in": 6.897334515088005e-06,
+        "out": 7.09044206814724e-06
+      },
+      {
+        "module": "down_blocks.3.motion_modules.0",
+        "in": 7.09044206814724e-06,
+        "out": 7.067318620102014e-06
+      },
+      {
+        "module": "down_blocks.3.resnets.1",
+        "in": 7.067318620102014e-06,
+        "out": 7.0819332904648036e-06
+      },
+      {
+        "module": "down_blocks.3.motion_modules.1",
+        "in": 7.0819332904648036e-06,
+        "out": 6.679805665044114e-06
+      },
+      {
+        "module": "mid_block.resnets.0",
+        "in": 6.679805665044114e-06,
+        "out": 6.171744644234423e-06
+      },
+      {
+        "module": "mid_block.attentions.0",
+        "in": 6.171744644234423e-06,
+        "out": 5.7441930039203726e-06
+      },
+      {
+        "module": "mid_block.resnets.1",
+        "in": 5.7441930039203726e-06,
+        "out": 6.165123068058165e-06
+      },
+      {
+        "module": "up_blocks.0.resnets.0",
+        "in": 6.461856628448004e-06,
+        "out": 6.423375907615991e-06
+      },
+      {
+        "module": "up_blocks.0.motion_modules.0",
+        "in": 6.423375907615991e-06,
+        "out": 6.372285497491248e-06
+      },
+      {
+        "module": "up_blocks.0.resnets.1",
+        "in": 6.695120646327268e-06,
+        "out": 5.8299474403611384e-06
+      },
+      {
+        "module": "up_blocks.0.motion_modules.1",
+        "in": 5.8299474403611384e-06,
+        "out": 5.710251116397558e-06
+      },
+      {
+        "module": "up_blocks.0.resnets.2",
+        "in": 6.139540801086696e-06,
+        "out": 6.383837899193168e-06
+      },
+      {
+        "module": "up_blocks.0.motion_modules.2",
+        "in": 6.383837899193168e-06,
+        "out": 5.9303565649315715e-06
+      },
+      {
+        "module": "up_blocks.0.upsamplers.0",
+        "in": 5.9303565649315715e-06,
+        "out": 6.74835973768495e-06
+      },
+      {
+        "module": "up_blocks.1.resnets.0",
+        "in": 6.6597172008187044e-06,
+        "out": 6.894461421325104e-06
+      },
+      {
+        "module": "up_blocks.1.attentions.0",
+        "in": 6.894461421325104e-06,
+        "out": 9.146388947556261e-06
+      },
+      {
+        "module": "up_blocks.1.motion_modules.0",
+        "in": 9.146388947556261e-06,
+        "out": 9.665374818723649e-06
+      },
+      {
+        "module": "up_blocks.1.resnets.1",
+        "in": 8.569973033445422e-06,
+        "out": 9.71800272964174e-06
+      },
+      {
+        "module": "up_blocks.1.attentions.1",
+        "in": 9.71800272964174e-06,
+        "out": 1.4046081560081802e-05
+      },
+      {
+        "module": "up_blocks.1.motion_modules.1",
+        "in": 1.4046081560081802e-05,
+        "out": 1.1838953469123226e-05
+      },
+      {
+        "module": "up_blocks.1.resnets.2",
+        "in": 1.2016975233564153e-05,
+        "out": 1.3901651072956156e-05
+      },
+      {
+        "module": "up_blocks.1.attentions.2",
+        "in": 1.3901651072956156e-05,
+        "out": 1.7812277292250656e-05
+      },
+      {
+        "module": "up_blocks.1.motion_modules.2",
+        "in": 1.7812277292250656e-05,
+        "out": 1.9632085241028108e-05
+      },
+      {
+        "module": "up_blocks.1.upsamplers.0",
+        "in": 1.9632085241028108e-05,
+        "out": 2.2202722902875394e-05
+      },
+      {
+        "module": "up_blocks.2.resnets.0",
+        "in": 2.4844572180882096e-05,
+        "out": 1.4488078704744112e-05
+      },
+      {
+        "module": "up_blocks.2.attentions.0",
+        "in": 1.4488078704744112e-05,
+        "out": 1.8156815713155083e-05
+      },
+      {
+        "module": "up_blocks.2.motion_modules.0",
+        "in": 1.8156815713155083e-05,
+        "out": 1.6926333046285436e-05
+      },
+      {
+        "module": "up_blocks.2.resnets.1",
+        "in": 1.2757996046275366e-05,
+        "out": 1.7703363482723944e-05
+      },
+      {
+        "module": "up_blocks.2.attentions.1",
+        "in": 1.7703363482723944e-05,
+        "out": 3.788785033975728e-05
+      },
+      {
+        "module": "up_blocks.2.motion_modules.1",
+        "in": 3.788785033975728e-05,
+        "out": 2.947532084363047e-05
+      },
+      {
+        "module": "up_blocks.2.resnets.2",
+        "in": 3.511585236992687e-05,
+        "out": 1.2775893083016854e-05
+      },
+      {
+        "module": "up_blocks.2.attentions.2",
+        "in": 1.2775893083016854e-05,
+        "out": 1.4935250874259509e-05
+      },
+      {
+        "module": "up_blocks.2.motion_modules.2",
+        "in": 1.4935250874259509e-05,
+        "out": 1.2986431102035567e-05
+      },
+      {
+        "module": "up_blocks.2.upsamplers.0",
+        "in": 1.2986431102035567e-05,
+        "out": 2.2428608644986525e-05
+      },
+      {
+        "module": "up_blocks.3.resnets.0",
+        "in": 1.4607956472900696e-05,
+        "out": 4.532438197202282e-06
+      },
+      {
+        "module": "up_blocks.3.attentions.0",
+        "in": 4.532438197202282e-06,
+        "out": 4.431371053215116e-06
+      },
+      {
+        "module": "up_blocks.3.motion_modules.0",
+        "in": 4.431371053215116e-06,
+        "out": 4.522660219663521e-06
+      },
+      {
+        "module": "up_blocks.3.resnets.1",
+        "in": 4.1724051698111e-06,
+        "out": 2.3841157599235885e-06
+      },
+      {
+        "module": "up_blocks.3.attentions.1",
+        "in": 2.3841157599235885e-06,
+        "out": 2.27804548558197e-06
+      },
+      {
+        "module": "up_blocks.3.motion_modules.1",
+        "in": 2.27804548558197e-06,
+        "out": 2.043751237579272e-06
+      },
+      {
+        "module": "up_blocks.3.resnets.2",
+        "in": 1.961604084499413e-06,
+        "out": 5.678542720488622e-07
+      },
+      {
+        "module": "up_blocks.3.attentions.2",
+        "in": 5.678542720488622e-07,
+        "out": 4.870116754318587e-07
+      },
+      {
+        "module": "up_blocks.3.motion_modules.2",
+        "in": 4.870116754318587e-07,
+        "out": 5.666615265909059e-07
+      },
+      {
+        "module": "conv_norm_out",
+        "in": 5.666615265909059e-07,
+        "out": 2.3495312007071334e-07
+      },
+      {
+        "module": "conv_out",
+        "in": 9.716192153064185e-07,
+        "out": 6.478304612755892e-07
+      }
+    ],
+    "fp32_weights/eps/off/201": {
+      "max_abs": 0.0007203817367553711,
+      "rel_l2": 0.00019107217667624354
+    },
+    "fp32_weights/eps/off/801": {
+      "max_abs": 0.00019824504852294922,
+      "rel_l2": 2.475250221323222e-05
+    },
+    "fp32_weights/eps/pan-left/201": {
+      "max_abs": 0.0008212924003601074,
+      "rel_l2": 0.00016536256589461118
+    },
+    "fp32_weights/eps/pan-left/801": {
+      "max_abs": 0.00023317337036132812,
+      "rel_l2": 2.4415741791017354e-05
+    },
+    "fp32_weights/eps/roll-cw/201": {
+      "max_abs": 0.0006864368915557861,
+      "rel_l2": 0.00016584926925133914
+    },
+    "fp32_weights/eps/roll-cw/801": {
+      "max_abs": 0.000292360782623291,
+      "rel_l2": 2.7780535674537532e-05
+    },
+    "camera_effect/pan-left/801": {
+      "max_abs": 0.08864831924438477,
+      "pass": true
+    },
+    "camera_effect/pan-left/201": {
+      "max_abs": 0.4233449697494507,
+      "pass": true
+    },
+    "camera_effect/roll-cw/801": {
+      "max_abs": 0.11543744802474976,
+      "pass": true
+    },
+    "camera_effect/roll-cw/201": {
+      "max_abs": 0.450766921043396,
+      "pass": true
+    }
+  }
+}
