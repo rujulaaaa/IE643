@@ -213,11 +213,10 @@ def main():
                                  encoder_hidden_states=text.repeat_interleave(cfg.frames, dim=0))
     ours_trace = ns["trace"](pipe.unet, cfg.frames, run_unet)
     clip_state = getattr(pipe.unet, "_vd_clip", {})
-    clip_state["joint"] = False                    # the same trace with per-frame group-norm, for the diagnosis
+    clip_state["authors"] = False                  # diffusers' own group-norm axes: what the graft would be without the fix
     with torch.no_grad():
-        eps_per_frame = run_unet().sample.cpu()
-    per_frame_trace = ns["trace"](pipe.unet, cfg.frames, run_unet)
-    clip_state["joint"] = True
+        eps_stock = run_unet().sample.cpu()
+    clip_state["authors"] = True
     torch.save({"latent": latent.cpu(), "text": text.cpu(), "timesteps": TIMESTEPS,
                 "plucker": {c: plucker_embedding(trajs[c], cfg.height, cfg.width) for c in CAMERAS}}, work / "inputs.pt")
 
@@ -273,13 +272,9 @@ def main():
     # (camera off, first timestep). A module whose output differs far more than its input is a suspect.
     rel = lambda a, b: float((a - b).norm() / b.norm().clamp_min(1e-12))
     b0 = ref[f"eps/off/{TIMESTEPS[0]}"]
-    print(f"per-frame group-norm instead: eps/off/{TIMESTEPS[0]} rel_l2 {rel(eps_per_frame, b0):.4e}", flush=True)
-    for name, o in per_frame_trace.items():
-        r = ref.get("trace", {}).get(name)
-        if r and o["out"] and r["out"] and o["out"]["shape"] == r["out"]["shape"]:
-            print(f"per-frame layer {name:<34} out {rel(o['out']['sub'], r['out']['sub']):.2e}", flush=True)
-        if name == "down_blocks.0.attentions.0":
-            break
+    stock = rel(eps_stock, b0)
+    print(f"info  with diffusers' group-norm axes: eps/off/{TIMESTEPS[0]} rel_l2 {stock:.4e}", flush=True)
+    report["stock_groupnorm"] = {"case": f"eps/off/{TIMESTEPS[0]}", "rel_l2": stock}
     layers = []
     for name, o in ours_trace.items():
         r = ref.get("trace", {}).get(name)
