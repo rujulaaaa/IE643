@@ -154,8 +154,8 @@ def raft_flow(frames: list[Image.Image], size: int | tuple[int, int] = 256, devi
     if h % 8 or w % 8 or min(h, w) < 128:
         raise ValueError("RAFT needs sides that are multiples of 8 and >= 128")
     if device not in _RAFT:
-        w = Raft_Large_Weights.DEFAULT
-        _RAFT[device] = (raft_large(weights=w).eval().to(device), w.transforms())
+        weights = Raft_Large_Weights.DEFAULT
+        _RAFT[device] = (raft_large(weights=weights).eval().to(device), weights.transforms())
     model, tf = _RAFT[device]
     x = torch.stack([torch.from_numpy(np.asarray(f.convert("RGB").resize((w, h)), np.float32) / 255)
                      .permute(2, 0, 1) for f in frames])

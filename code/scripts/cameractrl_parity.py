@@ -18,6 +18,7 @@ Pass: max |diff| < 1e-3 and relative L2 < 1e-3 for every case. Exit code 1 other
 
 import json
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -32,7 +33,8 @@ from vdprobe.config import CONFIG_DIR, GenerationConfig
 
 COMMIT = "af45a7a0dbeedb7f6ed66aac4a9e5411a279f0d2"
 REPO = "https://github.com/hehao13/CameraCtrl.git"
-REF_DEPS = ["diffusers==0.24.0", "huggingface_hub==0.25.2", "einops", "omegaconf"]
+# transformers is pinned too: diffusers 0.24 imports it, and the image's transformers 5 needs a newer huggingface_hub
+REF_DEPS = ["diffusers==0.24.0", "huggingface_hub==0.25.2", "transformers==4.46.3", "einops", "omegaconf"]
 CAMERAS = ["pan-left", "roll-cw"]
 TIMESTEPS = [801, 201]
 MAX_ABS, REL_L2 = 1e-3, 1e-3
@@ -110,7 +112,8 @@ def run(cmd, **kw):
 def main():
     ap = runio.parser(__doc__, "cameractrl_parity")
     ap.set_defaults(config=CONFIG_DIR / "cameractrl.yaml")
-    ap.add_argument("--work", type=Path, default=Path("/kaggle/working/parity_work"))
+    ap.add_argument("--work", type=Path, default=Path("/tmp/parity_work"),
+                    help="scratch directory; outside /kaggle/working, so it is not saved as kernel output")
     args = ap.parse_args()
     work = args.work
     work.mkdir(parents=True, exist_ok=True)
@@ -151,6 +154,9 @@ def main():
     _, snap, variant = _resolve_base(cfg)
     unet2d = UNet2DConditionModel.from_pretrained(snap, subfolder="unet", variant=variant, torch_dtype=torch.float32)
     unet2d.save_pretrained(work / "sd" / "unet")
+    # the repository's own config.json, as the authors use it: the one save_pretrained writes names
+    # mid_block_type "UNetMidBlock2DCrossAttn", which their 3D U-Net does not know
+    shutil.copy(Path(snap) / "unet" / "config.json", work / "sd" / "unet" / "config.json")
     del unet2d
     x = cfg.extra
     mm_ckpt = hf_hub_download("guoyww/animatediff", "v3_sd15_mm.ckpt")

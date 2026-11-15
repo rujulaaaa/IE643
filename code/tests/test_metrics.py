@@ -147,3 +147,20 @@ def test_camera_fidelity_opposites():
     assert M.camera_fidelity(a, 3 * a) == pytest.approx(1.0)
     assert M.camera_fidelity(a, np.array([0, 0, 0.2, 0])) == pytest.approx(0.0)
     assert M.camera_fidelity(a, np.zeros(4)) == 0.0
+
+
+def test_raft_flow_plumbing_non_square(monkeypatch):
+    """The path around RAFT (resize, batching, output layout) with the network replaced: no weights needed."""
+    import torch
+    import torchvision.models.optical_flow as O
+    from PIL import Image
+
+    class Fake(torch.nn.Module):
+        def forward(self, a, b):
+            return [torch.zeros(a.shape[0], 2, a.shape[2], a.shape[3]) + 1.5]
+
+    monkeypatch.setattr(O, "raft_large", lambda weights=None: Fake())
+    monkeypatch.setattr(M, "_RAFT", {})
+    frames = [Image.new("RGB", (96, 64), (i * 10, 0, 0)) for i in range(7)]
+    f = M.raft_flow(frames, size=(128, 192))
+    assert f.shape == (6, 128, 192, 2) and np.allclose(f, 1.5)

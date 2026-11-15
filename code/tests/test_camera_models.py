@@ -121,3 +121,29 @@ def test_switch_score():
     assert rows["swap_up_blocks.1"]["block"] == "up_blocks.1" and rows["swap_up_blocks.1"]["kind"] == "swap"
     # a camera that does nothing gives NaN, not a division by zero
     assert np.isnan(sw.score({"on": off, "off": off}, {"on": 1.0, "off": 1.0})[0]["retained"])
+
+
+def test_switch_analysis_on_planted_rows(tmp_path):
+    sw, an = _script("camera_switch"), _script("camera_switch_analysis")
+    import csv
+    off, on, b = np.zeros(4), np.array([0.2, 0, 0, 0]), np.array([-0.2, 0, 0, 0])
+    for i, scene in enumerate(("lake", "castle", "street")):
+        sigs = {"on": on, "off": off, "on_B": b, "on_until_1": on * 0.2, "on_until_3": on * (0.6 + 0.1 * i),
+                "on_from_3": on * 0.3, "only_up_blocks.1": on * 0.7, "swap_up_blocks.1": on * 0.4,
+                "swap_up_blocks.2": on * 0.9, "swap_all": b}
+        rows = sw.score(sigs, {a: 0.9 for a in sigs})
+        d = tmp_path / "job0" / f"{scene}__pan-left"
+        d.mkdir(parents=True)
+        with open(d / "rows.csv", "w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=["model", "scene", "camera", "seed"] + list(rows[0]))
+            w.writeheader()
+            w.writerows({"model": "cc", "scene": scene, "camera": "pan-left", "seed": 2024, **r} for r in rows)
+    s = an.summarise(an.load_rows([tmp_path]), n_boot=200)
+    assert s["n_groups"] == 3 and s["arms"]["on"]["retained"]["mean"] == pytest.approx(1.0)
+    when = s["verdicts"]["when"]
+    assert when["mean"] == pytest.approx(0.7) and when["pass"] and when["lo"] <= 0.7 <= when["hi"]
+    assert when["first_tau_until_half"] == 3 and when["last_tau_from_half"] is None
+    where = s["verdicts"]["where"]                    # swap_up_blocks.1 keeps 0.4 of A: 0.3 of the way to B
+    assert where["single_blocks_ranked"][0] == ("up_blocks.1", 0.3) and not where["pass"]
+    an.figures(s, tmp_path)
+    assert (tmp_path / "camera_switch.png").exists() and (tmp_path / "camera_blocks.png").exists()
