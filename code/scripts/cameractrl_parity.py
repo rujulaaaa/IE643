@@ -16,6 +16,7 @@ Pass: max |diff| < 1e-3 and relative L2 < 1e-3 for every case. Exit code 1 other
         --job "scripts/cameractrl_parity.py"
 """
 
+import gc
 import json
 import os
 import shutil
@@ -115,6 +116,7 @@ def main():
     ap.set_defaults(config=CONFIG_DIR / "cameractrl.yaml")
     ap.add_argument("--work", type=Path, default=Path("/tmp/parity_work"),
                     help="scratch directory; outside /kaggle/working, so it is not saved as kernel output")
+    ap.add_argument("--ref-gpu", default=None, help="CUDA_VISIBLE_DEVICES of the reference process")
     args = ap.parse_args()
     work = args.work
     work.mkdir(parents=True, exist_ok=True)
@@ -163,8 +165,12 @@ def main():
     mm_ckpt = hf_hub_download("guoyww/animatediff", "v3_sd15_mm.ckpt")
     lora_ckpt = hf_hub_download(x["domain_lora_repo"], x["domain_lora_file"])
     cc_ckpt = hf_hub_download(x["cameractrl_repo"], x["cameractrl_file"])
+    pipe.to("cpu")                      # the reference needs the card: fp32, attention without slicing
+    adapter.to("cpu")
     del loaded, pipe, adapter
+    gc.collect()
     torch.cuda.empty_cache()
+    print(f"our model released: {torch.cuda.memory_allocated() / 2 ** 30:.2f} GB still allocated", flush=True)
 
     # --- the reference, in a child process with its own packages ------------------------------------
     repo, deps = work / "CameraCtrl", work / "deps"
@@ -174,6 +180,8 @@ def main():
     run([sys.executable, "-m", "pip", "install", "-q", "--no-input", "--target", deps, *REF_DEPS])
     (work / "reference.py").write_text(REFERENCE)
     env = dict(os.environ, PYTHONPATH=f"{deps}{os.pathsep}{repo}", PYTHONUNBUFFERED="1")
+    if args.ref_gpu is not None:        # the kernel's second T4 is idle when this is the only job
+        env["CUDA_VISIBLE_DEVICES"] = args.ref_gpu
     run([sys.executable, work / "reference.py", work, repo, mm_ckpt, lora_ckpt, cc_ckpt], env=env)
     ref = torch.load(work / "reference.pt", map_location="cpu")
 
