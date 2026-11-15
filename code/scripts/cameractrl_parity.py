@@ -58,7 +58,8 @@ def _digest(x):
     if x is None:
         return None
     v = x.detach().float().flatten()
-    idx = torch.linspace(0, v.numel() - 1, min(v.numel(), 8192), device=v.device).long()
+    n = min(v.numel(), 8192)                                                # integer arithmetic: float32 linspace
+    idx = torch.arange(n, device=v.device) * (v.numel() - 1) // max(n - 1, 1)  # overshoots the end of large tensors
     return {"sub": v[idx].cpu(), "shape": list(x.shape)}
 def trace(unet, frames, run):
     rec, handles = {}, []
