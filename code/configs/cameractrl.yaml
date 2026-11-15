@@ -22,5 +22,6 @@ cameractrl_file: CameraCtrl.ckpt
 domain_lora_repo: guoyww/animatediff
 domain_lora_file: v3_sd15_adapter.ckpt
 domain_lora_scale: 1.0
+cross_frame_groupnorm: true   # ResNet and output group-norm over all frames jointly, as in the authors' U-Net
 trajectory_step: 0.1      # scene units per frame for pan / tilt / zoom
 trajectory_roll_deg: 2.0  # degrees per frame for roll

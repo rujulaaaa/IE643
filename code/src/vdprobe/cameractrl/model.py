@@ -15,6 +15,7 @@ import torch
 from ..config import CONFIG_DIR, GenerationConfig
 from ..pipeline import Loaded, build_pipeline
 from .adapter import CameraAdapter, CameraSpec
+from .groupnorm import cross_frame_groupnorm
 from .convert import load_into, merge_domain_lora
 from .pose_encoder import CameraPoseEncoder
 from .rays import CAMERAS, Trajectory, trajectory
@@ -51,6 +52,8 @@ def load_cameractrl(cfg: GenerationConfig | None = None, profile: str = "gpu", d
     loaded = build_pipeline(cfg, profile=profile, device=device)
     lora = _load_ckpt(x["domain_lora_repo"], x["domain_lora_file"])
     n = merge_domain_lora(loaded.unet, lora.get("state_dict", lora), float(x.get("domain_lora_scale", 1.0)))
+    if x.get("cross_frame_groupnorm", True):
+        loaded.revisions["cross_frame_groupnorm_layers"] = cross_frame_groupnorm(loaded.unet)
     attach_adapter(loaded, _load_ckpt(x["cameractrl_repo"], x["cameractrl_file"]))
     loaded.revisions["cameractrl"] = {"repo_id": x["cameractrl_repo"], "file": x["cameractrl_file"]}
     loaded.revisions["domain_lora"] = {"repo_id": x["domain_lora_repo"], "file": x["domain_lora_file"],
