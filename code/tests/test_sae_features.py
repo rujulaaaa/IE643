@@ -83,7 +83,26 @@ def test_sae_train_script_end_to_end(tmp_path, monkeypatch):
     import pandas as pd
     df = pd.read_csv(out / "features.csv")
     assert len(df) == 48 and {"step_0", "step_1", "frame_3", "camera_eta2"} <= set(df.columns)
-    dirs = torch.load(out / "directions.pt", weights_only=False)
+    dirs = torch.load(out / "directions.pt", weights_only=True)
     assert set(dirs["mean_diff"]) == {"pan-left", "zoom-in"} and dirs["mean_diff"]["zoom-in"][0] > 4.0
     assert dirs["features"]["zoom-in"]["decoder"].shape[1] == C
     assert (out / "default" / "sae.safetensors").exists()
+
+
+def test_steer_script_helpers():
+    import importlib.util
+    from pathlib import Path
+    spec = importlib.util.spec_from_file_location("sae_steer", Path(__file__).resolve().parents[1] / "scripts" / "sae_steer.py")
+    st = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(st)
+    dirs = {"mean_diff": {"pan-left": torch.tensor([3.0, 4.0, 0.0])},
+            "features": {"pan-left": {"decoder": torch.tensor([[0.0, 0.0, 9.0]]), "index": [7]}}}
+    arms = st.steering_arms(dirs, ["pan-left"], [1, 2], 3)
+    assert set(arms) == {f"{k}_pan-left_x{s}" for k in ("mean", "feat", "rand") for s in (1, 2)}
+    for kind, cam, s, d in arms.values():
+        assert torch.isclose(d.norm(), torch.tensor(5.0))            # every direction at the mean vector's norm
+    assert torch.equal(arms["feat_pan-left_x1"][3], torch.tensor([0.0, 0.0, 5.0]))
+    freq = np.array([0.5, 0.1, 0.11, 0.5, 0.9, 0.52, 0.1, 0.3])
+    r = st.matched_random(freq, [0, 1], np.random.default_rng(0))
+    assert len(set(r)) == 2 and not set(r) & {0, 1}
+    assert st.shift(np.array([0.1, 0, 0, 0]), np.zeros(4), np.array([0.2, 0, 0, 0])) == 0.5
