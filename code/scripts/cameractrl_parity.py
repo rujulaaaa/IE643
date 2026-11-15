@@ -78,7 +78,8 @@ missing, unexpected = encoder.load_state_dict(cc["pose_encoder_state_dict"])
 assert len(missing) == 0 and len(unexpected) == 0
 _, unexpected = unet.load_state_dict(cc["attention_processor_state_dict"], strict=False)
 assert len(unexpected) == 0, unexpected[:5]
-procs = [p for p in unet.attn_processors.values() if isinstance(p, PoseAdaptorAttnProcessor)]
+# unet.attn_processors leaves the motion modules out, which is where these processors are
+procs = [m.processor for m in unet.modules() if isinstance(getattr(m, "processor", None), PoseAdaptorAttnProcessor)]
 print("reference: pose processors", len(procs), flush=True)
 assert len(procs) == 20
 unet, encoder = unet.cuda().eval(), encoder.cuda().eval()
