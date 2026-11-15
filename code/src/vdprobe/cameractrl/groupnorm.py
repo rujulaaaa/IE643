@@ -25,7 +25,7 @@ class CrossFrameGroupNorm(nn.GroupNorm):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         f = self.clip["frames"]
-        if f <= 1 or x.ndim != 4:
+        if f <= 1 or x.ndim != 4 or not self.clip.get("joint", True):      # "joint": False restores per-frame (diagnostics)
             return super().forward(x)
         bf, c, h, w = x.shape
         if bf % f:

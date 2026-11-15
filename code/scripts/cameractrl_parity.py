@@ -43,8 +43,9 @@ MAX_ABS, REL_L2 = 1e-3, 1e-3
 TRACE = r'''
 # --- layer-by-layer trace, the same code in both processes -----------------------------------------
 import re as _re
-_TRACE_RE = _re.compile(r"^(conv_in|conv_norm_out|conv_out|(?:(?:down_blocks|up_blocks)\.\d+|mid_block)"
-                        r"\.(?:resnets|attentions|motion_modules|downsamplers|upsamplers)\.\d+)$")
+_TRACE_RE = _re.compile(r"^(conv_in|conv_norm_out|conv_out|time_embedding|(?:(?:down_blocks|up_blocks)\.\d+|mid_block)"
+                        r"\.(?:resnets|attentions|motion_modules|downsamplers|upsamplers)\.\d+"
+                        r"|down_blocks\.0\.resnets\.0\.(?:norm1|conv1|time_emb_proj|norm2|conv2))$")
 def _canon(x, frames):
     x = getattr(x, "sample", x)
     if isinstance(x, (tuple, list)):
@@ -57,6 +58,8 @@ def _canon(x, frames):
 def _digest(x):
     if x is None:
         return None
+    if x.ndim == 2:                       # (batch, C) or (batch * frames, C): one row is enough, and comparable
+        x = x[:1]
     v = x.detach().float().flatten()
     n = min(v.numel(), 8192)                                                # integer arithmetic: float32 linspace
     idx = torch.arange(n, device=v.device) * (v.numel() - 1) // max(n - 1, 1)  # overshoots the end of large tensors
@@ -206,9 +209,15 @@ def main():
     adapter.set(None)
     ns = {"torch": torch}
     exec(TRACE, ns)
-    ours_trace = ns["trace"](pipe.unet, cfg.frames, lambda: pipe.unet(
-        latent, torch.tensor(TIMESTEPS[0], device=loaded.device),
-        encoder_hidden_states=text.repeat_interleave(cfg.frames, dim=0)))
+    run_unet = lambda: pipe.unet(latent, torch.tensor(TIMESTEPS[0], device=loaded.device),
+                                 encoder_hidden_states=text.repeat_interleave(cfg.frames, dim=0))
+    ours_trace = ns["trace"](pipe.unet, cfg.frames, run_unet)
+    clip_state = getattr(pipe.unet, "_vd_clip", {})
+    clip_state["joint"] = False                    # the same trace with per-frame group-norm, for the diagnosis
+    with torch.no_grad():
+        eps_per_frame = run_unet().sample.cpu()
+    per_frame_trace = ns["trace"](pipe.unet, cfg.frames, run_unet)
+    clip_state["joint"] = True
     torch.save({"latent": latent.cpu(), "text": text.cpu(), "timesteps": TIMESTEPS,
                 "plucker": {c: plucker_embedding(trajs[c], cfg.height, cfg.width) for c in CAMERAS}}, work / "inputs.pt")
 
@@ -263,6 +272,14 @@ def main():
     # where the two computations part: per module, relative difference of its input and of its output
     # (camera off, first timestep). A module whose output differs far more than its input is a suspect.
     rel = lambda a, b: float((a - b).norm() / b.norm().clamp_min(1e-12))
+    b0 = ref[f"eps/off/{TIMESTEPS[0]}"]
+    print(f"per-frame group-norm instead: eps/off/{TIMESTEPS[0]} rel_l2 {rel(eps_per_frame, b0):.4e}", flush=True)
+    for name, o in per_frame_trace.items():
+        r = ref.get("trace", {}).get(name)
+        if r and o["out"] and r["out"] and o["out"]["shape"] == r["out"]["shape"]:
+            print(f"per-frame layer {name:<34} out {rel(o['out']['sub'], r['out']['sub']):.2e}", flush=True)
+        if name == "down_blocks.0.attentions.0":
+            break
     layers = []
     for name, o in ours_trace.items():
         r = ref.get("trace", {}).get(name)
