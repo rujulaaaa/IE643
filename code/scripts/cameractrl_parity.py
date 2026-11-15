@@ -40,6 +40,43 @@ CAMERAS = ["pan-left", "roll-cw"]
 TIMESTEPS = [801, 201]
 MAX_ABS, REL_L2 = 1e-3, 1e-3
 
+TRACE = r'''
+# --- layer-by-layer trace, the same code in both processes -----------------------------------------
+import re as _re
+_TRACE_RE = _re.compile(r"^(conv_in|conv_norm_out|conv_out|(?:(?:down_blocks|up_blocks)\.\d+|mid_block)"
+                        r"\.(?:resnets|attentions|motion_modules|downsamplers|upsamplers)\.\d+)$")
+def _canon(x, frames):
+    x = getattr(x, "sample", x)
+    if isinstance(x, (tuple, list)):
+        x = x[0]
+    if not torch.is_tensor(x):
+        return None
+    if x.ndim == 4 and frames > 1 and x.shape[0] % frames == 0:            # (b*f, c, h, w) -> (b, c, f, h, w)
+        x = x.reshape(x.shape[0] // frames, frames, *x.shape[1:]).permute(0, 2, 1, 3, 4)
+    return x
+def _digest(x):
+    if x is None:
+        return None
+    v = x.detach().float().flatten()
+    idx = torch.linspace(0, v.numel() - 1, min(v.numel(), 8192), device=v.device).long()
+    return {"sub": v[idx].cpu(), "shape": list(x.shape)}
+def trace(unet, frames, run):
+    rec, handles = {}, []
+    for name, m in unet.named_modules():
+        if _TRACE_RE.match(name):
+            def hook(mod, args, kwargs, out, name=name):
+                first = args[0] if args else next(iter(kwargs.values()))
+                rec[name] = {"in": _digest(_canon(first, frames)), "out": _digest(_canon(out, frames))}
+            handles.append(m.register_forward_hook(hook, with_kwargs=True))
+    try:
+        with torch.no_grad():
+            run()
+    finally:
+        for h in handles:
+            h.remove()
+    return rec
+'''
+
 REFERENCE = r'''
 import json, subprocess, sys
 from pathlib import Path
@@ -114,6 +151,11 @@ with torch.no_grad():
                 n += 1
 print("reference: rounded", n, "tensors to fp16 values", flush=True)
 forward_all("")
+for p in procs:
+    p.scale = 0.0
+_feats = [rearrange(x, "(b f) c h w -> b c f h w", b=1) for x in encoder(next(iter(inp["plucker"].values())))]
+out["trace"] = trace(unet, inp["latent"].shape[2], lambda: unet(
+    inp["latent"], torch.tensor(inp["timesteps"][0], device="cuda"), inp["text"], pose_embedding_features=_feats))
 torch.save(out, work / "reference.pt")
 print("reference: done", sorted(k for k in out if k.startswith("eps")), flush=True)
 '''
@@ -161,6 +203,11 @@ def main():
             emb = plucker_embedding(trajs[c], cfg.height, cfg.width).to(loaded.device)
             ours[f"features/{c}"] = [f.cpu() for f in adapter.encoder(emb)]
     adapter.set(None)
+    ns = {"torch": torch}
+    exec(TRACE, ns)
+    ours_trace = ns["trace"](pipe.unet, cfg.frames, lambda: pipe.unet(
+        latent, torch.tensor(TIMESTEPS[0], device=loaded.device),
+        encoder_hidden_states=text.repeat_interleave(cfg.frames, dim=0)))
     torch.save({"latent": latent.cpu(), "text": text.cpu(), "timesteps": TIMESTEPS,
                 "plucker": {c: plucker_embedding(trajs[c], cfg.height, cfg.width) for c in CAMERAS}}, work / "inputs.pt")
 
@@ -191,7 +238,7 @@ def main():
         run(["git", "clone", "-q", REPO, repo])
     run(["git", "-C", repo, "checkout", "-q", COMMIT])
     run([sys.executable, "-m", "pip", "install", "-q", "--no-input", "--target", deps, *REF_DEPS])
-    (work / "reference.py").write_text(REFERENCE)
+    (work / "reference.py").write_text("import torch\n" + TRACE + REFERENCE)
     env = dict(os.environ, PYTHONPATH=f"{deps}{os.pathsep}{repo}", PYTHONUNBUFFERED="1")
     if args.ref_gpu is not None:        # the kernel's second T4 is idle when this is the only job
         env["CUDA_VISIBLE_DEVICES"] = args.ref_gpu
@@ -212,6 +259,33 @@ def main():
             report[k]["pass"] = report[k]["max_abs"] < MAX_ABS and report[k]["rel_l2"] < REL_L2
         ok &= report[k]["pass"]
         print(f"{'PASS' if report[k]['pass'] else 'FAIL'}  {k:<24} {report[k]}", flush=True)
+    # where the two computations part: per module, relative difference of its input and of its output
+    # (camera off, first timestep). A module whose output differs far more than its input is a suspect.
+    rel = lambda a, b: float((a - b).norm() / b.norm().clamp_min(1e-12))
+    layers = []
+    for name, o in ours_trace.items():
+        r = ref.get("trace", {}).get(name)
+        if r is None:
+            layers.append({"module": name, "note": "not in the reference"})
+            continue
+        row = {"module": name}
+        for side in ("in", "out"):
+            a, b = o[side], r[side]
+            if a is None or b is None:
+                row[side] = None
+            elif a["shape"] != b["shape"]:
+                row[side], row[f"{side}_shapes"] = None, [a["shape"], b["shape"]]
+            else:
+                row[side] = rel(a["sub"], b["sub"])
+        layers.append(row)
+        f = lambda v: "   n/a  " if v is None else f"{v:.2e}"
+        flag = "  <--" if row.get("out") and row["out"] > 1e-4 and (row.get("in") is None or row["out"] > 5 * row["in"]) else ""
+        print(f"layer {name:<34} in {f(row.get('in'))}  out {f(row.get('out'))}{flag}"
+              + (f"  shapes {row.get('in_shapes') or row.get('out_shapes')}" if row.get("in_shapes") or row.get("out_shapes") else ""), flush=True)
+    missing = [k for k in ref.get("trace", {}) if k not in ours_trace]
+    if missing:
+        print("in the reference only:", missing, flush=True)
+    report["layers"] = layers
     # not part of the gate: the same comparison against the reference with its weights as released (fp32),
     # which measures what storing weights in fp16 costs
     for k in sorted(ours):
