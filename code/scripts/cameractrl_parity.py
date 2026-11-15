@@ -85,22 +85,35 @@ print("reference: pose processors", len(procs), flush=True)
 assert len(procs) == 20
 unet, encoder = unet.cuda().eval(), encoder.cuda().eval()
 
-# 3. the forward passes
+# 3. the forward passes: with the weights as released (keys "fp32/...", reported only), then with every
+#    weight rounded to fp16 and held in fp32 (the gate). The project stores all weights in fp16, so the
+#    second pass has the graft's weights exactly and any difference left is a difference in the computation.
 inp = torch.load(work / "inputs.pt", map_location="cuda")
 out = {}
+def forward_all(prefix):
+    with torch.no_grad():
+        for name, plucker in inp["plucker"].items():
+            feats = encoder(plucker)                                              # as in pipeline_animation.py
+            feats = [rearrange(x, "(b f) c h w -> b c f h w", b=1) for x in feats]
+            out[f"{prefix}features/{name}"] = [f.cpu() for f in feats]
+            for scale, tag in ((1.0, name), (0.0, "off")):
+                if tag == "off" and any(k.startswith(f"{prefix}eps/off/") for k in out):
+                    continue
+                for p in procs:
+                    p.scale = scale                                                # scale 0: h + 0 * merge(h + pose) = h
+                for t in inp["timesteps"]:
+                    eps = unet(inp["latent"], torch.tensor(t, device="cuda"), inp["text"], pose_embedding_features=feats).sample
+                    out[f"{prefix}eps/{tag}/{t}"] = eps.cpu()
+forward_all("fp32/")
+n = 0
 with torch.no_grad():
-    for name, plucker in inp["plucker"].items():
-        feats = encoder(plucker)                                              # as in pipeline_animation.py
-        feats = [rearrange(x, "(b f) c h w -> b c f h w", b=1) for x in feats]
-        out[f"features/{name}"] = [f.cpu() for f in feats]
-        for scale, tag in ((1.0, name), (0.0, "off")):
-            if tag == "off" and any(k.startswith("eps/off/") for k in out):
-                continue
-            for p in procs:
-                p.scale = scale                                                # scale 0: h + 0 * merge(h + pose) = h
-            for t in inp["timesteps"]:
-                eps = unet(inp["latent"], torch.tensor(t, device="cuda"), inp["text"], pose_embedding_features=feats).sample
-                out[f"eps/{tag}/{t}"] = eps.cpu()
+    for m in (unet, encoder):
+        for t in list(m.parameters()) + list(m.buffers()):
+            if t.is_floating_point():
+                t.copy_(t.half().float())
+                n += 1
+print("reference: rounded", n, "tensors to fp16 values", flush=True)
+forward_all("")
 torch.save(out, work / "reference.pt")
 print("reference: done", sorted(k for k in out if k.startswith("eps")), flush=True)
 '''
@@ -199,6 +212,13 @@ def main():
             report[k]["pass"] = report[k]["max_abs"] < MAX_ABS and report[k]["rel_l2"] < REL_L2
         ok &= report[k]["pass"]
         print(f"{'PASS' if report[k]['pass'] else 'FAIL'}  {k:<24} {report[k]}", flush=True)
+    # not part of the gate: the same comparison against the reference with its weights as released (fp32),
+    # which measures what storing weights in fp16 costs
+    for k in sorted(ours):
+        if k.startswith("eps/") and f"fp32/{k}" in ref:
+            a, b = ours[k], ref[f"fp32/{k}"]
+            report[f"fp32_weights/{k}"] = {"max_abs": float((a - b).abs().max()), "rel_l2": float((a - b).norm() / b.norm())}
+            print(f"info  vs fp32 weights  {k:<24} {report[f'fp32_weights/{k}']}", flush=True)
     # power of the test: the camera must change the reference prediction by far more than the tolerance
     for c in CAMERAS:
         for t in TIMESTEPS:
