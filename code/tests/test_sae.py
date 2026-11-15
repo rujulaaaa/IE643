@@ -110,3 +110,23 @@ def test_dead_features_are_resampled():
     _, without = train_sae(x, n_features=512, k=2, epochs=6, batch=500, lr=1e-3, seed=1, resample_dead=False)
     assert sum(with_re["resampled"]) > 0 and sum(without["resampled"]) == 0
     assert with_re["dead_fraction"] <= without["dead_fraction"]
+
+
+def test_resampling_dead_features_does_not_blow_up_the_loss():
+    """Clustered data leaves many features dead; reviving them must not undo the training (regression:
+    full-norm encoder rows for revived features made the loss jump from 0.05 to 1.5)."""
+    import torch
+    from vdprobe.sae import Normalizer, train_sae
+    g = torch.Generator().manual_seed(0)
+    xs = []
+    for ci in range(3):
+        for si in range(4):
+            b = torch.zeros(16)
+            b[0], b[1] = 3.0 * ci, 3.0 * si
+            xs.append(b + 0.3 * torch.randn(64, 16, generator=g))
+    x = Normalizer.fit(torch.cat(xs))(torch.cat(xs))
+    _, log = train_sae(x, n_features=48, k=4, epochs=40, batch=64, lr=3e-3)
+    curve = log["loss_curve"]
+    assert sum(log["resampled"]) > 0                                   # the case is exercised
+    assert max(b / a for a, b in zip(curve[3:], curve[4:])) < 2.0      # no jump after the first epochs
+    assert log["explained_variance"] > 0.9

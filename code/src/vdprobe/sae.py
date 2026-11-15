@@ -114,14 +114,19 @@ def train_sae(x: torch.Tensor, n_features: int = 5120, k: int = 32, epochs: int 
         log["loss_curve"].append(total / n)
         dead = (~fired).nonzero().flatten()
         n_re = 0
-        if resample_dead and epoch < epochs - 1 and len(dead):
-            # point each dead feature at one of the worst-reconstructed tokens of the hardest batch
+        if resample_dead and epoch < int(0.75 * epochs) and len(dead):
+            # Point each dead feature at one of the worst-reconstructed tokens of the hardest batch.
+            # The encoder row gets a fifth of the live rows' mean norm: at full norm a revived feature
+            # out-competes trained ones in the top-k with a large activation and the loss jumps by an
+            # order of magnitude. No resampling in the last quarter of training, so the model settles.
             order = worst_err.argsort(descending=True)[:len(dead)]
             dead = dead[:len(order)]
             with torch.no_grad():
                 dirs = F.normalize(worst_x[order] - sae.b_dec, dim=1)
+                alive = fired.nonzero().flatten()
+                enc_norm = sae.encoder.weight[alive].norm(dim=1).mean() if len(alive) else torch.tensor(1.0)
                 sae.decoder.weight[:, dead] = dirs.T
-                sae.encoder.weight[dead] = dirs
+                sae.encoder.weight[dead] = dirs * 0.2 * enc_norm
                 sae.encoder.bias[dead] = 0.0
             n_re = len(dead)
         log["resampled"].append(n_re)
