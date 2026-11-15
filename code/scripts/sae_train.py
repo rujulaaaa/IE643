@@ -139,10 +139,10 @@ def main():
     cam_train = np.array([SF.parse_clip_id(c)["camera"] for c in ids])
     off = next(c for c in ("none", "off") if c in cam_train)
     directions = {"mean_diff": {c: torch.from_numpy(raw_train[cam_train == c].mean(0) - raw_train[cam_train == off].mean(0))
-                                for c in sorted(set(cam_train)) if c != off}, "features": {}, "scale": norm.scale}
+                                for c in sorted(set(cam_train.tolist())) if c != off}, "features": {}, "scale": float(norm.scale)}
     for c in L["classes"]:
         d = df[(df.camera == c) & (df.frequency > 0)].sort_values(["camera_only", "camera_auroc"], ascending=False).head(args.top)
-        directions["features"][c] = {"index": d.feature.tolist(), "camera_auroc": d.camera_auroc.tolist(),
+        directions["features"][str(c)] = {"index": [int(i) for i in d.feature], "camera_auroc": [float(v) for v in d.camera_auroc],
                                      "decoder": default.decoder.weight[:, d.feature.tolist()].T.clone() * norm.scale}
     torch.save(directions, args.out / "directions.pt")
 
