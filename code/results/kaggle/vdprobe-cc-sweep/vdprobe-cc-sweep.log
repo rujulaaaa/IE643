@@ -1,0 +1,296 @@
+[{"stream_name":"stdout","time":2.307041683,"data":"dataset vdprobe-cam-sweep -\u003e /kaggle/input/notebooks/shivanshisme/vdprobe-cam-sweep ['__huggingface_repos__.json', '__output__.json', '__results__.html', '__script__.ipynb', '__script__.py', 'custom.css', 'out']\n"}
+,{"stream_name":"stdout","time":20.895325574,"data":"2\n"}
+,{"stream_name":"stdout","time":20.895359011,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":20.895363592,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":20.895367122,"data":"2.11.0+cu130\n"}
+,{"stream_name":"stdout","time":20.895375392,"data":" \n"}
+,{"stream_name":"stderr","time":23.873503183,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":37.240937999,"data":"\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  9.29it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:13\u003c00:00,  7.89s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:13\u003c00:00,  6.73s/it]\n"}
+,{"stream_name":"stderr","time":51.234502165,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:   8%|▊         | 1/13 [00:00\u003c00:01,  9.27it/s]\rFetching 13 files:  62%|██████▏   | 8/13 [00:00\u003c00:00, 39.52it/s]\rFetching 13 files:  92%|█████████▏| 12/13 [00:05\u003c00:00,  1.63it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:13\u003c00:00,  1.06s/it]\n"}
+,{"stream_name":"stderr","time":61.314668174,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:   8%|▊         | 1/12 [00:00\u003c00:01,  9.39it/s]\rFetching 12 files:  58%|█████▊    | 7/12 [00:00\u003c00:00, 33.31it/s]\rFetching 12 files:  92%|█████████▏| 11/12 [00:09\u003c00:01,  1.13s/it]\rFetching 12 files: 100%|██████████| 12/12 [00:09\u003c00:00,  1.21it/s]\n"}
+,{"stream_name":"stderr","time":86.261450195,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  8.58it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:11\u003c00:00,  6.98s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:11\u003c00:00,  5.95s/it]\n"}
+,{"stream_name":"stderr","time":86.400214306,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1337.80it/s]\n"}
+,{"stream_name":"stdout","time":112.775734053,"data":"Downloading: \"https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth\" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth\n"}
+,{"stream_name":"stderr","time":112.978152064,"data":"\r  0%|          | 0.00/20.1M [00:00\u003c?, ?B/s]\r 76%|███████▌  | 15.2M/20.1M [00:00\u003c00:00, 160MB/s]\r100%|██████████| 20.1M/20.1M [00:00\u003c00:00, 176MB/s]\n"}
+,{"stream_name":"stdout","time":113.91128161,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/camera_sweep.py --model cc --seeds 42 --tokens --verify --out /kaggle/working/out/job0\n"}
+,{"stream_name":"stdout","time":113.912962661,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/camera_sweep.py --model cc --seeds 1337 --tokens --out /kaggle/working/out/job1\n"}
+,{"stream_name":"stdout","time":113.913620645,"data":"job 2 on GPU 0: /usr/bin/python3 -u scripts/sae_train.py input/vdprobe-cam-sweep --out /kaggle/working/out/job2\n"}
+,{"stream_name":"stdout","time":3335.809456342,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3335.809512124,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":3335.809533432,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 836.60it/s]\n"}
+,{"stream_name":"stdout","time":3335.809538689,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3335.809542665,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":3335.809546578,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1043.90it/s]\n"}
+,{"stream_name":"stdout","time":3335.809550927,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":3335.809557006,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":3335.809561743,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3335.809565799,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":3335.809570369,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:01\u003c00:03,  1.13it/s]\n"}
+,{"stream_name":"stdout","time":3335.809575093,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3335.809579178,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":3335.809584153,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2681.23it/s]\n"}
+,{"stream_name":"stdout","time":3335.809588816,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3335.809592429,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:02\u003c00:00,  2.23it/s]\n"}
+,{"stream_name":"stdout","time":3335.809596934,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.83it/s]\n"}
+,{"stream_name":"stdout","time":3335.809601109,"data":"[job0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":3335.809605288,"data":"[job0] model cc: 92 coordinates, coarse 15, revisions {'base_model': {'repo_id': 'stable-diffusion-v1-5/stable-diffusion-v1-5', 'commit': '451f4fe16113bff5a5d2269ed5ad43b0592e9a14', 'variant': 'fp16'}, 'motion_adapter': {'repo_id': 'guoyww/animatediff-motion-adapter-v1-5-3', 'commit': '2e8139b1d1269fd8a21deb96ad19455e187692eb'}, 'authors_groupnorm_layers': 20, 'cameractrl': {'repo_id': 'hehao13/CameraCtrl', 'file': 'CameraCtrl.ckpt'}, 'domain_lora': {'repo_id': 'guoyww/animatediff', 'file': 'v3_sd15_adapter.ckpt', 'scale': 1.0, 'merged_matrices': 128}}\n"}
+,{"stream_name":"stdout","time":3335.8096117,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3335.809615124,"data":"[job0] === s42__camera: 80 clips, 142 pairs, 17 anchors, 15 coordinates\n"}
+,{"stream_name":"stdout","time":3335.809619211,"data":"[job0]     step  5/25    514.4 s  (1.29 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3335.809624303,"data":"[job0]     step 10/25   1032.0 s  (1.29 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3335.809628164,"data":"[job0]     step 15/25   1548.1 s  (1.29 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3335.809632195,"data":"[job0]     step 20/25   2066.5 s  (1.29 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3335.809636058,"data":"[job0]     step 25/25   2585.5 s  (1.29 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3335.809639673,"data":"[job0]   denoised in 43.1 min (32.3 s per clip), peak host RSS 8.0 GB\n"}
+,{"stream_name":"stdout","time":3335.809643959,"data":"[job0]   off                    a mountain lake at sunrise     sig -0.0010 +0.0009 +0.0010 -0.0010\n"}
+,{"stream_name":"stdout","time":3335.809652571,"data":"[job0]   static                 a mountain lake at sunrise     sig -0.0001 -0.0001 +0.0000 -0.0000\n"}
+,{"stream_name":"stdout","time":3335.809657076,"data":"[job0]   pan-left               a mountain lake at sunrise     sig +0.1124 -0.0017 +0.0037 +0.0004\n"}
+,{"stream_name":"stdout","time":3335.809661226,"data":"[job0]   pan-right              a mountain lake at sunrise     sig +0.0521 -0.0003 +0.0061 +0.0247\n"}
+,{"stream_name":"stdout","time":3335.809665269,"data":"[job0]   tilt-up                a mountain lake at sunrise     sig -0.0031 +0.0661 +0.0048 +0.0002\n"}
+,{"stream_name":"stdout","time":3335.809669384,"data":"[job0]   tilt-down              a mountain lake at sunrise     sig +0.0019 -0.0343 -0.0072 +0.0002\n"}
+,{"stream_name":"stdout","time":3335.80967398,"data":"[job0]   zoom-in                a mountain lake at sunrise     sig -0.0092 +0.0077 +0.0264 +0.0023\n"}
+,{"stream_name":"stdout","time":3335.809678456,"data":"[job0]   zoom-out               a mountain lake at sunrise     sig +0.0001 -0.0152 -0.0279 -0.0015\n"}
+,{"stream_name":"stdout","time":3335.80968284,"data":"[job0]   roll-cw                a mountain lake at sunrise     sig -0.0016 -0.0022 +0.0057 -0.0339\n"}
+,{"stream_name":"stdout","time":3335.809687284,"data":"[job0]   roll-ccw               a mountain lake at sunrise     sig +0.0029 +0.0008 +0.0040 +0.0452\n"}
+,{"stream_name":"stdout","time":3335.80969173,"data":"[job0]   off                    a medieval stone castle on a h sig -0.0200 +0.0004 +0.0040 -0.0125\n"}
+,{"stream_name":"stdout","time":3335.809696179,"data":"[job0]   static                 a medieval stone castle on a h sig +0.0000 +0.0000 +0.0000 +0.0000\n"}
+,{"stream_name":"stdout","time":3335.809700279,"data":"[job0]   pan-left               a medieval stone castle on a h sig -0.0662 -0.0017 +0.0182 -0.0515\n"}
+,{"stream_name":"stdout","time":3335.809704485,"data":"[job0]   pan-right              a medieval stone castle on a h sig +0.0263 -0.0012 +0.0050 +0.0314\n"}
+,{"stream_name":"stdout","time":3335.809708389,"data":"[job0]   tilt-up                a medieval stone castle on a h sig +0.0009 +0.0256 +0.0059 +0.0009\n"}
+,{"stream_name":"stdout","time":3335.809712832,"data":"[job0]   tilt-down              a medieval stone castle on a h sig -0.0041 -0.0216 -0.0074 -0.0034\n"}
+,{"stream_name":"stdout","time":3335.809716719,"data":"[job0]   zoom-in                a medieval stone castle on a h sig -0.0005 +0.0061 +0.0243 -0.0003\n"}
+,{"stream_name":"stdout","time":3335.809720866,"data":"[job0]   zoom-out               a medieval stone castle on a h sig -0.0253 -0.0147 -0.0194 -0.0062\n"}
+,{"stream_name":"stdout","time":3335.809725664,"data":"[job0]   roll-cw                a medieval stone castle on a h sig +0.0000 -0.0022 +0.0080 -0.0288\n"}
+,{"stream_name":"stdout","time":3335.809729413,"data":"[job0]   roll-ccw               a medieval stone castle on a h sig +0.0048 +0.0077 +0.0026 +0.0388\n"}
+,{"stream_name":"stdout","time":3335.809733428,"data":"[job0]   off                    a city street at night with ne sig -0.0000 +0.0001 +0.0000 -0.0000\n"}
+,{"stream_name":"stdout","time":3335.809737561,"data":"[job0]   static                 a city street at night with ne sig +0.0000 +0.0000 +0.0000 +0.0000\n"}
+,{"stream_name":"stdout","time":3335.809741599,"data":"[job0]   pan-left               a city street at night with ne sig +0.0420 -0.0015 +0.0015 -0.0122\n"}
+,{"stream_name":"stdout","time":3335.809745554,"data":"[job0]   pan-right              a city street at night with ne sig -0.0328 +0.0005 -0.0001 +0.0135\n"}
+,{"stream_name":"stdout","time":3335.809750141,"data":"[job0]   tilt-up                a city street at night with ne sig -0.0023 +0.0683 +0.0034 +0.0001\n"}
+,{"stream_name":"stdout","time":3335.809758514,"data":"[job0]   tilt-down              a city street at night with ne sig +0.0021 -0.0376 -0.0015 +0.0008\n"}
+,{"stream_name":"stdout","time":3335.809762911,"data":"[job0]   zoom-in                a city street at night with ne sig -0.0001 +0.0117 +0.0560 +0.0001\n"}
+,{"stream_name":"stdout","time":3335.809767027,"data":"[job0]   zoom-out               a city street at night with ne sig +0.0007 -0.0071 -0.0404 -0.0004\n"}
+,{"stream_name":"stdout","time":3335.809771193,"data":"[job0]   roll-cw                a city street at night with ne sig +0.0014 +0.0004 +0.0037 -0.0336\n"}
+,{"stream_name":"stdout","time":3335.809775179,"data":"[job0]   roll-ccw               a city street at night with ne sig +0.0027 +0.0004 +0.0052 +0.0326\n"}
+,{"stream_name":"stdout","time":3335.809779168,"data":"[job0]   off                    a red sandstone desert canyon  sig -0.0325 +0.0022 +0.0012 -0.0043\n"}
+,{"stream_name":"stdout","time":3335.809783189,"data":"[job0]   static                 a red sandstone desert canyon  sig +0.0000 +0.0000 +0.0000 +0.0000\n"}
+,{"stream_name":"stdout","time":3335.809787264,"data":"[job0]   pan-left               a red sandstone desert canyon  sig +0.0940 -0.0004 +0.0012 -0.0005\n"}
+,{"stream_name":"stdout","time":3335.809791508,"data":"[job0]   pan-right              a red sandstone desert canyon  sig -0.0326 +0.0020 -0.0008 +0.0073\n"}
+,{"stream_name":"stdout","time":3335.809795831,"data":"[job0]   tilt-up                a red sandstone desert canyon  sig +0.0101 +0.0388 +0.0101 +0.0059\n"}
+,{"stream_name":"stdout","time":3335.809799783,"data":"[job0]   tilt-down              a red sandstone desert canyon  sig +0.0011 -0.0340 -0.0111 -0.0035\n"}
+,{"stream_name":"stdout","time":3335.80980379,"data":"[job0]   zoom-in                a red sandstone desert canyon  sig +0.0125 +0.0300 +0.0646 -0.0006\n"}
+,{"stream_name":"stdout","time":3335.809807706,"data":"[job0]   zoom-out               a red sandstone desert canyon  sig -0.0033 -0.0168 -0.0416 -0.0011\n"}
+,{"stream_name":"stdout","time":3335.809812076,"data":"[job0]   roll-cw                a red sandstone desert canyon  sig +0.0048 -0.0015 +0.0096 -0.0392\n"}
+,{"stream_name":"stdout","time":3335.809816218,"data":"[job0]   roll-ccw               a red sandstone desert canyon  sig -0.0036 +0.0006 +0.0053 +0.0383\n"}
+,{"stream_name":"stdout","time":3335.809820247,"data":"[job0]   off                    a path through a pine forest   sig -0.0028 +0.0074 +0.0215 +0.0005\n"}
+,{"stream_name":"stdout","time":3335.809824171,"data":"[job0]   static                 a path through a pine forest   sig +0.0000 +0.0000 +0.0000 +0.0000\n"}
+,{"stream_name":"stdout","time":3335.809828685,"data":"[job0]   pan-left               a path through a pine forest   sig +0.0596 -0.0023 +0.0012 -0.0029\n"}
+,{"stream_name":"stdout","time":3335.809832976,"data":"[job0]   pan-right              a path through a pine forest   sig -0.0425 +0.0033 -0.0037 +0.0064\n"}
+,{"stream_name":"stdout","time":3335.809837241,"data":"[job0]   tilt-up                a path through a pine forest   sig -0.0030 +0.0524 +0.0244 +0.0072\n"}
+,{"stream_name":"stdout","time":3335.809841791,"data":"[job0]   tilt-down              a path through a pine forest   sig -0.0004 -0.0485 -0.0085 -0.0001\n"}
+,{"stream_name":"stdout","time":3335.809846284,"data":"[job0]   zoom-in                a path through a pine forest   sig +0.0027 +0.0120 +0.0674 -0.0001\n"}
+,{"stream_name":"stdout","time":3335.809850599,"data":"[job0]   zoom-out               a path through a pine forest   sig -0.0031 -0.0096 -0.0542 -0.0006\n"}
+,{"stream_name":"stdout","time":3335.809854893,"data":"[job0]   roll-cw                a path through a pine forest   sig +0.0077 -0.0059 +0.0041 -0.0408\n"}
+,{"stream_name":"stdout","time":3335.809864443,"data":"[job0]   roll-ccw               a path through a pine forest   sig +0.0064 +0.0025 +0.0042 +0.0456\n"}
+,{"stream_name":"stdout","time":3335.809868881,"data":"[job0]   off                    a lighthouse on a rocky cliff  sig -0.0261 -0.0008 +0.0035 -0.0174\n"}
+,{"stream_name":"stdout","time":3335.8098728,"data":"[job0]   static                 a lighthouse on a rocky cliff  sig +0.0000 +0.0000 +0.0000 +0.0000\n"}
+,{"stream_name":"stdout","time":3335.809876898,"data":"[job0]   pan-left               a lighthouse on a rocky cliff  sig -0.0843 +0.0101 +0.0164 -0.0660\n"}
+,{"stream_name":"stdout","time":3335.809880764,"data":"[job0]   pan-right              a lighthouse on a rocky cliff  sig +0.0453 -0.0025 -0.0057 +0.0243\n"}
+,{"stream_name":"stdout","time":3335.809884419,"data":"[job0]   tilt-up                a lighthouse on a rocky cliff  sig +0.0003 +0.0543 +0.0067 +0.0037\n"}
+,{"stream_name":"stdout","time":3335.809887933,"data":"[job0]   tilt-down              a lighthouse on a rocky cliff  sig +0.0266 -0.0225 -0.0288 +0.0118\n"}
+,{"stream_name":"stdout","time":3335.809892511,"data":"[job0]   zoom-in                a lighthouse on a rocky cliff  sig +0.0043 +0.0079 +0.0480 +0.0017\n"}
+,{"stream_name":"stdout","time":3335.809896062,"data":"[job0]   zoom-out               a lighthouse on a rocky cliff  sig +0.0043 +0.0045 -0.0711 +0.0008\n"}
+,{"stream_name":"stdout","time":3335.809900185,"data":"[job0]   roll-cw                a lighthouse on a rocky cliff  sig +0.0024 -0.0019 +0.0123 -0.0478\n"}
+,{"stream_name":"stdout","time":3335.809904596,"data":"[job0]   roll-ccw               a lighthouse on a rocky cliff  sig -0.0015 +0.0031 +0.0017 +0.0370\n"}
+,{"stream_name":"stdout","time":3335.809908721,"data":"[job0]   off                    a snowy village with wooden ho sig -0.0057 +0.0001 +0.0018 -0.0022\n"}
+,{"stream_name":"stdout","time":3335.809912569,"data":"[job0]   static                 a snowy village with wooden ho sig +0.0000 +0.0000 +0.0000 +0.0000\n"}
+,{"stream_name":"stdout","time":3335.809916702,"data":"[job0]   pan-left               a snowy village with wooden ho sig +0.1304 -0.0061 -0.0021 -0.0171\n"}
+,{"stream_name":"stdout","time":3335.809920783,"data":"[job0]   pan-right              a snowy village with wooden ho sig -0.0152 +0.0034 +0.0006 +0.0380\n"}
+,{"stream_name":"stdout","time":3335.809924662,"data":"[job0]   tilt-up                a snowy village with wooden ho sig -0.0061 +0.0641 +0.0152 +0.0050\n"}
+,{"stream_name":"stdout","time":3335.809928676,"data":"[job0]   tilt-down              a snowy village with wooden ho sig +0.0017 -0.0471 -0.0170 +0.0018\n"}
+,{"stream_name":"stdout","time":3335.809932524,"data":"[job0]   zoom-in                a snowy village with wooden ho sig -0.0034 +0.0157 +0.0538 -0.0013\n"}
+,{"stream_name":"stdout","time":3335.809936493,"data":"[job0]   zoom-out               a snowy village with wooden ho sig +0.0067 -0.0169 -0.0494 -0.0013\n"}
+,{"stream_name":"stdout","time":3335.809940678,"data":"[job0]   roll-cw                a snowy village with wooden ho sig +0.0051 +0.0011 +0.0085 -0.0407\n"}
+,{"stream_name":"stdout","time":3335.809945186,"data":"[job0]   roll-ccw               a snowy village with wooden ho sig +0.0051 +0.0060 +0.0023 +0.0511\n"}
+,{"stream_name":"stdout","time":3335.809949311,"data":"[job0]   off                    a tropical beach with palm tre sig +0.0010 +0.0026 +0.0009 -0.0075\n"}
+,{"stream_name":"stdout","time":3335.809953659,"data":"[job0]   static                 a tropical beach with palm tre sig +0.0000 +0.0000 +0.0000 +0.0000\n"}
+,{"stream_name":"stdout","time":3335.809958168,"data":"[job0]   pan-left               a tropical beach with palm tre sig +0.0868 -0.0064 -0.0034 -0.0130\n"}
+,{"stream_name":"stdout","time":3335.809967351,"data":"[job0]   pan-right              a tropical beach with palm tre sig +0.0158 -0.0013 +0.0078 +0.0108\n"}
+,{"stream_name":"stdout","time":3335.809971893,"data":"[job0]   tilt-up                a tropical beach with palm tre sig +0.0045 +0.0740 +0.0152 -0.0048\n"}
+,{"stream_name":"stdout","time":3335.809975831,"data":"[job0]   tilt-down              a tropical beach with palm tre sig +0.0007 -0.0369 -0.0068 -0.0012\n"}
+,{"stream_name":"stdout","time":3335.809979706,"data":"[job0]   zoom-in                a tropical beach with palm tre sig +0.0013 +0.0013 +0.0362 +0.0001\n"}
+,{"stream_name":"stdout","time":3335.809983723,"data":"[job0]   zoom-out               a tropical beach with palm tre sig -0.0044 -0.0032 -0.0375 +0.0006\n"}
+,{"stream_name":"stdout","time":3335.809987656,"data":"[job0]   roll-cw                a tropical beach with palm tre sig +0.0022 +0.0018 +0.0069 -0.0310\n"}
+,{"stream_name":"stdout","time":3335.809991968,"data":"[job0]   roll-ccw               a tropical beach with palm tre sig +0.0032 +0.0060 +0.0057 +0.0440\n"}
+,{"stream_name":"stdout","time":3335.809996014,"data":"[job0] wrote /kaggle/working/out/job0/s42__camera/verify.json\n"}
+,{"stream_name":"stdout","time":3335.810000088,"data":"[job0] PASS  verify  {'clip': '42__a-mountain-lake-at-sunrise__off', 'group_vs_solo_max_abs': 0.0, 'group_vs_solo_mad': 0.0, 'group_vs_pipe_max_abs': 0.0, 'group_vs_pipe_mad': 0.0, 'pass': True}\n"}
+,{"stream_name":"stdout","time":3335.810004423,"data":"[job0] wrote /kaggle/working/out/job0/s42__camera/manifest.json\n"}
+,{"stream_name":"stdout","time":3335.810008141,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":3335.810011741,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":3335.810016036,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 836.35it/s]\n"}
+,{"stream_name":"stdout","time":3335.81002048,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":3335.810024283,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":3335.810028819,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1182.21it/s]\n"}
+,{"stream_name":"stdout","time":3335.810032963,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":3335.810037412,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":3335.810042146,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":3335.810045868,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":3335.810049918,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:01\u003c00:08,  1.69s/it]\n"}
+,{"stream_name":"stdout","time":3335.810054173,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":3335.810057788,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":3335.810061876,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2580.74it/s]\n"}
+,{"stream_name":"stdout","time":3335.810066328,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":3335.810070031,"data":"[job1] Loading pipeline components...:  50%|█████     | 3/6 [00:01\u003c00:01,  1.91it/s]\n"}
+,{"stream_name":"stdout","time":3335.810074337,"data":"[job1] Loading pipeline components...:  83%|████████▎ | 5/6 [00:02\u003c00:00,  3.52it/s]\n"}
+,{"stream_name":"stdout","time":3335.810082911,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.80it/s]\n"}
+,{"stream_name":"stdout","time":3335.810086582,"data":"[job1] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":3335.810091197,"data":"[job1] model cc: 92 coordinates, coarse 15, revisions {'base_model': {'repo_id': 'stable-diffusion-v1-5/stable-diffusion-v1-5', 'commit': '451f4fe16113bff5a5d2269ed5ad43b0592e9a14', 'variant': 'fp16'}, 'motion_adapter': {'repo_id': 'guoyww/animatediff-motion-adapter-v1-5-3', 'commit': '2e8139b1d1269fd8a21deb96ad19455e187692eb'}, 'authors_groupnorm_layers': 20, 'cameractrl': {'repo_id': 'hehao13/CameraCtrl', 'file': 'CameraCtrl.ckpt'}, 'domain_lora': {'repo_id': 'guoyww/animatediff', 'file': 'v3_sd15_adapter.ckpt', 'scale': 1.0, 'merged_matrices': 128}}\n"}
+,{"stream_name":"stdout","time":3335.810096346,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":3335.81010715,"data":"[job1] === s1337__camera: 80 clips, 142 pairs, 17 anchors, 15 coordinates\n"}
+,{"stream_name":"stdout","time":3335.810111437,"data":"[job1]     step  5/25    537.1 s  (1.34 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3335.810115346,"data":"[job1]     step 10/25   1076.7 s  (1.35 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3335.810118693,"data":"[job1]     step 15/25   1616.6 s  (1.35 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3335.810122046,"data":"[job1]     step 20/25   2156.6 s  (1.35 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3335.810125301,"data":"[job1]     step 25/25   2697.9 s  (1.35 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3335.810129208,"data":"[job1]   denoised in 45.0 min (33.7 s per clip), peak host RSS 8.0 GB\n"}
+,{"stream_name":"stdout","time":3335.810133088,"data":"[job1]   off                    a mountain lake at sunrise     sig -0.0001 -0.0000 +0.0000 +0.0001\n"}
+,{"stream_name":"stdout","time":3335.81013679,"data":"[job1]   static                 a mountain lake at sunrise     sig -0.0004 +0.0001 +0.0001 -0.0000\n"}
+,{"stream_name":"stdout","time":3335.810140718,"data":"[job1]   pan-left               a mountain lake at sunrise     sig +0.1176 +0.0005 +0.0006 -0.0013\n"}
+,{"stream_name":"stdout","time":3335.810144634,"data":"[job1]   pan-right              a mountain lake at sunrise     sig -0.1157 -0.0010 -0.0006 +0.0030\n"}
+,{"stream_name":"stdout","time":3335.810148703,"data":"[job1]   tilt-up                a mountain lake at sunrise     sig +0.0020 +0.0218 +0.0035 -0.0034\n"}
+,{"stream_name":"stdout","time":3335.810152849,"data":"[job1]   tilt-down              a mountain lake at sunrise     sig -0.0005 -0.0065 -0.0031 -0.0004\n"}
+,{"stream_name":"stdout","time":3335.810156696,"data":"[job1]   zoom-in                a mountain lake at sunrise     sig -0.0146 +0.0020 +0.0155 +0.0039\n"}
+,{"stream_name":"stdout","time":3335.810160832,"data":"[job1]   zoom-out               a mountain lake at sunrise     sig -0.0275 -0.0029 -0.0067 +0.0060\n"}
+,{"stream_name":"stdout","time":3335.810164626,"data":"[job1]   roll-cw                a mountain lake at sunrise     sig -0.0163 -0.0010 +0.0041 -0.0323\n"}
+,{"stream_name":"stdout","time":3335.810168639,"data":"[job1]   roll-ccw               a mountain lake at sunrise     sig +0.0097 +0.0052 -0.0003 +0.0353\n"}
+,{"stream_name":"stdout","time":3335.810172744,"data":"[job1]   off                    a medieval stone castle on a h sig +0.0003 +0.0129 -0.0012 -0.0001\n"}
+,{"stream_name":"stdout","time":3335.810176754,"data":"[job1]   static                 a medieval stone castle on a h sig +0.0001 +0.0001 -0.0000 +0.0001\n"}
+,{"stream_name":"stdout","time":3335.810184999,"data":"[job1]   pan-left               a medieval stone castle on a h sig +0.0651 -0.0005 +0.0038 -0.0087\n"}
+,{"stream_name":"stdout","time":3335.810189234,"data":"[job1]   pan-right              a medieval stone castle on a h sig -0.0464 -0.0002 +0.0019 -0.0070\n"}
+,{"stream_name":"stdout","time":3335.810193745,"data":"[job1]   tilt-up                a medieval stone castle on a h sig +0.0012 +0.0319 +0.0134 +0.0010\n"}
+,{"stream_name":"stdout","time":3335.810197214,"data":"[job1]   tilt-down              a medieval stone castle on a h sig -0.0012 -0.0158 -0.0107 -0.0007\n"}
+,{"stream_name":"stdout","time":3335.810200654,"data":"[job1]   zoom-in                a medieval stone castle on a h sig -0.0002 +0.0162 +0.0434 -0.0020\n"}
+,{"stream_name":"stdout","time":3335.810204341,"data":"[job1]   zoom-out               a medieval stone castle on a h sig -0.0021 -0.0099 -0.0302 -0.0013\n"}
+,{"stream_name":"stdout","time":3335.81020769,"data":"[job1]   roll-cw                a medieval stone castle on a h sig -0.0186 -0.0014 +0.0022 -0.0293\n"}
+,{"stream_name":"stdout","time":3335.810211169,"data":"[job1]   roll-ccw               a medieval stone castle on a h sig +0.0058 +0.0005 +0.0015 +0.0442\n"}
+,{"stream_name":"stdout","time":3335.810214563,"data":"[job1]   off                    a city street at night with ne sig +0.0558 +0.0148 -0.0278 -0.0011\n"}
+,{"stream_name":"stdout","time":3335.810218027,"data":"[job1]   static                 a city street at night with ne sig +0.0000 +0.0000 +0.0000 +0.0000\n"}
+,{"stream_name":"stdout","time":3335.810221401,"data":"[job1]   pan-left               a city street at night with ne sig +0.0601 -0.0027 -0.0008 +0.0014\n"}
+,{"stream_name":"stdout","time":3335.810224912,"data":"[job1]   pan-right              a city street at night with ne sig +0.1356 +0.0057 -0.0300 +0.0024\n"}
+,{"stream_name":"stdout","time":3335.810228203,"data":"[job1]   tilt-up                a city street at night with ne sig +0.0003 +0.0184 -0.0020 -0.0025\n"}
+,{"stream_name":"stdout","time":3335.810232309,"data":"[job1]   tilt-down              a city street at night with ne sig +0.0007 -0.0303 -0.0090 +0.0005\n"}
+,{"stream_name":"stdout","time":3335.810236214,"data":"[job1]   zoom-in                a city street at night with ne sig +0.0008 -0.0003 +0.0268 -0.0007\n"}
+,{"stream_name":"stdout","time":3335.810240001,"data":"[job1]   zoom-out               a city street at night with ne sig +0.0054 +0.0032 -0.0346 -0.0003\n"}
+,{"stream_name":"stdout","time":3335.810244138,"data":"[job1]   roll-cw                a city street at night with ne sig +0.0058 +0.0033 +0.0044 -0.0278\n"}
+,{"stream_name":"stdout","time":3335.810251213,"data":"[job1]   roll-ccw               a city street at night with ne sig -0.0021 +0.0018 +0.0014 +0.0330\n"}
+,{"stream_name":"stdout","time":3335.81025485,"data":"[job1]   off                    a red sandstone desert canyon  sig +0.0519 +0.0106 -0.0015 -0.0022\n"}
+,{"stream_name":"stdout","time":3335.810258252,"data":"[job1]   static                 a red sandstone desert canyon  sig -0.0000 +0.0001 -0.0000 +0.0001\n"}
+,{"stream_name":"stdout","time":3335.810261723,"data":"[job1]   pan-left               a red sandstone desert canyon  sig +0.0663 -0.0018 -0.0000 -0.0224\n"}
+,{"stream_name":"stdout","time":3335.810265128,"data":"[job1]   pan-right              a red sandstone desert canyon  sig -0.0892 +0.0053 +0.0120 +0.0101\n"}
+,{"stream_name":"stdout","time":3335.810268776,"data":"[job1]   tilt-up                a red sandstone desert canyon  sig +0.0003 +0.0337 +0.0102 -0.0020\n"}
+,{"stream_name":"stdout","time":3335.810272254,"data":"[job1]   tilt-down              a red sandstone desert canyon  sig +0.0014 -0.0348 -0.0099 +0.0028\n"}
+,{"stream_name":"stdout","time":3335.810275821,"data":"[job1]   zoom-in                a red sandstone desert canyon  sig -0.0000 +0.0161 +0.0465 -0.0002\n"}
+,{"stream_name":"stdout","time":3335.810283844,"data":"[job1]   zoom-out               a red sandstone desert canyon  sig +0.0021 -0.0061 -0.0414 -0.0015\n"}
+,{"stream_name":"stdout","time":3335.81028729,"data":"[job1]   roll-cw                a red sandstone desert canyon  sig -0.0040 -0.0012 +0.0107 -0.0387\n"}
+,{"stream_name":"stdout","time":3335.810290654,"data":"[job1]   roll-ccw               a red sandstone desert canyon  sig +0.0134 +0.0022 +0.0044 +0.0340\n"}
+,{"stream_name":"stdout","time":3335.810294104,"data":"[job1]   off                    a path through a pine forest   sig +0.0212 +0.0081 +0.0251 -0.0040\n"}
+,{"stream_name":"stdout","time":3335.810297541,"data":"[job1]   static                 a path through a pine forest   sig +0.0000 +0.0000 +0.0000 +0.0000\n"}
+,{"stream_name":"stdout","time":3335.810300996,"data":"[job1]   pan-left               a path through a pine forest   sig +0.0640 -0.0018 +0.0009 -0.0003\n"}
+,{"stream_name":"stdout","time":3335.810304543,"data":"[job1]   pan-right              a path through a pine forest   sig -0.0477 +0.0018 +0.0005 +0.0067\n"}
+,{"stream_name":"stdout","time":3335.810308236,"data":"[job1]   tilt-up                a path through a pine forest   sig +0.0008 +0.0365 +0.0088 -0.0012\n"}
+,{"stream_name":"stdout","time":3335.810313289,"data":"[job1]   tilt-down              a path through a pine forest   sig -0.0020 -0.0343 -0.0122 +0.0004\n"}
+,{"stream_name":"stdout","time":3335.810335834,"data":"[job1]   zoom-in                a path through a pine forest   sig +0.0045 +0.0114 +0.0645 +0.0009\n"}
+,{"stream_name":"stdout","time":3335.810340104,"data":"[job1]   zoom-out               a path through a pine forest   sig +0.0033 -0.0075 -0.0556 -0.0002\n"}
+,{"stream_name":"stdout","time":3335.810344498,"data":"[job1]   roll-cw                a path through a pine forest   sig +0.0066 -0.0045 +0.0088 -0.0457\n"}
+,{"stream_name":"stdout","time":3335.810348459,"data":"[job1]   roll-ccw               a path through a pine forest   sig +0.0045 +0.0011 +0.0067 +0.0457\n"}
+,{"stream_name":"stdout","time":3335.810351898,"data":"[job1]   off                    a lighthouse on a rocky cliff  sig -0.0281 +0.0018 -0.0046 -0.0178\n"}
+,{"stream_name":"stdout","time":3335.810355345,"data":"[job1]   static                 a lighthouse on a rocky cliff  sig +0.0007 -0.0003 -0.0003 +0.0007\n"}
+,{"stream_name":"stdout","time":3335.810358771,"data":"[job1]   pan-left               a lighthouse on a rocky cliff  sig +0.1193 -0.0006 +0.0086 +0.0091\n"}
+,{"stream_name":"stdout","time":3335.810362113,"data":"[job1]   pan-right              a lighthouse on a rocky cliff  sig -0.0320 -0.0043 +0.0218 +0.0089\n"}
+,{"stream_name":"stdout","time":3335.810365508,"data":"[job1]   tilt-up                a lighthouse on a rocky cliff  sig -0.0008 +0.0329 +0.0088 +0.0015\n"}
+,{"stream_name":"stdout","time":3335.810369222,"data":"[job1]   tilt-down              a lighthouse on a rocky cliff  sig -0.0029 -0.0160 -0.0211 -0.0008\n"}
+,{"stream_name":"stdout","time":3335.810372671,"data":"[job1]   zoom-in                a lighthouse on a rocky cliff  sig +0.0024 +0.0056 +0.0434 -0.0005\n"}
+,{"stream_name":"stdout","time":3335.810376191,"data":"[job1]   zoom-out               a lighthouse on a rocky cliff  sig -0.0083 -0.0041 -0.0383 -0.0020\n"}
+,{"stream_name":"stdout","time":3335.810379628,"data":"[job1]   roll-cw                a lighthouse on a rocky cliff  sig -0.0228 +0.0004 +0.0033 -0.0342\n"}
+,{"stream_name":"stdout","time":3335.810382983,"data":"[job1]   roll-ccw               a lighthouse on a rocky cliff  sig +0.0170 +0.0006 +0.0007 +0.0426\n"}
+,{"stream_name":"stdout","time":3335.810386586,"data":"[job1]   off                    a snowy village with wooden ho sig +0.0352 -0.0002 +0.0049 -0.0072\n"}
+,{"stream_name":"stdout","time":3335.810393817,"data":"[job1]   static                 a snowy village with wooden ho sig -0.0001 -0.0002 +0.0001 +0.0000\n"}
+,{"stream_name":"stdout","time":3335.810397303,"data":"[job1]   pan-left               a snowy village with wooden ho sig +0.0770 -0.0035 -0.0012 -0.0078\n"}
+,{"stream_name":"stdout","time":3335.810400698,"data":"[job1]   pan-right              a snowy village with wooden ho sig -0.1062 +0.0017 +0.0051 +0.0157\n"}
+,{"stream_name":"stdout","time":3335.810437786,"data":"[job1]   tilt-up                a snowy village with wooden ho sig +0.0009 +0.0336 +0.0096 +0.0005\n"}
+,{"stream_name":"stdout","time":3335.810442711,"data":"[job1]   tilt-down              a snowy village with wooden ho sig +0.0028 -0.0329 -0.0003 -0.0005\n"}
+,{"stream_name":"stdout","time":3335.810447061,"data":"[job1]   zoom-in                a snowy village with wooden ho sig -0.0041 +0.0136 +0.0427 +0.0028\n"}
+,{"stream_name":"stdout","time":3335.810450566,"data":"[job1]   zoom-out               a snowy village with wooden ho sig +0.0349 -0.0053 -0.0222 -0.0077\n"}
+,{"stream_name":"stdout","time":3335.810453962,"data":"[job1]   roll-cw                a snowy village with wooden ho sig +0.0121 -0.0021 +0.0090 -0.0483\n"}
+,{"stream_name":"stdout","time":3335.810457426,"data":"[job1]   roll-ccw               a snowy village with wooden ho sig +0.0085 -0.0003 +0.0007 +0.0391\n"}
+,{"stream_name":"stdout","time":3335.810460911,"data":"[job1]   off                    a tropical beach with palm tre sig +0.0009 -0.0002 +0.0009 +0.0007\n"}
+,{"stream_name":"stdout","time":3335.810464289,"data":"[job1]   static                 a tropical beach with palm tre sig -0.0000 -0.0002 +0.0001 +0.0001\n"}
+,{"stream_name":"stdout","time":3335.810467709,"data":"[job1]   pan-left               a tropical beach with palm tre sig +0.0242 -0.0006 +0.0043 -0.0016\n"}
+,{"stream_name":"stdout","time":3335.810471176,"data":"[job1]   pan-right              a tropical beach with palm tre sig -0.0199 +0.0007 -0.0006 +0.0015\n"}
+,{"stream_name":"stdout","time":3335.810474748,"data":"[job1]   tilt-up                a tropical beach with palm tre sig +0.0010 +0.0119 +0.0032 -0.0007\n"}
+,{"stream_name":"stdout","time":3335.810478116,"data":"[job1]   tilt-down              a tropical beach with palm tre sig -0.0033 -0.0204 -0.0042 -0.0012\n"}
+,{"stream_name":"stdout","time":3335.810482486,"data":"[job1]   zoom-in                a tropical beach with palm tre sig +0.0010 -0.0024 +0.0223 -0.0000\n"}
+,{"stream_name":"stdout","time":3335.810485968,"data":"[job1]   zoom-out               a tropical beach with palm tre sig +0.0045 -0.0008 -0.0205 -0.0003\n"}
+,{"stream_name":"stdout","time":3335.810489353,"data":"[job1]   roll-cw                a tropical beach with palm tre sig -0.0004 -0.0013 +0.0060 -0.0431\n"}
+,{"stream_name":"stdout","time":3335.810492671,"data":"[job1]   roll-ccw               a tropical beach with palm tre sig -0.0016 +0.0012 +0.0031 +0.0352\n"}
+,{"stream_name":"stdout","time":3335.810496041,"data":"[job1] wrote /kaggle/working/out/job1/s1337__camera/manifest.json\n"}
+,{"stream_name":"stdout","time":3335.810499329,"data":"[job2] train (368640, 1280) from 72 clips, eval (368640, 1280) from 72 clips\n"}
+,{"stream_name":"stdout","time":3575.812839775,"data":"[job2] default {'explained_variance': 0.8456095945236269, 'explained_variance_eval': 0.7191661438832584, 'dead_fraction': 0.0005859375232830644}\n"}
+,{"stream_name":"stdout","time":3695.81409405,"data":"[job2] half {'explained_variance': 0.8179020091208049, 'explained_variance_eval': 0.7211449619866117, 'dead_fraction': 0.0}\n"}
+,{"stream_name":"stdout","time":3935.817044101,"data":"[job2] k64 {'explained_variance': 0.8716160904344668, 'explained_variance_eval': 0.7751110484322342, 'dead_fraction': 0.0}\n"}
+,{"stream_name":"stdout","time":3935.81709913,"data":"[job2] {\n"}
+,{"stream_name":"stdout","time":3935.817104697,"data":"[job2]   \"train_seed\": 42,\n"}
+,{"stream_name":"stdout","time":3935.817109022,"data":"[job2]   \"eval_seed\": 1337,\n"}
+,{"stream_name":"stdout","time":3935.817112832,"data":"[job2]   \"n_tokens_train\": 368640,\n"}
+,{"stream_name":"stdout","time":3935.817128646,"data":"[job2]   \"variants\": {\n"}
+,{"stream_name":"stdout","time":3935.817132696,"data":"[job2]     \"default\": {\n"}
+,{"stream_name":"stdout","time":3935.817136155,"data":"[job2]       \"explained_variance\": 0.8456095945236269,\n"}
+,{"stream_name":"stdout","time":3935.817139716,"data":"[job2]       \"explained_variance_eval\": 0.7191661438832584,\n"}
+,{"stream_name":"stdout","time":3935.817143126,"data":"[job2]       \"dead_fraction\": 0.0005859375232830644\n"}
+,{"stream_name":"stdout","time":3935.817146446,"data":"[job2]     },\n"}
+,{"stream_name":"stdout","time":3935.817149733,"data":"[job2]     \"half\": {\n"}
+,{"stream_name":"stdout","time":3935.817153389,"data":"[job2]       \"explained_variance\": 0.8179020091208049,\n"}
+,{"stream_name":"stdout","time":3935.817157285,"data":"[job2]       \"explained_variance_eval\": 0.7211449619866117,\n"}
+,{"stream_name":"stdout","time":3935.817161164,"data":"[job2]       \"dead_fraction\": 0.0\n"}
+,{"stream_name":"stdout","time":3935.817165303,"data":"[job2]     },\n"}
+,{"stream_name":"stdout","time":3935.81716907,"data":"[job2]     \"k64\": {\n"}
+,{"stream_name":"stdout","time":3935.817172998,"data":"[job2]       \"explained_variance\": 0.8716160904344668,\n"}
+,{"stream_name":"stdout","time":3935.817176603,"data":"[job2]       \"explained_variance_eval\": 0.7751110484322342,\n"}
+,{"stream_name":"stdout","time":3935.817180066,"data":"[job2]       \"dead_fraction\": 0.0\n"}
+,{"stream_name":"stdout","time":3935.81718362,"data":"[job2]     }\n"}
+,{"stream_name":"stdout","time":3935.817187255,"data":"[job2]   },\n"}
+,{"stream_name":"stdout","time":3935.817191375,"data":"[job2]   \"rule\": \"camera AUROC \u003e= 0.9 and scene eta2 \u003c= 0.1\",\n"}
+,{"stream_name":"stdout","time":3935.817196443,"data":"[job2]   \"n_camera_only\": {\n"}
+,{"stream_name":"stdout","time":3935.817200179,"data":"[job2]     \"sae\": 2503,\n"}
+,{"stream_name":"stdout","time":3935.817203607,"data":"[job2]     \"channels\": 143,\n"}
+,{"stream_name":"stdout","time":3935.817207194,"data":"[job2]     \"random\": 155\n"}
+,{"stream_name":"stdout","time":3935.817210944,"data":"[job2]   },\n"}
+,{"stream_name":"stdout","time":3935.817228999,"data":"[job2]   \"n_directions\": {\n"}
+,{"stream_name":"stdout","time":3935.81723299,"data":"[job2]     \"sae\": 5120,\n"}
+,{"stream_name":"stdout","time":3935.817236581,"data":"[job2]     \"channels\": 1280,\n"}
+,{"stream_name":"stdout","time":3935.817240224,"data":"[job2]     \"random\": 1280\n"}
+,{"stream_name":"stdout","time":3935.817243914,"data":"[job2]   },\n"}
+,{"stream_name":"stdout","time":3935.817247384,"data":"[job2]   \"camera_only_by_camera\": {\n"}
+,{"stream_name":"stdout","time":3935.817251146,"data":"[job2]     \"rolling-anticlockwise\": 584,\n"}
+,{"stream_name":"stdout","time":3935.817254787,"data":"[job2]     \"rolling-clockwise\": 467,\n"}
+,{"stream_name":"stdout","time":3935.81725851,"data":"[job2]     \"pan-right\": 245,\n"}
+,{"stream_name":"stdout","time":3935.81726214,"data":"[job2]     \"zoom-out\": 242,\n"}
+,{"stream_name":"stdout","time":3935.817265674,"data":"[job2]     \"tilt-up\": 208,\n"}
+,{"stream_name":"stdout","time":3935.817269448,"data":"[job2]     \"zoom-in\": 205,\n"}
+,{"stream_name":"stdout","time":3935.817278818,"data":"[job2]     \"tilt-down\": 195,\n"}
+,{"stream_name":"stdout","time":3935.817283031,"data":"[job2]     \"pan-left\": 187,\n"}
+,{"stream_name":"stdout","time":3935.817286765,"data":"[job2]     \"none\": 170\n"}
+,{"stream_name":"stdout","time":3935.817290446,"data":"[job2]   },\n"}
+,{"stream_name":"stdout","time":3935.817311815,"data":"[job2]   \"HS1\": {\n"}
+,{"stream_name":"stdout","time":3935.817315522,"data":"[job2]     \"min_features\": 10,\n"}
+,{"stream_name":"stdout","time":3935.817319387,"data":"[job2]     \"pass\": true\n"}
+,{"stream_name":"stdout","time":3935.817323289,"data":"[job2]   }\n"}
+,{"stream_name":"stdout","time":3935.817327117,"data":"[job2] }\n"}
+,{"stream_name":"stdout","time":3935.817720516,"data":"exit codes [0, 0, 0]\n"}
+,{"stream_name":"stderr","time":3937.958096785,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":3937.958127377,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":3938.180985701,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":3938.181011861,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":3938.983040345,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":3939.970183389,"data":"[NbConvertApp] Writing 566942 bytes to __results__.html\n"}
+]

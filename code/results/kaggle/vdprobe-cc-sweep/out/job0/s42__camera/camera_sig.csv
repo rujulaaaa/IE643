@@ -1,0 +1,81 @@
+clip,scene,camera,seed,tx,ty,zoom,roll
+42__a-mountain-lake-at-sunrise__off,a mountain lake at sunrise,off,42,-0.0010097472378842358,0.0008525761833448824,0.0010291670814396683,-0.000980034707321051
+42__a-mountain-lake-at-sunrise__static,a mountain lake at sunrise,static,42,-0.00013422830196214874,-0.00014517020566129035,3.054553293864243e-05,-2.7025707264540174e-05
+42__a-mountain-lake-at-sunrise__pan-left,a mountain lake at sunrise,pan-left,42,0.11244119870205699,-0.0016908421317584359,0.0037052543299892025,0.0003628632947836775
+42__a-mountain-lake-at-sunrise__pan-right,a mountain lake at sunrise,pan-right,42,0.05207362374736622,-0.00032533013000399913,0.0060750956150959585,0.024658913065466737
+42__a-mountain-lake-at-sunrise__tilt-up,a mountain lake at sunrise,tilt-up,42,-0.003078244767682482,0.06609167168970063,0.004794785667802945,0.00015671738492261539
+42__a-mountain-lake-at-sunrise__tilt-down,a mountain lake at sunrise,tilt-down,42,0.0019225199516468446,-0.0343169331031403,-0.007169620866757394,0.00019794534964665198
+42__a-mountain-lake-at-sunrise__zoom-in,a mountain lake at sunrise,zoom-in,42,-0.009157784730899317,0.007679280541674359,0.02637393615089081,0.002294079231319595
+42__a-mountain-lake-at-sunrise__zoom-out,a mountain lake at sunrise,zoom-out,42,8.703737243082003e-05,-0.015152273466248018,-0.027911908897108217,-0.00153894159719652
+42__a-mountain-lake-at-sunrise__roll-cw,a mountain lake at sunrise,roll-cw,42,-0.0016229076454760997,-0.0022050171397428927,0.0057206168575616905,-0.03391588204139303
+42__a-mountain-lake-at-sunrise__roll-ccw,a mountain lake at sunrise,roll-ccw,42,0.0029167479116227807,0.0007650772154631343,0.004013746239487052,0.045158594664376876
+42__a-medieval-stone-castle-on-a-hill__off,a medieval stone castle on a hill,off,42,-0.019989652712606124,0.00043458678672127454,0.0040125304439674065,-0.012457104820155154
+42__a-medieval-stone-castle-on-a-hill__static,a medieval stone castle on a hill,static,42,0.0,0.0,0.0,0.0
+42__a-medieval-stone-castle-on-a-hill__pan-left,a medieval stone castle on a hill,pan-left,42,-0.06622127565433504,-0.0016663532320398365,0.018169129682073216,-0.051466797508846925
+42__a-medieval-stone-castle-on-a-hill__pan-right,a medieval stone castle on a hill,pan-right,42,0.026254908589996625,-0.0012197658336726722,0.0050260668863179115,0.03143714986805375
+42__a-medieval-stone-castle-on-a-hill__tilt-up,a medieval stone castle on a hill,tilt-up,42,0.0008941844061946733,0.025576592152257178,0.005907051562515557,0.0008824213755034963
+42__a-medieval-stone-castle-on-a-hill__tilt-down,a medieval stone castle on a hill,tilt-down,42,-0.0041420222375746375,-0.02156274335308737,-0.007386382773517952,-0.0033617904492994973
+42__a-medieval-stone-castle-on-a-hill__zoom-in,a medieval stone castle on a hill,zoom-in,42,-0.00046978916479959804,0.006066816472570172,0.024325538928586774,-0.0002662585874617858
+42__a-medieval-stone-castle-on-a-hill__zoom-out,a medieval stone castle on a hill,zoom-out,42,-0.02534795469494659,-0.014662322895633528,-0.01939387511431575,-0.006183674133783641
+42__a-medieval-stone-castle-on-a-hill__roll-cw,a medieval stone castle on a hill,roll-cw,42,2.6423971528841e-05,-0.002185335461091784,0.008047031143565794,-0.028815155743623293
+42__a-medieval-stone-castle-on-a-hill__roll-ccw,a medieval stone castle on a hill,roll-ccw,42,0.0048478636310529824,0.007700317994850522,0.002555560511863546,0.03881595583124584
+42__a-city-street-at-night-with-neon-signs__off,a city street at night with neon signs,off,42,-4.091841795593216e-05,5.343199486979508e-05,5.569896448835485e-06,-4.621206482169084e-05
+42__a-city-street-at-night-with-neon-signs__static,a city street at night with neon signs,static,42,0.0,0.0,0.0,0.0
+42__a-city-street-at-night-with-neon-signs__pan-left,a city street at night with neon signs,pan-left,42,0.042046477949945954,-0.0015113225037164712,0.001487124068455239,-0.012230953938227707
+42__a-city-street-at-night-with-neon-signs__pan-right,a city street at night with neon signs,pan-right,42,-0.032755297462029896,0.00045926534229054485,-9.896178679894811e-05,0.013462734361048157
+42__a-city-street-at-night-with-neon-signs__tilt-up,a city street at night with neon signs,tilt-up,42,-0.0022691200974726453,0.06828028475321071,0.003413475229306986,0.00013955638340011655
+42__a-city-street-at-night-with-neon-signs__tilt-down,a city street at night with neon signs,tilt-down,42,0.002136122883430915,-0.03763007027238941,-0.001472799877532459,0.0008084125265328623
+42__a-city-street-at-night-with-neon-signs__zoom-in,a city street at night with neon signs,zoom-in,42,-6.238453426974024e-05,0.011677852884998553,0.056029117336870216,0.00013823713484605805
+42__a-city-street-at-night-with-neon-signs__zoom-out,a city street at night with neon signs,zoom-out,42,0.0006532458689768871,-0.007091082875233366,-0.04041973870065952,-0.00043769043450673096
+42__a-city-street-at-night-with-neon-signs__roll-cw,a city street at night with neon signs,roll-cw,42,0.001423620879459198,0.00043099844488484097,0.0036816585699170805,-0.03359351856126999
+42__a-city-street-at-night-with-neon-signs__roll-ccw,a city street at night with neon signs,roll-ccw,42,0.0026782595485659285,0.00043354626464464435,0.005204223690940273,0.03257913867377225
+42__a-red-sandstone-desert-canyon__off,a red sandstone desert canyon,off,42,-0.03254070117018116,0.0022264306439415712,0.0011502604356742982,-0.0042920416856162425
+42__a-red-sandstone-desert-canyon__static,a red sandstone desert canyon,static,42,0.0,0.0,0.0,0.0
+42__a-red-sandstone-desert-canyon__pan-left,a red sandstone desert canyon,pan-left,42,0.09403346685096241,-0.00037475037129346036,0.0012020496232448936,-0.0005172265459960092
+42__a-red-sandstone-desert-canyon__pan-right,a red sandstone desert canyon,pan-right,42,-0.032624420608264516,0.0019904422022956458,-0.0008189959382518123,0.007349403156698655
+42__a-red-sandstone-desert-canyon__tilt-up,a red sandstone desert canyon,tilt-up,42,0.010114567404780112,0.03876051074398249,0.010073302303065993,0.005907088408864967
+42__a-red-sandstone-desert-canyon__tilt-down,a red sandstone desert canyon,tilt-down,42,0.0010842537979650995,-0.034007741575705706,-0.011060042628603698,-0.0034671674573900847
+42__a-red-sandstone-desert-canyon__zoom-in,a red sandstone desert canyon,zoom-in,42,0.01246777128237306,0.02995929247905578,0.0646417876998618,-0.0006127347207387088
+42__a-red-sandstone-desert-canyon__zoom-out,a red sandstone desert canyon,zoom-out,42,-0.003333243924547043,-0.016808711950397234,-0.041584365330230154,-0.0011047287347474902
+42__a-red-sandstone-desert-canyon__roll-cw,a red sandstone desert canyon,roll-cw,42,0.004794122998802372,-0.0015491128612539402,0.009606149826761546,-0.03915003815742737
+42__a-red-sandstone-desert-canyon__roll-ccw,a red sandstone desert canyon,roll-ccw,42,-0.003621873452134724,0.0006052445730289463,0.0053474009913355176,0.03828282722582574
+42__a-path-through-a-pine-forest__off,a path through a pine forest,off,42,-0.0027648857745443123,0.007361681799561098,0.02145649158665408,0.0005214626707704537
+42__a-path-through-a-pine-forest__static,a path through a pine forest,static,42,0.0,0.0,0.0,0.0
+42__a-path-through-a-pine-forest__pan-left,a path through a pine forest,pan-left,42,0.05960887088693756,-0.0022646676922176523,0.0012182203495112222,-0.002853049169345087
+42__a-path-through-a-pine-forest__pan-right,a path through a pine forest,pan-right,42,-0.0424661929679966,0.003323207759238551,-0.0037357335104104762,0.006378878150233177
+42__a-path-through-a-pine-forest__tilt-up,a path through a pine forest,tilt-up,42,-0.0029995172720923696,0.05237784200081254,0.02443962277111531,0.007153446159751195
+42__a-path-through-a-pine-forest__tilt-down,a path through a pine forest,tilt-down,42,-0.0004304532052775112,-0.048497494479492365,-0.008472096648828392,-0.00010350324647270947
+42__a-path-through-a-pine-forest__zoom-in,a path through a pine forest,zoom-in,42,0.00273756773801623,0.011997326188247838,0.06736951050761705,-6.238001066320443e-05
+42__a-path-through-a-pine-forest__zoom-out,a path through a pine forest,zoom-out,42,-0.0031007277645586783,-0.009586622368340047,-0.05424542072989856,-0.0005850235140683601
+42__a-path-through-a-pine-forest__roll-cw,a path through a pine forest,roll-cw,42,0.007718886160235887,-0.0059442794463296375,0.004129535663216178,-0.04083861966203128
+42__a-path-through-a-pine-forest__roll-ccw,a path through a pine forest,roll-ccw,42,0.0063927707620621685,0.002522032196543182,0.00417868931305484,0.04558560029464833
+42__a-lighthouse-on-a-rocky-cliff__off,a lighthouse on a rocky cliff,off,42,-0.02613623840590863,-0.000803834725825408,0.0034978874475755086,-0.017382447027764484
+42__a-lighthouse-on-a-rocky-cliff__static,a lighthouse on a rocky cliff,static,42,0.0,0.0,0.0,0.0
+42__a-lighthouse-on-a-rocky-cliff__pan-left,a lighthouse on a rocky cliff,pan-left,42,-0.0842907139213529,0.010136092893136824,0.01642378247526257,-0.06595994812968185
+42__a-lighthouse-on-a-rocky-cliff__pan-right,a lighthouse on a rocky cliff,pan-right,42,0.04529732223708962,-0.0025152927050848487,-0.00573367074611903,0.024282388721322292
+42__a-lighthouse-on-a-rocky-cliff__tilt-up,a lighthouse on a rocky cliff,tilt-up,42,0.00032597148332656246,0.054266307263446834,0.0066751992716881205,0.003714637510035872
+42__a-lighthouse-on-a-rocky-cliff__tilt-down,a lighthouse on a rocky cliff,tilt-down,42,0.026610448161567192,-0.022488380230483555,-0.02881182353559884,0.011849280722997423
+42__a-lighthouse-on-a-rocky-cliff__zoom-in,a lighthouse on a rocky cliff,zoom-in,42,0.004268000106563365,0.007855743863699357,0.04796099193092733,0.0017350850809130353
+42__a-lighthouse-on-a-rocky-cliff__zoom-out,a lighthouse on a rocky cliff,zoom-out,42,0.004280399062151171,0.004540537280418404,-0.07107024844394352,0.0007785918494997643
+42__a-lighthouse-on-a-rocky-cliff__roll-cw,a lighthouse on a rocky cliff,roll-cw,42,0.002377434064638044,-0.0019250393550977302,0.012323988470505516,-0.04779601708810493
+42__a-lighthouse-on-a-rocky-cliff__roll-ccw,a lighthouse on a rocky cliff,roll-ccw,42,-0.0015348255869777501,0.0030805621013016995,0.0017484452616838406,0.03704374423670264
+42__a-snowy-village-with-wooden-houses__off,a snowy village with wooden houses,off,42,-0.005722758235598061,6.500260563730707e-05,0.0017892470005838673,-0.002233698431893395
+42__a-snowy-village-with-wooden-houses__static,a snowy village with wooden houses,static,42,0.0,0.0,0.0,0.0
+42__a-snowy-village-with-wooden-houses__pan-left,a snowy village with wooden houses,pan-left,42,0.1304021404291562,-0.006128743196586249,-0.002058798415158034,-0.01708489004597729
+42__a-snowy-village-with-wooden-houses__pan-right,a snowy village with wooden houses,pan-right,42,-0.015237838875158113,0.003448709123727677,0.0005531459428803683,0.038039440721910435
+42__a-snowy-village-with-wooden-houses__tilt-up,a snowy village with wooden houses,tilt-up,42,-0.0060779447534642225,0.06406798280629669,0.015244685127832098,0.005006840697227342
+42__a-snowy-village-with-wooden-houses__tilt-down,a snowy village with wooden houses,tilt-down,42,0.001656455184664476,-0.04706347316225976,-0.01701744131076276,0.0018108826787522217
+42__a-snowy-village-with-wooden-houses__zoom-in,a snowy village with wooden houses,zoom-in,42,-0.003408130192701844,0.015664625004506365,0.05381914571762926,-0.0012725931365383085
+42__a-snowy-village-with-wooden-houses__zoom-out,a snowy village with wooden houses,zoom-out,42,0.006685965979141396,-0.016874585380903195,-0.04936689188269094,-0.0013438080263235713
+42__a-snowy-village-with-wooden-houses__roll-cw,a snowy village with wooden houses,roll-cw,42,0.005067042526610579,0.0010626150000011972,0.008548488351897336,-0.04067292821045936
+42__a-snowy-village-with-wooden-houses__roll-ccw,a snowy village with wooden houses,roll-ccw,42,0.005121029570593874,0.006040428381941699,0.002297583070390257,0.05106312004887814
+42__a-tropical-beach-with-palm-trees__off,a tropical beach with palm trees,off,42,0.0009748691429973562,0.0025857170635777997,0.0009473822029702478,-0.007450414321750555
+42__a-tropical-beach-with-palm-trees__static,a tropical beach with palm trees,static,42,0.0,0.0,0.0,0.0
+42__a-tropical-beach-with-palm-trees__pan-left,a tropical beach with palm trees,pan-left,42,0.08676565567503886,-0.006444032848285736,-0.0033888068412247737,-0.012992286116022734
+42__a-tropical-beach-with-palm-trees__pan-right,a tropical beach with palm trees,pan-right,42,0.015778429676279612,-0.001273836824550798,0.007762388213524244,0.010783429872586835
+42__a-tropical-beach-with-palm-trees__tilt-up,a tropical beach with palm trees,tilt-up,42,0.004518340542058858,0.07396360438653428,0.015183089649119467,-0.004824535514677496
+42__a-tropical-beach-with-palm-trees__tilt-down,a tropical beach with palm trees,tilt-down,42,0.0006731178376918718,-0.03690143671963845,-0.006760616433551381,-0.0012196344856941247
+42__a-tropical-beach-with-palm-trees__zoom-in,a tropical beach with palm trees,zoom-in,42,0.0013436220606031237,0.001287568325442783,0.0361510136622211,8.934634282854701e-05
+42__a-tropical-beach-with-palm-trees__zoom-out,a tropical beach with palm trees,zoom-out,42,-0.004391668611061596,-0.003206537913411027,-0.03746679527793508,0.0006139180694064584
+42__a-tropical-beach-with-palm-trees__roll-cw,a tropical beach with palm trees,roll-cw,42,0.0022225318695907516,0.0018225305903795516,0.006910979384271363,-0.031011551786386614
+42__a-tropical-beach-with-palm-trees__roll-ccw,a tropical beach with palm trees,roll-ccw,42,0.003196460477666817,0.005968870842624378,0.005736953809707837,0.04402665060737512

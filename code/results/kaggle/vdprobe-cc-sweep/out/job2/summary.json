@@ -1,0 +1,48 @@
+{
+  "train_seed": 42,
+  "eval_seed": 1337,
+  "n_tokens_train": 368640,
+  "variants": {
+    "default": {
+      "explained_variance": 0.8456095945236269,
+      "explained_variance_eval": 0.7191661438832584,
+      "dead_fraction": 0.0005859375232830644
+    },
+    "half": {
+      "explained_variance": 0.8179020091208049,
+      "explained_variance_eval": 0.7211449619866117,
+      "dead_fraction": 0.0
+    },
+    "k64": {
+      "explained_variance": 0.8716160904344668,
+      "explained_variance_eval": 0.7751110484322342,
+      "dead_fraction": 0.0
+    }
+  },
+  "rule": "camera AUROC >= 0.9 and scene eta2 <= 0.1",
+  "n_camera_only": {
+    "sae": 2503,
+    "channels": 143,
+    "random": 155
+  },
+  "n_directions": {
+    "sae": 5120,
+    "channels": 1280,
+    "random": 1280
+  },
+  "camera_only_by_camera": {
+    "rolling-anticlockwise": 584,
+    "rolling-clockwise": 467,
+    "pan-right": 245,
+    "zoom-out": 242,
+    "tilt-up": 208,
+    "zoom-in": 205,
+    "tilt-down": 195,
+    "pan-left": 187,
+    "none": 170
+  },
+  "HS1": {
+    "min_features": 10,
+    "pass": true
+  }
+}
