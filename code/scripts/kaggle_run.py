@@ -134,7 +134,7 @@ def payload(with_data=False) -> str:
     return base64.b64encode(buf.getvalue()).decode()
 
 
-def build(slug, jobs, with_data=False, datasets=(), prefetch=PREFETCH):
+def build(slug, jobs, with_data=False, datasets=(), prefetch=PREFETCH, kernels=()):
     kdir = ROOT / "build" / slug
     if kdir.exists():
         shutil.rmtree(kdir)
@@ -146,14 +146,14 @@ def build(slug, jobs, with_data=False, datasets=(), prefetch=PREFETCH):
             argv += ["--out", f"/kaggle/working/out/job{i}"]
         parsed.append(argv)
     head = (f"PAYLOAD = {payload(with_data)!r}\nDIFFUSERS = {DIFFUSERS!r}\nPEFT = {PEFT!r}\nPREFETCH = {prefetch!r}\n"
-            f"JOBS = {json.dumps(parsed)}\nDATASETS = {list(datasets)!r}\n")
+            f"JOBS = {json.dumps(parsed)}\nDATASETS = {list(datasets) + list(kernels)!r}\n")
     (kdir / "script.py").write_text(head + KERNEL)
     meta = {
         "id": f"{USER}/{slug}", "title": slug, "code_file": "script.py", "language": "python",
         "kernel_type": "script", "is_private": True, "enable_gpu": True, "enable_tpu": False,
         "machine_shape": "NvidiaTeslaT4", "enable_internet": True,
         "competition_sources": [], "dataset_sources": [f"{USER}/{d}" for d in datasets],
-        "kernel_sources": [], "model_sources": [],
+        "kernel_sources": [f"{USER}/{k}" for k in kernels], "model_sources": [],
     }
     (kdir / "kernel-metadata.json").write_text(json.dumps(meta, indent=2))
     print(f"built {kdir} ({(kdir / 'script.py').stat().st_size / 1024:.0f} KiB), jobs:")
@@ -194,6 +194,8 @@ def main():
     p.add_argument("--data", action="store_true", help="also ship data/ (LoRA training clips)")
     p.add_argument("--dataset", action="append", default=[],
                    help="private dataset slug of this user to attach; jobs see it at input/<slug>/")
+    p.add_argument("--kernel-source", action="append", default=[],
+                   help="slug of another kernel of this user whose output to attach; jobs see it at input/<slug>/")
     p.add_argument("--prefetch-cameractrl", action="store_true",
                    help="also fetch the CameraCtrl cell's weights before the jobs start (scripts/cameractrl_*.py, cc_*.py)")
     p.add_argument("--user", help="Kaggle username (default: $KAGGLE_USER, else %s)" % USER)
@@ -203,7 +205,7 @@ def main():
     if args.download_only:
         return download(args.slug)
     kdir = build(args.slug, args.job, args.data, args.dataset,
-                 PREFETCH + "; " + PREFETCH_CAMERACTRL if args.prefetch_cameractrl else PREFETCH)
+                 PREFETCH + "; " + PREFETCH_CAMERACTRL if args.prefetch_cameractrl else PREFETCH, args.kernel_source)
     if args.build_only:
         return
     print(kaggle("kernels", "push", "-p", str(kdir)))

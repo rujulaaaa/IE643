@@ -89,7 +89,7 @@ def main():
     p.add_argument("--force", action="store_true")
     args = p.parse_args()
 
-    hits = sorted(args.sae.rglob("directions.pt"))
+    hits = sorted(args.sae.resolve().rglob("directions.pt"))
     if not hits:
         raise SystemExit(f"no directions.pt under {args.sae}")
     root = hits[0].parent

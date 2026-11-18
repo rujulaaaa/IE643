@@ -30,7 +30,7 @@ VARIANTS = {"default": (5120, 32), "half": (2560, 32), "k64": (5120, 64)}
 
 
 def load_tokens(roots, seed):
-    files = sorted({f for r in roots for f in Path(r).rglob("tokens.pt")})
+    files = sorted({f for r in roots for f in Path(r).resolve().rglob("tokens.pt")})   # resolve: input/<slug> is a symlink
     out = {}
     for f in files:
         out.update({cid: v for cid, v in torch.load(f, map_location="cpu", weights_only=True).items() if SF.parse_clip_id(cid)["seed"] == seed})
