@@ -1,0 +1,260 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 948.40it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1204.89it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:03,  1.12it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2329.32it/s]
+Loading pipeline components...:  67%|██████▋   | 4/6 [00:02<00:00,  2.29it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  3.81it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.81it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 5449.94it/s]
+
+=== a-mountain-lake-at-sunrise__pan-left: 22 tracks
+    step  5/25    388.5 s  (3.53 s per clip-step)
+    step 10/25    787.6 s  (3.58 s per clip-step)
+    step 15/25   1186.1 s  (3.59 s per clip-step)
+    step 20/25   1585.5 s  (3.60 s per clip-step)
+    step 25/25   1984.3 s  (3.61 s per clip-step)
+  on                       retained +1.000  b +nan  clip 0.768
+  off                      retained +0.000  b +nan  clip 1.000
+  on_until_1               retained +0.008  b +nan  clip 0.889
+  on_until_2               retained -0.007  b +nan  clip 0.867
+  on_until_3               retained +1.525  b +nan  clip 0.795
+  on_until_5               retained +1.142  b +nan  clip 0.794
+  on_until_8               retained +1.040  b +nan  clip 0.763
+  on_until_12              retained +1.045  b +nan  clip 0.768
+  on_until_18              retained +1.008  b +nan  clip 0.769
+  on_from_1                retained +0.633  b +nan  clip 0.790
+  on_from_2                retained -0.064  b +nan  clip 0.852
+  on_from_3                retained -0.398  b +nan  clip 0.841
+  on_from_5                retained -0.352  b +nan  clip 0.847
+  on_from_8                retained -0.069  b +nan  clip 0.943
+  on_from_12               retained -0.003  b +nan  clip 0.970
+  on_from_18               retained +0.002  b +nan  clip 0.993
+  only_down_blocks         retained +0.148  b +nan  clip 0.769
+  only_mid_block           retained -0.004  b +nan  clip 0.992
+  only_up_blocks.0         retained -0.009  b +nan  clip 0.984
+  only_up_blocks.1         retained -0.004  b +nan  clip 0.974
+  only_up_blocks.2         retained -0.000  b +nan  clip 0.977
+  only_up_blocks.3         retained +0.360  b +nan  clip 0.894
+wrote /kaggle/working/out/job1/a-mountain-lake-at-sunrise__pan-left/manifest.json
+PASS  checks {'camera_changes_clip': True}
+
+=== a-mountain-lake-at-sunrise__rolling-clockwise: 22 tracks
+    step  5/25    397.9 s  (3.62 s per clip-step)
+    step 10/25    796.6 s  (3.62 s per clip-step)
+    step 15/25   1196.0 s  (3.62 s per clip-step)
+    step 20/25   1595.0 s  (3.62 s per clip-step)
+    step 25/25   1993.8 s  (3.63 s per clip-step)
+  on                       retained +1.000  b +nan  clip 0.863
+  off                      retained +0.000  b +nan  clip 1.000
+  on_until_1               retained +0.009  b +nan  clip 0.982
+  on_until_2               retained +0.190  b +nan  clip 0.907
+  on_until_3               retained +2.013  b +nan  clip 0.782
+  on_until_5               retained +1.246  b +nan  clip 0.760
+  on_until_8               retained +1.095  b +nan  clip 0.771
+  on_until_12              retained +1.026  b +nan  clip 0.803
+  on_until_18              retained +0.999  b +nan  clip 0.854
+  on_from_1                retained +1.105  b +nan  clip 0.845
+  on_from_2                retained +1.023  b +nan  clip 0.823
+  on_from_3                retained +0.813  b +nan  clip 0.845
+  on_from_5                retained +0.633  b +nan  clip 0.931
+  on_from_8                retained +0.099  b +nan  clip 0.965
+  on_from_12               retained +0.004  b +nan  clip 0.984
+  on_from_18               retained +0.003  b +nan  clip 0.996
+  only_down_blocks         retained +0.738  b +nan  clip 0.832
+  only_mid_block           retained +0.001  b +nan  clip 0.977
+  only_up_blocks.0         retained +0.378  b +nan  clip 0.884
+  only_up_blocks.1         retained +0.002  b +nan  clip 0.974
+  only_up_blocks.2         retained +0.002  b +nan  clip 0.984
+  only_up_blocks.3         retained +0.015  b +nan  clip 0.956
+wrote /kaggle/working/out/job1/a-mountain-lake-at-sunrise__rolling-clockwise/manifest.json
+PASS  checks {'camera_changes_clip': True}
+
+=== a-medieval-stone-castle-on-a-hill__pan-left: 22 tracks
+    step  5/25    398.0 s  (3.62 s per clip-step)
+    step 10/25    796.7 s  (3.62 s per clip-step)
+    step 15/25   1195.9 s  (3.62 s per clip-step)
+    step 20/25   1595.3 s  (3.63 s per clip-step)
+    step 25/25   1994.4 s  (3.63 s per clip-step)
+  on                       retained +1.000  b +nan  clip 0.847
+  off                      retained +0.000  b +nan  clip 1.000
+  on_until_1               retained +0.640  b +nan  clip 0.911
+  on_until_2               retained +0.781  b +nan  clip 0.890
+  on_until_3               retained +1.064  b +nan  clip 0.892
+  on_until_5               retained +1.267  b +nan  clip 0.861
+  on_until_8               retained +1.054  b +nan  clip 0.864
+  on_until_12              retained +0.972  b +nan  clip 0.855
+  on_until_18              retained +0.999  b +nan  clip 0.854
+  on_from_1                retained +1.007  b +nan  clip 0.893
+  on_from_2                retained +0.768  b +nan  clip 0.872
+  on_from_3                retained -0.020  b +nan  clip 0.874
+  on_from_5                retained -0.204  b +nan  clip 0.899
+  on_from_8                retained -0.092  b +nan  clip 0.922
+  on_from_12               retained +0.066  b +nan  clip 0.949
+  on_from_18               retained +0.012  b +nan  clip 0.988
+  only_down_blocks         retained +0.316  b +nan  clip 0.868
+  only_mid_block           retained +0.735  b +nan  clip 0.873
+  only_up_blocks.0         retained +0.186  b +nan  clip 0.929
+  only_up_blocks.1         retained -0.012  b +nan  clip 0.933
+  only_up_blocks.2         retained -0.077  b +nan  clip 0.933
+  only_up_blocks.3         retained +0.086  b +nan  clip 0.885
+wrote /kaggle/working/out/job1/a-medieval-stone-castle-on-a-hill__pan-left/manifest.json
+PASS  checks {'camera_changes_clip': True}
+
+=== a-medieval-stone-castle-on-a-hill__rolling-clockwise: 22 tracks
+    step  5/25    398.5 s  (3.62 s per clip-step)
+    step 10/25    797.6 s  (3.63 s per clip-step)
+    step 15/25   1196.7 s  (3.63 s per clip-step)
+    step 20/25   1596.1 s  (3.63 s per clip-step)
+    step 25/25   1995.2 s  (3.63 s per clip-step)
+  on                       retained +1.000  b +nan  clip 0.860
+  off                      retained +0.000  b +nan  clip 1.000
+  on_until_1               retained +0.433  b +nan  clip 0.910
+  on_until_2               retained +1.119  b +nan  clip 0.867
+  on_until_3               retained +1.172  b +nan  clip 0.897
+  on_until_5               retained +0.966  b +nan  clip 0.874
+  on_until_8               retained +0.912  b +nan  clip 0.885
+  on_until_12              retained +0.977  b +nan  clip 0.877
+  on_until_18              retained +1.000  b +nan  clip 0.864
+  on_from_1                retained +0.943  b +nan  clip 0.872
+  on_from_2                retained +0.783  b +nan  clip 0.872
+  on_from_3                retained +0.372  b +nan  clip 0.870
+  on_from_5                retained +0.081  b +nan  clip 0.900
+  on_from_8                retained -0.004  b +nan  clip 0.919
+  on_from_12               retained +0.026  b +nan  clip 0.966
+  on_from_18               retained +0.009  b +nan  clip 0.988
+  only_down_blocks         retained +0.748  b +nan  clip 0.878
+  only_mid_block           retained +0.094  b +nan  clip 0.917
+  only_up_blocks.0         retained +1.144  b +nan  clip 0.868
+  only_up_blocks.1         retained -0.044  b +nan  clip 0.906
+  only_up_blocks.2         retained -0.000  b +nan  clip 0.965
+  only_up_blocks.3         retained +0.127  b +nan  clip 0.903
+wrote /kaggle/working/out/job1/a-medieval-stone-castle-on-a-hill__rolling-clockwise/manifest.json
+PASS  checks {'camera_changes_clip': True}
+
+=== a-city-street-at-night-with-neon-signs__pan-left: 22 tracks
+    step  5/25    398.5 s  (3.62 s per clip-step)
+    step 10/25    796.8 s  (3.62 s per clip-step)
+    step 15/25   1195.9 s  (3.62 s per clip-step)
+    step 20/25   1595.7 s  (3.63 s per clip-step)
+    step 25/25   1994.3 s  (3.63 s per clip-step)
+  on                       retained +1.000  b +nan  clip 0.802
+  off                      retained +0.000  b +nan  clip 1.000
+  on_until_1               retained +0.029  b +nan  clip 0.965
+  on_until_2               retained +0.111  b +nan  clip 0.902
+  on_until_3               retained +1.390  b +nan  clip 0.844
+  on_until_5               retained +0.987  b +nan  clip 0.852
+  on_until_8               retained +1.013  b +nan  clip 0.837
+  on_until_12              retained +1.016  b +nan  clip 0.800
+  on_until_18              retained +1.004  b +nan  clip 0.805
+  on_from_1                retained +0.873  b +nan  clip 0.798
+  on_from_2                retained -0.430  b +nan  clip 0.800
+  on_from_3                retained -0.344  b +nan  clip 0.748
+  on_from_5                retained +0.116  b +nan  clip 0.859
+  on_from_8                retained +0.052  b +nan  clip 0.868
+  on_from_12               retained +0.054  b +nan  clip 0.947
+  on_from_18               retained +0.011  b +nan  clip 0.995
+  only_down_blocks         retained +0.270  b +nan  clip 0.878
+  only_mid_block           retained -0.004  b +nan  clip 0.882
+  only_up_blocks.0         retained -0.025  b +nan  clip 0.879
+  only_up_blocks.1         retained +0.036  b +nan  clip 0.935
+  only_up_blocks.2         retained +0.032  b +nan  clip 0.972
+  only_up_blocks.3         retained -0.774  b +nan  clip 0.800
+wrote /kaggle/working/out/job1/a-city-street-at-night-with-neon-signs__pan-left/manifest.json
+PASS  checks {'camera_changes_clip': True}
+
+=== a-city-street-at-night-with-neon-signs__rolling-clockwise: 22 tracks
+    step  5/25    398.5 s  (3.62 s per clip-step)
+    step 10/25    797.7 s  (3.63 s per clip-step)
+    step 15/25   1196.2 s  (3.62 s per clip-step)
+    step 20/25   1594.9 s  (3.62 s per clip-step)
+    step 25/25   1994.1 s  (3.63 s per clip-step)
+  on                       retained +1.000  b +nan  clip 0.846
+  off                      retained +0.000  b +nan  clip 1.000
+  on_until_1               retained -0.014  b +nan  clip 0.979
+  on_until_2               retained -0.017  b +nan  clip 0.922
+  on_until_3               retained +0.846  b +nan  clip 0.784
+  on_until_5               retained +1.053  b +nan  clip 0.802
+  on_until_8               retained +1.788  b +nan  clip 0.823
+  on_until_12              retained +1.006  b +nan  clip 0.840
+  on_until_18              retained +1.001  b +nan  clip 0.849
+  on_from_1                retained +0.964  b +nan  clip 0.825
+  on_from_2                retained +0.893  b +nan  clip 0.851
+  on_from_3                retained +0.741  b +nan  clip 0.797
+  on_from_5                retained +0.642  b +nan  clip 0.798
+  on_from_8                retained +0.060  b +nan  clip 0.851
+  on_from_12               retained -0.015  b +nan  clip 0.967
+  on_from_18               retained -0.030  b +nan  clip 0.995
+  only_down_blocks         retained +0.702  b +nan  clip 0.835
+  only_mid_block           retained -0.261  b +nan  clip 0.793
+  only_up_blocks.0         retained -0.036  b +nan  clip 0.944
+  only_up_blocks.1         retained -0.055  b +nan  clip 0.937
+  only_up_blocks.2         retained -0.056  b +nan  clip 0.927
+  only_up_blocks.3         retained +0.248  b +nan  clip 0.876
+wrote /kaggle/working/out/job1/a-city-street-at-night-with-neon-signs__rolling-clockwise/manifest.json
+PASS  checks {'camera_changes_clip': True}
+
+=== a-red-sandstone-desert-canyon__pan-left: 22 tracks
+    step  5/25    398.2 s  (3.62 s per clip-step)
+    step 10/25    797.2 s  (3.62 s per clip-step)
+    step 15/25   1196.2 s  (3.62 s per clip-step)
+    step 20/25   1595.2 s  (3.63 s per clip-step)
+    step 25/25   1993.9 s  (3.63 s per clip-step)
+  on                       retained +1.000  b +nan  clip 0.874
+  off                      retained +0.000  b +nan  clip 1.000
+  on_until_1               retained -0.000  b +nan  clip 0.987
+  on_until_2               retained +1.120  b +nan  clip 0.926
+  on_until_3               retained +1.027  b +nan  clip 0.921
+  on_until_5               retained +1.005  b +nan  clip 0.911
+  on_until_8               retained +0.998  b +nan  clip 0.899
+  on_until_12              retained +0.999  b +nan  clip 0.887
+  on_until_18              retained +0.999  b +nan  clip 0.872
+  on_from_1                retained +0.994  b +nan  clip 0.905
+  on_from_2                retained +0.288  b +nan  clip 0.896
+  on_from_3                retained +0.323  b +nan  clip 0.905
+  on_from_5                retained -0.353  b +nan  clip 0.935
+  on_from_8                retained -0.061  b +nan  clip 0.956
+  on_from_12               retained -0.031  b +nan  clip 0.978
+  on_from_18               retained -0.014  b +nan  clip 0.994
+  only_down_blocks         retained +0.964  b +nan  clip 0.886
+  only_mid_block           retained -0.064  b +nan  clip 0.985
+  only_up_blocks.0         retained -0.013  b +nan  clip 0.983
+  only_up_blocks.1         retained -0.033  b +nan  clip 0.980
+  only_up_blocks.2         retained -0.055  b +nan  clip 0.984
+  only_up_blocks.3         retained +0.006  b +nan  clip 0.970
+wrote /kaggle/working/out/job1/a-red-sandstone-desert-canyon__pan-left/manifest.json
+PASS  checks {'camera_changes_clip': True}
+
+=== a-red-sandstone-desert-canyon__rolling-clockwise: 22 tracks
+    step  5/25    398.1 s  (3.62 s per clip-step)
+    step 10/25    796.8 s  (3.62 s per clip-step)
+    step 15/25   1196.3 s  (3.63 s per clip-step)
+    step 20/25   1595.3 s  (3.63 s per clip-step)
+    step 25/25   1995.1 s  (3.63 s per clip-step)
+  on                       retained +1.000  b +nan  clip 0.908
+  off                      retained +0.000  b +nan  clip 1.000
+  on_until_1               retained -0.016  b +nan  clip 0.992
+  on_until_2               retained +0.094  b +nan  clip 0.971
+  on_until_3               retained +0.342  b +nan  clip 0.951
+  on_until_5               retained +0.821  b +nan  clip 0.915
+  on_until_8               retained +1.015  b +nan  clip 0.911
+  on_until_12              retained +1.000  b +nan  clip 0.911
+  on_until_18              retained +0.998  b +nan  clip 0.903
+  on_from_1                retained +1.017  b +nan  clip 0.910
+  on_from_2                retained +1.007  b +nan  clip 0.899
+  on_from_3                retained +0.948  b +nan  clip 0.896
+  on_from_5                retained -0.423  b +nan  clip 0.949
+  on_from_8                retained -0.083  b +nan  clip 0.964
+  on_from_12               retained +0.003  b +nan  clip 0.980
+  on_from_18               retained +0.034  b +nan  clip 0.992
+  only_down_blocks         retained +1.017  b +nan  clip 0.879
+  only_mid_block           retained +0.036  b +nan  clip 0.991
+  only_up_blocks.0         retained +0.001  b +nan  clip 0.974
+  only_up_blocks.1         retained -0.083  b +nan  clip 0.907
+  only_up_blocks.2         retained +0.088  b +nan  clip 0.984
+  only_up_blocks.3         retained +0.031  b +nan  clip 0.984
+wrote /kaggle/working/out/job1/a-red-sandstone-desert-canyon__rolling-clockwise/manifest.json
+PASS  checks {'camera_changes_clip': True}
+8 groups in 282.5 min
