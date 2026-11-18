@@ -110,3 +110,34 @@ def test_config_file():
     assert cfg.prompt_template.format(scene="a lake") == "a lake, high quality, detailed"
     assert GenerationConfig.from_yaml().height == 512            # the frozen config is untouched
     assert all(M.named_trajectory(cfg, c).frames == 16 for c in CAMERAS)
+
+
+def test_trajectory_step_per_family():
+    from types import SimpleNamespace
+    cfg = SimpleNamespace(frames=4, extra={"trajectory_step": {"pan": 0.04, "tilt": 0.2, "zoom": 0.3}, "trajectory_roll_deg": 3.0})
+    assert M.trajectory_step(cfg, "pan-left") == 0.04 and M.trajectory_step(cfg, "zoom-out") == 0.3
+    t = M.named_trajectory(cfg, "tilt-up")
+    assert abs(float(t.c2w[3, :3, 3].norm()) - 0.6) < 1e-6          # 3 frames x 0.2
+    assert abs(float(M.named_trajectory(cfg, "pan-right").c2w[2, :3, 3].norm()) - 0.08) < 1e-6
+    assert M.trajectory_step(SimpleNamespace(extra={"trajectory_step": 0.07}), "zoom-in") == 0.07
+
+
+def test_calibration_choice_rule():
+    import importlib.util
+    from pathlib import Path
+    spec = importlib.util.spec_from_file_location("cal", Path(__file__).resolve().parents[1] / "scripts" / "cameractrl_calibrate.py")
+    cal = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(cal)
+    rows = []
+    for scene in ("a", "b", "c"):
+        for v, main, sharp in ((0.025, 0.02, 1.0), (0.05, 0.04, 0.9), (0.1, 0.09, 0.6)):       # pan: 0.05 is the pick
+            rows.append({"camera": "pan-left", "value": v, "main": main, "sharpness": sharp})
+        for v, main in ((0.1, 0.01), (0.2, 0.02), (0.4, 0.025)):                              # zoom never reaches 0.03
+            rows.append({"camera": "zoom-in", "value": v, "main": main, "sharpness": 0.95})
+        rows.append({"camera": "off", "value": 0.0, "main": 0.0, "sharpness": 1.0})
+    pick = cal.choose(rows)
+    assert pick["pan"]["value"] == 0.05 and pick["pan"]["reached_target"]
+    assert pick["zoom"]["value"] == 0.4 and not pick["zoom"]["reached_target"]
+    tracks = cal.tracks_for("p", (0.05, 0.1), (2.0,), 4)
+    assert [t.id for t in tracks[:3]] == ["off", "static", "pan-left@0.05"] and len(tracks) == 2 + 6 * 2 + 2
+    assert tracks[-1].id == "roll-ccw@2" and abs(float(tracks[2].meta["camera"].c2w[3, 0, 3]) + 0.15) < 1e-6

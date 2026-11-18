@@ -61,10 +61,25 @@ def load_cameractrl(cfg: GenerationConfig | None = None, profile: str = "gpu", d
     return loaded
 
 
+FAMILY = {"pan-left": "pan", "pan-right": "pan", "tilt-up": "tilt", "tilt-down": "tilt",
+          "zoom-in": "zoom", "zoom-out": "zoom", "roll-cw": "roll", "roll-ccw": "roll", "static": None}
+
+
+def trajectory_step(cfg, name: str) -> float:
+    """Scene units per frame for a translation: `trajectory_step` of the config, a number for every
+    translation or a mapping {pan, tilt, zoom: number}."""
+    x = getattr(cfg, "extra", {}) or {}
+    step = x.get("trajectory_step", 0.1)
+    if isinstance(step, dict):
+        fam = FAMILY.get(name)
+        return float(step[fam]) if fam in step else 0.0 if fam is None else float(step.get("default", 0.1))
+    return float(step)
+
+
 def named_trajectory(cfg, name: str) -> Trajectory:
     """A named trajectory with the magnitudes of the config (`trajectory_step`, `trajectory_roll_deg`)."""
     x = getattr(cfg, "extra", {}) or {}
-    return trajectory(name, cfg.frames, step=float(x.get("trajectory_step", 0.1)),
+    return trajectory(name, cfg.frames, step=trajectory_step(cfg, name),
                       roll_deg=float(x.get("trajectory_roll_deg", 2.0)))
 
 
