@@ -1,0 +1,104 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 786.85it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1131.90it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:01<00:09,  1.94s/it]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2710.92it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:02<00:01,  1.70it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.65it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 10518.60it/s]
+
+=== a mountain lake at sunrise: 38 tracks
+    step  5/25    197.3 s  (1.04 s per clip-step)
+    step 10/25    388.8 s  (1.02 s per clip-step)
+    step 15/25    579.9 s  (1.02 s per clip-step)
+    step 20/25    770.7 s  (1.01 s per clip-step)
+    step 25/25    961.6 s  (1.01 s per clip-step)
+  off              main +0.0000  off-axis 0.0010  sharp 3.96  clip 1.000
+  static           main +0.0000  off-axis 0.0001  sharp 1.00  clip 0.930
+  pan-left@0.025   main +0.0384  off-axis 0.0024  sharp 0.74  clip 0.882
+  pan-left@0.05    main +0.0709  off-axis 0.0088  sharp 0.89  clip 0.869
+  pan-left@0.1     main +0.1124  off-axis 0.0037  sharp 0.36  clip 0.840
+  pan-left@0.2     main +0.1276  off-axis 0.0021  sharp 0.60  clip 0.811
+  pan-left@0.4     main +0.0706  off-axis 0.0042  sharp 1.51  clip 0.892
+  pan-right@0.025  main +0.0008  off-axis 0.0059  sharp 0.39  clip 0.885
+  pan-right@0.05   main -0.0199  off-axis 0.0120  sharp 0.63  clip 0.897
+  pan-right@0.1    main -0.0521  off-axis 0.0247  sharp 1.23  clip 0.911
+  pan-right@0.2    main -0.0358  off-axis 0.0355  sharp 1.37  clip 0.893
+  pan-right@0.4    main -0.0407  off-axis 0.0100  sharp 1.06  clip 0.908
+  tilt-up@0.025    main +0.0254  off-axis 0.0007  sharp 1.62  clip 0.862
+  tilt-up@0.05     main +0.0366  off-axis 0.0008  sharp 0.88  clip 0.922
+  tilt-up@0.1      main +0.0661  off-axis 0.0048  sharp 2.72  clip 0.865
+  tilt-up@0.2      main +0.0830  off-axis 0.0178  sharp 1.69  clip 0.786
+  tilt-up@0.4      main +0.1088  off-axis 0.0138  sharp 3.07  clip 0.798
+  tilt-down@0.025  main +0.0179  off-axis 0.0023  sharp 1.35  clip 0.911
+  tilt-down@0.05   main +0.0255  off-axis 0.0046  sharp 1.95  clip 0.911
+  tilt-down@0.1    main +0.0343  off-axis 0.0072  sharp 3.98  clip 0.883
+  tilt-down@0.2    main +0.0339  off-axis 0.0084  sharp 2.97  clip 0.887
+  tilt-down@0.4    main +0.0353  off-axis 0.0166  sharp 1.77  clip 0.865
+  zoom-in@0.025    main +0.0045  off-axis 0.0039  sharp 1.08  clip 0.920
+  zoom-in@0.05     main +0.0070  off-axis 0.0015  sharp 1.21  clip 0.934
+  zoom-in@0.1      main +0.0131  off-axis 0.0028  sharp 2.36  clip 0.938
+  zoom-in@0.2      main +0.0264  off-axis 0.0092  sharp 1.98  clip 0.892
+  zoom-in@0.4      main +0.0429  off-axis 0.0135  sharp 2.61  clip 0.822
+  zoom-out@0.025   main +0.0041  off-axis 0.0010  sharp 1.01  clip 0.925
+  zoom-out@0.05    main +0.0059  off-axis 0.0022  sharp 0.98  clip 0.934
+  zoom-out@0.1     main +0.0147  off-axis 0.0068  sharp 1.85  clip 0.932
+  zoom-out@0.2     main +0.0279  off-axis 0.0152  sharp 2.97  clip 0.798
+  zoom-out@0.4     main +0.0401  off-axis 0.0199  sharp 3.54  clip 0.780
+  roll-cw@1        main +0.0179  off-axis 0.0073  sharp 2.14  clip 0.900
+  roll-cw@2        main +0.0339  off-axis 0.0057  sharp 5.06  clip 0.876
+  roll-cw@4        main +0.0408  off-axis 0.0290  sharp 4.18  clip 0.848
+  roll-ccw@1       main +0.0272  off-axis 0.0021  sharp 1.80  clip 0.806
+  roll-ccw@2       main +0.0452  off-axis 0.0040  sharp 4.88  clip 0.814
+  roll-ccw@4       main +0.0508  off-axis 0.0116  sharp 4.53  clip 0.771
+
+=== a medieval stone castle on a hill: 38 tracks
+    step  5/25    193.2 s  (1.02 s per clip-step)
+    step 10/25    384.9 s  (1.01 s per clip-step)
+    step 15/25    575.6 s  (1.01 s per clip-step)
+    step 20/25    766.9 s  (1.01 s per clip-step)
+    step 25/25    958.1 s  (1.01 s per clip-step)
+  off              main +0.0000  off-axis 0.0200  sharp 2.13  clip 1.000
+  static           main +0.0000  off-axis 0.0000  sharp 1.00  clip 0.884
+  pan-left@0.025   main -0.0163  off-axis 0.0223  sharp 1.06  clip 0.741
+  pan-left@0.05    main -0.0207  off-axis 0.0291  sharp 0.60  clip 0.712
+  pan-left@0.1     main -0.0662  off-axis 0.0515  sharp 0.54  clip 0.814
+  pan-left@0.2     main -0.0893  off-axis 0.0562  sharp 0.69  clip 0.880
+  pan-left@0.4     main -0.0505  off-axis 0.0376  sharp 0.85  clip 0.831
+  pan-right@0.025  main -0.0128  off-axis 0.0162  sharp 1.02  clip 0.749
+  pan-right@0.05   main -0.0220  off-axis 0.0208  sharp 0.73  clip 0.773
+  pan-right@0.1    main -0.0263  off-axis 0.0314  sharp 0.69  clip 0.817
+  pan-right@0.2    main +0.0512  off-axis 0.0058  sharp 0.74  clip 0.784
+  pan-right@0.4    main +0.0301  off-axis 0.0094  sharp 0.76  clip 0.838
+  tilt-up@0.025    main +0.0132  off-axis 0.0045  sharp 0.58  clip 0.776
+  tilt-up@0.05     main +0.0165  off-axis 0.0069  sharp 0.75  clip 0.793
+  tilt-up@0.1      main +0.0256  off-axis 0.0059  sharp 0.74  clip 0.757
+  tilt-up@0.2      main -0.0057  off-axis 0.0166  sharp 0.76  clip 0.735
+  tilt-up@0.4      main +0.0111  off-axis 0.0034  sharp 0.69  clip 0.824
+  tilt-down@0.025  main +0.0097  off-axis 0.0122  sharp 0.65  clip 0.837
+  tilt-down@0.05   main +0.0188  off-axis 0.0102  sharp 0.71  clip 0.895
+  tilt-down@0.1    main +0.0216  off-axis 0.0074  sharp 0.81  clip 0.862
+  tilt-down@0.2    main +0.0059  off-axis 0.0170  sharp 0.77  clip 0.826
+  tilt-down@0.4    main +0.0149  off-axis 0.0211  sharp 0.58  clip 0.786
+  zoom-in@0.025    main +0.0085  off-axis 0.0029  sharp 0.51  clip 0.722
+  zoom-in@0.05     main +0.0195  off-axis 0.0028  sharp 0.69  clip 0.733
+  zoom-in@0.1      main +0.0191  off-axis 0.0053  sharp 0.64  clip 0.765
+  zoom-in@0.2      main +0.0243  off-axis 0.0061  sharp 0.72  clip 0.764
+  zoom-in@0.4      main +0.0299  off-axis 0.0071  sharp 0.75  clip 0.734
+  zoom-out@0.025   main +0.0008  off-axis 0.0156  sharp 0.58  clip 0.832
+  zoom-out@0.05    main +0.0087  off-axis 0.0161  sharp 0.57  clip 0.759
+  zoom-out@0.1     main +0.0200  off-axis 0.0218  sharp 0.93  clip 0.810
+  zoom-out@0.2     main +0.0194  off-axis 0.0253  sharp 0.96  clip 0.872
+  zoom-out@0.4     main +0.0250  off-axis 0.0219  sharp 0.92  clip 0.858
+  roll-cw@1        main +0.0205  off-axis 0.0113  sharp 0.60  clip 0.785
+  roll-cw@2        main +0.0288  off-axis 0.0080  sharp 0.66  clip 0.743
+  roll-cw@4        main +0.0438  off-axis 0.0241  sharp 0.61  clip 0.868
+  roll-ccw@1       main +0.0226  off-axis 0.0020  sharp 0.83  clip 0.736
+  roll-ccw@2       main +0.0388  off-axis 0.0077  sharp 0.58  clip 0.786
+  roll-ccw@4       main +0.0506  off-axis 0.0198  sharp 0.58  clip 0.827
+wrote /kaggle/working/out/job0/calib.json
+pan 0.4 NOT reached {0.025: {'main': -0.00601187292319985, 'sharpness': 0.880935449111181}, 0.05: {'main': -0.02027635163429486, 'sharpness': 0.6775231804505385}, 0.1: {'main': -0.03916426616868142, 'sharpness': 0.6153005268496368}, 0.2: {'main': 0.007706257277342674, 'sharpness': 0.7156968680815785}, 0.4: {'main': -0.005290109609997271, 'sharpness': 0.9541528708709706}}
+roll 2.0 reached {1.0: {'main': 0.02156684240673975, 'sharpness': 1.3165667084052803}, 2.0: {'main': 0.036365918936319436, 'sharpness': 2.767575261921194}, 4.0: {'main': 0.04719764083161121, 'sharpness': 2.393204557706757}}
+tilt 0.1 NOT reached {0.025: {'main': 0.01558861811702529, 'sharpness': 1.0014475597208607}, 0.05: {'main': 0.022157343787695488, 'sharpness': 0.8162323874915338}, 0.1: {'main': 0.029946762627698742, 'sharpness': 1.7652665425849035}, 0.2: {'main': 0.019861690247739327, 'sharpness': 1.2287029937162102}, 0.4: {'main': 0.025079096146650836, 'sharpness': 1.2276287073312833}}
+zoom 0.4 reached {0.025: {'main': 0.0042957027509076895, 'sharpness': 0.7932855224971853}, 0.05: {'main': 0.007850855140654825, 'sharpness': 0.8339299170585747}, 0.1: {'main': 0.016928639354406215, 'sharpness': 1.3887893240789908}, 0.2: {'main': 0.025349737539738793, 'sharpness': 1.4675655627548507}, 0.4: {'main': 0.03499275127635013, 'sharpness': 1.7621019201999235}}

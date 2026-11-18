@@ -23,5 +23,6 @@ domain_lora_repo: guoyww/animatediff
 domain_lora_file: v3_sd15_adapter.ckpt
 domain_lora_scale: 1.0
 authors_groupnorm: true   # group-norm axes of the authors' U-Net (vdprobe/cameractrl/groupnorm.py)
-trajectory_step: 0.1      # scene units per frame for pan / tilt / zoom
+# frozen 2026-11-19 by the calibration rule of scripts/cameractrl_calibrate.py (D-41): scene units per frame
+trajectory_step: {pan: 0.1, tilt: 0.1, zoom: 0.2}
 trajectory_roll_deg: 2.0  # degrees per frame for roll

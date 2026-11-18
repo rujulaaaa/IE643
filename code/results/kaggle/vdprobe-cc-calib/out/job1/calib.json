@@ -1,0 +1,157 @@
+{
+  "experiment": "cameractrl_calibrate",
+  "date": "2026-11-18",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.2",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-3",
+      "commit": "2e8139b1d1269fd8a21deb96ad19455e187692eb"
+    },
+    "authors_groupnorm_layers": 20,
+    "cameractrl": {
+      "repo_id": "hehao13/CameraCtrl",
+      "file": "CameraCtrl.ckpt"
+    },
+    "domain_lora": {
+      "repo_id": "guoyww/animatediff",
+      "file": "v3_sd15_adapter.ckpt",
+      "scale": 1.0,
+      "merged_matrices": 128
+    }
+  },
+  "frames": 16,
+  "resolution": "256x384",
+  "steps": [
+    0.025,
+    0.05,
+    0.1,
+    0.2,
+    0.4
+  ],
+  "scheduler": "DDIM",
+  "guidance_scale": 14.0,
+  "seed": 42,
+  "scenes": [
+    "a city street at night with neon signs",
+    "a red sandstone desert canyon"
+  ],
+  "rolls": [
+    1.0,
+    2.0,
+    4.0
+  ],
+  "rule": {
+    "min_main": 0.03,
+    "min_sharpness": 0.8
+  },
+  "choice": {
+    "pan": {
+      "value": 0.025,
+      "reached_target": true,
+      "table": {
+        "0.025": {
+          "main": 0.031464758549883405,
+          "sharpness": 1.294071004846686
+        },
+        "0.05": {
+          "main": 0.037793213459910435,
+          "sharpness": 1.1387231513442209
+        },
+        "0.1": {
+          "main": 0.03740088770598793,
+          "sharpness": 1.367472487601363
+        },
+        "0.2": {
+          "main": 0.04924000969115687,
+          "sharpness": 1.1600220950680609
+        },
+        "0.4": {
+          "main": 0.052816508263157175,
+          "sharpness": 1.2582368348426403
+        }
+      }
+    },
+    "roll": {
+      "value": 2.0,
+      "reached_target": true,
+      "table": {
+        "1.0": {
+          "main": 0.021893847458780834,
+          "sharpness": 0.9274447028410033
+        },
+        "2.0": {
+          "main": 0.035938172893547865,
+          "sharpness": 1.0426328175572073
+        },
+        "4.0": {
+          "main": 0.055078635493900505,
+          "sharpness": 0.8446235100646451
+        }
+      }
+    },
+    "tilt": {
+      "value": 0.1,
+      "reached_target": true,
+      "table": {
+        "0.025": {
+          "main": 0.01447484857368785,
+          "sharpness": 0.8413584691584965
+        },
+        "0.05": {
+          "main": 0.02861186479523298,
+          "sharpness": 1.2234129131862796
+        },
+        "0.1": {
+          "main": 0.03819529050818595,
+          "sharpness": 1.3154714191216192
+        },
+        "0.2": {
+          "main": 0.06614946217406244,
+          "sharpness": 1.1643097946288326
+        },
+        "0.4": {
+          "main": 0.06909191763428779,
+          "sharpness": 0.7202178643656707
+        }
+      }
+    },
+    "zoom": {
+      "value": 0.2,
+      "reached_target": true,
+      "table": {
+        "0.025": {
+          "main": 0.012996249158550978,
+          "sharpness": 0.8479824383496464
+        },
+        "0.05": {
+          "main": 0.01846586355218418,
+          "sharpness": 0.9331500159176958
+        },
+        "0.1": {
+          "main": 0.03298761612780735,
+          "sharpness": 0.7972682142453479
+        },
+        "0.2": {
+          "main": 0.04880674133355019,
+          "sharpness": 0.8860659756588054
+        },
+        "0.4": {
+          "main": 0.07531639986769464,
+          "sharpness": 1.1509257003214635
+        }
+      }
+    }
+  }
+}

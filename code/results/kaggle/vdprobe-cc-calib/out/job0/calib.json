@@ -1,0 +1,157 @@
+{
+  "experiment": "cameractrl_calibrate",
+  "date": "2026-11-18",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.2",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-3",
+      "commit": "2e8139b1d1269fd8a21deb96ad19455e187692eb"
+    },
+    "authors_groupnorm_layers": 20,
+    "cameractrl": {
+      "repo_id": "hehao13/CameraCtrl",
+      "file": "CameraCtrl.ckpt"
+    },
+    "domain_lora": {
+      "repo_id": "guoyww/animatediff",
+      "file": "v3_sd15_adapter.ckpt",
+      "scale": 1.0,
+      "merged_matrices": 128
+    }
+  },
+  "frames": 16,
+  "resolution": "256x384",
+  "steps": [
+    0.025,
+    0.05,
+    0.1,
+    0.2,
+    0.4
+  ],
+  "scheduler": "DDIM",
+  "guidance_scale": 14.0,
+  "seed": 42,
+  "scenes": [
+    "a mountain lake at sunrise",
+    "a medieval stone castle on a hill"
+  ],
+  "rolls": [
+    1.0,
+    2.0,
+    4.0
+  ],
+  "rule": {
+    "min_main": 0.03,
+    "min_sharpness": 0.8
+  },
+  "choice": {
+    "pan": {
+      "value": 0.4,
+      "reached_target": false,
+      "table": {
+        "0.025": {
+          "main": -0.00601187292319985,
+          "sharpness": 0.880935449111181
+        },
+        "0.05": {
+          "main": -0.02027635163429486,
+          "sharpness": 0.6775231804505385
+        },
+        "0.1": {
+          "main": -0.03916426616868142,
+          "sharpness": 0.6153005268496368
+        },
+        "0.2": {
+          "main": 0.007706257277342674,
+          "sharpness": 0.7156968680815785
+        },
+        "0.4": {
+          "main": -0.005290109609997271,
+          "sharpness": 0.9541528708709706
+        }
+      }
+    },
+    "roll": {
+      "value": 2.0,
+      "reached_target": true,
+      "table": {
+        "1.0": {
+          "main": 0.02156684240673975,
+          "sharpness": 1.3165667084052803
+        },
+        "2.0": {
+          "main": 0.036365918936319436,
+          "sharpness": 2.767575261921194
+        },
+        "4.0": {
+          "main": 0.04719764083161121,
+          "sharpness": 2.393204557706757
+        }
+      }
+    },
+    "tilt": {
+      "value": 0.1,
+      "reached_target": false,
+      "table": {
+        "0.025": {
+          "main": 0.01558861811702529,
+          "sharpness": 1.0014475597208607
+        },
+        "0.05": {
+          "main": 0.022157343787695488,
+          "sharpness": 0.8162323874915338
+        },
+        "0.1": {
+          "main": 0.029946762627698742,
+          "sharpness": 1.7652665425849035
+        },
+        "0.2": {
+          "main": 0.019861690247739327,
+          "sharpness": 1.2287029937162102
+        },
+        "0.4": {
+          "main": 0.025079096146650836,
+          "sharpness": 1.2276287073312833
+        }
+      }
+    },
+    "zoom": {
+      "value": 0.4,
+      "reached_target": true,
+      "table": {
+        "0.025": {
+          "main": 0.0042957027509076895,
+          "sharpness": 0.7932855224971853
+        },
+        "0.05": {
+          "main": 0.007850855140654825,
+          "sharpness": 0.8339299170585747
+        },
+        "0.1": {
+          "main": 0.016928639354406215,
+          "sharpness": 1.3887893240789908
+        },
+        "0.2": {
+          "main": 0.025349737539738793,
+          "sharpness": 1.4675655627548507
+        },
+        "0.4": {
+          "main": 0.03499275127635013,
+          "sharpness": 1.7621019201999235
+        }
+      }
+    }
+  }
+}
