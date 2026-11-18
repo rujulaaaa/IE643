@@ -1,0 +1,512 @@
+{
+  "groups": [
+    {
+      "seed": 42,
+      "scene": "camera",
+      "path": "results/kaggle/vdprobe-cam-sweep/out/job0/s42__camera",
+      "n_clips": 72,
+      "torch": "2.11.0+cu130",
+      "gpu": "Tesla T4"
+    },
+    {
+      "seed": 1337,
+      "scene": "camera",
+      "path": "results/kaggle/vdprobe-cam-sweep/out/job1/s1337__camera",
+      "n_clips": 72,
+      "torch": "2.11.0+cu130",
+      "gpu": "Tesla T4"
+    }
+  ],
+  "coords": [
+    {
+      "name": "down_blocks.0.motion_modules.1",
+      "kind": "temporal_module",
+      "block": "down_blocks.0",
+      "level": 0,
+      "short": "down0.mm1"
+    },
+    {
+      "name": "down_blocks.0.attentions.1.transformer_blocks.0.attn2",
+      "kind": "spatial_attn2",
+      "block": "down_blocks.0",
+      "level": 0,
+      "short": "down0.sp.a21"
+    },
+    {
+      "name": "down_blocks.1.motion_modules.1",
+      "kind": "temporal_module",
+      "block": "down_blocks.1",
+      "level": 1,
+      "short": "down1.mm1"
+    },
+    {
+      "name": "down_blocks.1.attentions.1.transformer_blocks.0.attn2",
+      "kind": "spatial_attn2",
+      "block": "down_blocks.1",
+      "level": 1,
+      "short": "down1.sp.a21"
+    },
+    {
+      "name": "down_blocks.2.motion_modules.1",
+      "kind": "temporal_module",
+      "block": "down_blocks.2",
+      "level": 2,
+      "short": "down2.mm1"
+    },
+    {
+      "name": "down_blocks.2.attentions.1.transformer_blocks.0.attn2",
+      "kind": "spatial_attn2",
+      "block": "down_blocks.2",
+      "level": 2,
+      "short": "down2.sp.a21"
+    },
+    {
+      "name": "down_blocks.3.motion_modules.1",
+      "kind": "temporal_module",
+      "block": "down_blocks.3",
+      "level": 3,
+      "short": "down3.mm1"
+    },
+    {
+      "name": "mid_block.motion_modules.0",
+      "kind": "temporal_module",
+      "block": "mid_block",
+      "level": 3,
+      "short": "mid.mm0"
+    },
+    {
+      "name": "mid_block.attentions.0.transformer_blocks.0.attn2",
+      "kind": "spatial_attn2",
+      "block": "mid_block",
+      "level": 3,
+      "short": "mid.sp.a20"
+    },
+    {
+      "name": "up_blocks.0.motion_modules.2",
+      "kind": "temporal_module",
+      "block": "up_blocks.0",
+      "level": 3,
+      "short": "up0.mm2"
+    },
+    {
+      "name": "up_blocks.1.motion_modules.2",
+      "kind": "temporal_module",
+      "block": "up_blocks.1",
+      "level": 2,
+      "short": "up1.mm2"
+    },
+    {
+      "name": "up_blocks.1.attentions.2.transformer_blocks.0.attn2",
+      "kind": "spatial_attn2",
+      "block": "up_blocks.1",
+      "level": 2,
+      "short": "up1.sp.a22"
+    },
+    {
+      "name": "up_blocks.2.motion_modules.2",
+      "kind": "temporal_module",
+      "block": "up_blocks.2",
+      "level": 1,
+      "short": "up2.mm2"
+    },
+    {
+      "name": "up_blocks.2.attentions.2.transformer_blocks.0.attn2",
+      "kind": "spatial_attn2",
+      "block": "up_blocks.2",
+      "level": 1,
+      "short": "up2.sp.a22"
+    },
+    {
+      "name": "up_blocks.3.motion_modules.2",
+      "kind": "temporal_module",
+      "block": "up_blocks.3",
+      "level": 0,
+      "short": "up3.mm2"
+    },
+    {
+      "name": "up_blocks.3.attentions.2.transformer_blocks.0.attn2",
+      "kind": "spatial_attn2",
+      "block": "up_blocks.3",
+      "level": 0,
+      "short": "up3.sp.a22"
+    }
+  ],
+  "n_steps": 25,
+  "n_boot": 1000,
+  "units_per_seed": {
+    "42": 56,
+    "1337": 56
+  },
+  "H1": {
+    "M_by_block": {
+      "down_blocks.0": 0.5824,
+      "down_blocks.1": 0.454,
+      "down_blocks.2": 0.2436,
+      "down_blocks.3": 0.2126,
+      "mid_block": 0.1202,
+      "up_blocks.0": 0.2758,
+      "up_blocks.1": 0.2945,
+      "up_blocks.2": 0.3396,
+      "up_blocks.3": 0.1386
+    },
+    "M_ci": {
+      "down_blocks.0": [
+        0.5590179888169599,
+        0.6027283469992907
+      ],
+      "down_blocks.1": [
+        0.4191931754919776,
+        0.47440529963477723
+      ],
+      "down_blocks.2": [
+        0.2190213228765373,
+        0.26355882297240263
+      ],
+      "down_blocks.3": [
+        0.18892687162712954,
+        0.23842938468378702
+      ],
+      "mid_block": [
+        0.10021625181530142,
+        0.13975227968443485
+      ],
+      "up_blocks.0": [
+        0.24616547026113494,
+        0.31056364451457924
+      ],
+      "up_blocks.1": [
+        0.2612743148045018,
+        0.32071815058648306
+      ],
+      "up_blocks.2": [
+        0.2964174756062861,
+        0.3738004510486216
+      ],
+      "up_blocks.3": [
+        0.11189956607734493,
+        0.16234582919665227
+      ]
+    },
+    "argmax_block": "down_blocks.0",
+    "bootstrap_argmax_counts": {
+      "down_blocks.0": 1000,
+      "down_blocks.1": 0,
+      "down_blocks.2": 0,
+      "down_blocks.3": 0,
+      "mid_block": 0,
+      "up_blocks.0": 0,
+      "up_blocks.1": 0,
+      "up_blocks.2": 0,
+      "up_blocks.3": 0
+    },
+    "set95": [
+      "down_blocks.0"
+    ],
+    "levels": {
+      "down_blocks.0": 0,
+      "down_blocks.1": 1,
+      "down_blocks.2": 2,
+      "down_blocks.3": 3,
+      "mid_block": 3,
+      "up_blocks.0": 3,
+      "up_blocks.1": 2,
+      "up_blocks.2": 1,
+      "up_blocks.3": 0
+    },
+    "survives": false,
+    "rule": "95% bootstrap argmax set excludes every level-0 and level-3 block"
+  },
+  "H2": {
+    "coord": "down_blocks.0.motion_modules.1",
+    "m_t": [
+      0.9707,
+      0.9643,
+      0.9497,
+      0.9314,
+      0.9002,
+      0.8608,
+      0.8192,
+      0.7829,
+      0.7418,
+      0.6985,
+      0.656,
+      0.6106,
+      0.5737,
+      0.5283,
+      0.4926,
+      0.4594,
+      0.4276,
+      0.3994,
+      0.3622,
+      0.3272,
+      0.2909,
+      0.257,
+      0.2236,
+      0.1922,
+      0.1407
+    ],
+    "tau": 12,
+    "tau_ci": [
+      11.0,
+      13.0
+    ],
+    "mean_early": 0.8238426398670705,
+    "mean_late": 0.35960530062672597,
+    "survives": false,
+    "rule": "tau CI within steps <= 12 and mean m(t<tau) > mean m(t>=tau)"
+  },
+  "H3": {
+    "f_stat": 0.30357142857142855,
+    "n_flip": 4,
+    "flips": [
+      [
+        "mid.mm0",
+        0
+      ],
+      [
+        "mid.mm0",
+        4
+      ],
+      [
+        "mid.mm0",
+        8
+      ],
+      [
+        "mid.mm0",
+        12
+      ]
+    ],
+    "f_dyn_motion": 0.7767857142857143,
+    "survives": false,
+    "rule": "f_stat >= 0.75 and n_flip >= 1"
+  },
+  "profile_dyn": {
+    "down0.mm1": {
+      "median": -0.5824392234620913,
+      "lo": -0.6067265820179896,
+      "hi": -0.5544382175440365
+    },
+    "down0.sp.a21": {
+      "median": -0.38384918307924615,
+      "lo": -0.41944603224111104,
+      "hi": -0.3342328719297665
+    },
+    "down1.mm1": {
+      "median": -0.4540273814428029,
+      "lo": -0.47949846370411614,
+      "hi": -0.41218581547120436
+    },
+    "down1.sp.a21": {
+      "median": -0.25855576509556316,
+      "lo": -0.28924473742961687,
+      "hi": -0.2251206266759726
+    },
+    "down2.mm1": {
+      "median": -0.2435844319188649,
+      "lo": -0.27077890527460496,
+      "hi": -0.2119712377554688
+    },
+    "down2.sp.a21": {
+      "median": 0.17935082783825526,
+      "lo": 0.14776283490309128,
+      "hi": 0.2250489509754238
+    },
+    "down3.mm1": {
+      "median": -0.2126362165880356,
+      "lo": -0.24612842581321204,
+      "hi": -0.18124959765567644
+    },
+    "mid.mm0": {
+      "median": -0.12021449588398646,
+      "lo": -0.14741081506210002,
+      "hi": -0.0931133237156982
+    },
+    "mid.sp.a20": {
+      "median": 0.15513574950645923,
+      "lo": 0.12099191576928989,
+      "hi": 0.19913857670513946
+    },
+    "up0.mm2": {
+      "median": -0.2757699862450652,
+      "lo": -0.31800540018955653,
+      "hi": -0.2405500250174678
+    },
+    "up1.mm2": {
+      "median": -0.29447395088323863,
+      "lo": -0.3273484439096069,
+      "hi": -0.2544822242432066
+    },
+    "up1.sp.a22": {
+      "median": 0.15074641136579375,
+      "lo": 0.1240430703064863,
+      "hi": 0.1796303424250757
+    },
+    "up2.mm2": {
+      "median": -0.3395728296376581,
+      "lo": -0.37733909972888374,
+      "hi": -0.29070221717610134
+    },
+    "up2.sp.a22": {
+      "median": -0.008335507796451602,
+      "lo": -0.026306760871374783,
+      "hi": 0.011569277794193516
+    },
+    "up3.mm2": {
+      "median": -0.13857451224471076,
+      "lo": -0.1693524789891293,
+      "hi": -0.106624028837327
+    },
+    "up3.sp.a22": {
+      "median": -0.1780681772586311,
+      "lo": -0.2059893090779431,
+      "hi": -0.14453329422167646
+    }
+  },
+  "profile_stat": {
+    "down0.mm1": {
+      "median": -0.7706792596026163,
+      "lo": -0.7982134434619921,
+      "hi": -0.6451803859449535
+    },
+    "down0.sp.a21": {
+      "median": -0.17413969368194068,
+      "lo": -0.23363834758073757,
+      "hi": -0.04461714044952738
+    },
+    "down1.mm1": {
+      "median": -0.6167535530856826,
+      "lo": -0.6487992356585227,
+      "hi": -0.5531027183116713
+    },
+    "down1.sp.a21": {
+      "median": -0.17642650807121243,
+      "lo": -0.23725652660939844,
+      "hi": -0.042629529602433804
+    },
+    "down2.mm1": {
+      "median": -0.1945816340451407,
+      "lo": -0.2305335911147074,
+      "hi": -0.14973350564312438
+    },
+    "down2.sp.a21": {
+      "median": 0.6390947633080906,
+      "lo": 0.6041540225273537,
+      "hi": 0.6684714265030778
+    },
+    "down3.mm1": {
+      "median": -0.1094546088333667,
+      "lo": -0.1441348356015907,
+      "hi": -0.07202546425842496
+    },
+    "mid.mm0": {
+      "median": 0.0688465421837023,
+      "lo": 0.037508312852407216,
+      "hi": 0.10164128804889354
+    },
+    "mid.sp.a20": {
+      "median": 0.8399390900330013,
+      "lo": 0.8202381389497735,
+      "hi": 0.8570945341467027
+    },
+    "up0.mm2": {
+      "median": -0.23000186077703078,
+      "lo": -0.2711973221644021,
+      "hi": -0.18188116268265744
+    },
+    "up1.mm2": {
+      "median": -0.32247755477412865,
+      "lo": -0.378152526988153,
+      "hi": -0.2492014284796565
+    },
+    "up1.sp.a22": {
+      "median": 0.3447629766908981,
+      "lo": 0.24637245939140195,
+      "hi": 0.41547183361600337
+    },
+    "up2.mm2": {
+      "median": -0.47336045171036867,
+      "lo": -0.5263629340435585,
+      "hi": -0.37691748461182667
+    },
+    "up2.sp.a22": {
+      "median": 0.2942775507015489,
+      "lo": 0.06893417835396728,
+      "hi": 0.44284399564829047
+    },
+    "up3.mm2": {
+      "median": -0.4188143121525572,
+      "lo": -0.46918414491956406,
+      "hi": -0.34257909769689115
+    },
+    "up3.sp.a22": {
+      "median": -0.04000534657785278,
+      "lo": -0.08091872698114068,
+      "hi": 0.01474415925248269
+    }
+  },
+  "static_energy_share": {
+    "down_blocks.0.motion_modules.1": 0.5484,
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2": 0.9672,
+    "down_blocks.1.motion_modules.1": 0.5438,
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2": 0.9786,
+    "down_blocks.2.motion_modules.1": 0.3979,
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2": 0.8654,
+    "down_blocks.3.motion_modules.1": 0.401,
+    "mid_block.motion_modules.0": 0.4715,
+    "mid_block.attentions.0.transformer_blocks.0.attn2": 0.79,
+    "up_blocks.0.motion_modules.2": 0.4871,
+    "up_blocks.1.motion_modules.2": 0.5215,
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2": 0.9995,
+    "up_blocks.2.motion_modules.2": 0.5818,
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2": 0.9997,
+    "up_blocks.3.motion_modules.2": 0.6951,
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2": 0.9142
+  },
+  "cross_family": {
+    "d_static|content": {
+      "down_blocks.0.attentions.1.transformer_blocks.0.attn2": 0.005,
+      "down_blocks.0.motion_modules.1": 0.0389,
+      "down_blocks.1.attentions.1.transformer_blocks.0.attn2": 0.0086,
+      "down_blocks.1.motion_modules.1": 0.0971,
+      "down_blocks.2.attentions.1.transformer_blocks.0.attn2": 0.2983,
+      "down_blocks.2.motion_modules.1": 0.3048,
+      "down_blocks.3.motion_modules.1": 0.4108,
+      "mid_block.attentions.0.transformer_blocks.0.attn2": 0.586,
+      "mid_block.motion_modules.0": 0.4322,
+      "up_blocks.0.motion_modules.2": 0.3156,
+      "up_blocks.1.attentions.2.transformer_blocks.0.attn2": 0.0004,
+      "up_blocks.1.motion_modules.2": 0.2427,
+      "up_blocks.2.attentions.2.transformer_blocks.0.attn2": 0.0004,
+      "up_blocks.2.motion_modules.2": 0.1933,
+      "up_blocks.3.attentions.2.transformer_blocks.0.attn2": 0.0289,
+      "up_blocks.3.motion_modules.2": 0.0153
+    },
+    "d_dynamic|content": {
+      "down_blocks.0.attentions.1.transformer_blocks.0.attn2": 0.1844,
+      "down_blocks.0.motion_modules.1": 0.1068,
+      "down_blocks.1.attentions.1.transformer_blocks.0.attn2": 0.4868,
+      "down_blocks.1.motion_modules.1": 0.3502,
+      "down_blocks.2.attentions.1.transformer_blocks.0.attn2": 0.8749,
+      "down_blocks.2.motion_modules.1": 0.4989,
+      "down_blocks.3.motion_modules.1": 0.5287,
+      "mid_block.attentions.0.transformer_blocks.0.attn2": 0.7085,
+      "mid_block.motion_modules.0": 0.6174,
+      "up_blocks.0.motion_modules.2": 0.4905,
+      "up_blocks.1.attentions.2.transformer_blocks.0.attn2": 0.8461,
+      "up_blocks.1.motion_modules.2": 0.4711,
+      "up_blocks.2.attentions.2.transformer_blocks.0.attn2": 0.8219,
+      "up_blocks.2.motion_modules.2": 0.4408,
+      "up_blocks.3.attentions.2.transformer_blocks.0.attn2": 0.6252,
+      "up_blocks.3.motion_modules.2": 0.0739
+    }
+  },
+  "robustness": {
+    "spearman_dyn_cos_vs_l2": 0.9965372283576772,
+    "spearman_dyn_median_ratio_vs_ratio_of_medians": 0.9978943618397614,
+    "seed_agreement_dyn": {
+      "42-1337": 0.9899248120300751
+    }
+  },
+  "probes": {},
+  "probe_controls": {}
+}
