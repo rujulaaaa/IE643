@@ -1,0 +1,103 @@
+{
+  "experiment": "cameractrl_smoke",
+  "date": "2026-11-15",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.2",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-3",
+      "commit": "2e8139b1d1269fd8a21deb96ad19455e187692eb"
+    },
+    "authors_groupnorm_layers": 20,
+    "cameractrl": {
+      "repo_id": "hehao13/CameraCtrl",
+      "file": "CameraCtrl.ckpt"
+    },
+    "domain_lora": {
+      "repo_id": "guoyww/animatediff",
+      "file": "v3_sd15_adapter.ckpt",
+      "scale": 1.0,
+      "merged_matrices": 128
+    }
+  },
+  "frames": 16,
+  "resolution": "256x384",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 14.0,
+  "seed": 42,
+  "checks": {
+    "off_vs_pipe": {
+      "mad": 0.0,
+      "pass": true
+    },
+    "null_patch": {
+      "mad": 0.0,
+      "camera": "pan-left",
+      "n_patched": 375,
+      "seconds": 56.71428528999991,
+      "pass": true
+    },
+    "camera_moves": {
+      "min_mad_to_off": 0.33969584107398987,
+      "pass": true
+    },
+    "pan_reads_as_tx": {
+      "clips": 2,
+      "correct": 2,
+      "pass": true
+    },
+    "zoom_reads_as_zoom": {
+      "clips": 2,
+      "correct": 2,
+      "pass": true
+    },
+    "roll_reads_as_roll": {
+      "clips": 2,
+      "correct": 2,
+      "pass": true
+    }
+  },
+  "timing": {
+    "g14.0/a-mountain-lake-at-sunrise": {
+      "seconds_per_clip": 27.670929419799997,
+      "peak_alloc_gb": 4.89838981628418
+    },
+    "g14.0/a-medieval-stone-castle-on-a-hill": {
+      "seconds_per_clip": 28.703388767,
+      "peak_alloc_gb": 4.984444618225098
+    },
+    "g7.5/a-mountain-lake-at-sunrise": {
+      "seconds_per_clip": 28.405993391200013,
+      "peak_alloc_gb": 4.984444618225098
+    },
+    "g7.5/a-medieval-stone-castle-on-a-hill": {
+      "seconds_per_clip": 28.293930133000003,
+      "peak_alloc_gb": 4.984444618225098
+    },
+    "pipe_seconds": 27.96149785700004
+  },
+  "passed": true,
+  "cameras": [
+    "off",
+    "static",
+    "pan-left",
+    "zoom-in",
+    "roll-cw"
+  ],
+  "scenes": [
+    "a mountain lake at sunrise",
+    "a medieval stone castle on a hill"
+  ]
+}

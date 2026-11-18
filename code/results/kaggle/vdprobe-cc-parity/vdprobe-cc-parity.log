@@ -1,0 +1,177 @@
+[{"stream_name":"stdout","time":18.960874024,"data":"2\n"}
+,{"stream_name":"stdout","time":18.960936802,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":18.960941169,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":18.960943632,"data":"2.11.0+cu130\n"}
+,{"stream_name":"stdout","time":18.960945902,"data":" \n"}
+,{"stream_name":"stderr","time":21.938380449,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":33.653599512,"data":"\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  6.30it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:11\u003c00:00,  6.94s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:11\u003c00:00,  5.92s/it]\n"}
+,{"stream_name":"stderr","time":46.862049778,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:  15%|█▌        | 2/13 [00:00\u003c00:00, 13.93it/s]\rFetching 13 files:  69%|██████▉   | 9/13 [00:00\u003c00:00, 41.45it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:13\u003c00:00,  1.00s/it]\n"}
+,{"stream_name":"stderr","time":57.188369641,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:  17%|█▋        | 2/12 [00:00\u003c00:00, 15.92it/s]\rFetching 12 files:  58%|█████▊    | 7/12 [00:00\u003c00:00, 33.18it/s]\rFetching 12 files:  92%|█████████▏| 11/12 [00:10\u003c00:01,  1.19s/it]\rFetching 12 files: 100%|██████████| 12/12 [00:10\u003c00:00,  1.18it/s]\n"}
+,{"stream_name":"stderr","time":81.942381147,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:12\u003c00:00,  6.17s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:12\u003c00:00,  6.17s/it]\n"}
+,{"stream_name":"stderr","time":82.04481032,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1313.63it/s]\n"}
+,{"stream_name":"stdout","time":107.407385544,"data":"Downloading: \"https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth\" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth\n"}
+,{"stream_name":"stderr","time":107.632580581,"data":"\r  0%|          | 0.00/20.1M [00:00\u003c?, ?B/s]\r 51%|█████     | 10.2M/20.1M [00:00\u003c00:00, 107MB/s]\r100%|██████████| 20.1M/20.1M [00:00\u003c00:00, 152MB/s]\n"}
+,{"stream_name":"stdout","time":108.641142603,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/cameractrl_parity.py --ref-gpu 1 --out /kaggle/working/out/job0\n"}
+,{"stream_name":"stdout","time":168.642531743,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":168.642601307,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":168.642610014,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 837.60it/s]\n"}
+,{"stream_name":"stdout","time":168.642617715,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":168.642623413,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":168.642628694,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1068.15it/s]\n"}
+,{"stream_name":"stdout","time":168.64263424,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":168.642666334,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":168.642670116,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":168.642672824,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":168.642675611,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:00,  9.22it/s]\n"}
+,{"stream_name":"stdout","time":168.642678412,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:01\u003c00:04,  1.05s/it]\n"}
+,{"stream_name":"stdout","time":168.642681223,"data":"[job0] Loading pipeline components...:  50%|█████     | 3/6 [00:01\u003c00:01,  1.60it/s]\n"}
+,{"stream_name":"stdout","time":168.642685194,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":168.642704627,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":168.642709115,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2322.87it/s]\n"}
+,{"stream_name":"stdout","time":168.642714107,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":168.64271818,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:02\u003c00:00,  2.13it/s]\n"}
+,{"stream_name":"stdout","time":168.642723351,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.72it/s]\n"}
+,{"stream_name":"stdout","time":168.642728201,"data":"[job0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":168.642732394,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":168.642736154,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":168.642740156,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1197.69it/s]\n"}
+,{"stream_name":"stdout","time":228.643064862,"data":"[job0] our model released: 0.04 GB still allocated\n"}
+,{"stream_name":"stdout","time":228.643154822,"data":"[job0] $ git clone -q https://github.com/hehao13/CameraCtrl.git /tmp/parity_work/CameraCtrl\n"}
+,{"stream_name":"stdout","time":228.643161503,"data":"[job0] $ git -C /tmp/parity_work/CameraCtrl checkout -q af45a7a0dbeedb7f6ed66aac4a9e5411a279f0d2\n"}
+,{"stream_name":"stdout","time":228.643166579,"data":"[job0] $ /usr/bin/python3 -m pip install -q --no-input --target /tmp/parity_work/deps diffusers==0.24.0 huggingface_hub==0.25.2 transformers==4.46.3 einops omegaconf\n"}
+,{"stream_name":"stdout","time":228.643171695,"data":"[job0] ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stdout","time":228.643177075,"data":"[job0] bigframes 2.51.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stdout","time":228.643187894,"data":"[job0] s3fs 2025.12.0 requires fsspec==2025.12.0, but you have fsspec 2026.9.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643191537,"data":"[job0] litellm 1.93.2 requires importlib-metadata\u003c9.0,\u003e=8.0.0, but you have importlib-metadata 10.2.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643194867,"data":"[job0] litellm 1.93.2 requires tokenizers\u003c1.0,\u003e=0.21.0, but you have tokenizers 0.20.3 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643198418,"data":"[job0] ydata-profiling 4.18.4 requires numpy\u003c2.4,\u003e=1.22, but you have numpy 2.5.4 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643209325,"data":"[job0] google-colab 1.0.0 requires jupyter-server==2.20.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643212229,"data":"[job0] google-colab 1.0.0 requires pandas==2.2.3, but you have pandas 2.3.3 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.64321476,"data":"[job0] google-colab 1.0.0 requires requests==2.32.4, but you have requests 2.34.2 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643217273,"data":"[job0] dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643219757,"data":"[job0] datasets 4.8.5 requires fsspec[http]\u003c=2026.2.0,\u003e=2023.1.0, but you have fsspec 2026.9.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643222437,"data":"[job0] moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643224962,"data":"[job0] gcsfs 2025.12.0 requires fsspec==2025.12.0, but you have fsspec 2026.9.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643227407,"data":"[job0] ydf 0.15.0 requires protobuf\u003c7.0.0,\u003e=5.29.1, but you have protobuf 7.36.2 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643231155,"data":"[job0] numba 0.61.2 requires numpy\u003c2.3,\u003e=1.24, but you have numpy 2.5.4 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.64323401,"data":"[job0] gradio-client 2.7.2 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.25.2 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643236577,"data":"[job0] gradio 6.30.0 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.25.2 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.64323907,"data":"[job0] gradio 6.30.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":228.643242457,"data":"[job0] $ /usr/bin/python3 /tmp/parity_work/reference.py /tmp/parity_work /tmp/parity_work/CameraCtrl /root/.cache/huggingface/hub/models--guoyww--animatediff/snapshots/fdfe36afa161e51b3e9c24022b0e368d59e7345e/v3_sd15_mm.ckpt /root/.cache/huggingface/hub/models--guoyww--animatediff/snapshots/fdfe36afa161e51b3e9c24022b0e368d59e7345e/v3_sd15_adapter.ckpt /root/.cache/huggingface/hub/models--hehao13--CameraCtrl/snapshots/ecb80f5851165e6aaf3b7b3ce5cf942bb056223c/CameraCtrl.ckpt\n"}
+,{"stream_name":"stdout","time":228.643247579,"data":"[job0] reference: diffusers 0.24.0 torch 2.11.0+cu130\n"}
+,{"stream_name":"stdout","time":228.643249997,"data":"[job0] The cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by calling `transformers.utils.move_cache()`.\n"}
+,{"stream_name":"stdout","time":228.643252745,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":228.64325504,"data":"[job0] 0it [00:00, ?it/s]\n"}
+,{"stream_name":"stdout","time":228.643257391,"data":"[job0] 0it [00:00, ?it/s]\n"}
+,{"stream_name":"stdout","time":288.647162708,"data":"[job0] WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stdout","time":288.647201493,"data":"[job0] I0000 00:00:1794723187.747482     366 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stdout","time":288.64720893,"data":"[job0] /tmp/parity_work/deps/diffusers/utils/outputs.py:63: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n"}
+,{"stream_name":"stdout","time":288.647237891,"data":"[job0]   torch.utils._pytree._register_pytree_node(\n"}
+,{"stream_name":"stdout","time":288.647242626,"data":"[job0] WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stdout","time":288.647246905,"data":"[job0] I0000 00:00:1794723214.970919     362 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stdout","time":288.647251278,"data":"[job0] /tmp/parity_work/deps/diffusers/utils/outputs.py:63: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n"}
+,{"stream_name":"stdout","time":288.647255667,"data":"[job0]   torch.utils._pytree._register_pytree_node(\n"}
+,{"stream_name":"stdout","time":348.647759895,"data":"[job0] reference: pose processors 20\n"}
+,{"stream_name":"stdout","time":348.647803621,"data":"[job0] reference: rounded 1436 tensors to fp16 values\n"}
+,{"stream_name":"stdout","time":348.647811439,"data":"[job0] reference: done ['eps/off/201', 'eps/off/801', 'eps/pan-left/201', 'eps/pan-left/801', 'eps/roll-cw/201', 'eps/roll-cw/801']\n"}
+,{"stream_name":"stdout","time":348.647818281,"data":"[job0] PASS  eps/off/201              {'max_abs': 1.5020370483398438e-05, 'rel_l2': 1.5529142274317564e-06, 'ref_norm': 244.98565673828125, 'pass': True}\n"}
+,{"stream_name":"stdout","time":348.647824446,"data":"[job0] PASS  eps/off/801              {'max_abs': 6.9141387939453125e-06, 'rel_l2': 6.257325253500312e-07, 'ref_norm': 315.1954345703125, 'pass': True}\n"}
+,{"stream_name":"stdout","time":348.647830592,"data":"[job0] PASS  eps/pan-left/201         {'max_abs': 1.3560056686401367e-05, 'rel_l2': 1.6748629150242778e-06, 'ref_norm': 246.97824096679688, 'pass': True}\n"}
+,{"stream_name":"stdout","time":348.647837072,"data":"[job0] PASS  eps/pan-left/801         {'max_abs': 6.973743438720703e-06, 'rel_l2': 6.265822776185814e-07, 'ref_norm': 314.8316345214844, 'pass': True}\n"}
+,{"stream_name":"stdout","time":348.647843824,"data":"[job0] PASS  eps/roll-cw/201          {'max_abs': 1.0341405868530273e-05, 'rel_l2': 1.6203151744775823e-06, 'ref_norm': 246.93310546875, 'pass': True}\n"}
+,{"stream_name":"stdout","time":348.647850339,"data":"[job0] PASS  eps/roll-cw/801          {'max_abs': 7.987022399902344e-06, 'rel_l2': 6.307151352302753e-07, 'ref_norm': 315.1069641113281, 'pass': True}\n"}
+,{"stream_name":"stdout","time":348.647856882,"data":"[job0] PASS  features/pan-left        {'max_abs_per_level': [0.0, 0.0, 0.0, 0.0], 'pass': True}\n"}
+,{"stream_name":"stdout","time":348.647862814,"data":"[job0] PASS  features/roll-cw         {'max_abs_per_level': [0.0, 0.0, 0.0, 0.0], 'pass': True}\n"}
+,{"stream_name":"stdout","time":348.647868606,"data":"[job0] info  with diffusers' group-norm axes: eps/off/801 rel_l2 1.2697e-02\n"}
+,{"stream_name":"stdout","time":348.647874936,"data":"[job0] layer time_embedding                     in 0.00e+00  out 0.00e+00\n"}
+,{"stream_name":"stdout","time":348.647880906,"data":"[job0] layer conv_in                            in 0.00e+00  out 0.00e+00\n"}
+,{"stream_name":"stdout","time":348.647886688,"data":"[job0] layer down_blocks.0.resnets.0.norm1      in 0.00e+00  out 0.00e+00\n"}
+,{"stream_name":"stdout","time":348.647892353,"data":"[job0] layer down_blocks.0.resnets.0.conv1      in 0.00e+00  out 0.00e+00\n"}
+,{"stream_name":"stdout","time":348.647898384,"data":"[job0] layer down_blocks.0.resnets.0.time_emb_proj in 0.00e+00  out 0.00e+00\n"}
+,{"stream_name":"stdout","time":348.647904126,"data":"[job0] layer down_blocks.0.resnets.0.norm2      in 0.00e+00  out 0.00e+00\n"}
+,{"stream_name":"stdout","time":348.647908516,"data":"[job0] layer down_blocks.0.resnets.0.conv2      in 0.00e+00  out 0.00e+00\n"}
+,{"stream_name":"stdout","time":348.647930454,"data":"[job0] layer down_blocks.0.resnets.0            in 0.00e+00  out 0.00e+00\n"}
+,{"stream_name":"stdout","time":348.647937064,"data":"[job0] layer down_blocks.0.attentions.0         in 0.00e+00  out 2.93e-07\n"}
+,{"stream_name":"stdout","time":348.647942266,"data":"[job0] layer down_blocks.0.motion_modules.0     in 2.93e-07  out 4.39e-07\n"}
+,{"stream_name":"stdout","time":348.647947034,"data":"[job0] layer down_blocks.0.resnets.1            in 4.39e-07  out 1.66e-06\n"}
+,{"stream_name":"stdout","time":348.647951362,"data":"[job0] layer down_blocks.0.attentions.1         in 1.66e-06  out 2.07e-06\n"}
+,{"stream_name":"stdout","time":348.647955948,"data":"[job0] layer down_blocks.0.motion_modules.1     in 2.07e-06  out 2.28e-06\n"}
+,{"stream_name":"stdout","time":348.647960622,"data":"[job0] layer down_blocks.0.downsamplers.0       in 2.28e-06  out 2.48e-06\n"}
+,{"stream_name":"stdout","time":348.647965158,"data":"[job0] layer down_blocks.1.resnets.0            in 2.48e-06  out 3.05e-06\n"}
+,{"stream_name":"stdout","time":348.647969505,"data":"[job0] layer down_blocks.1.attentions.0         in 3.05e-06  out 3.66e-06\n"}
+,{"stream_name":"stdout","time":348.647974106,"data":"[job0] layer down_blocks.1.motion_modules.0     in 3.66e-06  out 4.13e-06\n"}
+,{"stream_name":"stdout","time":348.647978616,"data":"[job0] layer down_blocks.1.resnets.1            in 4.13e-06  out 5.64e-06\n"}
+,{"stream_name":"stdout","time":348.647983038,"data":"[job0] layer down_blocks.1.attentions.1         in 5.64e-06  out 4.69e-06\n"}
+,{"stream_name":"stdout","time":348.647987708,"data":"[job0] layer down_blocks.1.motion_modules.1     in 4.69e-06  out 4.01e-06\n"}
+,{"stream_name":"stdout","time":348.647992088,"data":"[job0] layer down_blocks.1.downsamplers.0       in 4.01e-06  out 6.11e-06\n"}
+,{"stream_name":"stdout","time":348.64799626,"data":"[job0] layer down_blocks.2.resnets.0            in 6.11e-06  out 6.03e-06\n"}
+,{"stream_name":"stdout","time":348.648000203,"data":"[job0] layer down_blocks.2.attentions.0         in 6.03e-06  out 6.10e-06\n"}
+,{"stream_name":"stdout","time":348.648003722,"data":"[job0] layer down_blocks.2.motion_modules.0     in 6.10e-06  out 6.59e-06\n"}
+,{"stream_name":"stdout","time":348.64800777,"data":"[job0] layer down_blocks.2.resnets.1            in 6.59e-06  out 7.53e-06\n"}
+,{"stream_name":"stdout","time":348.648011906,"data":"[job0] layer down_blocks.2.attentions.1         in 7.53e-06  out 7.78e-06\n"}
+,{"stream_name":"stdout","time":348.648015908,"data":"[job0] layer down_blocks.2.motion_modules.1     in 7.78e-06  out 7.86e-06\n"}
+,{"stream_name":"stdout","time":348.648020151,"data":"[job0] layer down_blocks.2.downsamplers.0       in 7.86e-06  out 6.90e-06\n"}
+,{"stream_name":"stdout","time":348.648024001,"data":"[job0] layer down_blocks.3.resnets.0            in 6.90e-06  out 7.09e-06\n"}
+,{"stream_name":"stdout","time":348.648028248,"data":"[job0] layer down_blocks.3.motion_modules.0     in 7.09e-06  out 7.07e-06\n"}
+,{"stream_name":"stdout","time":348.648032352,"data":"[job0] layer down_blocks.3.resnets.1            in 7.07e-06  out 7.08e-06\n"}
+,{"stream_name":"stdout","time":348.648036514,"data":"[job0] layer down_blocks.3.motion_modules.1     in 7.08e-06  out 6.68e-06\n"}
+,{"stream_name":"stdout","time":348.648050729,"data":"[job0] layer mid_block.resnets.0                in 6.68e-06  out 6.17e-06\n"}
+,{"stream_name":"stdout","time":348.648054023,"data":"[job0] layer mid_block.attentions.0             in 6.17e-06  out 5.74e-06\n"}
+,{"stream_name":"stdout","time":348.648057353,"data":"[job0] layer mid_block.resnets.1                in 5.74e-06  out 6.17e-06\n"}
+,{"stream_name":"stdout","time":348.648065409,"data":"[job0] layer up_blocks.0.resnets.0              in 6.46e-06  out 6.42e-06\n"}
+,{"stream_name":"stdout","time":348.648069819,"data":"[job0] layer up_blocks.0.motion_modules.0       in 6.42e-06  out 6.37e-06\n"}
+,{"stream_name":"stdout","time":348.648073194,"data":"[job0] layer up_blocks.0.resnets.1              in 6.70e-06  out 5.83e-06\n"}
+,{"stream_name":"stdout","time":348.648076525,"data":"[job0] layer up_blocks.0.motion_modules.1       in 5.83e-06  out 5.71e-06\n"}
+,{"stream_name":"stdout","time":348.648080351,"data":"[job0] layer up_blocks.0.resnets.2              in 6.14e-06  out 6.38e-06\n"}
+,{"stream_name":"stdout","time":348.648084273,"data":"[job0] layer up_blocks.0.motion_modules.2       in 6.38e-06  out 5.93e-06\n"}
+,{"stream_name":"stdout","time":348.64808808,"data":"[job0] layer up_blocks.0.upsamplers.0           in 5.93e-06  out 6.75e-06\n"}
+,{"stream_name":"stdout","time":348.648091401,"data":"[job0] layer up_blocks.1.resnets.0              in 6.66e-06  out 6.89e-06\n"}
+,{"stream_name":"stdout","time":348.64809488,"data":"[job0] layer up_blocks.1.attentions.0           in 6.89e-06  out 9.15e-06\n"}
+,{"stream_name":"stdout","time":348.648098168,"data":"[job0] layer up_blocks.1.motion_modules.0       in 9.15e-06  out 9.67e-06\n"}
+,{"stream_name":"stdout","time":348.648101868,"data":"[job0] layer up_blocks.1.resnets.1              in 8.57e-06  out 9.72e-06\n"}
+,{"stream_name":"stdout","time":348.648105731,"data":"[job0] layer up_blocks.1.attentions.1           in 9.72e-06  out 1.40e-05\n"}
+,{"stream_name":"stdout","time":348.648109317,"data":"[job0] layer up_blocks.1.motion_modules.1       in 1.40e-05  out 1.18e-05\n"}
+,{"stream_name":"stdout","time":348.648112894,"data":"[job0] layer up_blocks.1.resnets.2              in 1.20e-05  out 1.39e-05\n"}
+,{"stream_name":"stdout","time":348.648116755,"data":"[job0] layer up_blocks.1.attentions.2           in 1.39e-05  out 1.78e-05\n"}
+,{"stream_name":"stdout","time":348.648120421,"data":"[job0] layer up_blocks.1.motion_modules.2       in 1.78e-05  out 1.96e-05\n"}
+,{"stream_name":"stdout","time":348.648245424,"data":"[job0] layer up_blocks.1.upsamplers.0           in 1.96e-05  out 2.22e-05\n"}
+,{"stream_name":"stdout","time":348.648261549,"data":"[job0] layer up_blocks.2.resnets.0              in 2.48e-05  out 1.45e-05\n"}
+,{"stream_name":"stdout","time":348.648265945,"data":"[job0] layer up_blocks.2.attentions.0           in 1.45e-05  out 1.82e-05\n"}
+,{"stream_name":"stdout","time":348.648269694,"data":"[job0] layer up_blocks.2.motion_modules.0       in 1.82e-05  out 1.69e-05\n"}
+,{"stream_name":"stdout","time":348.648273215,"data":"[job0] layer up_blocks.2.resnets.1              in 1.28e-05  out 1.77e-05\n"}
+,{"stream_name":"stdout","time":348.64827738,"data":"[job0] layer up_blocks.2.attentions.1           in 1.77e-05  out 3.79e-05\n"}
+,{"stream_name":"stdout","time":348.648281413,"data":"[job0] layer up_blocks.2.motion_modules.1       in 3.79e-05  out 2.95e-05\n"}
+,{"stream_name":"stdout","time":348.648284934,"data":"[job0] layer up_blocks.2.resnets.2              in 3.51e-05  out 1.28e-05\n"}
+,{"stream_name":"stdout","time":348.648288358,"data":"[job0] layer up_blocks.2.attentions.2           in 1.28e-05  out 1.49e-05\n"}
+,{"stream_name":"stdout","time":348.648291973,"data":"[job0] layer up_blocks.2.motion_modules.2       in 1.49e-05  out 1.30e-05\n"}
+,{"stream_name":"stdout","time":348.648295413,"data":"[job0] layer up_blocks.2.upsamplers.0           in 1.30e-05  out 2.24e-05\n"}
+,{"stream_name":"stdout","time":348.648298893,"data":"[job0] layer up_blocks.3.resnets.0              in 1.46e-05  out 4.53e-06\n"}
+,{"stream_name":"stdout","time":348.648302754,"data":"[job0] layer up_blocks.3.attentions.0           in 4.53e-06  out 4.43e-06\n"}
+,{"stream_name":"stdout","time":348.64831848,"data":"[job0] layer up_blocks.3.motion_modules.0       in 4.43e-06  out 4.52e-06\n"}
+,{"stream_name":"stdout","time":348.648322141,"data":"[job0] layer up_blocks.3.resnets.1              in 4.17e-06  out 2.38e-06\n"}
+,{"stream_name":"stdout","time":348.648325793,"data":"[job0] layer up_blocks.3.attentions.1           in 2.38e-06  out 2.28e-06\n"}
+,{"stream_name":"stdout","time":348.64832947,"data":"[job0] layer up_blocks.3.motion_modules.1       in 2.28e-06  out 2.04e-06\n"}
+,{"stream_name":"stdout","time":348.648332994,"data":"[job0] layer up_blocks.3.resnets.2              in 1.96e-06  out 5.68e-07\n"}
+,{"stream_name":"stdout","time":348.648336566,"data":"[job0] layer up_blocks.3.attentions.2           in 5.68e-07  out 4.87e-07\n"}
+,{"stream_name":"stdout","time":348.648340086,"data":"[job0] layer up_blocks.3.motion_modules.2       in 4.87e-07  out 5.67e-07\n"}
+,{"stream_name":"stdout","time":348.648343563,"data":"[job0] layer conv_norm_out                      in 5.67e-07  out 2.35e-07\n"}
+,{"stream_name":"stdout","time":348.648346582,"data":"[job0] layer conv_out                           in 9.72e-07  out 6.48e-07\n"}
+,{"stream_name":"stdout","time":348.64834958,"data":"[job0] info  vs fp32 weights  eps/off/201              {'max_abs': 0.0007203817367553711, 'rel_l2': 0.00019107217667624354}\n"}
+,{"stream_name":"stdout","time":348.648352795,"data":"[job0] info  vs fp32 weights  eps/off/801              {'max_abs': 0.00019824504852294922, 'rel_l2': 2.475250221323222e-05}\n"}
+,{"stream_name":"stdout","time":348.648356548,"data":"[job0] info  vs fp32 weights  eps/pan-left/201         {'max_abs': 0.0008212924003601074, 'rel_l2': 0.00016536256589461118}\n"}
+,{"stream_name":"stdout","time":348.648360859,"data":"[job0] info  vs fp32 weights  eps/pan-left/801         {'max_abs': 0.00023317337036132812, 'rel_l2': 2.4415741791017354e-05}\n"}
+,{"stream_name":"stdout","time":348.648364118,"data":"[job0] info  vs fp32 weights  eps/roll-cw/201          {'max_abs': 0.0006864368915557861, 'rel_l2': 0.00016584926925133914}\n"}
+,{"stream_name":"stdout","time":348.648367746,"data":"[job0] info  vs fp32 weights  eps/roll-cw/801          {'max_abs': 0.000292360782623291, 'rel_l2': 2.7780535674537532e-05}\n"}
+,{"stream_name":"stdout","time":348.648371406,"data":"[job0] camera effect in the reference  pan-left t=801: max |on - off| = 0.0886\n"}
+,{"stream_name":"stdout","time":348.648375044,"data":"[job0] camera effect in the reference  pan-left t=201: max |on - off| = 0.4233\n"}
+,{"stream_name":"stdout","time":348.648378999,"data":"[job0] camera effect in the reference  roll-cw t=801: max |on - off| = 0.1154\n"}
+,{"stream_name":"stdout","time":348.648383058,"data":"[job0] camera effect in the reference  roll-cw t=201: max |on - off| = 0.4508\n"}
+,{"stream_name":"stdout","time":348.648386689,"data":"[job0] PARITY PASSED\n"}
+,{"stream_name":"stdout","time":348.648715884,"data":"exit codes [0]\n"}
+,{"stream_name":"stderr","time":350.731429847,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":350.731477119,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":350.967240113,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":350.96726851,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":351.809257881,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":352.355270434,"data":"[NbConvertApp] Writing 563063 bytes to __results__.html\n"}
+]

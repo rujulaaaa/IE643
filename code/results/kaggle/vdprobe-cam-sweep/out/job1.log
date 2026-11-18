@@ -1,0 +1,92 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1020.14it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1218.10it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2395.48it/s]
+Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:01,  4.54it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:02<00:05,  1.32s/it]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  3.10it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.48it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+model lora: 95 coordinates, coarse 16, revisions {'base_model': {'repo_id': 'stable-diffusion-v1-5/stable-diffusion-v1-5', 'commit': '451f4fe16113bff5a5d2269ed5ad43b0592e9a14', 'variant': 'fp16'}, 'motion_adapter': {'repo_id': 'guoyww/animatediff-motion-adapter-v1-5-2', 'commit': '6167b88ffe39b4441fdf2113e77b99a6f56b7906'}, 'camera_loras': {'repo_template': 'guoyww/animatediff-motion-lora-{camera}', 'cameras': ['zoom-in', 'zoom-out', 'pan-left', 'pan-right', 'tilt-up', 'tilt-down', 'rolling-clockwise', 'rolling-anticlockwise']}}
+
+=== s1337__camera: 72 clips, 127 pairs, 16 anchors, 16 coordinates
+    step  5/25   1471.8 s  (4.09 s per clip-step)
+    step 10/25   2945.9 s  (4.09 s per clip-step)
+    step 15/25   4420.4 s  (4.09 s per clip-step)
+    step 20/25   5894.6 s  (4.09 s per clip-step)
+    step 25/25   7373.3 s  (4.10 s per clip-step)
+  denoised in 122.9 min (102.4 s per clip), peak host RSS 8.3 GB
+  none                   a mountain lake at sunrise     sig -0.0001 -0.0002 -0.0001 +0.0001
+  zoom-in                a mountain lake at sunrise     sig +0.0001 +0.0009 +0.0313 -0.0003
+  zoom-out               a mountain lake at sunrise     sig -0.0007 +0.0097 -0.0373 -0.0004
+  pan-left               a mountain lake at sunrise     sig +0.0561 -0.0001 +0.0003 -0.0011
+  pan-right              a mountain lake at sunrise     sig -0.0507 +0.0011 +0.0012 -0.0002
+  tilt-up                a mountain lake at sunrise     sig -0.0007 +0.0307 +0.0004 +0.0005
+  tilt-down              a mountain lake at sunrise     sig -0.0006 -0.0259 +0.0002 +0.0005
+  rolling-clockwise      a mountain lake at sunrise     sig +0.0021 +0.0012 +0.0006 +0.0330
+  rolling-anticlockwise  a mountain lake at sunrise     sig -0.0025 -0.0001 -0.0003 -0.0345
+  none                   a medieval stone castle on a h sig -0.0326 -0.0001 +0.0021 +0.0119
+  zoom-in                a medieval stone castle on a h sig -0.0273 +0.0049 +0.0374 +0.0091
+  zoom-out               a medieval stone castle on a h sig +0.0275 -0.0306 -0.0299 -0.0051
+  pan-left               a medieval stone castle on a h sig -0.0710 -0.0267 +0.0669 -0.0960
+  pan-right              a medieval stone castle on a h sig -0.0336 -0.0508 +0.0775 +0.0234
+  tilt-up                a medieval stone castle on a h sig +0.0138 +0.0357 +0.0002 -0.0224
+  tilt-down              a medieval stone castle on a h sig +0.0023 -0.0351 -0.0115 -0.0020
+  rolling-clockwise      a medieval stone castle on a h sig -0.0388 -0.0161 -0.0045 +0.0333
+  rolling-anticlockwise  a medieval stone castle on a h sig +0.0203 -0.0128 -0.0030 -0.0506
+  none                   a city street at night with ne sig +0.0001 +0.0002 +0.0004 -0.0005
+  zoom-in                a city street at night with ne sig -0.0317 +0.0227 +0.0537 +0.0312
+  zoom-out               a city street at night with ne sig +0.0097 +0.0105 -0.0248 -0.0086
+  pan-left               a city street at night with ne sig +0.0559 +0.0054 +0.0047 -0.0163
+  pan-right              a city street at night with ne sig -0.0669 +0.0139 +0.0183 +0.0202
+  tilt-up                a city street at night with ne sig -0.0037 +0.0248 +0.0247 +0.0031
+  tilt-down              a city street at night with ne sig +0.0006 -0.0212 +0.0013 -0.0005
+  rolling-clockwise      a city street at night with ne sig -0.0043 -0.0009 +0.0019 +0.0312
+  rolling-anticlockwise  a city street at night with ne sig +0.0025 -0.0015 -0.0003 -0.0301
+  none                   a red sandstone desert canyon  sig -0.0582 +0.0003 +0.0017 +0.0169
+  zoom-in                a red sandstone desert canyon  sig -0.0712 +0.0084 +0.0204 +0.0213
+  zoom-out               a red sandstone desert canyon  sig -0.0182 +0.0040 -0.0263 -0.0318
+  pan-left               a red sandstone desert canyon  sig +0.0629 -0.0035 -0.0079 -0.0079
+  pan-right              a red sandstone desert canyon  sig -0.0644 +0.0001 +0.0004 +0.0063
+  tilt-up                a red sandstone desert canyon  sig +0.0220 +0.0415 +0.0168 -0.0263
+  tilt-down              a red sandstone desert canyon  sig +0.0011 -0.0351 -0.0110 -0.0002
+  rolling-clockwise      a red sandstone desert canyon  sig -0.0443 -0.0203 -0.0004 +0.0289
+  rolling-anticlockwise  a red sandstone desert canyon  sig +0.0140 -0.0090 +0.0014 -0.0524
+  none                   a path through a pine forest   sig +0.0000 +0.0000 +0.0000 +0.0000
+  zoom-in                a path through a pine forest   sig -0.0010 +0.0004 +0.0521 -0.0019
+  zoom-out               a path through a pine forest   sig -0.0003 +0.0054 -0.0322 +0.0001
+  pan-left               a path through a pine forest   sig +0.0509 +0.0007 +0.0001 -0.0003
+  pan-right              a path through a pine forest   sig -0.0496 +0.0017 -0.0025 +0.0005
+  tilt-up                a path through a pine forest   sig -0.0001 +0.0324 +0.0023 -0.0001
+  tilt-down              a path through a pine forest   sig +0.0013 -0.0266 -0.0024 -0.0003
+  rolling-clockwise      a path through a pine forest   sig -0.0056 -0.0010 +0.0023 +0.0278
+  rolling-anticlockwise  a path through a pine forest   sig +0.0009 +0.0012 -0.0030 -0.0452
+  none                   a lighthouse on a rocky cliff  sig -0.0001 -0.0002 +0.0000 +0.0001
+  zoom-in                a lighthouse on a rocky cliff  sig -0.0112 -0.0000 +0.0363 +0.0007
+  zoom-out               a lighthouse on a rocky cliff  sig +0.0025 -0.0253 -0.0371 -0.0035
+  pan-left               a lighthouse on a rocky cliff  sig +0.0499 +0.0016 -0.0098 -0.0058
+  pan-right              a lighthouse on a rocky cliff  sig -0.0492 +0.0007 +0.0009 +0.0028
+  tilt-up                a lighthouse on a rocky cliff  sig +0.0014 +0.0321 +0.0048 +0.0002
+  tilt-down              a lighthouse on a rocky cliff  sig -0.0005 -0.0262 -0.0017 -0.0008
+  rolling-clockwise      a lighthouse on a rocky cliff  sig -0.0128 -0.0024 -0.0029 +0.0318
+  rolling-anticlockwise  a lighthouse on a rocky cliff  sig +0.0069 -0.0118 -0.0035 -0.0401
+  none                   a snowy village with wooden ho sig -0.0681 -0.0001 +0.0020 +0.0063
+  zoom-in                a snowy village with wooden ho sig -0.0628 +0.0014 +0.0322 +0.0134
+  zoom-out               a snowy village with wooden ho sig +0.0288 -0.0007 -0.0352 -0.0032
+  pan-left               a snowy village with wooden ho sig +0.0551 -0.0006 -0.0002 +0.0001
+  pan-right              a snowy village with wooden ho sig -0.0576 +0.0009 -0.0005 -0.0000
+  tilt-up                a snowy village with wooden ho sig +0.0358 -0.0145 -0.0058 -0.0108
+  tilt-down              a snowy village with wooden ho sig -0.0316 -0.0202 -0.0008 +0.0062
+  rolling-clockwise      a snowy village with wooden ho sig -0.0369 -0.0103 +0.0013 +0.0365
+  rolling-anticlockwise  a snowy village with wooden ho sig +0.0003 -0.0032 -0.0023 -0.0407
+  none                   a tropical beach with palm tre sig +0.0001 -0.0002 +0.0000 -0.0000
+  zoom-in                a tropical beach with palm tre sig -0.0014 +0.0008 +0.0300 -0.0004
+  zoom-out               a tropical beach with palm tre sig +0.0024 +0.0049 -0.0304 +0.0003
+  pan-left               a tropical beach with palm tre sig +0.0458 -0.0003 +0.0003 -0.0004
+  pan-right              a tropical beach with palm tre sig -0.0466 +0.0004 +0.0002 +0.0002
+  tilt-up                a tropical beach with palm tre sig +0.0051 +0.0180 +0.0059 -0.0006
+  tilt-down              a tropical beach with palm tre sig -0.0003 -0.0220 +0.0007 +0.0002
+  rolling-clockwise      a tropical beach with palm tre sig -0.0031 -0.0015 +0.0009 +0.0293
+  rolling-anticlockwise  a tropical beach with palm tre sig +0.0013 -0.0016 -0.0002 -0.0366
+wrote /kaggle/working/out/job1/s1337__camera/manifest.json

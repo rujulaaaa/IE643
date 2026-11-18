@@ -1,0 +1,854 @@
+{
+  "experiment": "camera_sweep",
+  "date": "2026-11-15",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.2",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    },
+    "camera_loras": {
+      "repo_template": "guoyww/animatediff-motion-lora-{camera}",
+      "cameras": [
+        "zoom-in",
+        "zoom-out",
+        "pan-left",
+        "pan-right",
+        "tilt-up",
+        "tilt-down",
+        "rolling-clockwise",
+        "rolling-anticlockwise"
+      ]
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "model": "lora",
+  "seed": 42,
+  "scene": "camera",
+  "n_clips": 72,
+  "n_pairs": 127,
+  "coords": [
+    "down_blocks.0.motion_modules.1",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.1.motion_modules.1",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.2.motion_modules.1",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.3.motion_modules.1",
+    "mid_block.motion_modules.0",
+    "mid_block.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.2",
+    "up_blocks.1.motion_modules.2",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.2",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.2",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2"
+  ],
+  "all_coords": [
+    "down_blocks.0.attentions.0.transformer_blocks.0.attn1",
+    "down_blocks.0.attentions.0.transformer_blocks.0.attn2",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn1",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.0.motion_modules.0",
+    "down_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+    "down_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+    "down_blocks.0.motion_modules.1",
+    "down_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+    "down_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+    "down_blocks.1.attentions.0.transformer_blocks.0.attn1",
+    "down_blocks.1.attentions.0.transformer_blocks.0.attn2",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn1",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.1.motion_modules.0",
+    "down_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+    "down_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+    "down_blocks.1.motion_modules.1",
+    "down_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+    "down_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+    "down_blocks.2.attentions.0.transformer_blocks.0.attn1",
+    "down_blocks.2.attentions.0.transformer_blocks.0.attn2",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn1",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.2.motion_modules.0",
+    "down_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+    "down_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+    "down_blocks.2.motion_modules.1",
+    "down_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+    "down_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+    "down_blocks.3.motion_modules.0",
+    "down_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+    "down_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+    "down_blocks.3.motion_modules.1",
+    "down_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+    "down_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.0",
+    "up_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.1",
+    "up_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.2",
+    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.1.motion_modules.0",
+    "up_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.1.motion_modules.1",
+    "up_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.1.motion_modules.2",
+    "up_blocks.1.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.2.transformer_blocks.0.attn2",
+    "up_blocks.2.attentions.0.transformer_blocks.0.attn1",
+    "up_blocks.2.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.2.attentions.1.transformer_blocks.0.attn1",
+    "up_blocks.2.attentions.1.transformer_blocks.0.attn2",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn1",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.0",
+    "up_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.1",
+    "up_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.2",
+    "up_blocks.2.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.2.motion_modules.2.transformer_blocks.0.attn2",
+    "up_blocks.3.attentions.0.transformer_blocks.0.attn1",
+    "up_blocks.3.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.3.attentions.1.transformer_blocks.0.attn1",
+    "up_blocks.3.attentions.1.transformer_blocks.0.attn2",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn1",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.0",
+    "up_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.1",
+    "up_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.2",
+    "up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.3.motion_modules.2.transformer_blocks.0.attn2",
+    "mid_block.attentions.0.transformer_blocks.0.attn1",
+    "mid_block.attentions.0.transformer_blocks.0.attn2",
+    "mid_block.motion_modules.0",
+    "mid_block.motion_modules.0.transformer_blocks.0.attn1",
+    "mid_block.motion_modules.0.transformer_blocks.0.attn2"
+  ],
+  "sketch_dim": 512,
+  "clips": [
+    "42__a-mountain-lake-at-sunrise__none",
+    "42__a-mountain-lake-at-sunrise__zoom-in",
+    "42__a-mountain-lake-at-sunrise__zoom-out",
+    "42__a-mountain-lake-at-sunrise__pan-left",
+    "42__a-mountain-lake-at-sunrise__pan-right",
+    "42__a-mountain-lake-at-sunrise__tilt-up",
+    "42__a-mountain-lake-at-sunrise__tilt-down",
+    "42__a-mountain-lake-at-sunrise__rolling-clockwise",
+    "42__a-mountain-lake-at-sunrise__rolling-anticlockwise",
+    "42__a-medieval-stone-castle-on-a-hill__none",
+    "42__a-medieval-stone-castle-on-a-hill__zoom-in",
+    "42__a-medieval-stone-castle-on-a-hill__zoom-out",
+    "42__a-medieval-stone-castle-on-a-hill__pan-left",
+    "42__a-medieval-stone-castle-on-a-hill__pan-right",
+    "42__a-medieval-stone-castle-on-a-hill__tilt-up",
+    "42__a-medieval-stone-castle-on-a-hill__tilt-down",
+    "42__a-medieval-stone-castle-on-a-hill__rolling-clockwise",
+    "42__a-medieval-stone-castle-on-a-hill__rolling-anticlockwise",
+    "42__a-city-street-at-night-with-neon-signs__none",
+    "42__a-city-street-at-night-with-neon-signs__zoom-in",
+    "42__a-city-street-at-night-with-neon-signs__zoom-out",
+    "42__a-city-street-at-night-with-neon-signs__pan-left",
+    "42__a-city-street-at-night-with-neon-signs__pan-right",
+    "42__a-city-street-at-night-with-neon-signs__tilt-up",
+    "42__a-city-street-at-night-with-neon-signs__tilt-down",
+    "42__a-city-street-at-night-with-neon-signs__rolling-clockwise",
+    "42__a-city-street-at-night-with-neon-signs__rolling-anticlockwise",
+    "42__a-red-sandstone-desert-canyon__none",
+    "42__a-red-sandstone-desert-canyon__zoom-in",
+    "42__a-red-sandstone-desert-canyon__zoom-out",
+    "42__a-red-sandstone-desert-canyon__pan-left",
+    "42__a-red-sandstone-desert-canyon__pan-right",
+    "42__a-red-sandstone-desert-canyon__tilt-up",
+    "42__a-red-sandstone-desert-canyon__tilt-down",
+    "42__a-red-sandstone-desert-canyon__rolling-clockwise",
+    "42__a-red-sandstone-desert-canyon__rolling-anticlockwise",
+    "42__a-path-through-a-pine-forest__none",
+    "42__a-path-through-a-pine-forest__zoom-in",
+    "42__a-path-through-a-pine-forest__zoom-out",
+    "42__a-path-through-a-pine-forest__pan-left",
+    "42__a-path-through-a-pine-forest__pan-right",
+    "42__a-path-through-a-pine-forest__tilt-up",
+    "42__a-path-through-a-pine-forest__tilt-down",
+    "42__a-path-through-a-pine-forest__rolling-clockwise",
+    "42__a-path-through-a-pine-forest__rolling-anticlockwise",
+    "42__a-lighthouse-on-a-rocky-cliff__none",
+    "42__a-lighthouse-on-a-rocky-cliff__zoom-in",
+    "42__a-lighthouse-on-a-rocky-cliff__zoom-out",
+    "42__a-lighthouse-on-a-rocky-cliff__pan-left",
+    "42__a-lighthouse-on-a-rocky-cliff__pan-right",
+    "42__a-lighthouse-on-a-rocky-cliff__tilt-up",
+    "42__a-lighthouse-on-a-rocky-cliff__tilt-down",
+    "42__a-lighthouse-on-a-rocky-cliff__rolling-clockwise",
+    "42__a-lighthouse-on-a-rocky-cliff__rolling-anticlockwise",
+    "42__a-snowy-village-with-wooden-houses__none",
+    "42__a-snowy-village-with-wooden-houses__zoom-in",
+    "42__a-snowy-village-with-wooden-houses__zoom-out",
+    "42__a-snowy-village-with-wooden-houses__pan-left",
+    "42__a-snowy-village-with-wooden-houses__pan-right",
+    "42__a-snowy-village-with-wooden-houses__tilt-up",
+    "42__a-snowy-village-with-wooden-houses__tilt-down",
+    "42__a-snowy-village-with-wooden-houses__rolling-clockwise",
+    "42__a-snowy-village-with-wooden-houses__rolling-anticlockwise",
+    "42__a-tropical-beach-with-palm-trees__none",
+    "42__a-tropical-beach-with-palm-trees__zoom-in",
+    "42__a-tropical-beach-with-palm-trees__zoom-out",
+    "42__a-tropical-beach-with-palm-trees__pan-left",
+    "42__a-tropical-beach-with-palm-trees__pan-right",
+    "42__a-tropical-beach-with-palm-trees__tilt-up",
+    "42__a-tropical-beach-with-palm-trees__tilt-down",
+    "42__a-tropical-beach-with-palm-trees__rolling-clockwise",
+    "42__a-tropical-beach-with-palm-trees__rolling-anticlockwise"
+  ],
+  "clip_meta": {
+    "42__a-mountain-lake-at-sunrise__none": {
+      "scene": "a mountain lake at sunrise",
+      "camera": "none",
+      "subject": "a mountain lake at sunrise",
+      "verb": "none",
+      "family": "a mountain lake at sunrise"
+    },
+    "42__a-mountain-lake-at-sunrise__zoom-in": {
+      "scene": "a mountain lake at sunrise",
+      "camera": "zoom-in",
+      "subject": "a mountain lake at sunrise",
+      "verb": "zoom-in",
+      "family": "a mountain lake at sunrise"
+    },
+    "42__a-mountain-lake-at-sunrise__zoom-out": {
+      "scene": "a mountain lake at sunrise",
+      "camera": "zoom-out",
+      "subject": "a mountain lake at sunrise",
+      "verb": "zoom-out",
+      "family": "a mountain lake at sunrise"
+    },
+    "42__a-mountain-lake-at-sunrise__pan-left": {
+      "scene": "a mountain lake at sunrise",
+      "camera": "pan-left",
+      "subject": "a mountain lake at sunrise",
+      "verb": "pan-left",
+      "family": "a mountain lake at sunrise"
+    },
+    "42__a-mountain-lake-at-sunrise__pan-right": {
+      "scene": "a mountain lake at sunrise",
+      "camera": "pan-right",
+      "subject": "a mountain lake at sunrise",
+      "verb": "pan-right",
+      "family": "a mountain lake at sunrise"
+    },
+    "42__a-mountain-lake-at-sunrise__tilt-up": {
+      "scene": "a mountain lake at sunrise",
+      "camera": "tilt-up",
+      "subject": "a mountain lake at sunrise",
+      "verb": "tilt-up",
+      "family": "a mountain lake at sunrise"
+    },
+    "42__a-mountain-lake-at-sunrise__tilt-down": {
+      "scene": "a mountain lake at sunrise",
+      "camera": "tilt-down",
+      "subject": "a mountain lake at sunrise",
+      "verb": "tilt-down",
+      "family": "a mountain lake at sunrise"
+    },
+    "42__a-mountain-lake-at-sunrise__rolling-clockwise": {
+      "scene": "a mountain lake at sunrise",
+      "camera": "rolling-clockwise",
+      "subject": "a mountain lake at sunrise",
+      "verb": "rolling-clockwise",
+      "family": "a mountain lake at sunrise"
+    },
+    "42__a-mountain-lake-at-sunrise__rolling-anticlockwise": {
+      "scene": "a mountain lake at sunrise",
+      "camera": "rolling-anticlockwise",
+      "subject": "a mountain lake at sunrise",
+      "verb": "rolling-anticlockwise",
+      "family": "a mountain lake at sunrise"
+    },
+    "42__a-medieval-stone-castle-on-a-hill__none": {
+      "scene": "a medieval stone castle on a hill",
+      "camera": "none",
+      "subject": "a medieval stone castle on a hill",
+      "verb": "none",
+      "family": "a medieval stone castle on a hill"
+    },
+    "42__a-medieval-stone-castle-on-a-hill__zoom-in": {
+      "scene": "a medieval stone castle on a hill",
+      "camera": "zoom-in",
+      "subject": "a medieval stone castle on a hill",
+      "verb": "zoom-in",
+      "family": "a medieval stone castle on a hill"
+    },
+    "42__a-medieval-stone-castle-on-a-hill__zoom-out": {
+      "scene": "a medieval stone castle on a hill",
+      "camera": "zoom-out",
+      "subject": "a medieval stone castle on a hill",
+      "verb": "zoom-out",
+      "family": "a medieval stone castle on a hill"
+    },
+    "42__a-medieval-stone-castle-on-a-hill__pan-left": {
+      "scene": "a medieval stone castle on a hill",
+      "camera": "pan-left",
+      "subject": "a medieval stone castle on a hill",
+      "verb": "pan-left",
+      "family": "a medieval stone castle on a hill"
+    },
+    "42__a-medieval-stone-castle-on-a-hill__pan-right": {
+      "scene": "a medieval stone castle on a hill",
+      "camera": "pan-right",
+      "subject": "a medieval stone castle on a hill",
+      "verb": "pan-right",
+      "family": "a medieval stone castle on a hill"
+    },
+    "42__a-medieval-stone-castle-on-a-hill__tilt-up": {
+      "scene": "a medieval stone castle on a hill",
+      "camera": "tilt-up",
+      "subject": "a medieval stone castle on a hill",
+      "verb": "tilt-up",
+      "family": "a medieval stone castle on a hill"
+    },
+    "42__a-medieval-stone-castle-on-a-hill__tilt-down": {
+      "scene": "a medieval stone castle on a hill",
+      "camera": "tilt-down",
+      "subject": "a medieval stone castle on a hill",
+      "verb": "tilt-down",
+      "family": "a medieval stone castle on a hill"
+    },
+    "42__a-medieval-stone-castle-on-a-hill__rolling-clockwise": {
+      "scene": "a medieval stone castle on a hill",
+      "camera": "rolling-clockwise",
+      "subject": "a medieval stone castle on a hill",
+      "verb": "rolling-clockwise",
+      "family": "a medieval stone castle on a hill"
+    },
+    "42__a-medieval-stone-castle-on-a-hill__rolling-anticlockwise": {
+      "scene": "a medieval stone castle on a hill",
+      "camera": "rolling-anticlockwise",
+      "subject": "a medieval stone castle on a hill",
+      "verb": "rolling-anticlockwise",
+      "family": "a medieval stone castle on a hill"
+    },
+    "42__a-city-street-at-night-with-neon-signs__none": {
+      "scene": "a city street at night with neon signs",
+      "camera": "none",
+      "subject": "a city street at night with neon signs",
+      "verb": "none",
+      "family": "a city street at night with neon signs"
+    },
+    "42__a-city-street-at-night-with-neon-signs__zoom-in": {
+      "scene": "a city street at night with neon signs",
+      "camera": "zoom-in",
+      "subject": "a city street at night with neon signs",
+      "verb": "zoom-in",
+      "family": "a city street at night with neon signs"
+    },
+    "42__a-city-street-at-night-with-neon-signs__zoom-out": {
+      "scene": "a city street at night with neon signs",
+      "camera": "zoom-out",
+      "subject": "a city street at night with neon signs",
+      "verb": "zoom-out",
+      "family": "a city street at night with neon signs"
+    },
+    "42__a-city-street-at-night-with-neon-signs__pan-left": {
+      "scene": "a city street at night with neon signs",
+      "camera": "pan-left",
+      "subject": "a city street at night with neon signs",
+      "verb": "pan-left",
+      "family": "a city street at night with neon signs"
+    },
+    "42__a-city-street-at-night-with-neon-signs__pan-right": {
+      "scene": "a city street at night with neon signs",
+      "camera": "pan-right",
+      "subject": "a city street at night with neon signs",
+      "verb": "pan-right",
+      "family": "a city street at night with neon signs"
+    },
+    "42__a-city-street-at-night-with-neon-signs__tilt-up": {
+      "scene": "a city street at night with neon signs",
+      "camera": "tilt-up",
+      "subject": "a city street at night with neon signs",
+      "verb": "tilt-up",
+      "family": "a city street at night with neon signs"
+    },
+    "42__a-city-street-at-night-with-neon-signs__tilt-down": {
+      "scene": "a city street at night with neon signs",
+      "camera": "tilt-down",
+      "subject": "a city street at night with neon signs",
+      "verb": "tilt-down",
+      "family": "a city street at night with neon signs"
+    },
+    "42__a-city-street-at-night-with-neon-signs__rolling-clockwise": {
+      "scene": "a city street at night with neon signs",
+      "camera": "rolling-clockwise",
+      "subject": "a city street at night with neon signs",
+      "verb": "rolling-clockwise",
+      "family": "a city street at night with neon signs"
+    },
+    "42__a-city-street-at-night-with-neon-signs__rolling-anticlockwise": {
+      "scene": "a city street at night with neon signs",
+      "camera": "rolling-anticlockwise",
+      "subject": "a city street at night with neon signs",
+      "verb": "rolling-anticlockwise",
+      "family": "a city street at night with neon signs"
+    },
+    "42__a-red-sandstone-desert-canyon__none": {
+      "scene": "a red sandstone desert canyon",
+      "camera": "none",
+      "subject": "a red sandstone desert canyon",
+      "verb": "none",
+      "family": "a red sandstone desert canyon"
+    },
+    "42__a-red-sandstone-desert-canyon__zoom-in": {
+      "scene": "a red sandstone desert canyon",
+      "camera": "zoom-in",
+      "subject": "a red sandstone desert canyon",
+      "verb": "zoom-in",
+      "family": "a red sandstone desert canyon"
+    },
+    "42__a-red-sandstone-desert-canyon__zoom-out": {
+      "scene": "a red sandstone desert canyon",
+      "camera": "zoom-out",
+      "subject": "a red sandstone desert canyon",
+      "verb": "zoom-out",
+      "family": "a red sandstone desert canyon"
+    },
+    "42__a-red-sandstone-desert-canyon__pan-left": {
+      "scene": "a red sandstone desert canyon",
+      "camera": "pan-left",
+      "subject": "a red sandstone desert canyon",
+      "verb": "pan-left",
+      "family": "a red sandstone desert canyon"
+    },
+    "42__a-red-sandstone-desert-canyon__pan-right": {
+      "scene": "a red sandstone desert canyon",
+      "camera": "pan-right",
+      "subject": "a red sandstone desert canyon",
+      "verb": "pan-right",
+      "family": "a red sandstone desert canyon"
+    },
+    "42__a-red-sandstone-desert-canyon__tilt-up": {
+      "scene": "a red sandstone desert canyon",
+      "camera": "tilt-up",
+      "subject": "a red sandstone desert canyon",
+      "verb": "tilt-up",
+      "family": "a red sandstone desert canyon"
+    },
+    "42__a-red-sandstone-desert-canyon__tilt-down": {
+      "scene": "a red sandstone desert canyon",
+      "camera": "tilt-down",
+      "subject": "a red sandstone desert canyon",
+      "verb": "tilt-down",
+      "family": "a red sandstone desert canyon"
+    },
+    "42__a-red-sandstone-desert-canyon__rolling-clockwise": {
+      "scene": "a red sandstone desert canyon",
+      "camera": "rolling-clockwise",
+      "subject": "a red sandstone desert canyon",
+      "verb": "rolling-clockwise",
+      "family": "a red sandstone desert canyon"
+    },
+    "42__a-red-sandstone-desert-canyon__rolling-anticlockwise": {
+      "scene": "a red sandstone desert canyon",
+      "camera": "rolling-anticlockwise",
+      "subject": "a red sandstone desert canyon",
+      "verb": "rolling-anticlockwise",
+      "family": "a red sandstone desert canyon"
+    },
+    "42__a-path-through-a-pine-forest__none": {
+      "scene": "a path through a pine forest",
+      "camera": "none",
+      "subject": "a path through a pine forest",
+      "verb": "none",
+      "family": "a path through a pine forest"
+    },
+    "42__a-path-through-a-pine-forest__zoom-in": {
+      "scene": "a path through a pine forest",
+      "camera": "zoom-in",
+      "subject": "a path through a pine forest",
+      "verb": "zoom-in",
+      "family": "a path through a pine forest"
+    },
+    "42__a-path-through-a-pine-forest__zoom-out": {
+      "scene": "a path through a pine forest",
+      "camera": "zoom-out",
+      "subject": "a path through a pine forest",
+      "verb": "zoom-out",
+      "family": "a path through a pine forest"
+    },
+    "42__a-path-through-a-pine-forest__pan-left": {
+      "scene": "a path through a pine forest",
+      "camera": "pan-left",
+      "subject": "a path through a pine forest",
+      "verb": "pan-left",
+      "family": "a path through a pine forest"
+    },
+    "42__a-path-through-a-pine-forest__pan-right": {
+      "scene": "a path through a pine forest",
+      "camera": "pan-right",
+      "subject": "a path through a pine forest",
+      "verb": "pan-right",
+      "family": "a path through a pine forest"
+    },
+    "42__a-path-through-a-pine-forest__tilt-up": {
+      "scene": "a path through a pine forest",
+      "camera": "tilt-up",
+      "subject": "a path through a pine forest",
+      "verb": "tilt-up",
+      "family": "a path through a pine forest"
+    },
+    "42__a-path-through-a-pine-forest__tilt-down": {
+      "scene": "a path through a pine forest",
+      "camera": "tilt-down",
+      "subject": "a path through a pine forest",
+      "verb": "tilt-down",
+      "family": "a path through a pine forest"
+    },
+    "42__a-path-through-a-pine-forest__rolling-clockwise": {
+      "scene": "a path through a pine forest",
+      "camera": "rolling-clockwise",
+      "subject": "a path through a pine forest",
+      "verb": "rolling-clockwise",
+      "family": "a path through a pine forest"
+    },
+    "42__a-path-through-a-pine-forest__rolling-anticlockwise": {
+      "scene": "a path through a pine forest",
+      "camera": "rolling-anticlockwise",
+      "subject": "a path through a pine forest",
+      "verb": "rolling-anticlockwise",
+      "family": "a path through a pine forest"
+    },
+    "42__a-lighthouse-on-a-rocky-cliff__none": {
+      "scene": "a lighthouse on a rocky cliff",
+      "camera": "none",
+      "subject": "a lighthouse on a rocky cliff",
+      "verb": "none",
+      "family": "a lighthouse on a rocky cliff"
+    },
+    "42__a-lighthouse-on-a-rocky-cliff__zoom-in": {
+      "scene": "a lighthouse on a rocky cliff",
+      "camera": "zoom-in",
+      "subject": "a lighthouse on a rocky cliff",
+      "verb": "zoom-in",
+      "family": "a lighthouse on a rocky cliff"
+    },
+    "42__a-lighthouse-on-a-rocky-cliff__zoom-out": {
+      "scene": "a lighthouse on a rocky cliff",
+      "camera": "zoom-out",
+      "subject": "a lighthouse on a rocky cliff",
+      "verb": "zoom-out",
+      "family": "a lighthouse on a rocky cliff"
+    },
+    "42__a-lighthouse-on-a-rocky-cliff__pan-left": {
+      "scene": "a lighthouse on a rocky cliff",
+      "camera": "pan-left",
+      "subject": "a lighthouse on a rocky cliff",
+      "verb": "pan-left",
+      "family": "a lighthouse on a rocky cliff"
+    },
+    "42__a-lighthouse-on-a-rocky-cliff__pan-right": {
+      "scene": "a lighthouse on a rocky cliff",
+      "camera": "pan-right",
+      "subject": "a lighthouse on a rocky cliff",
+      "verb": "pan-right",
+      "family": "a lighthouse on a rocky cliff"
+    },
+    "42__a-lighthouse-on-a-rocky-cliff__tilt-up": {
+      "scene": "a lighthouse on a rocky cliff",
+      "camera": "tilt-up",
+      "subject": "a lighthouse on a rocky cliff",
+      "verb": "tilt-up",
+      "family": "a lighthouse on a rocky cliff"
+    },
+    "42__a-lighthouse-on-a-rocky-cliff__tilt-down": {
+      "scene": "a lighthouse on a rocky cliff",
+      "camera": "tilt-down",
+      "subject": "a lighthouse on a rocky cliff",
+      "verb": "tilt-down",
+      "family": "a lighthouse on a rocky cliff"
+    },
+    "42__a-lighthouse-on-a-rocky-cliff__rolling-clockwise": {
+      "scene": "a lighthouse on a rocky cliff",
+      "camera": "rolling-clockwise",
+      "subject": "a lighthouse on a rocky cliff",
+      "verb": "rolling-clockwise",
+      "family": "a lighthouse on a rocky cliff"
+    },
+    "42__a-lighthouse-on-a-rocky-cliff__rolling-anticlockwise": {
+      "scene": "a lighthouse on a rocky cliff",
+      "camera": "rolling-anticlockwise",
+      "subject": "a lighthouse on a rocky cliff",
+      "verb": "rolling-anticlockwise",
+      "family": "a lighthouse on a rocky cliff"
+    },
+    "42__a-snowy-village-with-wooden-houses__none": {
+      "scene": "a snowy village with wooden houses",
+      "camera": "none",
+      "subject": "a snowy village with wooden houses",
+      "verb": "none",
+      "family": "a snowy village with wooden houses"
+    },
+    "42__a-snowy-village-with-wooden-houses__zoom-in": {
+      "scene": "a snowy village with wooden houses",
+      "camera": "zoom-in",
+      "subject": "a snowy village with wooden houses",
+      "verb": "zoom-in",
+      "family": "a snowy village with wooden houses"
+    },
+    "42__a-snowy-village-with-wooden-houses__zoom-out": {
+      "scene": "a snowy village with wooden houses",
+      "camera": "zoom-out",
+      "subject": "a snowy village with wooden houses",
+      "verb": "zoom-out",
+      "family": "a snowy village with wooden houses"
+    },
+    "42__a-snowy-village-with-wooden-houses__pan-left": {
+      "scene": "a snowy village with wooden houses",
+      "camera": "pan-left",
+      "subject": "a snowy village with wooden houses",
+      "verb": "pan-left",
+      "family": "a snowy village with wooden houses"
+    },
+    "42__a-snowy-village-with-wooden-houses__pan-right": {
+      "scene": "a snowy village with wooden houses",
+      "camera": "pan-right",
+      "subject": "a snowy village with wooden houses",
+      "verb": "pan-right",
+      "family": "a snowy village with wooden houses"
+    },
+    "42__a-snowy-village-with-wooden-houses__tilt-up": {
+      "scene": "a snowy village with wooden houses",
+      "camera": "tilt-up",
+      "subject": "a snowy village with wooden houses",
+      "verb": "tilt-up",
+      "family": "a snowy village with wooden houses"
+    },
+    "42__a-snowy-village-with-wooden-houses__tilt-down": {
+      "scene": "a snowy village with wooden houses",
+      "camera": "tilt-down",
+      "subject": "a snowy village with wooden houses",
+      "verb": "tilt-down",
+      "family": "a snowy village with wooden houses"
+    },
+    "42__a-snowy-village-with-wooden-houses__rolling-clockwise": {
+      "scene": "a snowy village with wooden houses",
+      "camera": "rolling-clockwise",
+      "subject": "a snowy village with wooden houses",
+      "verb": "rolling-clockwise",
+      "family": "a snowy village with wooden houses"
+    },
+    "42__a-snowy-village-with-wooden-houses__rolling-anticlockwise": {
+      "scene": "a snowy village with wooden houses",
+      "camera": "rolling-anticlockwise",
+      "subject": "a snowy village with wooden houses",
+      "verb": "rolling-anticlockwise",
+      "family": "a snowy village with wooden houses"
+    },
+    "42__a-tropical-beach-with-palm-trees__none": {
+      "scene": "a tropical beach with palm trees",
+      "camera": "none",
+      "subject": "a tropical beach with palm trees",
+      "verb": "none",
+      "family": "a tropical beach with palm trees"
+    },
+    "42__a-tropical-beach-with-palm-trees__zoom-in": {
+      "scene": "a tropical beach with palm trees",
+      "camera": "zoom-in",
+      "subject": "a tropical beach with palm trees",
+      "verb": "zoom-in",
+      "family": "a tropical beach with palm trees"
+    },
+    "42__a-tropical-beach-with-palm-trees__zoom-out": {
+      "scene": "a tropical beach with palm trees",
+      "camera": "zoom-out",
+      "subject": "a tropical beach with palm trees",
+      "verb": "zoom-out",
+      "family": "a tropical beach with palm trees"
+    },
+    "42__a-tropical-beach-with-palm-trees__pan-left": {
+      "scene": "a tropical beach with palm trees",
+      "camera": "pan-left",
+      "subject": "a tropical beach with palm trees",
+      "verb": "pan-left",
+      "family": "a tropical beach with palm trees"
+    },
+    "42__a-tropical-beach-with-palm-trees__pan-right": {
+      "scene": "a tropical beach with palm trees",
+      "camera": "pan-right",
+      "subject": "a tropical beach with palm trees",
+      "verb": "pan-right",
+      "family": "a tropical beach with palm trees"
+    },
+    "42__a-tropical-beach-with-palm-trees__tilt-up": {
+      "scene": "a tropical beach with palm trees",
+      "camera": "tilt-up",
+      "subject": "a tropical beach with palm trees",
+      "verb": "tilt-up",
+      "family": "a tropical beach with palm trees"
+    },
+    "42__a-tropical-beach-with-palm-trees__tilt-down": {
+      "scene": "a tropical beach with palm trees",
+      "camera": "tilt-down",
+      "subject": "a tropical beach with palm trees",
+      "verb": "tilt-down",
+      "family": "a tropical beach with palm trees"
+    },
+    "42__a-tropical-beach-with-palm-trees__rolling-clockwise": {
+      "scene": "a tropical beach with palm trees",
+      "camera": "rolling-clockwise",
+      "subject": "a tropical beach with palm trees",
+      "verb": "rolling-clockwise",
+      "family": "a tropical beach with palm trees"
+    },
+    "42__a-tropical-beach-with-palm-trees__rolling-anticlockwise": {
+      "scene": "a tropical beach with palm trees",
+      "camera": "rolling-anticlockwise",
+      "subject": "a tropical beach with palm trees",
+      "verb": "rolling-anticlockwise",
+      "family": "a tropical beach with palm trees"
+    }
+  },
+  "prompts": {
+    "42__a-mountain-lake-at-sunrise__none": "a mountain lake at sunrise, high quality, detailed",
+    "42__a-mountain-lake-at-sunrise__zoom-in": "a mountain lake at sunrise, high quality, detailed",
+    "42__a-mountain-lake-at-sunrise__zoom-out": "a mountain lake at sunrise, high quality, detailed",
+    "42__a-mountain-lake-at-sunrise__pan-left": "a mountain lake at sunrise, high quality, detailed",
+    "42__a-mountain-lake-at-sunrise__pan-right": "a mountain lake at sunrise, high quality, detailed",
+    "42__a-mountain-lake-at-sunrise__tilt-up": "a mountain lake at sunrise, high quality, detailed",
+    "42__a-mountain-lake-at-sunrise__tilt-down": "a mountain lake at sunrise, high quality, detailed",
+    "42__a-mountain-lake-at-sunrise__rolling-clockwise": "a mountain lake at sunrise, high quality, detailed",
+    "42__a-mountain-lake-at-sunrise__rolling-anticlockwise": "a mountain lake at sunrise, high quality, detailed",
+    "42__a-medieval-stone-castle-on-a-hill__none": "a medieval stone castle on a hill, high quality, detailed",
+    "42__a-medieval-stone-castle-on-a-hill__zoom-in": "a medieval stone castle on a hill, high quality, detailed",
+    "42__a-medieval-stone-castle-on-a-hill__zoom-out": "a medieval stone castle on a hill, high quality, detailed",
+    "42__a-medieval-stone-castle-on-a-hill__pan-left": "a medieval stone castle on a hill, high quality, detailed",
+    "42__a-medieval-stone-castle-on-a-hill__pan-right": "a medieval stone castle on a hill, high quality, detailed",
+    "42__a-medieval-stone-castle-on-a-hill__tilt-up": "a medieval stone castle on a hill, high quality, detailed",
+    "42__a-medieval-stone-castle-on-a-hill__tilt-down": "a medieval stone castle on a hill, high quality, detailed",
+    "42__a-medieval-stone-castle-on-a-hill__rolling-clockwise": "a medieval stone castle on a hill, high quality, detailed",
+    "42__a-medieval-stone-castle-on-a-hill__rolling-anticlockwise": "a medieval stone castle on a hill, high quality, detailed",
+    "42__a-city-street-at-night-with-neon-signs__none": "a city street at night with neon signs, high quality, detailed",
+    "42__a-city-street-at-night-with-neon-signs__zoom-in": "a city street at night with neon signs, high quality, detailed",
+    "42__a-city-street-at-night-with-neon-signs__zoom-out": "a city street at night with neon signs, high quality, detailed",
+    "42__a-city-street-at-night-with-neon-signs__pan-left": "a city street at night with neon signs, high quality, detailed",
+    "42__a-city-street-at-night-with-neon-signs__pan-right": "a city street at night with neon signs, high quality, detailed",
+    "42__a-city-street-at-night-with-neon-signs__tilt-up": "a city street at night with neon signs, high quality, detailed",
+    "42__a-city-street-at-night-with-neon-signs__tilt-down": "a city street at night with neon signs, high quality, detailed",
+    "42__a-city-street-at-night-with-neon-signs__rolling-clockwise": "a city street at night with neon signs, high quality, detailed",
+    "42__a-city-street-at-night-with-neon-signs__rolling-anticlockwise": "a city street at night with neon signs, high quality, detailed",
+    "42__a-red-sandstone-desert-canyon__none": "a red sandstone desert canyon, high quality, detailed",
+    "42__a-red-sandstone-desert-canyon__zoom-in": "a red sandstone desert canyon, high quality, detailed",
+    "42__a-red-sandstone-desert-canyon__zoom-out": "a red sandstone desert canyon, high quality, detailed",
+    "42__a-red-sandstone-desert-canyon__pan-left": "a red sandstone desert canyon, high quality, detailed",
+    "42__a-red-sandstone-desert-canyon__pan-right": "a red sandstone desert canyon, high quality, detailed",
+    "42__a-red-sandstone-desert-canyon__tilt-up": "a red sandstone desert canyon, high quality, detailed",
+    "42__a-red-sandstone-desert-canyon__tilt-down": "a red sandstone desert canyon, high quality, detailed",
+    "42__a-red-sandstone-desert-canyon__rolling-clockwise": "a red sandstone desert canyon, high quality, detailed",
+    "42__a-red-sandstone-desert-canyon__rolling-anticlockwise": "a red sandstone desert canyon, high quality, detailed",
+    "42__a-path-through-a-pine-forest__none": "a path through a pine forest, high quality, detailed",
+    "42__a-path-through-a-pine-forest__zoom-in": "a path through a pine forest, high quality, detailed",
+    "42__a-path-through-a-pine-forest__zoom-out": "a path through a pine forest, high quality, detailed",
+    "42__a-path-through-a-pine-forest__pan-left": "a path through a pine forest, high quality, detailed",
+    "42__a-path-through-a-pine-forest__pan-right": "a path through a pine forest, high quality, detailed",
+    "42__a-path-through-a-pine-forest__tilt-up": "a path through a pine forest, high quality, detailed",
+    "42__a-path-through-a-pine-forest__tilt-down": "a path through a pine forest, high quality, detailed",
+    "42__a-path-through-a-pine-forest__rolling-clockwise": "a path through a pine forest, high quality, detailed",
+    "42__a-path-through-a-pine-forest__rolling-anticlockwise": "a path through a pine forest, high quality, detailed",
+    "42__a-lighthouse-on-a-rocky-cliff__none": "a lighthouse on a rocky cliff, high quality, detailed",
+    "42__a-lighthouse-on-a-rocky-cliff__zoom-in": "a lighthouse on a rocky cliff, high quality, detailed",
+    "42__a-lighthouse-on-a-rocky-cliff__zoom-out": "a lighthouse on a rocky cliff, high quality, detailed",
+    "42__a-lighthouse-on-a-rocky-cliff__pan-left": "a lighthouse on a rocky cliff, high quality, detailed",
+    "42__a-lighthouse-on-a-rocky-cliff__pan-right": "a lighthouse on a rocky cliff, high quality, detailed",
+    "42__a-lighthouse-on-a-rocky-cliff__tilt-up": "a lighthouse on a rocky cliff, high quality, detailed",
+    "42__a-lighthouse-on-a-rocky-cliff__tilt-down": "a lighthouse on a rocky cliff, high quality, detailed",
+    "42__a-lighthouse-on-a-rocky-cliff__rolling-clockwise": "a lighthouse on a rocky cliff, high quality, detailed",
+    "42__a-lighthouse-on-a-rocky-cliff__rolling-anticlockwise": "a lighthouse on a rocky cliff, high quality, detailed",
+    "42__a-snowy-village-with-wooden-houses__none": "a snowy village with wooden houses, high quality, detailed",
+    "42__a-snowy-village-with-wooden-houses__zoom-in": "a snowy village with wooden houses, high quality, detailed",
+    "42__a-snowy-village-with-wooden-houses__zoom-out": "a snowy village with wooden houses, high quality, detailed",
+    "42__a-snowy-village-with-wooden-houses__pan-left": "a snowy village with wooden houses, high quality, detailed",
+    "42__a-snowy-village-with-wooden-houses__pan-right": "a snowy village with wooden houses, high quality, detailed",
+    "42__a-snowy-village-with-wooden-houses__tilt-up": "a snowy village with wooden houses, high quality, detailed",
+    "42__a-snowy-village-with-wooden-houses__tilt-down": "a snowy village with wooden houses, high quality, detailed",
+    "42__a-snowy-village-with-wooden-houses__rolling-clockwise": "a snowy village with wooden houses, high quality, detailed",
+    "42__a-snowy-village-with-wooden-houses__rolling-anticlockwise": "a snowy village with wooden houses, high quality, detailed",
+    "42__a-tropical-beach-with-palm-trees__none": "a tropical beach with palm trees, high quality, detailed",
+    "42__a-tropical-beach-with-palm-trees__zoom-in": "a tropical beach with palm trees, high quality, detailed",
+    "42__a-tropical-beach-with-palm-trees__zoom-out": "a tropical beach with palm trees, high quality, detailed",
+    "42__a-tropical-beach-with-palm-trees__pan-left": "a tropical beach with palm trees, high quality, detailed",
+    "42__a-tropical-beach-with-palm-trees__pan-right": "a tropical beach with palm trees, high quality, detailed",
+    "42__a-tropical-beach-with-palm-trees__tilt-up": "a tropical beach with palm trees, high quality, detailed",
+    "42__a-tropical-beach-with-palm-trees__tilt-down": "a tropical beach with palm trees, high quality, detailed",
+    "42__a-tropical-beach-with-palm-trees__rolling-clockwise": "a tropical beach with palm trees, high quality, detailed",
+    "42__a-tropical-beach-with-palm-trees__rolling-anticlockwise": "a tropical beach with palm trees, high quality, detailed"
+  },
+  "cameras": [
+    "none",
+    "zoom-in",
+    "zoom-out",
+    "pan-left",
+    "pan-right",
+    "tilt-up",
+    "tilt-down",
+    "rolling-clockwise",
+    "rolling-anticlockwise"
+  ],
+  "anchor_camera": "none",
+  "anchor_scene": "a mountain lake at sunrise",
+  "token_site": "up_blocks.1.motion_modules.2",
+  "token_steps": [
+    0,
+    1,
+    2,
+    4,
+    8
+  ],
+  "denoise_seconds": 7225.417617176,
+  "seconds_per_clip": 100.35302246077778,
+  "decode_seconds": 471.8944886070003,
+  "peak_rss_gb": 8.265186309814453,
+  "peak_alloc_gb": 6.363686561584473,
+  "verify": {
+    "clip": "42__a-mountain-lake-at-sunrise__none",
+    "group_vs_solo_max_abs": 0.0,
+    "group_vs_solo_mad": 0.0,
+    "group_vs_pipe_max_abs": 0.0,
+    "group_vs_pipe_mad": 0.0,
+    "pass": true
+  },
+  "subset": {
+    "scenes": 0,
+    "cameras": 0
+  }
+}

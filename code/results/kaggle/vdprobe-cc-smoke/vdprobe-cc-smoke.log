@@ -1,0 +1,127 @@
+[{"stream_name":"stdout","time":24.053833991,"data":"2\n"}
+,{"stream_name":"stdout","time":24.05389002,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":24.053901386,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":24.053904206,"data":"2.11.0+cu130\n"}
+,{"stream_name":"stdout","time":24.053906523,"data":" \n"}
+,{"stream_name":"stderr","time":26.922720528,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":40.134690645,"data":"\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  5.75it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:13\u003c00:00,  7.79s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:13\u003c00:00,  6.65s/it]\n"}
+,{"stream_name":"stderr","time":53.48990924,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:   8%|▊         | 1/13 [00:00\u003c00:01,  9.70it/s]\rFetching 13 files:  62%|██████▏   | 8/13 [00:00\u003c00:00, 38.63it/s]\rFetching 13 files:  92%|█████████▏| 12/13 [00:05\u003c00:00,  1.65it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:13\u003c00:00,  1.01s/it]\n"}
+,{"stream_name":"stderr","time":63.61259719,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:   8%|▊         | 1/12 [00:00\u003c00:01,  8.53it/s]\rFetching 12 files:  58%|█████▊    | 7/12 [00:00\u003c00:00, 31.70it/s]\rFetching 12 files:  92%|█████████▏| 11/12 [00:09\u003c00:01,  1.13s/it]\rFetching 12 files: 100%|██████████| 12/12 [00:09\u003c00:00,  1.21it/s]\n"}
+,{"stream_name":"stderr","time":90.613422458,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  9.64it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:10\u003c00:00,  6.42s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:10\u003c00:00,  5.47s/it]\n"}
+,{"stream_name":"stderr","time":90.752173553,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1395.42it/s]\n"}
+,{"stream_name":"stdout","time":116.937215678,"data":"Downloading: \"https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth\" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth\n"}
+,{"stream_name":"stderr","time":117.141456696,"data":"\r  0%|          | 0.00/20.1M [00:00\u003c?, ?B/s]\r 74%|███████▍  | 14.9M/20.1M [00:00\u003c00:00, 156MB/s]\r100%|██████████| 20.1M/20.1M [00:00\u003c00:00, 174MB/s]\n"}
+,{"stream_name":"stdout","time":118.160722279,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/cameractrl_smoke.py --out /kaggle/working/out/job0\n"}
+,{"stream_name":"stdout","time":118.161638197,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/cameractrl_smoke.py --cameras off static pan-right tilt-up tilt-down zoom-out roll-ccw --seed 1337 --out /kaggle/working/out/job1\n"}
+,{"stream_name":"stdout","time":178.162788746,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":178.163150013,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":178.163169088,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 879.12it/s]\n"}
+,{"stream_name":"stdout","time":178.163178876,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":178.163186,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":178.163193849,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1161.41it/s]\n"}
+,{"stream_name":"stdout","time":178.163251344,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":178.16326813,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":178.163274631,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":178.163280149,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":178.163286202,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:01\u003c00:09,  1.97s/it]\n"}
+,{"stream_name":"stdout","time":178.163292393,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":178.163298009,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":178.163303818,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2475.89it/s]\n"}
+,{"stream_name":"stdout","time":178.163310083,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":178.163340559,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:02\u003c00:03,  1.06it/s]\n"}
+,{"stream_name":"stdout","time":178.163347039,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:02\u003c00:00,  2.37it/s]\n"}
+,{"stream_name":"stdout","time":178.163353454,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.43it/s]\n"}
+,{"stream_name":"stdout","time":178.163359617,"data":"[job0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":178.16336733,"data":"[job0] 92 coordinates, 20 camera sites, revisions {'base_model': {'repo_id': 'stable-diffusion-v1-5/stable-diffusion-v1-5', 'commit': '451f4fe16113bff5a5d2269ed5ad43b0592e9a14', 'variant': 'fp16'}, 'motion_adapter': {'repo_id': 'guoyww/animatediff-motion-adapter-v1-5-3', 'commit': '2e8139b1d1269fd8a21deb96ad19455e187692eb'}, 'authors_groupnorm_layers': 20, 'cameractrl': {'repo_id': 'hehao13/CameraCtrl', 'file': 'CameraCtrl.ckpt'}, 'domain_lora': {'repo_id': 'guoyww/animatediff', 'file': 'v3_sd15_adapter.ckpt', 'scale': 1.0, 'merged_matrices': 128}}\n"}
+,{"stream_name":"stdout","time":178.163421719,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":178.163427979,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":178.163434225,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 880.23it/s]\n"}
+,{"stream_name":"stdout","time":178.163440118,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":178.163445325,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":178.163451354,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1204.54it/s]\n"}
+,{"stream_name":"stdout","time":178.163457002,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":178.163461731,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":178.16346611,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":178.163470116,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":178.16348187,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:01\u003c00:09,  1.99s/it]\n"}
+,{"stream_name":"stdout","time":178.163513499,"data":"[job1] Loading pipeline components...:  33%|███▎      | 2/6 [00:02\u003c00:03,  1.13it/s]\n"}
+,{"stream_name":"stdout","time":178.163520157,"data":"[job1] Loading pipeline components...:  67%|██████▋   | 4/6 [00:02\u003c00:00,  2.66it/s]\n"}
+,{"stream_name":"stdout","time":178.163526186,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":178.163531636,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":178.16353774,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2522.15it/s]\n"}
+,{"stream_name":"stdout","time":178.163543647,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":178.163549224,"data":"[job1] Loading pipeline components...:  83%|████████▎ | 5/6 [00:02\u003c00:00,  3.10it/s]\n"}
+,{"stream_name":"stdout","time":178.163555409,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.45it/s]\n"}
+,{"stream_name":"stdout","time":178.163561913,"data":"[job1] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":178.163593468,"data":"[job1] 92 coordinates, 20 camera sites, revisions {'base_model': {'repo_id': 'stable-diffusion-v1-5/stable-diffusion-v1-5', 'commit': '451f4fe16113bff5a5d2269ed5ad43b0592e9a14', 'variant': 'fp16'}, 'motion_adapter': {'repo_id': 'guoyww/animatediff-motion-adapter-v1-5-3', 'commit': '2e8139b1d1269fd8a21deb96ad19455e187692eb'}, 'authors_groupnorm_layers': 20, 'cameractrl': {'repo_id': 'hehao13/CameraCtrl', 'file': 'CameraCtrl.ckpt'}, 'domain_lora': {'repo_id': 'guoyww/animatediff', 'file': 'v3_sd15_adapter.ckpt', 'scale': 1.0, 'merged_matrices': 128}}\n"}
+,{"stream_name":"stdout","time":358.164431284,"data":"[job0] g=14.0  a mountain lake at sunrise   off        sig -0.0010 +0.0009 +0.0010 -0.0010   MAD to off 0.000\n"}
+,{"stream_name":"stdout","time":358.164498026,"data":"[job0] g=14.0  a mountain lake at sunrise   static     sig -0.0001 -0.0001 +0.0000 -0.0000   MAD to off 0.382\n"}
+,{"stream_name":"stdout","time":358.164504368,"data":"[job0] g=14.0  a mountain lake at sunrise   pan-left   sig +0.1124 -0.0017 +0.0037 +0.0004   MAD to off 0.466\n"}
+,{"stream_name":"stdout","time":358.164509409,"data":"[job0] g=14.0  a mountain lake at sunrise   zoom-in    sig -0.0028 +0.0022 +0.0131 +0.0009   MAD to off 0.436\n"}
+,{"stream_name":"stdout","time":358.164514357,"data":"[job0] g=14.0  a mountain lake at sunrise   roll-cw    sig -0.0016 -0.0022 +0.0057 -0.0339   MAD to off 0.584\n"}
+,{"stream_name":"stdout","time":358.164521794,"data":"[job1] g=14.0  a mountain lake at sunrise   off        sig -0.0001 -0.0000 +0.0000 +0.0001   MAD to off 0.000\n"}
+,{"stream_name":"stdout","time":358.164673906,"data":"[job1] g=14.0  a mountain lake at sunrise   static     sig -0.0004 +0.0001 +0.0001 -0.0000   MAD to off 0.464\n"}
+,{"stream_name":"stdout","time":358.164688003,"data":"[job1] g=14.0  a mountain lake at sunrise   pan-right  sig -0.1157 -0.0010 -0.0006 +0.0030   MAD to off 0.640\n"}
+,{"stream_name":"stdout","time":418.165464458,"data":"[job1] g=14.0  a mountain lake at sunrise   tilt-up    sig +0.0020 +0.0218 +0.0035 -0.0034   MAD to off 0.677\n"}
+,{"stream_name":"stdout","time":418.165517527,"data":"[job1] g=14.0  a mountain lake at sunrise   tilt-down  sig -0.0005 -0.0065 -0.0031 -0.0004   MAD to off 0.608\n"}
+,{"stream_name":"stdout","time":418.165568538,"data":"[job1] g=14.0  a mountain lake at sunrise   zoom-out   sig -0.0208 -0.0024 -0.0067 +0.0027   MAD to off 0.560\n"}
+,{"stream_name":"stdout","time":418.165574768,"data":"[job1] g=14.0  a mountain lake at sunrise   roll-ccw   sig +0.0097 +0.0052 -0.0003 +0.0353   MAD to off 0.680\n"}
+,{"stream_name":"stdout","time":478.165850143,"data":"[job0] g=14.0  a medieval stone castle on a off        sig -0.0200 +0.0004 +0.0040 -0.0125   MAD to off 0.000\n"}
+,{"stream_name":"stdout","time":538.166288684,"data":"[job0] g=14.0  a medieval stone castle on a static     sig +0.0000 +0.0000 +0.0000 +0.0000   MAD to off 0.491\n"}
+,{"stream_name":"stdout","time":538.166328776,"data":"[job0] g=14.0  a medieval stone castle on a pan-left   sig -0.0662 -0.0017 +0.0182 -0.0515   MAD to off 0.436\n"}
+,{"stream_name":"stdout","time":538.166334798,"data":"[job0] g=14.0  a medieval stone castle on a zoom-in    sig -0.0002 +0.0053 +0.0191 +0.0005   MAD to off 0.442\n"}
+,{"stream_name":"stdout","time":538.16633957,"data":"[job0] g=14.0  a medieval stone castle on a roll-cw    sig +0.0000 -0.0022 +0.0080 -0.0288   MAD to off 0.497\n"}
+,{"stream_name":"stdout","time":598.16690593,"data":"[job1] g=14.0  a medieval stone castle on a off        sig +0.0003 +0.0129 -0.0012 -0.0001   MAD to off 0.000\n"}
+,{"stream_name":"stdout","time":598.166953247,"data":"[job1] g=14.0  a medieval stone castle on a static     sig +0.0001 +0.0001 -0.0000 +0.0001   MAD to off 0.539\n"}
+,{"stream_name":"stdout","time":598.166961379,"data":"[job1] g=14.0  a medieval stone castle on a pan-right  sig -0.0464 -0.0002 +0.0019 -0.0070   MAD to off 0.535\n"}
+,{"stream_name":"stdout","time":598.166967916,"data":"[job1] g=14.0  a medieval stone castle on a tilt-up    sig +0.0012 +0.0319 +0.0134 +0.0010   MAD to off 0.483\n"}
+,{"stream_name":"stdout","time":598.166974245,"data":"[job1] g=14.0  a medieval stone castle on a tilt-down  sig -0.0012 -0.0158 -0.0107 -0.0007   MAD to off 0.531\n"}
+,{"stream_name":"stdout","time":598.166980471,"data":"[job1] g=14.0  a medieval stone castle on a zoom-out   sig -0.0075 -0.0070 -0.0201 -0.0024   MAD to off 0.489\n"}
+,{"stream_name":"stdout","time":598.166986625,"data":"[job1] g=14.0  a medieval stone castle on a roll-ccw   sig +0.0058 +0.0005 +0.0015 +0.0442   MAD to off 0.566\n"}
+,{"stream_name":"stdout","time":658.168184953,"data":"[job0] g=7.5   a mountain lake at sunrise   off        sig +0.0054 +0.0051 +0.0088 -0.0057   MAD to off 0.000\n"}
+,{"stream_name":"stdout","time":658.168255505,"data":"[job0] g=7.5   a mountain lake at sunrise   static     sig -0.0001 -0.0001 -0.0001 +0.0001   MAD to off 0.375\n"}
+,{"stream_name":"stdout","time":658.168262586,"data":"[job0] g=7.5   a mountain lake at sunrise   pan-left   sig +0.1372 +0.0001 +0.0030 -0.0001   MAD to off 0.348\n"}
+,{"stream_name":"stdout","time":658.168267812,"data":"[job0] g=7.5   a mountain lake at sunrise   zoom-in    sig +0.0085 -0.0004 +0.0298 +0.0008   MAD to off 0.340\n"}
+,{"stream_name":"stdout","time":658.168272982,"data":"[job0] g=7.5   a mountain lake at sunrise   roll-cw    sig +0.0022 -0.0045 +0.0049 -0.0391   MAD to off 0.385\n"}
+,{"stream_name":"stdout","time":778.16954489,"data":"[job1] g=7.5   a mountain lake at sunrise   off        sig -0.0001 +0.0000 +0.0000 +0.0001   MAD to off 0.000\n"}
+,{"stream_name":"stdout","time":778.169590707,"data":"[job1] g=7.5   a mountain lake at sunrise   static     sig -0.0006 +0.0001 -0.0000 -0.0000   MAD to off 0.334\n"}
+,{"stream_name":"stdout","time":778.16959645,"data":"[job1] g=7.5   a mountain lake at sunrise   pan-right  sig -0.1208 +0.0001 -0.0024 +0.0046   MAD to off 0.502\n"}
+,{"stream_name":"stdout","time":838.170077509,"data":"[job0] g=7.5   a medieval stone castle on a off        sig -0.0205 +0.0004 +0.0045 -0.0138   MAD to off 0.000\n"}
+,{"stream_name":"stdout","time":838.170164132,"data":"[job0] g=7.5   a medieval stone castle on a static     sig +0.0000 +0.0000 +0.0000 +0.0000   MAD to off 0.405\n"}
+,{"stream_name":"stdout","time":838.170173311,"data":"[job0] g=7.5   a medieval stone castle on a pan-left   sig -0.1246 -0.0010 +0.0507 -0.0844   MAD to off 0.357\n"}
+,{"stream_name":"stdout","time":838.170178622,"data":"[job0] g=7.5   a medieval stone castle on a zoom-in    sig -0.0206 +0.0092 +0.0163 -0.0087   MAD to off 0.344\n"}
+,{"stream_name":"stdout","time":838.170183724,"data":"[job0] g=7.5   a medieval stone castle on a roll-cw    sig +0.0012 -0.0078 +0.0073 -0.0405   MAD to off 0.412\n"}
+,{"stream_name":"stdout","time":838.170188357,"data":"[job1] g=7.5   a mountain lake at sunrise   tilt-up    sig +0.0003 +0.0261 +0.0081 -0.0016   MAD to off 0.579\n"}
+,{"stream_name":"stdout","time":838.170193551,"data":"[job1] g=7.5   a mountain lake at sunrise   tilt-down  sig -0.0013 -0.0124 -0.0065 +0.0007   MAD to off 0.469\n"}
+,{"stream_name":"stdout","time":838.170198586,"data":"[job1] g=7.5   a mountain lake at sunrise   zoom-out   sig -0.0211 -0.0046 -0.0118 +0.0054   MAD to off 0.432\n"}
+,{"stream_name":"stdout","time":838.170203245,"data":"[job1] g=7.5   a mountain lake at sunrise   roll-ccw   sig +0.0108 +0.0019 -0.0016 +0.0361   MAD to off 0.569\n"}
+,{"stream_name":"stdout","time":958.171301841,"data":"[job0] wrote /kaggle/working/out/job0/smoke.json\n"}
+,{"stream_name":"stdout","time":958.171345174,"data":"[job0] PASS  off_vs_pipe  {'mad': 0.0, 'pass': True}\n"}
+,{"stream_name":"stdout","time":958.171365858,"data":"[job0] PASS  null_patch  {'mad': 0.0, 'camera': 'pan-left', 'n_patched': 375, 'seconds': 56.71428528999991, 'pass': True}\n"}
+,{"stream_name":"stdout","time":958.171371406,"data":"[job0] PASS  camera_moves  {'min_mad_to_off': 0.33969584107398987, 'pass': True}\n"}
+,{"stream_name":"stdout","time":958.171376506,"data":"[job0] PASS  pan_reads_as_tx  {'clips': 2, 'correct': 2, 'pass': True}\n"}
+,{"stream_name":"stdout","time":958.171381557,"data":"[job0] PASS  zoom_reads_as_zoom  {'clips': 2, 'correct': 2, 'pass': True}\n"}
+,{"stream_name":"stdout","time":958.171386055,"data":"[job0] PASS  roll_reads_as_roll  {'clips': 2, 'correct': 2, 'pass': True}\n"}
+,{"stream_name":"stdout","time":1018.172065549,"data":"[job1] g=7.5   a medieval stone castle on a off        sig -0.0001 +0.0162 -0.0002 +0.0001   MAD to off 0.000\n"}
+,{"stream_name":"stdout","time":1018.172103265,"data":"[job1] g=7.5   a medieval stone castle on a static     sig +0.0000 +0.0000 +0.0000 +0.0000   MAD to off 0.501\n"}
+,{"stream_name":"stdout","time":1018.172136725,"data":"[job1] g=7.5   a medieval stone castle on a pan-right  sig -0.0505 +0.0016 +0.0015 -0.0031   MAD to off 0.422\n"}
+,{"stream_name":"stdout","time":1018.172144457,"data":"[job1] g=7.5   a medieval stone castle on a tilt-up    sig -0.0002 +0.0283 +0.0106 +0.0013   MAD to off 0.401\n"}
+,{"stream_name":"stdout","time":1018.172157724,"data":"[job1] g=7.5   a medieval stone castle on a tilt-down  sig -0.0019 -0.0187 -0.0111 +0.0002   MAD to off 0.417\n"}
+,{"stream_name":"stdout","time":1018.172162255,"data":"[job1] g=7.5   a medieval stone castle on a zoom-out   sig -0.0062 -0.0046 -0.0228 -0.0004   MAD to off 0.416\n"}
+,{"stream_name":"stdout","time":1018.172166753,"data":"[job1] g=7.5   a medieval stone castle on a roll-ccw   sig +0.0065 +0.0031 +0.0013 +0.0422   MAD to off 0.482\n"}
+,{"stream_name":"stdout","time":1138.173469185,"data":"[job1] wrote /kaggle/working/out/job1/smoke.json\n"}
+,{"stream_name":"stdout","time":1138.173508052,"data":"[job1] PASS  off_vs_pipe  {'mad': 0.0, 'pass': True}\n"}
+,{"stream_name":"stdout","time":1138.173515035,"data":"[job1] PASS  null_patch  {'mad': 0.0, 'camera': 'pan-right', 'n_patched': 375, 'seconds': 50.95277046399997, 'pass': True}\n"}
+,{"stream_name":"stdout","time":1138.173536661,"data":"[job1] PASS  camera_moves  {'min_mad_to_off': 0.33403560519218445, 'pass': True}\n"}
+,{"stream_name":"stdout","time":1138.173542309,"data":"[job1] PASS  pan_reads_as_tx  {'clips': 2, 'correct': 2, 'pass': True}\n"}
+,{"stream_name":"stdout","time":1138.173545784,"data":"[job1] PASS  tilt_reads_as_ty  {'clips': 4, 'correct': 4, 'pass': True}\n"}
+,{"stream_name":"stdout","time":1138.173549258,"data":"[job1] FAIL  zoom_reads_as_zoom  {'clips': 2, 'correct': 1, 'pass': False}\n"}
+,{"stream_name":"stdout","time":1138.1735528,"data":"[job1] PASS  roll_reads_as_roll  {'clips': 2, 'correct': 2, 'pass': True}\n"}
+,{"stream_name":"stdout","time":1138.17372213,"data":"exit codes [0, 0]\n"}
+,{"stream_name":"stderr","time":1140.362554033,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1140.362587073,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1140.664592246,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1140.664613315,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1141.517691193,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1142.591582789,"data":"[NbConvertApp] Writing 563763 bytes to __results__.html\n"}
+]
