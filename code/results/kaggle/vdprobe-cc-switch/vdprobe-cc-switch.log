@@ -1,0 +1,881 @@
+[{"stream_name":"stdout","time":17.252624507,"data":"2\n"}
+,{"stream_name":"stdout","time":17.252689292,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":17.252695064,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":17.252698383,"data":"2.11.0+cu130\n"}
+,{"stream_name":"stdout","time":17.252701578,"data":" \n"}
+,{"stream_name":"stderr","time":20.42454708,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":35.588941195,"data":"\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  3.56it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:15\u003c00:00,  8.99s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:15\u003c00:00,  7.68s/it]\n"}
+,{"stream_name":"stderr","time":54.343834454,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:   8%|▊         | 1/13 [00:00\u003c00:02,  4.19it/s]\rFetching 13 files:  62%|██████▏   | 8/13 [00:00\u003c00:00, 19.12it/s]\rFetching 13 files:  85%|████████▍ | 11/13 [00:04\u003c00:00,  2.16it/s]\rFetching 13 files:  92%|█████████▏| 12/13 [00:14\u003c00:00,  2.16it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:18\u003c00:00,  2.15s/it]\rFetching 13 files: 100%|██████████| 13/13 [00:18\u003c00:00,  1.41s/it]\n"}
+,{"stream_name":"stderr","time":67.785160312,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:   8%|▊         | 1/12 [00:00\u003c00:02,  4.80it/s]\rFetching 12 files:  58%|█████▊    | 7/12 [00:00\u003c00:00, 17.09it/s]\rFetching 12 files:  83%|████████▎ | 10/12 [00:07\u003c00:01,  1.07it/s]\rFetching 12 files:  92%|█████████▏| 11/12 [00:10\u003c00:01,  1.26s/it]\rFetching 12 files: 100%|██████████| 12/12 [00:13\u003c00:00,  1.51s/it]\rFetching 12 files: 100%|██████████| 12/12 [00:13\u003c00:00,  1.08s/it]\n"}
+,{"stream_name":"stderr","time":92.203075965,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  4.68it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:11\u003c00:00,  6.95s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:11\u003c00:00,  5.94s/it]\n"}
+,{"stream_name":"stderr","time":92.433886197,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 990.66it/s]\n"}
+,{"stream_name":"stdout","time":140.868371886,"data":"Downloading: \"https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth\" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth\n"}
+,{"stream_name":"stderr","time":141.017528905,"data":"\r  0%|          | 0.00/20.1M [00:00\u003c?, ?B/s]\r100%|██████████| 20.1M/20.1M [00:00\u003c00:00, 230MB/s]\n"}
+,{"stream_name":"stdout","time":141.907437749,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/camera_switch.py --model cc --shard 0/2 --swap-sets down_blocks.0+down_blocks.1+down_blocks.2 down_blocks.0+up_blocks.3 up_blocks.0+up_blocks.1+up_blocks.2 --out /kaggle/working/out/job0\n"}
+,{"stream_name":"stdout","time":141.908325788,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/camera_switch.py --model cc --shard 1/2 --swap-sets down_blocks.0+down_blocks.1+down_blocks.2 down_blocks.0+up_blocks.3 up_blocks.0+up_blocks.1+up_blocks.2 --out /kaggle/working/out/job1\n"}
+,{"stream_name":"stdout","time":201.909426757,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":201.909465857,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":201.90948664,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 946.80it/s]\n"}
+,{"stream_name":"stdout","time":201.909491145,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":201.909494535,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":201.909498062,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1244.40it/s]\n"}
+,{"stream_name":"stdout","time":201.909512281,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":201.909516569,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":201.909522129,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":201.909525987,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":201.909529557,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:01\u003c00:07,  1.57s/it]\n"}
+,{"stream_name":"stdout","time":201.90953314,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:01\u003c00:00,  2.74it/s]\n"}
+,{"stream_name":"stdout","time":201.909536804,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":201.909539949,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":201.909543545,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2585.75it/s]\n"}
+,{"stream_name":"stdout","time":201.909547163,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":201.909550395,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  3.86it/s]\n"}
+,{"stream_name":"stdout","time":201.909554022,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.90it/s]\n"}
+,{"stream_name":"stdout","time":201.909557782,"data":"[job0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":201.909561382,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":201.909564634,"data":"[job0] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":201.909568116,"data":"[job0] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 10817.00it/s]\n"}
+,{"stream_name":"stdout","time":201.909571665,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":201.909574845,"data":"[job0] === a-mountain-lake-at-sunrise__zoom-in: 45 tracks\n"}
+,{"stream_name":"stdout","time":201.909650557,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":201.909664943,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":201.909669405,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 920.11it/s]\n"}
+,{"stream_name":"stdout","time":201.909673691,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":201.90967726,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":201.909680701,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1164.66it/s]\n"}
+,{"stream_name":"stdout","time":201.909684449,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":201.909701581,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":201.909705655,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":201.909708954,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":201.909712485,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:01\u003c00:07,  1.59s/it]\n"}
+,{"stream_name":"stdout","time":201.90971613,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":201.909719319,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":201.909723242,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2644.32it/s]\n"}
+,{"stream_name":"stdout","time":201.909726896,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":201.909730043,"data":"[job1] Loading pipeline components...:  33%|███▎      | 2/6 [00:01\u003c00:03,  1.28it/s]\n"}
+,{"stream_name":"stdout","time":201.909733749,"data":"[job1] Loading pipeline components...:  83%|████████▎ | 5/6 [00:01\u003c00:00,  3.85it/s]\n"}
+,{"stream_name":"stdout","time":201.909737412,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:01\u003c00:00,  3.04it/s]\n"}
+,{"stream_name":"stdout","time":201.909741044,"data":"[job1] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":201.909744664,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":201.909747884,"data":"[job1] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":201.909751302,"data":"[job1] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 8326.93it/s]\n"}
+,{"stream_name":"stdout","time":201.909754854,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":201.909758051,"data":"[job1] === a-mountain-lake-at-sunrise__pan-left: 45 tracks\n"}
+,{"stream_name":"stdout","time":441.91132635,"data":"[job0]     step  5/25    233.7 s  (1.04 s per clip-step)\n"}
+,{"stream_name":"stdout","time":441.911494763,"data":"[job1]     step  5/25    224.0 s  (1.00 s per clip-step)\n"}
+,{"stream_name":"stdout","time":681.913135462,"data":"[job0]     step 10/25    476.8 s  (1.06 s per clip-step)\n"}
+,{"stream_name":"stdout","time":681.9131715,"data":"[job1]     step 10/25    455.5 s  (1.01 s per clip-step)\n"}
+,{"stream_name":"stdout","time":921.915473291,"data":"[job0]     step 15/25    720.2 s  (1.07 s per clip-step)\n"}
+,{"stream_name":"stdout","time":921.915536437,"data":"[job1]     step 15/25    687.3 s  (1.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1161.917086559,"data":"[job0]     step 20/25    964.5 s  (1.07 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1161.917145225,"data":"[job1]     step 20/25    918.5 s  (1.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1401.919053693,"data":"[job1]     step 25/25   1149.4 s  (1.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1461.919925516,"data":"[job0]     step 25/25   1208.8 s  (1.07 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1521.920858755,"data":"[job1]   on                       retained +1.000  b +0.000  clip 0.873\n"}
+,{"stream_name":"stdout","time":1521.920896245,"data":"[job1]   off                      retained +0.000  b +0.987  clip 1.000\n"}
+,{"stream_name":"stdout","time":1521.920914152,"data":"[job1]   on_until_1               retained +0.011  b +0.976  clip 0.968\n"}
+,{"stream_name":"stdout","time":1521.9209184,"data":"[job1]   on_until_2               retained +0.125  b +0.863  clip 0.921\n"}
+,{"stream_name":"stdout","time":1521.920921894,"data":"[job1]   on_until_3               retained +1.176  b -0.173  clip 0.871\n"}
+,{"stream_name":"stdout","time":1521.920926127,"data":"[job1]   on_until_5               retained +1.112  b -0.110  clip 0.881\n"}
+,{"stream_name":"stdout","time":1521.920930373,"data":"[job1]   on_until_8               retained +1.120  b -0.118  clip 0.889\n"}
+,{"stream_name":"stdout","time":1521.920934787,"data":"[job1]   on_until_12              retained +0.978  b +0.021  clip 0.877\n"}
+,{"stream_name":"stdout","time":1521.920938955,"data":"[job1]   on_until_18              retained +0.977  b +0.022  clip 0.870\n"}
+,{"stream_name":"stdout","time":1521.920943192,"data":"[job1]   on_from_1                retained +0.995  b +0.005  clip 0.877\n"}
+,{"stream_name":"stdout","time":1521.920947674,"data":"[job1]   on_from_2                retained +0.895  b +0.102  clip 0.912\n"}
+,{"stream_name":"stdout","time":1521.920952065,"data":"[job1]   on_from_3                retained -0.013  b +1.003  clip 0.882\n"}
+,{"stream_name":"stdout","time":1521.920956195,"data":"[job1]   on_from_5                retained -0.130  b +1.118  clip 0.873\n"}
+,{"stream_name":"stdout","time":1521.920960236,"data":"[job1]   on_from_8                retained +0.306  b +0.687  clip 0.891\n"}
+,{"stream_name":"stdout","time":1521.920964451,"data":"[job1]   on_from_12               retained +0.065  b +0.928  clip 0.975\n"}
+,{"stream_name":"stdout","time":1521.920968698,"data":"[job1]   on_from_18               retained -0.057  b +1.046  clip 0.990\n"}
+,{"stream_name":"stdout","time":1521.920972968,"data":"[job1]   only_down_blocks.0       retained -0.539  b +1.520  clip 0.912\n"}
+,{"stream_name":"stdout","time":1521.920977328,"data":"[job1]   only_down_blocks.1       retained +0.072  b +0.913  clip 0.921\n"}
+,{"stream_name":"stdout","time":1521.920981421,"data":"[job1]   only_down_blocks.2       retained +0.074  b +0.910  clip 0.944\n"}
+,{"stream_name":"stdout","time":1521.92098556,"data":"[job1]   only_down_blocks.3       retained +0.017  b +0.970  clip 0.989\n"}
+,{"stream_name":"stdout","time":1521.920989792,"data":"[job1]   only_up_blocks.0         retained -0.026  b +1.014  clip 0.983\n"}
+,{"stream_name":"stdout","time":1521.920994103,"data":"[job1]   only_up_blocks.1         retained +0.029  b +0.960  clip 0.976\n"}
+,{"stream_name":"stdout","time":1521.920998419,"data":"[job1]   only_up_blocks.2         retained +0.013  b +0.974  clip 0.973\n"}
+,{"stream_name":"stdout","time":1521.921002525,"data":"[job1]   only_up_blocks.3         retained +0.028  b +0.963  clip 0.925\n"}
+,{"stream_name":"stdout","time":1521.92100653,"data":"[job1]   without_down_blocks.0    retained +0.850  b +0.147  clip 0.844\n"}
+,{"stream_name":"stdout","time":1521.921010813,"data":"[job1]   without_down_blocks.1    retained +0.105  b +0.884  clip 0.893\n"}
+,{"stream_name":"stdout","time":1521.921015185,"data":"[job1]   without_down_blocks.2    retained +0.518  b +0.476  clip 0.865\n"}
+,{"stream_name":"stdout","time":1521.921019485,"data":"[job1]   without_down_blocks.3    retained +1.003  b -0.003  clip 0.880\n"}
+,{"stream_name":"stdout","time":1521.921024822,"data":"[job1]   without_up_blocks.0      retained +0.990  b +0.009  clip 0.863\n"}
+,{"stream_name":"stdout","time":1521.921029043,"data":"[job1]   without_up_blocks.1      retained +0.951  b +0.048  clip 0.902\n"}
+,{"stream_name":"stdout","time":1521.921033178,"data":"[job1]   without_up_blocks.2      retained +0.993  b +0.007  clip 0.871\n"}
+,{"stream_name":"stdout","time":1521.921041327,"data":"[job1]   without_up_blocks.3      retained +0.959  b +0.040  clip 0.886\n"}
+,{"stream_name":"stdout","time":1521.921045642,"data":"[job1]   on_B                     retained -0.008  b +1.000  clip 0.828\n"}
+,{"stream_name":"stdout","time":1521.921049958,"data":"[job1]   swap_down_blocks.0       retained +1.120  b -0.119  clip 0.862\n"}
+,{"stream_name":"stdout","time":1521.921053968,"data":"[job1]   swap_down_blocks.1       retained +0.489  b +0.508  clip 0.864\n"}
+,{"stream_name":"stdout","time":1521.921058057,"data":"[job1]   swap_down_blocks.2       retained +0.781  b +0.215  clip 0.906\n"}
+,{"stream_name":"stdout","time":1521.921062218,"data":"[job1]   swap_down_blocks.3       retained +1.010  b -0.010  clip 0.877\n"}
+,{"stream_name":"stdout","time":1521.921066874,"data":"[job1]   swap_up_blocks.0         retained +1.071  b -0.070  clip 0.862\n"}
+,{"stream_name":"stdout","time":1521.921071297,"data":"[job1]   swap_up_blocks.1         retained +1.006  b -0.006  clip 0.874\n"}
+,{"stream_name":"stdout","time":1521.921075348,"data":"[job1]   swap_up_blocks.2         retained +1.016  b -0.016  clip 0.880\n"}
+,{"stream_name":"stdout","time":1521.921079399,"data":"[job1]   swap_up_blocks.3         retained +1.007  b -0.006  clip 0.876\n"}
+,{"stream_name":"stdout","time":1521.921083365,"data":"[job1]   swap_down_blocks.0+down_blocks.1+down_blocks.2 retained -1.137  b +2.106  clip 0.858\n"}
+,{"stream_name":"stdout","time":1521.921087997,"data":"[job1]   swap_down_blocks.0+up_blocks.3 retained +1.151  b -0.148  clip 0.864\n"}
+,{"stream_name":"stdout","time":1521.921092297,"data":"[job1]   swap_up_blocks.0+up_blocks.1+up_blocks.2 retained +1.049  b -0.049  clip 0.875\n"}
+,{"stream_name":"stdout","time":1521.921096642,"data":"[job1]   swap_all                 retained -0.008  b +1.000  clip 0.828\n"}
+,{"stream_name":"stdout","time":1521.921100585,"data":"[job1] wrote /kaggle/working/out/job1/a-mountain-lake-at-sunrise__pan-left/manifest.json\n"}
+,{"stream_name":"stdout","time":1521.921105081,"data":"[job1] PASS  checks {'camera_changes_clip': True, 'swap_all_equals_on_B': True, 'swap_all_mad': 0.0}\n"}
+,{"stream_name":"stdout","time":1521.921109648,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":1521.92111369,"data":"[job1] === a-mountain-lake-at-sunrise__roll-cw: 32 tracks\n"}
+,{"stream_name":"stdout","time":1581.921408629,"data":"[job0]   on                       retained +1.000  b +0.000  clip 0.894\n"}
+,{"stream_name":"stdout","time":1581.921452931,"data":"[job0]   off                      retained +0.000  b +0.539  clip 1.000\n"}
+,{"stream_name":"stdout","time":1581.921460624,"data":"[job0]   on_until_1               retained +0.276  b +0.449  clip 0.953\n"}
+,{"stream_name":"stdout","time":1581.921465839,"data":"[job0]   on_until_2               retained +0.517  b +0.303  clip 0.917\n"}
+,{"stream_name":"stdout","time":1581.921470703,"data":"[job0]   on_until_3               retained +0.556  b +0.292  clip 0.890\n"}
+,{"stream_name":"stdout","time":1581.921475258,"data":"[job0]   on_until_5               retained +0.271  b +0.444  clip 0.914\n"}
+,{"stream_name":"stdout","time":1581.921480346,"data":"[job0]   on_until_8               retained +0.279  b +0.466  clip 0.915\n"}
+,{"stream_name":"stdout","time":1581.921485088,"data":"[job0]   on_until_12              retained +0.535  b +0.293  clip 0.883\n"}
+,{"stream_name":"stdout","time":1581.921489791,"data":"[job0]   on_until_18              retained +0.917  b +0.067  clip 0.893\n"}
+,{"stream_name":"stdout","time":1581.921494401,"data":"[job0]   on_from_1                retained +1.149  b -0.057  clip 0.903\n"}
+,{"stream_name":"stdout","time":1581.92149906,"data":"[job0]   on_from_2                retained +0.649  b +0.156  clip 0.919\n"}
+,{"stream_name":"stdout","time":1581.921531796,"data":"[job0]   on_from_3                retained +0.341  b +0.252  clip 0.906\n"}
+,{"stream_name":"stdout","time":1581.921537996,"data":"[job0]   on_from_5                retained +0.086  b +0.416  clip 0.914\n"}
+,{"stream_name":"stdout","time":1581.921541656,"data":"[job0]   on_from_8                retained -0.132  b +0.726  clip 0.941\n"}
+,{"stream_name":"stdout","time":1581.921545075,"data":"[job0]   on_from_12               retained -0.252  b +0.780  clip 0.976\n"}
+,{"stream_name":"stdout","time":1581.921548882,"data":"[job0]   on_from_18               retained -0.175  b +0.602  clip 0.991\n"}
+,{"stream_name":"stdout","time":1581.92155252,"data":"[job0]   only_down_blocks.0       retained -0.309  b +0.590  clip 0.909\n"}
+,{"stream_name":"stdout","time":1581.921556167,"data":"[job0]   only_down_blocks.1       retained +0.272  b +0.467  clip 0.913\n"}
+,{"stream_name":"stdout","time":1581.92155969,"data":"[job0]   only_down_blocks.2       retained +0.576  b +0.299  clip 0.952\n"}
+,{"stream_name":"stdout","time":1581.921563639,"data":"[job0]   only_down_blocks.3       retained +0.067  b +0.516  clip 0.985\n"}
+,{"stream_name":"stdout","time":1581.921567459,"data":"[job0]   only_up_blocks.0         retained -0.250  b +0.764  clip 0.976\n"}
+,{"stream_name":"stdout","time":1581.92157112,"data":"[job0]   only_up_blocks.1         retained -0.126  b +0.690  clip 0.971\n"}
+,{"stream_name":"stdout","time":1581.921574603,"data":"[job0]   only_up_blocks.2         retained +0.207  b +0.422  clip 0.973\n"}
+,{"stream_name":"stdout","time":1581.921578371,"data":"[job0]   only_up_blocks.3         retained -0.198  b +0.689  clip 0.913\n"}
+,{"stream_name":"stdout","time":1581.921581864,"data":"[job0]   without_down_blocks.0    retained +0.345  b +0.447  clip 0.873\n"}
+,{"stream_name":"stdout","time":1581.921585757,"data":"[job0]   without_down_blocks.1    retained +0.342  b +0.318  clip 0.894\n"}
+,{"stream_name":"stdout","time":1581.921589226,"data":"[job0]   without_down_blocks.2    retained +0.638  b +0.192  clip 0.904\n"}
+,{"stream_name":"stdout","time":1581.921592443,"data":"[job0]   without_down_blocks.3    retained +1.032  b +0.232  clip 0.888\n"}
+,{"stream_name":"stdout","time":1581.921598805,"data":"[job0]   without_up_blocks.0      retained +1.232  b +0.133  clip 0.905\n"}
+,{"stream_name":"stdout","time":1581.921602727,"data":"[job0]   without_up_blocks.1      retained +1.071  b +0.004  clip 0.904\n"}
+,{"stream_name":"stdout","time":1581.921606394,"data":"[job0]   without_up_blocks.2      retained +0.847  b +0.055  clip 0.893\n"}
+,{"stream_name":"stdout","time":1581.921609877,"data":"[job0]   without_up_blocks.3      retained +0.893  b +0.077  clip 0.899\n"}
+,{"stream_name":"stdout","time":1581.921613497,"data":"[job0]   on_B                     retained -0.578  b +1.000  clip 0.920\n"}
+,{"stream_name":"stdout","time":1581.921617025,"data":"[job0]   swap_down_blocks.0       retained +0.700  b +0.156  clip 0.879\n"}
+,{"stream_name":"stdout","time":1581.921620629,"data":"[job0]   swap_down_blocks.1       retained +0.009  b +0.624  clip 0.889\n"}
+,{"stream_name":"stdout","time":1581.921624352,"data":"[job0]   swap_down_blocks.2       retained +1.224  b +0.107  clip 0.887\n"}
+,{"stream_name":"stdout","time":1581.921628249,"data":"[job0]   swap_down_blocks.3       retained +0.889  b +0.072  clip 0.887\n"}
+,{"stream_name":"stdout","time":1581.921631977,"data":"[job0]   swap_up_blocks.0         retained +1.227  b +0.100  clip 0.899\n"}
+,{"stream_name":"stdout","time":1581.921635931,"data":"[job0]   swap_up_blocks.1         retained +1.050  b -0.016  clip 0.895\n"}
+,{"stream_name":"stdout","time":1581.921639712,"data":"[job0]   swap_up_blocks.2         retained +0.208  b +0.469  clip 0.904\n"}
+,{"stream_name":"stdout","time":1581.921649168,"data":"[job0]   swap_up_blocks.3         retained +0.901  b +0.059  clip 0.904\n"}
+,{"stream_name":"stdout","time":1581.921653217,"data":"[job0]   swap_down_blocks.0+down_blocks.1+down_blocks.2 retained -1.268  b +1.531  clip 0.898\n"}
+,{"stream_name":"stdout","time":1581.921657223,"data":"[job0]   swap_down_blocks.0+up_blocks.3 retained +0.227  b +0.467  clip 0.887\n"}
+,{"stream_name":"stdout","time":1581.921661022,"data":"[job0]   swap_up_blocks.0+up_blocks.1+up_blocks.2 retained +0.846  b +0.113  clip 0.882\n"}
+,{"stream_name":"stdout","time":1581.921664895,"data":"[job0]   swap_all                 retained -0.578  b +1.000  clip 0.920\n"}
+,{"stream_name":"stdout","time":1581.921668846,"data":"[job0] wrote /kaggle/working/out/job0/a-mountain-lake-at-sunrise__zoom-in/manifest.json\n"}
+,{"stream_name":"stdout","time":1581.921672445,"data":"[job0] PASS  checks {'camera_changes_clip': True, 'swap_all_equals_on_B': True, 'swap_all_mad': 0.0}\n"}
+,{"stream_name":"stdout","time":1581.921676545,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":1581.921680163,"data":"[job0] === a-mountain-lake-at-sunrise__tilt-up: 45 tracks\n"}
+,{"stream_name":"stdout","time":1701.922790397,"data":"[job1]     step  5/25    165.1 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1821.923673793,"data":"[job0]     step  5/25    242.2 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1881.924229379,"data":"[job1]     step 10/25    329.6 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2001.925393913,"data":"[job1]     step 15/25    493.9 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2061.925752502,"data":"[job0]     step 10/25    485.2 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2181.926800705,"data":"[job1]     step 20/25    658.1 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2301.927660451,"data":"[job0]     step 15/25    728.5 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2361.928425836,"data":"[job1]     step 25/25    822.4 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2481.929752322,"data":"[job1]   on                       retained +1.000  b +nan  clip 0.800\n"}
+,{"stream_name":"stdout","time":2481.92978889,"data":"[job1]   off                      retained +0.000  b +nan  clip 1.000\n"}
+,{"stream_name":"stdout","time":2481.929794232,"data":"[job1]   on_until_1               retained +0.249  b +nan  clip 0.944\n"}
+,{"stream_name":"stdout","time":2481.929798705,"data":"[job1]   on_until_2               retained -0.460  b +nan  clip 0.846\n"}
+,{"stream_name":"stdout","time":2481.929803028,"data":"[job1]   on_until_3               retained -1.512  b +nan  clip 0.799\n"}
+,{"stream_name":"stdout","time":2481.929807353,"data":"[job1]   on_until_5               retained +0.167  b +nan  clip 0.726\n"}
+,{"stream_name":"stdout","time":2481.929811566,"data":"[job1]   on_until_8               retained +0.776  b +nan  clip 0.749\n"}
+,{"stream_name":"stdout","time":2481.929815797,"data":"[job1]   on_until_12              retained +0.918  b +nan  clip 0.781\n"}
+,{"stream_name":"stdout","time":2481.929819989,"data":"[job1]   on_until_18              retained +0.983  b +nan  clip 0.802\n"}
+,{"stream_name":"stdout","time":2481.929824132,"data":"[job1]   on_from_1                retained +0.981  b +nan  clip 0.776\n"}
+,{"stream_name":"stdout","time":2481.92982835,"data":"[job1]   on_from_2                retained +0.834  b +nan  clip 0.866\n"}
+,{"stream_name":"stdout","time":2481.929832614,"data":"[job1]   on_from_3                retained +0.886  b +nan  clip 0.869\n"}
+,{"stream_name":"stdout","time":2481.92983687,"data":"[job1]   on_from_5                retained +1.173  b +nan  clip 0.888\n"}
+,{"stream_name":"stdout","time":2481.929853757,"data":"[job1]   on_from_8                retained +1.244  b +nan  clip 0.930\n"}
+,{"stream_name":"stdout","time":2481.929857259,"data":"[job1]   on_from_12               retained +0.268  b +nan  clip 0.976\n"}
+,{"stream_name":"stdout","time":2481.929860531,"data":"[job1]   on_from_18               retained -0.065  b +nan  clip 0.990\n"}
+,{"stream_name":"stdout","time":2481.929863821,"data":"[job1]   only_down_blocks.0       retained -0.002  b +nan  clip 0.912\n"}
+,{"stream_name":"stdout","time":2481.929867066,"data":"[job1]   only_down_blocks.1       retained +0.245  b +nan  clip 0.900\n"}
+,{"stream_name":"stdout","time":2481.929870324,"data":"[job1]   only_down_blocks.2       retained +0.341  b +nan  clip 0.951\n"}
+,{"stream_name":"stdout","time":2481.929873691,"data":"[job1]   only_down_blocks.3       retained -0.224  b +nan  clip 0.962\n"}
+,{"stream_name":"stdout","time":2481.92987696,"data":"[job1]   only_up_blocks.0         retained +0.133  b +nan  clip 0.961\n"}
+,{"stream_name":"stdout","time":2481.929880235,"data":"[job1]   only_up_blocks.1         retained +0.096  b +nan  clip 0.972\n"}
+,{"stream_name":"stdout","time":2481.929883686,"data":"[job1]   only_up_blocks.2         retained +0.116  b +nan  clip 0.974\n"}
+,{"stream_name":"stdout","time":2481.92988702,"data":"[job1]   only_up_blocks.3         retained +0.130  b +nan  clip 0.926\n"}
+,{"stream_name":"stdout","time":2481.929890242,"data":"[job1]   without_down_blocks.0    retained +0.682  b +nan  clip 0.869\n"}
+,{"stream_name":"stdout","time":2481.929893674,"data":"[job1]   without_down_blocks.1    retained +0.612  b +nan  clip 0.899\n"}
+,{"stream_name":"stdout","time":2481.929896924,"data":"[job1]   without_down_blocks.2    retained +0.467  b +nan  clip 0.889\n"}
+,{"stream_name":"stdout","time":2481.929900235,"data":"[job1]   without_down_blocks.3    retained +0.783  b +nan  clip 0.731\n"}
+,{"stream_name":"stdout","time":2481.929903525,"data":"[job1]   without_up_blocks.0      retained +1.002  b +nan  clip 0.765\n"}
+,{"stream_name":"stdout","time":2481.929907493,"data":"[job1]   without_up_blocks.1      retained +1.093  b +nan  clip 0.824\n"}
+,{"stream_name":"stdout","time":2481.929910764,"data":"[job1]   without_up_blocks.2      retained +0.898  b +nan  clip 0.795\n"}
+,{"stream_name":"stdout","time":2481.92991414,"data":"[job1]   without_up_blocks.3      retained +0.746  b +nan  clip 0.795\n"}
+,{"stream_name":"stdout","time":2481.929917441,"data":"[job1] wrote /kaggle/working/out/job1/a-mountain-lake-at-sunrise__roll-cw/manifest.json\n"}
+,{"stream_name":"stdout","time":2481.92992087,"data":"[job1] PASS  checks {'camera_changes_clip': True}\n"}
+,{"stream_name":"stdout","time":2481.929924172,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":2481.929927402,"data":"[job1] === a-medieval-stone-castle-on-a-hill__pan-left: 45 tracks\n"}
+,{"stream_name":"stdout","time":2541.93013204,"data":"[job0]     step 20/25    971.6 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2721.931868331,"data":"[job1]     step  5/25    227.6 s  (1.01 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2841.932832642,"data":"[job0]     step 25/25   1214.3 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2961.934230661,"data":"[job0]   on                       retained +1.000  b +0.000  clip 0.879\n"}
+,{"stream_name":"stdout","time":2961.934273014,"data":"[job0]   off                      retained +0.000  b +0.648  clip 1.000\n"}
+,{"stream_name":"stdout","time":2961.934279995,"data":"[job0]   on_until_1               retained +0.205  b +0.599  clip 0.865\n"}
+,{"stream_name":"stdout","time":2961.934284857,"data":"[job0]   on_until_2               retained +0.623  b +0.280  clip 0.864\n"}
+,{"stream_name":"stdout","time":2961.93430291,"data":"[job0]   on_until_3               retained +0.670  b +0.247  clip 0.876\n"}
+,{"stream_name":"stdout","time":2961.934307067,"data":"[job0]   on_until_5               retained +0.910  b +0.076  clip 0.874\n"}
+,{"stream_name":"stdout","time":2961.93431059,"data":"[job0]   on_until_8               retained +1.014  b -0.003  clip 0.887\n"}
+,{"stream_name":"stdout","time":2961.934314175,"data":"[job0]   on_until_12              retained +1.014  b -0.015  clip 0.882\n"}
+,{"stream_name":"stdout","time":2961.934317667,"data":"[job0]   on_until_18              retained +0.997  b +0.004  clip 0.878\n"}
+,{"stream_name":"stdout","time":2961.934321353,"data":"[job0]   on_from_1                retained +0.258  b +0.553  clip 0.884\n"}
+,{"stream_name":"stdout","time":2961.93432524,"data":"[job0]   on_from_2                retained +0.514  b +0.378  clip 0.891\n"}
+,{"stream_name":"stdout","time":2961.934328729,"data":"[job0]   on_from_3                retained +0.464  b +0.396  clip 0.906\n"}
+,{"stream_name":"stdout","time":2961.934332504,"data":"[job0]   on_from_5                retained +0.327  b +0.492  clip 0.922\n"}
+,{"stream_name":"stdout","time":2961.934336126,"data":"[job0]   on_from_8                retained +0.205  b +0.559  clip 0.956\n"}
+,{"stream_name":"stdout","time":2961.934340013,"data":"[job0]   on_from_12               retained -0.028  b +0.759  clip 0.979\n"}
+,{"stream_name":"stdout","time":2961.934343359,"data":"[job0]   on_from_18               retained -0.083  b +0.626  clip 0.991\n"}
+,{"stream_name":"stdout","time":2961.934346662,"data":"[job0]   only_down_blocks.0       retained +0.105  b +0.542  clip 0.926\n"}
+,{"stream_name":"stdout","time":2961.934350089,"data":"[job0]   only_down_blocks.1       retained +0.105  b +0.682  clip 0.926\n"}
+,{"stream_name":"stdout","time":2961.93435353,"data":"[job0]   only_down_blocks.2       retained +0.207  b +0.616  clip 0.920\n"}
+,{"stream_name":"stdout","time":2961.934357005,"data":"[job0]   only_down_blocks.3       retained +0.155  b +0.652  clip 0.926\n"}
+,{"stream_name":"stdout","time":2961.934360271,"data":"[job0]   only_up_blocks.0         retained +0.025  b +0.693  clip 0.976\n"}
+,{"stream_name":"stdout","time":2961.934363749,"data":"[job0]   only_up_blocks.1         retained -0.025  b +0.739  clip 0.964\n"}
+,{"stream_name":"stdout","time":2961.934367163,"data":"[job0]   only_up_blocks.2         retained +0.060  b +0.607  clip 0.978\n"}
+,{"stream_name":"stdout","time":2961.934370647,"data":"[job0]   only_up_blocks.3         retained -0.004  b +0.621  clip 0.919\n"}
+,{"stream_name":"stdout","time":2961.934374155,"data":"[job0]   without_down_blocks.0    retained +0.622  b +0.272  clip 0.871\n"}
+,{"stream_name":"stdout","time":2961.934377889,"data":"[job0]   without_down_blocks.1    retained +0.547  b +0.312  clip 0.923\n"}
+,{"stream_name":"stdout","time":2961.934381458,"data":"[job0]   without_down_blocks.2    retained +0.469  b +0.458  clip 0.930\n"}
+,{"stream_name":"stdout","time":2961.934397818,"data":"[job0]   without_down_blocks.3    retained +1.078  b -0.079  clip 0.870\n"}
+,{"stream_name":"stdout","time":2961.934405006,"data":"[job0]   without_up_blocks.0      retained +0.921  b +0.071  clip 0.871\n"}
+,{"stream_name":"stdout","time":2961.934408472,"data":"[job0]   without_up_blocks.1      retained +0.765  b +0.188  clip 0.890\n"}
+,{"stream_name":"stdout","time":2961.934411955,"data":"[job0]   without_up_blocks.2      retained +0.914  b +0.074  clip 0.879\n"}
+,{"stream_name":"stdout","time":2961.934415382,"data":"[job0]   without_up_blocks.3      retained +0.751  b +0.202  clip 0.892\n"}
+,{"stream_name":"stdout","time":2961.934418687,"data":"[job0]   on_B                     retained +0.155  b +1.000  clip 0.800\n"}
+,{"stream_name":"stdout","time":2961.934429259,"data":"[job0]   swap_down_blocks.0       retained +1.213  b -0.170  clip 0.855\n"}
+,{"stream_name":"stdout","time":2961.934432893,"data":"[job0]   swap_down_blocks.1       retained +1.484  b -0.319  clip 0.859\n"}
+,{"stream_name":"stdout","time":2961.934436656,"data":"[job0]   swap_down_blocks.2       retained +0.595  b +0.381  clip 0.904\n"}
+,{"stream_name":"stdout","time":2961.93444027,"data":"[job0]   swap_down_blocks.3       retained +1.386  b -0.292  clip 0.879\n"}
+,{"stream_name":"stdout","time":2961.934443709,"data":"[job0]   swap_up_blocks.0         retained +1.815  b -0.645  clip 0.858\n"}
+,{"stream_name":"stdout","time":2961.934447196,"data":"[job0]   swap_up_blocks.1         retained +0.773  b +0.191  clip 0.869\n"}
+,{"stream_name":"stdout","time":2961.934450792,"data":"[job0]   swap_up_blocks.2         retained +0.801  b +0.198  clip 0.869\n"}
+,{"stream_name":"stdout","time":2961.934454382,"data":"[job0]   swap_up_blocks.3         retained +0.924  b +0.068  clip 0.882\n"}
+,{"stream_name":"stdout","time":2961.934457744,"data":"[job0]   swap_down_blocks.0+down_blocks.1+down_blocks.2 retained +0.491  b +0.303  clip 0.747\n"}
+,{"stream_name":"stdout","time":2961.934461247,"data":"[job0]   swap_down_blocks.0+up_blocks.3 retained +1.121  b -0.102  clip 0.848\n"}
+,{"stream_name":"stdout","time":2961.934464797,"data":"[job0]   swap_up_blocks.0+up_blocks.1+up_blocks.2 retained +0.967  b +0.074  clip 0.871\n"}
+,{"stream_name":"stdout","time":2961.934468363,"data":"[job0]   swap_all                 retained +0.155  b +1.000  clip 0.800\n"}
+,{"stream_name":"stdout","time":2961.934471681,"data":"[job0] wrote /kaggle/working/out/job0/a-mountain-lake-at-sunrise__tilt-up/manifest.json\n"}
+,{"stream_name":"stdout","time":2961.934475389,"data":"[job0] PASS  checks {'camera_changes_clip': True, 'swap_all_equals_on_B': True, 'swap_all_mad': 0.0}\n"}
+,{"stream_name":"stdout","time":2961.934479077,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":2961.934482433,"data":"[job0] === a-medieval-stone-castle-on-a-hill__zoom-in: 45 tracks\n"}
+,{"stream_name":"stdout","time":2961.934591701,"data":"[job1]     step 10/25    459.6 s  (1.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3141.93627845,"data":"[job1]     step 15/25    692.8 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3201.937080402,"data":"[job0]     step  5/25    239.8 s  (1.07 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3381.938753883,"data":"[job1]     step 20/25    925.6 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3441.939549382,"data":"[job0]     step 10/25    482.7 s  (1.07 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3621.941231313,"data":"[job1]     step 25/25   1156.5 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3681.941680325,"data":"[job0]     step 15/25    725.1 s  (1.07 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3801.943449643,"data":"[job1]   on                       retained +1.000  b +0.000  clip 0.519\n"}
+,{"stream_name":"stdout","time":3801.943491606,"data":"[job1]   off                      retained +0.000  b +0.580  clip 1.000\n"}
+,{"stream_name":"stdout","time":3801.943497867,"data":"[job1]   on_until_1               retained +0.027  b +0.555  clip 0.955\n"}
+,{"stream_name":"stdout","time":3801.94351705,"data":"[job1]   on_until_2               retained +0.045  b +0.562  clip 0.936\n"}
+,{"stream_name":"stdout","time":3801.943522289,"data":"[job1]   on_until_3               retained +0.013  b +0.550  clip 0.916\n"}
+,{"stream_name":"stdout","time":3801.943527399,"data":"[job1]   on_until_5               retained -0.067  b +0.524  clip 0.824\n"}
+,{"stream_name":"stdout","time":3801.943548993,"data":"[job1]   on_until_8               retained +1.322  b -0.207  clip 0.758\n"}
+,{"stream_name":"stdout","time":3801.943553586,"data":"[job1]   on_until_12              retained +0.992  b +0.005  clip 0.733\n"}
+,{"stream_name":"stdout","time":3801.943557747,"data":"[job1]   on_until_18              retained +0.994  b +0.000  clip 0.548\n"}
+,{"stream_name":"stdout","time":3801.943561731,"data":"[job1]   on_from_1                retained +1.001  b -0.051  clip 0.512\n"}
+,{"stream_name":"stdout","time":3801.943565702,"data":"[job1]   on_from_2                retained -0.112  b +0.267  clip 0.565\n"}
+,{"stream_name":"stdout","time":3801.943569695,"data":"[job1]   on_from_3                retained +1.434  b +0.279  clip 0.570\n"}
+,{"stream_name":"stdout","time":3801.943573692,"data":"[job1]   on_from_5                retained +0.619  b +0.773  clip 0.588\n"}
+,{"stream_name":"stdout","time":3801.943577702,"data":"[job1]   on_from_8                retained -0.372  b +0.590  clip 0.729\n"}
+,{"stream_name":"stdout","time":3801.943581563,"data":"[job1]   on_from_12               retained -0.072  b +0.580  clip 0.856\n"}
+,{"stream_name":"stdout","time":3801.943585473,"data":"[job1]   on_from_18               retained +0.004  b +0.576  clip 0.989\n"}
+,{"stream_name":"stdout","time":3801.943589473,"data":"[job1]   only_down_blocks.0       retained +0.652  b +0.311  clip 0.725\n"}
+,{"stream_name":"stdout","time":3801.943593369,"data":"[job1]   only_down_blocks.1       retained +0.029  b +0.584  clip 0.883\n"}
+,{"stream_name":"stdout","time":3801.943597306,"data":"[job1]   only_down_blocks.2       retained +0.038  b +0.584  clip 0.935\n"}
+,{"stream_name":"stdout","time":3801.943601198,"data":"[job1]   only_down_blocks.3       retained -0.180  b +0.593  clip 0.962\n"}
+,{"stream_name":"stdout","time":3801.94360519,"data":"[job1]   only_up_blocks.0         retained -0.090  b +0.585  clip 0.916\n"}
+,{"stream_name":"stdout","time":3801.943609217,"data":"[job1]   only_up_blocks.1         retained -0.197  b +0.598  clip 0.951\n"}
+,{"stream_name":"stdout","time":3801.943613157,"data":"[job1]   only_up_blocks.2         retained +0.029  b +0.582  clip 0.960\n"}
+,{"stream_name":"stdout","time":3801.943617138,"data":"[job1]   only_up_blocks.3         retained -0.206  b +0.549  clip 0.926\n"}
+,{"stream_name":"stdout","time":3801.943621093,"data":"[job1]   without_down_blocks.0    retained +0.040  b +0.577  clip 0.820\n"}
+,{"stream_name":"stdout","time":3801.943625251,"data":"[job1]   without_down_blocks.1    retained -0.140  b +0.410  clip 0.830\n"}
+,{"stream_name":"stdout","time":3801.943629257,"data":"[job1]   without_down_blocks.2    retained +1.776  b -0.451  clip 0.609\n"}
+,{"stream_name":"stdout","time":3801.943633213,"data":"[job1]   without_down_blocks.3    retained +1.227  b -0.093  clip 0.524\n"}
+,{"stream_name":"stdout","time":3801.943638116,"data":"[job1]   without_up_blocks.0      retained +0.006  b +0.118  clip 0.566\n"}
+,{"stream_name":"stdout","time":3801.943642086,"data":"[job1]   without_up_blocks.1      retained +1.718  b -0.301  clip 0.524\n"}
+,{"stream_name":"stdout","time":3801.943646064,"data":"[job1]   without_up_blocks.2      retained +1.076  b -0.027  clip 0.465\n"}
+,{"stream_name":"stdout","time":3801.94364999,"data":"[job1]   without_up_blocks.3      retained +1.057  b -0.002  clip 0.502\n"}
+,{"stream_name":"stdout","time":3801.94365396,"data":"[job1]   on_B                     retained -0.029  b +1.000  clip 0.645\n"}
+,{"stream_name":"stdout","time":3801.943657839,"data":"[job1]   swap_down_blocks.0       retained +0.830  b +0.102  clip 0.497\n"}
+,{"stream_name":"stdout","time":3801.943661767,"data":"[job1]   swap_down_blocks.1       retained -1.314  b +1.153  clip 0.503\n"}
+,{"stream_name":"stdout","time":3801.943669887,"data":"[job1]   swap_down_blocks.2       retained +1.417  b -0.246  clip 0.601\n"}
+,{"stream_name":"stdout","time":3801.943674053,"data":"[job1]   swap_down_blocks.3       retained +1.103  b -0.030  clip 0.535\n"}
+,{"stream_name":"stdout","time":3801.943680884,"data":"[job1]   swap_up_blocks.0         retained +0.931  b -0.066  clip 0.514\n"}
+,{"stream_name":"stdout","time":3801.943684884,"data":"[job1]   swap_up_blocks.1         retained +1.043  b +0.006  clip 0.453\n"}
+,{"stream_name":"stdout","time":3801.943688802,"data":"[job1]   swap_up_blocks.2         retained +1.059  b -0.035  clip 0.451\n"}
+,{"stream_name":"stdout","time":3801.943692967,"data":"[job1]   swap_up_blocks.3         retained +1.023  b -0.034  clip 0.474\n"}
+,{"stream_name":"stdout","time":3801.94369691,"data":"[job1]   swap_down_blocks.0+down_blocks.1+down_blocks.2 retained -0.648  b +1.240  clip 0.486\n"}
+,{"stream_name":"stdout","time":3801.943700946,"data":"[job1]   swap_down_blocks.0+up_blocks.3 retained +0.639  b +0.204  clip 0.501\n"}
+,{"stream_name":"stdout","time":3801.943704933,"data":"[job1]   swap_up_blocks.0+up_blocks.1+up_blocks.2 retained +1.108  b -0.031  clip 0.458\n"}
+,{"stream_name":"stdout","time":3801.943709856,"data":"[job1]   swap_all                 retained -0.029  b +1.000  clip 0.645\n"}
+,{"stream_name":"stdout","time":3801.943713839,"data":"[job1] wrote /kaggle/working/out/job1/a-medieval-stone-castle-on-a-hill__pan-left/manifest.json\n"}
+,{"stream_name":"stdout","time":3801.943717893,"data":"[job1] PASS  checks {'camera_changes_clip': True, 'swap_all_equals_on_B': True, 'swap_all_mad': 0.0}\n"}
+,{"stream_name":"stdout","time":3801.943721995,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":3801.943725944,"data":"[job1] === a-medieval-stone-castle-on-a-hill__roll-cw: 32 tracks\n"}
+,{"stream_name":"stdout","time":3921.944480488,"data":"[job0]     step 20/25    968.7 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3921.944581987,"data":"[job1]     step  5/25    161.3 s  (1.01 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4101.946269969,"data":"[job1]     step 10/25    325.7 s  (1.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4161.946772404,"data":"[job0]     step 25/25   1212.8 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4281.948205198,"data":"[job1]     step 15/25    491.5 s  (1.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4341.949324858,"data":"[job0]   on                       retained +1.000  b +0.000  clip 0.585\n"}
+,{"stream_name":"stdout","time":4341.949369271,"data":"[job0]   off                      retained +0.000  b +0.669  clip 1.000\n"}
+,{"stream_name":"stdout","time":4341.949376678,"data":"[job0]   on_until_1               retained -0.035  b +0.694  clip 0.918\n"}
+,{"stream_name":"stdout","time":4341.949383023,"data":"[job0]   on_until_2               retained -0.031  b +0.692  clip 0.885\n"}
+,{"stream_name":"stdout","time":4341.949389107,"data":"[job0]   on_until_3               retained -0.058  b +0.710  clip 0.859\n"}
+,{"stream_name":"stdout","time":4341.9493954,"data":"[job0]   on_until_5               retained +0.233  b +0.520  clip 0.828\n"}
+,{"stream_name":"stdout","time":4341.949401314,"data":"[job0]   on_until_8               retained +0.451  b +0.372  clip 0.823\n"}
+,{"stream_name":"stdout","time":4341.949407394,"data":"[job0]   on_until_12              retained +0.824  b +0.120  clip 0.621\n"}
+,{"stream_name":"stdout","time":4341.949413311,"data":"[job0]   on_until_18              retained +1.006  b -0.004  clip 0.594\n"}
+,{"stream_name":"stdout","time":4341.949419215,"data":"[job0]   on_from_1                retained +0.565  b +0.289  clip 0.792\n"}
+,{"stream_name":"stdout","time":4341.949444384,"data":"[job0]   on_from_2                retained +0.541  b +0.305  clip 0.774\n"}
+,{"stream_name":"stdout","time":4341.949449482,"data":"[job0]   on_from_3                retained +0.560  b +0.292  clip 0.686\n"}
+,{"stream_name":"stdout","time":4341.9494545,"data":"[job0]   on_from_5                retained +0.323  b +0.456  clip 0.706\n"}
+,{"stream_name":"stdout","time":4341.949471713,"data":"[job0]   on_from_8                retained -0.004  b +0.671  clip 0.748\n"}
+,{"stream_name":"stdout","time":4341.949476414,"data":"[job0]   on_from_12               retained -0.010  b +0.675  clip 0.898\n"}
+,{"stream_name":"stdout","time":4341.949481213,"data":"[job0]   on_from_18               retained -0.003  b +0.671  clip 0.990\n"}
+,{"stream_name":"stdout","time":4341.94948585,"data":"[job0]   only_down_blocks.0       retained -0.089  b +0.731  clip 0.823\n"}
+,{"stream_name":"stdout","time":4341.949490428,"data":"[job0]   only_down_blocks.1       retained +0.050  b +0.637  clip 0.886\n"}
+,{"stream_name":"stdout","time":4341.949495282,"data":"[job0]   only_down_blocks.2       retained -0.013  b +0.678  clip 0.937\n"}
+,{"stream_name":"stdout","time":4341.949499842,"data":"[job0]   only_down_blocks.3       retained -0.052  b +0.705  clip 0.964\n"}
+,{"stream_name":"stdout","time":4341.949528707,"data":"[job0]   only_up_blocks.0         retained +0.160  b +0.563  clip 0.899\n"}
+,{"stream_name":"stdout","time":4341.94953358,"data":"[job0]   only_up_blocks.1         retained +0.013  b +0.658  clip 0.938\n"}
+,{"stream_name":"stdout","time":4341.949538537,"data":"[job0]   only_up_blocks.2         retained +0.037  b +0.645  clip 0.960\n"}
+,{"stream_name":"stdout","time":4341.949543457,"data":"[job0]   only_up_blocks.3         retained -0.140  b +0.765  clip 0.936\n"}
+,{"stream_name":"stdout","time":4341.949548026,"data":"[job0]   without_down_blocks.0    retained +0.406  b +0.398  clip 0.855\n"}
+,{"stream_name":"stdout","time":4341.949552606,"data":"[job0]   without_down_blocks.1    retained +0.571  b +0.291  clip 0.658\n"}
+,{"stream_name":"stdout","time":4341.949557575,"data":"[job0]   without_down_blocks.2    retained +1.308  b -0.207  clip 0.637\n"}
+,{"stream_name":"stdout","time":4341.949562463,"data":"[job0]   without_down_blocks.3    retained +1.076  b -0.052  clip 0.592\n"}
+,{"stream_name":"stdout","time":4341.949578068,"data":"[job0]   without_up_blocks.0      retained +0.735  b +0.172  clip 0.741\n"}
+,{"stream_name":"stdout","time":4341.949582793,"data":"[job0]   without_up_blocks.1      retained +0.709  b +0.190  clip 0.814\n"}
+,{"stream_name":"stdout","time":4341.949587463,"data":"[job0]   without_up_blocks.2      retained +1.004  b -0.000  clip 0.666\n"}
+,{"stream_name":"stdout","time":4341.949592259,"data":"[job0]   without_up_blocks.3      retained +0.645  b +0.238  clip 0.673\n"}
+,{"stream_name":"stdout","time":4341.949597177,"data":"[job0]   on_B                     retained -0.490  b +1.000  clip 0.811\n"}
+,{"stream_name":"stdout","time":4341.949601714,"data":"[job0]   swap_down_blocks.0       retained +0.565  b +0.295  clip 0.633\n"}
+,{"stream_name":"stdout","time":4341.949606291,"data":"[job0]   swap_down_blocks.1       retained +0.531  b +0.319  clip 0.631\n"}
+,{"stream_name":"stdout","time":4341.949611073,"data":"[job0]   swap_down_blocks.2       retained +0.651  b +0.235  clip 0.716\n"}
+,{"stream_name":"stdout","time":4341.949615786,"data":"[job0]   swap_down_blocks.3       retained +0.814  b +0.124  clip 0.638\n"}
+,{"stream_name":"stdout","time":4341.949620662,"data":"[job0]   swap_up_blocks.0         retained +1.053  b -0.039  clip 0.587\n"}
+,{"stream_name":"stdout","time":4341.949625248,"data":"[job0]   swap_up_blocks.1         retained +0.771  b +0.152  clip 0.624\n"}
+,{"stream_name":"stdout","time":4341.94963587,"data":"[job0]   swap_up_blocks.2         retained +0.677  b +0.220  clip 0.635\n"}
+,{"stream_name":"stdout","time":4341.949640575,"data":"[job0]   swap_up_blocks.3         retained +0.782  b +0.148  clip 0.607\n"}
+,{"stream_name":"stdout","time":4341.949645265,"data":"[job0]   swap_down_blocks.0+down_blocks.1+down_blocks.2 retained -0.539  b +1.034  clip 0.859\n"}
+,{"stream_name":"stdout","time":4341.949650068,"data":"[job0]   swap_down_blocks.0+up_blocks.3 retained +0.660  b +0.231  clip 0.635\n"}
+,{"stream_name":"stdout","time":4341.949654854,"data":"[job0]   swap_up_blocks.0+up_blocks.1+up_blocks.2 retained +0.757  b +0.156  clip 0.622\n"}
+,{"stream_name":"stdout","time":4341.949659617,"data":"[job0]   swap_all                 retained -0.490  b +1.000  clip 0.811\n"}
+,{"stream_name":"stdout","time":4341.949664393,"data":"[job0] wrote /kaggle/working/out/job0/a-medieval-stone-castle-on-a-hill__zoom-in/manifest.json\n"}
+,{"stream_name":"stdout","time":4341.949669442,"data":"[job0] PASS  checks {'camera_changes_clip': True, 'swap_all_equals_on_B': True, 'swap_all_mad': 0.0}\n"}
+,{"stream_name":"stdout","time":4341.949674081,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":4341.949678666,"data":"[job0] === a-medieval-stone-castle-on-a-hill__tilt-up: 45 tracks\n"}
+,{"stream_name":"stdout","time":4461.950725443,"data":"[job1]     step 20/25    657.4 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4581.952181825,"data":"[job0]     step  5/25    240.3 s  (1.07 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4581.952228725,"data":"[job1]     step 25/25    824.2 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4701.953570223,"data":"[job1]   on                       retained +1.000  b +nan  clip 0.818\n"}
+,{"stream_name":"stdout","time":4701.953629978,"data":"[job1]   off                      retained +0.000  b +nan  clip 1.000\n"}
+,{"stream_name":"stdout","time":4701.953635862,"data":"[job1]   on_until_1               retained +0.262  b +nan  clip 0.955\n"}
+,{"stream_name":"stdout","time":4701.953640274,"data":"[job1]   on_until_2               retained +0.251  b +nan  clip 0.955\n"}
+,{"stream_name":"stdout","time":4701.953644688,"data":"[job1]   on_until_3               retained +0.786  b +nan  clip 0.926\n"}
+,{"stream_name":"stdout","time":4701.953648967,"data":"[job1]   on_until_5               retained +0.300  b +nan  clip 0.862\n"}
+,{"stream_name":"stdout","time":4701.953653224,"data":"[job1]   on_until_8               retained +0.931  b +nan  clip 0.810\n"}
+,{"stream_name":"stdout","time":4701.953657446,"data":"[job1]   on_until_12              retained +1.250  b +nan  clip 0.803\n"}
+,{"stream_name":"stdout","time":4701.953661714,"data":"[job1]   on_until_18              retained +1.051  b +nan  clip 0.808\n"}
+,{"stream_name":"stdout","time":4701.953665974,"data":"[job1]   on_from_1                retained +1.056  b +nan  clip 0.801\n"}
+,{"stream_name":"stdout","time":4701.953670205,"data":"[job1]   on_from_2                retained +0.781  b +nan  clip 0.797\n"}
+,{"stream_name":"stdout","time":4701.953674399,"data":"[job1]   on_from_3                retained +0.686  b +nan  clip 0.827\n"}
+,{"stream_name":"stdout","time":4701.953678587,"data":"[job1]   on_from_5                retained +0.647  b +nan  clip 0.855\n"}
+,{"stream_name":"stdout","time":4701.953682746,"data":"[job1]   on_from_8                retained +0.328  b +nan  clip 0.906\n"}
+,{"stream_name":"stdout","time":4701.953686895,"data":"[job1]   on_from_12               retained +0.089  b +nan  clip 0.969\n"}
+,{"stream_name":"stdout","time":4701.953691089,"data":"[job1]   on_from_18               retained +0.032  b +nan  clip 0.990\n"}
+,{"stream_name":"stdout","time":4701.953723261,"data":"[job1]   only_down_blocks.0       retained -1.026  b +nan  clip 0.862\n"}
+,{"stream_name":"stdout","time":4701.953726937,"data":"[job1]   only_down_blocks.1       retained -0.072  b +nan  clip 0.913\n"}
+,{"stream_name":"stdout","time":4701.953730261,"data":"[job1]   only_down_blocks.2       retained +0.280  b +nan  clip 0.943\n"}
+,{"stream_name":"stdout","time":4701.953733604,"data":"[job1]   only_down_blocks.3       retained +0.230  b +nan  clip 0.956\n"}
+,{"stream_name":"stdout","time":4701.953736909,"data":"[job1]   only_up_blocks.0         retained +0.136  b +nan  clip 0.850\n"}
+,{"stream_name":"stdout","time":4701.953740441,"data":"[job1]   only_up_blocks.1         retained -0.012  b +nan  clip 0.933\n"}
+,{"stream_name":"stdout","time":4701.953743797,"data":"[job1]   only_up_blocks.2         retained +0.044  b +nan  clip 0.970\n"}
+,{"stream_name":"stdout","time":4701.953747133,"data":"[job1]   only_up_blocks.3         retained +0.458  b +nan  clip 0.940\n"}
+,{"stream_name":"stdout","time":4701.953750385,"data":"[job1]   without_down_blocks.0    retained +0.010  b +nan  clip 0.871\n"}
+,{"stream_name":"stdout","time":4701.953753679,"data":"[job1]   without_down_blocks.1    retained +1.057  b +nan  clip 0.798\n"}
+,{"stream_name":"stdout","time":4701.95375693,"data":"[job1]   without_down_blocks.2    retained +0.886  b +nan  clip 0.701\n"}
+,{"stream_name":"stdout","time":4701.95376017,"data":"[job1]   without_down_blocks.3    retained +0.860  b +nan  clip 0.588\n"}
+,{"stream_name":"stdout","time":4701.953763531,"data":"[job1]   without_up_blocks.0      retained +1.020  b +nan  clip 0.723\n"}
+,{"stream_name":"stdout","time":4701.953767873,"data":"[job1]   without_up_blocks.1      retained +0.959  b +nan  clip 0.789\n"}
+,{"stream_name":"stdout","time":4701.953771223,"data":"[job1]   without_up_blocks.2      retained +0.946  b +nan  clip 0.800\n"}
+,{"stream_name":"stdout","time":4701.953789624,"data":"[job1]   without_up_blocks.3      retained +0.757  b +nan  clip 0.836\n"}
+,{"stream_name":"stdout","time":4701.953792958,"data":"[job1] wrote /kaggle/working/out/job1/a-medieval-stone-castle-on-a-hill__roll-cw/manifest.json\n"}
+,{"stream_name":"stdout","time":4701.953796518,"data":"[job1] PASS  checks {'camera_changes_clip': True}\n"}
+,{"stream_name":"stdout","time":4701.953799858,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":4701.95380312,"data":"[job1] === a-city-street-at-night-with-neon-signs__pan-left: 45 tracks\n"}
+,{"stream_name":"stdout","time":4821.954811789,"data":"[job0]     step 10/25    484.6 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4941.956317708,"data":"[job1]     step  5/25    228.3 s  (1.01 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5061.957425303,"data":"[job0]     step 15/25    728.1 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5181.95909371,"data":"[job1]     step 10/25    459.6 s  (1.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5301.960097941,"data":"[job0]     step 20/25    971.6 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5421.961649383,"data":"[job1]     step 15/25    692.2 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5541.962854633,"data":"[job0]     step 25/25   1215.5 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5661.964604614,"data":"[job1]     step 20/25    925.8 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5721.965257735,"data":"[job0]   on                       retained +1.000  b +0.000  clip 0.823\n"}
+,{"stream_name":"stdout","time":5721.965295386,"data":"[job0]   off                      retained +0.000  b +0.639  clip 1.000\n"}
+,{"stream_name":"stdout","time":5721.96530198,"data":"[job0]   on_until_1               retained -0.036  b +0.741  clip 0.950\n"}
+,{"stream_name":"stdout","time":5721.965317401,"data":"[job0]   on_until_2               retained -0.031  b +0.726  clip 0.940\n"}
+,{"stream_name":"stdout","time":5721.965321554,"data":"[job0]   on_until_3               retained +0.013  b +0.680  clip 0.895\n"}
+,{"stream_name":"stdout","time":5721.965325078,"data":"[job0]   on_until_5               retained +1.229  b -0.115  clip 0.833\n"}
+,{"stream_name":"stdout","time":5721.965328294,"data":"[job0]   on_until_8               retained +1.455  b -0.249  clip 0.855\n"}
+,{"stream_name":"stdout","time":5721.96533175,"data":"[job0]   on_until_12              retained +1.115  b -0.063  clip 0.842\n"}
+,{"stream_name":"stdout","time":5721.965335151,"data":"[job0]   on_until_18              retained +1.002  b -0.001  clip 0.838\n"}
+,{"stream_name":"stdout","time":5721.965338578,"data":"[job0]   on_from_1                retained +1.042  b -0.034  clip 0.828\n"}
+,{"stream_name":"stdout","time":5721.965342201,"data":"[job0]   on_from_2                retained +0.943  b +0.029  clip 0.780\n"}
+,{"stream_name":"stdout","time":5721.96534578,"data":"[job0]   on_from_3                retained +0.829  b +0.088  clip 0.726\n"}
+,{"stream_name":"stdout","time":5721.965349228,"data":"[job0]   on_from_5                retained +0.591  b +0.232  clip 0.726\n"}
+,{"stream_name":"stdout","time":5721.965352414,"data":"[job0]   on_from_8                retained +0.078  b +0.575  clip 0.666\n"}
+,{"stream_name":"stdout","time":5721.965355863,"data":"[job0]   on_from_12               retained -0.012  b +0.656  clip 0.792\n"}
+,{"stream_name":"stdout","time":5721.965359434,"data":"[job0]   on_from_18               retained -0.003  b +0.648  clip 0.990\n"}
+,{"stream_name":"stdout","time":5721.965363092,"data":"[job0]   only_down_blocks.0       retained +0.705  b +0.196  clip 0.688\n"}
+,{"stream_name":"stdout","time":5721.965366703,"data":"[job0]   only_down_blocks.1       retained +0.089  b +0.557  clip 0.937\n"}
+,{"stream_name":"stdout","time":5721.965370558,"data":"[job0]   only_down_blocks.2       retained +0.073  b +0.675  clip 0.926\n"}
+,{"stream_name":"stdout","time":5721.965374501,"data":"[job0]   only_down_blocks.3       retained -0.028  b +0.723  clip 0.962\n"}
+,{"stream_name":"stdout","time":5721.965377965,"data":"[job0]   only_up_blocks.0         retained +0.305  b +0.452  clip 0.917\n"}
+,{"stream_name":"stdout","time":5721.965381522,"data":"[job0]   only_up_blocks.1         retained -0.033  b +0.668  clip 0.937\n"}
+,{"stream_name":"stdout","time":5721.965384927,"data":"[job0]   only_up_blocks.2         retained +0.025  b +0.635  clip 0.964\n"}
+,{"stream_name":"stdout","time":5721.965388848,"data":"[job0]   only_up_blocks.3         retained -0.069  b +0.845  clip 0.930\n"}
+,{"stream_name":"stdout","time":5721.965392868,"data":"[job0]   without_down_blocks.0    retained +0.432  b +0.379  clip 0.870\n"}
+,{"stream_name":"stdout","time":5721.965397413,"data":"[job0]   without_down_blocks.1    retained +0.969  b +0.015  clip 0.717\n"}
+,{"stream_name":"stdout","time":5721.965401977,"data":"[job0]   without_down_blocks.2    retained +0.916  b +0.046  clip 0.837\n"}
+,{"stream_name":"stdout","time":5721.965406918,"data":"[job0]   without_down_blocks.3    retained +1.043  b -0.019  clip 0.835\n"}
+,{"stream_name":"stdout","time":5721.96541401,"data":"[job0]   without_up_blocks.0      retained +1.033  b -0.001  clip 0.846\n"}
+,{"stream_name":"stdout","time":5721.965418712,"data":"[job0]   without_up_blocks.1      retained +1.256  b -0.164  clip 0.832\n"}
+,{"stream_name":"stdout","time":5721.965423565,"data":"[job0]   without_up_blocks.2      retained +0.979  b +0.012  clip 0.815\n"}
+,{"stream_name":"stdout","time":5721.965428428,"data":"[job0]   without_up_blocks.3      retained +0.872  b +0.077  clip 0.788\n"}
+,{"stream_name":"stdout","time":5721.965452167,"data":"[job0]   on_B                     retained -0.021  b +1.000  clip 0.818\n"}
+,{"stream_name":"stdout","time":5721.965457497,"data":"[job0]   swap_down_blocks.0       retained +1.055  b +0.004  clip 0.705\n"}
+,{"stream_name":"stdout","time":5721.96546219,"data":"[job0]   swap_down_blocks.1       retained +1.111  b -0.114  clip 0.796\n"}
+,{"stream_name":"stdout","time":5721.965466713,"data":"[job0]   swap_down_blocks.2       retained +0.889  b +0.065  clip 0.832\n"}
+,{"stream_name":"stdout","time":5721.965471255,"data":"[job0]   swap_down_blocks.3       retained +1.025  b -0.009  clip 0.836\n"}
+,{"stream_name":"stdout","time":5721.965476048,"data":"[job0]   swap_up_blocks.0         retained +0.948  b +0.033  clip 0.791\n"}
+,{"stream_name":"stdout","time":5721.965480875,"data":"[job0]   swap_up_blocks.1         retained +0.916  b +0.045  clip 0.781\n"}
+,{"stream_name":"stdout","time":5721.965485389,"data":"[job0]   swap_up_blocks.2         retained +0.845  b +0.121  clip 0.771\n"}
+,{"stream_name":"stdout","time":5721.965490232,"data":"[job0]   swap_up_blocks.3         retained +0.970  b +0.024  clip 0.821\n"}
+,{"stream_name":"stdout","time":5721.965494919,"data":"[job0]   swap_down_blocks.0+down_blocks.1+down_blocks.2 retained +0.466  b +0.435  clip 0.816\n"}
+,{"stream_name":"stdout","time":5721.965499828,"data":"[job0]   swap_down_blocks.0+up_blocks.3 retained +0.856  b +0.157  clip 0.710\n"}
+,{"stream_name":"stdout","time":5721.965522642,"data":"[job0]   swap_up_blocks.0+up_blocks.1+up_blocks.2 retained +0.793  b +0.197  clip 0.726\n"}
+,{"stream_name":"stdout","time":5721.965527653,"data":"[job0]   swap_all                 retained -0.021  b +1.000  clip 0.818\n"}
+,{"stream_name":"stdout","time":5721.965532471,"data":"[job0] wrote /kaggle/working/out/job0/a-medieval-stone-castle-on-a-hill__tilt-up/manifest.json\n"}
+,{"stream_name":"stdout","time":5721.965537392,"data":"[job0] PASS  checks {'camera_changes_clip': True, 'swap_all_equals_on_B': True, 'swap_all_mad': 0.0}\n"}
+,{"stream_name":"stdout","time":5721.965541935,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":5721.965546508,"data":"[job0] === a-city-street-at-night-with-neon-signs__zoom-in: 45 tracks\n"}
+,{"stream_name":"stdout","time":5901.967676547,"data":"[job1]     step 25/25   1160.5 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5961.968127374,"data":"[job0]     step  5/25    238.6 s  (1.06 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6081.969958021,"data":"[job1]   on                       retained +1.000  b +0.000  clip 0.740\n"}
+,{"stream_name":"stdout","time":6081.97002982,"data":"[job1]   off                      retained +0.000  b +0.343  clip 1.000\n"}
+,{"stream_name":"stdout","time":6081.970037986,"data":"[job1]   on_until_1               retained -0.845  b +0.654  clip 0.774\n"}
+,{"stream_name":"stdout","time":6081.970044792,"data":"[job1]   on_until_2               retained -0.901  b +0.688  clip 0.735\n"}
+,{"stream_name":"stdout","time":6081.970051255,"data":"[job1]   on_until_3               retained -1.188  b +0.818  clip 0.777\n"}
+,{"stream_name":"stdout","time":6081.970057644,"data":"[job1]   on_until_5               retained +1.286  b -0.112  clip 0.708\n"}
+,{"stream_name":"stdout","time":6081.970064212,"data":"[job1]   on_until_8               retained +1.380  b -0.190  clip 0.751\n"}
+,{"stream_name":"stdout","time":6081.970070575,"data":"[job1]   on_until_12              retained +1.091  b -0.040  clip 0.756\n"}
+,{"stream_name":"stdout","time":6081.970077239,"data":"[job1]   on_until_18              retained +0.945  b +0.026  clip 0.741\n"}
+,{"stream_name":"stdout","time":6081.970101729,"data":"[job1]   on_from_1                retained +1.020  b -0.006  clip 0.733\n"}
+,{"stream_name":"stdout","time":6081.970107179,"data":"[job1]   on_from_2                retained +1.066  b -0.054  clip 0.685\n"}
+,{"stream_name":"stdout","time":6081.970112406,"data":"[job1]   on_from_3                retained +0.212  b +0.269  clip 0.718\n"}
+,{"stream_name":"stdout","time":6081.970117482,"data":"[job1]   on_from_5                retained +0.759  b +0.068  clip 0.728\n"}
+,{"stream_name":"stdout","time":6081.970122343,"data":"[job1]   on_from_8                retained +0.111  b +0.303  clip 0.838\n"}
+,{"stream_name":"stdout","time":6081.970127466,"data":"[job1]   on_from_12               retained +0.044  b +0.331  clip 0.928\n"}
+,{"stream_name":"stdout","time":6081.970132666,"data":"[job1]   on_from_18               retained +0.038  b +0.327  clip 0.980\n"}
+,{"stream_name":"stdout","time":6081.970137949,"data":"[job1]   only_down_blocks.0       retained -0.421  b +0.537  clip 0.722\n"}
+,{"stream_name":"stdout","time":6081.97014272,"data":"[job1]   only_down_blocks.1       retained +0.583  b +0.177  clip 0.765\n"}
+,{"stream_name":"stdout","time":6081.970147803,"data":"[job1]   only_down_blocks.2       retained -0.719  b +0.616  clip 0.790\n"}
+,{"stream_name":"stdout","time":6081.970152929,"data":"[job1]   only_down_blocks.3       retained -0.614  b +0.582  clip 0.879\n"}
+,{"stream_name":"stdout","time":6081.970158021,"data":"[job1]   only_up_blocks.0         retained -0.682  b +0.598  clip 0.809\n"}
+,{"stream_name":"stdout","time":6081.970163007,"data":"[job1]   only_up_blocks.1         retained -0.236  b +0.461  clip 0.776\n"}
+,{"stream_name":"stdout","time":6081.970168018,"data":"[job1]   only_up_blocks.2         retained -0.239  b +0.462  clip 0.749\n"}
+,{"stream_name":"stdout","time":6081.970173123,"data":"[job1]   only_up_blocks.3         retained -0.906  b +0.676  clip 0.814\n"}
+,{"stream_name":"stdout","time":6081.970178162,"data":"[job1]   without_down_blocks.0    retained -0.200  b +0.447  clip 0.743\n"}
+,{"stream_name":"stdout","time":6081.970182966,"data":"[job1]   without_down_blocks.1    retained +0.639  b +0.130  clip 0.735\n"}
+,{"stream_name":"stdout","time":6081.970188201,"data":"[job1]   without_down_blocks.2    retained +0.304  b +0.260  clip 0.705\n"}
+,{"stream_name":"stdout","time":6081.970193273,"data":"[job1]   without_down_blocks.3    retained +0.995  b +0.018  clip 0.730\n"}
+,{"stream_name":"stdout","time":6081.970200004,"data":"[job1]   without_up_blocks.0      retained +1.263  b -0.084  clip 0.708\n"}
+,{"stream_name":"stdout","time":6081.970204865,"data":"[job1]   without_up_blocks.1      retained +1.462  b -0.153  clip 0.735\n"}
+,{"stream_name":"stdout","time":6081.970209804,"data":"[job1]   without_up_blocks.2      retained +1.431  b -0.161  clip 0.722\n"}
+,{"stream_name":"stdout","time":6081.970214801,"data":"[job1]   without_up_blocks.3      retained +0.668  b +0.100  clip 0.741\n"}
+,{"stream_name":"stdout","time":6081.970220116,"data":"[job1]   on_B                     retained -1.287  b +1.000  clip 0.691\n"}
+,{"stream_name":"stdout","time":6081.970224913,"data":"[job1]   swap_down_blocks.0       retained +1.126  b -0.042  clip 0.738\n"}
+,{"stream_name":"stdout","time":6081.970229642,"data":"[job1]   swap_down_blocks.1       retained -1.424  b +0.893  clip 0.733\n"}
+,{"stream_name":"stdout","time":6081.970234612,"data":"[job1]   swap_down_blocks.2       retained -0.932  b +0.723  clip 0.751\n"}
+,{"stream_name":"stdout","time":6081.970238455,"data":"[job1]   swap_down_blocks.3       retained +0.843  b +0.070  clip 0.749\n"}
+,{"stream_name":"stdout","time":6081.970242169,"data":"[job1]   swap_up_blocks.0         retained +1.254  b -0.081  clip 0.749\n"}
+,{"stream_name":"stdout","time":6081.970249529,"data":"[job1]   swap_up_blocks.1         retained +0.329  b +0.266  clip 0.729\n"}
+,{"stream_name":"stdout","time":6081.970253838,"data":"[job1]   swap_up_blocks.2         retained -0.006  b +0.405  clip 0.728\n"}
+,{"stream_name":"stdout","time":6081.970257601,"data":"[job1]   swap_up_blocks.3         retained +0.088  b +0.397  clip 0.739\n"}
+,{"stream_name":"stdout","time":6081.970261441,"data":"[job1]   swap_down_blocks.0+down_blocks.1+down_blocks.2 retained -1.936  b +1.128  clip 0.716\n"}
+,{"stream_name":"stdout","time":6081.970265106,"data":"[job1]   swap_down_blocks.0+up_blocks.3 retained +1.151  b -0.057  clip 0.726\n"}
+,{"stream_name":"stdout","time":6081.970268794,"data":"[job1]   swap_up_blocks.0+up_blocks.1+up_blocks.2 retained +0.808  b +0.101  clip 0.743\n"}
+,{"stream_name":"stdout","time":6081.970272437,"data":"[job1]   swap_all                 retained -1.287  b +1.000  clip 0.691\n"}
+,{"stream_name":"stdout","time":6081.970275942,"data":"[job1] wrote /kaggle/working/out/job1/a-city-street-at-night-with-neon-signs__pan-left/manifest.json\n"}
+,{"stream_name":"stdout","time":6081.970279601,"data":"[job1] PASS  checks {'camera_changes_clip': True, 'swap_all_equals_on_B': True, 'swap_all_mad': 0.0}\n"}
+,{"stream_name":"stdout","time":6081.970283361,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":6081.970286971,"data":"[job1] === a-city-street-at-night-with-neon-signs__roll-cw: 32 tracks\n"}
+,{"stream_name":"stdout","time":6201.971665493,"data":"[job0]     step 10/25    481.4 s  (1.07 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6201.971731682,"data":"[job1]     step  5/25    160.1 s  (1.00 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6381.974359881,"data":"[job1]     step 10/25    323.6 s  (1.01 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6441.974991354,"data":"[job0]     step 15/25    724.8 s  (1.07 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6561.976736452,"data":"[job1]     step 15/25    488.0 s  (1.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6681.978513227,"data":"[job0]     step 20/25    969.1 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6741.979279768,"data":"[job1]     step 20/25    652.5 s  (1.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6861.980964259,"data":"[job1]     step 25/25    816.2 s  (1.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6921.981531911,"data":"[job0]     step 25/25   1213.9 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":6981.982771951,"data":"[job1]   on                       retained +1.000  b +nan  clip 0.727\n"}
+,{"stream_name":"stdout","time":6981.982811226,"data":"[job1]   off                      retained +0.000  b +nan  clip 1.000\n"}
+,{"stream_name":"stdout","time":6981.98281747,"data":"[job1]   on_until_1               retained +0.188  b +nan  clip 0.797\n"}
+,{"stream_name":"stdout","time":6981.982822727,"data":"[job1]   on_until_2               retained +0.328  b +nan  clip 0.735\n"}
+,{"stream_name":"stdout","time":6981.982827773,"data":"[job1]   on_until_3               retained +0.196  b +nan  clip 0.754\n"}
+,{"stream_name":"stdout","time":6981.982832783,"data":"[job1]   on_until_5               retained +0.421  b +nan  clip 0.770\n"}
+,{"stream_name":"stdout","time":6981.982837727,"data":"[job1]   on_until_8               retained +1.015  b +nan  clip 0.747\n"}
+,{"stream_name":"stdout","time":6981.982842698,"data":"[job1]   on_until_12              retained +1.185  b +nan  clip 0.735\n"}
+,{"stream_name":"stdout","time":6981.982858588,"data":"[job1]   on_until_18              retained +1.003  b +nan  clip 0.715\n"}
+,{"stream_name":"stdout","time":6981.982863054,"data":"[job1]   on_from_1                retained +0.910  b +nan  clip 0.739\n"}
+,{"stream_name":"stdout","time":6981.982881157,"data":"[job1]   on_from_2                retained +0.592  b +nan  clip 0.721\n"}
+,{"stream_name":"stdout","time":6981.982885082,"data":"[job1]   on_from_3                retained +0.532  b +nan  clip 0.693\n"}
+,{"stream_name":"stdout","time":6981.982888654,"data":"[job1]   on_from_5                retained +0.456  b +nan  clip 0.696\n"}
+,{"stream_name":"stdout","time":6981.982892282,"data":"[job1]   on_from_8                retained +0.074  b +nan  clip 0.871\n"}
+,{"stream_name":"stdout","time":6981.982895796,"data":"[job1]   on_from_12               retained -0.031  b +nan  clip 0.922\n"}
+,{"stream_name":"stdout","time":6981.982899354,"data":"[job1]   on_from_18               retained +0.018  b +nan  clip 0.985\n"}
+,{"stream_name":"stdout","time":6981.982902856,"data":"[job1]   only_down_blocks.0       retained +0.105  b +nan  clip 0.720\n"}
+,{"stream_name":"stdout","time":6981.982917678,"data":"[job1]   only_down_blocks.1       retained +0.241  b +nan  clip 0.727\n"}
+,{"stream_name":"stdout","time":6981.982921012,"data":"[job1]   only_down_blocks.2       retained +0.228  b +nan  clip 0.751\n"}
+,{"stream_name":"stdout","time":6981.982924376,"data":"[job1]   only_down_blocks.3       retained -0.093  b +nan  clip 0.757\n"}
+,{"stream_name":"stdout","time":6981.982930968,"data":"[job1]   only_up_blocks.0         retained -0.027  b +nan  clip 0.895\n"}
+,{"stream_name":"stdout","time":6981.982934377,"data":"[job1]   only_up_blocks.1         retained -0.104  b +nan  clip 0.863\n"}
+,{"stream_name":"stdout","time":6981.98293765,"data":"[job1]   only_up_blocks.2         retained -0.036  b +nan  clip 0.748\n"}
+,{"stream_name":"stdout","time":6981.982941051,"data":"[job1]   only_up_blocks.3         retained +0.200  b +nan  clip 0.780\n"}
+,{"stream_name":"stdout","time":6981.982944625,"data":"[job1]   without_down_blocks.0    retained +0.535  b +nan  clip 0.694\n"}
+,{"stream_name":"stdout","time":6981.982948077,"data":"[job1]   without_down_blocks.1    retained +0.574  b +nan  clip 0.727\n"}
+,{"stream_name":"stdout","time":6981.982951907,"data":"[job1]   without_down_blocks.2    retained +0.843  b +nan  clip 0.716\n"}
+,{"stream_name":"stdout","time":6981.982955296,"data":"[job1]   without_down_blocks.3    retained +0.809  b +nan  clip 0.709\n"}
+,{"stream_name":"stdout","time":6981.982958563,"data":"[job1]   without_up_blocks.0      retained +0.990  b +nan  clip 0.749\n"}
+,{"stream_name":"stdout","time":6981.982962838,"data":"[job1]   without_up_blocks.1      retained +0.955  b +nan  clip 0.743\n"}
+,{"stream_name":"stdout","time":6981.982966218,"data":"[job1]   without_up_blocks.2      retained +1.012  b +nan  clip 0.746\n"}
+,{"stream_name":"stdout","time":6981.982969645,"data":"[job1]   without_up_blocks.3      retained +0.964  b +nan  clip 0.726\n"}
+,{"stream_name":"stdout","time":6981.982973955,"data":"[job1] wrote /kaggle/working/out/job1/a-city-street-at-night-with-neon-signs__roll-cw/manifest.json\n"}
+,{"stream_name":"stdout","time":6981.982977495,"data":"[job1] PASS  checks {'camera_changes_clip': True}\n"}
+,{"stream_name":"stdout","time":6981.982980825,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":6981.982984047,"data":"[job1] === a-red-sandstone-desert-canyon__pan-left: 45 tracks\n"}
+,{"stream_name":"stdout","time":7101.984574705,"data":"[job0]   on                       retained +1.000  b +0.000  clip 0.690\n"}
+,{"stream_name":"stdout","time":7101.9846079,"data":"[job0]   off                      retained +0.000  b +0.394  clip 1.000\n"}
+,{"stream_name":"stdout","time":7101.984613332,"data":"[job0]   on_until_1               retained +0.849  b +0.140  clip 0.818\n"}
+,{"stream_name":"stdout","time":7101.984617786,"data":"[job0]   on_until_2               retained +0.854  b +0.088  clip 0.760\n"}
+,{"stream_name":"stdout","time":7101.984633513,"data":"[job0]   on_until_3               retained +0.992  b +0.063  clip 0.709\n"}
+,{"stream_name":"stdout","time":7101.98463706,"data":"[job0]   on_until_5               retained +0.997  b +0.042  clip 0.748\n"}
+,{"stream_name":"stdout","time":7101.984640346,"data":"[job0]   on_until_8               retained +0.925  b +0.029  clip 0.699\n"}
+,{"stream_name":"stdout","time":7101.984643705,"data":"[job0]   on_until_12              retained +0.961  b +0.022  clip 0.691\n"}
+,{"stream_name":"stdout","time":7101.984647118,"data":"[job0]   on_until_18              retained +0.983  b +0.011  clip 0.691\n"}
+,{"stream_name":"stdout","time":7101.984650385,"data":"[job0]   on_from_1                retained +0.853  b +0.070  clip 0.767\n"}
+,{"stream_name":"stdout","time":7101.984653732,"data":"[job0]   on_from_2                retained +0.986  b +0.021  clip 0.703\n"}
+,{"stream_name":"stdout","time":7101.984657033,"data":"[job0]   on_from_3                retained +0.980  b +0.037  clip 0.704\n"}
+,{"stream_name":"stdout","time":7101.984660347,"data":"[job0]   on_from_5                retained +0.937  b +0.045  clip 0.728\n"}
+,{"stream_name":"stdout","time":7101.984663598,"data":"[job0]   on_from_8                retained +0.825  b +0.098  clip 0.869\n"}
+,{"stream_name":"stdout","time":7101.984666981,"data":"[job0]   on_from_12               retained +0.200  b +0.348  clip 0.942\n"}
+,{"stream_name":"stdout","time":7101.984670243,"data":"[job0]   on_from_18               retained +0.008  b +0.392  clip 0.981\n"}
+,{"stream_name":"stdout","time":7101.98467352,"data":"[job0]   only_down_blocks.0       retained +0.894  b +0.139  clip 0.720\n"}
+,{"stream_name":"stdout","time":7101.984676887,"data":"[job0]   only_down_blocks.1       retained +0.891  b +0.113  clip 0.718\n"}
+,{"stream_name":"stdout","time":7101.984680194,"data":"[job0]   only_down_blocks.2       retained +0.825  b +0.100  clip 0.786\n"}
+,{"stream_name":"stdout","time":7101.984683451,"data":"[job0]   only_down_blocks.3       retained +0.749  b +0.168  clip 0.833\n"}
+,{"stream_name":"stdout","time":7101.984686723,"data":"[job0]   only_up_blocks.0         retained +0.804  b +0.156  clip 0.803\n"}
+,{"stream_name":"stdout","time":7101.984690029,"data":"[job0]   only_up_blocks.1         retained +0.210  b +0.385  clip 0.780\n"}
+,{"stream_name":"stdout","time":7101.984693331,"data":"[job0]   only_up_blocks.2         retained +0.742  b +0.170  clip 0.720\n"}
+,{"stream_name":"stdout","time":7101.984696599,"data":"[job0]   only_up_blocks.3         retained +0.823  b +0.204  clip 0.786\n"}
+,{"stream_name":"stdout","time":7101.984699852,"data":"[job0]   without_down_blocks.0    retained +0.858  b +0.089  clip 0.740\n"}
+,{"stream_name":"stdout","time":7101.984703146,"data":"[job0]   without_down_blocks.1    retained +0.959  b +0.032  clip 0.716\n"}
+,{"stream_name":"stdout","time":7101.984706449,"data":"[job0]   without_down_blocks.2    retained +0.923  b +0.041  clip 0.704\n"}
+,{"stream_name":"stdout","time":7101.984709719,"data":"[job0]   without_down_blocks.3    retained +1.200  b -0.077  clip 0.711\n"}
+,{"stream_name":"stdout","time":7101.984713863,"data":"[job0]   without_up_blocks.0      retained +1.139  b -0.020  clip 0.725\n"}
+,{"stream_name":"stdout","time":7101.984717203,"data":"[job0]   without_up_blocks.1      retained +1.135  b -0.077  clip 0.755\n"}
+,{"stream_name":"stdout","time":7101.984720466,"data":"[job0]   without_up_blocks.2      retained +0.815  b +0.085  clip 0.745\n"}
+,{"stream_name":"stdout","time":7101.984723743,"data":"[job0]   without_up_blocks.3      retained +0.884  b +0.067  clip 0.696\n"}
+,{"stream_name":"stdout","time":7101.984727063,"data":"[job0]   on_B                     retained -0.916  b +1.000  clip 0.713\n"}
+,{"stream_name":"stdout","time":7101.984733426,"data":"[job0]   swap_down_blocks.0       retained +1.215  b -0.153  clip 0.707\n"}
+,{"stream_name":"stdout","time":7101.984737305,"data":"[job0]   swap_down_blocks.1       retained +0.888  b +0.120  clip 0.709\n"}
+,{"stream_name":"stdout","time":7101.984740671,"data":"[job0]   swap_down_blocks.2       retained +0.923  b +0.051  clip 0.685\n"}
+,{"stream_name":"stdout","time":7101.984744324,"data":"[job0]   swap_down_blocks.3       retained +1.012  b -0.005  clip 0.701\n"}
+,{"stream_name":"stdout","time":7101.984747611,"data":"[job0]   swap_up_blocks.0         retained +1.018  b -0.015  clip 0.738\n"}
+,{"stream_name":"stdout","time":7101.984750934,"data":"[job0]   swap_up_blocks.1         retained +0.875  b +0.060  clip 0.751\n"}
+,{"stream_name":"stdout","time":7101.984754224,"data":"[job0]   swap_up_blocks.2         retained +0.909  b +0.069  clip 0.693\n"}
+,{"stream_name":"stdout","time":7101.984757555,"data":"[job0]   swap_up_blocks.3         retained +0.978  b +0.011  clip 0.693\n"}
+,{"stream_name":"stdout","time":7101.984760946,"data":"[job0]   swap_down_blocks.0+down_blocks.1+down_blocks.2 retained -0.807  b +0.929  clip 0.717\n"}
+,{"stream_name":"stdout","time":7101.984764352,"data":"[job0]   swap_down_blocks.0+up_blocks.3 retained +1.222  b -0.168  clip 0.720\n"}
+,{"stream_name":"stdout","time":7101.98476765,"data":"[job0]   swap_up_blocks.0+up_blocks.1+up_blocks.2 retained +1.187  b +0.038  clip 0.747\n"}
+,{"stream_name":"stdout","time":7101.984771004,"data":"[job0]   swap_all                 retained -0.916  b +1.000  clip 0.713\n"}
+,{"stream_name":"stdout","time":7101.984774283,"data":"[job0] wrote /kaggle/working/out/job0/a-city-street-at-night-with-neon-signs__zoom-in/manifest.json\n"}
+,{"stream_name":"stdout","time":7101.984777698,"data":"[job0] PASS  checks {'camera_changes_clip': True, 'swap_all_equals_on_B': True, 'swap_all_mad': 0.0}\n"}
+,{"stream_name":"stdout","time":7101.984781202,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":7101.984784509,"data":"[job0] === a-city-street-at-night-with-neon-signs__tilt-up: 45 tracks\n"}
+,{"stream_name":"stdout","time":7221.986326457,"data":"[job1]     step  5/25    233.4 s  (1.04 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7401.98887234,"data":"[job0]     step  5/25    243.2 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7461.989803695,"data":"[job1]     step 10/25    464.7 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7641.991993262,"data":"[job0]     step 10/25    488.4 s  (1.09 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7701.992939779,"data":"[job1]     step 15/25    695.7 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7881.9956314,"data":"[job0]     step 15/25    734.1 s  (1.09 s per clip-step)\n"}
+,{"stream_name":"stdout","time":7941.996675791,"data":"[job1]     step 20/25    926.3 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8121.999044136,"data":"[job0]     step 20/25    980.3 s  (1.09 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8181.99997105,"data":"[job1]     step 25/25   1157.3 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8302.001781307,"data":"[job1]   on                       retained +1.000  b +0.000  clip 0.877\n"}
+,{"stream_name":"stdout","time":8302.001816409,"data":"[job1]   off                      retained +0.000  b +0.479  clip 1.000\n"}
+,{"stream_name":"stdout","time":8302.001821834,"data":"[job1]   on_until_1               retained +0.044  b +0.460  clip 0.952\n"}
+,{"stream_name":"stdout","time":8302.001826209,"data":"[job1]   on_until_2               retained +0.014  b +0.479  clip 0.899\n"}
+,{"stream_name":"stdout","time":8302.001842875,"data":"[job1]   on_until_3               retained -0.057  b +0.512  clip 0.860\n"}
+,{"stream_name":"stdout","time":8302.001846615,"data":"[job1]   on_until_5               retained -0.614  b +0.786  clip 0.900\n"}
+,{"stream_name":"stdout","time":8302.001849978,"data":"[job1]   on_until_8               retained +1.182  b -0.091  clip 0.898\n"}
+,{"stream_name":"stdout","time":8302.001853321,"data":"[job1]   on_until_12              retained +0.978  b +0.011  clip 0.894\n"}
+,{"stream_name":"stdout","time":8302.00185669,"data":"[job1]   on_until_18              retained +0.967  b +0.016  clip 0.881\n"}
+,{"stream_name":"stdout","time":8302.00186008,"data":"[job1]   on_from_1                retained +0.960  b +0.020  clip 0.887\n"}
+,{"stream_name":"stdout","time":8302.001863405,"data":"[job1]   on_from_2                retained +0.652  b +0.172  clip 0.892\n"}
+,{"stream_name":"stdout","time":8302.001867078,"data":"[job1]   on_from_3                retained +0.643  b +0.176  clip 0.793\n"}
+,{"stream_name":"stdout","time":8302.001870346,"data":"[job1]   on_from_5                retained +0.543  b +0.222  clip 0.790\n"}
+,{"stream_name":"stdout","time":8302.00187372,"data":"[job1]   on_from_8                retained +0.491  b +0.249  clip 0.857\n"}
+,{"stream_name":"stdout","time":8302.001877016,"data":"[job1]   on_from_12               retained -0.007  b +0.479  clip 0.959\n"}
+,{"stream_name":"stdout","time":8302.001880345,"data":"[job1]   on_from_18               retained +0.001  b +0.478  clip 0.989\n"}
+,{"stream_name":"stdout","time":8302.001883638,"data":"[job1]   only_down_blocks.0       retained +0.147  b +0.429  clip 0.906\n"}
+,{"stream_name":"stdout","time":8302.001886932,"data":"[job1]   only_down_blocks.1       retained +0.074  b +0.450  clip 0.923\n"}
+,{"stream_name":"stdout","time":8302.00189021,"data":"[job1]   only_down_blocks.2       retained +0.865  b +0.065  clip 0.912\n"}
+,{"stream_name":"stdout","time":8302.001893516,"data":"[job1]   only_down_blocks.3       retained +0.019  b +0.471  clip 0.951\n"}
+,{"stream_name":"stdout","time":8302.001896826,"data":"[job1]   only_up_blocks.0         retained -0.090  b +0.524  clip 0.948\n"}
+,{"stream_name":"stdout","time":8302.001900177,"data":"[job1]   only_up_blocks.1         retained +0.022  b +0.473  clip 0.925\n"}
+,{"stream_name":"stdout","time":8302.00190346,"data":"[job1]   only_up_blocks.2         retained +0.006  b +0.479  clip 0.947\n"}
+,{"stream_name":"stdout","time":8302.001906774,"data":"[job1]   only_up_blocks.3         retained +0.018  b +0.470  clip 0.975\n"}
+,{"stream_name":"stdout","time":8302.00192542,"data":"[job1]   without_down_blocks.0    retained +0.088  b +0.444  clip 0.874\n"}
+,{"stream_name":"stdout","time":8302.00192896,"data":"[job1]   without_down_blocks.1    retained +0.424  b +0.281  clip 0.869\n"}
+,{"stream_name":"stdout","time":8302.001932296,"data":"[job1]   without_down_blocks.2    retained +0.908  b +0.046  clip 0.872\n"}
+,{"stream_name":"stdout","time":8302.001935758,"data":"[job1]   without_down_blocks.3    retained +1.046  b -0.022  clip 0.898\n"}
+,{"stream_name":"stdout","time":8302.001940048,"data":"[job1]   without_up_blocks.0      retained +0.836  b +0.081  clip 0.817\n"}
+,{"stream_name":"stdout","time":8302.001943464,"data":"[job1]   without_up_blocks.1      retained +1.128  b -0.063  clip 0.888\n"}
+,{"stream_name":"stdout","time":8302.001946782,"data":"[job1]   without_up_blocks.2      retained +1.080  b -0.038  clip 0.886\n"}
+,{"stream_name":"stdout","time":8302.00195012,"data":"[job1]   without_up_blocks.3      retained +0.923  b +0.038  clip 0.896\n"}
+,{"stream_name":"stdout","time":8302.001953403,"data":"[job1]   on_B                     retained -1.052  b +1.000  clip 0.884\n"}
+,{"stream_name":"stdout","time":8302.001960883,"data":"[job1]   swap_down_blocks.0       retained +1.179  b -0.087  clip 0.873\n"}
+,{"stream_name":"stdout","time":8302.001964383,"data":"[job1]   swap_down_blocks.1       retained +0.620  b +0.186  clip 0.831\n"}
+,{"stream_name":"stdout","time":8302.0019677,"data":"[job1]   swap_down_blocks.2       retained +0.449  b +0.269  clip 0.843\n"}
+,{"stream_name":"stdout","time":8302.001971038,"data":"[job1]   swap_down_blocks.3       retained +0.962  b +0.019  clip 0.878\n"}
+,{"stream_name":"stdout","time":8302.001974364,"data":"[job1]   swap_up_blocks.0         retained +1.058  b -0.029  clip 0.896\n"}
+,{"stream_name":"stdout","time":8302.001977653,"data":"[job1]   swap_up_blocks.1         retained +1.075  b -0.037  clip 0.876\n"}
+,{"stream_name":"stdout","time":8302.001980972,"data":"[job1]   swap_up_blocks.2         retained +1.091  b -0.045  clip 0.876\n"}
+,{"stream_name":"stdout","time":8302.00198464,"data":"[job1]   swap_up_blocks.3         retained +0.980  b +0.011  clip 0.866\n"}
+,{"stream_name":"stdout","time":8302.001988154,"data":"[job1]   swap_down_blocks.0+down_blocks.1+down_blocks.2 retained -1.014  b +0.980  clip 0.865\n"}
+,{"stream_name":"stdout","time":8302.001991573,"data":"[job1]   swap_down_blocks.0+up_blocks.3 retained +1.198  b -0.096  clip 0.874\n"}
+,{"stream_name":"stdout","time":8302.001994926,"data":"[job1]   swap_up_blocks.0+up_blocks.1+up_blocks.2 retained +1.138  b -0.069  clip 0.889\n"}
+,{"stream_name":"stdout","time":8302.00199831,"data":"[job1]   swap_all                 retained -1.052  b +1.000  clip 0.884\n"}
+,{"stream_name":"stdout","time":8302.002001715,"data":"[job1] wrote /kaggle/working/out/job1/a-red-sandstone-desert-canyon__pan-left/manifest.json\n"}
+,{"stream_name":"stdout","time":8302.002005169,"data":"[job1] PASS  checks {'camera_changes_clip': True, 'swap_all_equals_on_B': True, 'swap_all_mad': 0.0}\n"}
+,{"stream_name":"stdout","time":8302.002008701,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":8302.00201191,"data":"[job1] === a-red-sandstone-desert-canyon__roll-cw: 32 tracks\n"}
+,{"stream_name":"stdout","time":8362.002406951,"data":"[job0]     step 25/25   1226.0 s  (1.09 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8482.004493059,"data":"[job1]     step  5/25    162.8 s  (1.02 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8542.005677152,"data":"[job0]   on                       retained +1.000  b +0.000  clip 0.720\n"}
+,{"stream_name":"stdout","time":8542.005710816,"data":"[job0]   off                      retained +0.000  b +0.433  clip 1.000\n"}
+,{"stream_name":"stdout","time":8542.005716666,"data":"[job0]   on_until_1               retained -0.142  b +0.539  clip 0.786\n"}
+,{"stream_name":"stdout","time":8542.005721818,"data":"[job0]   on_until_2               retained +0.120  b +0.309  clip 0.734\n"}
+,{"stream_name":"stdout","time":8542.005726948,"data":"[job0]   on_until_3               retained +0.409  b +0.139  clip 0.782\n"}
+,{"stream_name":"stdout","time":8542.00573195,"data":"[job0]   on_until_5               retained +0.461  b +0.113  clip 0.722\n"}
+,{"stream_name":"stdout","time":8542.005736786,"data":"[job0]   on_until_8               retained +0.597  b +0.120  clip 0.718\n"}
+,{"stream_name":"stdout","time":8542.005741786,"data":"[job0]   on_until_12              retained +0.640  b +0.036  clip 0.717\n"}
+,{"stream_name":"stdout","time":8542.00574672,"data":"[job0]   on_until_18              retained +0.821  b +0.019  clip 0.725\n"}
+,{"stream_name":"stdout","time":8542.005751663,"data":"[job0]   on_from_1                retained +0.798  b +0.079  clip 0.728\n"}
+,{"stream_name":"stdout","time":8542.005756578,"data":"[job0]   on_from_2                retained +0.406  b +0.195  clip 0.718\n"}
+,{"stream_name":"stdout","time":8542.0057728,"data":"[job0]   on_from_3                retained +0.329  b +0.265  clip 0.747\n"}
+,{"stream_name":"stdout","time":8542.005776889,"data":"[job0]   on_from_5                retained +0.195  b +0.330  clip 0.691\n"}
+,{"stream_name":"stdout","time":8542.005780774,"data":"[job0]   on_from_8                retained +0.222  b +0.290  clip 0.816\n"}
+,{"stream_name":"stdout","time":8542.005805786,"data":"[job0]   on_from_12               retained -0.048  b +0.412  clip 0.939\n"}
+,{"stream_name":"stdout","time":8542.005810103,"data":"[job0]   on_from_18               retained -0.015  b +0.422  clip 0.982\n"}
+,{"stream_name":"stdout","time":8542.005813979,"data":"[job0]   only_down_blocks.0       retained +0.149  b +0.349  clip 0.793\n"}
+,{"stream_name":"stdout","time":8542.005817906,"data":"[job0]   only_down_blocks.1       retained -0.359  b +0.536  clip 0.794\n"}
+,{"stream_name":"stdout","time":8542.005821709,"data":"[job0]   only_down_blocks.2       retained +0.180  b +0.427  clip 0.730\n"}
+,{"stream_name":"stdout","time":8542.005825673,"data":"[job0]   only_down_blocks.3       retained -0.071  b +0.469  clip 0.843\n"}
+,{"stream_name":"stdout","time":8542.005829775,"data":"[job0]   only_up_blocks.0         retained -0.117  b +0.511  clip 0.837\n"}
+,{"stream_name":"stdout","time":8542.0058339,"data":"[job0]   only_up_blocks.1         retained -0.254  b +0.482  clip 0.870\n"}
+,{"stream_name":"stdout","time":8542.005837809,"data":"[job0]   only_up_blocks.2         retained -0.058  b +0.427  clip 0.811\n"}
+,{"stream_name":"stdout","time":8542.005841812,"data":"[job0]   only_up_blocks.3         retained -0.327  b +0.657  clip 0.755\n"}
+,{"stream_name":"stdout","time":8542.005845772,"data":"[job0]   without_down_blocks.0    retained +0.605  b +0.182  clip 0.748\n"}
+,{"stream_name":"stdout","time":8542.005865753,"data":"[job0]   without_down_blocks.1    retained +0.580  b +0.113  clip 0.657\n"}
+,{"stream_name":"stdout","time":8542.005869523,"data":"[job0]   without_down_blocks.2    retained +0.480  b +0.146  clip 0.708\n"}
+,{"stream_name":"stdout","time":8542.005873265,"data":"[job0]   without_down_blocks.3    retained +0.712  b +0.093  clip 0.718\n"}
+,{"stream_name":"stdout","time":8542.005878085,"data":"[job0]   without_up_blocks.0      retained +0.972  b -0.139  clip 0.744\n"}
+,{"stream_name":"stdout","time":8542.005882011,"data":"[job0]   without_up_blocks.1      retained +1.012  b -0.088  clip 0.718\n"}
+,{"stream_name":"stdout","time":8542.005885773,"data":"[job0]   without_up_blocks.2      retained +0.645  b +0.091  clip 0.684\n"}
+,{"stream_name":"stdout","time":8542.005889581,"data":"[job0]   without_up_blocks.3      retained +0.499  b +0.160  clip 0.664\n"}
+,{"stream_name":"stdout","time":8542.005893384,"data":"[job0]   on_B                     retained +0.022  b +1.000  clip 0.727\n"}
+,{"stream_name":"stdout","time":8542.005897198,"data":"[job0]   swap_down_blocks.0       retained +0.807  b -0.021  clip 0.711\n"}
+,{"stream_name":"stdout","time":8542.005900998,"data":"[job0]   swap_down_blocks.1       retained +1.208  b -0.257  clip 0.715\n"}
+,{"stream_name":"stdout","time":8542.005904791,"data":"[job0]   swap_down_blocks.2       retained +0.598  b +0.138  clip 0.732\n"}
+,{"stream_name":"stdout","time":8542.005920051,"data":"[job0]   swap_down_blocks.3       retained +0.809  b +0.005  clip 0.710\n"}
+,{"stream_name":"stdout","time":8542.005923558,"data":"[job0]   swap_up_blocks.0         retained +1.308  b -0.320  clip 0.684\n"}
+,{"stream_name":"stdout","time":8542.005926958,"data":"[job0]   swap_up_blocks.1         retained +0.327  b +0.125  clip 0.734\n"}
+,{"stream_name":"stdout","time":8542.005930632,"data":"[job0]   swap_up_blocks.2         retained +0.601  b +0.129  clip 0.583\n"}
+,{"stream_name":"stdout","time":8542.005938198,"data":"[job0]   swap_up_blocks.3         retained +0.276  b +0.091  clip 0.698\n"}
+,{"stream_name":"stdout","time":8542.005941886,"data":"[job0]   swap_down_blocks.0+down_blocks.1+down_blocks.2 retained +0.264  b +0.769  clip 0.686\n"}
+,{"stream_name":"stdout","time":8542.005945439,"data":"[job0]   swap_down_blocks.0+up_blocks.3 retained +0.767  b -0.013  clip 0.742\n"}
+,{"stream_name":"stdout","time":8542.00594907,"data":"[job0]   swap_up_blocks.0+up_blocks.1+up_blocks.2 retained +0.476  b +0.147  clip 0.746\n"}
+,{"stream_name":"stdout","time":8542.00595259,"data":"[job0]   swap_all                 retained +0.022  b +1.000  clip 0.727\n"}
+,{"stream_name":"stdout","time":8542.005956146,"data":"[job0] wrote /kaggle/working/out/job0/a-city-street-at-night-with-neon-signs__tilt-up/manifest.json\n"}
+,{"stream_name":"stdout","time":8542.005959737,"data":"[job0] PASS  checks {'camera_changes_clip': True, 'swap_all_equals_on_B': True, 'swap_all_mad': 0.0}\n"}
+,{"stream_name":"stdout","time":8542.00596343,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":8542.00596683,"data":"[job0] === a-red-sandstone-desert-canyon__zoom-in: 45 tracks\n"}
+,{"stream_name":"stdout","time":8662.00738574,"data":"[job1]     step 10/25    329.1 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8782.009185806,"data":"[job0]     step  5/25    239.0 s  (1.06 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8842.01012102,"data":"[job1]     step 15/25    495.3 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":8962.011808404,"data":"[job1]     step 20/25    661.2 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9022.012658007,"data":"[job0]     step 10/25    482.0 s  (1.07 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9142.014322731,"data":"[job1]     step 25/25    826.8 s  (1.03 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9262.015607947,"data":"[job0]     step 15/25    725.8 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9262.015963257,"data":"[job1]   on                       retained +1.000  b +nan  clip 0.888\n"}
+,{"stream_name":"stdout","time":9262.015977174,"data":"[job1]   off                      retained +0.000  b +nan  clip 1.000\n"}
+,{"stream_name":"stdout","time":9262.015983516,"data":"[job1]   on_until_1               retained -0.069  b +nan  clip 0.935\n"}
+,{"stream_name":"stdout","time":9262.015989265,"data":"[job1]   on_until_2               retained -0.231  b +nan  clip 0.876\n"}
+,{"stream_name":"stdout","time":9262.015994953,"data":"[job1]   on_until_3               retained +0.149  b +nan  clip 0.862\n"}
+,{"stream_name":"stdout","time":9262.016013756,"data":"[job1]   on_until_5               retained -0.312  b +nan  clip 0.893\n"}
+,{"stream_name":"stdout","time":9262.016019697,"data":"[job1]   on_until_8               retained +0.771  b +nan  clip 0.848\n"}
+,{"stream_name":"stdout","time":9262.016025335,"data":"[job1]   on_until_12              retained +1.007  b +nan  clip 0.875\n"}
+,{"stream_name":"stdout","time":9262.016030849,"data":"[job1]   on_until_18              retained +0.990  b +nan  clip 0.898\n"}
+,{"stream_name":"stdout","time":9262.016159878,"data":"[job1]   on_from_1                retained +0.777  b +nan  clip 0.868\n"}
+,{"stream_name":"stdout","time":9262.016167976,"data":"[job1]   on_from_2                retained +1.184  b +nan  clip 0.851\n"}
+,{"stream_name":"stdout","time":9262.016173479,"data":"[job1]   on_from_3                retained +1.332  b +nan  clip 0.866\n"}
+,{"stream_name":"stdout","time":9262.016178857,"data":"[job1]   on_from_5                retained +1.210  b +nan  clip 0.822\n"}
+,{"stream_name":"stdout","time":9262.01621281,"data":"[job1]   on_from_8                retained +0.987  b +nan  clip 0.833\n"}
+,{"stream_name":"stdout","time":9262.016216967,"data":"[job1]   on_from_12               retained +0.291  b +nan  clip 0.926\n"}
+,{"stream_name":"stdout","time":9262.016220544,"data":"[job1]   on_from_18               retained +0.041  b +nan  clip 0.988\n"}
+,{"stream_name":"stdout","time":9262.016224207,"data":"[job1]   only_down_blocks.0       retained +0.816  b +nan  clip 0.868\n"}
+,{"stream_name":"stdout","time":9262.016227936,"data":"[job1]   only_down_blocks.1       retained +0.357  b +nan  clip 0.945\n"}
+,{"stream_name":"stdout","time":9262.016231631,"data":"[job1]   only_down_blocks.2       retained +0.482  b +nan  clip 0.823\n"}
+,{"stream_name":"stdout","time":9262.016235334,"data":"[job1]   only_down_blocks.3       retained +0.468  b +nan  clip 0.906\n"}
+,{"stream_name":"stdout","time":9262.016239343,"data":"[job1]   only_up_blocks.0         retained -0.208  b +nan  clip 0.941\n"}
+,{"stream_name":"stdout","time":9262.016243165,"data":"[job1]   only_up_blocks.1         retained +0.219  b +nan  clip 0.919\n"}
+,{"stream_name":"stdout","time":9262.016246827,"data":"[job1]   only_up_blocks.2         retained +0.187  b +nan  clip 0.945\n"}
+,{"stream_name":"stdout","time":9262.016250508,"data":"[job1]   only_up_blocks.3         retained +0.026  b +nan  clip 0.939\n"}
+,{"stream_name":"stdout","time":9262.016254146,"data":"[job1]   without_down_blocks.0    retained +0.491  b +nan  clip 0.900\n"}
+,{"stream_name":"stdout","time":9262.016257822,"data":"[job1]   without_down_blocks.1    retained +0.908  b +nan  clip 0.822\n"}
+,{"stream_name":"stdout","time":9262.016261498,"data":"[job1]   without_down_blocks.2    retained +1.214  b +nan  clip 0.848\n"}
+,{"stream_name":"stdout","time":9262.016265082,"data":"[job1]   without_down_blocks.3    retained +0.985  b +nan  clip 0.859\n"}
+,{"stream_name":"stdout","time":9262.016268729,"data":"[job1]   without_up_blocks.0      retained +1.161  b +nan  clip 0.846\n"}
+,{"stream_name":"stdout","time":9262.016272294,"data":"[job1]   without_up_blocks.1      retained +1.142  b +nan  clip 0.871\n"}
+,{"stream_name":"stdout","time":9262.016276018,"data":"[job1]   without_up_blocks.2      retained +1.005  b +nan  clip 0.895\n"}
+,{"stream_name":"stdout","time":9262.016279648,"data":"[job1]   without_up_blocks.3      retained +0.799  b +nan  clip 0.881\n"}
+,{"stream_name":"stdout","time":9262.016283311,"data":"[job1] wrote /kaggle/working/out/job1/a-red-sandstone-desert-canyon__roll-cw/manifest.json\n"}
+,{"stream_name":"stdout","time":9262.016287058,"data":"[job1] PASS  checks {'camera_changes_clip': True}\n"}
+,{"stream_name":"stdout","time":9262.016290763,"data":"[job1] 8 groups in 150.7 min\n"}
+,{"stream_name":"stdout","time":9502.018910597,"data":"[job0]     step 20/25    968.8 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9742.022350814,"data":"[job0]     step 25/25   1211.4 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":9922.025152566,"data":"[job0]   on                       retained +1.000  b +0.000  clip 0.924\n"}
+,{"stream_name":"stdout","time":9922.025192858,"data":"[job0]   off                      retained +0.000  b +0.668  clip 1.000\n"}
+,{"stream_name":"stdout","time":9922.02519822,"data":"[job0]   on_until_1               retained +0.328  b +0.512  clip 0.868\n"}
+,{"stream_name":"stdout","time":9922.025202616,"data":"[job0]   on_until_2               retained +0.337  b +0.511  clip 0.865\n"}
+,{"stream_name":"stdout","time":9922.025207113,"data":"[job0]   on_until_3               retained +0.377  b +0.452  clip 0.911\n"}
+,{"stream_name":"stdout","time":9922.025211559,"data":"[job0]   on_until_5               retained +0.478  b +0.339  clip 0.895\n"}
+,{"stream_name":"stdout","time":9922.025228098,"data":"[job0]   on_until_8               retained +0.899  b +0.059  clip 0.921\n"}
+,{"stream_name":"stdout","time":9922.025231778,"data":"[job0]   on_until_12              retained +0.927  b +0.032  clip 0.932\n"}
+,{"stream_name":"stdout","time":9922.025235355,"data":"[job0]   on_until_18              retained +0.982  b +0.011  clip 0.929\n"}
+,{"stream_name":"stdout","time":9922.02523913,"data":"[job0]   on_from_1                retained +1.092  b -0.064  clip 0.917\n"}
+,{"stream_name":"stdout","time":9922.025242774,"data":"[job0]   on_from_2                retained +1.153  b -0.100  clip 0.881\n"}
+,{"stream_name":"stdout","time":9922.025246289,"data":"[job0]   on_from_3                retained +1.127  b -0.080  clip 0.875\n"}
+,{"stream_name":"stdout","time":9922.025249745,"data":"[job0]   on_from_5                retained +1.091  b -0.056  clip 0.872\n"}
+,{"stream_name":"stdout","time":9922.025253272,"data":"[job0]   on_from_8                retained +1.020  b -0.005  clip 0.907\n"}
+,{"stream_name":"stdout","time":9922.025256737,"data":"[job0]   on_from_12               retained -0.024  b +0.679  clip 0.966\n"}
+,{"stream_name":"stdout","time":9922.025260217,"data":"[job0]   on_from_18               retained -0.004  b +0.667  clip 0.990\n"}
+,{"stream_name":"stdout","time":9922.025263728,"data":"[job0]   only_down_blocks.0       retained +0.808  b +0.133  clip 0.922\n"}
+,{"stream_name":"stdout","time":9922.025267218,"data":"[job0]   only_down_blocks.1       retained +0.222  b +0.529  clip 0.896\n"}
+,{"stream_name":"stdout","time":9922.025270669,"data":"[job0]   only_down_blocks.2       retained +0.356  b +0.437  clip 0.882\n"}
+,{"stream_name":"stdout","time":9922.025274128,"data":"[job0]   only_down_blocks.3       retained +0.329  b +0.456  clip 0.889\n"}
+,{"stream_name":"stdout","time":9922.025277581,"data":"[job0]   only_up_blocks.0         retained +0.026  b +0.634  clip 0.960\n"}
+,{"stream_name":"stdout","time":9922.025281061,"data":"[job0]   only_up_blocks.1         retained +0.266  b +0.497  clip 0.931\n"}
+,{"stream_name":"stdout","time":9922.025284536,"data":"[job0]   only_up_blocks.2         retained +0.103  b +0.599  clip 0.946\n"}
+,{"stream_name":"stdout","time":9922.025287986,"data":"[job0]   only_up_blocks.3         retained -0.004  b +0.673  clip 0.970\n"}
+,{"stream_name":"stdout","time":9922.025291414,"data":"[job0]   without_down_blocks.0    retained +0.823  b +0.117  clip 0.901\n"}
+,{"stream_name":"stdout","time":9922.025294885,"data":"[job0]   without_down_blocks.1    retained +1.004  b +0.004  clip 0.918\n"}
+,{"stream_name":"stdout","time":9922.025298317,"data":"[job0]   without_down_blocks.2    retained +0.795  b +0.135  clip 0.917\n"}
+,{"stream_name":"stdout","time":9922.025301854,"data":"[job0]   without_down_blocks.3    retained +0.995  b -0.004  clip 0.926\n"}
+,{"stream_name":"stdout","time":9922.02530614,"data":"[job0]   without_up_blocks.0      retained +1.094  b -0.074  clip 0.925\n"}
+,{"stream_name":"stdout","time":9922.02530961,"data":"[job0]   without_up_blocks.1      retained +0.859  b +0.095  clip 0.904\n"}
+,{"stream_name":"stdout","time":9922.025313075,"data":"[job0]   without_up_blocks.2      retained +1.060  b -0.043  clip 0.920\n"}
+,{"stream_name":"stdout","time":9922.025316289,"data":"[job0]   without_up_blocks.3      retained +0.848  b +0.101  clip 0.907\n"}
+,{"stream_name":"stdout","time":9922.025319697,"data":"[job0]   on_B                     retained -0.471  b +1.000  clip 0.911\n"}
+,{"stream_name":"stdout","time":9922.025323283,"data":"[job0]   swap_down_blocks.0       retained +1.099  b -0.072  clip 0.923\n"}
+,{"stream_name":"stdout","time":9922.025327047,"data":"[job0]   swap_down_blocks.1       retained +1.198  b -0.142  clip 0.868\n"}
+,{"stream_name":"stdout","time":9922.025334972,"data":"[job0]   swap_down_blocks.2       retained +0.870  b +0.087  clip 0.905\n"}
+,{"stream_name":"stdout","time":9922.025338304,"data":"[job0]   swap_down_blocks.3       retained +1.006  b -0.005  clip 0.924\n"}
+,{"stream_name":"stdout","time":9922.025341848,"data":"[job0]   swap_up_blocks.0         retained +1.072  b -0.051  clip 0.916\n"}
+,{"stream_name":"stdout","time":9922.025345537,"data":"[job0]   swap_up_blocks.1         retained +0.860  b +0.093  clip 0.922\n"}
+,{"stream_name":"stdout","time":9922.025348718,"data":"[job0]   swap_up_blocks.2         retained +1.011  b -0.009  clip 0.936\n"}
+,{"stream_name":"stdout","time":9922.025352084,"data":"[job0]   swap_up_blocks.3         retained +0.972  b +0.019  clip 0.917\n"}
+,{"stream_name":"stdout","time":9922.025355473,"data":"[job0]   swap_down_blocks.0+down_blocks.1+down_blocks.2 retained -0.462  b +0.987  clip 0.884\n"}
+,{"stream_name":"stdout","time":9922.02535905,"data":"[job0]   swap_down_blocks.0+up_blocks.3 retained +1.062  b -0.048  clip 0.908\n"}
+,{"stream_name":"stdout","time":9922.02536236,"data":"[job0]   swap_up_blocks.0+up_blocks.1+up_blocks.2 retained +0.895  b +0.077  clip 0.903\n"}
+,{"stream_name":"stdout","time":9922.025366008,"data":"[job0]   swap_all                 retained -0.471  b +1.000  clip 0.911\n"}
+,{"stream_name":"stdout","time":9922.02536942,"data":"[job0] wrote /kaggle/working/out/job0/a-red-sandstone-desert-canyon__zoom-in/manifest.json\n"}
+,{"stream_name":"stdout","time":9922.025373021,"data":"[job0] PASS  checks {'camera_changes_clip': True, 'swap_all_equals_on_B': True, 'swap_all_mad': 0.0}\n"}
+,{"stream_name":"stdout","time":9922.025376564,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":9922.025379823,"data":"[job0] === a-red-sandstone-desert-canyon__tilt-up: 45 tracks\n"}
+,{"stream_name":"stdout","time":10162.028723556,"data":"[job0]     step  5/25    243.8 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10402.032269938,"data":"[job0]     step 10/25    487.3 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10642.036144442,"data":"[job0]     step 15/25    730.9 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":10882.039064478,"data":"[job0]     step 20/25    974.8 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11122.042223371,"data":"[job0]     step 25/25   1218.6 s  (1.08 s per clip-step)\n"}
+,{"stream_name":"stdout","time":11302.04456914,"data":"[job0]   on                       retained +1.000  b +0.000  clip 0.884\n"}
+,{"stream_name":"stdout","time":11302.044600039,"data":"[job0]   off                      retained +0.000  b +0.738  clip 1.000\n"}
+,{"stream_name":"stdout","time":11302.044604113,"data":"[job0]   on_until_1               retained +0.080  b +0.780  clip 0.947\n"}
+,{"stream_name":"stdout","time":11302.044608168,"data":"[job0]   on_until_2               retained +0.283  b +0.641  clip 0.900\n"}
+,{"stream_name":"stdout","time":11302.044625935,"data":"[job0]   on_until_3               retained +0.270  b +0.538  clip 0.863\n"}
+,{"stream_name":"stdout","time":11302.044631017,"data":"[job0]   on_until_5               retained +0.614  b +0.370  clip 0.898\n"}
+,{"stream_name":"stdout","time":11302.044636027,"data":"[job0]   on_until_8               retained +1.283  b -0.291  clip 0.899\n"}
+,{"stream_name":"stdout","time":11302.04464091,"data":"[job0]   on_until_12              retained +0.952  b +0.020  clip 0.902\n"}
+,{"stream_name":"stdout","time":11302.044645655,"data":"[job0]   on_until_18              retained +1.017  b +0.002  clip 0.895\n"}
+,{"stream_name":"stdout","time":11302.044649925,"data":"[job0]   on_from_1                retained +1.058  b -0.058  clip 0.848\n"}
+,{"stream_name":"stdout","time":11302.04467025,"data":"[job0]   on_from_2                retained +1.013  b -0.016  clip 0.847\n"}
+,{"stream_name":"stdout","time":11302.044673123,"data":"[job0]   on_from_3                retained +0.866  b +0.055  clip 0.842\n"}
+,{"stream_name":"stdout","time":11302.044675493,"data":"[job0]   on_from_5                retained +0.860  b +0.058  clip 0.828\n"}
+,{"stream_name":"stdout","time":11302.044677758,"data":"[job0]   on_from_8                retained +0.800  b +0.097  clip 0.833\n"}
+,{"stream_name":"stdout","time":11302.044680087,"data":"[job0]   on_from_12               retained -0.065  b +0.770  clip 0.944\n"}
+,{"stream_name":"stdout","time":11302.04468235,"data":"[job0]   on_from_18               retained -0.009  b +0.727  clip 0.988\n"}
+,{"stream_name":"stdout","time":11302.044684617,"data":"[job0]   only_down_blocks.0       retained +0.894  b +0.041  clip 0.885\n"}
+,{"stream_name":"stdout","time":11302.04468696,"data":"[job0]   only_down_blocks.1       retained +0.339  b +0.591  clip 0.937\n"}
+,{"stream_name":"stdout","time":11302.04468923,"data":"[job0]   only_down_blocks.2       retained +0.562  b +0.406  clip 0.890\n"}
+,{"stream_name":"stdout","time":11302.044691488,"data":"[job0]   only_down_blocks.3       retained +0.517  b +0.454  clip 0.890\n"}
+,{"stream_name":"stdout","time":11302.044693758,"data":"[job0]   only_up_blocks.0         retained +0.103  b +0.389  clip 0.963\n"}
+,{"stream_name":"stdout","time":11302.044696767,"data":"[job0]   only_up_blocks.1         retained +0.087  b +0.548  clip 0.930\n"}
+,{"stream_name":"stdout","time":11302.044699132,"data":"[job0]   only_up_blocks.2         retained +0.154  b +0.602  clip 0.940\n"}
+,{"stream_name":"stdout","time":11302.044701389,"data":"[job0]   only_up_blocks.3         retained +0.031  b +0.729  clip 0.968\n"}
+,{"stream_name":"stdout","time":11302.044703648,"data":"[job0]   without_down_blocks.0    retained +0.528  b +0.387  clip 0.910\n"}
+,{"stream_name":"stdout","time":11302.044705907,"data":"[job0]   without_down_blocks.1    retained +0.929  b -0.013  clip 0.867\n"}
+,{"stream_name":"stdout","time":11302.044708588,"data":"[job0]   without_down_blocks.2    retained +0.833  b +0.103  clip 0.893\n"}
+,{"stream_name":"stdout","time":11302.044722142,"data":"[job0]   without_down_blocks.3    retained +0.811  b +0.137  clip 0.893\n"}
+,{"stream_name":"stdout","time":11302.044727208,"data":"[job0]   without_up_blocks.0      retained +0.831  b +0.098  clip 0.875\n"}
+,{"stream_name":"stdout","time":11302.044731508,"data":"[job0]   without_up_blocks.1      retained +1.053  b -0.086  clip 0.852\n"}
+,{"stream_name":"stdout","time":11302.044735401,"data":"[job0]   without_up_blocks.2      retained +0.844  b +0.105  clip 0.884\n"}
+,{"stream_name":"stdout","time":11302.044739287,"data":"[job0]   without_up_blocks.3      retained +0.941  b +0.068  clip 0.846\n"}
+,{"stream_name":"stdout","time":11302.044742589,"data":"[job0]   on_B                     retained +0.425  b +1.000  clip 0.888\n"}
+,{"stream_name":"stdout","time":11302.044745862,"data":"[job0]   swap_down_blocks.0       retained +1.141  b -0.170  clip 0.869\n"}
+,{"stream_name":"stdout","time":11302.044749285,"data":"[job0]   swap_down_blocks.1       retained +0.916  b -0.005  clip 0.855\n"}
+,{"stream_name":"stdout","time":11302.044752578,"data":"[job0]   swap_down_blocks.2       retained +0.825  b +0.124  clip 0.858\n"}
+,{"stream_name":"stdout","time":11302.04475588,"data":"[job0]   swap_down_blocks.3       retained +1.006  b +0.002  clip 0.887\n"}
+,{"stream_name":"stdout","time":11302.044759207,"data":"[job0]   swap_up_blocks.0         retained +0.878  b -0.008  clip 0.862\n"}
+,{"stream_name":"stdout","time":11302.044762556,"data":"[job0]   swap_up_blocks.1         retained +0.804  b +0.163  clip 0.847\n"}
+,{"stream_name":"stdout","time":11302.04477318,"data":"[job0]   swap_up_blocks.2         retained +0.768  b +0.213  clip 0.883\n"}
+,{"stream_name":"stdout","time":11302.04477558,"data":"[job0]   swap_up_blocks.3         retained +1.004  b +0.027  clip 0.889\n"}
+,{"stream_name":"stdout","time":11302.044777836,"data":"[job0]   swap_down_blocks.0+down_blocks.1+down_blocks.2 retained +0.962  b +0.215  clip 0.888\n"}
+,{"stream_name":"stdout","time":11302.044780144,"data":"[job0]   swap_down_blocks.0+up_blocks.3 retained +1.146  b -0.191  clip 0.864\n"}
+,{"stream_name":"stdout","time":11302.044782419,"data":"[job0]   swap_up_blocks.0+up_blocks.1+up_blocks.2 retained +0.746  b +0.240  clip 0.854\n"}
+,{"stream_name":"stdout","time":11302.044784711,"data":"[job0]   swap_all                 retained +0.425  b +1.000  clip 0.888\n"}
+,{"stream_name":"stdout","time":11302.044786962,"data":"[job0] wrote /kaggle/working/out/job0/a-red-sandstone-desert-canyon__tilt-up/manifest.json\n"}
+,{"stream_name":"stdout","time":11302.044789301,"data":"[job0] PASS  checks {'camera_changes_clip': True, 'swap_all_equals_on_B': True, 'swap_all_mad': 0.0}\n"}
+,{"stream_name":"stdout","time":11302.044791663,"data":"[job0] 8 groups in 184.5 min\n"}
+,{"stream_name":"stdout","time":11302.045310807,"data":"exit codes [0, 0]\n"}
+,{"stream_name":"stderr","time":11304.041349797,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":11304.041375567,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":11304.230446589,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":11304.230469058,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":11304.949424441,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":11305.836139027,"data":"[NbConvertApp] Writing 571908 bytes to __results__.html\n"}
+]
