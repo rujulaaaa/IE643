@@ -118,4 +118,9 @@ def test_block_sums_and_compare(tmp_path):
                   for b, e in (("up_blocks.1", 0.9), ("down_blocks.0", 0.1), ("up_blocks.2", 0.5))]
                  + [{"model": "cc", "direction": "nec", "candidate": "mm_up_blocks.1", "eff_cam": -5.0}]).to_csv(d / "rows.csv", index=False)
     out = sc.compare(rows, tmp_path, "cc")
-    assert out["n_blocks"] == 3 and out["spearman"] == pytest.approx(1.0)
+    assert out["n_blocks"] == 3 and out["spearman"] == pytest.approx(1.0) and out["direction"] == "suff"
+    # camera_patch runs the mm_<block> candidates without B<-A: fall back to necessity
+    pd.DataFrame([{"model": "cc", "direction": "nec", "candidate": f"mm_{b}", "eff_cam": e}
+                  for b, e in (("up_blocks.1", 0.2), ("down_blocks.0", 0.9), ("up_blocks.2", 0.5))]).to_csv(d / "rows.csv", index=False)
+    out = sc.compare(rows, tmp_path, "cc")
+    assert out["direction"] == "nec" and out["n_blocks"] == 3 and out["spearman"] == pytest.approx(-1.0)

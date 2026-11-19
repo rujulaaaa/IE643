@@ -1,0 +1,48 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 902.39it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1242.36it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:00,  7.41it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:02<00:06,  1.72s/it]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2426.15it/s]
+Loading pipeline components...:  67%|██████▋   | 4/6 [00:03<00:01,  1.40it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:03<00:00,  2.42it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:03<00:00,  1.79it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 9459.00it/s]
+
+=== pair 0: zoom-in | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 19 tracks, 8.4 min
+  run B: 13 tracks, 5.8 min
+  run B2: 4 tracks, 1.8 min
+  B<-A|exp1_region                     cam +0.020  content +nan
+  B2<-A|exp1_region                    cam +0.057  content -0.074
+  A<-B|exp1_region                     cam +0.178  content +nan
+  B<-B2|exp1_region                    cam +0.017  content -0.001
+  B<-A|up1_motion_modules              cam +0.170  content +nan
+  B2<-A|up1_motion_modules             cam +0.090  content -0.009
+  A<-B|up1_motion_modules              cam +0.881  content +nan
+  B<-B2|up1_motion_modules             cam -0.028  content +0.034
+  B<-A|up1_motion_modules_all          cam +0.435  content +nan
+  B2<-A|up1_motion_modules_all         cam +0.078  content +0.479
+  A<-B|up1_motion_modules_all          cam +1.027  content +nan
+  B<-B2|up1_motion_modules_all         cam -0.092  content +0.386
+  B2<-A|mm_down_blocks.0               cam +0.095  content +0.230
+  A<-B|mm_down_blocks.0                cam +0.924  content +nan
+  B2<-A|mm_down_blocks.1               cam +0.649  content +0.129
+  A<-B|mm_down_blocks.1                cam +0.937  content +nan
+  B2<-A|mm_down_blocks.2               cam +0.095  content +0.146
+  A<-B|mm_down_blocks.2                cam +0.955  content +nan
+  B2<-A|mm_down_blocks.3               cam +0.505  content -0.094
+  A<-B|mm_down_blocks.3                cam +0.287  content +nan
+  B2<-A|mm_up_blocks.0                 cam +0.111  content -0.039
+  A<-B|mm_up_blocks.0                  cam +0.211  content +nan
+  B2<-A|mm_up_blocks.1                 cam +0.078  content +0.479
+  A<-B|mm_up_blocks.1                  cam +1.027  content +nan
+  B2<-A|mm_up_blocks.2                 cam +0.162  content +0.880
+  A<-B|mm_up_blocks.2                  cam +1.132  content +nan
+  B2<-A|mm_up_blocks.3                 cam +0.204  content +0.588
+  A<-B|mm_up_blocks.3                  cam +1.132  content +nan
+  B<-A|attn_first_third                cam +0.681  content +nan
+  B2<-A|attn_first_third               cam +0.944  content +0.070
+wrote /kaggle/working/out/job0/zoom-in__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True, 'null_mad': 0.0, 'null_patch': True}
+1 pairs in 17.6 min

@@ -10,7 +10,7 @@ text-conditional branch of B runs with gradients, and every site gets
 Outputs: atp.csv (model, pair, camera, scene, step, site, kind, block, score, frac, gap), manifest.json.
 `--compare <dir of camera_patch rows.csv>` adds atp_vs_patch.json: per block, the sum of `frac` over the block's
 motion modules (mean over pairs and steps 0-7) against the measured `eff_cam` of the `mm_<block>` candidate
-(sufficiency, same model), and their Spearman correlation.
+(sufficiency if the patch run has it, else necessity; same model), and their Spearman correlation.
 
     python scripts/kaggle_run.py --user <account> --slug vdprobe-cc-atp --prefetch-cameractrl \\
         --job "scripts/attribution_screen.py --model cc --shard 0/2" --job "scripts/attribution_screen.py --model cc --shard 1/2"
@@ -52,11 +52,14 @@ def compare(atp_rows, patch_dir: Path, model: str) -> dict:
     if not files:
         return {"error": f"no rows.csv under {patch_dir}"}
     df = pd.concat([pd.read_csv(f) for f in files])
-    df = df[(df.model == model) & (df.direction == "suff") & df.candidate.str.startswith("mm_")]
+    df = df[(df.model == model) & df.candidate.str.startswith("mm_")]
+    # same-scene arm: sufficiency (B<-A) when the patch run has it, else necessity (A<-B), the reverse patch
+    direction = "suff" if (df.direction == "suff").any() else "nec"
+    df = df[df.direction == direction]
     eff = df.groupby(df.candidate.str[3:]).eff_cam.mean().to_dict()
     atp = block_sums(atp_rows)
     blocks = sorted(set(eff) & set(atp))
-    return {"blocks": {b: {"atp_frac": atp[b], "eff_cam": float(eff[b])} for b in blocks},
+    return {"direction": direction, "blocks": {b: {"atp_frac": atp[b], "eff_cam": float(eff[b])} for b in blocks},
             "spearman": spearman([atp[b] for b in blocks], [eff[b] for b in blocks]), "n_blocks": len(blocks)}
 
 

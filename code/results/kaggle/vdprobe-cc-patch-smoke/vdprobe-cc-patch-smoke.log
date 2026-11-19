@@ -1,0 +1,84 @@
+[{"stream_name":"stdout","time":36.002502318,"data":"2\n"}
+,{"stream_name":"stdout","time":36.002546025,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":36.002550536,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":36.002553395,"data":"2.11.0+cu130\n"}
+,{"stream_name":"stdout","time":36.002556055,"data":" \n"}
+,{"stream_name":"stderr","time":39.331385879,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":52.101632788,"data":"\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  4.39it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:12\u003c00:00,  7.50s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:12\u003c00:00,  6.41s/it]\n"}
+,{"stream_name":"stderr","time":65.377335372,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:  15%|█▌        | 2/13 [00:00\u003c00:00, 15.24it/s]\rFetching 13 files:  85%|████████▍ | 11/13 [00:02\u003c00:00,  5.19it/s]\rFetching 13 files:  92%|█████████▏| 12/13 [00:03\u003c00:00,  3.04it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:13\u003c00:00,  1.72s/it]\rFetching 13 files: 100%|██████████| 13/13 [00:13\u003c00:00,  1.01s/it]\n"}
+,{"stream_name":"stderr","time":75.294681016,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:  17%|█▋        | 2/12 [00:00\u003c00:00, 15.59it/s]\rFetching 12 files:  67%|██████▋   | 8/12 [00:00\u003c00:00, 35.02it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:09\u003c00:00,  1.06s/it]\rFetching 12 files: 100%|██████████| 12/12 [00:09\u003c00:00,  1.23it/s]\n"}
+,{"stream_name":"stderr","time":114.564986655,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:14\u003c00:00,  7.05s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:14\u003c00:00,  7.05s/it]\n"}
+,{"stream_name":"stderr","time":114.668510915,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1271.21it/s]\n"}
+,{"stream_name":"stdout","time":134.987910039,"data":"Downloading: \"https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth\" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth\n"}
+,{"stream_name":"stderr","time":135.273292473,"data":"\r  0%|          | 0.00/20.1M [00:00\u003c?, ?B/s]\r 36%|███▌      | 7.25M/20.1M [00:00\u003c00:00, 75.6MB/s]\r100%|██████████| 20.1M/20.1M [00:00\u003c00:00, 130MB/s] \n"}
+,{"stream_name":"stdout","time":136.337216952,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/camera_patch.py --model cc --pairs 1 --block-pairs 1 --null --out /kaggle/working/out/job0\n"}
+,{"stream_name":"stdout","time":196.338803831,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":196.338846275,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":196.338856132,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 902.39it/s]\n"}
+,{"stream_name":"stdout","time":196.338860395,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":196.338863446,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":196.338866728,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1242.36it/s]\n"}
+,{"stream_name":"stdout","time":196.338870142,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":196.33889693,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":196.338900857,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":196.338903204,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":196.338905704,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:00,  7.41it/s]\n"}
+,{"stream_name":"stdout","time":196.338908305,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:02\u003c00:06,  1.72s/it]\n"}
+,{"stream_name":"stdout","time":196.33891094,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":196.338913206,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":196.338915831,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2426.15it/s]\n"}
+,{"stream_name":"stdout","time":196.33891849,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":196.338920866,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:03\u003c00:01,  1.40it/s]\n"}
+,{"stream_name":"stdout","time":196.338923423,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:03\u003c00:00,  2.42it/s]\n"}
+,{"stream_name":"stdout","time":196.338926076,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:03\u003c00:00,  1.79it/s]\n"}
+,{"stream_name":"stdout","time":196.338928786,"data":"[job0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":196.338931454,"data":"[job0] candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)\n"}
+,{"stream_name":"stdout","time":196.338934234,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":196.338936516,"data":"[job0] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":196.338939116,"data":"[job0] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 9459.00it/s]\n"}
+,{"stream_name":"stdout","time":196.338941668,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":196.338943996,"data":"[job0] === pair 0: zoom-in | a mountain lake at sunrise -\u003e a medieval stone castle on a hill\n"}
+,{"stream_name":"stdout","time":736.342657017,"data":"[job0]   run A: 19 tracks, 8.4 min\n"}
+,{"stream_name":"stdout","time":1096.344647012,"data":"[job0]   run B: 13 tracks, 5.8 min\n"}
+,{"stream_name":"stdout","time":1216.345590692,"data":"[job0]   run B2: 4 tracks, 1.8 min\n"}
+,{"stream_name":"stdout","time":1276.346226837,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.020  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346267697,"data":"[job0]   B2\u003c-A|exp1_region                    cam +0.057  content -0.074\n"}
+,{"stream_name":"stdout","time":1276.346279789,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.178  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346283511,"data":"[job0]   B\u003c-B2|exp1_region                    cam +0.017  content -0.001\n"}
+,{"stream_name":"stdout","time":1276.346286841,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.170  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346304294,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam +0.090  content -0.009\n"}
+,{"stream_name":"stdout","time":1276.346307044,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.881  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346309555,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam -0.028  content +0.034\n"}
+,{"stream_name":"stdout","time":1276.346311987,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.435  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346315397,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.078  content +0.479\n"}
+,{"stream_name":"stdout","time":1276.346339559,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +1.027  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346344029,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam -0.092  content +0.386\n"}
+,{"stream_name":"stdout","time":1276.34634829,"data":"[job0]   B2\u003c-A|mm_down_blocks.0               cam +0.095  content +0.230\n"}
+,{"stream_name":"stdout","time":1276.346352335,"data":"[job0]   A\u003c-B|mm_down_blocks.0                cam +0.924  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346356433,"data":"[job0]   B2\u003c-A|mm_down_blocks.1               cam +0.649  content +0.129\n"}
+,{"stream_name":"stdout","time":1276.346360041,"data":"[job0]   A\u003c-B|mm_down_blocks.1                cam +0.937  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346363675,"data":"[job0]   B2\u003c-A|mm_down_blocks.2               cam +0.095  content +0.146\n"}
+,{"stream_name":"stdout","time":1276.346367331,"data":"[job0]   A\u003c-B|mm_down_blocks.2                cam +0.955  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346370943,"data":"[job0]   B2\u003c-A|mm_down_blocks.3               cam +0.505  content -0.094\n"}
+,{"stream_name":"stdout","time":1276.346374481,"data":"[job0]   A\u003c-B|mm_down_blocks.3                cam +0.287  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346378061,"data":"[job0]   B2\u003c-A|mm_up_blocks.0                 cam +0.111  content -0.039\n"}
+,{"stream_name":"stdout","time":1276.346383574,"data":"[job0]   A\u003c-B|mm_up_blocks.0                  cam +0.211  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346391356,"data":"[job0]   B2\u003c-A|mm_up_blocks.1                 cam +0.078  content +0.479\n"}
+,{"stream_name":"stdout","time":1276.346394006,"data":"[job0]   A\u003c-B|mm_up_blocks.1                  cam +1.027  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346396487,"data":"[job0]   B2\u003c-A|mm_up_blocks.2                 cam +0.162  content +0.880\n"}
+,{"stream_name":"stdout","time":1276.346399331,"data":"[job0]   A\u003c-B|mm_up_blocks.2                  cam +1.132  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346401964,"data":"[job0]   B2\u003c-A|mm_up_blocks.3                 cam +0.204  content +0.588\n"}
+,{"stream_name":"stdout","time":1276.346404388,"data":"[job0]   A\u003c-B|mm_up_blocks.3                  cam +1.132  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346408335,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.681  content +nan\n"}
+,{"stream_name":"stdout","time":1276.346410863,"data":"[job0]   B2\u003c-A|attn_first_third               cam +0.944  content +0.070\n"}
+,{"stream_name":"stdout","time":1276.346413332,"data":"[job0] wrote /kaggle/working/out/job0/zoom-in__a-mountain-lake-at-sunrise/manifest.json\n"}
+,{"stream_name":"stdout","time":1276.346459797,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True, 'null_mad': 0.0, 'null_patch': True}\n"}
+,{"stream_name":"stdout","time":1276.346471289,"data":"[job0] 1 pairs in 17.6 min\n"}
+,{"stream_name":"stdout","time":1276.346538112,"data":"exit codes [0]\n"}
+,{"stream_name":"stderr","time":1279.115129129,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1279.115162327,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1279.547622447,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1279.547665423,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1280.500159914,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1282.136609747,"data":"[NbConvertApp] Writing 570992 bytes to __results__.html\n"}
+]
