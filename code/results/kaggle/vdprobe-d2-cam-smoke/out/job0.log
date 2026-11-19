@@ -1,0 +1,45 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 920.81it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1389.48it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:01<00:09,  2.00s/it]Loading pipeline components...:  83%|████████▎ | 5/6 [00:02<00:00,  3.13it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2816.71it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.58it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_mid_block (1), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 8887.61it/s]
+
+=== pair 0: zoom-in | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 30 tracks, 37.2 min
+  B<-A|attn_first_third                cam +0.712  content +nan
+  B2<-A|attn_first_third               cam +0.257  content -0.086
+  B<-A|attn_h0                         cam +0.554  content +nan
+  B2<-A|attn_h0                        cam +0.696  content -0.012
+  B<-A|attn_h1                         cam -0.019  content +nan
+  B2<-A|attn_h1                        cam +0.358  content -0.034
+  B<-A|attn_h2                         cam -0.023  content +nan
+  B2<-A|attn_h2                        cam -0.210  content -0.082
+  B<-A|attn_h3                         cam +0.342  content +nan
+  B2<-A|attn_h3                        cam +0.637  content -0.039
+  B<-A|attn_h4                         cam +0.462  content +nan
+  B2<-A|attn_h4                        cam +0.672  content -0.030
+  B<-A|attn_h5                         cam +0.072  content +nan
+  B2<-A|attn_h5                        cam +0.490  content -0.023
+  B<-A|attn_h6                         cam -0.022  content +nan
+  B2<-A|attn_h6                        cam +0.488  content +0.001
+  B<-A|attn_h7                         cam +0.178  content +nan
+  B2<-A|attn_h7                        cam +0.477  content -0.049
+  B2<-A|attn_down_blocks.0             cam +0.200  content -0.077
+  B2<-A|attn_down_blocks.1             cam +0.637  content -0.092
+  B2<-A|attn_down_blocks.2             cam +0.650  content -0.096
+  B2<-A|attn_down_blocks.3             cam +0.073  content -0.001
+  B2<-A|attn_mid_block                 cam +0.046  content +0.018
+  B2<-A|attn_up_blocks.0               cam +0.161  content -0.075
+  B2<-A|attn_up_blocks.1               cam -0.271  content -0.066
+  B2<-A|attn_up_blocks.2               cam +0.278  content -0.054
+  B2<-A|attn_up_blocks.3               cam +0.116  content +0.017
+wrote /kaggle/working/out/job0/zoom-in__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {}
+1 pairs in 39.3 min

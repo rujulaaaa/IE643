@@ -1,0 +1,44 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 944.03it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1366.36it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00,  5.97it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2693.94it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 11.61it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 10.60it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+candidates: site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 (1), site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 (1), site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 (1), site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 (1), site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 (1), site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 (1), site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 (1), site_up_blocks.3.motion_modules.2 (1), site_down_blocks.0.motion_modules.0 (1)
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 11939.93it/s]
+
+=== pair 0: zoom-in | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 21 tracks, 10.3 min
+  run B: 10 tracks, 5.0 min
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam -0.093  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam -0.163  content -0.046
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam +0.123  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam -0.265  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam -0.134  content +0.041
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam +0.233  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam -0.022  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.056  content +0.004
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.204  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam -0.009  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam -0.089  content +0.014
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.038  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.266  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.096  content -0.029
+  A<-B|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.150  content +nan
+  B<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.140  content +nan
+  B2<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.103  content -0.069
+  A<-B|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.006  content +nan
+  B<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.020  content +nan
+  B2<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam -0.092  content +0.032
+  A<-B|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.148  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2 cam +0.279  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2 cam +0.204  content +0.588
+  A<-B|site_up_blocks.3.motion_modules.2 cam +1.132  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0 cam +0.446  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0 cam +0.096  content +0.142
+  A<-B|site_down_blocks.0.motion_modules.0 cam +0.847  content +nan
+wrote /kaggle/working/out/job2/zoom-in__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {'B_arm_equals_B_source': True}
+1 pairs in 16.8 min

@@ -70,30 +70,41 @@ env = dict(os.environ, PYTHONPATH=str(REPO / "src"), PYTHONUNBUFFERED="1")
 # fetch the weights once, before parallel jobs race on the Hugging Face cache
 subprocess.run([sys.executable, "-c", PREFETCH], env=env, cwd=REPO, check=True)
 
-procs, logs = [], []
-for i, job in enumerate(JOBS):
-    gpu = i % max(n_gpu, 1)
-    log = OUT / ("job%d.log" % i)
-    cmd = [sys.executable, "-u"] + job
-    print("job %d on GPU %d: %s" % (i, gpu, " ".join(cmd)), flush=True)
-    if n_gpu < len(JOBS) and i >= n_gpu:   # fewer GPUs than jobs: run the rest after
-        for p in procs: p.wait()
-    procs.append(subprocess.Popen(cmd, cwd=REPO, env=dict(env, CUDA_VISIBLE_DEVICES=str(gpu)),
-                                  stdout=open(log, "w"), stderr=subprocess.STDOUT))
-    logs.append(log)
+import threading
+n_q = max(n_gpu, 1)
+logs = [OUT / ("job%d.log" % i) for i in range(len(JOBS))]
+codes = [None] * len(JOBS)
 
-seen = [0] * len(logs)
-while any(p.poll() is None for p in procs):
-    time.sleep(60)
+def worker(gpu):   # each GPU runs its own jobs (i % n_gpu == gpu) one after another
+    for i, job in enumerate(JOBS):
+        if i % n_q != gpu:
+            continue
+        cmd = [sys.executable, "-u"] + job
+        print("job %d on GPU %d: %s" % (i, gpu, " ".join(cmd)), flush=True)
+        p = subprocess.Popen(cmd, cwd=REPO, env=dict(env, CUDA_VISIBLE_DEVICES=str(gpu)),
+                             stdout=open(logs[i], "w"), stderr=subprocess.STDOUT)
+        codes[i] = p.wait()
+
+threads = [threading.Thread(target=worker, args=(g,)) for g in range(n_q)]
+for t in threads:
+    t.start()
+
+def flush_logs(seen):
     for i, log in enumerate(logs):
+        if not log.exists():
+            continue
         lines = log.read_text(errors="replace").splitlines()
         for l in lines[seen[i]:]:
             print("[job%d] %s" % (i, l), flush=True)
         seen[i] = len(lines)
-for i, log in enumerate(logs):
-    for l in log.read_text(errors="replace").splitlines()[seen[i]:]:
-        print("[job%d] %s" % (i, l), flush=True)
-codes = [p.returncode for p in procs]
+
+seen = [0] * len(logs)
+while any(t.is_alive() for t in threads):
+    time.sleep(60)
+    flush_logs(seen)
+for t in threads:
+    t.join()
+flush_logs(seen)
 print("exit codes", codes, flush=True)
 import shutil; shutil.rmtree(REPO, ignore_errors=True)
 if any(codes):
