@@ -1,0 +1,767 @@
+[{"stream_name":"stdout","time":23.527265003,"data":"2\n"}
+,{"stream_name":"stdout","time":23.527336727,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":23.52734117,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":23.52734345,"data":"2.11.0+cu130\n"}
+,{"stream_name":"stdout","time":23.527345758,"data":" \n"}
+,{"stream_name":"stderr","time":26.322792106,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":38.447030506,"data":"\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  6.22it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:12\u003c00:00,  7.13s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:12\u003c00:00,  6.08s/it]\n"}
+,{"stream_name":"stderr","time":52.458606697,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:  15%|█▌        | 2/13 [00:00\u003c00:00, 17.79it/s]\rFetching 13 files:  85%|████████▍ | 11/13 [00:05\u003c00:00,  2.05it/s]\rFetching 13 files:  92%|█████████▏| 12/13 [00:06\u003c00:00,  1.79it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:13\u003c00:00,  1.61s/it]\rFetching 13 files: 100%|██████████| 13/13 [00:13\u003c00:00,  1.07s/it]\n"}
+,{"stream_name":"stderr","time":62.668925176,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:  17%|█▋        | 2/12 [00:00\u003c00:00, 17.91it/s]\rFetching 12 files:  67%|██████▋   | 8/12 [00:00\u003c00:00, 38.83it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:10\u003c00:00,  1.09s/it]\rFetching 12 files: 100%|██████████| 12/12 [00:10\u003c00:00,  1.19it/s]\n"}
+,{"stream_name":"stderr","time":89.000802641,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:10\u003c00:00,  5.39s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:10\u003c00:00,  5.39s/it]\n"}
+,{"stream_name":"stderr","time":89.111777791,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1351.79it/s]\n"}
+,{"stream_name":"stdout","time":107.928434659,"data":"Downloading: \"https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth\" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth\n"}
+,{"stream_name":"stderr","time":108.501460102,"data":"\r  0%|          | 0.00/20.1M [00:00\u003c?, ?B/s]\r 29%|██▉       | 5.88M/20.1M [00:00\u003c00:00, 61.3MB/s]\r 82%|████████▏ | 16.5M/20.1M [00:00\u003c00:00, 81.6MB/s]\r100%|██████████| 20.1M/20.1M [00:00\u003c00:00, 87.5MB/s]\n"}
+,{"stream_name":"stdout","time":109.570155252,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/camera_patch.py --model cc --shard 0/2 --out /kaggle/working/out/job0\n"}
+,{"stream_name":"stdout","time":109.571134484,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/camera_patch.py --model cc --shard 1/2 --out /kaggle/working/out/job1\n"}
+,{"stream_name":"stdout","time":169.572866931,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":169.572940552,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":169.572948373,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 987.13it/s]\n"}
+,{"stream_name":"stdout","time":169.572954972,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":169.572960594,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":169.573003918,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1011.58it/s]\n"}
+,{"stream_name":"stdout","time":169.573009773,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":169.573016367,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":169.573021215,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":169.573025429,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":169.573029773,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":169.573033908,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":169.573038736,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2621.10it/s]\n"}
+,{"stream_name":"stdout","time":169.57304357,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":169.57304775,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:00\u003c00:01,  4.78it/s]\n"}
+,{"stream_name":"stdout","time":169.573052066,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:01\u003c00:04,  1.09s/it]\n"}
+,{"stream_name":"stdout","time":169.573056806,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:02\u003c00:00,  2.23it/s]\n"}
+,{"stream_name":"stdout","time":169.57306119,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  3.84it/s]\n"}
+,{"stream_name":"stdout","time":169.573066005,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.79it/s]\n"}
+,{"stream_name":"stdout","time":169.573088128,"data":"[job0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":169.573092831,"data":"[job0] candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)\n"}
+,{"stream_name":"stdout","time":169.573098048,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":169.573102078,"data":"[job0] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":169.573106621,"data":"[job0] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 7369.41it/s]\n"}
+,{"stream_name":"stdout","time":169.573111268,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":169.573115269,"data":"[job0] === pair 0: zoom-in | a mountain lake at sunrise -\u003e a medieval stone castle on a hill\n"}
+,{"stream_name":"stdout","time":169.57312,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":169.573125616,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":169.573129908,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 892.22it/s]\n"}
+,{"stream_name":"stdout","time":169.573134488,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":169.573138693,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":169.57314284,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1143.82it/s]\n"}
+,{"stream_name":"stdout","time":169.573178096,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":169.57318387,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":169.573190852,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":169.573194871,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":169.57319948,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:01\u003c00:09,  2.00s/it]\n"}
+,{"stream_name":"stdout","time":169.573204105,"data":"[job1] Loading pipeline components...:  83%|████████▎ | 5/6 [00:02\u003c00:00,  3.10it/s]\n"}
+,{"stream_name":"stdout","time":169.573208768,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":169.573212916,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":169.573217453,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 4690.14it/s]\n"}
+,{"stream_name":"stdout","time":169.573222267,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":169.573226231,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.63it/s]\n"}
+,{"stream_name":"stdout","time":169.573230674,"data":"[job1] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":169.57323544,"data":"[job1] candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)\n"}
+,{"stream_name":"stdout","time":169.573240291,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":169.573262641,"data":"[job1] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":169.573267285,"data":"[job1] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 7966.77it/s]\n"}
+,{"stream_name":"stdout","time":169.573271729,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":169.573275608,"data":"[job1] === pair 1: pan-left | a mountain lake at sunrise -\u003e a medieval stone castle on a hill\n"}
+,{"stream_name":"stdout","time":769.578368407,"data":"[job0]   run A: 19 tracks, 9.0 min\n"}
+,{"stream_name":"stdout","time":769.578447066,"data":"[job1]   run A: 19 tracks, 8.7 min\n"}
+,{"stream_name":"stdout","time":1069.580662687,"data":"[job1]   run B: 12 tracks, 5.7 min\n"}
+,{"stream_name":"stdout","time":1129.581059124,"data":"[job0]   run B: 12 tracks, 5.8 min\n"}
+,{"stream_name":"stdout","time":1189.581711163,"data":"[job1]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":1249.582445933,"data":"[job0]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":1249.582482694,"data":"[job1]   B\u003c-A|exp1_region                     cam +0.008  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582488456,"data":"[job1]   B2\u003c-A|exp1_region                    cam +0.023  content -0.050\n"}
+,{"stream_name":"stdout","time":1249.582493015,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.004  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582514301,"data":"[job1]   B\u003c-B2|exp1_region                    cam -0.002  content -0.001\n"}
+,{"stream_name":"stdout","time":1249.582518717,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.837  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582539194,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam +0.507  content -0.028\n"}
+,{"stream_name":"stdout","time":1249.582542731,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +0.772  content +nan\n"}
+,{"stream_name":"stdout","time":1249.58254613,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam -0.116  content +0.034\n"}
+,{"stream_name":"stdout","time":1249.582549442,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +1.059  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582552702,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +0.900  content +0.881\n"}
+,{"stream_name":"stdout","time":1249.582556042,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +1.118  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582559414,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam -0.164  content +0.386\n"}
+,{"stream_name":"stdout","time":1249.582562749,"data":"[job1]   B2\u003c-A|mm_down_blocks.0               cam +1.006  content +0.281\n"}
+,{"stream_name":"stdout","time":1249.5825661,"data":"[job1]   A\u003c-B|mm_down_blocks.0                cam +0.838  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582569412,"data":"[job1]   B2\u003c-A|mm_down_blocks.1               cam +1.004  content +0.162\n"}
+,{"stream_name":"stdout","time":1249.58257281,"data":"[job1]   A\u003c-B|mm_down_blocks.1                cam +1.010  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582590587,"data":"[job1]   B2\u003c-A|mm_down_blocks.2               cam +0.601  content +0.322\n"}
+,{"stream_name":"stdout","time":1249.582594352,"data":"[job1]   A\u003c-B|mm_down_blocks.2                cam +1.129  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582597676,"data":"[job1]   B2\u003c-A|mm_down_blocks.3               cam +0.024  content -0.031\n"}
+,{"stream_name":"stdout","time":1249.582600996,"data":"[job1]   A\u003c-B|mm_down_blocks.3                cam +0.391  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582604289,"data":"[job1]   B2\u003c-A|mm_up_blocks.0                 cam +0.327  content -0.048\n"}
+,{"stream_name":"stdout","time":1249.58260766,"data":"[job1]   A\u003c-B|mm_up_blocks.0                  cam +0.368  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582610991,"data":"[job1]   B2\u003c-A|mm_up_blocks.1                 cam +0.900  content +0.881\n"}
+,{"stream_name":"stdout","time":1249.582621608,"data":"[job1]   A\u003c-B|mm_up_blocks.1                  cam +1.118  content +nan\n"}
+,{"stream_name":"stdout","time":1249.58262508,"data":"[job1]   B2\u003c-A|mm_up_blocks.2                 cam +1.136  content +0.799\n"}
+,{"stream_name":"stdout","time":1249.582628357,"data":"[job1]   A\u003c-B|mm_up_blocks.2                  cam +0.936  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582631689,"data":"[job1]   B2\u003c-A|mm_up_blocks.3                 cam +1.136  content +0.856\n"}
+,{"stream_name":"stdout","time":1249.58263637,"data":"[job1]   A\u003c-B|mm_up_blocks.3                  cam +0.694  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582639724,"data":"[job1]   B\u003c-A|attn_first_third                cam +0.867  content +nan\n"}
+,{"stream_name":"stdout","time":1249.582642981,"data":"[job1]   B2\u003c-A|attn_first_third               cam +0.947  content +0.153\n"}
+,{"stream_name":"stdout","time":1249.582646617,"data":"[job1] wrote /kaggle/working/out/job1/pan-left__a-mountain-lake-at-sunrise/manifest.json\n"}
+,{"stream_name":"stdout","time":1249.58265008,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":1249.582672169,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":1249.582675784,"data":"[job1] === pair 3: roll-cw | a mountain lake at sunrise -\u003e a medieval stone castle on a hill\n"}
+,{"stream_name":"stdout","time":1309.583281605,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.020  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583322667,"data":"[job0]   B2\u003c-A|exp1_region                    cam +0.057  content -0.074\n"}
+,{"stream_name":"stdout","time":1309.583328498,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.178  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583333238,"data":"[job0]   B\u003c-B2|exp1_region                    cam +0.017  content -0.001\n"}
+,{"stream_name":"stdout","time":1309.583337864,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.170  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583342578,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam +0.090  content -0.009\n"}
+,{"stream_name":"stdout","time":1309.583347096,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.881  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583351614,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam -0.028  content +0.034\n"}
+,{"stream_name":"stdout","time":1309.583356186,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.435  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583360739,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.078  content +0.479\n"}
+,{"stream_name":"stdout","time":1309.5833657,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +1.027  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583370178,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam -0.092  content +0.386\n"}
+,{"stream_name":"stdout","time":1309.583374725,"data":"[job0]   B2\u003c-A|mm_down_blocks.0               cam +0.095  content +0.230\n"}
+,{"stream_name":"stdout","time":1309.583379204,"data":"[job0]   A\u003c-B|mm_down_blocks.0                cam +0.924  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583383714,"data":"[job0]   B2\u003c-A|mm_down_blocks.1               cam +0.649  content +0.129\n"}
+,{"stream_name":"stdout","time":1309.583388205,"data":"[job0]   A\u003c-B|mm_down_blocks.1                cam +0.937  content +nan\n"}
+,{"stream_name":"stdout","time":1309.58339288,"data":"[job0]   B2\u003c-A|mm_down_blocks.2               cam +0.095  content +0.146\n"}
+,{"stream_name":"stdout","time":1309.583397353,"data":"[job0]   A\u003c-B|mm_down_blocks.2                cam +0.955  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583401816,"data":"[job0]   B2\u003c-A|mm_down_blocks.3               cam +0.505  content -0.094\n"}
+,{"stream_name":"stdout","time":1309.583406348,"data":"[job0]   A\u003c-B|mm_down_blocks.3                cam +0.287  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583410859,"data":"[job0]   B2\u003c-A|mm_up_blocks.0                 cam +0.111  content -0.039\n"}
+,{"stream_name":"stdout","time":1309.583415346,"data":"[job0]   A\u003c-B|mm_up_blocks.0                  cam +0.211  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583419929,"data":"[job0]   B2\u003c-A|mm_up_blocks.1                 cam +0.078  content +0.479\n"}
+,{"stream_name":"stdout","time":1309.58342446,"data":"[job0]   A\u003c-B|mm_up_blocks.1                  cam +1.027  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583428942,"data":"[job0]   B2\u003c-A|mm_up_blocks.2                 cam +0.162  content +0.880\n"}
+,{"stream_name":"stdout","time":1309.583433448,"data":"[job0]   A\u003c-B|mm_up_blocks.2                  cam +1.132  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583437959,"data":"[job0]   B2\u003c-A|mm_up_blocks.3                 cam +0.204  content +0.588\n"}
+,{"stream_name":"stdout","time":1309.583456658,"data":"[job0]   A\u003c-B|mm_up_blocks.3                  cam +1.132  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583461356,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.681  content +nan\n"}
+,{"stream_name":"stdout","time":1309.583465027,"data":"[job0]   B2\u003c-A|attn_first_third               cam +0.944  content +0.070\n"}
+,{"stream_name":"stdout","time":1309.583468607,"data":"[job0] wrote /kaggle/working/out/job0/zoom-in__a-mountain-lake-at-sunrise/manifest.json\n"}
+,{"stream_name":"stdout","time":1309.583472244,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":1309.583475865,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":1309.583479207,"data":"[job0] === pair 2: tilt-up | a mountain lake at sunrise -\u003e a medieval stone castle on a hill\n"}
+,{"stream_name":"stdout","time":1789.587407241,"data":"[job1]   run A: 19 tracks, 8.9 min\n"}
+,{"stream_name":"stdout","time":1849.587774906,"data":"[job0]   run A: 19 tracks, 9.1 min\n"}
+,{"stream_name":"stdout","time":2149.590300821,"data":"[job1]   run B: 12 tracks, 5.6 min\n"}
+,{"stream_name":"stdout","time":2209.590666883,"data":"[job0]   run B: 12 tracks, 5.8 min\n"}
+,{"stream_name":"stdout","time":2269.591234187,"data":"[job1]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":2329.59194601,"data":"[job0]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":2329.591990077,"data":"[job1]   B\u003c-A|exp1_region                     cam -0.002  content +nan\n"}
+,{"stream_name":"stdout","time":2329.591996627,"data":"[job1]   B2\u003c-A|exp1_region                    cam -0.004  content -0.076\n"}
+,{"stream_name":"stdout","time":2329.592001888,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.193  content +nan\n"}
+,{"stream_name":"stdout","time":2329.59200705,"data":"[job1]   B\u003c-B2|exp1_region                    cam -0.015  content -0.001\n"}
+,{"stream_name":"stdout","time":2329.592012239,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.474  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592017217,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam +0.032  content +0.044\n"}
+,{"stream_name":"stdout","time":2329.592022316,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +0.580  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592040267,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam +0.337  content +0.034\n"}
+,{"stream_name":"stdout","time":2329.592045004,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +0.501  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592049707,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +0.180  content +0.519\n"}
+,{"stream_name":"stdout","time":2329.592054352,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam -0.041  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592058955,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam +0.278  content +0.386\n"}
+,{"stream_name":"stdout","time":2329.592063667,"data":"[job1]   B2\u003c-A|mm_down_blocks.0               cam -0.029  content +0.280\n"}
+,{"stream_name":"stdout","time":2329.592068389,"data":"[job1]   A\u003c-B|mm_down_blocks.0                cam +0.140  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592072998,"data":"[job1]   B2\u003c-A|mm_down_blocks.1               cam +0.626  content +0.310\n"}
+,{"stream_name":"stdout","time":2329.59207758,"data":"[job1]   A\u003c-B|mm_down_blocks.1                cam -0.074  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592099341,"data":"[job1]   B2\u003c-A|mm_down_blocks.2               cam +0.028  content +0.230\n"}
+,{"stream_name":"stdout","time":2329.592103747,"data":"[job1]   A\u003c-B|mm_down_blocks.2                cam +0.032  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592107545,"data":"[job1]   B2\u003c-A|mm_down_blocks.3               cam +0.032  content -0.034\n"}
+,{"stream_name":"stdout","time":2329.592111255,"data":"[job1]   A\u003c-B|mm_down_blocks.3                cam +0.185  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592114938,"data":"[job1]   B2\u003c-A|mm_up_blocks.0                 cam +0.059  content -0.092\n"}
+,{"stream_name":"stdout","time":2329.592118542,"data":"[job1]   A\u003c-B|mm_up_blocks.0                  cam +0.234  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592122172,"data":"[job1]   B2\u003c-A|mm_up_blocks.1                 cam +0.180  content +0.519\n"}
+,{"stream_name":"stdout","time":2329.592125871,"data":"[job1]   A\u003c-B|mm_up_blocks.1                  cam -0.041  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592129594,"data":"[job1]   B2\u003c-A|mm_up_blocks.2                 cam +0.404  content +0.851\n"}
+,{"stream_name":"stdout","time":2329.592133265,"data":"[job1]   A\u003c-B|mm_up_blocks.2                  cam -0.183  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592137011,"data":"[job1]   B2\u003c-A|mm_up_blocks.3                 cam +0.532  content +0.863\n"}
+,{"stream_name":"stdout","time":2329.592142001,"data":"[job1]   A\u003c-B|mm_up_blocks.3                  cam -0.244  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592145855,"data":"[job1]   B\u003c-A|attn_first_third                cam -0.009  content +nan\n"}
+,{"stream_name":"stdout","time":2329.592149558,"data":"[job1]   B2\u003c-A|attn_first_third               cam +0.831  content +0.048\n"}
+,{"stream_name":"stdout","time":2329.59215331,"data":"[job1] wrote /kaggle/working/out/job1/roll-cw__a-mountain-lake-at-sunrise/manifest.json\n"}
+,{"stream_name":"stdout","time":2329.592157018,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":2329.592161187,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":2329.592165169,"data":"[job1] === pair 5: pan-left | a medieval stone castle on a hill -\u003e a city street at night with neon signs\n"}
+,{"stream_name":"stdout","time":2389.59254069,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.215  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592603414,"data":"[job0]   B2\u003c-A|exp1_region                    cam -0.010  content +0.044\n"}
+,{"stream_name":"stdout","time":2389.592610877,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.511  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592616657,"data":"[job0]   B\u003c-B2|exp1_region                    cam +0.013  content -0.001\n"}
+,{"stream_name":"stdout","time":2389.592622384,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.598  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592627837,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam +0.317  content -0.063\n"}
+,{"stream_name":"stdout","time":2389.592633349,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.585  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592638884,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam -0.005  content +0.034\n"}
+,{"stream_name":"stdout","time":2389.592644319,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.881  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592649794,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.790  content +0.434\n"}
+,{"stream_name":"stdout","time":2389.592674183,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.658  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592678889,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam -0.015  content +0.386\n"}
+,{"stream_name":"stdout","time":2389.592683023,"data":"[job0]   B2\u003c-A|mm_down_blocks.0               cam +0.932  content +0.289\n"}
+,{"stream_name":"stdout","time":2389.592687295,"data":"[job0]   A\u003c-B|mm_down_blocks.0                cam +0.775  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592691681,"data":"[job0]   B2\u003c-A|mm_down_blocks.1               cam +0.893  content +0.291\n"}
+,{"stream_name":"stdout","time":2389.592696134,"data":"[job0]   A\u003c-B|mm_down_blocks.1                cam +0.644  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592700321,"data":"[job0]   B2\u003c-A|mm_down_blocks.2               cam +0.217  content +0.126\n"}
+,{"stream_name":"stdout","time":2389.592704595,"data":"[job0]   A\u003c-B|mm_down_blocks.2                cam +0.645  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592709161,"data":"[job0]   B2\u003c-A|mm_down_blocks.3               cam +0.226  content -0.096\n"}
+,{"stream_name":"stdout","time":2389.592713473,"data":"[job0]   A\u003c-B|mm_down_blocks.3                cam +0.440  content +nan\n"}
+,{"stream_name":"stdout","time":2389.59271754,"data":"[job0]   B2\u003c-A|mm_up_blocks.0                 cam +0.485  content -0.088\n"}
+,{"stream_name":"stdout","time":2389.592722158,"data":"[job0]   A\u003c-B|mm_up_blocks.0                  cam +0.428  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592726657,"data":"[job0]   B2\u003c-A|mm_up_blocks.1                 cam +0.790  content +0.434\n"}
+,{"stream_name":"stdout","time":2389.592730847,"data":"[job0]   A\u003c-B|mm_up_blocks.1                  cam +0.658  content +nan\n"}
+,{"stream_name":"stdout","time":2389.59273503,"data":"[job0]   B2\u003c-A|mm_up_blocks.2                 cam +0.885  content +0.468\n"}
+,{"stream_name":"stdout","time":2389.592739548,"data":"[job0]   A\u003c-B|mm_up_blocks.2                  cam +0.679  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592743817,"data":"[job0]   B2\u003c-A|mm_up_blocks.3                 cam +0.926  content +0.545\n"}
+,{"stream_name":"stdout","time":2389.592748179,"data":"[job0]   A\u003c-B|mm_up_blocks.3                  cam +0.795  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592753488,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.718  content +nan\n"}
+,{"stream_name":"stdout","time":2389.592757496,"data":"[job0]   B2\u003c-A|attn_first_third               cam +0.824  content +0.015\n"}
+,{"stream_name":"stdout","time":2389.592762081,"data":"[job0] wrote /kaggle/working/out/job0/tilt-up__a-mountain-lake-at-sunrise/manifest.json\n"}
+,{"stream_name":"stdout","time":2389.592766402,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":2389.592770904,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":2389.592775241,"data":"[job0] === pair 4: zoom-in | a medieval stone castle on a hill -\u003e a city street at night with neon signs\n"}
+,{"stream_name":"stdout","time":2869.597238326,"data":"[job1]   run A: 19 tracks, 8.9 min\n"}
+,{"stream_name":"stdout","time":2989.598318314,"data":"[job0]   run A: 19 tracks, 9.1 min\n"}
+,{"stream_name":"stdout","time":3229.600799696,"data":"[job1]   run B: 12 tracks, 5.6 min\n"}
+,{"stream_name":"stdout","time":3349.601805118,"data":"[job0]   run B: 12 tracks, 5.8 min\n"}
+,{"stream_name":"stdout","time":3349.601849551,"data":"[job1]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":3409.602570961,"data":"[job1]   B\u003c-A|exp1_region                     cam +0.032  content +nan\n"}
+,{"stream_name":"stdout","time":3409.602636876,"data":"[job1]   B2\u003c-A|exp1_region                    cam -0.386  content -0.094\n"}
+,{"stream_name":"stdout","time":3409.602643239,"data":"[job1]   A\u003c-B|exp1_region                     cam -0.184  content +nan\n"}
+,{"stream_name":"stdout","time":3409.602647814,"data":"[job1]   B\u003c-B2|exp1_region                    cam +0.032  content -0.061\n"}
+,{"stream_name":"stdout","time":3409.602652152,"data":"[job1]   B\u003c-A|up1_motion_modules              cam -0.026  content +nan\n"}
+,{"stream_name":"stdout","time":3409.602656667,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam +0.026  content -0.029\n"}
+,{"stream_name":"stdout","time":3409.602661142,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +1.655  content +nan\n"}
+,{"stream_name":"stdout","time":3409.602665352,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam +0.040  content -0.045\n"}
+,{"stream_name":"stdout","time":3409.60266983,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +0.443  content +nan\n"}
+,{"stream_name":"stdout","time":3409.602674524,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +0.805  content +0.425\n"}
+,{"stream_name":"stdout","time":3409.602678753,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +1.379  content +nan\n"}
+,{"stream_name":"stdout","time":3409.60268328,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam +0.128  content +0.669\n"}
+,{"stream_name":"stdout","time":3409.602687633,"data":"[job1]   B2\u003c-A|mm_down_blocks.0               cam -0.289  content +0.093\n"}
+,{"stream_name":"stdout","time":3409.602691778,"data":"[job1]   A\u003c-B|mm_down_blocks.0                cam +1.537  content +nan\n"}
+,{"stream_name":"stdout","time":3409.60269607,"data":"[job1]   B2\u003c-A|mm_down_blocks.1               cam +1.568  content +0.010\n"}
+,{"stream_name":"stdout","time":3409.602700457,"data":"[job1]   A\u003c-B|mm_down_blocks.1                cam +1.410  content +nan\n"}
+,{"stream_name":"stdout","time":3409.602704813,"data":"[job1]   B2\u003c-A|mm_down_blocks.2               cam +1.607  content +0.352\n"}
+,{"stream_name":"stdout","time":3409.602708989,"data":"[job1]   A\u003c-B|mm_down_blocks.2                cam +1.072  content +nan\n"}
+,{"stream_name":"stdout","time":3409.6027134,"data":"[job1]   B2\u003c-A|mm_down_blocks.3               cam -1.412  content -0.031\n"}
+,{"stream_name":"stdout","time":3409.60271821,"data":"[job1]   A\u003c-B|mm_down_blocks.3                cam +0.115  content +nan\n"}
+,{"stream_name":"stdout","time":3409.602722705,"data":"[job1]   B2\u003c-A|mm_up_blocks.0                 cam -0.290  content -0.094\n"}
+,{"stream_name":"stdout","time":3409.60272726,"data":"[job1]   A\u003c-B|mm_up_blocks.0                  cam +0.268  content +nan\n"}
+,{"stream_name":"stdout","time":3409.602731472,"data":"[job1]   B2\u003c-A|mm_up_blocks.1                 cam +0.805  content +0.425\n"}
+,{"stream_name":"stdout","time":3409.602735982,"data":"[job1]   A\u003c-B|mm_up_blocks.1                  cam +1.379  content +nan\n"}
+,{"stream_name":"stdout","time":3409.602740527,"data":"[job1]   B2\u003c-A|mm_up_blocks.2                 cam +0.804  content +0.410\n"}
+,{"stream_name":"stdout","time":3409.602744663,"data":"[job1]   A\u003c-B|mm_up_blocks.2                  cam +1.264  content +nan\n"}
+,{"stream_name":"stdout","time":3409.602748911,"data":"[job1]   B2\u003c-A|mm_up_blocks.3                 cam +1.334  content +0.424\n"}
+,{"stream_name":"stdout","time":3409.602753359,"data":"[job1]   A\u003c-B|mm_up_blocks.3                  cam +1.372  content +nan\n"}
+,{"stream_name":"stdout","time":3409.602758758,"data":"[job1]   B\u003c-A|attn_first_third                cam -0.084  content +nan\n"}
+,{"stream_name":"stdout","time":3409.602767775,"data":"[job1]   B2\u003c-A|attn_first_third               cam -0.262  content +0.084\n"}
+,{"stream_name":"stdout","time":3409.602772371,"data":"[job1] wrote /kaggle/working/out/job1/pan-left__a-medieval-stone-castle-on-a-hill/manifest.json\n"}
+,{"stream_name":"stdout","time":3409.60277696,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":3409.602781213,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":3409.602785262,"data":"[job1] === pair 7: roll-cw | a medieval stone castle on a hill -\u003e a city street at night with neon signs\n"}
+,{"stream_name":"stdout","time":3469.603260567,"data":"[job0]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":3469.603304491,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.027  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603312654,"data":"[job0]   B2\u003c-A|exp1_region                    cam +0.116  content -0.095\n"}
+,{"stream_name":"stdout","time":3469.60331757,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.166  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603322295,"data":"[job0]   B\u003c-B2|exp1_region                    cam +0.018  content -0.061\n"}
+,{"stream_name":"stdout","time":3469.603326774,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.142  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603331206,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam +0.157  content -0.134\n"}
+,{"stream_name":"stdout","time":3469.603335876,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.585  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603340473,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +0.048  content -0.045\n"}
+,{"stream_name":"stdout","time":3469.603344993,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.223  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603349522,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.092  content +0.175\n"}
+,{"stream_name":"stdout","time":3469.603354254,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.691  content +nan\n"}
+,{"stream_name":"stdout","time":3469.60335898,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +0.187  content +0.669\n"}
+,{"stream_name":"stdout","time":3469.603363752,"data":"[job0]   B2\u003c-A|mm_down_blocks.0               cam -0.256  content +0.094\n"}
+,{"stream_name":"stdout","time":3469.603368565,"data":"[job0]   A\u003c-B|mm_down_blocks.0                cam +0.805  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603373154,"data":"[job0]   B2\u003c-A|mm_down_blocks.1               cam +0.202  content +0.087\n"}
+,{"stream_name":"stdout","time":3469.603377724,"data":"[job0]   A\u003c-B|mm_down_blocks.1                cam +0.903  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603382666,"data":"[job0]   B2\u003c-A|mm_down_blocks.2               cam +0.487  content +0.420\n"}
+,{"stream_name":"stdout","time":3469.603387131,"data":"[job0]   A\u003c-B|mm_down_blocks.2                cam +0.675  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603391769,"data":"[job0]   B2\u003c-A|mm_down_blocks.3               cam +0.486  content -0.148\n"}
+,{"stream_name":"stdout","time":3469.603396456,"data":"[job0]   A\u003c-B|mm_down_blocks.3                cam +0.527  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603400903,"data":"[job0]   B2\u003c-A|mm_up_blocks.0                 cam +0.284  content -0.044\n"}
+,{"stream_name":"stdout","time":3469.603405323,"data":"[job0]   A\u003c-B|mm_up_blocks.0                  cam +0.567  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603427593,"data":"[job0]   B2\u003c-A|mm_up_blocks.1                 cam +0.092  content +0.175\n"}
+,{"stream_name":"stdout","time":3469.603432466,"data":"[job0]   A\u003c-B|mm_up_blocks.1                  cam +0.691  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603436035,"data":"[job0]   B2\u003c-A|mm_up_blocks.2                 cam +0.166  content +0.240\n"}
+,{"stream_name":"stdout","time":3469.603439422,"data":"[job0]   A\u003c-B|mm_up_blocks.2                  cam +0.815  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603443314,"data":"[job0]   B2\u003c-A|mm_up_blocks.3                 cam +0.120  content +0.442\n"}
+,{"stream_name":"stdout","time":3469.603449865,"data":"[job0]   A\u003c-B|mm_up_blocks.3                  cam +1.004  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603453555,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.521  content +nan\n"}
+,{"stream_name":"stdout","time":3469.603457012,"data":"[job0]   B2\u003c-A|attn_first_third               cam +0.192  content -0.038\n"}
+,{"stream_name":"stdout","time":3469.603460639,"data":"[job0] wrote /kaggle/working/out/job0/zoom-in__a-medieval-stone-castle-on-a-hill/manifest.json\n"}
+,{"stream_name":"stdout","time":3469.603464335,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":3469.603467896,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3469.603471395,"data":"[job0] === pair 6: tilt-up | a medieval stone castle on a hill -\u003e a city street at night with neon signs\n"}
+,{"stream_name":"stdout","time":3949.608274154,"data":"[job1]   run A: 19 tracks, 8.9 min\n"}
+,{"stream_name":"stdout","time":4069.609441808,"data":"[job0]   run A: 19 tracks, 9.1 min\n"}
+,{"stream_name":"stdout","time":4309.612134489,"data":"[job1]   run B: 12 tracks, 5.7 min\n"}
+,{"stream_name":"stdout","time":4429.613665611,"data":"[job0]   run B: 12 tracks, 5.8 min\n"}
+,{"stream_name":"stdout","time":4429.613715457,"data":"[job1]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":4489.614338685,"data":"[job1]   B\u003c-A|exp1_region                     cam -0.027  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614375713,"data":"[job1]   B2\u003c-A|exp1_region                    cam -0.618  content -0.169\n"}
+,{"stream_name":"stdout","time":4489.614381021,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.030  content +nan\n"}
+,{"stream_name":"stdout","time":4489.61438562,"data":"[job1]   B\u003c-B2|exp1_region                    cam -0.044  content -0.061\n"}
+,{"stream_name":"stdout","time":4489.61439002,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.003  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614394515,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam -0.400  content +0.017\n"}
+,{"stream_name":"stdout","time":4489.614398734,"data":"[job1]   A\u003c-B|up1_motion_modules              cam -0.106  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614402921,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam -0.100  content -0.045\n"}
+,{"stream_name":"stdout","time":4489.61440715,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +0.198  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614411466,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +0.038  content +0.069\n"}
+,{"stream_name":"stdout","time":4489.61441577,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +0.091  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614420037,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam +0.073  content +0.669\n"}
+,{"stream_name":"stdout","time":4489.614441218,"data":"[job1]   B2\u003c-A|mm_down_blocks.0               cam +0.192  content -0.080\n"}
+,{"stream_name":"stdout","time":4489.614444867,"data":"[job1]   A\u003c-B|mm_down_blocks.0                cam +0.634  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614448225,"data":"[job1]   B2\u003c-A|mm_down_blocks.1               cam +0.772  content +0.125\n"}
+,{"stream_name":"stdout","time":4489.614451562,"data":"[job1]   A\u003c-B|mm_down_blocks.1                cam +0.230  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614454884,"data":"[job1]   B2\u003c-A|mm_down_blocks.2               cam +0.109  content +0.129\n"}
+,{"stream_name":"stdout","time":4489.614458258,"data":"[job1]   A\u003c-B|mm_down_blocks.2                cam +0.073  content +nan\n"}
+,{"stream_name":"stdout","time":4489.61446152,"data":"[job1]   B2\u003c-A|mm_down_blocks.3               cam +1.559  content -0.013\n"}
+,{"stream_name":"stdout","time":4489.614464966,"data":"[job1]   A\u003c-B|mm_down_blocks.3                cam +0.014  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614468308,"data":"[job1]   B2\u003c-A|mm_up_blocks.0                 cam +0.188  content -0.044\n"}
+,{"stream_name":"stdout","time":4489.614471619,"data":"[job1]   A\u003c-B|mm_up_blocks.0                  cam +0.113  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614474962,"data":"[job1]   B2\u003c-A|mm_up_blocks.1                 cam +0.038  content +0.069\n"}
+,{"stream_name":"stdout","time":4489.614478317,"data":"[job1]   A\u003c-B|mm_up_blocks.1                  cam +0.091  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614481634,"data":"[job1]   B2\u003c-A|mm_up_blocks.2                 cam -0.043  content +0.168\n"}
+,{"stream_name":"stdout","time":4489.614485038,"data":"[job1]   A\u003c-B|mm_up_blocks.2                  cam +0.286  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614488521,"data":"[job1]   B2\u003c-A|mm_up_blocks.3                 cam -0.076  content +0.283\n"}
+,{"stream_name":"stdout","time":4489.61449195,"data":"[job1]   A\u003c-B|mm_up_blocks.3                  cam +0.672  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614496323,"data":"[job1]   B\u003c-A|attn_first_third                cam +2.836  content +nan\n"}
+,{"stream_name":"stdout","time":4489.614499668,"data":"[job1]   B2\u003c-A|attn_first_third               cam -0.322  content +0.109\n"}
+,{"stream_name":"stdout","time":4489.614503,"data":"[job1] wrote /kaggle/working/out/job1/roll-cw__a-medieval-stone-castle-on-a-hill/manifest.json\n"}
+,{"stream_name":"stdout","time":4489.614506587,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":4489.614510008,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":4489.614513205,"data":"[job1] === pair 9: pan-left | a city street at night with neon signs -\u003e a red sandstone desert canyon\n"}
+,{"stream_name":"stdout","time":4549.615741764,"data":"[job0]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":4609.616340033,"data":"[job0]   B\u003c-A|exp1_region                     cam -0.003  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616458272,"data":"[job0]   B2\u003c-A|exp1_region                    cam +0.262  content -0.051\n"}
+,{"stream_name":"stdout","time":4609.616480179,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.010  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616484865,"data":"[job0]   B\u003c-B2|exp1_region                    cam +0.027  content -0.061\n"}
+,{"stream_name":"stdout","time":4609.6164893,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.345  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616493726,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam +0.217  content -0.083\n"}
+,{"stream_name":"stdout","time":4609.616513106,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.208  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616516804,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +0.086  content -0.045\n"}
+,{"stream_name":"stdout","time":4609.616520182,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.389  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616523591,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.204  content +0.554\n"}
+,{"stream_name":"stdout","time":4609.616561994,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.257  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616566615,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +0.372  content +0.669\n"}
+,{"stream_name":"stdout","time":4609.616574479,"data":"[job0]   B2\u003c-A|mm_down_blocks.0               cam +0.342  content -0.051\n"}
+,{"stream_name":"stdout","time":4609.616577972,"data":"[job0]   A\u003c-B|mm_down_blocks.0                cam +0.475  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616581352,"data":"[job0]   B2\u003c-A|mm_down_blocks.1               cam +0.273  content -0.048\n"}
+,{"stream_name":"stdout","time":4609.616585103,"data":"[job0]   A\u003c-B|mm_down_blocks.1                cam +0.437  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616588451,"data":"[job0]   B2\u003c-A|mm_down_blocks.2               cam +0.183  content +0.366\n"}
+,{"stream_name":"stdout","time":4609.61659188,"data":"[job0]   A\u003c-B|mm_down_blocks.2                cam +0.202  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616595219,"data":"[job0]   B2\u003c-A|mm_down_blocks.3               cam +0.108  content -0.008\n"}
+,{"stream_name":"stdout","time":4609.616598629,"data":"[job0]   A\u003c-B|mm_down_blocks.3                cam +0.222  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616602001,"data":"[job0]   B2\u003c-A|mm_up_blocks.0                 cam +0.118  content -0.043\n"}
+,{"stream_name":"stdout","time":4609.61660539,"data":"[job0]   A\u003c-B|mm_up_blocks.0                  cam +0.304  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616608661,"data":"[job0]   B2\u003c-A|mm_up_blocks.1                 cam +0.204  content +0.554\n"}
+,{"stream_name":"stdout","time":4609.616611973,"data":"[job0]   A\u003c-B|mm_up_blocks.1                  cam +0.257  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616615253,"data":"[job0]   B2\u003c-A|mm_up_blocks.2                 cam +0.780  content +0.423\n"}
+,{"stream_name":"stdout","time":4609.616618632,"data":"[job0]   A\u003c-B|mm_up_blocks.2                  cam +0.535  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616621974,"data":"[job0]   B2\u003c-A|mm_up_blocks.3                 cam +0.898  content +0.455\n"}
+,{"stream_name":"stdout","time":4609.61663605,"data":"[job0]   A\u003c-B|mm_up_blocks.3                  cam +0.922  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616639769,"data":"[job0]   B\u003c-A|attn_first_third                cam +1.159  content +nan\n"}
+,{"stream_name":"stdout","time":4609.616643118,"data":"[job0]   B2\u003c-A|attn_first_third               cam +0.146  content -0.042\n"}
+,{"stream_name":"stdout","time":4609.616646404,"data":"[job0] wrote /kaggle/working/out/job0/tilt-up__a-medieval-stone-castle-on-a-hill/manifest.json\n"}
+,{"stream_name":"stdout","time":4609.616649866,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":4609.616653251,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":4609.616656469,"data":"[job0] === pair 8: zoom-in | a city street at night with neon signs -\u003e a red sandstone desert canyon\n"}
+,{"stream_name":"stdout","time":5029.621089025,"data":"[job1]   run A: 19 tracks, 8.9 min\n"}
+,{"stream_name":"stdout","time":5149.622265383,"data":"[job0]   run A: 19 tracks, 9.1 min\n"}
+,{"stream_name":"stdout","time":5389.625344415,"data":"[job1]   run B: 12 tracks, 5.6 min\n"}
+,{"stream_name":"stdout","time":5509.626743939,"data":"[job1]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":5569.627292834,"data":"[job0]   run B: 12 tracks, 5.8 min\n"}
+,{"stream_name":"stdout","time":5569.627474312,"data":"[job1]   B\u003c-A|exp1_region                     cam -0.428  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627484379,"data":"[job1]   B2\u003c-A|exp1_region                    cam -0.162  content -0.006\n"}
+,{"stream_name":"stdout","time":5569.627489091,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.439  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627493403,"data":"[job1]   B\u003c-B2|exp1_region                    cam +0.009  content -0.003\n"}
+,{"stream_name":"stdout","time":5569.627497771,"data":"[job1]   B\u003c-A|up1_motion_modules              cam -0.044  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627502084,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam -0.212  content -0.006\n"}
+,{"stream_name":"stdout","time":5569.627506439,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +0.582  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627510793,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam -0.454  content -0.015\n"}
+,{"stream_name":"stdout","time":5569.627515049,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam -1.009  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627519399,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +1.118  content +0.251\n"}
+,{"stream_name":"stdout","time":5569.627523669,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +0.407  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627527896,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam -0.386  content +0.727\n"}
+,{"stream_name":"stdout","time":5569.627566543,"data":"[job1]   B2\u003c-A|mm_down_blocks.0               cam +1.917  content +0.100\n"}
+,{"stream_name":"stdout","time":5569.627572006,"data":"[job1]   A\u003c-B|mm_down_blocks.0                cam +0.824  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627593091,"data":"[job1]   B2\u003c-A|mm_down_blocks.1               cam +2.653  content +0.122\n"}
+,{"stream_name":"stdout","time":5569.627597766,"data":"[job1]   A\u003c-B|mm_down_blocks.1                cam +0.720  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627602068,"data":"[job1]   B2\u003c-A|mm_down_blocks.2               cam +2.065  content +0.111\n"}
+,{"stream_name":"stdout","time":5569.627606378,"data":"[job1]   A\u003c-B|mm_down_blocks.2                cam +0.524  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627610683,"data":"[job1]   B2\u003c-A|mm_down_blocks.3               cam -0.222  content +0.015\n"}
+,{"stream_name":"stdout","time":5569.627615164,"data":"[job1]   A\u003c-B|mm_down_blocks.3                cam -0.170  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627619386,"data":"[job1]   B2\u003c-A|mm_up_blocks.0                 cam +0.067  content -0.059\n"}
+,{"stream_name":"stdout","time":5569.627623634,"data":"[job1]   A\u003c-B|mm_up_blocks.0                  cam -0.184  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627628085,"data":"[job1]   B2\u003c-A|mm_up_blocks.1                 cam +1.118  content +0.251\n"}
+,{"stream_name":"stdout","time":5569.627632336,"data":"[job1]   A\u003c-B|mm_up_blocks.1                  cam +0.407  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627653476,"data":"[job1]   B2\u003c-A|mm_up_blocks.2                 cam +1.569  content +0.332\n"}
+,{"stream_name":"stdout","time":5569.627657084,"data":"[job1]   A\u003c-B|mm_up_blocks.2                  cam +0.812  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627660661,"data":"[job1]   B2\u003c-A|mm_up_blocks.3                 cam +1.966  content +0.473\n"}
+,{"stream_name":"stdout","time":5569.627664548,"data":"[job1]   A\u003c-B|mm_up_blocks.3                  cam +0.889  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627668671,"data":"[job1]   B\u003c-A|attn_first_third                cam -0.082  content +nan\n"}
+,{"stream_name":"stdout","time":5569.627672429,"data":"[job1]   B2\u003c-A|attn_first_third               cam +2.131  content -0.021\n"}
+,{"stream_name":"stdout","time":5569.627675882,"data":"[job1] wrote /kaggle/working/out/job1/pan-left__a-city-street-at-night-with-neon-signs/manifest.json\n"}
+,{"stream_name":"stdout","time":5569.627679387,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":5569.627682768,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":5569.6276859,"data":"[job1] === pair 11: roll-cw | a city street at night with neon signs -\u003e a red sandstone desert canyon\n"}
+,{"stream_name":"stdout","time":5689.629350793,"data":"[job0]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":5689.629406801,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.852  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629413847,"data":"[job0]   B2\u003c-A|exp1_region                    cam +0.049  content -0.001\n"}
+,{"stream_name":"stdout","time":5689.629418835,"data":"[job0]   A\u003c-B|exp1_region                     cam -0.001  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629423581,"data":"[job0]   B\u003c-B2|exp1_region                    cam -0.013  content -0.003\n"}
+,{"stream_name":"stdout","time":5689.629428171,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.846  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629432712,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam +0.522  content +0.013\n"}
+,{"stream_name":"stdout","time":5689.629437239,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.064  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629441755,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +0.313  content -0.015\n"}
+,{"stream_name":"stdout","time":5689.629446329,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.851  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629451278,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.726  content +0.576\n"}
+,{"stream_name":"stdout","time":5689.629455875,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.047  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629460437,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +0.143  content +0.727\n"}
+,{"stream_name":"stdout","time":5689.629464977,"data":"[job0]   B2\u003c-A|mm_down_blocks.0               cam +0.831  content +0.134\n"}
+,{"stream_name":"stdout","time":5689.629469507,"data":"[job0]   A\u003c-B|mm_down_blocks.0                cam +0.121  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629474055,"data":"[job0]   B2\u003c-A|mm_down_blocks.1               cam +1.027  content +0.221\n"}
+,{"stream_name":"stdout","time":5689.629478577,"data":"[job0]   A\u003c-B|mm_down_blocks.1                cam +0.098  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629483063,"data":"[job0]   B2\u003c-A|mm_down_blocks.2               cam +0.739  content +0.233\n"}
+,{"stream_name":"stdout","time":5689.629504527,"data":"[job0]   A\u003c-B|mm_down_blocks.2                cam +0.151  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629508434,"data":"[job0]   B2\u003c-A|mm_down_blocks.3               cam +0.207  content -0.014\n"}
+,{"stream_name":"stdout","time":5689.629512054,"data":"[job0]   A\u003c-B|mm_down_blocks.3                cam +0.039  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629515607,"data":"[job0]   B2\u003c-A|mm_up_blocks.0                 cam +0.140  content +0.022\n"}
+,{"stream_name":"stdout","time":5689.629519223,"data":"[job0]   A\u003c-B|mm_up_blocks.0                  cam +0.034  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629522875,"data":"[job0]   B2\u003c-A|mm_up_blocks.1                 cam +0.726  content +0.576\n"}
+,{"stream_name":"stdout","time":5689.629526857,"data":"[job0]   A\u003c-B|mm_up_blocks.1                  cam +0.047  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629530517,"data":"[job0]   B2\u003c-A|mm_up_blocks.2                 cam +0.879  content +0.497\n"}
+,{"stream_name":"stdout","time":5689.629534225,"data":"[job0]   A\u003c-B|mm_up_blocks.2                  cam +0.085  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629545268,"data":"[job0]   B2\u003c-A|mm_up_blocks.3                 cam +0.734  content +0.665\n"}
+,{"stream_name":"stdout","time":5689.629550236,"data":"[job0]   A\u003c-B|mm_up_blocks.3                  cam +0.175  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629553989,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.848  content +nan\n"}
+,{"stream_name":"stdout","time":5689.629557579,"data":"[job0]   B2\u003c-A|attn_first_third               cam +0.784  content -0.087\n"}
+,{"stream_name":"stdout","time":5689.629561221,"data":"[job0] wrote /kaggle/working/out/job0/zoom-in__a-city-street-at-night-with-neon-signs/manifest.json\n"}
+,{"stream_name":"stdout","time":5689.629564946,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":5689.629568597,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":5689.629571993,"data":"[job0] === pair 10: tilt-up | a city street at night with neon signs -\u003e a red sandstone desert canyon\n"}
+,{"stream_name":"stdout","time":6109.634622791,"data":"[job1]   run A: 19 tracks, 8.9 min\n"}
+,{"stream_name":"stdout","time":6289.636919816,"data":"[job0]   run A: 19 tracks, 9.1 min\n"}
+,{"stream_name":"stdout","time":6469.639485834,"data":"[job1]   run B: 12 tracks, 5.7 min\n"}
+,{"stream_name":"stdout","time":6589.640859781,"data":"[job1]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":6649.641486122,"data":"[job0]   run B: 12 tracks, 5.8 min\n"}
+,{"stream_name":"stdout","time":6649.641884788,"data":"[job1]   B\u003c-A|exp1_region                     cam +0.300  content +nan\n"}
+,{"stream_name":"stdout","time":6649.641898161,"data":"[job1]   B2\u003c-A|exp1_region                    cam -0.051  content -0.023\n"}
+,{"stream_name":"stdout","time":6649.641904157,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.185  content +nan\n"}
+,{"stream_name":"stdout","time":6649.641909756,"data":"[job1]   B\u003c-B2|exp1_region                    cam -0.004  content -0.003\n"}
+,{"stream_name":"stdout","time":6649.641915397,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.633  content +nan\n"}
+,{"stream_name":"stdout","time":6649.641920976,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam -0.028  content +0.002\n"}
+,{"stream_name":"stdout","time":6649.641926516,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +0.835  content +nan\n"}
+,{"stream_name":"stdout","time":6649.641953595,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam -0.217  content -0.015\n"}
+,{"stream_name":"stdout","time":6649.641958274,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +1.278  content +nan\n"}
+,{"stream_name":"stdout","time":6649.641962823,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +1.248  content +0.404\n"}
+,{"stream_name":"stdout","time":6649.641966971,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +0.768  content +nan\n"}
+,{"stream_name":"stdout","time":6649.641971438,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam -0.194  content +0.727\n"}
+,{"stream_name":"stdout","time":6649.641975939,"data":"[job1]   B2\u003c-A|mm_down_blocks.0               cam +0.525  content +0.163\n"}
+,{"stream_name":"stdout","time":6649.64198016,"data":"[job1]   A\u003c-B|mm_down_blocks.0                cam +0.643  content +nan\n"}
+,{"stream_name":"stdout","time":6649.641984649,"data":"[job1]   B2\u003c-A|mm_down_blocks.1               cam +0.910  content +0.136\n"}
+,{"stream_name":"stdout","time":6649.641989163,"data":"[job1]   A\u003c-B|mm_down_blocks.1                cam +0.975  content +nan\n"}
+,{"stream_name":"stdout","time":6649.641993335,"data":"[job1]   B2\u003c-A|mm_down_blocks.2               cam +1.513  content +0.250\n"}
+,{"stream_name":"stdout","time":6649.641997618,"data":"[job1]   A\u003c-B|mm_down_blocks.2                cam +0.820  content +nan\n"}
+,{"stream_name":"stdout","time":6649.642002029,"data":"[job1]   B2\u003c-A|mm_down_blocks.3               cam +0.383  content -0.074\n"}
+,{"stream_name":"stdout","time":6649.642006408,"data":"[job1]   A\u003c-B|mm_down_blocks.3                cam +0.733  content +nan\n"}
+,{"stream_name":"stdout","time":6649.642010462,"data":"[job1]   B2\u003c-A|mm_up_blocks.0                 cam -0.077  content +0.004\n"}
+,{"stream_name":"stdout","time":6649.642014969,"data":"[job1]   A\u003c-B|mm_up_blocks.0                  cam +0.814  content +nan\n"}
+,{"stream_name":"stdout","time":6649.642019468,"data":"[job1]   B2\u003c-A|mm_up_blocks.1                 cam +1.248  content +0.404\n"}
+,{"stream_name":"stdout","time":6649.642023616,"data":"[job1]   A\u003c-B|mm_up_blocks.1                  cam +0.768  content +nan\n"}
+,{"stream_name":"stdout","time":6649.642027872,"data":"[job1]   B2\u003c-A|mm_up_blocks.2                 cam +1.039  content +0.490\n"}
+,{"stream_name":"stdout","time":6649.642032317,"data":"[job1]   A\u003c-B|mm_up_blocks.2                  cam +0.892  content +nan\n"}
+,{"stream_name":"stdout","time":6649.6420366,"data":"[job1]   B2\u003c-A|mm_up_blocks.3                 cam +1.164  content +0.434\n"}
+,{"stream_name":"stdout","time":6649.642040704,"data":"[job1]   A\u003c-B|mm_up_blocks.3                  cam +0.926  content +nan\n"}
+,{"stream_name":"stdout","time":6649.642044977,"data":"[job1]   B\u003c-A|attn_first_third                cam +0.683  content +nan\n"}
+,{"stream_name":"stdout","time":6649.64204898,"data":"[job1]   B2\u003c-A|attn_first_third               cam +0.637  content -0.024\n"}
+,{"stream_name":"stdout","time":6649.642052914,"data":"[job1] wrote /kaggle/working/out/job1/roll-cw__a-city-street-at-night-with-neon-signs/manifest.json\n"}
+,{"stream_name":"stdout","time":6649.642057388,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":6649.642061616,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":6649.642065598,"data":"[job1] === pair 13: pan-left | a red sandstone desert canyon -\u003e a path through a pine forest\n"}
+,{"stream_name":"stdout","time":6769.64346768,"data":"[job0]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":6829.644345572,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.006  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644456969,"data":"[job0]   B2\u003c-A|exp1_region                    cam +0.021  content -0.008\n"}
+,{"stream_name":"stdout","time":6829.64446466,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.514  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644469597,"data":"[job0]   B\u003c-B2|exp1_region                    cam -0.004  content -0.003\n"}
+,{"stream_name":"stdout","time":6829.644474247,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.147  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644514968,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam +0.486  content -0.049\n"}
+,{"stream_name":"stdout","time":6829.644520692,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.673  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644525541,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam -0.570  content -0.015\n"}
+,{"stream_name":"stdout","time":6829.644540822,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.492  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644545791,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +1.192  content +0.172\n"}
+,{"stream_name":"stdout","time":6829.644550514,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.627  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644555194,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam -0.545  content +0.727\n"}
+,{"stream_name":"stdout","time":6829.644559573,"data":"[job0]   B2\u003c-A|mm_down_blocks.0               cam +1.034  content +0.048\n"}
+,{"stream_name":"stdout","time":6829.644564052,"data":"[job0]   A\u003c-B|mm_down_blocks.0                cam +0.934  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644568501,"data":"[job0]   B2\u003c-A|mm_down_blocks.1               cam +1.157  content +0.050\n"}
+,{"stream_name":"stdout","time":6829.64457315,"data":"[job0]   A\u003c-B|mm_down_blocks.1                cam +0.809  content +nan\n"}
+,{"stream_name":"stdout","time":6829.64460936,"data":"[job0]   B2\u003c-A|mm_down_blocks.2               cam +1.221  content +0.098\n"}
+,{"stream_name":"stdout","time":6829.644614295,"data":"[job0]   A\u003c-B|mm_down_blocks.2                cam +0.692  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644618678,"data":"[job0]   B2\u003c-A|mm_down_blocks.3               cam +0.456  content -0.009\n"}
+,{"stream_name":"stdout","time":6829.644622837,"data":"[job0]   A\u003c-B|mm_down_blocks.3                cam +0.670  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644626923,"data":"[job0]   B2\u003c-A|mm_up_blocks.0                 cam +0.468  content -0.051\n"}
+,{"stream_name":"stdout","time":6829.64463151,"data":"[job0]   A\u003c-B|mm_up_blocks.0                  cam +0.664  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644635818,"data":"[job0]   B2\u003c-A|mm_up_blocks.1                 cam +1.192  content +0.172\n"}
+,{"stream_name":"stdout","time":6829.644640145,"data":"[job0]   A\u003c-B|mm_up_blocks.1                  cam +0.627  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644644188,"data":"[job0]   B2\u003c-A|mm_up_blocks.2                 cam +1.191  content +0.391\n"}
+,{"stream_name":"stdout","time":6829.644648413,"data":"[job0]   A\u003c-B|mm_up_blocks.2                  cam +0.725  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644652825,"data":"[job0]   B2\u003c-A|mm_up_blocks.3                 cam +1.275  content +0.397\n"}
+,{"stream_name":"stdout","time":6829.644657162,"data":"[job0]   A\u003c-B|mm_up_blocks.3                  cam +0.778  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644663853,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.575  content +nan\n"}
+,{"stream_name":"stdout","time":6829.644686613,"data":"[job0]   B2\u003c-A|attn_first_third               cam +1.298  content +0.008\n"}
+,{"stream_name":"stdout","time":6829.644691431,"data":"[job0] wrote /kaggle/working/out/job0/tilt-up__a-city-street-at-night-with-neon-signs/manifest.json\n"}
+,{"stream_name":"stdout","time":6829.644695688,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":6829.644700807,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":6829.644705772,"data":"[job0] === pair 12: zoom-in | a red sandstone desert canyon -\u003e a path through a pine forest\n"}
+,{"stream_name":"stdout","time":6949.646423119,"data":"[job1]   run A: 11 tracks, 5.2 min\n"}
+,{"stream_name":"stdout","time":7069.647845972,"data":"[job1]   run B: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":7129.648717886,"data":"[job0]   run A: 11 tracks, 5.3 min\n"}
+,{"stream_name":"stdout","time":7189.649529376,"data":"[job1]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":7189.649578949,"data":"[job1]   B\u003c-A|exp1_region                     cam +0.010  content +nan\n"}
+,{"stream_name":"stdout","time":7189.649586436,"data":"[job1]   B2\u003c-A|exp1_region                    cam -0.062  content -0.031\n"}
+,{"stream_name":"stdout","time":7189.649592338,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.041  content +nan\n"}
+,{"stream_name":"stdout","time":7189.649597947,"data":"[job1]   B\u003c-B2|exp1_region                    cam +0.010  content -0.012\n"}
+,{"stream_name":"stdout","time":7189.649603505,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.578  content +nan\n"}
+,{"stream_name":"stdout","time":7189.649609006,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam +0.446  content +0.006\n"}
+,{"stream_name":"stdout","time":7189.649614685,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +0.077  content +nan\n"}
+,{"stream_name":"stdout","time":7189.649620187,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam -0.102  content +0.023\n"}
+,{"stream_name":"stdout","time":7189.649625752,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +1.152  content +nan\n"}
+,{"stream_name":"stdout","time":7189.649630731,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +0.922  content +0.852\n"}
+,{"stream_name":"stdout","time":7189.649635014,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +0.390  content +nan\n"}
+,{"stream_name":"stdout","time":7189.649638761,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam -0.018  content +0.504\n"}
+,{"stream_name":"stdout","time":7189.649642709,"data":"[job1]   B\u003c-A|attn_first_third                cam +1.086  content +nan\n"}
+,{"stream_name":"stdout","time":7189.649646612,"data":"[job1]   B2\u003c-A|attn_first_third               cam +0.208  content +0.021\n"}
+,{"stream_name":"stdout","time":7189.649650652,"data":"[job1] wrote /kaggle/working/out/job1/pan-left__a-red-sandstone-desert-canyon/manifest.json\n"}
+,{"stream_name":"stdout","time":7189.649654808,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":7189.649658649,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":7189.64966241,"data":"[job1] === pair 15: roll-cw | a red sandstone desert canyon -\u003e a path through a pine forest\n"}
+,{"stream_name":"stdout","time":7249.650097654,"data":"[job0]   run B: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":7369.651981291,"data":"[job0]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":7429.652671056,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.028  content +nan\n"}
+,{"stream_name":"stdout","time":7429.652730643,"data":"[job0]   B2\u003c-A|exp1_region                    cam -0.132  content -0.029\n"}
+,{"stream_name":"stdout","time":7429.652737187,"data":"[job0]   A\u003c-B|exp1_region                     cam -0.014  content +nan\n"}
+,{"stream_name":"stdout","time":7429.652741245,"data":"[job0]   B\u003c-B2|exp1_region                    cam +0.030  content -0.012\n"}
+,{"stream_name":"stdout","time":7429.652745164,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.400  content +nan\n"}
+,{"stream_name":"stdout","time":7429.652748581,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam -0.027  content +0.059\n"}
+,{"stream_name":"stdout","time":7429.652752556,"data":"[job0]   A\u003c-B|up1_motion_modules              cam -0.048  content +nan\n"}
+,{"stream_name":"stdout","time":7429.65275627,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +0.200  content +0.023\n"}
+,{"stream_name":"stdout","time":7429.652759691,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.798  content +nan\n"}
+,{"stream_name":"stdout","time":7429.652763059,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.393  content +0.879\n"}
+,{"stream_name":"stdout","time":7429.652766619,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam -0.080  content +nan\n"}
+,{"stream_name":"stdout","time":7429.652769981,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +0.422  content +0.504\n"}
+,{"stream_name":"stdout","time":7429.65277336,"data":"[job0]   B\u003c-A|attn_first_third                cam +1.078  content +nan\n"}
+,{"stream_name":"stdout","time":7429.652776792,"data":"[job0]   B2\u003c-A|attn_first_third               cam -0.078  content +0.056\n"}
+,{"stream_name":"stdout","time":7429.652780122,"data":"[job0] wrote /kaggle/working/out/job0/zoom-in__a-red-sandstone-desert-canyon/manifest.json\n"}
+,{"stream_name":"stdout","time":7429.652783685,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":7429.652787321,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":7429.65279057,"data":"[job0] === pair 14: tilt-up | a red sandstone desert canyon -\u003e a path through a pine forest\n"}
+,{"stream_name":"stdout","time":7549.654585006,"data":"[job1]   run A: 11 tracks, 5.2 min\n"}
+,{"stream_name":"stdout","time":7669.656429511,"data":"[job1]   run B: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":7729.657088594,"data":"[job0]   run A: 11 tracks, 5.3 min\n"}
+,{"stream_name":"stdout","time":7789.657954324,"data":"[job1]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":7789.657993866,"data":"[job1]   B\u003c-A|exp1_region                     cam +0.058  content +nan\n"}
+,{"stream_name":"stdout","time":7789.657999844,"data":"[job1]   B2\u003c-A|exp1_region                    cam -0.152  content -0.002\n"}
+,{"stream_name":"stdout","time":7789.658004459,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.086  content +nan\n"}
+,{"stream_name":"stdout","time":7789.658008907,"data":"[job1]   B\u003c-B2|exp1_region                    cam +0.044  content -0.012\n"}
+,{"stream_name":"stdout","time":7789.65801338,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.525  content +nan\n"}
+,{"stream_name":"stdout","time":7789.658017635,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam -0.175  content +0.033\n"}
+,{"stream_name":"stdout","time":7789.658021865,"data":"[job1]   A\u003c-B|up1_motion_modules              cam -0.181  content +nan\n"}
+,{"stream_name":"stdout","time":7789.65802627,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam +0.123  content +0.023\n"}
+,{"stream_name":"stdout","time":7789.658046189,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam -0.354  content +nan\n"}
+,{"stream_name":"stdout","time":7789.658049841,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam -0.071  content +0.497\n"}
+,{"stream_name":"stdout","time":7789.658053252,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam -0.168  content +nan\n"}
+,{"stream_name":"stdout","time":7789.658056619,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam +0.432  content +0.504\n"}
+,{"stream_name":"stdout","time":7789.658059999,"data":"[job1]   B\u003c-A|attn_first_third                cam -0.440  content +nan\n"}
+,{"stream_name":"stdout","time":7789.658063375,"data":"[job1]   B2\u003c-A|attn_first_third               cam +0.317  content +0.068\n"}
+,{"stream_name":"stdout","time":7789.658066679,"data":"[job1] wrote /kaggle/working/out/job1/roll-cw__a-red-sandstone-desert-canyon/manifest.json\n"}
+,{"stream_name":"stdout","time":7789.658070154,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":7789.658073564,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":7789.658076735,"data":"[job1] === pair 17: pan-left | a path through a pine forest -\u003e a lighthouse on a rocky cliff\n"}
+,{"stream_name":"stdout","time":7849.658506985,"data":"[job0]   run B: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":7969.660182197,"data":"[job0]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":8029.661378063,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.040  content +nan\n"}
+,{"stream_name":"stdout","time":8029.661437603,"data":"[job0]   B2\u003c-A|exp1_region                    cam -0.143  content -0.021\n"}
+,{"stream_name":"stdout","time":8029.661443274,"data":"[job0]   A\u003c-B|exp1_region                     cam -0.030  content +nan\n"}
+,{"stream_name":"stdout","time":8029.661447981,"data":"[job0]   B\u003c-B2|exp1_region                    cam +0.044  content -0.012\n"}
+,{"stream_name":"stdout","time":8029.661453139,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.337  content +nan\n"}
+,{"stream_name":"stdout","time":8029.661457685,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam -0.455  content +0.076\n"}
+,{"stream_name":"stdout","time":8029.661462295,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.113  content +nan\n"}
+,{"stream_name":"stdout","time":8029.661466769,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +0.257  content +0.023\n"}
+,{"stream_name":"stdout","time":8029.661471369,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.172  content +nan\n"}
+,{"stream_name":"stdout","time":8029.661475918,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam -0.501  content +0.573\n"}
+,{"stream_name":"stdout","time":8029.661480455,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.129  content +nan\n"}
+,{"stream_name":"stdout","time":8029.661485191,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +0.560  content +0.504\n"}
+,{"stream_name":"stdout","time":8029.661489767,"data":"[job0]   B\u003c-A|attn_first_third                cam -0.015  content +nan\n"}
+,{"stream_name":"stdout","time":8029.66149424,"data":"[job0]   B2\u003c-A|attn_first_third               cam -0.123  content +0.006\n"}
+,{"stream_name":"stdout","time":8029.661498781,"data":"[job0] wrote /kaggle/working/out/job0/tilt-up__a-red-sandstone-desert-canyon/manifest.json\n"}
+,{"stream_name":"stdout","time":8029.661503409,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":8029.661524234,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":8029.661527856,"data":"[job0] === pair 16: zoom-in | a path through a pine forest -\u003e a lighthouse on a rocky cliff\n"}
+,{"stream_name":"stdout","time":8149.663352502,"data":"[job1]   run A: 11 tracks, 5.2 min\n"}
+,{"stream_name":"stdout","time":8269.664880036,"data":"[job1]   run B: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":8329.665319152,"data":"[job0]   run A: 11 tracks, 5.3 min\n"}
+,{"stream_name":"stdout","time":8389.666390118,"data":"[job1]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":8389.666429616,"data":"[job1]   B\u003c-A|exp1_region                     cam -0.037  content +nan\n"}
+,{"stream_name":"stdout","time":8389.666435575,"data":"[job1]   B2\u003c-A|exp1_region                    cam -0.213  content +0.003\n"}
+,{"stream_name":"stdout","time":8389.666440109,"data":"[job1]   A\u003c-B|exp1_region                     cam -0.022  content +nan\n"}
+,{"stream_name":"stdout","time":8389.66644447,"data":"[job1]   B\u003c-B2|exp1_region                    cam -0.037  content -0.020\n"}
+,{"stream_name":"stdout","time":8389.666448813,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.691  content +nan\n"}
+,{"stream_name":"stdout","time":8389.666453131,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam -0.216  content -0.021\n"}
+,{"stream_name":"stdout","time":8389.666457405,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +0.140  content +nan\n"}
+,{"stream_name":"stdout","time":8389.666461613,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam +0.414  content +0.033\n"}
+,{"stream_name":"stdout","time":8389.666465855,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +0.681  content +nan\n"}
+,{"stream_name":"stdout","time":8389.666470102,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +0.279  content +0.426\n"}
+,{"stream_name":"stdout","time":8389.666474351,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +0.231  content +nan\n"}
+,{"stream_name":"stdout","time":8389.666478648,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam +0.453  content +0.857\n"}
+,{"stream_name":"stdout","time":8389.666482864,"data":"[job1]   B\u003c-A|attn_first_third                cam +0.867  content +nan\n"}
+,{"stream_name":"stdout","time":8389.666487159,"data":"[job1]   B2\u003c-A|attn_first_third               cam +0.009  content -0.028\n"}
+,{"stream_name":"stdout","time":8389.666491406,"data":"[job1] wrote /kaggle/working/out/job1/pan-left__a-path-through-a-pine-forest/manifest.json\n"}
+,{"stream_name":"stdout","time":8389.666495743,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":8389.66650004,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":8389.66650413,"data":"[job1] === pair 19: roll-cw | a path through a pine forest -\u003e a lighthouse on a rocky cliff\n"}
+,{"stream_name":"stdout","time":8449.667137561,"data":"[job0]   run B: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":8569.668811095,"data":"[job0]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":8629.66973487,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.002  content +nan\n"}
+,{"stream_name":"stdout","time":8629.669806755,"data":"[job0]   B2\u003c-A|exp1_region                    cam -0.065  content +0.021\n"}
+,{"stream_name":"stdout","time":8629.669813659,"data":"[job0]   A\u003c-B|exp1_region                     cam -0.006  content +nan\n"}
+,{"stream_name":"stdout","time":8629.669818178,"data":"[job0]   B\u003c-B2|exp1_region                    cam -0.194  content -0.020\n"}
+,{"stream_name":"stdout","time":8629.669838245,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.612  content +nan\n"}
+,{"stream_name":"stdout","time":8629.669841885,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam +0.204  content +0.032\n"}
+,{"stream_name":"stdout","time":8629.669845347,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.283  content +nan\n"}
+,{"stream_name":"stdout","time":8629.669848679,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam -0.555  content +0.033\n"}
+,{"stream_name":"stdout","time":8629.669852027,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.923  content +nan\n"}
+,{"stream_name":"stdout","time":8629.669855409,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.599  content +0.309\n"}
+,{"stream_name":"stdout","time":8629.66988701,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.306  content +nan\n"}
+,{"stream_name":"stdout","time":8629.669891259,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam -0.237  content +0.857\n"}
+,{"stream_name":"stdout","time":8629.669894665,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.758  content +nan\n"}
+,{"stream_name":"stdout","time":8629.669898037,"data":"[job0]   B2\u003c-A|attn_first_third               cam +0.426  content +0.060\n"}
+,{"stream_name":"stdout","time":8629.669901384,"data":"[job0] wrote /kaggle/working/out/job0/zoom-in__a-path-through-a-pine-forest/manifest.json\n"}
+,{"stream_name":"stdout","time":8629.669904821,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":8629.669908294,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":8629.66991146,"data":"[job0] === pair 18: tilt-up | a path through a pine forest -\u003e a lighthouse on a rocky cliff\n"}
+,{"stream_name":"stdout","time":8689.671246429,"data":"[job1]   run A: 11 tracks, 5.2 min\n"}
+,{"stream_name":"stdout","time":8809.672965343,"data":"[job1]   run B: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":8929.674371169,"data":"[job0]   run A: 11 tracks, 5.3 min\n"}
+,{"stream_name":"stdout","time":8929.674590951,"data":"[job1]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":8989.675705285,"data":"[job1]   B\u003c-A|exp1_region                     cam -0.007  content +nan\n"}
+,{"stream_name":"stdout","time":8989.675743726,"data":"[job1]   B2\u003c-A|exp1_region                    cam -0.025  content +0.017\n"}
+,{"stream_name":"stdout","time":8989.675749279,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.027  content +nan\n"}
+,{"stream_name":"stdout","time":8989.675753811,"data":"[job1]   B\u003c-B2|exp1_region                    cam -0.012  content -0.020\n"}
+,{"stream_name":"stdout","time":8989.675758119,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.164  content +nan\n"}
+,{"stream_name":"stdout","time":8989.675762449,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam +0.164  content +0.036\n"}
+,{"stream_name":"stdout","time":8989.675766711,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +0.145  content +nan\n"}
+,{"stream_name":"stdout","time":8989.675770931,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam +0.497  content +0.033\n"}
+,{"stream_name":"stdout","time":8989.675775221,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +1.131  content +nan\n"}
+,{"stream_name":"stdout","time":8989.675779403,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam -0.425  content +0.679\n"}
+,{"stream_name":"stdout","time":8989.675783651,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +0.310  content +nan\n"}
+,{"stream_name":"stdout","time":8989.675788007,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam +0.289  content +0.857\n"}
+,{"stream_name":"stdout","time":8989.675808409,"data":"[job1]   B\u003c-A|attn_first_third                cam +1.217  content +nan\n"}
+,{"stream_name":"stdout","time":8989.675812033,"data":"[job1]   B2\u003c-A|attn_first_third               cam +0.297  content +0.111\n"}
+,{"stream_name":"stdout","time":8989.675815424,"data":"[job1] wrote /kaggle/working/out/job1/roll-cw__a-path-through-a-pine-forest/manifest.json\n"}
+,{"stream_name":"stdout","time":8989.675818885,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":8989.675822345,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":8989.675825541,"data":"[job1] === pair 21: pan-left | a lighthouse on a rocky cliff -\u003e a snowy village with wooden houses\n"}
+,{"stream_name":"stdout","time":9049.676406865,"data":"[job0]   run B: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":9169.677945331,"data":"[job0]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":9229.678873829,"data":"[job0]   B\u003c-A|exp1_region                     cam -0.020  content +nan\n"}
+,{"stream_name":"stdout","time":9229.678932941,"data":"[job0]   B2\u003c-A|exp1_region                    cam -0.126  content -0.034\n"}
+,{"stream_name":"stdout","time":9229.678940718,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.038  content +nan\n"}
+,{"stream_name":"stdout","time":9229.678947295,"data":"[job0]   B\u003c-B2|exp1_region                    cam +0.048  content -0.020\n"}
+,{"stream_name":"stdout","time":9229.678953465,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.381  content +nan\n"}
+,{"stream_name":"stdout","time":9229.678959581,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam -0.131  content +0.015\n"}
+,{"stream_name":"stdout","time":9229.678965825,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.343  content +nan\n"}
+,{"stream_name":"stdout","time":9229.678971957,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +0.370  content +0.033\n"}
+,{"stream_name":"stdout","time":9229.678978008,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.858  content +nan\n"}
+,{"stream_name":"stdout","time":9229.678984,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.409  content +0.977\n"}
+,{"stream_name":"stdout","time":9229.678989984,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.345  content +nan\n"}
+,{"stream_name":"stdout","time":9229.678996005,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +0.463  content +0.857\n"}
+,{"stream_name":"stdout","time":9229.679002169,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.775  content +nan\n"}
+,{"stream_name":"stdout","time":9229.679008569,"data":"[job0]   B2\u003c-A|attn_first_third               cam +0.048  content +0.051\n"}
+,{"stream_name":"stdout","time":9229.679014835,"data":"[job0] wrote /kaggle/working/out/job0/tilt-up__a-path-through-a-pine-forest/manifest.json\n"}
+,{"stream_name":"stdout","time":9229.679020909,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":9229.679027435,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":9229.679033103,"data":"[job0] === pair 20: zoom-in | a lighthouse on a rocky cliff -\u003e a snowy village with wooden houses\n"}
+,{"stream_name":"stdout","time":9289.679955821,"data":"[job1]   run A: 11 tracks, 5.2 min\n"}
+,{"stream_name":"stdout","time":9409.681651337,"data":"[job1]   run B: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":9529.68307791,"data":"[job0]   run A: 11 tracks, 5.3 min\n"}
+,{"stream_name":"stdout","time":9529.683368197,"data":"[job1]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":9529.683381051,"data":"[job1]   B\u003c-A|exp1_region                     cam +0.050  content +nan\n"}
+,{"stream_name":"stdout","time":9529.683386559,"data":"[job1]   B2\u003c-A|exp1_region                    cam +0.417  content -0.027\n"}
+,{"stream_name":"stdout","time":9529.683391149,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.224  content +nan\n"}
+,{"stream_name":"stdout","time":9529.683395858,"data":"[job1]   B\u003c-B2|exp1_region                    cam -0.485  content +0.004\n"}
+,{"stream_name":"stdout","time":9529.683400414,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.111  content +nan\n"}
+,{"stream_name":"stdout","time":9529.6834046,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam +2.659  content -0.064\n"}
+,{"stream_name":"stdout","time":9529.683409394,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +0.548  content +nan\n"}
+,{"stream_name":"stdout","time":9529.683413818,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam -1.297  content +0.045\n"}
+,{"stream_name":"stdout","time":9529.683418071,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +0.907  content +nan\n"}
+,{"stream_name":"stdout","time":9529.683422621,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +2.755  content +0.517\n"}
+,{"stream_name":"stdout","time":9529.683426949,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +1.105  content +nan\n"}
+,{"stream_name":"stdout","time":9529.683431207,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam -2.085  content +0.754\n"}
+,{"stream_name":"stdout","time":9529.683435981,"data":"[job1]   B\u003c-A|attn_first_third                cam +0.680  content +nan\n"}
+,{"stream_name":"stdout","time":9529.683440365,"data":"[job1]   B2\u003c-A|attn_first_third               cam +3.006  content +0.026\n"}
+,{"stream_name":"stdout","time":9529.683444613,"data":"[job1] wrote /kaggle/working/out/job1/pan-left__a-lighthouse-on-a-rocky-cliff/manifest.json\n"}
+,{"stream_name":"stdout","time":9529.683449111,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":9529.68345346,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":9529.683457395,"data":"[job1] === pair 23: roll-cw | a lighthouse on a rocky cliff -\u003e a snowy village with wooden houses\n"}
+,{"stream_name":"stdout","time":9649.684882133,"data":"[job0]   run B: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":9769.686997495,"data":"[job0]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":9769.687038535,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.075  content +nan\n"}
+,{"stream_name":"stdout","time":9769.687044413,"data":"[job0]   B2\u003c-A|exp1_region                    cam -0.229  content -0.004\n"}
+,{"stream_name":"stdout","time":9769.687049086,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.181  content +nan\n"}
+,{"stream_name":"stdout","time":9769.687053581,"data":"[job0]   B\u003c-B2|exp1_region                    cam +0.181  content +0.004\n"}
+,{"stream_name":"stdout","time":9769.687057848,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.926  content +nan\n"}
+,{"stream_name":"stdout","time":9769.687062491,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam -0.178  content -0.014\n"}
+,{"stream_name":"stdout","time":9769.687066783,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.452  content +nan\n"}
+,{"stream_name":"stdout","time":9769.687070948,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +0.737  content +0.045\n"}
+,{"stream_name":"stdout","time":9769.687093176,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.874  content +nan\n"}
+,{"stream_name":"stdout","time":9769.687096922,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam -0.148  content +0.400\n"}
+,{"stream_name":"stdout","time":9769.687100314,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.485  content +nan\n"}
+,{"stream_name":"stdout","time":9769.687103712,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +1.097  content +0.754\n"}
+,{"stream_name":"stdout","time":9769.687107037,"data":"[job0]   B\u003c-A|attn_first_third                cam +1.195  content +nan\n"}
+,{"stream_name":"stdout","time":9769.687110397,"data":"[job0]   B2\u003c-A|attn_first_third               cam -0.223  content +0.077\n"}
+,{"stream_name":"stdout","time":9769.687113717,"data":"[job0] wrote /kaggle/working/out/job0/zoom-in__a-lighthouse-on-a-rocky-cliff/manifest.json\n"}
+,{"stream_name":"stdout","time":9769.687117127,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":9769.687120423,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":9769.687123662,"data":"[job0] === pair 22: tilt-up | a lighthouse on a rocky cliff -\u003e a snowy village with wooden houses\n"}
+,{"stream_name":"stdout","time":9889.689387644,"data":"[job1]   run A: 11 tracks, 5.2 min\n"}
+,{"stream_name":"stdout","time":10009.691777754,"data":"[job1]   run B: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":10129.693315403,"data":"[job0]   run A: 11 tracks, 5.3 min\n"}
+,{"stream_name":"stdout","time":10129.693726764,"data":"[job1]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":10129.69374072,"data":"[job1]   B\u003c-A|exp1_region                     cam +0.448  content +nan\n"}
+,{"stream_name":"stdout","time":10129.69374469,"data":"[job1]   B2\u003c-A|exp1_region                    cam -0.055  content -0.022\n"}
+,{"stream_name":"stdout","time":10129.693747939,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.058  content +nan\n"}
+,{"stream_name":"stdout","time":10129.69375123,"data":"[job1]   B\u003c-B2|exp1_region                    cam +0.429  content +0.004\n"}
+,{"stream_name":"stdout","time":10129.693754484,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +1.208  content +nan\n"}
+,{"stream_name":"stdout","time":10129.693757592,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam -0.685  content -0.055\n"}
+,{"stream_name":"stdout","time":10129.693760647,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +0.120  content +nan\n"}
+,{"stream_name":"stdout","time":10129.693763758,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam +0.811  content +0.045\n"}
+,{"stream_name":"stdout","time":10129.693766838,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +0.667  content +nan\n"}
+,{"stream_name":"stdout","time":10129.693769949,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam -0.699  content +0.617\n"}
+,{"stream_name":"stdout","time":10129.693772989,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +0.065  content +nan\n"}
+,{"stream_name":"stdout","time":10129.693776216,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam +1.407  content +0.754\n"}
+,{"stream_name":"stdout","time":10129.693779347,"data":"[job1]   B\u003c-A|attn_first_third                cam +1.611  content +nan\n"}
+,{"stream_name":"stdout","time":10129.693782477,"data":"[job1]   B2\u003c-A|attn_first_third               cam -0.218  content +0.093\n"}
+,{"stream_name":"stdout","time":10129.693785515,"data":"[job1] wrote /kaggle/working/out/job1/roll-cw__a-lighthouse-on-a-rocky-cliff/manifest.json\n"}
+,{"stream_name":"stdout","time":10129.693801798,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":10129.69380455,"data":"[job1] 12 pairs in 165.8 min\n"}
+,{"stream_name":"stdout","time":10249.69543033,"data":"[job0]   run B: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":10369.697242459,"data":"[job0]   run B2: 4 tracks, 1.9 min\n"}
+,{"stream_name":"stdout","time":10369.69730685,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.154  content +nan\n"}
+,{"stream_name":"stdout","time":10369.69731401,"data":"[job0]   B2\u003c-A|exp1_region                    cam +0.029  content +0.013\n"}
+,{"stream_name":"stdout","time":10369.697318494,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.224  content +nan\n"}
+,{"stream_name":"stdout","time":10369.697323107,"data":"[job0]   B\u003c-B2|exp1_region                    cam +0.153  content +0.004\n"}
+,{"stream_name":"stdout","time":10369.69732743,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.689  content +nan\n"}
+,{"stream_name":"stdout","time":10369.697331722,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam -0.101  content -0.023\n"}
+,{"stream_name":"stdout","time":10369.697335992,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.479  content +nan\n"}
+,{"stream_name":"stdout","time":10369.697340174,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +0.472  content +0.045\n"}
+,{"stream_name":"stdout","time":10369.697344444,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +1.058  content +nan\n"}
+,{"stream_name":"stdout","time":10369.697348668,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.219  content +0.606\n"}
+,{"stream_name":"stdout","time":10369.697357944,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.574  content +nan\n"}
+,{"stream_name":"stdout","time":10369.697361911,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +0.718  content +0.754\n"}
+,{"stream_name":"stdout","time":10369.697364805,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.954  content +nan\n"}
+,{"stream_name":"stdout","time":10369.69736771,"data":"[job0]   B2\u003c-A|attn_first_third               cam +0.098  content +0.045\n"}
+,{"stream_name":"stdout","time":10369.697370525,"data":"[job0] wrote /kaggle/working/out/job0/tilt-up__a-lighthouse-on-a-rocky-cliff/manifest.json\n"}
+,{"stream_name":"stdout","time":10369.69737439,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":10369.697390479,"data":"[job0] 12 pairs in 170.1 min\n"}
+,{"stream_name":"stdout","time":10369.697808347,"data":"exit codes [0, 0]\n"}
+,{"stream_name":"stderr","time":10371.953269942,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":10371.953306422,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":10372.219410681,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":10372.219438472,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":10373.034702141,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":10374.115239481,"data":"[NbConvertApp] Writing 571366 bytes to __results__.html\n"}
+]

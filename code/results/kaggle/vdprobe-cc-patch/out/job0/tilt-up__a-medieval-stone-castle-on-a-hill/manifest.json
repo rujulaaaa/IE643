@@ -1,0 +1,264 @@
+{
+  "experiment": "camera_patch",
+  "date": "2026-11-19",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.2",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-3",
+      "commit": "2e8139b1d1269fd8a21deb96ad19455e187692eb"
+    },
+    "authors_groupnorm_layers": 20,
+    "cameractrl": {
+      "repo_id": "hehao13/CameraCtrl",
+      "file": "CameraCtrl.ckpt"
+    },
+    "domain_lora": {
+      "repo_id": "guoyww/animatediff",
+      "file": "v3_sd15_adapter.ckpt",
+      "scale": 1.0,
+      "merged_matrices": 128
+    }
+  },
+  "frames": 16,
+  "resolution": "256x384",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 14.0,
+  "model": "cc",
+  "camera": "tilt-up",
+  "scene_a": "a medieval stone castle on a hill",
+  "scene_b": "a city street at night with neon signs",
+  "seed": 2024,
+  "prompts": [
+    "a medieval stone castle on a hill, high quality, detailed",
+    "a city street at night with neon signs, high quality, detailed"
+  ],
+  "candidates": [
+    {
+      "name": "exp1_region",
+      "coords": [
+        "up_blocks.0.motion_modules.2"
+      ],
+      "steps": [
+        0,
+        1,
+        2
+      ],
+      "component": "dynamic"
+    },
+    {
+      "name": "up1_motion_modules",
+      "coords": [
+        "up_blocks.1.motion_modules.0",
+        "up_blocks.1.motion_modules.1",
+        "up_blocks.1.motion_modules.2"
+      ],
+      "steps": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "component": "dynamic"
+    },
+    {
+      "name": "up1_motion_modules_all",
+      "coords": [
+        "up_blocks.1.motion_modules.0",
+        "up_blocks.1.motion_modules.1",
+        "up_blocks.1.motion_modules.2"
+      ],
+      "steps": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "component": "all"
+    },
+    {
+      "name": "mm_down_blocks.0",
+      "coords": [
+        "down_blocks.0.motion_modules.0",
+        "down_blocks.0.motion_modules.1"
+      ],
+      "steps": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "component": "all"
+    },
+    {
+      "name": "mm_down_blocks.1",
+      "coords": [
+        "down_blocks.1.motion_modules.0",
+        "down_blocks.1.motion_modules.1"
+      ],
+      "steps": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "component": "all"
+    },
+    {
+      "name": "mm_down_blocks.2",
+      "coords": [
+        "down_blocks.2.motion_modules.0",
+        "down_blocks.2.motion_modules.1"
+      ],
+      "steps": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "component": "all"
+    },
+    {
+      "name": "mm_down_blocks.3",
+      "coords": [
+        "down_blocks.3.motion_modules.0",
+        "down_blocks.3.motion_modules.1"
+      ],
+      "steps": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "component": "all"
+    },
+    {
+      "name": "mm_up_blocks.0",
+      "coords": [
+        "up_blocks.0.motion_modules.0",
+        "up_blocks.0.motion_modules.1",
+        "up_blocks.0.motion_modules.2"
+      ],
+      "steps": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "component": "all"
+    },
+    {
+      "name": "mm_up_blocks.1",
+      "coords": [
+        "up_blocks.1.motion_modules.0",
+        "up_blocks.1.motion_modules.1",
+        "up_blocks.1.motion_modules.2"
+      ],
+      "steps": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "component": "all"
+    },
+    {
+      "name": "mm_up_blocks.2",
+      "coords": [
+        "up_blocks.2.motion_modules.0",
+        "up_blocks.2.motion_modules.1",
+        "up_blocks.2.motion_modules.2"
+      ],
+      "steps": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "component": "all"
+    },
+    {
+      "name": "mm_up_blocks.3",
+      "coords": [
+        "up_blocks.3.motion_modules.0",
+        "up_blocks.3.motion_modules.1",
+        "up_blocks.3.motion_modules.2"
+      ],
+      "steps": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "component": "all"
+    }
+  ],
+  "checks": {
+    "B_arm_equals_B_source": true,
+    "B2_arm_equals_B2_source": true
+  },
+  "passed": true,
+  "sheet_rows": [
+    "A",
+    "B",
+    "B<-A|up1_motion_modules_all",
+    "B2",
+    "B2<-A|up1_motion_modules_all",
+    "A<-B|up1_motion_modules_all"
+  ],
+  "denoise_seconds": 1011.0195313600002,
+  "n_tracks": 35,
+  "peak_alloc_gb": 6.121606826782227
+}
