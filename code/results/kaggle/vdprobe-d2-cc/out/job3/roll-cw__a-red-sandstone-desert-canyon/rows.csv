@@ -1,0 +1,4 @@
+candidate,direction,arm,eff_cam,eff_cam_cos,eff_content,den_cam,den_content,Dc,model,pair,camera,scene_a,scene_b,seed
+exp1_region,mean_abl,A<-mean|exp1_region,-0.0615884826025245,-0.08497443471066313,,0.03563898790865452,0.2616775631904602,0.0992656797170639,cc,roll-cw__a-red-sandstone-desert-canyon,roll-cw,a red sandstone desert canyon,a path through a pine forest,2024
+up1_motion_modules,mean_abl,A<-mean|up1_motion_modules,-0.16159745332395087,-0.10134303577783942,,0.03563898790865452,0.2616775631904602,0.09070709347724915,cc,roll-cw__a-red-sandstone-desert-canyon,roll-cw,a red sandstone desert canyon,a path through a pine forest,2024
+up1_motion_modules_all,mean_abl,A<-mean|up1_motion_modules_all,-0.11217104893623123,-0.07268393780049913,,0.03563898790865452,0.2616775631904602,0.07898023724555969,cc,roll-cw__a-red-sandstone-desert-canyon,roll-cw,a red sandstone desert canyon,a path through a pine forest,2024

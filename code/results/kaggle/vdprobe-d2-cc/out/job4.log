@@ -1,0 +1,209 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 695.00it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1045.00it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00,  8.96it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2593.99it/s]
+Loading pipeline components...:  67%|██████▋   | 4/6 [00:00<00:00,  7.62it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  9.51it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00,  9.07it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+candidates: site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 (1), site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 (1), site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 (1), site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 (1), site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 (1), site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 (1), site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 (1), site_up_blocks.3.motion_modules.2 (1), site_down_blocks.0.motion_modules.0 (1)
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 9742.41it/s]
+
+=== pair 0: zoom-in | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 21 tracks, 10.3 min
+  run B: 10 tracks, 5.1 min
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam -0.093  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam -0.163  content -0.046
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam +0.123  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam -0.265  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam -0.134  content +0.041
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam +0.233  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam -0.022  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.056  content +0.004
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.204  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam -0.009  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam -0.089  content +0.014
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.038  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.266  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.096  content -0.029
+  A<-B|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.150  content +nan
+  B<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.140  content +nan
+  B2<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.103  content -0.069
+  A<-B|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.006  content +nan
+  B<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.020  content +nan
+  B2<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam -0.092  content +0.032
+  A<-B|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.148  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2 cam +0.279  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2 cam +0.204  content +0.588
+  A<-B|site_up_blocks.3.motion_modules.2 cam +1.132  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0 cam +0.446  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0 cam +0.096  content +0.142
+  A<-B|site_down_blocks.0.motion_modules.0 cam +0.847  content +nan
+wrote /kaggle/working/out/job4/zoom-in__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {'B_arm_equals_B_source': True}
+
+=== pair 2: tilt-up | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 21 tracks, 10.5 min
+  run B: 10 tracks, 5.1 min
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam -0.082  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam -0.031  content +0.025
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam +0.103  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam -0.080  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam -0.036  content +0.038
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam +0.038  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam -0.013  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam -0.041  content +0.019
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.214  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam -0.004  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam -0.042  content +0.021
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.150  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.069  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam -0.035  content +0.075
+  A<-B|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.547  content +nan
+  B<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.138  content +nan
+  B2<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam -0.052  content -0.003
+  A<-B|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.558  content +nan
+  B<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.011  content +nan
+  B2<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam -0.044  content -0.012
+  A<-B|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.122  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2 cam +1.014  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2 cam +0.926  content +0.545
+  A<-B|site_up_blocks.3.motion_modules.2 cam +0.795  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0 cam +0.940  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0 cam +0.927  content +0.514
+  A<-B|site_down_blocks.0.motion_modules.0 cam +0.476  content +nan
+wrote /kaggle/working/out/job4/tilt-up__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {'B_arm_equals_B_source': True}
+
+=== pair 4: zoom-in | a medieval stone castle on a hill -> a city street at night with neon signs
+  run A: 21 tracks, 10.5 min
+  run B: 10 tracks, 5.1 min
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam -0.106  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam +0.205  content -0.176
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam +0.253  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam -0.080  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam +0.217  content -0.202
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam -0.137  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.008  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.221  content -0.086
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.418  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam -0.067  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.078  content -0.073
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.359  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.070  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.074  content -0.159
+  A<-B|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.608  content +nan
+  B<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam -0.111  content +nan
+  B2<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.194  content -0.103
+  A<-B|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.617  content +nan
+  B<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam -0.067  content +nan
+  B2<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.242  content -0.130
+  A<-B|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.263  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2 cam +0.451  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2 cam +0.120  content +0.442
+  A<-B|site_up_blocks.3.motion_modules.2 cam +1.004  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0 cam +0.332  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0 cam -0.379  content +0.195
+  A<-B|site_down_blocks.0.motion_modules.0 cam +0.757  content +nan
+wrote /kaggle/working/out/job4/zoom-in__a-medieval-stone-castle-on-a-hill/manifest.json
+PASS  checks {'B_arm_equals_B_source': True}
+
+=== pair 6: tilt-up | a medieval stone castle on a hill -> a city street at night with neon signs
+  run A: 21 tracks, 10.5 min
+  run B: 10 tracks, 5.1 min
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam -0.062  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam +0.465  content -0.145
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam +0.022  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam -0.064  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam +0.288  content -0.096
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam -0.010  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.007  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.294  content -0.066
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.065  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam -0.075  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.248  content -0.022
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.052  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam -0.070  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam -0.062  content -0.000
+  A<-B|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.298  content +nan
+  B<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam -0.086  content +nan
+  B2<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.251  content -0.014
+  A<-B|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.074  content +nan
+  B<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam -0.076  content +nan
+  B2<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.248  content -0.100
+  A<-B|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.074  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2 cam +1.455  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2 cam +0.898  content +0.455
+  A<-B|site_up_blocks.3.motion_modules.2 cam +0.922  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0 cam +0.709  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0 cam +0.107  content -0.006
+  A<-B|site_down_blocks.0.motion_modules.0 cam +0.359  content +nan
+wrote /kaggle/working/out/job4/tilt-up__a-medieval-stone-castle-on-a-hill/manifest.json
+PASS  checks {'B_arm_equals_B_source': True}
+
+=== pair 8: zoom-in | a city street at night with neon signs -> a red sandstone desert canyon
+  run A: 21 tracks, 10.6 min
+  run B: 10 tracks, 5.2 min
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam +0.688  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam +0.385  content -0.070
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam +0.076  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam +0.787  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam +0.249  content +0.052
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam -0.009  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.762  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.098  content -0.032
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam -0.014  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.963  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.254  content -0.069
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.016  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.861  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.586  content -0.009
+  A<-B|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.084  content +nan
+  B<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.856  content +nan
+  B2<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.034  content -0.018
+  A<-B|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam -0.042  content +nan
+  B<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.775  content +nan
+  B2<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.096  content -0.038
+  A<-B|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam -0.034  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2 cam +0.925  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2 cam +0.734  content +0.665
+  A<-B|site_up_blocks.3.motion_modules.2 cam +0.175  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0 cam +1.028  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0 cam +0.874  content +0.125
+  A<-B|site_down_blocks.0.motion_modules.0 cam +0.210  content +nan
+wrote /kaggle/working/out/job4/zoom-in__a-city-street-at-night-with-neon-signs/manifest.json
+PASS  checks {'B_arm_equals_B_source': True}
+
+=== pair 10: tilt-up | a city street at night with neon signs -> a red sandstone desert canyon
+  run A: 21 tracks, 10.8 min
+  run B: 10 tracks, 5.2 min
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam -0.425  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam +0.518  content -0.006
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1 cam +0.416  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam -0.293  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam +0.488  content +0.076
+  A<-B|site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn2 cam +0.421  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam -0.057  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam -0.051  content -0.021
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn1 cam +0.258  content +nan
+  B<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.150  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.005  content -0.057
+  A<-B|site_up_blocks.3.motion_modules.1.transformer_blocks.0.attn2 cam +0.292  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.081  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.248  content +0.017
+  A<-B|site_down_blocks.0.motion_modules.0.transformer_blocks.0.attn1 cam +0.599  content +nan
+  B<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam -0.073  content +nan
+  B2<-A|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.486  content -0.042
+  A<-B|site_up_blocks.3.attentions.1.transformer_blocks.0.attn1 cam +0.378  content +nan
+  B<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam -0.001  content +nan
+  B2<-A|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam -0.044  content -0.022
+  A<-B|site_up_blocks.3.attentions.2.transformer_blocks.0.attn1 cam +0.184  content +nan
+  B<-A|site_up_blocks.3.motion_modules.2 cam +0.597  content +nan
+  B2<-A|site_up_blocks.3.motion_modules.2 cam +1.275  content +0.397
+  A<-B|site_up_blocks.3.motion_modules.2 cam +0.778  content +nan
+  B<-A|site_down_blocks.0.motion_modules.0 cam +0.370  content +nan
+  B2<-A|site_down_blocks.0.motion_modules.0 cam +1.027  content +0.065
+  A<-B|site_down_blocks.0.motion_modules.0 cam +1.031  content +nan
+wrote /kaggle/working/out/job4/tilt-up__a-city-street-at-night-with-neon-signs/manifest.json
+PASS  checks {'B_arm_equals_B_source': True}
+6 pairs in 102.5 min

@@ -1,0 +1,4 @@
+candidate,direction,arm,eff_cam,eff_cam_cos,eff_content,den_cam,den_content,Dc,model,pair,camera,scene_a,scene_b,seed
+exp1_region,mean_abl,A<-mean|exp1_region,0.029819948728504183,-0.006862648327338721,,0.049333818415700996,0.35302726924419403,0.18339481949806213,cc,zoom-in__a-path-through-a-pine-forest,zoom-in,a path through a pine forest,a lighthouse on a rocky cliff,2024
+up1_motion_modules,mean_abl,A<-mean|up1_motion_modules,0.3324201157441116,0.1406752062877836,,0.049333818415700996,0.35302726924419403,0.1771484911441803,cc,zoom-in__a-path-through-a-pine-forest,zoom-in,a path through a pine forest,a lighthouse on a rocky cliff,2024
+up1_motion_modules_all,mean_abl,A<-mean|up1_motion_modules_all,0.5229059283929646,0.115438393803456,,0.049333818415700996,0.35302726924419403,0.0395263135433197,cc,zoom-in__a-path-through-a-pine-forest,zoom-in,a path through a pine forest,a lighthouse on a rocky cliff,2024

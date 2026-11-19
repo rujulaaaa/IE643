@@ -1,0 +1,115 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 906.58it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1124.13it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:01,  3.48it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:00<00:00, 15.44it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2548.00it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 10.27it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_mid_block (1), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 10115.88it/s]
+
+=== pair 0: zoom-in | a mountain lake at sunrise -> a medieval stone castle on a hill
+  ablation: 15 tracks, 21.3 min
+  A<-mean|exp1_region                  cam -0.118  content +nan
+  A<-mean|up1_motion_modules           cam +0.468  content +nan
+  A<-mean|up1_motion_modules_all       cam +0.606  content +nan
+  A<-mean|mm_down_blocks.0             cam +1.113  content +nan
+  A<-mean|mm_down_blocks.1             cam +1.121  content +nan
+  A<-mean|mm_down_blocks.2             cam +1.003  content +nan
+  A<-mean|mm_down_blocks.3             cam -0.005  content +nan
+  A<-mean|mm_mid_block                 cam -0.295  content +nan
+  A<-mean|mm_up_blocks.0               cam -0.219  content +nan
+  A<-mean|mm_up_blocks.1               cam +0.606  content +nan
+  A<-mean|mm_up_blocks.2               cam +0.747  content +nan
+  A<-mean|mm_up_blocks.3               cam +0.789  content +nan
+wrote /kaggle/working/out/job2/zoom-in__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {'mean_counts_2': True}
+
+=== pair 2: tilt-up | a mountain lake at sunrise -> a medieval stone castle on a hill
+  ablation: 15 tracks, 21.4 min
+  A<-mean|exp1_region                  cam +0.086  content +nan
+  A<-mean|up1_motion_modules           cam +1.124  content +nan
+  A<-mean|up1_motion_modules_all       cam +1.223  content +nan
+  A<-mean|mm_down_blocks.0             cam +0.944  content +nan
+  A<-mean|mm_down_blocks.1             cam +0.849  content +nan
+  A<-mean|mm_down_blocks.2             cam +1.058  content +nan
+  A<-mean|mm_down_blocks.3             cam +0.135  content +nan
+  A<-mean|mm_mid_block                 cam +0.924  content +nan
+  A<-mean|mm_up_blocks.0               cam +1.177  content +nan
+  A<-mean|mm_up_blocks.1               cam +1.223  content +nan
+  A<-mean|mm_up_blocks.2               cam +1.133  content +nan
+  A<-mean|mm_up_blocks.3               cam +1.232  content +nan
+wrote /kaggle/working/out/job2/tilt-up__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {'mean_counts_2': True}
+
+=== pair 4: zoom-in | a medieval stone castle on a hill -> a city street at night with neon signs
+  ablation: 15 tracks, 21.4 min
+  A<-mean|exp1_region                  cam -0.042  content +nan
+  A<-mean|up1_motion_modules           cam +0.229  content +nan
+  A<-mean|up1_motion_modules_all       cam +0.881  content +nan
+  A<-mean|mm_down_blocks.0             cam +0.769  content +nan
+  A<-mean|mm_down_blocks.1             cam +0.781  content +nan
+  A<-mean|mm_down_blocks.2             cam +0.798  content +nan
+  A<-mean|mm_down_blocks.3             cam +0.514  content +nan
+  A<-mean|mm_mid_block                 cam +0.176  content +nan
+  A<-mean|mm_up_blocks.0               cam +0.277  content +nan
+  A<-mean|mm_up_blocks.1               cam +0.881  content +nan
+  A<-mean|mm_up_blocks.2               cam +0.927  content +nan
+  A<-mean|mm_up_blocks.3               cam +0.833  content +nan
+wrote /kaggle/working/out/job2/zoom-in__a-medieval-stone-castle-on-a-hill/manifest.json
+PASS  checks {'mean_counts_2': True}
+
+=== pair 6: tilt-up | a medieval stone castle on a hill -> a city street at night with neon signs
+  ablation: 15 tracks, 21.4 min
+  A<-mean|exp1_region                  cam +0.340  content +nan
+  A<-mean|up1_motion_modules           cam +0.678  content +nan
+  A<-mean|up1_motion_modules_all       cam +0.897  content +nan
+  A<-mean|mm_down_blocks.0             cam +0.675  content +nan
+  A<-mean|mm_down_blocks.1             cam +0.865  content +nan
+  A<-mean|mm_down_blocks.2             cam +0.854  content +nan
+  A<-mean|mm_down_blocks.3             cam +1.014  content +nan
+  A<-mean|mm_mid_block                 cam +0.059  content +nan
+  A<-mean|mm_up_blocks.0               cam +0.548  content +nan
+  A<-mean|mm_up_blocks.1               cam +0.897  content +nan
+  A<-mean|mm_up_blocks.2               cam +0.795  content +nan
+  A<-mean|mm_up_blocks.3               cam +0.726  content +nan
+wrote /kaggle/working/out/job2/tilt-up__a-medieval-stone-castle-on-a-hill/manifest.json
+PASS  checks {'mean_counts_2': True}
+
+=== pair 8: zoom-in | a city street at night with neon signs -> a red sandstone desert canyon
+  ablation: 15 tracks, 21.4 min
+  A<-mean|exp1_region                  cam +0.203  content +nan
+  A<-mean|up1_motion_modules           cam -0.316  content +nan
+  A<-mean|up1_motion_modules_all       cam -0.481  content +nan
+  A<-mean|mm_down_blocks.0             cam +0.570  content +nan
+  A<-mean|mm_down_blocks.1             cam +0.452  content +nan
+  A<-mean|mm_down_blocks.2             cam -0.713  content +nan
+  A<-mean|mm_down_blocks.3             cam +0.351  content +nan
+  A<-mean|mm_mid_block                 cam +0.155  content +nan
+  A<-mean|mm_up_blocks.0               cam +0.336  content +nan
+  A<-mean|mm_up_blocks.1               cam -0.481  content +nan
+  A<-mean|mm_up_blocks.2               cam -1.545  content +nan
+  A<-mean|mm_up_blocks.3               cam -0.125  content +nan
+wrote /kaggle/working/out/job2/zoom-in__a-city-street-at-night-with-neon-signs/manifest.json
+PASS  checks {'mean_counts_2': True}
+
+=== pair 10: tilt-up | a city street at night with neon signs -> a red sandstone desert canyon
+  ablation: 15 tracks, 21.8 min
+  A<-mean|exp1_region                  cam +0.552  content +nan
+  A<-mean|up1_motion_modules           cam -2.047  content +nan
+  A<-mean|up1_motion_modules_all       cam -5.087  content +nan
+  A<-mean|mm_down_blocks.0             cam +1.844  content +nan
+  A<-mean|mm_down_blocks.1             cam -0.871  content +nan
+  A<-mean|mm_down_blocks.2             cam -6.394  content +nan
+  A<-mean|mm_down_blocks.3             cam +0.716  content +nan
+  A<-mean|mm_mid_block                 cam +0.897  content +nan
+  A<-mean|mm_up_blocks.0               cam +0.268  content +nan
+  A<-mean|mm_up_blocks.1               cam -5.087  content +nan
+  A<-mean|mm_up_blocks.2               cam -5.678  content +nan
+  A<-mean|mm_up_blocks.3               cam -4.592  content +nan
+wrote /kaggle/working/out/job2/tilt-up__a-city-street-at-night-with-neon-signs/manifest.json
+PASS  checks {'mean_counts_2': True}
+6 pairs in 135.4 min

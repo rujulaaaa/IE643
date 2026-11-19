@@ -1,0 +1,63 @@
+{
+  "experiment": "camera_patch",
+  "date": "2026-11-19",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.2",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-3",
+      "commit": "2e8139b1d1269fd8a21deb96ad19455e187692eb"
+    },
+    "authors_groupnorm_layers": 20,
+    "cameractrl": {
+      "repo_id": "hehao13/CameraCtrl",
+      "file": "CameraCtrl.ckpt"
+    },
+    "domain_lora": {
+      "repo_id": "guoyww/animatediff",
+      "file": "v3_sd15_adapter.ckpt",
+      "scale": 1.0,
+      "merged_matrices": 128
+    }
+  },
+  "frames": 16,
+  "resolution": "256x384",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 14.0,
+  "mode": "heads",
+  "model": "cc",
+  "camera": "pan-left",
+  "scene_a": "a mountain lake at sunrise",
+  "scene_b": "a medieval stone castle on a hill",
+  "seed": 2024,
+  "prompts": [
+    "a mountain lake at sunrise, high quality, detailed",
+    "a medieval stone castle on a hill, high quality, detailed"
+  ],
+  "candidates": [],
+  "checks": {},
+  "passed": true,
+  "sheet_rows": [
+    "A",
+    "B",
+    "B<-A|up1_motion_modules_all",
+    "B2",
+    "B2<-A|up1_motion_modules_all",
+    "A<-B|up1_motion_modules_all"
+  ],
+  "denoise_seconds": 831.5242073430001,
+  "n_tracks": 29,
+  "peak_alloc_gb": 5.784880638122559
+}

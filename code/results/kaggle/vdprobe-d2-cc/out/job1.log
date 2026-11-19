@@ -1,0 +1,383 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 986.20it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 962.91it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:01<00:09,  1.87s/it]Loading pipeline components...:  67%|██████▋   | 4/6 [00:02<00:00,  2.46it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2652.30it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  3.54it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.60it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 11029.69it/s]
+
+=== pair 1: pan-left | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 29 tracks, 13.9 min
+  B<-A|attn_first_third                cam +0.867  content +nan
+  B2<-A|attn_first_third               cam +0.947  content +0.153
+  B<-A|attn_h0                         cam +0.308  content +nan
+  B2<-A|attn_h0                        cam -0.052  content -0.010
+  B<-A|attn_h1                         cam +0.063  content +nan
+  B2<-A|attn_h1                        cam -0.067  content -0.037
+  B<-A|attn_h2                         cam +1.249  content +nan
+  B2<-A|attn_h2                        cam +0.036  content -0.034
+  B<-A|attn_h3                         cam +0.067  content +nan
+  B2<-A|attn_h3                        cam +0.023  content -0.022
+  B<-A|attn_h4                         cam +0.649  content +nan
+  B2<-A|attn_h4                        cam -0.152  content +0.037
+  B<-A|attn_h5                         cam +0.499  content +nan
+  B2<-A|attn_h5                        cam +0.057  content -0.027
+  B<-A|attn_h6                         cam +0.284  content +nan
+  B2<-A|attn_h6                        cam -0.073  content -0.040
+  B<-A|attn_h7                         cam +0.065  content +nan
+  B2<-A|attn_h7                        cam +0.028  content -0.079
+  B2<-A|attn_down_blocks.0             cam -0.150  content +0.029
+  B2<-A|attn_down_blocks.1             cam +0.024  content -0.042
+  B2<-A|attn_down_blocks.2             cam +0.032  content +0.025
+  B2<-A|attn_down_blocks.3             cam -0.105  content +0.025
+  B2<-A|attn_up_blocks.0               cam -0.130  content +0.012
+  B2<-A|attn_up_blocks.1               cam +0.024  content -0.010
+  B2<-A|attn_up_blocks.2               cam -0.053  content +0.074
+  B2<-A|attn_up_blocks.3               cam -0.112  content +0.009
+wrote /kaggle/working/out/job1/pan-left__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {}
+
+=== pair 3: roll-cw | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 29 tracks, 13.9 min
+  B<-A|attn_first_third                cam -0.009  content +nan
+  B2<-A|attn_first_third               cam +0.831  content +0.048
+  B<-A|attn_h0                         cam +0.236  content +nan
+  B2<-A|attn_h0                        cam +0.055  content +0.040
+  B<-A|attn_h1                         cam +0.240  content +nan
+  B2<-A|attn_h1                        cam +0.001  content -0.064
+  B<-A|attn_h2                         cam +0.245  content +nan
+  B2<-A|attn_h2                        cam -0.007  content -0.057
+  B<-A|attn_h3                         cam +0.237  content +nan
+  B2<-A|attn_h3                        cam -0.019  content +0.001
+  B<-A|attn_h4                         cam +0.184  content +nan
+  B2<-A|attn_h4                        cam +0.109  content +0.110
+  B<-A|attn_h5                         cam +0.215  content +nan
+  B2<-A|attn_h5                        cam +0.183  content -0.001
+  B<-A|attn_h6                         cam +0.419  content +nan
+  B2<-A|attn_h6                        cam +0.077  content -0.040
+  B<-A|attn_h7                         cam +0.171  content +nan
+  B2<-A|attn_h7                        cam +0.000  content -0.096
+  B2<-A|attn_down_blocks.0             cam +0.119  content +0.016
+  B2<-A|attn_down_blocks.1             cam +0.007  content -0.033
+  B2<-A|attn_down_blocks.2             cam +0.054  content +0.043
+  B2<-A|attn_down_blocks.3             cam +0.027  content +0.036
+  B2<-A|attn_up_blocks.0               cam +0.005  content -0.004
+  B2<-A|attn_up_blocks.1               cam +0.002  content -0.013
+  B2<-A|attn_up_blocks.2               cam +0.062  content +0.071
+  B2<-A|attn_up_blocks.3               cam +0.119  content +0.008
+wrote /kaggle/working/out/job1/roll-cw__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {}
+
+=== pair 5: pan-left | a medieval stone castle on a hill -> a city street at night with neon signs
+  run A: 29 tracks, 13.9 min
+  B<-A|attn_first_third                cam -0.084  content +nan
+  B2<-A|attn_first_third               cam -0.262  content +0.084
+  B<-A|attn_h0                         cam -0.027  content +nan
+  B2<-A|attn_h0                        cam -0.212  content -0.153
+  B<-A|attn_h1                         cam -0.111  content +nan
+  B2<-A|attn_h1                        cam -0.254  content -0.071
+  B<-A|attn_h2                         cam +0.031  content +nan
+  B2<-A|attn_h2                        cam -0.336  content -0.096
+  B<-A|attn_h3                         cam +0.030  content +nan
+  B2<-A|attn_h3                        cam -0.337  content -0.238
+  B<-A|attn_h4                         cam -0.180  content +nan
+  B2<-A|attn_h4                        cam -0.603  content -0.139
+  B<-A|attn_h5                         cam +0.045  content +nan
+  B2<-A|attn_h5                        cam -0.198  content -0.079
+  B<-A|attn_h6                         cam -0.179  content +nan
+  B2<-A|attn_h6                        cam -0.142  content -0.083
+  B<-A|attn_h7                         cam +0.038  content +nan
+  B2<-A|attn_h7                        cam -0.308  content -0.056
+  B2<-A|attn_down_blocks.0             cam -0.238  content -0.043
+  B2<-A|attn_down_blocks.1             cam +0.245  content -0.197
+  B2<-A|attn_down_blocks.2             cam -0.097  content -0.185
+  B2<-A|attn_down_blocks.3             cam -0.397  content -0.049
+  B2<-A|attn_up_blocks.0               cam -0.899  content -0.138
+  B2<-A|attn_up_blocks.1               cam -0.304  content -0.194
+  B2<-A|attn_up_blocks.2               cam -0.661  content -0.160
+  B2<-A|attn_up_blocks.3               cam -0.845  content -0.147
+wrote /kaggle/working/out/job1/pan-left__a-medieval-stone-castle-on-a-hill/manifest.json
+PASS  checks {}
+
+=== pair 7: roll-cw | a medieval stone castle on a hill -> a city street at night with neon signs
+  run A: 29 tracks, 13.9 min
+  B<-A|attn_first_third                cam +2.836  content +nan
+  B2<-A|attn_first_third               cam -0.322  content +0.109
+  B<-A|attn_h0                         cam +0.258  content +nan
+  B2<-A|attn_h0                        cam -1.273  content -0.114
+  B<-A|attn_h1                         cam +0.085  content +nan
+  B2<-A|attn_h1                        cam -0.490  content -0.210
+  B<-A|attn_h2                         cam -0.057  content +nan
+  B2<-A|attn_h2                        cam -0.546  content -0.070
+  B<-A|attn_h3                         cam -0.075  content +nan
+  B2<-A|attn_h3                        cam -0.542  content -0.228
+  B<-A|attn_h4                         cam +0.371  content +nan
+  B2<-A|attn_h4                        cam +0.456  content -0.096
+  B<-A|attn_h5                         cam +0.225  content +nan
+  B2<-A|attn_h5                        cam +0.159  content -0.134
+  B<-A|attn_h6                         cam +0.304  content +nan
+  B2<-A|attn_h6                        cam -0.563  content -0.118
+  B<-A|attn_h7                         cam -0.057  content +nan
+  B2<-A|attn_h7                        cam -0.545  content -0.166
+  B2<-A|attn_down_blocks.0             cam -0.463  content -0.034
+  B2<-A|attn_down_blocks.1             cam +0.759  content -0.086
+  B2<-A|attn_down_blocks.2             cam -0.433  content +0.033
+  B2<-A|attn_down_blocks.3             cam -0.496  content -0.090
+  B2<-A|attn_up_blocks.0               cam -0.571  content -0.150
+  B2<-A|attn_up_blocks.1               cam -0.551  content -0.055
+  B2<-A|attn_up_blocks.2               cam -1.007  content -0.154
+  B2<-A|attn_up_blocks.3               cam -0.970  content -0.121
+wrote /kaggle/working/out/job1/roll-cw__a-medieval-stone-castle-on-a-hill/manifest.json
+PASS  checks {}
+
+=== pair 9: pan-left | a city street at night with neon signs -> a red sandstone desert canyon
+  run A: 29 tracks, 13.9 min
+  B<-A|attn_first_third                cam -0.082  content +nan
+  B2<-A|attn_first_third               cam +2.131  content -0.021
+  B<-A|attn_h0                         cam -0.618  content +nan
+  B2<-A|attn_h0                        cam +0.094  content -0.038
+  B<-A|attn_h1                         cam -0.154  content +nan
+  B2<-A|attn_h1                        cam +0.046  content -0.028
+  B<-A|attn_h2                         cam -0.263  content +nan
+  B2<-A|attn_h2                        cam +0.075  content -0.008
+  B<-A|attn_h3                         cam -0.275  content +nan
+  B2<-A|attn_h3                        cam +0.065  content -0.010
+  B<-A|attn_h4                         cam -0.610  content +nan
+  B2<-A|attn_h4                        cam +0.303  content +0.027
+  B<-A|attn_h5                         cam -0.134  content +nan
+  B2<-A|attn_h5                        cam +1.046  content +0.009
+  B<-A|attn_h6                         cam +0.042  content +nan
+  B2<-A|attn_h6                        cam +0.666  content +0.024
+  B<-A|attn_h7                         cam +0.081  content +nan
+  B2<-A|attn_h7                        cam +0.207  content +0.019
+  B2<-A|attn_down_blocks.0             cam -0.834  content -0.033
+  B2<-A|attn_down_blocks.1             cam +0.067  content -0.016
+  B2<-A|attn_down_blocks.2             cam -0.211  content -0.020
+  B2<-A|attn_down_blocks.3             cam +0.022  content -0.025
+  B2<-A|attn_up_blocks.0               cam -0.025  content +0.008
+  B2<-A|attn_up_blocks.1               cam +0.013  content -0.005
+  B2<-A|attn_up_blocks.2               cam -0.252  content +0.016
+  B2<-A|attn_up_blocks.3               cam -0.114  content +0.043
+wrote /kaggle/working/out/job1/pan-left__a-city-street-at-night-with-neon-signs/manifest.json
+PASS  checks {}
+
+=== pair 11: roll-cw | a city street at night with neon signs -> a red sandstone desert canyon
+  run A: 29 tracks, 13.9 min
+  B<-A|attn_first_third                cam +0.683  content +nan
+  B2<-A|attn_first_third               cam +0.637  content -0.024
+  B<-A|attn_h0                         cam -0.101  content +nan
+  B2<-A|attn_h0                        cam +0.113  content -0.060
+  B<-A|attn_h1                         cam -0.072  content +nan
+  B2<-A|attn_h1                        cam +0.062  content +0.008
+  B<-A|attn_h2                         cam -0.002  content +nan
+  B2<-A|attn_h2                        cam +0.207  content -0.086
+  B<-A|attn_h3                         cam -0.083  content +nan
+  B2<-A|attn_h3                        cam +0.095  content -0.040
+  B<-A|attn_h4                         cam +0.319  content +nan
+  B2<-A|attn_h4                        cam +0.177  content +0.065
+  B<-A|attn_h5                         cam +0.223  content +nan
+  B2<-A|attn_h5                        cam +0.387  content -0.068
+  B<-A|attn_h6                         cam -0.057  content +nan
+  B2<-A|attn_h6                        cam -0.011  content -0.053
+  B<-A|attn_h7                         cam -0.126  content +nan
+  B2<-A|attn_h7                        cam +0.228  content -0.034
+  B2<-A|attn_down_blocks.0             cam +0.264  content -0.053
+  B2<-A|attn_down_blocks.1             cam +0.078  content +0.038
+  B2<-A|attn_down_blocks.2             cam -0.082  content -0.013
+  B2<-A|attn_down_blocks.3             cam +0.026  content -0.029
+  B2<-A|attn_up_blocks.0               cam -0.014  content +0.039
+  B2<-A|attn_up_blocks.1               cam +0.041  content -0.033
+  B2<-A|attn_up_blocks.2               cam +0.196  content -0.043
+  B2<-A|attn_up_blocks.3               cam +0.100  content +0.025
+wrote /kaggle/working/out/job1/roll-cw__a-city-street-at-night-with-neon-signs/manifest.json
+PASS  checks {}
+
+=== pair 13: pan-left | a red sandstone desert canyon -> a path through a pine forest
+  run A: 29 tracks, 13.9 min
+  B<-A|attn_first_third                cam +1.086  content +nan
+  B2<-A|attn_first_third               cam +0.208  content +0.021
+  B<-A|attn_h0                         cam +0.146  content +nan
+  B2<-A|attn_h0                        cam +0.154  content -0.009
+  B<-A|attn_h1                         cam +0.078  content +nan
+  B2<-A|attn_h1                        cam +0.098  content -0.018
+  B<-A|attn_h2                         cam +0.022  content +nan
+  B2<-A|attn_h2                        cam +0.062  content -0.053
+  B<-A|attn_h3                         cam +0.074  content +nan
+  B2<-A|attn_h3                        cam +0.119  content -0.017
+  B<-A|attn_h4                         cam +0.200  content +nan
+  B2<-A|attn_h4                        cam +0.102  content -0.051
+  B<-A|attn_h5                         cam +0.350  content +nan
+  B2<-A|attn_h5                        cam +0.189  content -0.015
+  B<-A|attn_h6                         cam +0.513  content +nan
+  B2<-A|attn_h6                        cam +0.117  content -0.068
+  B<-A|attn_h7                         cam +0.020  content +nan
+  B2<-A|attn_h7                        cam +0.110  content -0.061
+  B2<-A|attn_down_blocks.0             cam +0.194  content -0.056
+  B2<-A|attn_down_blocks.1             cam +0.119  content -0.033
+  B2<-A|attn_down_blocks.2             cam -0.005  content -0.037
+  B2<-A|attn_down_blocks.3             cam +0.045  content -0.005
+  B2<-A|attn_up_blocks.0               cam -0.080  content -0.021
+  B2<-A|attn_up_blocks.1               cam +0.055  content -0.001
+  B2<-A|attn_up_blocks.2               cam +0.155  content +0.003
+  B2<-A|attn_up_blocks.3               cam -0.026  content -0.035
+wrote /kaggle/working/out/job1/pan-left__a-red-sandstone-desert-canyon/manifest.json
+PASS  checks {}
+
+=== pair 15: roll-cw | a red sandstone desert canyon -> a path through a pine forest
+  run A: 29 tracks, 13.9 min
+  B<-A|attn_first_third                cam -0.440  content +nan
+  B2<-A|attn_first_third               cam +0.317  content +0.068
+  B<-A|attn_h0                         cam +0.532  content +nan
+  B2<-A|attn_h0                        cam +0.001  content +0.016
+  B<-A|attn_h1                         cam +0.290  content +nan
+  B2<-A|attn_h1                        cam -0.031  content -0.034
+  B<-A|attn_h2                         cam +0.496  content +nan
+  B2<-A|attn_h2                        cam -0.007  content -0.063
+  B<-A|attn_h3                         cam +0.371  content +nan
+  B2<-A|attn_h3                        cam -0.200  content -0.035
+  B<-A|attn_h4                         cam +0.489  content +nan
+  B2<-A|attn_h4                        cam -0.256  content -0.032
+  B<-A|attn_h5                         cam -0.320  content +nan
+  B2<-A|attn_h5                        cam -0.012  content -0.056
+  B<-A|attn_h6                         cam +0.163  content +nan
+  B2<-A|attn_h6                        cam -0.334  content -0.057
+  B<-A|attn_h7                         cam +0.778  content +nan
+  B2<-A|attn_h7                        cam -0.153  content -0.024
+  B2<-A|attn_down_blocks.0             cam +0.670  content -0.011
+  B2<-A|attn_down_blocks.1             cam +0.057  content -0.029
+  B2<-A|attn_down_blocks.2             cam -0.002  content -0.056
+  B2<-A|attn_down_blocks.3             cam +0.003  content +0.007
+  B2<-A|attn_up_blocks.0               cam -0.212  content -0.041
+  B2<-A|attn_up_blocks.1               cam -0.051  content -0.001
+  B2<-A|attn_up_blocks.2               cam -0.129  content -0.039
+  B2<-A|attn_up_blocks.3               cam +0.253  content -0.027
+wrote /kaggle/working/out/job1/roll-cw__a-red-sandstone-desert-canyon/manifest.json
+PASS  checks {}
+
+=== pair 17: pan-left | a path through a pine forest -> a lighthouse on a rocky cliff
+  run A: 29 tracks, 13.9 min
+  B<-A|attn_first_third                cam +0.867  content +nan
+  B2<-A|attn_first_third               cam +0.009  content -0.028
+  B<-A|attn_h0                         cam +0.143  content +nan
+  B2<-A|attn_h0                        cam -0.131  content +0.027
+  B<-A|attn_h1                         cam +0.102  content +nan
+  B2<-A|attn_h1                        cam -0.294  content -0.005
+  B<-A|attn_h2                         cam +0.816  content +nan
+  B2<-A|attn_h2                        cam -0.423  content +0.008
+  B<-A|attn_h3                         cam +0.332  content +nan
+  B2<-A|attn_h3                        cam -0.262  content -0.008
+  B<-A|attn_h4                         cam +0.120  content +nan
+  B2<-A|attn_h4                        cam +0.068  content +0.048
+  B<-A|attn_h5                         cam +0.451  content +nan
+  B2<-A|attn_h5                        cam -0.725  content +0.002
+  B<-A|attn_h6                         cam +0.450  content +nan
+  B2<-A|attn_h6                        cam -0.198  content +0.018
+  B<-A|attn_h7                         cam +0.297  content +nan
+  B2<-A|attn_h7                        cam -0.177  content -0.019
+  B2<-A|attn_down_blocks.0             cam -0.136  content -0.026
+  B2<-A|attn_down_blocks.1             cam -0.312  content -0.035
+  B2<-A|attn_down_blocks.2             cam -0.020  content +0.032
+  B2<-A|attn_down_blocks.3             cam -0.225  content -0.006
+  B2<-A|attn_up_blocks.0               cam -0.036  content -0.010
+  B2<-A|attn_up_blocks.1               cam -0.073  content +0.030
+  B2<-A|attn_up_blocks.2               cam -0.179  content +0.009
+  B2<-A|attn_up_blocks.3               cam -0.185  content +0.034
+wrote /kaggle/working/out/job1/pan-left__a-path-through-a-pine-forest/manifest.json
+PASS  checks {}
+
+=== pair 19: roll-cw | a path through a pine forest -> a lighthouse on a rocky cliff
+  run A: 29 tracks, 13.9 min
+  B<-A|attn_first_third                cam +1.217  content +nan
+  B2<-A|attn_first_third               cam +0.297  content +0.111
+  B<-A|attn_h0                         cam +0.039  content +nan
+  B2<-A|attn_h0                        cam -0.327  content +0.001
+  B<-A|attn_h1                         cam -0.029  content +nan
+  B2<-A|attn_h1                        cam +0.099  content +0.033
+  B<-A|attn_h2                         cam +0.037  content +nan
+  B2<-A|attn_h2                        cam -0.005  content -0.043
+  B<-A|attn_h3                         cam +0.219  content +nan
+  B2<-A|attn_h3                        cam -0.002  content -0.028
+  B<-A|attn_h4                         cam +0.145  content +nan
+  B2<-A|attn_h4                        cam -0.429  content +0.009
+  B<-A|attn_h5                         cam +0.028  content +nan
+  B2<-A|attn_h5                        cam +0.216  content -0.005
+  B<-A|attn_h6                         cam +0.176  content +nan
+  B2<-A|attn_h6                        cam -0.308  content +0.031
+  B<-A|attn_h7                         cam +0.081  content +nan
+  B2<-A|attn_h7                        cam +0.102  content -0.009
+  B2<-A|attn_down_blocks.0             cam +0.288  content -0.027
+  B2<-A|attn_down_blocks.1             cam -0.002  content +0.071
+  B2<-A|attn_down_blocks.2             cam -0.003  content +0.026
+  B2<-A|attn_down_blocks.3             cam -0.006  content +0.008
+  B2<-A|attn_up_blocks.0               cam +0.102  content -0.011
+  B2<-A|attn_up_blocks.1               cam -0.073  content +0.043
+  B2<-A|attn_up_blocks.2               cam -0.072  content -0.010
+  B2<-A|attn_up_blocks.3               cam -0.050  content +0.032
+wrote /kaggle/working/out/job1/roll-cw__a-path-through-a-pine-forest/manifest.json
+PASS  checks {}
+
+=== pair 21: pan-left | a lighthouse on a rocky cliff -> a snowy village with wooden houses
+  run A: 29 tracks, 13.9 min
+  B<-A|attn_first_third                cam +0.680  content +nan
+  B2<-A|attn_first_third               cam +3.006  content +0.026
+  B<-A|attn_h0                         cam -0.460  content +nan
+  B2<-A|attn_h0                        cam +1.306  content +0.080
+  B<-A|attn_h1                         cam -0.379  content +nan
+  B2<-A|attn_h1                        cam +1.361  content +0.114
+  B<-A|attn_h2                         cam -0.581  content +nan
+  B2<-A|attn_h2                        cam +1.388  content +0.100
+  B<-A|attn_h3                         cam -0.569  content +nan
+  B2<-A|attn_h3                        cam +1.400  content +0.092
+  B<-A|attn_h4                         cam -0.446  content +nan
+  B2<-A|attn_h4                        cam +1.045  content +0.072
+  B<-A|attn_h5                         cam -0.790  content +nan
+  B2<-A|attn_h5                        cam +2.832  content +0.140
+  B<-A|attn_h6                         cam +0.120  content +nan
+  B2<-A|attn_h6                        cam +2.036  content +0.080
+  B<-A|attn_h7                         cam -0.323  content +nan
+  B2<-A|attn_h7                        cam +1.404  content +0.091
+  B2<-A|attn_down_blocks.0             cam +1.597  content +0.114
+  B2<-A|attn_down_blocks.1             cam +3.126  content +0.108
+  B2<-A|attn_down_blocks.2             cam +0.766  content +0.036
+  B2<-A|attn_down_blocks.3             cam +0.155  content -0.001
+  B2<-A|attn_up_blocks.0               cam -0.019  content -0.001
+  B2<-A|attn_up_blocks.1               cam +1.957  content +0.097
+  B2<-A|attn_up_blocks.2               cam +1.881  content +0.013
+  B2<-A|attn_up_blocks.3               cam -0.185  content +0.016
+wrote /kaggle/working/out/job1/pan-left__a-lighthouse-on-a-rocky-cliff/manifest.json
+PASS  checks {}
+
+=== pair 23: roll-cw | a lighthouse on a rocky cliff -> a snowy village with wooden houses
+  run A: 29 tracks, 13.9 min
+  B<-A|attn_first_third                cam +1.611  content +nan
+  B2<-A|attn_first_third               cam -0.218  content +0.093
+  B<-A|attn_h0                         cam +0.241  content +nan
+  B2<-A|attn_h0                        cam +0.275  content +0.119
+  B<-A|attn_h1                         cam +0.821  content +nan
+  B2<-A|attn_h1                        cam -0.786  content +0.074
+  B<-A|attn_h2                         cam +0.553  content +nan
+  B2<-A|attn_h2                        cam -0.772  content +0.119
+  B<-A|attn_h3                         cam +0.571  content +nan
+  B2<-A|attn_h3                        cam -0.793  content +0.148
+  B<-A|attn_h4                         cam +1.650  content +nan
+  B2<-A|attn_h4                        cam +0.123  content +0.081
+  B<-A|attn_h5                         cam +1.944  content +nan
+  B2<-A|attn_h5                        cam +0.145  content +0.006
+  B<-A|attn_h6                         cam +0.375  content +nan
+  B2<-A|attn_h6                        cam -0.344  content +0.014
+  B<-A|attn_h7                         cam +0.750  content +nan
+  B2<-A|attn_h7                        cam -0.394  content +0.046
+  B2<-A|attn_down_blocks.0             cam -0.750  content +0.170
+  B2<-A|attn_down_blocks.1             cam -0.795  content +0.034
+  B2<-A|attn_down_blocks.2             cam -0.343  content +0.027
+  B2<-A|attn_down_blocks.3             cam +0.023  content -0.006
+  B2<-A|attn_up_blocks.0               cam +0.016  content -0.013
+  B2<-A|attn_up_blocks.1               cam -0.889  content -0.004
+  B2<-A|attn_up_blocks.2               cam -0.332  content +0.060
+  B2<-A|attn_up_blocks.3               cam +0.039  content +0.033
+wrote /kaggle/working/out/job1/roll-cw__a-lighthouse-on-a-rocky-cliff/manifest.json
+PASS  checks {}
+12 pairs in 182.7 min

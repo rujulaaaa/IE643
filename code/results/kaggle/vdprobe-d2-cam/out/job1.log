@@ -1,0 +1,207 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 924.06it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1111.87it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:00,  8.99it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2507.12it/s]
+Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00,  5.45it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:02<00:02,  1.11it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.80it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_mid_block (1), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 9030.40it/s]
+
+=== pair 1: pan-left | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 30 tracks, 37.0 min
+Downloading: "https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth
+  0%|          | 0.00/20.1M [00:00<?, ?B/s] 53%|█████▎    | 10.8M/20.1M [00:00<00:00, 112MB/s]100%|██████████| 20.1M/20.1M [00:00<00:00, 151MB/s]
+  B<-A|attn_first_third                cam +0.899  content +nan
+  B2<-A|attn_first_third               cam +0.903  content -0.067
+  B<-A|attn_h0                         cam +0.658  content +nan
+  B2<-A|attn_h0                        cam +0.331  content -0.126
+  B<-A|attn_h1                         cam -0.003  content +nan
+  B2<-A|attn_h1                        cam +1.082  content -0.096
+  B<-A|attn_h2                         cam -0.004  content +nan
+  B2<-A|attn_h2                        cam +0.039  content -0.058
+  B<-A|attn_h3                         cam +0.619  content +nan
+  B2<-A|attn_h3                        cam +0.482  content -0.143
+  B<-A|attn_h4                         cam +0.568  content +nan
+  B2<-A|attn_h4                        cam +0.547  content -0.142
+  B<-A|attn_h5                         cam +0.342  content +nan
+  B2<-A|attn_h5                        cam +0.684  content -0.071
+  B<-A|attn_h6                         cam -0.009  content +nan
+  B2<-A|attn_h6                        cam +0.994  content -0.097
+  B<-A|attn_h7                         cam +0.632  content +nan
+  B2<-A|attn_h7                        cam +0.384  content -0.086
+  B2<-A|attn_down_blocks.0             cam +0.313  content -0.045
+  B2<-A|attn_down_blocks.1             cam +0.716  content -0.140
+  B2<-A|attn_down_blocks.2             cam +0.636  content -0.179
+  B2<-A|attn_down_blocks.3             cam +0.041  content -0.067
+  B2<-A|attn_mid_block                 cam -0.043  content -0.038
+  B2<-A|attn_up_blocks.0               cam -0.070  content -0.031
+  B2<-A|attn_up_blocks.1               cam +0.893  content -0.083
+  B2<-A|attn_up_blocks.2               cam +1.001  content -0.035
+  B2<-A|attn_up_blocks.3               cam -0.015  content +0.005
+wrote /kaggle/working/out/job1/pan-left__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {}
+
+=== pair 3: rolling-clockwise | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 30 tracks, 37.1 min
+  B<-A|attn_first_third                cam +0.917  content +nan
+  B2<-A|attn_first_third               cam +1.953  content -0.093
+  B<-A|attn_h0                         cam +0.100  content +nan
+  B2<-A|attn_h0                        cam +0.869  content -0.070
+  B<-A|attn_h1                         cam +0.004  content +nan
+  B2<-A|attn_h1                        cam +0.643  content +0.009
+  B<-A|attn_h2                         cam +0.004  content +nan
+  B2<-A|attn_h2                        cam +1.085  content -0.087
+  B<-A|attn_h3                         cam +0.091  content +nan
+  B2<-A|attn_h3                        cam +0.688  content -0.086
+  B<-A|attn_h4                         cam +0.107  content +nan
+  B2<-A|attn_h4                        cam +0.729  content -0.022
+  B<-A|attn_h5                         cam +0.056  content +nan
+  B2<-A|attn_h5                        cam +0.623  content +0.074
+  B<-A|attn_h6                         cam +0.037  content +nan
+  B2<-A|attn_h6                        cam +1.715  content -0.094
+  B<-A|attn_h7                         cam +0.060  content +nan
+  B2<-A|attn_h7                        cam +0.725  content -0.032
+  B2<-A|attn_down_blocks.0             cam -0.971  content -0.034
+  B2<-A|attn_down_blocks.1             cam +0.910  content -0.053
+  B2<-A|attn_down_blocks.2             cam +1.190  content -0.125
+  B2<-A|attn_down_blocks.3             cam +0.147  content -0.028
+  B2<-A|attn_mid_block                 cam -0.005  content -0.017
+  B2<-A|attn_up_blocks.0               cam +0.553  content -0.097
+  B2<-A|attn_up_blocks.1               cam +1.752  content -0.109
+  B2<-A|attn_up_blocks.2               cam +2.034  content -0.140
+  B2<-A|attn_up_blocks.3               cam +0.112  content -0.006
+wrote /kaggle/working/out/job1/rolling-clockwise__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {}
+
+=== pair 5: pan-left | a medieval stone castle on a hill -> a city street at night with neon signs
+  run A: 30 tracks, 37.1 min
+  B<-A|attn_first_third                cam +1.016  content +nan
+  B2<-A|attn_first_third               cam +0.970  content +0.117
+  B<-A|attn_h0                         cam +0.744  content +nan
+  B2<-A|attn_h0                        cam +0.168  content +0.150
+  B<-A|attn_h1                         cam +1.104  content +nan
+  B2<-A|attn_h1                        cam +0.085  content -0.025
+  B<-A|attn_h2                         cam +0.423  content +nan
+  B2<-A|attn_h2                        cam +0.056  content +0.055
+  B<-A|attn_h3                         cam +0.702  content +nan
+  B2<-A|attn_h3                        cam +0.071  content +0.007
+  B<-A|attn_h4                         cam +0.954  content +nan
+  B2<-A|attn_h4                        cam +0.157  content +0.042
+  B<-A|attn_h5                         cam +1.061  content +nan
+  B2<-A|attn_h5                        cam +0.224  content +0.081
+  B<-A|attn_h6                         cam +0.775  content +nan
+  B2<-A|attn_h6                        cam +0.070  content -0.030
+  B<-A|attn_h7                         cam +0.799  content +nan
+  B2<-A|attn_h7                        cam +0.989  content +0.052
+  B2<-A|attn_down_blocks.0             cam -0.106  content +0.133
+  B2<-A|attn_down_blocks.1             cam +0.588  content -0.007
+  B2<-A|attn_down_blocks.2             cam +1.234  content +0.166
+  B2<-A|attn_down_blocks.3             cam +0.024  content -0.017
+  B2<-A|attn_mid_block                 cam +0.092  content -0.011
+  B2<-A|attn_up_blocks.0               cam -0.052  content -0.009
+  B2<-A|attn_up_blocks.1               cam +0.129  content +0.015
+  B2<-A|attn_up_blocks.2               cam +0.112  content +0.011
+  B2<-A|attn_up_blocks.3               cam +0.178  content +0.023
+wrote /kaggle/working/out/job1/pan-left__a-medieval-stone-castle-on-a-hill/manifest.json
+PASS  checks {}
+
+=== pair 7: rolling-clockwise | a medieval stone castle on a hill -> a city street at night with neon signs
+  run A: 30 tracks, 37.1 min
+  B<-A|attn_first_third                cam +0.994  content +nan
+  B2<-A|attn_first_third               cam +0.575  content +0.231
+  B<-A|attn_h0                         cam +0.368  content +nan
+  B2<-A|attn_h0                        cam +0.250  content +0.143
+  B<-A|attn_h1                         cam +0.231  content +nan
+  B2<-A|attn_h1                        cam -0.033  content +0.031
+  B<-A|attn_h2                         cam +0.124  content +nan
+  B2<-A|attn_h2                        cam +0.004  content +0.029
+  B<-A|attn_h3                         cam +0.260  content +nan
+  B2<-A|attn_h3                        cam -0.034  content +0.070
+  B<-A|attn_h4                         cam +0.265  content +nan
+  B2<-A|attn_h4                        cam +0.015  content -0.002
+  B<-A|attn_h5                         cam +0.194  content +nan
+  B2<-A|attn_h5                        cam +0.159  content +0.093
+  B<-A|attn_h6                         cam +0.283  content +nan
+  B2<-A|attn_h6                        cam -0.014  content +0.060
+  B<-A|attn_h7                         cam +0.272  content +nan
+  B2<-A|attn_h7                        cam +0.145  content +0.132
+  B2<-A|attn_down_blocks.0             cam -0.057  content +0.095
+  B2<-A|attn_down_blocks.1             cam +0.070  content +0.345
+  B2<-A|attn_down_blocks.2             cam +0.269  content +0.091
+  B2<-A|attn_down_blocks.3             cam -0.013  content +0.001
+  B2<-A|attn_mid_block                 cam -0.078  content -0.006
+  B2<-A|attn_up_blocks.0               cam -0.028  content -0.016
+  B2<-A|attn_up_blocks.1               cam -0.062  content +0.027
+  B2<-A|attn_up_blocks.2               cam -0.040  content -0.014
+  B2<-A|attn_up_blocks.3               cam -0.067  content +0.044
+wrote /kaggle/working/out/job1/rolling-clockwise__a-medieval-stone-castle-on-a-hill/manifest.json
+PASS  checks {}
+
+=== pair 9: pan-left | a city street at night with neon signs -> a red sandstone desert canyon
+  run A: 30 tracks, 37.1 min
+  B<-A|attn_first_third                cam +0.975  content +nan
+  B2<-A|attn_first_third               cam +4.507  content +0.018
+  B<-A|attn_h0                         cam +0.204  content +nan
+  B2<-A|attn_h0                        cam +3.787  content +0.075
+  B<-A|attn_h1                         cam +0.011  content +nan
+  B2<-A|attn_h1                        cam +4.792  content +0.010
+  B<-A|attn_h2                         cam +0.042  content +nan
+  B2<-A|attn_h2                        cam +3.641  content +0.013
+  B<-A|attn_h3                         cam +0.065  content +nan
+  B2<-A|attn_h3                        cam +4.064  content +0.064
+  B<-A|attn_h4                         cam +0.148  content +nan
+  B2<-A|attn_h4                        cam +3.295  content +0.047
+  B<-A|attn_h5                         cam +0.523  content +nan
+  B2<-A|attn_h5                        cam +4.595  content +0.025
+  B<-A|attn_h6                         cam +0.047  content +nan
+  B2<-A|attn_h6                        cam +5.458  content +0.013
+  B<-A|attn_h7                         cam +0.748  content +nan
+  B2<-A|attn_h7                        cam +4.168  content +0.040
+  B2<-A|attn_down_blocks.0             cam +1.816  content -0.005
+  B2<-A|attn_down_blocks.1             cam +5.043  content +0.030
+  B2<-A|attn_down_blocks.2             cam +4.857  content +0.040
+  B2<-A|attn_down_blocks.3             cam +0.446  content -0.028
+  B2<-A|attn_mid_block                 cam -0.078  content +0.003
+  B2<-A|attn_up_blocks.0               cam +5.482  content +0.037
+  B2<-A|attn_up_blocks.1               cam +4.023  content +0.035
+  B2<-A|attn_up_blocks.2               cam +2.703  content -0.002
+  B2<-A|attn_up_blocks.3               cam +0.201  content +0.011
+wrote /kaggle/working/out/job1/pan-left__a-city-street-at-night-with-neon-signs/manifest.json
+PASS  checks {}
+
+=== pair 11: rolling-clockwise | a city street at night with neon signs -> a red sandstone desert canyon
+  run A: 30 tracks, 37.1 min
+  B<-A|attn_first_third                cam +0.898  content +nan
+  B2<-A|attn_first_third               cam +0.988  content +0.036
+  B<-A|attn_h0                         cam +0.142  content +nan
+  B2<-A|attn_h0                        cam +0.114  content +0.050
+  B<-A|attn_h1                         cam -0.041  content +nan
+  B2<-A|attn_h1                        cam -0.013  content +0.048
+  B<-A|attn_h2                         cam -0.083  content +nan
+  B2<-A|attn_h2                        cam +1.411  content -0.005
+  B<-A|attn_h3                         cam -0.041  content +nan
+  B2<-A|attn_h3                        cam +0.078  content +0.024
+  B<-A|attn_h4                         cam -0.048  content +nan
+  B2<-A|attn_h4                        cam +0.140  content +0.055
+  B<-A|attn_h5                         cam -0.019  content +nan
+  B2<-A|attn_h5                        cam +0.059  content +0.040
+  B<-A|attn_h6                         cam +0.089  content +nan
+  B2<-A|attn_h6                        cam -0.489  content +0.042
+  B<-A|attn_h7                         cam +0.329  content +nan
+  B2<-A|attn_h7                        cam +0.106  content +0.026
+  B2<-A|attn_down_blocks.0             cam +0.489  content -0.019
+  B2<-A|attn_down_blocks.1             cam +0.071  content +0.013
+  B2<-A|attn_down_blocks.2             cam +0.160  content +0.048
+  B2<-A|attn_down_blocks.3             cam +0.736  content -0.003
+  B2<-A|attn_mid_block                 cam +0.244  content +0.003
+  B2<-A|attn_up_blocks.0               cam +0.510  content -0.006
+  B2<-A|attn_up_blocks.1               cam +0.207  content +0.007
+  B2<-A|attn_up_blocks.2               cam -0.049  content -0.030
+  B2<-A|attn_up_blocks.3               cam +0.210  content +0.009
+wrote /kaggle/working/out/job1/rolling-clockwise__a-city-street-at-night-with-neon-signs/manifest.json
+PASS  checks {}
+6 pairs in 234.8 min

@@ -1,0 +1,4 @@
+candidate,direction,arm,eff_cam,eff_cam_cos,eff_content,den_cam,den_content,Dc,model,pair,camera,scene_a,scene_b,seed
+exp1_region,mean_abl,A<-mean|exp1_region,0.060022339685262466,-0.01940830562154423,,0.04827185030431656,0.40150652825832367,0.20621442794799805,cc,roll-cw__a-lighthouse-on-a-rocky-cliff,roll-cw,a lighthouse on a rocky cliff,a snowy village with wooden houses,2024
+up1_motion_modules,mean_abl,A<-mean|up1_motion_modules,0.11535249432607116,0.010099128510676967,,0.04827185030431656,0.40150652825832367,0.19085189700126648,cc,roll-cw__a-lighthouse-on-a-rocky-cliff,roll-cw,a lighthouse on a rocky cliff,a snowy village with wooden houses,2024
+up1_motion_modules_all,mean_abl,A<-mean|up1_motion_modules_all,0.07786007785813372,0.15795920376375328,,0.04827185030431656,0.40150652825832367,0.16272398829460144,cc,roll-cw__a-lighthouse-on-a-rocky-cliff,roll-cw,a lighthouse on a rocky cliff,a snowy village with wooden houses,2024
