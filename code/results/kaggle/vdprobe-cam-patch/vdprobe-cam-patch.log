@@ -1,0 +1,329 @@
+[{"stream_name":"stdout","time":23.313318109,"data":"2\n"}
+,{"stream_name":"stdout","time":23.313384467,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":23.313391104,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":23.313394743,"data":"2.11.0+cu130\n"}
+,{"stream_name":"stdout","time":23.313398546,"data":" \n"}
+,{"stream_name":"stderr","time":26.157678681,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":38.165253708,"data":"\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  6.41it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:12\u003c00:00,  7.08s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:12\u003c00:00,  6.04s/it]\n"}
+,{"stream_name":"stderr","time":51.835505792,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\rFetching 13 files:   8%|▊         | 1/13 [00:00\u003c00:01,  6.96it/s]\rFetching 13 files:  54%|█████▍    | 7/13 [00:00\u003c00:00, 28.66it/s]\rFetching 13 files:  85%|████████▍ | 11/13 [00:01\u003c00:00,  4.76it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:13\u003c00:00,  1.59s/it]\rFetching 13 files: 100%|██████████| 13/13 [00:13\u003c00:00,  1.04s/it]\n"}
+,{"stream_name":"stderr","time":61.820688032,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:   8%|▊         | 1/12 [00:00\u003c00:01,  5.66it/s]\rFetching 12 files:  50%|█████     | 6/12 [00:00\u003c00:00, 24.86it/s]\rFetching 12 files:  83%|████████▎ | 10/12 [00:04\u003c00:01,  1.82it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:09\u003c00:00,  1.10s/it]\rFetching 12 files: 100%|██████████| 12/12 [00:09\u003c00:00,  1.23it/s]\n"}
+,{"stream_name":"stdout","time":62.285437413,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/camera_patch.py --model lora --scenes 3 --block-pairs 0 --shard 0/2 --out /kaggle/working/out/job0\n"}
+,{"stream_name":"stdout","time":62.286467338,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/camera_patch.py --model lora --scenes 3 --block-pairs 0 --shard 1/2 --out /kaggle/working/out/job1\n"}
+,{"stream_name":"stdout","time":122.288431378,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.288463246,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.288476966,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 860.28it/s]\n"}
+,{"stream_name":"stdout","time":122.288482023,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.288486736,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.288492336,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1125.82it/s]\n"}
+,{"stream_name":"stdout","time":122.288498085,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":122.288503896,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":122.288508561,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.288512961,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.288517773,"data":"[job0] Loading pipeline components...:  17%|█▋        | 1/6 [00:02\u003c00:10,  2.05s/it]\n"}
+,{"stream_name":"stdout","time":122.288531613,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:02\u003c00:00,  2.33it/s]\n"}
+,{"stream_name":"stdout","time":122.288536368,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.288539523,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":122.288543801,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2436.57it/s]\n"}
+,{"stream_name":"stdout","time":122.288547308,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.288550815,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  3.19it/s]\n"}
+,{"stream_name":"stdout","time":122.288554865,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.37it/s]\n"}
+,{"stream_name":"stdout","time":122.288558672,"data":"[job0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":122.288562242,"data":"[job0] /usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!\n"}
+,{"stream_name":"stdout","time":122.288566105,"data":"[job0]   warnings.warn(\n"}
+,{"stream_name":"stdout","time":122.288569471,"data":"[job0] candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_mid_block (1), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)\n"}
+,{"stream_name":"stdout","time":122.288573543,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.288576661,"data":"[job0] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.288626238,"data":"[job0] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 6101.43it/s]\n"}
+,{"stream_name":"stdout","time":122.28863393500001,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.288637386,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.288640771,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 948.08it/s]\n"}
+,{"stream_name":"stdout","time":122.288644352,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.288647476,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.28865089,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1130.77it/s]\n"}
+,{"stream_name":"stdout","time":122.288654503,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":122.288658277,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":122.288661851,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.288665055,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.288668408,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:02\u003c00:10,  2.05s/it]\n"}
+,{"stream_name":"stdout","time":122.288671872,"data":"[job1] Loading pipeline components...:  50%|█████     | 3/6 [00:02\u003c00:01,  1.70it/s]\n"}
+,{"stream_name":"stdout","time":122.288679951,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.288683143,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":122.288686549,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2325.41it/s]\n"}
+,{"stream_name":"stdout","time":122.2886901,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.288694804,"data":"[job1] Loading pipeline components...:  67%|██████▋   | 4/6 [00:02\u003c00:00,  2.17it/s]\n"}
+,{"stream_name":"stdout","time":122.288698265,"data":"[job1] Loading pipeline components...:  83%|████████▎ | 5/6 [00:02\u003c00:00,  2.92it/s]\n"}
+,{"stream_name":"stdout","time":122.288701876,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.37it/s]\n"}
+,{"stream_name":"stdout","time":122.288706964,"data":"[job1] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":122.288710626,"data":"[job1] /usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!\n"}
+,{"stream_name":"stdout","time":122.288715046,"data":"[job1]   warnings.warn(\n"}
+,{"stream_name":"stdout","time":122.288719464,"data":"[job1] candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_mid_block (1), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)\n"}
+,{"stream_name":"stdout","time":122.28872449,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.288727736,"data":"[job1] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.288732238,"data":"[job1] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 6503.53it/s]\n"}
+,{"stream_name":"stdout","time":182.288863755,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":182.288901477,"data":"[job0] === pair 0: zoom-in | a mountain lake at sunrise -\u003e a medieval stone castle on a hill\n"}
+,{"stream_name":"stdout","time":182.288907891,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":182.28891268,"data":"[job1] === pair 1: pan-left | a mountain lake at sunrise -\u003e a medieval stone castle on a hill\n"}
+,{"stream_name":"stdout","time":1082.296643335,"data":"[job0]   run A: 11 tracks, 14.5 min\n"}
+,{"stream_name":"stdout","time":1202.297685041,"data":"[job1]   run A: 11 tracks, 16.4 min\n"}
+,{"stream_name":"stdout","time":1382.299058086,"data":"[job0]   run B: 4 tracks, 5.4 min\n"}
+,{"stream_name":"stdout","time":1562.300485867,"data":"[job1]   run B: 4 tracks, 6.4 min\n"}
+,{"stream_name":"stdout","time":1742.301952269,"data":"[job0]   run B2: 4 tracks, 5.2 min\n"}
+,{"stream_name":"stdout","time":1742.301987147,"data":"[job0] Downloading: \"https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth\" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth\n"}
+,{"stream_name":"stdout","time":1742.3019932,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":1742.301997458,"data":"[job0]   0%|          | 0.00/20.1M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stdout","time":1742.302002035,"data":"[job0]  48%|████▊     | 9.62M/20.1M [00:00\u003c00:00, 101MB/s]\n"}
+,{"stream_name":"stdout","time":1742.302007162,"data":"[job0] 100%|██████████| 20.1M/20.1M [00:00\u003c00:00, 149MB/s]\n"}
+,{"stream_name":"stdout","time":1742.302024983,"data":"[job0]   B\u003c-A|exp1_region                     cam -0.023  content +nan\n"}
+,{"stream_name":"stdout","time":1742.302028675,"data":"[job0]   B2\u003c-A|exp1_region                    cam -0.713  content -0.104\n"}
+,{"stream_name":"stdout","time":1742.302032218,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.001  content +nan\n"}
+,{"stream_name":"stdout","time":1742.302035695,"data":"[job0]   B\u003c-B2|exp1_region                    cam +0.126  content +0.043\n"}
+,{"stream_name":"stdout","time":1742.302039273,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.642  content +nan\n"}
+,{"stream_name":"stdout","time":1742.302042765,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam +0.329  content -0.031\n"}
+,{"stream_name":"stdout","time":1742.302046245,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.897  content +nan\n"}
+,{"stream_name":"stdout","time":1742.302049728,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +0.390  content +0.116\n"}
+,{"stream_name":"stdout","time":1742.302053164,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.631  content +nan\n"}
+,{"stream_name":"stdout","time":1742.302056631,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.188  content +0.850\n"}
+,{"stream_name":"stdout","time":1742.302060196,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.915  content +nan\n"}
+,{"stream_name":"stdout","time":1742.302063688,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +0.472  content +0.772\n"}
+,{"stream_name":"stdout","time":1742.302067097,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.712  content +nan\n"}
+,{"stream_name":"stdout","time":1742.302070633,"data":"[job0]   B2\u003c-A|attn_first_third               cam +0.257  content -0.086\n"}
+,{"stream_name":"stdout","time":1742.302074034,"data":"[job0] wrote /kaggle/working/out/job0/zoom-in__a-mountain-lake-at-sunrise/manifest.json\n"}
+,{"stream_name":"stdout","time":1742.302077568,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":1742.302081014,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":1742.302084271,"data":"[job0] === pair 2: tilt-up | a mountain lake at sunrise -\u003e a medieval stone castle on a hill\n"}
+,{"stream_name":"stdout","time":1982.304008869,"data":"[job1]   run B2: 4 tracks, 6.1 min\n"}
+,{"stream_name":"stdout","time":1982.304046189,"data":"[job1]   B\u003c-A|exp1_region                     cam -0.000  content +nan\n"}
+,{"stream_name":"stdout","time":1982.304051783,"data":"[job1]   B2\u003c-A|exp1_region                    cam +0.152  content -0.055\n"}
+,{"stream_name":"stdout","time":1982.304056271,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.069  content +nan\n"}
+,{"stream_name":"stdout","time":1982.304060699,"data":"[job1]   B\u003c-B2|exp1_region                    cam +0.079  content +0.043\n"}
+,{"stream_name":"stdout","time":1982.304065054,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.580  content +nan\n"}
+,{"stream_name":"stdout","time":1982.304069304,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam +0.559  content -0.075\n"}
+,{"stream_name":"stdout","time":1982.304073665,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +1.945  content +nan\n"}
+,{"stream_name":"stdout","time":1982.304077948,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam -0.194  content +0.116\n"}
+,{"stream_name":"stdout","time":1982.304082307,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +0.606  content +nan\n"}
+,{"stream_name":"stdout","time":1982.304100286,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +0.672  content +0.539\n"}
+,{"stream_name":"stdout","time":1982.304104022,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +1.246  content +nan\n"}
+,{"stream_name":"stdout","time":1982.304107402,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam -0.185  content +0.772\n"}
+,{"stream_name":"stdout","time":1982.304110844,"data":"[job1]   B\u003c-A|attn_first_third                cam +0.899  content +nan\n"}
+,{"stream_name":"stdout","time":1982.304114518,"data":"[job1]   B2\u003c-A|attn_first_third               cam +0.903  content -0.067\n"}
+,{"stream_name":"stdout","time":1982.304117959,"data":"[job1] wrote /kaggle/working/out/job1/pan-left__a-mountain-lake-at-sunrise/manifest.json\n"}
+,{"stream_name":"stdout","time":1982.304121379,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":1982.304125064,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":1982.304128261,"data":"[job1] === pair 3: rolling-clockwise | a mountain lake at sunrise -\u003e a medieval stone castle on a hill\n"}
+,{"stream_name":"stdout","time":2642.309229702,"data":"[job0]   run A: 11 tracks, 14.6 min\n"}
+,{"stream_name":"stdout","time":3002.312322078,"data":"[job0]   run B: 4 tracks, 5.4 min\n"}
+,{"stream_name":"stdout","time":3062.312943985,"data":"[job1]   run A: 11 tracks, 17.1 min\n"}
+,{"stream_name":"stdout","time":3302.31486057,"data":"[job0]   run B2: 4 tracks, 5.2 min\n"}
+,{"stream_name":"stdout","time":3362.315442309,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.022  content +nan\n"}
+,{"stream_name":"stdout","time":3362.315478556,"data":"[job0]   B2\u003c-A|exp1_region                    cam +0.518  content -0.057\n"}
+,{"stream_name":"stdout","time":3362.315483978,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.098  content +nan\n"}
+,{"stream_name":"stdout","time":3362.315497816,"data":"[job0]   B\u003c-B2|exp1_region                    cam -0.266  content +0.043\n"}
+,{"stream_name":"stdout","time":3362.315502568,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.851  content +nan\n"}
+,{"stream_name":"stdout","time":3362.315506875,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam +1.200  content -0.025\n"}
+,{"stream_name":"stdout","time":3362.31551123,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.567  content +nan\n"}
+,{"stream_name":"stdout","time":3362.315515536,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam -0.366  content +0.116\n"}
+,{"stream_name":"stdout","time":3362.3155199,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.800  content +nan\n"}
+,{"stream_name":"stdout","time":3362.315524149,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +1.152  content +0.608\n"}
+,{"stream_name":"stdout","time":3362.3155284,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.621  content +nan\n"}
+,{"stream_name":"stdout","time":3362.315532693,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam -0.447  content +0.772\n"}
+,{"stream_name":"stdout","time":3362.315537045,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.922  content +nan\n"}
+,{"stream_name":"stdout","time":3362.3155435,"data":"[job0]   B2\u003c-A|attn_first_third               cam +1.282  content -0.049\n"}
+,{"stream_name":"stdout","time":3362.315547817,"data":"[job0] wrote /kaggle/working/out/job0/tilt-up__a-mountain-lake-at-sunrise/manifest.json\n"}
+,{"stream_name":"stdout","time":3362.315552353,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":3362.315569374,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":3362.315572921,"data":"[job0] === pair 4: zoom-in | a medieval stone castle on a hill -\u003e a city street at night with neon signs\n"}
+,{"stream_name":"stdout","time":3482.316767639,"data":"[job1]   run B: 4 tracks, 6.4 min\n"}
+,{"stream_name":"stdout","time":3842.319814932,"data":"[job1]   run B2: 4 tracks, 6.1 min\n"}
+,{"stream_name":"stdout","time":3842.319861487,"data":"[job1]   B\u003c-A|exp1_region                     cam +0.030  content +nan\n"}
+,{"stream_name":"stdout","time":3842.3198744,"data":"[job1]   B2\u003c-A|exp1_region                    cam +2.834  content -0.115\n"}
+,{"stream_name":"stdout","time":3842.31988051,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.221  content +nan\n"}
+,{"stream_name":"stdout","time":3842.319885983,"data":"[job1]   B\u003c-B2|exp1_region                    cam +0.030  content +0.043\n"}
+,{"stream_name":"stdout","time":3842.319891422,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.937  content +nan\n"}
+,{"stream_name":"stdout","time":3842.319896971,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam +2.106  content -0.045\n"}
+,{"stream_name":"stdout","time":3842.319902461,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +0.374  content +nan\n"}
+,{"stream_name":"stdout","time":3842.319908045,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam -0.603  content +0.116\n"}
+,{"stream_name":"stdout","time":3842.319913834,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +0.838  content +nan\n"}
+,{"stream_name":"stdout","time":3842.3199193,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +1.221  content +0.783\n"}
+,{"stream_name":"stdout","time":3842.319924786,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +0.493  content +nan\n"}
+,{"stream_name":"stdout","time":3842.31993042,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam -0.654  content +0.772\n"}
+,{"stream_name":"stdout","time":3842.31993603,"data":"[job1]   B\u003c-A|attn_first_third                cam +0.917  content +nan\n"}
+,{"stream_name":"stdout","time":3842.319941643,"data":"[job1]   B2\u003c-A|attn_first_third               cam +1.953  content -0.093\n"}
+,{"stream_name":"stdout","time":3842.319947121,"data":"[job1] wrote /kaggle/working/out/job1/rolling-clockwise__a-mountain-lake-at-sunrise/manifest.json\n"}
+,{"stream_name":"stdout","time":3842.319952539,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":3842.319957994,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":3842.319963237,"data":"[job1] === pair 5: pan-left | a medieval stone castle on a hill -\u003e a city street at night with neon signs\n"}
+,{"stream_name":"stdout","time":4262.323422965,"data":"[job0]   run A: 11 tracks, 14.6 min\n"}
+,{"stream_name":"stdout","time":4562.325957169,"data":"[job0]   run B: 4 tracks, 5.4 min\n"}
+,{"stream_name":"stdout","time":4922.329034538,"data":"[job0]   run B2: 4 tracks, 5.2 min\n"}
+,{"stream_name":"stdout","time":4922.329075775,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.384  content +nan\n"}
+,{"stream_name":"stdout","time":4922.329152433,"data":"[job0]   B2\u003c-A|exp1_region                    cam +0.034  content +0.042\n"}
+,{"stream_name":"stdout","time":4922.329158798,"data":"[job0]   A\u003c-B|exp1_region                     cam -0.002  content +nan\n"}
+,{"stream_name":"stdout","time":4922.329163746,"data":"[job0]   B\u003c-B2|exp1_region                    cam -0.324  content -0.024\n"}
+,{"stream_name":"stdout","time":4922.32916849,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.896  content +nan\n"}
+,{"stream_name":"stdout","time":4922.329204757,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam +0.783  content +0.440\n"}
+,{"stream_name":"stdout","time":4922.329208921,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.906  content +nan\n"}
+,{"stream_name":"stdout","time":4922.329212782,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +0.192  content -0.008\n"}
+,{"stream_name":"stdout","time":4922.329216486,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.933  content +nan\n"}
+,{"stream_name":"stdout","time":4922.329220161,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.757  content +0.691\n"}
+,{"stream_name":"stdout","time":4922.329223835,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.987  content +nan\n"}
+,{"stream_name":"stdout","time":4922.329227473,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +0.217  content +0.415\n"}
+,{"stream_name":"stdout","time":4922.329231114,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.974  content +nan\n"}
+,{"stream_name":"stdout","time":4922.329234678,"data":"[job0]   B2\u003c-A|attn_first_third               cam +0.778  content +0.123\n"}
+,{"stream_name":"stdout","time":4922.329238303,"data":"[job0] wrote /kaggle/working/out/job0/zoom-in__a-medieval-stone-castle-on-a-hill/manifest.json\n"}
+,{"stream_name":"stdout","time":4922.329241999,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":4922.3292457,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":4922.32924948,"data":"[job0] === pair 6: tilt-up | a medieval stone castle on a hill -\u003e a city street at night with neon signs\n"}
+,{"stream_name":"stdout","time":4922.329254702,"data":"[job1]   run A: 11 tracks, 17.2 min\n"}
+,{"stream_name":"stdout","time":5342.33274267,"data":"[job1]   run B: 4 tracks, 6.4 min\n"}
+,{"stream_name":"stdout","time":5702.336245833,"data":"[job1]   run B2: 4 tracks, 6.1 min\n"}
+,{"stream_name":"stdout","time":5762.336836045,"data":"[job1]   B\u003c-A|exp1_region                     cam +0.489  content +nan\n"}
+,{"stream_name":"stdout","time":5762.336871861,"data":"[job1]   B2\u003c-A|exp1_region                    cam +0.122  content +0.030\n"}
+,{"stream_name":"stdout","time":5762.336877607,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.128  content +nan\n"}
+,{"stream_name":"stdout","time":5762.336882292,"data":"[job1]   B\u003c-B2|exp1_region                    cam +0.237  content -0.024\n"}
+,{"stream_name":"stdout","time":5762.336886897,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +1.021  content +nan\n"}
+,{"stream_name":"stdout","time":5762.336891463,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam +0.989  content +0.284\n"}
+,{"stream_name":"stdout","time":5762.336896129,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +1.051  content +nan\n"}
+,{"stream_name":"stdout","time":5762.336900612,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam +0.006  content -0.008\n"}
+,{"stream_name":"stdout","time":5762.336905113,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +0.932  content +nan\n"}
+,{"stream_name":"stdout","time":5762.336909565,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +0.981  content +0.625\n"}
+,{"stream_name":"stdout","time":5762.336914069,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +0.973  content +nan\n"}
+,{"stream_name":"stdout","time":5762.336918497,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam -0.066  content +0.415\n"}
+,{"stream_name":"stdout","time":5762.336922909,"data":"[job1]   B\u003c-A|attn_first_third                cam +1.016  content +nan\n"}
+,{"stream_name":"stdout","time":5762.336940274,"data":"[job1]   B2\u003c-A|attn_first_third               cam +0.970  content +0.117\n"}
+,{"stream_name":"stdout","time":5762.336944271,"data":"[job1] wrote /kaggle/working/out/job1/pan-left__a-medieval-stone-castle-on-a-hill/manifest.json\n"}
+,{"stream_name":"stdout","time":5762.336947987,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":5762.336951677,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":5762.336955111,"data":"[job1] === pair 7: rolling-clockwise | a medieval stone castle on a hill -\u003e a city street at night with neon signs\n"}
+,{"stream_name":"stdout","time":5822.337420503,"data":"[job0]   run A: 11 tracks, 14.6 min\n"}
+,{"stream_name":"stdout","time":6182.340875245,"data":"[job0]   run B: 4 tracks, 5.4 min\n"}
+,{"stream_name":"stdout","time":6482.344306002,"data":"[job0]   run B2: 4 tracks, 5.2 min\n"}
+,{"stream_name":"stdout","time":6542.344840851,"data":"[job0]   B\u003c-A|exp1_region                     cam +0.693  content +nan\n"}
+,{"stream_name":"stdout","time":6542.344889586,"data":"[job0]   B2\u003c-A|exp1_region                    cam +0.115  content +0.049\n"}
+,{"stream_name":"stdout","time":6542.344896991,"data":"[job0]   A\u003c-B|exp1_region                     cam -0.011  content +nan\n"}
+,{"stream_name":"stdout","time":6542.344902996,"data":"[job0]   B\u003c-B2|exp1_region                    cam -0.186  content -0.024\n"}
+,{"stream_name":"stdout","time":6542.344909019,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.888  content +nan\n"}
+,{"stream_name":"stdout","time":6542.344915171,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam +0.601  content +0.179\n"}
+,{"stream_name":"stdout","time":6542.344920885,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.967  content +nan\n"}
+,{"stream_name":"stdout","time":6542.344926314,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +0.298  content -0.008\n"}
+,{"stream_name":"stdout","time":6542.344931737,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.995  content +nan\n"}
+,{"stream_name":"stdout","time":6542.344937223,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam +0.789  content +0.518\n"}
+,{"stream_name":"stdout","time":6542.344942801,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.908  content +nan\n"}
+,{"stream_name":"stdout","time":6542.344948404,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +0.271  content +0.415\n"}
+,{"stream_name":"stdout","time":6542.344953891,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.856  content +nan\n"}
+,{"stream_name":"stdout","time":6542.344959738,"data":"[job0]   B2\u003c-A|attn_first_third               cam +0.181  content +0.076\n"}
+,{"stream_name":"stdout","time":6542.344965272,"data":"[job0] wrote /kaggle/working/out/job0/tilt-up__a-medieval-stone-castle-on-a-hill/manifest.json\n"}
+,{"stream_name":"stdout","time":6542.344970614,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":6542.344976218,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":6542.344981581,"data":"[job0] === pair 8: zoom-in | a city street at night with neon signs -\u003e a red sandstone desert canyon\n"}
+,{"stream_name":"stdout","time":6842.348303844,"data":"[job1]   run A: 11 tracks, 17.5 min\n"}
+,{"stream_name":"stdout","time":7202.351901946,"data":"[job1]   run B: 4 tracks, 6.4 min\n"}
+,{"stream_name":"stdout","time":7442.354083382,"data":"[job0]   run A: 11 tracks, 14.6 min\n"}
+,{"stream_name":"stdout","time":7622.355971284,"data":"[job1]   run B2: 4 tracks, 6.1 min\n"}
+,{"stream_name":"stdout","time":7622.356063644,"data":"[job1]   B\u003c-A|exp1_region                     cam +1.168  content +nan\n"}
+,{"stream_name":"stdout","time":7622.356072226,"data":"[job1]   B2\u003c-A|exp1_region                    cam -0.103  content +0.082\n"}
+,{"stream_name":"stdout","time":7622.356078525,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.174  content +nan\n"}
+,{"stream_name":"stdout","time":7622.356084449,"data":"[job1]   B\u003c-B2|exp1_region                    cam -0.287  content -0.024\n"}
+,{"stream_name":"stdout","time":7622.356089955,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.935  content +nan\n"}
+,{"stream_name":"stdout","time":7622.356095755,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam +0.520  content +0.157\n"}
+,{"stream_name":"stdout","time":7622.356101483,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +1.107  content +nan\n"}
+,{"stream_name":"stdout","time":7622.356106714,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam +0.217  content -0.008\n"}
+,{"stream_name":"stdout","time":7622.356112491,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +0.831  content +nan\n"}
+,{"stream_name":"stdout","time":7622.356118322,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +0.532  content +0.600\n"}
+,{"stream_name":"stdout","time":7622.356124166,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +1.019  content +nan\n"}
+,{"stream_name":"stdout","time":7622.356129697,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam +0.256  content +0.415\n"}
+,{"stream_name":"stdout","time":7622.356135673,"data":"[job1]   B\u003c-A|attn_first_third                cam +0.994  content +nan\n"}
+,{"stream_name":"stdout","time":7622.35614114,"data":"[job1]   B2\u003c-A|attn_first_third               cam +0.575  content +0.231\n"}
+,{"stream_name":"stdout","time":7622.356146991,"data":"[job1] wrote /kaggle/working/out/job1/rolling-clockwise__a-medieval-stone-castle-on-a-hill/manifest.json\n"}
+,{"stream_name":"stdout","time":7622.356152632,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":7622.356157909,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":7622.356163139,"data":"[job1] === pair 9: pan-left | a city street at night with neon signs -\u003e a red sandstone desert canyon\n"}
+,{"stream_name":"stdout","time":7802.357786653,"data":"[job0]   run B: 4 tracks, 5.4 min\n"}
+,{"stream_name":"stdout","time":8102.360898682,"data":"[job0]   run B2: 4 tracks, 5.2 min\n"}
+,{"stream_name":"stdout","time":8102.36094494,"data":"[job0]   B\u003c-A|exp1_region                     cam -0.045  content +nan\n"}
+,{"stream_name":"stdout","time":8102.360952097,"data":"[job0]   B2\u003c-A|exp1_region                    cam +0.533  content +0.005\n"}
+,{"stream_name":"stdout","time":8102.360957725,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.185  content +nan\n"}
+,{"stream_name":"stdout","time":8102.360963332,"data":"[job0]   B\u003c-B2|exp1_region                    cam -0.078  content -0.025\n"}
+,{"stream_name":"stdout","time":8102.360968888,"data":"[job0]   B\u003c-A|up1_motion_modules              cam +0.463  content +nan\n"}
+,{"stream_name":"stdout","time":8102.360974401,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam -3.306  content +0.134\n"}
+,{"stream_name":"stdout","time":8102.360979988,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.578  content +nan\n"}
+,{"stream_name":"stdout","time":8102.360985384,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +1.889  content +0.173\n"}
+,{"stream_name":"stdout","time":8102.361009746,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam +0.503  content +nan\n"}
+,{"stream_name":"stdout","time":8102.36101436,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam -3.374  content +0.249\n"}
+,{"stream_name":"stdout","time":8102.361018741,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +0.677  content +nan\n"}
+,{"stream_name":"stdout","time":8102.361023108,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +3.351  content +0.348\n"}
+,{"stream_name":"stdout","time":8102.361027456,"data":"[job0]   B\u003c-A|attn_first_third                cam +0.485  content +nan\n"}
+,{"stream_name":"stdout","time":8102.36103176,"data":"[job0]   B2\u003c-A|attn_first_third               cam -3.494  content +0.078\n"}
+,{"stream_name":"stdout","time":8102.36103659,"data":"[job0] wrote /kaggle/working/out/job0/zoom-in__a-city-street-at-night-with-neon-signs/manifest.json\n"}
+,{"stream_name":"stdout","time":8102.361041091,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":8102.361045525,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":8102.361049597,"data":"[job0] === pair 10: tilt-up | a city street at night with neon signs -\u003e a red sandstone desert canyon\n"}
+,{"stream_name":"stdout","time":8702.367683154,"data":"[job1]   run A: 11 tracks, 17.1 min\n"}
+,{"stream_name":"stdout","time":9002.370914734,"data":"[job0]   run A: 11 tracks, 14.6 min\n"}
+,{"stream_name":"stdout","time":9122.372305766,"data":"[job1]   run B: 4 tracks, 6.4 min\n"}
+,{"stream_name":"stdout","time":9362.374944428,"data":"[job0]   run B: 4 tracks, 5.4 min\n"}
+,{"stream_name":"stdout","time":9482.376464403,"data":"[job1]   run B2: 4 tracks, 6.2 min\n"}
+,{"stream_name":"stdout","time":9482.376516455,"data":"[job1]   B\u003c-A|exp1_region                     cam +0.035  content +nan\n"}
+,{"stream_name":"stdout","time":9482.376522904,"data":"[job1]   B2\u003c-A|exp1_region                    cam -0.299  content +0.002\n"}
+,{"stream_name":"stdout","time":9482.376528039,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.003  content +nan\n"}
+,{"stream_name":"stdout","time":9482.376544192,"data":"[job1]   B\u003c-B2|exp1_region                    cam +0.050  content -0.025\n"}
+,{"stream_name":"stdout","time":9482.376548806,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +0.820  content +nan\n"}
+,{"stream_name":"stdout","time":9482.376553342,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam +4.801  content +0.083\n"}
+,{"stream_name":"stdout","time":9482.376557938,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +1.287  content +nan\n"}
+,{"stream_name":"stdout","time":9482.376562681,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam -2.418  content +0.173\n"}
+,{"stream_name":"stdout","time":9482.376567236,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +0.756  content +nan\n"}
+,{"stream_name":"stdout","time":9482.376571718,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +4.332  content +0.245\n"}
+,{"stream_name":"stdout","time":9482.376576341,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +1.387  content +nan\n"}
+,{"stream_name":"stdout","time":9482.376581154,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam -2.996  content +0.348\n"}
+,{"stream_name":"stdout","time":9482.376585756,"data":"[job1]   B\u003c-A|attn_first_third                cam +0.975  content +nan\n"}
+,{"stream_name":"stdout","time":9482.376590333,"data":"[job1]   B2\u003c-A|attn_first_third               cam +4.507  content +0.018\n"}
+,{"stream_name":"stdout","time":9482.376610872,"data":"[job1] wrote /kaggle/working/out/job1/pan-left__a-city-street-at-night-with-neon-signs/manifest.json\n"}
+,{"stream_name":"stdout","time":9482.376631992,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":9482.37663842,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":9482.376641696,"data":"[job1] === pair 11: rolling-clockwise | a city street at night with neon signs -\u003e a red sandstone desert canyon\n"}
+,{"stream_name":"stdout","time":9662.37811765,"data":"[job0]   run B2: 4 tracks, 5.2 min\n"}
+,{"stream_name":"stdout","time":9722.378992178,"data":"[job0]   B\u003c-A|exp1_region                     cam -0.560  content +nan\n"}
+,{"stream_name":"stdout","time":9722.379055419,"data":"[job0]   B2\u003c-A|exp1_region                    cam +1.149  content +0.003\n"}
+,{"stream_name":"stdout","time":9722.379063649,"data":"[job0]   A\u003c-B|exp1_region                     cam +0.973  content +nan\n"}
+,{"stream_name":"stdout","time":9722.379069229,"data":"[job0]   B\u003c-B2|exp1_region                    cam -0.368  content -0.025\n"}
+,{"stream_name":"stdout","time":9722.379073893,"data":"[job0]   B\u003c-A|up1_motion_modules              cam -0.566  content +nan\n"}
+,{"stream_name":"stdout","time":9722.379078357,"data":"[job0]   B2\u003c-A|up1_motion_modules             cam -15.906  content +0.087\n"}
+,{"stream_name":"stdout","time":9722.379083109,"data":"[job0]   A\u003c-B|up1_motion_modules              cam +0.426  content +nan\n"}
+,{"stream_name":"stdout","time":9722.379087606,"data":"[job0]   B\u003c-B2|up1_motion_modules             cam +8.881  content +0.173\n"}
+,{"stream_name":"stdout","time":9722.379092189,"data":"[job0]   B\u003c-A|up1_motion_modules_all          cam -0.199  content +nan\n"}
+,{"stream_name":"stdout","time":9722.379102813,"data":"[job0]   B2\u003c-A|up1_motion_modules_all         cam -16.055  content +0.468\n"}
+,{"stream_name":"stdout","time":9722.379106584,"data":"[job0]   A\u003c-B|up1_motion_modules_all          cam +1.215  content +nan\n"}
+,{"stream_name":"stdout","time":9722.379109595,"data":"[job0]   B\u003c-B2|up1_motion_modules_all         cam +13.682  content +0.348\n"}
+,{"stream_name":"stdout","time":9722.379112607,"data":"[job0]   B\u003c-A|attn_first_third                cam -0.376  content +nan\n"}
+,{"stream_name":"stdout","time":9722.379115585,"data":"[job0]   B2\u003c-A|attn_first_third               cam -15.854  content +0.015\n"}
+,{"stream_name":"stdout","time":9722.379118606,"data":"[job0] wrote /kaggle/working/out/job0/tilt-up__a-city-street-at-night-with-neon-signs/manifest.json\n"}
+,{"stream_name":"stdout","time":9722.379121751,"data":"[job0] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":9722.379124837,"data":"[job0] 6 pairs in 159.3 min\n"}
+,{"stream_name":"stdout","time":10562.388861139,"data":"[job1]   run A: 11 tracks, 17.1 min\n"}
+,{"stream_name":"stdout","time":10982.392734678,"data":"[job1]   run B: 4 tracks, 6.2 min\n"}
+,{"stream_name":"stdout","time":11342.396652635,"data":"[job1]   run B2: 4 tracks, 5.9 min\n"}
+,{"stream_name":"stdout","time":11342.396724725,"data":"[job1]   B\u003c-A|exp1_region                     cam +0.012  content +nan\n"}
+,{"stream_name":"stdout","time":11342.396730746,"data":"[job1]   B2\u003c-A|exp1_region                    cam +0.425  content +0.010\n"}
+,{"stream_name":"stdout","time":11342.396735196,"data":"[job1]   A\u003c-B|exp1_region                     cam +0.220  content +nan\n"}
+,{"stream_name":"stdout","time":11342.396741508,"data":"[job1]   B\u003c-B2|exp1_region                    cam -0.088  content -0.025\n"}
+,{"stream_name":"stdout","time":11342.396748725,"data":"[job1]   B\u003c-A|up1_motion_modules              cam +1.126  content +nan\n"}
+,{"stream_name":"stdout","time":11342.396763981,"data":"[job1]   B2\u003c-A|up1_motion_modules             cam +0.704  content +0.048\n"}
+,{"stream_name":"stdout","time":11342.396766498,"data":"[job1]   A\u003c-B|up1_motion_modules              cam +0.686  content +nan\n"}
+,{"stream_name":"stdout","time":11342.396768804,"data":"[job1]   B\u003c-B2|up1_motion_modules             cam +0.020  content +0.173\n"}
+,{"stream_name":"stdout","time":11342.396771059,"data":"[job1]   B\u003c-A|up1_motion_modules_all          cam +0.740  content +nan\n"}
+,{"stream_name":"stdout","time":11342.396773354,"data":"[job1]   B2\u003c-A|up1_motion_modules_all         cam +0.659  content +0.335\n"}
+,{"stream_name":"stdout","time":11342.396775586,"data":"[job1]   A\u003c-B|up1_motion_modules_all          cam +0.509  content +nan\n"}
+,{"stream_name":"stdout","time":11342.396777834,"data":"[job1]   B\u003c-B2|up1_motion_modules_all         cam +0.080  content +0.348\n"}
+,{"stream_name":"stdout","time":11342.396780996,"data":"[job1]   B\u003c-A|attn_first_third                cam +0.898  content +nan\n"}
+,{"stream_name":"stdout","time":11342.396796997,"data":"[job1]   B2\u003c-A|attn_first_third               cam +0.988  content +0.036\n"}
+,{"stream_name":"stdout","time":11342.396801166,"data":"[job1] wrote /kaggle/working/out/job1/rolling-clockwise__a-city-street-at-night-with-neon-signs/manifest.json\n"}
+,{"stream_name":"stdout","time":11342.396805238,"data":"[job1] PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}\n"}
+,{"stream_name":"stdout","time":11342.396809414,"data":"[job1] 6 pairs in 186.6 min\n"}
+,{"stream_name":"stdout","time":11342.39689367,"data":"exit codes [0, 0]\n"}
+,{"stream_name":"stderr","time":11344.58894181,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":11344.588968806,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":11344.852745109,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":11344.852770322,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":11345.657037103,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":11346.742155128,"data":"[NbConvertApp] Writing 571338 bytes to __results__.html\n"}
+]

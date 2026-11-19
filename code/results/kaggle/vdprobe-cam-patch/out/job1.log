@@ -1,0 +1,139 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 948.08it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1130.77it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:02<00:10,  2.05s/it]Loading pipeline components...:  50%|█████     | 3/6 [00:02<00:01,  1.70it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2325.41it/s]
+Loading pipeline components...:  67%|██████▋   | 4/6 [00:02<00:00,  2.17it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:02<00:00,  2.92it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.37it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_mid_block (1), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 6503.53it/s]
+
+=== pair 1: pan-left | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 11 tracks, 16.4 min
+  run B: 4 tracks, 6.4 min
+  run B2: 4 tracks, 6.1 min
+  B<-A|exp1_region                     cam -0.000  content +nan
+  B2<-A|exp1_region                    cam +0.152  content -0.055
+  A<-B|exp1_region                     cam +0.069  content +nan
+  B<-B2|exp1_region                    cam +0.079  content +0.043
+  B<-A|up1_motion_modules              cam +0.580  content +nan
+  B2<-A|up1_motion_modules             cam +0.559  content -0.075
+  A<-B|up1_motion_modules              cam +1.945  content +nan
+  B<-B2|up1_motion_modules             cam -0.194  content +0.116
+  B<-A|up1_motion_modules_all          cam +0.606  content +nan
+  B2<-A|up1_motion_modules_all         cam +0.672  content +0.539
+  A<-B|up1_motion_modules_all          cam +1.246  content +nan
+  B<-B2|up1_motion_modules_all         cam -0.185  content +0.772
+  B<-A|attn_first_third                cam +0.899  content +nan
+  B2<-A|attn_first_third               cam +0.903  content -0.067
+wrote /kaggle/working/out/job1/pan-left__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}
+
+=== pair 3: rolling-clockwise | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 11 tracks, 17.1 min
+  run B: 4 tracks, 6.4 min
+  run B2: 4 tracks, 6.1 min
+  B<-A|exp1_region                     cam +0.030  content +nan
+  B2<-A|exp1_region                    cam +2.834  content -0.115
+  A<-B|exp1_region                     cam +0.221  content +nan
+  B<-B2|exp1_region                    cam +0.030  content +0.043
+  B<-A|up1_motion_modules              cam +0.937  content +nan
+  B2<-A|up1_motion_modules             cam +2.106  content -0.045
+  A<-B|up1_motion_modules              cam +0.374  content +nan
+  B<-B2|up1_motion_modules             cam -0.603  content +0.116
+  B<-A|up1_motion_modules_all          cam +0.838  content +nan
+  B2<-A|up1_motion_modules_all         cam +1.221  content +0.783
+  A<-B|up1_motion_modules_all          cam +0.493  content +nan
+  B<-B2|up1_motion_modules_all         cam -0.654  content +0.772
+  B<-A|attn_first_third                cam +0.917  content +nan
+  B2<-A|attn_first_third               cam +1.953  content -0.093
+wrote /kaggle/working/out/job1/rolling-clockwise__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}
+
+=== pair 5: pan-left | a medieval stone castle on a hill -> a city street at night with neon signs
+  run A: 11 tracks, 17.2 min
+  run B: 4 tracks, 6.4 min
+  run B2: 4 tracks, 6.1 min
+  B<-A|exp1_region                     cam +0.489  content +nan
+  B2<-A|exp1_region                    cam +0.122  content +0.030
+  A<-B|exp1_region                     cam +0.128  content +nan
+  B<-B2|exp1_region                    cam +0.237  content -0.024
+  B<-A|up1_motion_modules              cam +1.021  content +nan
+  B2<-A|up1_motion_modules             cam +0.989  content +0.284
+  A<-B|up1_motion_modules              cam +1.051  content +nan
+  B<-B2|up1_motion_modules             cam +0.006  content -0.008
+  B<-A|up1_motion_modules_all          cam +0.932  content +nan
+  B2<-A|up1_motion_modules_all         cam +0.981  content +0.625
+  A<-B|up1_motion_modules_all          cam +0.973  content +nan
+  B<-B2|up1_motion_modules_all         cam -0.066  content +0.415
+  B<-A|attn_first_third                cam +1.016  content +nan
+  B2<-A|attn_first_third               cam +0.970  content +0.117
+wrote /kaggle/working/out/job1/pan-left__a-medieval-stone-castle-on-a-hill/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}
+
+=== pair 7: rolling-clockwise | a medieval stone castle on a hill -> a city street at night with neon signs
+  run A: 11 tracks, 17.5 min
+  run B: 4 tracks, 6.4 min
+  run B2: 4 tracks, 6.1 min
+  B<-A|exp1_region                     cam +1.168  content +nan
+  B2<-A|exp1_region                    cam -0.103  content +0.082
+  A<-B|exp1_region                     cam +0.174  content +nan
+  B<-B2|exp1_region                    cam -0.287  content -0.024
+  B<-A|up1_motion_modules              cam +0.935  content +nan
+  B2<-A|up1_motion_modules             cam +0.520  content +0.157
+  A<-B|up1_motion_modules              cam +1.107  content +nan
+  B<-B2|up1_motion_modules             cam +0.217  content -0.008
+  B<-A|up1_motion_modules_all          cam +0.831  content +nan
+  B2<-A|up1_motion_modules_all         cam +0.532  content +0.600
+  A<-B|up1_motion_modules_all          cam +1.019  content +nan
+  B<-B2|up1_motion_modules_all         cam +0.256  content +0.415
+  B<-A|attn_first_third                cam +0.994  content +nan
+  B2<-A|attn_first_third               cam +0.575  content +0.231
+wrote /kaggle/working/out/job1/rolling-clockwise__a-medieval-stone-castle-on-a-hill/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}
+
+=== pair 9: pan-left | a city street at night with neon signs -> a red sandstone desert canyon
+  run A: 11 tracks, 17.1 min
+  run B: 4 tracks, 6.4 min
+  run B2: 4 tracks, 6.2 min
+  B<-A|exp1_region                     cam +0.035  content +nan
+  B2<-A|exp1_region                    cam -0.299  content +0.002
+  A<-B|exp1_region                     cam +0.003  content +nan
+  B<-B2|exp1_region                    cam +0.050  content -0.025
+  B<-A|up1_motion_modules              cam +0.820  content +nan
+  B2<-A|up1_motion_modules             cam +4.801  content +0.083
+  A<-B|up1_motion_modules              cam +1.287  content +nan
+  B<-B2|up1_motion_modules             cam -2.418  content +0.173
+  B<-A|up1_motion_modules_all          cam +0.756  content +nan
+  B2<-A|up1_motion_modules_all         cam +4.332  content +0.245
+  A<-B|up1_motion_modules_all          cam +1.387  content +nan
+  B<-B2|up1_motion_modules_all         cam -2.996  content +0.348
+  B<-A|attn_first_third                cam +0.975  content +nan
+  B2<-A|attn_first_third               cam +4.507  content +0.018
+wrote /kaggle/working/out/job1/pan-left__a-city-street-at-night-with-neon-signs/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}
+
+=== pair 11: rolling-clockwise | a city street at night with neon signs -> a red sandstone desert canyon
+  run A: 11 tracks, 17.1 min
+  run B: 4 tracks, 6.2 min
+  run B2: 4 tracks, 5.9 min
+  B<-A|exp1_region                     cam +0.012  content +nan
+  B2<-A|exp1_region                    cam +0.425  content +0.010
+  A<-B|exp1_region                     cam +0.220  content +nan
+  B<-B2|exp1_region                    cam -0.088  content -0.025
+  B<-A|up1_motion_modules              cam +1.126  content +nan
+  B2<-A|up1_motion_modules             cam +0.704  content +0.048
+  A<-B|up1_motion_modules              cam +0.686  content +nan
+  B<-B2|up1_motion_modules             cam +0.020  content +0.173
+  B<-A|up1_motion_modules_all          cam +0.740  content +nan
+  B2<-A|up1_motion_modules_all         cam +0.659  content +0.335
+  A<-B|up1_motion_modules_all          cam +0.509  content +nan
+  B<-B2|up1_motion_modules_all         cam +0.080  content +0.348
+  B<-A|attn_first_third                cam +0.898  content +nan
+  B2<-A|attn_first_third               cam +0.988  content +0.036
+wrote /kaggle/working/out/job1/rolling-clockwise__a-city-street-at-night-with-neon-signs/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}
+6 pairs in 186.6 min

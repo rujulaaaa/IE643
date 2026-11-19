@@ -1,0 +1,141 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 860.28it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1125.82it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:02<00:10,  2.05s/it]Loading pipeline components...:  67%|██████▋   | 4/6 [00:02<00:00,  2.33it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2436.57it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  3.19it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.37it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_mid_block (1), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 6101.43it/s]
+
+=== pair 0: zoom-in | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 11 tracks, 14.5 min
+  run B: 4 tracks, 5.4 min
+  run B2: 4 tracks, 5.2 min
+Downloading: "https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth
+  0%|          | 0.00/20.1M [00:00<?, ?B/s] 48%|████▊     | 9.62M/20.1M [00:00<00:00, 101MB/s]100%|██████████| 20.1M/20.1M [00:00<00:00, 149MB/s]
+  B<-A|exp1_region                     cam -0.023  content +nan
+  B2<-A|exp1_region                    cam -0.713  content -0.104
+  A<-B|exp1_region                     cam +0.001  content +nan
+  B<-B2|exp1_region                    cam +0.126  content +0.043
+  B<-A|up1_motion_modules              cam +0.642  content +nan
+  B2<-A|up1_motion_modules             cam +0.329  content -0.031
+  A<-B|up1_motion_modules              cam +0.897  content +nan
+  B<-B2|up1_motion_modules             cam +0.390  content +0.116
+  B<-A|up1_motion_modules_all          cam +0.631  content +nan
+  B2<-A|up1_motion_modules_all         cam +0.188  content +0.850
+  A<-B|up1_motion_modules_all          cam +0.915  content +nan
+  B<-B2|up1_motion_modules_all         cam +0.472  content +0.772
+  B<-A|attn_first_third                cam +0.712  content +nan
+  B2<-A|attn_first_third               cam +0.257  content -0.086
+wrote /kaggle/working/out/job0/zoom-in__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}
+
+=== pair 2: tilt-up | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 11 tracks, 14.6 min
+  run B: 4 tracks, 5.4 min
+  run B2: 4 tracks, 5.2 min
+  B<-A|exp1_region                     cam +0.022  content +nan
+  B2<-A|exp1_region                    cam +0.518  content -0.057
+  A<-B|exp1_region                     cam +0.098  content +nan
+  B<-B2|exp1_region                    cam -0.266  content +0.043
+  B<-A|up1_motion_modules              cam +0.851  content +nan
+  B2<-A|up1_motion_modules             cam +1.200  content -0.025
+  A<-B|up1_motion_modules              cam +0.567  content +nan
+  B<-B2|up1_motion_modules             cam -0.366  content +0.116
+  B<-A|up1_motion_modules_all          cam +0.800  content +nan
+  B2<-A|up1_motion_modules_all         cam +1.152  content +0.608
+  A<-B|up1_motion_modules_all          cam +0.621  content +nan
+  B<-B2|up1_motion_modules_all         cam -0.447  content +0.772
+  B<-A|attn_first_third                cam +0.922  content +nan
+  B2<-A|attn_first_third               cam +1.282  content -0.049
+wrote /kaggle/working/out/job0/tilt-up__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}
+
+=== pair 4: zoom-in | a medieval stone castle on a hill -> a city street at night with neon signs
+  run A: 11 tracks, 14.6 min
+  run B: 4 tracks, 5.4 min
+  run B2: 4 tracks, 5.2 min
+  B<-A|exp1_region                     cam +0.384  content +nan
+  B2<-A|exp1_region                    cam +0.034  content +0.042
+  A<-B|exp1_region                     cam -0.002  content +nan
+  B<-B2|exp1_region                    cam -0.324  content -0.024
+  B<-A|up1_motion_modules              cam +0.896  content +nan
+  B2<-A|up1_motion_modules             cam +0.783  content +0.440
+  A<-B|up1_motion_modules              cam +0.906  content +nan
+  B<-B2|up1_motion_modules             cam +0.192  content -0.008
+  B<-A|up1_motion_modules_all          cam +0.933  content +nan
+  B2<-A|up1_motion_modules_all         cam +0.757  content +0.691
+  A<-B|up1_motion_modules_all          cam +0.987  content +nan
+  B<-B2|up1_motion_modules_all         cam +0.217  content +0.415
+  B<-A|attn_first_third                cam +0.974  content +nan
+  B2<-A|attn_first_third               cam +0.778  content +0.123
+wrote /kaggle/working/out/job0/zoom-in__a-medieval-stone-castle-on-a-hill/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}
+
+=== pair 6: tilt-up | a medieval stone castle on a hill -> a city street at night with neon signs
+  run A: 11 tracks, 14.6 min
+  run B: 4 tracks, 5.4 min
+  run B2: 4 tracks, 5.2 min
+  B<-A|exp1_region                     cam +0.693  content +nan
+  B2<-A|exp1_region                    cam +0.115  content +0.049
+  A<-B|exp1_region                     cam -0.011  content +nan
+  B<-B2|exp1_region                    cam -0.186  content -0.024
+  B<-A|up1_motion_modules              cam +0.888  content +nan
+  B2<-A|up1_motion_modules             cam +0.601  content +0.179
+  A<-B|up1_motion_modules              cam +0.967  content +nan
+  B<-B2|up1_motion_modules             cam +0.298  content -0.008
+  B<-A|up1_motion_modules_all          cam +0.995  content +nan
+  B2<-A|up1_motion_modules_all         cam +0.789  content +0.518
+  A<-B|up1_motion_modules_all          cam +0.908  content +nan
+  B<-B2|up1_motion_modules_all         cam +0.271  content +0.415
+  B<-A|attn_first_third                cam +0.856  content +nan
+  B2<-A|attn_first_third               cam +0.181  content +0.076
+wrote /kaggle/working/out/job0/tilt-up__a-medieval-stone-castle-on-a-hill/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}
+
+=== pair 8: zoom-in | a city street at night with neon signs -> a red sandstone desert canyon
+  run A: 11 tracks, 14.6 min
+  run B: 4 tracks, 5.4 min
+  run B2: 4 tracks, 5.2 min
+  B<-A|exp1_region                     cam -0.045  content +nan
+  B2<-A|exp1_region                    cam +0.533  content +0.005
+  A<-B|exp1_region                     cam +0.185  content +nan
+  B<-B2|exp1_region                    cam -0.078  content -0.025
+  B<-A|up1_motion_modules              cam +0.463  content +nan
+  B2<-A|up1_motion_modules             cam -3.306  content +0.134
+  A<-B|up1_motion_modules              cam +0.578  content +nan
+  B<-B2|up1_motion_modules             cam +1.889  content +0.173
+  B<-A|up1_motion_modules_all          cam +0.503  content +nan
+  B2<-A|up1_motion_modules_all         cam -3.374  content +0.249
+  A<-B|up1_motion_modules_all          cam +0.677  content +nan
+  B<-B2|up1_motion_modules_all         cam +3.351  content +0.348
+  B<-A|attn_first_third                cam +0.485  content +nan
+  B2<-A|attn_first_third               cam -3.494  content +0.078
+wrote /kaggle/working/out/job0/zoom-in__a-city-street-at-night-with-neon-signs/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}
+
+=== pair 10: tilt-up | a city street at night with neon signs -> a red sandstone desert canyon
+  run A: 11 tracks, 14.6 min
+  run B: 4 tracks, 5.4 min
+  run B2: 4 tracks, 5.2 min
+  B<-A|exp1_region                     cam -0.560  content +nan
+  B2<-A|exp1_region                    cam +1.149  content +0.003
+  A<-B|exp1_region                     cam +0.973  content +nan
+  B<-B2|exp1_region                    cam -0.368  content -0.025
+  B<-A|up1_motion_modules              cam -0.566  content +nan
+  B2<-A|up1_motion_modules             cam -15.906  content +0.087
+  A<-B|up1_motion_modules              cam +0.426  content +nan
+  B<-B2|up1_motion_modules             cam +8.881  content +0.173
+  B<-A|up1_motion_modules_all          cam -0.199  content +nan
+  B2<-A|up1_motion_modules_all         cam -16.055  content +0.468
+  A<-B|up1_motion_modules_all          cam +1.215  content +nan
+  B<-B2|up1_motion_modules_all         cam +13.682  content +0.348
+  B<-A|attn_first_third                cam -0.376  content +nan
+  B2<-A|attn_first_third               cam -15.854  content +0.015
+wrote /kaggle/working/out/job0/tilt-up__a-city-street-at-night-with-neon-signs/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True}
+6 pairs in 159.3 min
