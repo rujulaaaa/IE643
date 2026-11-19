@@ -1,0 +1,54 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 853.89it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1309.68it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:02<00:10,  2.13s/it]Loading pipeline components...:  33%|███▎      | 2/6 [00:02<00:03,  1.06it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2406.31it/s]
+Loading pipeline components...:  83%|████████▎ | 5/6 [00:02<00:00,  2.96it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.35it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+candidates: exp1_region (1), up1_motion_modules (3), up1_motion_modules_all (3), mm_down_blocks.0 (2), mm_down_blocks.1 (2), mm_down_blocks.2 (2), mm_down_blocks.3 (2), mm_mid_block (1), mm_up_blocks.0 (3), mm_up_blocks.1 (3), mm_up_blocks.2 (3), mm_up_blocks.3 (3)
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 6760.27it/s]
+
+=== pair 0: zoom-in | a mountain lake at sunrise -> a medieval stone castle on a hill
+  run A: 20 tracks, 29.1 min
+  run B: 14 tracks, 21.5 min
+  run B2: 4 tracks, 5.8 min
+Downloading: "https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth
+  0%|          | 0.00/20.1M [00:00<?, ?B/s] 48%|████▊     | 9.75M/20.1M [00:00<00:00, 102MB/s]100%|██████████| 20.1M/20.1M [00:00<00:00, 149MB/s]
+  B<-A|exp1_region                     cam -0.023  content +nan
+  B2<-A|exp1_region                    cam -0.713  content -0.104
+  A<-B|exp1_region                     cam +0.001  content +nan
+  B<-B2|exp1_region                    cam +0.126  content +0.043
+  B<-A|up1_motion_modules              cam +0.642  content +nan
+  B2<-A|up1_motion_modules             cam +0.329  content -0.031
+  A<-B|up1_motion_modules              cam +0.897  content +nan
+  B<-B2|up1_motion_modules             cam +0.390  content +0.116
+  B<-A|up1_motion_modules_all          cam +0.631  content +nan
+  B2<-A|up1_motion_modules_all         cam +0.188  content +0.850
+  A<-B|up1_motion_modules_all          cam +0.915  content +nan
+  B<-B2|up1_motion_modules_all         cam +0.472  content +0.772
+  B2<-A|mm_down_blocks.0               cam +0.257  content +0.173
+  A<-B|mm_down_blocks.0                cam +1.067  content +nan
+  B2<-A|mm_down_blocks.1               cam +0.297  content +0.147
+  A<-B|mm_down_blocks.1                cam +1.051  content +nan
+  B2<-A|mm_down_blocks.2               cam +0.273  content +0.367
+  A<-B|mm_down_blocks.2                cam +0.832  content +nan
+  B2<-A|mm_down_blocks.3               cam +0.221  content -0.052
+  A<-B|mm_down_blocks.3                cam +0.515  content +nan
+  B2<-A|mm_mid_block                   cam +0.312  content +0.146
+  A<-B|mm_mid_block                    cam +0.890  content +nan
+  B2<-A|mm_up_blocks.0                 cam -0.548  content +0.076
+  A<-B|mm_up_blocks.0                  cam +0.624  content +nan
+  B2<-A|mm_up_blocks.1                 cam +0.188  content +0.850
+  A<-B|mm_up_blocks.1                  cam +0.915  content +nan
+  B2<-A|mm_up_blocks.2                 cam +0.295  content +0.883
+  A<-B|mm_up_blocks.2                  cam +1.059  content +nan
+  B2<-A|mm_up_blocks.3                 cam +0.328  content +0.915
+  A<-B|mm_up_blocks.3                  cam +1.052  content +nan
+  B<-A|attn_first_third                cam +0.712  content +nan
+  B2<-A|attn_first_third               cam +0.257  content -0.086
+wrote /kaggle/working/out/job0/zoom-in__a-mountain-lake-at-sunrise/manifest.json
+PASS  checks {'B_arm_equals_B_source': True, 'B2_arm_equals_B2_source': True, 'null_mad': 0.0, 'null_patch': True}
+1 pairs in 59.4 min
