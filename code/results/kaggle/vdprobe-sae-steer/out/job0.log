@@ -1,0 +1,89 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 886.84it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1298.21it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  33%|███▎      | 2/6 [00:02<00:04,  1.00s/it]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2530.87it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:02<00:02,  1.48it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:02<00:00,  2.16it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.54it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 6260.04it/s]
+
+=== a mountain lake at sunrise: 31 tracks
+    step  5/25    514.4 s  (3.32 s per clip-step)
+    step 10/25   1031.1 s  (3.33 s per clip-step)
+    step 15/25   1545.9 s  (3.32 s per clip-step)
+    step 20/25   2060.6 s  (3.32 s per clip-step)
+    step 25/25   2576.5 s  (3.32 s per clip-step)
+  base                             shift +nan  clip 1.000
+  mean_pan-left_x1                 shift -0.010  clip 0.968
+  feat_pan-left_x1                 shift -0.004  clip 0.985
+  rand_pan-left_x1                 shift -0.005  clip 0.984
+  mean_pan-left_x2                 shift -0.006  clip 0.936
+  feat_pan-left_x2                 shift -0.004  clip 0.964
+  rand_pan-left_x2                 shift -0.002  clip 0.971
+  mean_pan-left_x4                 shift -0.043  clip 0.853
+  feat_pan-left_x4                 shift -0.013  clip 0.923
+  rand_pan-left_x4                 shift -0.004  clip 0.959
+  mean_pan-left_x8                 shift -1.320  clip 0.785
+  feat_pan-left_x8                 shift -0.008  clip 0.847
+  rand_pan-left_x8                 shift -0.004  clip 0.908
+  mean_zoom-in_x1                  shift -0.021  clip 0.978
+  feat_zoom-in_x1                  shift -0.008  clip 0.991
+  rand_zoom-in_x1                  shift -0.015  clip 0.979
+  mean_zoom-in_x2                  shift -0.022  clip 0.970
+  feat_zoom-in_x2                  shift -0.020  clip 0.982
+  rand_zoom-in_x2                  shift -0.008  clip 0.967
+  mean_zoom-in_x4                  shift -0.023  clip 0.934
+  feat_zoom-in_x4                  shift -0.021  clip 0.965
+  rand_zoom-in_x4                  shift -0.020  clip 0.941
+  mean_zoom-in_x8                  shift -0.126  clip 0.830
+  feat_zoom-in_x8                  shift -0.569  clip 0.870
+  rand_zoom-in_x8                  shift -0.019  clip 0.926
+  lora_pan-left                    shift +1.000  clip 0.768
+  lora_pan-left_abl_top            shift +1.013  clip 0.774
+  lora_pan-left_abl_rand           shift +0.995  clip 0.766
+  lora_zoom-in                     shift +1.000  clip 0.825
+  lora_zoom-in_abl_top             shift +0.997  clip 0.813
+  lora_zoom-in_abl_rand            shift +1.000  clip 0.822
+wrote /kaggle/working/out/job0/a-mountain-lake-at-sunrise/manifest.json
+
+=== a city street at night with neon signs: 31 tracks
+    step  5/25    513.5 s  (3.31 s per clip-step)
+    step 10/25   1030.2 s  (3.32 s per clip-step)
+    step 15/25   1545.5 s  (3.32 s per clip-step)
+    step 20/25   2061.3 s  (3.32 s per clip-step)
+    step 25/25   2577.8 s  (3.33 s per clip-step)
+  base                             shift +nan  clip 1.000
+  mean_pan-left_x1                 shift +0.070  clip 0.901
+  feat_pan-left_x1                 shift +0.022  clip 0.893
+  rand_pan-left_x1                 shift +0.009  clip 0.925
+  mean_pan-left_x2                 shift +0.041  clip 0.773
+  feat_pan-left_x2                 shift -0.002  clip 0.795
+  rand_pan-left_x2                 shift -0.026  clip 0.863
+  mean_pan-left_x4                 shift -0.016  clip 0.704
+  feat_pan-left_x4                 shift +0.007  clip 0.717
+  rand_pan-left_x4                 shift +0.020  clip 0.773
+  mean_pan-left_x8                 shift +0.050  clip 0.685
+  feat_pan-left_x8                 shift -0.112  clip 0.612
+  rand_pan-left_x8                 shift +0.037  clip 0.601
+  mean_zoom-in_x1                  shift +0.013  clip 0.934
+  feat_zoom-in_x1                  shift +0.132  clip 0.939
+  rand_zoom-in_x1                  shift -0.109  clip 0.976
+  mean_zoom-in_x2                  shift -0.128  clip 0.834
+  feat_zoom-in_x2                  shift -0.243  clip 0.862
+  rand_zoom-in_x2                  shift -0.002  clip 0.965
+  mean_zoom-in_x4                  shift +0.589  clip 0.733
+  feat_zoom-in_x4                  shift +0.342  clip 0.776
+  rand_zoom-in_x4                  shift -0.056  clip 0.929
+  mean_zoom-in_x8                  shift +1.677  clip 0.680
+  feat_zoom-in_x8                  shift +2.130  clip 0.694
+  rand_zoom-in_x8                  shift -0.081  clip 0.742
+  lora_pan-left                    shift +1.000  clip 0.802
+  lora_pan-left_abl_top            shift +1.002  clip 0.802
+  lora_pan-left_abl_rand           shift +0.999  clip 0.803
+  lora_zoom-in                     shift +1.000  clip 0.830
+  lora_zoom-in_abl_top             shift +0.975  clip 0.823
+  lora_zoom-in_abl_rand            shift +1.015  clip 0.834
+wrote /kaggle/working/out/job0/a-city-street-at-night-with-neon-signs/manifest.json

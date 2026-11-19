@@ -1,0 +1,227 @@
+[{"stream_name":"stdout","time":2.010156488,"data":"dataset vdprobe-cc-sweep -\u003e /kaggle/input/notebooks/shivanshisme/vdprobe-cc-sweep ['__huggingface_repos__.json', '__output__.json', '__results__.html', '__script__.ipynb', '__script__.py', 'custom.css', 'out']\n"}
+,{"stream_name":"stdout","time":23.64374536,"data":"2\n"}
+,{"stream_name":"stdout","time":23.643800639,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":23.643808205,"data":"Tesla T4\n"}
+,{"stream_name":"stdout","time":23.643812089,"data":"2.11.0+cu130\n"}
+,{"stream_name":"stdout","time":23.643822015,"data":" \n"}
+,{"stream_name":"stderr","time":38.430863406,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rFetching 2 files:  50%|█████     | 1/2 [00:00\u003c00:00,  9.02it/s]\rFetching 2 files: 100%|██████████| 2/2 [00:12\u003c00:00,  7.08s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:12\u003c00:00,  6.03s/it]\n"}
+,{"stream_name":"stderr","time":38.546660504,"data":"\rFetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":52.572691796,"data":"\rFetching 13 files:  38%|███▊      | 5/13 [00:00\u003c00:00, 49.44it/s]\rFetching 13 files:  85%|████████▍ | 11/13 [00:02\u003c00:00,  3.29it/s]\rFetching 13 files: 100%|██████████| 13/13 [00:14\u003c00:00,  1.08s/it]\n"}
+,{"stream_name":"stderr","time":62.321647192,"data":"\rFetching 12 files:   0%|          | 0/12 [00:00\u003c?, ?it/s]\rFetching 12 files:  58%|█████▊    | 7/12 [00:00\u003c00:00, 66.50it/s]\rFetching 12 files: 100%|██████████| 12/12 [00:09\u003c00:00,  1.24it/s]\n"}
+,{"stream_name":"stdout","time":62.764314635,"data":"job 0 on GPU 0: /usr/bin/python3 -u scripts/sae_steer.py --sae input/vdprobe-cc-sweep --shard 0/2 --out /kaggle/working/out/job0\n"}
+,{"stream_name":"stdout","time":62.765348884,"data":"job 1 on GPU 1: /usr/bin/python3 -u scripts/sae_steer.py --sae input/vdprobe-cc-sweep --shard 1/2 --out /kaggle/working/out/job1\n"}
+,{"stream_name":"stdout","time":122.766533327,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.76658615,"data":"[job0] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.766591681,"data":"[job0] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 886.84it/s]\n"}
+,{"stream_name":"stdout","time":122.766595937,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.766599033,"data":"[job0] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.766602231,"data":"[job0] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1298.21it/s]\n"}
+,{"stream_name":"stdout","time":122.766605581,"data":"[job0] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":122.766610005,"data":"[job0]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":122.766613438,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.766642001,"data":"[job0] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.766648837,"data":"[job0] Loading pipeline components...:  33%|███▎      | 2/6 [00:02\u003c00:04,  1.00s/it]\n"}
+,{"stream_name":"stdout","time":122.766654443,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.766659435,"data":"[job0] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":122.766680911,"data":"[job0] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2530.87it/s]\n"}
+,{"stream_name":"stdout","time":122.766685825,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":122.766690009,"data":"[job0] Loading pipeline components...:  50%|█████     | 3/6 [00:02\u003c00:02,  1.48it/s]\n"}
+,{"stream_name":"stdout","time":122.766694383,"data":"[job0] Loading pipeline components...:  67%|██████▋   | 4/6 [00:02\u003c00:00,  2.16it/s]\n"}
+,{"stream_name":"stdout","time":122.766699536,"data":"[job0] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.54it/s]\n"}
+,{"stream_name":"stdout","time":122.766704723,"data":"[job0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":122.766715642,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.766720214,"data":"[job1] Fetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.766725076,"data":"[job1] Fetching 2 files: 100%|██████████| 2/2 [00:00\u003c00:00, 894.78it/s]\n"}
+,{"stream_name":"stdout","time":122.766730096,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.766734385,"data":"[job1] Fetching 13 files:   0%|          | 0/13 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.766738839,"data":"[job1] Fetching 13 files: 100%|██████████| 13/13 [00:00\u003c00:00, 1156.68it/s]\n"}
+,{"stream_name":"stdout","time":122.766777456,"data":"[job1] /usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stdout","time":122.766790363,"data":"[job1]   deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stdout","time":122.766794572,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.766797923,"data":"[job1] Loading pipeline components...:   0%|          | 0/6 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":122.766801745,"data":"[job1] Loading pipeline components...:  17%|█▋        | 1/6 [00:02\u003c00:10,  2.10s/it]\n"}
+,{"stream_name":"stdout","time":122.766807297,"data":"[job1] Loading pipeline components...:  83%|████████▎ | 5/6 [00:02\u003c00:00,  2.90it/s]\n"}
+,{"stream_name":"stdout","time":122.766814857,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.766817233,"data":"[job1] Loading weights:   0%|          | 0/196 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stdout","time":122.766819728,"data":"[job1] Loading weights: 100%|██████████| 196/196 [00:00\u003c00:00, 2631.32it/s]\n"}
+,{"stream_name":"stdout","time":122.766822247,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":122.766824505,"data":"[job1] Loading pipeline components...: 100%|██████████| 6/6 [00:02\u003c00:00,  2.45it/s]\n"}
+,{"stream_name":"stdout","time":122.766827061,"data":"[job1] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":182.767357671,"data":"[job0] /usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!\n"}
+,{"stream_name":"stdout","time":182.767392023,"data":"[job0]   warnings.warn(\n"}
+,{"stream_name":"stdout","time":182.76740995,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":182.767413626,"data":"[job0] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":182.767417443,"data":"[job0] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 6260.04it/s]\n"}
+,{"stream_name":"stdout","time":182.7674217,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":182.767424981,"data":"[job0] === a mountain lake at sunrise: 31 tracks\n"}
+,{"stream_name":"stdout","time":182.767428317,"data":"[job1] /usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!\n"}
+,{"stream_name":"stdout","time":182.767432258,"data":"[job1]   warnings.warn(\n"}
+,{"stream_name":"stdout","time":182.767435518,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":182.767438751,"data":"[job1] Loading weights:   0%|          | 0/398 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":182.767442227,"data":"[job1] Loading weights: 100%|██████████| 398/398 [00:00\u003c00:00, 6621.87it/s]\n"}
+,{"stream_name":"stdout","time":182.767445866,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":182.76744905,"data":"[job1] === a medieval stone castle on a hill: 31 tracks\n"}
+,{"stream_name":"stdout","time":662.771094081,"data":"[job0]     step  5/25    514.4 s  (3.32 s per clip-step)\n"}
+,{"stream_name":"stdout","time":662.771144721,"data":"[job1]     step  5/25    487.7 s  (3.15 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1142.775302862,"data":"[job1]     step 10/25    977.7 s  (3.15 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1202.775655932,"data":"[job0]     step 10/25   1031.1 s  (3.33 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1622.77889902,"data":"[job1]     step 15/25   1466.8 s  (3.15 s per clip-step)\n"}
+,{"stream_name":"stdout","time":1682.779182942,"data":"[job0]     step 15/25   1545.9 s  (3.32 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2102.782561518,"data":"[job1]     step 20/25   1955.2 s  (3.15 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2222.783419612,"data":"[job0]     step 20/25   2060.6 s  (3.32 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2582.786124507,"data":"[job1]     step 25/25   2444.0 s  (3.15 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2582.786206788,"data":"[job1] Downloading: \"https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth\" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth\n"}
+,{"stream_name":"stdout","time":2582.786216663,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":2582.786221448,"data":"[job1]   0%|          | 0.00/20.1M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stdout","time":2582.786226701,"data":"[job1] 100%|██████████| 20.1M/20.1M [00:00\u003c00:00, 223MB/s]\n"}
+,{"stream_name":"stdout","time":2762.787708131,"data":"[job0]     step 25/25   2576.5 s  (3.32 s per clip-step)\n"}
+,{"stream_name":"stdout","time":2762.787769702,"data":"[job1]   base                             shift +nan  clip 1.000\n"}
+,{"stream_name":"stdout","time":2762.78777802,"data":"[job1]   mean_pan-left_x1                 shift +0.082  clip 0.851\n"}
+,{"stream_name":"stdout","time":2762.78778346,"data":"[job1]   feat_pan-left_x1                 shift -0.259  clip 0.904\n"}
+,{"stream_name":"stdout","time":2762.787788505,"data":"[job1]   rand_pan-left_x1                 shift +0.002  clip 0.977\n"}
+,{"stream_name":"stdout","time":2762.787793975,"data":"[job1]   mean_pan-left_x2                 shift +0.102  clip 0.850\n"}
+,{"stream_name":"stdout","time":2762.787814937,"data":"[job1]   feat_pan-left_x2                 shift +0.046  clip 0.827\n"}
+,{"stream_name":"stdout","time":2762.787819312,"data":"[job1]   rand_pan-left_x2                 shift +0.034  clip 0.936\n"}
+,{"stream_name":"stdout","time":2762.787823286,"data":"[job1]   mean_pan-left_x4                 shift +0.272  clip 0.856\n"}
+,{"stream_name":"stdout","time":2762.787827235,"data":"[job1]   feat_pan-left_x4                 shift -0.089  clip 0.826\n"}
+,{"stream_name":"stdout","time":2762.787831195,"data":"[job1]   rand_pan-left_x4                 shift +0.095  clip 0.901\n"}
+,{"stream_name":"stdout","time":2762.787835185,"data":"[job1]   mean_pan-left_x8                 shift +0.204  clip 0.860\n"}
+,{"stream_name":"stdout","time":2762.787839112,"data":"[job1]   feat_pan-left_x8                 shift -0.048  clip 0.826\n"}
+,{"stream_name":"stdout","time":2762.78784312,"data":"[job1]   rand_pan-left_x8                 shift +0.720  clip 0.873\n"}
+,{"stream_name":"stdout","time":2762.787847049,"data":"[job1]   mean_zoom-in_x1                  shift -0.008  clip 0.916\n"}
+,{"stream_name":"stdout","time":2762.787851023,"data":"[job1]   feat_zoom-in_x1                  shift -0.000  clip 0.974\n"}
+,{"stream_name":"stdout","time":2762.787854986,"data":"[job1]   rand_zoom-in_x1                  shift +0.021  clip 0.965\n"}
+,{"stream_name":"stdout","time":2762.787858986,"data":"[job1]   mean_zoom-in_x2                  shift -0.017  clip 0.896\n"}
+,{"stream_name":"stdout","time":2762.787862925,"data":"[job1]   feat_zoom-in_x2                  shift +0.012  clip 0.962\n"}
+,{"stream_name":"stdout","time":2762.787866895,"data":"[job1]   rand_zoom-in_x2                  shift -0.006  clip 0.942\n"}
+,{"stream_name":"stdout","time":2762.787870878,"data":"[job1]   mean_zoom-in_x4                  shift +0.123  clip 0.875\n"}
+,{"stream_name":"stdout","time":2762.787874821,"data":"[job1]   feat_zoom-in_x4                  shift +0.069  clip 0.921\n"}
+,{"stream_name":"stdout","time":2762.787878722,"data":"[job1]   rand_zoom-in_x4                  shift -0.012  clip 0.896\n"}
+,{"stream_name":"stdout","time":2762.787882726,"data":"[job1]   mean_zoom-in_x8                  shift +0.230  clip 0.834\n"}
+,{"stream_name":"stdout","time":2762.7878867,"data":"[job1]   feat_zoom-in_x8                  shift +0.238  clip 0.874\n"}
+,{"stream_name":"stdout","time":2762.787890668,"data":"[job1]   rand_zoom-in_x8                  shift +0.398  clip 0.796\n"}
+,{"stream_name":"stdout","time":2762.787894582,"data":"[job1]   lora_pan-left                    shift +1.000  clip 0.847\n"}
+,{"stream_name":"stdout","time":2762.787898517,"data":"[job1]   lora_pan-left_abl_top            shift +1.042  clip 0.845\n"}
+,{"stream_name":"stdout","time":2762.78790246,"data":"[job1]   lora_pan-left_abl_rand           shift +0.988  clip 0.847\n"}
+,{"stream_name":"stdout","time":2762.787906302,"data":"[job1]   lora_zoom-in                     shift +1.000  clip 0.898\n"}
+,{"stream_name":"stdout","time":2762.78791109,"data":"[job1]   lora_zoom-in_abl_top             shift +1.002  clip 0.898\n"}
+,{"stream_name":"stdout","time":2762.787915023,"data":"[job1]   lora_zoom-in_abl_rand            shift +1.003  clip 0.898\n"}
+,{"stream_name":"stdout","time":2762.787919369,"data":"[job1] wrote /kaggle/working/out/job1/a-medieval-stone-castle-on-a-hill/manifest.json\n"}
+,{"stream_name":"stdout","time":2762.787923571,"data":"[job1] \n"}
+,{"stream_name":"stdout","time":2762.787927383,"data":"[job1] === a red sandstone desert canyon: 31 tracks\n"}
+,{"stream_name":"stdout","time":2882.789012744,"data":"[job0]   base                             shift +nan  clip 1.000\n"}
+,{"stream_name":"stdout","time":2882.789105089,"data":"[job0]   mean_pan-left_x1                 shift -0.010  clip 0.968\n"}
+,{"stream_name":"stdout","time":2882.789112396,"data":"[job0]   feat_pan-left_x1                 shift -0.004  clip 0.985\n"}
+,{"stream_name":"stdout","time":2882.789117795,"data":"[job0]   rand_pan-left_x1                 shift -0.005  clip 0.984\n"}
+,{"stream_name":"stdout","time":2882.789123271,"data":"[job0]   mean_pan-left_x2                 shift -0.006  clip 0.936\n"}
+,{"stream_name":"stdout","time":2882.789146842,"data":"[job0]   feat_pan-left_x2                 shift -0.004  clip 0.964\n"}
+,{"stream_name":"stdout","time":2882.789151888,"data":"[job0]   rand_pan-left_x2                 shift -0.002  clip 0.971\n"}
+,{"stream_name":"stdout","time":2882.789157038,"data":"[job0]   mean_pan-left_x4                 shift -0.043  clip 0.853\n"}
+,{"stream_name":"stdout","time":2882.789162184,"data":"[job0]   feat_pan-left_x4                 shift -0.013  clip 0.923\n"}
+,{"stream_name":"stdout","time":2882.789167257,"data":"[job0]   rand_pan-left_x4                 shift -0.004  clip 0.959\n"}
+,{"stream_name":"stdout","time":2882.789172384,"data":"[job0]   mean_pan-left_x8                 shift -1.320  clip 0.785\n"}
+,{"stream_name":"stdout","time":2882.789177555,"data":"[job0]   feat_pan-left_x8                 shift -0.008  clip 0.847\n"}
+,{"stream_name":"stdout","time":2882.789182597,"data":"[job0]   rand_pan-left_x8                 shift -0.004  clip 0.908\n"}
+,{"stream_name":"stdout","time":2882.789187673,"data":"[job0]   mean_zoom-in_x1                  shift -0.021  clip 0.978\n"}
+,{"stream_name":"stdout","time":2882.789192778,"data":"[job0]   feat_zoom-in_x1                  shift -0.008  clip 0.991\n"}
+,{"stream_name":"stdout","time":2882.789197574,"data":"[job0]   rand_zoom-in_x1                  shift -0.015  clip 0.979\n"}
+,{"stream_name":"stdout","time":2882.789202669,"data":"[job0]   mean_zoom-in_x2                  shift -0.022  clip 0.970\n"}
+,{"stream_name":"stdout","time":2882.789208061,"data":"[job0]   feat_zoom-in_x2                  shift -0.020  clip 0.982\n"}
+,{"stream_name":"stdout","time":2882.789213395,"data":"[job0]   rand_zoom-in_x2                  shift -0.008  clip 0.967\n"}
+,{"stream_name":"stdout","time":2882.789218233,"data":"[job0]   mean_zoom-in_x4                  shift -0.023  clip 0.934\n"}
+,{"stream_name":"stdout","time":2882.789223555,"data":"[job0]   feat_zoom-in_x4                  shift -0.021  clip 0.965\n"}
+,{"stream_name":"stdout","time":2882.789228586,"data":"[job0]   rand_zoom-in_x4                  shift -0.020  clip 0.941\n"}
+,{"stream_name":"stdout","time":2882.789233665,"data":"[job0]   mean_zoom-in_x8                  shift -0.126  clip 0.830\n"}
+,{"stream_name":"stdout","time":2882.789238769,"data":"[job0]   feat_zoom-in_x8                  shift -0.569  clip 0.870\n"}
+,{"stream_name":"stdout","time":2882.789243712,"data":"[job0]   rand_zoom-in_x8                  shift -0.019  clip 0.926\n"}
+,{"stream_name":"stdout","time":2882.789248732,"data":"[job0]   lora_pan-left                    shift +1.000  clip 0.768\n"}
+,{"stream_name":"stdout","time":2882.789253836,"data":"[job0]   lora_pan-left_abl_top            shift +1.013  clip 0.774\n"}
+,{"stream_name":"stdout","time":2882.789258929,"data":"[job0]   lora_pan-left_abl_rand           shift +0.995  clip 0.766\n"}
+,{"stream_name":"stdout","time":2882.789264004,"data":"[job0]   lora_zoom-in                     shift +1.000  clip 0.825\n"}
+,{"stream_name":"stdout","time":2882.789268773,"data":"[job0]   lora_zoom-in_abl_top             shift +0.997  clip 0.813\n"}
+,{"stream_name":"stdout","time":2882.789275447,"data":"[job0]   lora_zoom-in_abl_rand            shift +1.000  clip 0.822\n"}
+,{"stream_name":"stdout","time":2882.789286221,"data":"[job0] wrote /kaggle/working/out/job0/a-mountain-lake-at-sunrise/manifest.json\n"}
+,{"stream_name":"stdout","time":2882.789291632,"data":"[job0] \n"}
+,{"stream_name":"stdout","time":2882.789296904,"data":"[job0] === a city street at night with neon signs: 31 tracks\n"}
+,{"stream_name":"stdout","time":3242.792071682,"data":"[job1]     step  5/25    490.2 s  (3.16 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3422.793586423,"data":"[job0]     step  5/25    513.5 s  (3.31 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3722.796273232,"data":"[job1]     step 10/25    979.7 s  (3.16 s per clip-step)\n"}
+,{"stream_name":"stdout","time":3962.798291517,"data":"[job0]     step 10/25   1030.2 s  (3.32 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4202.800486864,"data":"[job1]     step 15/25   1468.6 s  (3.16 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4442.802462089,"data":"[job0]     step 15/25   1545.5 s  (3.32 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4742.80493329,"data":"[job1]     step 20/25   1957.0 s  (3.16 s per clip-step)\n"}
+,{"stream_name":"stdout","time":4982.806948391,"data":"[job0]     step 20/25   2061.3 s  (3.32 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5222.809197943,"data":"[job1]     step 25/25   2445.8 s  (3.16 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5342.810279066,"data":"[job1]   base                             shift +nan  clip 1.000\n"}
+,{"stream_name":"stdout","time":5342.810312409,"data":"[job1]   mean_pan-left_x1                 shift +0.046  clip 0.966\n"}
+,{"stream_name":"stdout","time":5342.810318578,"data":"[job1]   feat_pan-left_x1                 shift +0.021  clip 0.988\n"}
+,{"stream_name":"stdout","time":5342.810323882,"data":"[job1]   rand_pan-left_x1                 shift +0.007  clip 0.991\n"}
+,{"stream_name":"stdout","time":5342.810329391,"data":"[job1]   mean_pan-left_x2                 shift +0.175  clip 0.948\n"}
+,{"stream_name":"stdout","time":5342.810334427,"data":"[job1]   feat_pan-left_x2                 shift -0.012  clip 0.966\n"}
+,{"stream_name":"stdout","time":5342.810340369,"data":"[job1]   rand_pan-left_x2                 shift -0.043  clip 0.984\n"}
+,{"stream_name":"stdout","time":5342.810345514,"data":"[job1]   mean_pan-left_x4                 shift +0.008  clip 0.940\n"}
+,{"stream_name":"stdout","time":5342.810350286,"data":"[job1]   feat_pan-left_x4                 shift +0.151  clip 0.845\n"}
+,{"stream_name":"stdout","time":5342.810354772,"data":"[job1]   rand_pan-left_x4                 shift -0.071  clip 0.963\n"}
+,{"stream_name":"stdout","time":5342.81035973,"data":"[job1]   mean_pan-left_x8                 shift +0.026  clip 0.874\n"}
+,{"stream_name":"stdout","time":5342.810364794,"data":"[job1]   feat_pan-left_x8                 shift +0.167  clip 0.848\n"}
+,{"stream_name":"stdout","time":5342.810370309,"data":"[job1]   rand_pan-left_x8                 shift +0.024  clip 0.886\n"}
+,{"stream_name":"stdout","time":5342.810375777,"data":"[job1]   mean_zoom-in_x1                  shift +0.048  clip 0.987\n"}
+,{"stream_name":"stdout","time":5342.810381062,"data":"[job1]   feat_zoom-in_x1                  shift +0.012  clip 0.989\n"}
+,{"stream_name":"stdout","time":5342.810386451,"data":"[job1]   rand_zoom-in_x1                  shift +0.038  clip 0.991\n"}
+,{"stream_name":"stdout","time":5342.810391655,"data":"[job1]   mean_zoom-in_x2                  shift +0.060  clip 0.973\n"}
+,{"stream_name":"stdout","time":5342.810396363,"data":"[job1]   feat_zoom-in_x2                  shift +0.009  clip 0.980\n"}
+,{"stream_name":"stdout","time":5342.810400884,"data":"[job1]   rand_zoom-in_x2                  shift +0.063  clip 0.981\n"}
+,{"stream_name":"stdout","time":5342.810421242,"data":"[job1]   mean_zoom-in_x4                  shift +0.051  clip 0.959\n"}
+,{"stream_name":"stdout","time":5342.810424084,"data":"[job1]   feat_zoom-in_x4                  shift +0.048  clip 0.955\n"}
+,{"stream_name":"stdout","time":5342.810426452,"data":"[job1]   rand_zoom-in_x4                  shift +0.085  clip 0.942\n"}
+,{"stream_name":"stdout","time":5342.810429029,"data":"[job1]   mean_zoom-in_x8                  shift -0.227  clip 0.902\n"}
+,{"stream_name":"stdout","time":5342.810431488,"data":"[job1]   feat_zoom-in_x8                  shift -0.174  clip 0.941\n"}
+,{"stream_name":"stdout","time":5342.810433854,"data":"[job1]   rand_zoom-in_x8                  shift +0.124  clip 0.901\n"}
+,{"stream_name":"stdout","time":5342.810436216,"data":"[job1]   lora_pan-left                    shift +1.000  clip 0.874\n"}
+,{"stream_name":"stdout","time":5342.810438594,"data":"[job1]   lora_pan-left_abl_top            shift +1.001  clip 0.881\n"}
+,{"stream_name":"stdout","time":5342.810441002,"data":"[job1]   lora_pan-left_abl_rand           shift +1.000  clip 0.873\n"}
+,{"stream_name":"stdout","time":5342.810443368,"data":"[job1]   lora_zoom-in                     shift +1.000  clip 0.912\n"}
+,{"stream_name":"stdout","time":5342.81044576,"data":"[job1]   lora_zoom-in_abl_top             shift +1.001  clip 0.911\n"}
+,{"stream_name":"stdout","time":5342.810450312,"data":"[job1]   lora_zoom-in_abl_rand            shift +1.000  clip 0.912\n"}
+,{"stream_name":"stdout","time":5342.8104708,"data":"[job1] wrote /kaggle/working/out/job1/a-red-sandstone-desert-canyon/manifest.json\n"}
+,{"stream_name":"stdout","time":5462.811198069,"data":"[job0]     step 25/25   2577.8 s  (3.33 s per clip-step)\n"}
+,{"stream_name":"stdout","time":5642.81293222,"data":"[job0]   base                             shift +nan  clip 1.000\n"}
+,{"stream_name":"stdout","time":5642.81298454,"data":"[job0]   mean_pan-left_x1                 shift +0.070  clip 0.901\n"}
+,{"stream_name":"stdout","time":5642.812991733,"data":"[job0]   feat_pan-left_x1                 shift +0.022  clip 0.893\n"}
+,{"stream_name":"stdout","time":5642.812996767,"data":"[job0]   rand_pan-left_x1                 shift +0.009  clip 0.925\n"}
+,{"stream_name":"stdout","time":5642.813001814,"data":"[job0]   mean_pan-left_x2                 shift +0.041  clip 0.773\n"}
+,{"stream_name":"stdout","time":5642.813007156,"data":"[job0]   feat_pan-left_x2                 shift -0.002  clip 0.795\n"}
+,{"stream_name":"stdout","time":5642.813011992,"data":"[job0]   rand_pan-left_x2                 shift -0.026  clip 0.863\n"}
+,{"stream_name":"stdout","time":5642.813017304,"data":"[job0]   mean_pan-left_x4                 shift -0.016  clip 0.704\n"}
+,{"stream_name":"stdout","time":5642.813022344,"data":"[job0]   feat_pan-left_x4                 shift +0.007  clip 0.717\n"}
+,{"stream_name":"stdout","time":5642.813027709,"data":"[job0]   rand_pan-left_x4                 shift +0.020  clip 0.773\n"}
+,{"stream_name":"stdout","time":5642.813032415,"data":"[job0]   mean_pan-left_x8                 shift +0.050  clip 0.685\n"}
+,{"stream_name":"stdout","time":5642.813037693,"data":"[job0]   feat_pan-left_x8                 shift -0.112  clip 0.612\n"}
+,{"stream_name":"stdout","time":5642.813042866,"data":"[job0]   rand_pan-left_x8                 shift +0.037  clip 0.601\n"}
+,{"stream_name":"stdout","time":5642.813048174,"data":"[job0]   mean_zoom-in_x1                  shift +0.013  clip 0.934\n"}
+,{"stream_name":"stdout","time":5642.81305357,"data":"[job0]   feat_zoom-in_x1                  shift +0.132  clip 0.939\n"}
+,{"stream_name":"stdout","time":5642.813058464,"data":"[job0]   rand_zoom-in_x1                  shift -0.109  clip 0.976\n"}
+,{"stream_name":"stdout","time":5642.813091777,"data":"[job0]   mean_zoom-in_x2                  shift -0.128  clip 0.834\n"}
+,{"stream_name":"stdout","time":5642.813096812,"data":"[job0]   feat_zoom-in_x2                  shift -0.243  clip 0.862\n"}
+,{"stream_name":"stdout","time":5642.813100671,"data":"[job0]   rand_zoom-in_x2                  shift -0.002  clip 0.965\n"}
+,{"stream_name":"stdout","time":5642.813129684,"data":"[job0]   mean_zoom-in_x4                  shift +0.589  clip 0.733\n"}
+,{"stream_name":"stdout","time":5642.813134024,"data":"[job0]   feat_zoom-in_x4                  shift +0.342  clip 0.776\n"}
+,{"stream_name":"stdout","time":5642.813137846,"data":"[job0]   rand_zoom-in_x4                  shift -0.056  clip 0.929\n"}
+,{"stream_name":"stdout","time":5642.813141963,"data":"[job0]   mean_zoom-in_x8                  shift +1.677  clip 0.680\n"}
+,{"stream_name":"stdout","time":5642.813145918,"data":"[job0]   feat_zoom-in_x8                  shift +2.130  clip 0.694\n"}
+,{"stream_name":"stdout","time":5642.813149921,"data":"[job0]   rand_zoom-in_x8                  shift -0.081  clip 0.742\n"}
+,{"stream_name":"stdout","time":5642.813154085,"data":"[job0]   lora_pan-left                    shift +1.000  clip 0.802\n"}
+,{"stream_name":"stdout","time":5642.813158372,"data":"[job0]   lora_pan-left_abl_top            shift +1.002  clip 0.802\n"}
+,{"stream_name":"stdout","time":5642.813162792,"data":"[job0]   lora_pan-left_abl_rand           shift +0.999  clip 0.803\n"}
+,{"stream_name":"stdout","time":5642.813166536,"data":"[job0]   lora_zoom-in                     shift +1.000  clip 0.830\n"}
+,{"stream_name":"stdout","time":5642.813170242,"data":"[job0]   lora_zoom-in_abl_top             shift +0.975  clip 0.823\n"}
+,{"stream_name":"stdout","time":5642.813173711,"data":"[job0]   lora_zoom-in_abl_rand            shift +1.015  clip 0.834\n"}
+,{"stream_name":"stdout","time":5642.813177273,"data":"[job0] wrote /kaggle/working/out/job0/a-city-street-at-night-with-neon-signs/manifest.json\n"}
+,{"stream_name":"stdout","time":5642.813598467,"data":"exit codes [0, 0]\n"}
+,{"stream_name":"stderr","time":5644.992851853,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":5644.992882208,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":5645.242499061,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":5645.242530522,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":5646.038790021,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":5647.097230092,"data":"[NbConvertApp] Writing 571095 bytes to __results__.html\n"}
+]

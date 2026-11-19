@@ -1,0 +1,120 @@
+{
+  "experiment": "sae_steer",
+  "date": "2026-11-19",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.2",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-2",
+      "commit": "6167b88ffe39b4441fdf2113e77b99a6f56b7906"
+    },
+    "camera_loras": {
+      "repo_template": "guoyww/animatediff-motion-lora-{camera}",
+      "cameras": [
+        "pan-left",
+        "zoom-in"
+      ]
+    }
+  },
+  "frames": 16,
+  "resolution": "512x512",
+  "steps": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "scheduler": "DDIM",
+  "guidance_scale": 7.5,
+  "scene": "a mountain lake at sunrise",
+  "seed": 2024,
+  "site": "up_blocks.1.motion_modules.2",
+  "cameras": [
+    "pan-left",
+    "zoom-in"
+  ],
+  "strengths": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "ablate": {
+    "pan-left": {
+      "top": [
+        56,
+        129,
+        140,
+        144,
+        194,
+        226,
+        241,
+        286,
+        493,
+        534
+      ],
+      "rand": [
+        3850,
+        3508,
+        3060,
+        2716,
+        4863,
+        1872,
+        2199,
+        3081,
+        4774,
+        3079
+      ]
+    },
+    "zoom-in": {
+      "top": [
+        37,
+        78,
+        91,
+        172,
+        216,
+        264,
+        285,
+        381,
+        489,
+        532
+      ],
+      "rand": [
+        2986,
+        253,
+        2303,
+        2254,
+        4288,
+        2123,
+        3441,
+        3470,
+        4357,
+        5030
+      ]
+    }
+  },
+  "checks": {
+    "probes_applied": true
+  },
+  "direction_norm": {
+    "pan-left": 24.391080856323242,
+    "zoom-in": 17.33786964416504
+  },
+  "denoise_seconds": 2576.5344326040004,
+  "n_tracks": 31
+}

@@ -1,0 +1,91 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 894.78it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1156.68it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:02<00:10,  2.10s/it]Loading pipeline components...:  83%|████████▎ | 5/6 [00:02<00:00,  2.90it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2631.32it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.45it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py:331: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 6621.87it/s]
+
+=== a medieval stone castle on a hill: 31 tracks
+    step  5/25    487.7 s  (3.15 s per clip-step)
+    step 10/25    977.7 s  (3.15 s per clip-step)
+    step 15/25   1466.8 s  (3.15 s per clip-step)
+    step 20/25   1955.2 s  (3.15 s per clip-step)
+    step 25/25   2444.0 s  (3.15 s per clip-step)
+Downloading: "https://download.pytorch.org/models/raft_large_C_T_SKHT_V2-ff5fadd5.pth" to /root/.cache/torch/hub/checkpoints/raft_large_C_T_SKHT_V2-ff5fadd5.pth
+  0%|          | 0.00/20.1M [00:00<?, ?B/s]100%|██████████| 20.1M/20.1M [00:00<00:00, 223MB/s]
+  base                             shift +nan  clip 1.000
+  mean_pan-left_x1                 shift +0.082  clip 0.851
+  feat_pan-left_x1                 shift -0.259  clip 0.904
+  rand_pan-left_x1                 shift +0.002  clip 0.977
+  mean_pan-left_x2                 shift +0.102  clip 0.850
+  feat_pan-left_x2                 shift +0.046  clip 0.827
+  rand_pan-left_x2                 shift +0.034  clip 0.936
+  mean_pan-left_x4                 shift +0.272  clip 0.856
+  feat_pan-left_x4                 shift -0.089  clip 0.826
+  rand_pan-left_x4                 shift +0.095  clip 0.901
+  mean_pan-left_x8                 shift +0.204  clip 0.860
+  feat_pan-left_x8                 shift -0.048  clip 0.826
+  rand_pan-left_x8                 shift +0.720  clip 0.873
+  mean_zoom-in_x1                  shift -0.008  clip 0.916
+  feat_zoom-in_x1                  shift -0.000  clip 0.974
+  rand_zoom-in_x1                  shift +0.021  clip 0.965
+  mean_zoom-in_x2                  shift -0.017  clip 0.896
+  feat_zoom-in_x2                  shift +0.012  clip 0.962
+  rand_zoom-in_x2                  shift -0.006  clip 0.942
+  mean_zoom-in_x4                  shift +0.123  clip 0.875
+  feat_zoom-in_x4                  shift +0.069  clip 0.921
+  rand_zoom-in_x4                  shift -0.012  clip 0.896
+  mean_zoom-in_x8                  shift +0.230  clip 0.834
+  feat_zoom-in_x8                  shift +0.238  clip 0.874
+  rand_zoom-in_x8                  shift +0.398  clip 0.796
+  lora_pan-left                    shift +1.000  clip 0.847
+  lora_pan-left_abl_top            shift +1.042  clip 0.845
+  lora_pan-left_abl_rand           shift +0.988  clip 0.847
+  lora_zoom-in                     shift +1.000  clip 0.898
+  lora_zoom-in_abl_top             shift +1.002  clip 0.898
+  lora_zoom-in_abl_rand            shift +1.003  clip 0.898
+wrote /kaggle/working/out/job1/a-medieval-stone-castle-on-a-hill/manifest.json
+
+=== a red sandstone desert canyon: 31 tracks
+    step  5/25    490.2 s  (3.16 s per clip-step)
+    step 10/25    979.7 s  (3.16 s per clip-step)
+    step 15/25   1468.6 s  (3.16 s per clip-step)
+    step 20/25   1957.0 s  (3.16 s per clip-step)
+    step 25/25   2445.8 s  (3.16 s per clip-step)
+  base                             shift +nan  clip 1.000
+  mean_pan-left_x1                 shift +0.046  clip 0.966
+  feat_pan-left_x1                 shift +0.021  clip 0.988
+  rand_pan-left_x1                 shift +0.007  clip 0.991
+  mean_pan-left_x2                 shift +0.175  clip 0.948
+  feat_pan-left_x2                 shift -0.012  clip 0.966
+  rand_pan-left_x2                 shift -0.043  clip 0.984
+  mean_pan-left_x4                 shift +0.008  clip 0.940
+  feat_pan-left_x4                 shift +0.151  clip 0.845
+  rand_pan-left_x4                 shift -0.071  clip 0.963
+  mean_pan-left_x8                 shift +0.026  clip 0.874
+  feat_pan-left_x8                 shift +0.167  clip 0.848
+  rand_pan-left_x8                 shift +0.024  clip 0.886
+  mean_zoom-in_x1                  shift +0.048  clip 0.987
+  feat_zoom-in_x1                  shift +0.012  clip 0.989
+  rand_zoom-in_x1                  shift +0.038  clip 0.991
+  mean_zoom-in_x2                  shift +0.060  clip 0.973
+  feat_zoom-in_x2                  shift +0.009  clip 0.980
+  rand_zoom-in_x2                  shift +0.063  clip 0.981
+  mean_zoom-in_x4                  shift +0.051  clip 0.959
+  feat_zoom-in_x4                  shift +0.048  clip 0.955
+  rand_zoom-in_x4                  shift +0.085  clip 0.942
+  mean_zoom-in_x8                  shift -0.227  clip 0.902
+  feat_zoom-in_x8                  shift -0.174  clip 0.941
+  rand_zoom-in_x8                  shift +0.124  clip 0.901
+  lora_pan-left                    shift +1.000  clip 0.874
+  lora_pan-left_abl_top            shift +1.001  clip 0.881
+  lora_pan-left_abl_rand           shift +1.000  clip 0.873
+  lora_zoom-in                     shift +1.000  clip 0.912
+  lora_zoom-in_abl_top             shift +1.001  clip 0.911
+  lora_zoom-in_abl_rand            shift +1.000  clip 0.912
+wrote /kaggle/working/out/job1/a-red-sandstone-desert-canyon/manifest.json
