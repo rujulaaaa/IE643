@@ -20,6 +20,7 @@ projected on the LoRA clip's signature direction and divided by its length: 1 = 
 clip_sim_to_base.
 
     python scripts/sae_steer.py --sae input/vdprobe-cam-sae --scenes 1 --strengths 2      # smoke
+    python scripts/sae_steer.py --sae input/vdprobe-cc-sweep --shard 0/2                 # two GPUs
 """
 
 import argparse
@@ -86,8 +87,10 @@ def main():
     p.add_argument("--strengths", type=float, nargs="+", default=[1, 2, 4, 8])
     p.add_argument("--top", type=int, default=10)
     p.add_argument("--seed", type=int, default=None)
+    p.add_argument("--shard", default="0/1", help="i/n: scenes i, i+n, ...")
     p.add_argument("--force", action="store_true")
     args = p.parse_args()
+    si, sn = (int(v) for v in args.shard.split("/"))
 
     hits = sorted(args.sae.resolve().rglob("directions.pt"))
     if not hits:
@@ -113,7 +116,7 @@ def main():
     from vdprobe.camera_set import CameraClip
 
     ok = True
-    for scene in cm.cameras.scenes[:args.scenes]:
+    for scene in cm.cameras.scenes[:args.scenes][si::sn]:
         out = args.out / scene.replace(" ", "-")
         if (out / "manifest.json").exists() and not args.force:
             print(f"[skip] {out.name}")
