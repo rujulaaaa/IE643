@@ -1,0 +1,69 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 777.37it/s]
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Fetching 13 files: 100%|██████████| 13/13 [00:00<00:00, 1206.46it/s]
+/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.
+  deprecate("torch_dtype", "1.0.0", _TORCH_DTYPE_DEPRECATION_MESSAGE)
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:00,  9.54it/s]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 196/196 [00:00<00:00, 2715.06it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00,  9.04it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:02<00:01,  1.32it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.54it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+pan-left           a mountain lake at sunri step  0  gap 2.95  peak 13.2 GB  top up.3.motion_modules.2=+0.984, up.3.motion_modules.2.transformer.0.attn1=+0.764, down.0.motion_modules.0.transformer.0.attn1=+0.308
+pan-left           a mountain lake at sunri step  2  gap 12.9  peak 13.2 GB  top up.3.motion_modules.2=+0.979, up.3.motion_modules.1=+0.623, up.3.motion_modules.0=+0.463
+pan-left           a mountain lake at sunri step  4  gap 39.4  peak 13.2 GB  top up.3.motion_modules.2=+0.966, up.3.motion_modules.1=+0.740, up.3.motion_modules.0=+0.496
+pan-left           a mountain lake at sunri step  8  gap 156  peak 13.2 GB  top up.3.motion_modules.2=+0.955, up.3.motion_modules.1=+0.835, up.3.motion_modules.0=+0.583
+pan-left           a mountain lake at sunri step 16  gap 1.38e+03  peak 13.2 GB  top up.3.motion_modules.1=+1.021, up.3.motion_modules.2=+0.902, up.3.motion_modules.0=+0.527
+roll-cw            a mountain lake at sunri step  0  gap 4.45  peak 13.2 GB  top up.3.motion_modules.2=+1.021, up.3.motion_modules.2.transformer.0.attn1=+0.522, up.3.motion_modules.1=+0.476
+roll-cw            a mountain lake at sunri step  2  gap 13.3  peak 13.2 GB  top up.3.motion_modules.2=+0.972, up.3.motion_modules.1=+0.483, up.3.motion_modules.0=+0.312
+roll-cw            a mountain lake at sunri step  4  gap 36.3  peak 13.2 GB  top up.3.motion_modules.2=+0.942, up.3.motion_modules.1=+0.563, up.3.motion_modules.0=+0.377
+roll-cw            a mountain lake at sunri step  8  gap 152  peak 13.2 GB  top up.3.motion_modules.2=+0.949, up.3.motion_modules.1=+0.866, up.3.motion_modules.0=+0.617
+roll-cw            a mountain lake at sunri step 16  gap 1.53e+03  peak 13.2 GB  top up.3.motion_modules.2=+0.927, up.3.motion_modules.1=+0.925, up.3.motion_modules.0=+0.455
+pan-left           a medieval stone castle  step  0  gap 3.06  peak 13.2 GB  top up.3.motion_modules.2=+0.980, up.3.motion_modules.2.transformer.0.attn1=+0.694, down.0.motion_modules.0.transformer.0.attn1=+0.355
+pan-left           a medieval stone castle  step  2  gap 5.99  peak 13.2 GB  top up.3.motion_modules.2=+0.966, up.3.motion_modules.1=+0.420, up.3.motion_modules.0=+0.252
+pan-left           a medieval stone castle  step  4  gap 19.8  peak 13.2 GB  top up.3.motion_modules.2=+0.953, up.3.motion_modules.1=+0.508, down.0.motion_modules.0=+0.359
+pan-left           a medieval stone castle  step  8  gap 154  peak 13.2 GB  top up.3.motion_modules.1=+1.018, up.3.motion_modules.2=+0.955, up.3.motion_modules.0=+0.813
+pan-left           a medieval stone castle  step 16  gap 1.73e+03  peak 13.2 GB  top up.3.motion_modules.1=+0.978, up.3.motion_modules.2=+0.975, up.3.motion_modules.0=+0.445
+roll-cw            a medieval stone castle  step  0  gap 4.16  peak 13.2 GB  top up.3.motion_modules.2=+1.017, up.3.motion_modules.2.transformer.0.attn1=+0.488, up.3.motion_modules.1=+0.475
+roll-cw            a medieval stone castle  step  2  gap 7.19  peak 13.2 GB  top up.3.motion_modules.2=+0.981, up.3.motion_modules.1=+0.672, up.3.motion_modules.0=+0.522
+roll-cw            a medieval stone castle  step  4  gap 20.8  peak 13.2 GB  top up.3.motion_modules.2=+0.957, up.3.motion_modules.1=+0.570, up.3.motion_modules.0=+0.368
+roll-cw            a medieval stone castle  step  8  gap 135  peak 13.2 GB  top up.3.motion_modules.1=+1.047, up.3.motion_modules.2=+0.948, up.3.motion_modules.0=+0.751
+roll-cw            a medieval stone castle  step 16  gap 1.65e+03  peak 13.2 GB  top up.3.motion_modules.1=+0.991, up.3.motion_modules.2=+0.909, up.3.motion_modules.0=+0.448
+pan-left           a city street at night w step  0  gap 2.91  peak 13.2 GB  top up.3.motion_modules.2=+0.981, up.3.motion_modules.2.transformer.0.attn1=+0.736, up.3.motion_modules.1=+0.231
+pan-left           a city street at night w step  2  gap 5.58  peak 13.2 GB  top up.3.motion_modules.2=+0.947, down.0.motion_modules.0=+0.301, up.3.motion_modules.1=+0.237
+pan-left           a city street at night w step  4  gap 26.1  peak 13.2 GB  top up.3.motion_modules.2=+0.977, up.3.motion_modules.1=+0.313, down.0.motion_modules.0=+0.272
+pan-left           a city street at night w step  8  gap 223  peak 13.2 GB  top up.3.motion_modules.2=+0.959, up.3.motion_modules.1=+0.958, up.3.motion_modules.0=+0.724
+pan-left           a city street at night w step 16  gap 3e+03  peak 13.2 GB  top up.3.motion_modules.1=+0.904, up.3.motion_modules.2=+0.837, up.3.motion_modules.0=+0.434
+roll-cw            a city street at night w step  0  gap 3.2  peak 13.2 GB  top up.3.motion_modules.2=+1.027, up.3.motion_modules.2.transformer.0.attn1=+0.638, up.3.motion_modules.1=+0.345
+roll-cw            a city street at night w step  2  gap 9.69  peak 13.2 GB  top up.3.motion_modules.2=+0.971, up.3.motion_modules.1=+0.504, up.3.motion_modules.0=+0.302
+roll-cw            a city street at night w step  4  gap 48.9  peak 13.2 GB  top up.3.motion_modules.2=+0.972, up.3.motion_modules.1=+0.529, up.3.motion_modules.0=+0.306
+roll-cw            a city street at night w step  8  gap 365  peak 13.2 GB  top up.3.motion_modules.2=+0.994, up.3.motion_modules.1=+0.786, up.3.motion_modules.0=+0.466
+roll-cw            a city street at night w step 16  gap 3.53e+03  peak 13.2 GB  top up.3.motion_modules.2=+0.840, up.3.motion_modules.1=+0.765, up.3.motion_modules.0=+0.311
+pan-left           a red sandstone desert c step  0  gap 2.82  peak 13.2 GB  top up.3.motion_modules.2=+0.982, up.3.motion_modules.2.transformer.0.attn1=+0.723, down.0.motion_modules.0.transformer.0.attn1=+0.274
+pan-left           a red sandstone desert c step  2  gap 6.35  peak 13.2 GB  top up.3.motion_modules.2=+0.976, up.3.motion_modules.1=+0.422, up.2.motion_modules.2=+0.260
+pan-left           a red sandstone desert c step  4  gap 19.4  peak 13.2 GB  top up.3.motion_modules.2=+0.963, up.3.motion_modules.1=+0.544, up.3.motion_modules.0=+0.399
+pan-left           a red sandstone desert c step  8  gap 136  peak 13.2 GB  top up.3.motion_modules.1=+0.948, up.3.motion_modules.2=+0.934, up.3.motion_modules.0=+0.720
+pan-left           a red sandstone desert c step 16  gap 1.8e+03  peak 13.2 GB  top up.3.motion_modules.2=+0.888, up.3.motion_modules.1=+0.848, up.3.motion_modules.0=+0.408
+roll-cw            a red sandstone desert c step  0  gap 4.02  peak 13.2 GB  top up.3.motion_modules.2=+1.015, up.3.motion_modules.2.transformer.0.attn1=+0.487, up.3.motion_modules.1=+0.471
+roll-cw            a red sandstone desert c step  2  gap 8.04  peak 13.2 GB  top up.3.motion_modules.2=+0.984, up.3.motion_modules.1=+0.490, up.3.motion_modules.0=+0.344
+roll-cw            a red sandstone desert c step  4  gap 27.5  peak 13.2 GB  top up.3.motion_modules.2=+0.967, up.3.motion_modules.1=+0.652, up.3.motion_modules.0=+0.463
+roll-cw            a red sandstone desert c step  8  gap 142  peak 13.2 GB  top up.3.motion_modules.2=+0.959, up.3.motion_modules.1=+0.849, up.3.motion_modules.0=+0.577
+roll-cw            a red sandstone desert c step 16  gap 1.91e+03  peak 13.2 GB  top up.3.motion_modules.2=+0.917, up.3.motion_modules.1=+0.835, up.3.motion_modules.0=+0.330
+pan-left           a path through a pine fo step  0  gap 2.27  peak 13.2 GB  top up.3.motion_modules.2=+0.967, up.3.motion_modules.2.transformer.0.attn1=+0.820, down.2.motion_modules.0=-0.235
+pan-left           a path through a pine fo step  2  gap 6.88  peak 13.2 GB  top up.3.motion_modules.2=+0.996, up.3.motion_modules.2.transformer.0.attn1=+0.226, down.0.motion_modules.0=+0.197
+pan-left           a path through a pine fo step  4  gap 14.8  peak 13.2 GB  top up.3.motion_modules.2=+0.993, up.3.motion_modules.1=+0.366, down.0.motion_modules.0=+0.276
+pan-left           a path through a pine fo step  8  gap 117  peak 13.2 GB  top up.3.motion_modules.1=+1.072, up.3.motion_modules.2=+0.982, up.3.motion_modules.0=+0.870
+pan-left           a path through a pine fo step 16  gap 1.97e+03  peak 13.2 GB  top up.3.motion_modules.1=+1.004, up.3.motion_modules.2=+0.966, up.3.motion_modules.0=+0.560
+roll-cw            a path through a pine fo step  0  gap 2.66  peak 13.2 GB  top up.3.motion_modules.2=+1.016, up.3.motion_modules.2.transformer.0.attn1=+0.724, up.3.motion_modules.1=+0.291
+roll-cw            a path through a pine fo step  2  gap 10.8  peak 13.2 GB  top up.3.motion_modules.2=+0.996, up.3.motion_modules.1=+0.255, down.0.motion_modules.0=+0.230
+roll-cw            a path through a pine fo step  4  gap 20.3  peak 13.2 GB  top up.3.motion_modules.2=+0.974, up.3.motion_modules.1=+0.368, down.0.motion_modules.0=+0.233
+roll-cw            a path through a pine fo step  8  gap 133  peak 13.2 GB  top up.3.motion_modules.2=+0.975, up.3.motion_modules.1=+0.846, up.3.motion_modules.0=+0.633
+roll-cw            a path through a pine fo step 16  gap 2.28e+03  peak 13.2 GB  top up.3.motion_modules.2=+0.978, up.3.motion_modules.1=+0.834, up.3.motion_modules.0=+0.385
+pan-left           a lighthouse on a rocky  step  0  gap 2.8  peak 13.2 GB  top up.3.motion_modules.2=+0.981, up.3.motion_modules.2.transformer.0.attn1=+0.711, up.3.motion_modules.1=+0.237
+pan-left           a lighthouse on a rocky  step  2  gap 10.3  peak 13.2 GB  top up.3.motion_modules.2=+0.984, up.3.motion_modules.1=+0.596, up.3.motion_modules.0=+0.385
+pan-left           a lighthouse on a rocky  step  4  gap 42.1  peak 13.2 GB  top up.3.motion_modules.2=+0.982, up.3.motion_modules.1=+0.315, up.3.motion_modules.0=+0.191
+pan-left           a lighthouse on a rocky  step  8  gap 151  peak 13.2 GB  top up.3.motion_modules.2=+0.973, up.3.motion_modules.1=+0.675, up.3.motion_modules.0=+0.509
+pan-left           a lighthouse on a rocky  step 16  gap 1.48e+03  peak 13.2 GB  top up.3.motion_modules.1=+1.049, up.3.motion_modules.2=+0.940, up.3.motion_modules.0=+0.574
+roll-cw            a lighthouse on a rocky  step  0  gap 3.66  peak 13.2 GB  top up.3.motion_modules.2=+1.021, up.3.motion_modules.2.transformer.0.attn1=+0.501, up.3.motion_modules.1=+0.441
+roll-cw            a lighthouse on a rocky  step  2  gap 12.6  peak 13.2 GB  top up.3.motion_modules.2=+0.993, up.3.motion_modules.1=+0.701, up.3.motion_modules.0=+0.550
+roll-cw            a lighthouse on a rocky  step  4  gap 35.2  peak 13.2 GB  top up.3.motion_modules.2=+0.971, up.3.motion_modules.1=+0.447, down.0.motion_modules.0=+0.362
+roll-cw            a lighthouse on a rocky  step  8  gap 158  peak 13.2 GB  top up.3.motion_modules.2=+0.956, up.3.motion_modules.1=+0.625, up.3.motion_modules.0=+0.456
+roll-cw            a lighthouse on a rocky  step 16  gap 1.4e+03  peak 13.2 GB  top up.3.motion_modules.1=+1.050, up.3.motion_modules.2=+0.901, up.3.motion_modules.0=+0.558
+wrote /kaggle/working/out/job1/manifest.json

@@ -1,0 +1,113 @@
+{
+  "experiment": "attribution_screen",
+  "date": "2026-11-19",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "diffusers": "0.40.0",
+  "transformers": "5.20.2",
+  "gpu": "Tesla T4",
+  "gpu_total_vram_gb": 14.56,
+  "capability": "sm_75",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-3",
+      "commit": "2e8139b1d1269fd8a21deb96ad19455e187692eb"
+    },
+    "authors_groupnorm_layers": 20,
+    "cameractrl": {
+      "repo_id": "hehao13/CameraCtrl",
+      "file": "CameraCtrl.ckpt"
+    },
+    "domain_lora": {
+      "repo_id": "guoyww/animatediff",
+      "file": "v3_sd15_adapter.ckpt",
+      "scale": 1.0,
+      "merged_matrices": 128
+    }
+  },
+  "frames": 16,
+  "resolution": "256x384",
+  "steps": [
+    0,
+    2,
+    4,
+    8,
+    16
+  ],
+  "scheduler": "DDIM",
+  "guidance_scale": 14.0,
+  "model": "cc",
+  "seed": 2024,
+  "shard": "1/2",
+  "pairs": [
+    "pan-left__a mountain lake at sunrise",
+    "roll-cw__a mountain lake at sunrise",
+    "pan-left__a medieval stone castle on a hill",
+    "roll-cw__a medieval stone castle on a hill",
+    "pan-left__a city street at night with neon signs",
+    "roll-cw__a city street at night with neon signs",
+    "pan-left__a red sandstone desert canyon",
+    "roll-cw__a red sandstone desert canyon",
+    "pan-left__a path through a pine forest",
+    "roll-cw__a path through a pine forest",
+    "pan-left__a lighthouse on a rocky cliff",
+    "roll-cw__a lighthouse on a rocky cliff"
+  ],
+  "n_sites": 92,
+  "seconds": 795.525924183,
+  "block_frac_steps_0_7": {
+    "down_blocks.0": 0.263665414460482,
+    "down_blocks.1": 0.10053623706981163,
+    "down_blocks.2": 0.05306336987082881,
+    "down_blocks.3": 0.00998362455814711,
+    "up_blocks.0": 0.057489523584868474,
+    "up_blocks.1": 0.2397075786805665,
+    "up_blocks.2": 0.5828402025992616,
+    "up_blocks.3": 1.7021897981056515
+  },
+  "vs_patch": {
+    "direction": "nec",
+    "blocks": {
+      "down_blocks.0": {
+        "atp_frac": 0.263665414460482,
+        "eff_cam": 0.7208543152732281
+      },
+      "down_blocks.1": {
+        "atp_frac": 0.10053623706981163,
+        "eff_cam": 0.6748094288612223
+      },
+      "down_blocks.2": {
+        "atp_frac": 0.05306336987082881,
+        "eff_cam": 0.5807497909658087
+      },
+      "down_blocks.3": {
+        "atp_frac": 0.00998362455814711,
+        "eff_cam": 0.28786823499380226
+      },
+      "up_blocks.0": {
+        "atp_frac": 0.057489523584868474,
+        "eff_cam": 0.31832737439587633
+      },
+      "up_blocks.1": {
+        "atp_frac": 0.2397075786805665,
+        "eff_cam": 0.5857719941916174
+      },
+      "up_blocks.2": {
+        "atp_frac": 0.5828402025992616,
+        "eff_cam": 0.6648468267400721
+      },
+      "up_blocks.3": {
+        "atp_frac": 1.7021897981056515,
+        "eff_cam": 0.7594016646579971
+      }
+    },
+    "spearman": 0.8571428571428572,
+    "n_blocks": 8
+  }
+}
