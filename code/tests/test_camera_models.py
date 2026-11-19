@@ -215,3 +215,45 @@ def test_patch_verdict_on_planted_rows(tmp_path):
     cc = vd.summarise(df.assign(model="cc"), block="up_blocks.1", n_boot=300)
     assert cc["verdicts"]["HK3"]["transfer"]["lo"] > 0.3 and not cc["verdicts"]["HK3"]["pass"]     # leak 0.3 > 0.1
     assert "up1_motion_modules_all" in vd.markdown(s)
+
+
+def test_mean_ablation_runs_and_is_null_when_both_clean_clips_match(tiny_unet, monkeypatch):
+    import torch
+
+    from vdprobe.coords import coarse_coordinates, enumerate_coordinates
+    from vdprobe.pipeline import Loaded
+
+    from test_kv import _FakePipe
+    pt = _script("camera_patch")
+    monkeypatch.setattr(torch.cuda, "synchronize", lambda *a: None)
+    monkeypatch.setattr(pt, "decode", lambda loaded, x: x)
+    cfg = SimpleNamespace(frames=4, steps=3, guidance_scale=7.5, negative_prompt="")
+    loaded = Loaded(_FakePipe(tiny_unet), cfg, "test", "tiny", {}, 0.0, device="cpu")
+    cm = SimpleNamespace(loaded=loaded, before_track=lambda step, tr: None, reset=lambda: None)
+    coords = enumerate_coordinates(tiny_unet)
+    use = [{"name": "all", "coords": tuple(c.name for c in coarse_coordinates(coords)), "steps": pt.STEPS,
+            "component": "all"}]
+    noise = torch.randn(1, 4, 4, 8, 8, generator=torch.Generator().manual_seed(0))
+    # the fake camera does nothing, so with B2's prompt = A's, mean(B, B2) = A's own activations: exact null
+    fr, lat, _, checks = pt.run_ablation(cm, coords, use, "a dog running", "a dog running", {}, {}, noise)
+    assert checks == {"mean_counts_2": True}
+    assert torch.equal(lat["A<-mean|all"], lat["A"])
+    fr, lat, _, checks = pt.run_ablation(cm, coords, use, "a dog running", "a red car", {}, {}, noise)
+    assert checks["mean_counts_2"] and not torch.allclose(lat["A<-mean|all"], lat["A"], atol=1e-5)
+    assert set(fr) == {"A", "B", "B2", "A<-mean|all"}
+
+
+def test_score_pair_mean_ablation_is_scored_like_necessity():
+    pt = _script("camera_patch")
+    A, B, B2 = np.array([0.2, 0, 0, 0]), np.array([0.0, 0.01, 0, 0]), np.array([0.0, 0, 0.01, 0])
+    sigs = {"A": A, "B": B, "B2": B2, "A<-mean|c": A - 0.5 * (A - B)}
+    rows = pt.score_pair(sigs, {"A": 0.1, "B": 0.1, "B2": -0.1, "A<-mean|c": 0.1}, ["c"])
+    assert [r["direction"] for r in rows] == ["mean_abl"] and rows[0]["eff_cam"] == pytest.approx(0.5)
+
+
+def test_site_candidates():
+    pt = _script("camera_patch")
+    c = pt.site_candidates(["up_blocks.3.motion_modules.2.transformer_blocks.0.attn1"])
+    assert c == [{"name": "site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",
+                  "coords": ("up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",), "steps": pt.STEPS,
+                  "component": "all"}]

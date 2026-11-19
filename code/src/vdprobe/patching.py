@@ -183,3 +183,42 @@ def null_patch_verdict(reference: Generation, patched: Generation) -> dict:
     return {"latent_mad": mad, "psnr_db": db,
             "pass": bool(mad < NULL_PATCH_MAX_LATENT_MAD and db > NULL_PATCH_MIN_PSNR_DB),
             "criterion": f"latent MAD < {NULL_PATCH_MAX_LATENT_MAD:g} and PSNR > {NULL_PATCH_MIN_PSNR_DB:g} dB (D-11)"}
+
+
+def mean_cache(caches: list[TensorCache]) -> TensorCache:
+    """Raw-mode cache whose entries are the element-wise mean of `caches` (same keys and shapes required).
+    Patched into a clip, it is mean ablation (D2): necessity without picking one counterfactual clip."""
+    if not caches:
+        raise ValueError("no caches")
+    if any(c.mode != "raw" for c in caches):
+        raise ValueError("mean_cache needs raw-mode caches")
+    keys = set(caches[0].store)
+    if any(set(c.store) != keys for c in caches[1:]):
+        raise ValueError("caches have different keys")
+    out = TensorCache(caches[0].coords, caches[0].steps, mode="raw", device=caches[0].device)
+    for k in caches[0].store:
+        ts = [c.store[k] for c in caches]
+        if any(t.shape != ts[0].shape for t in ts):
+            raise ValueError(f"{k}: shapes differ")
+        out.store[k] = (sum(t.float() for t in ts) / len(ts)).to(ts[0].dtype)
+    return out
+
+
+class RunningMeanCache(TensorCache):
+    """Raw-mode cache shared by several tracks: each (coord, step) entry is the running mean of every track that
+    wrote it, so only one copy is held. Equals `mean_cache` of per-track caches (up to rounding); `counts` says
+    how many tracks each entry averages."""
+
+    def __init__(self, coords, steps, device: str = "cpu"):
+        super().__init__(coords, steps, mode="raw", device=device)
+        self.counts: dict[tuple[str, int], int] = {}
+
+    @torch.no_grad()
+    def __call__(self, ctx, coord, module, output, args, kwargs):
+        key = (coord.name, ctx.step)
+        new = output.detach().to(self.device, copy=True)
+        k = self.counts.get(key, 0)
+        if k:
+            old = self.store[key]
+            new = (old.float() + (new.float() - old.float()) / (k + 1)).to(old.dtype)
+        self.store[key], self.counts[key] = new, k + 1

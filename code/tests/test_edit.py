@@ -81,3 +81,30 @@ def test_channel_mask():
     s = torch.tensor([0.5, -0.9, 0.1, -0.2, -0.8, 0.0, 0.3, -0.1, 0.2, 0.4])
     m = channel_mask(s, 0.2)
     assert m.tolist() == [0, 1, 0, 0, 1, 0, 0, 0, 0, 0]
+
+
+def _inject(unet, a, b, spec):
+    ctl = AttnController(spec)
+    with attention_injection(unet, ctl):
+        _forward(unet, a, ctl, "record")
+        return _forward(unet, b, ctl, "inject")
+
+
+def test_head_selection(live_unet, tiny_run):
+    import dataclasses
+    unet = live_unet
+    mods = temporal_attention_modules(enumerate_coordinates(unet))
+    n_heads = {m.heads for name, m in unet.named_modules() if name in mods}
+    assert len(n_heads) == 1
+    n_heads = n_heads.pop()
+    a, b = tiny_run(0), tiny_run(1)
+    with torch.no_grad():
+        b_plain = unet(b.sample, torch.tensor(999), encoder_hidden_states=b.text).sample
+    full = AttnSpec(mods, steps=(0,))
+    all_h = _inject(unet, a, b, full)
+    assert torch.equal(_inject(unet, a, b, dataclasses.replace(full, heads=tuple(range(n_heads)))), all_h)
+    assert torch.equal(_inject(unet, a, b, dataclasses.replace(full, heads=())), b_plain)
+    if n_heads > 1:
+        one = _inject(unet, a, b, dataclasses.replace(full, heads=(0,)))
+        assert not torch.allclose(one, b_plain, atol=1e-6)
+        assert (one - b_plain).norm() < (all_h - b_plain).norm()

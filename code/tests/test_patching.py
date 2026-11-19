@@ -98,3 +98,47 @@ def test_pair_distance_self_is_zero_and_other_is_positive(tiny_unet, tiny_run):
     other = PairDistance(ref)
     _run(tiny_unet, tiny_run(1), [other])
     assert min(r["d_raw"] for r in other.rows) > 0
+
+
+def _cache(entries):
+    c = TensorCache(("x",), (0,), mode="raw")
+    c.store.update(entries)
+    return c
+
+
+def test_mean_cache():
+    from vdprobe.patching import mean_cache
+    x = torch.randn(2, 3, 4)
+    same = mean_cache([_cache({("x", 0): x}), _cache({("x", 0): x.clone()})])
+    assert torch.equal(same.store[("x", 0)], x)
+    assert torch.equal(mean_cache([_cache({("x", 0): x}), _cache({("x", 0): -x})]).store[("x", 0)], torch.zeros_like(x))
+    with pytest.raises(ValueError):
+        mean_cache([_cache({("x", 0): x}), _cache({("x", 1): x})])
+    with pytest.raises(ValueError):
+        mean_cache([_cache({("x", 0): x}), _cache({("x", 0): x[:1]})])
+
+
+def test_mean_cache_patch_is_null_for_identical_sources(tiny_unet, tiny_run):
+    from vdprobe.patching import mean_cache
+    coords = enumerate_coordinates(tiny_unet)
+    names = tuple(c.name for c in coarse_coordinates(coords))
+    run = tiny_run(0)
+    c1, c2 = TensorCache(names, STEPS), TensorCache(names, STEPS)
+    ref = _run(tiny_unet, run, [c1, c2])
+    out = _run(tiny_unet, run, [Patcher(mean_cache([c1, c2]), PatchSpec(names, STEPS))])
+    assert torch.equal(out, ref)
+
+
+def test_running_mean_cache_matches_mean_cache(tiny_unet, tiny_run):
+    from vdprobe.patching import RunningMeanCache, mean_cache
+    coords = enumerate_coordinates(tiny_unet)
+    names = tuple(c.name for c in coarse_coordinates(coords))
+    caches, running = [], RunningMeanCache(names, STEPS)
+    for seed in (0, 1):
+        c = TensorCache(names, STEPS)
+        _run(tiny_unet, tiny_run(seed), [c, running])
+        caches.append(c)
+    ref = mean_cache(caches)
+    assert set(running.counts.values()) == {2}
+    for k, v in ref.store.items():
+        assert torch.allclose(running.store[k], v, atol=1e-6)

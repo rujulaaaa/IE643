@@ -30,6 +30,14 @@ CLIP(x, prompt Y):
     eff_content  transfer: (Dc(x) - Dc(B2)) / (Dc(A) - Dc(B2));  ctrl: (Dc(x) - Dc(B)) / (Dc(B2) - Dc(B));
                  same-scene arms: NaN
 
+Modes (`--mode`; D-43):
+    patch   the candidates above (Tasks A5, B4)
+    heads   temporal attention probabilities, first third, one arm per head index (every temporal attention layer):
+            attn_h<k> as B<-A and B2<-A; one arm per block (all heads): attn_<block> as B2<-A; attn_first_third
+    sites   single sites named by --sites (whole output, steps 0-7) as B<-A, B2<-A, A<-B (D1 follow-up)
+    ablate  mean ablation: A<-mean|cand, the candidates' activations replaced by the mean of B and B2 (the pair's two
+            no-camera clips, same noise); scored like necessity
+
 Per pair <out>/<camera>__<scene X>/: rows.csv, sheet.png, sigs.json, manifest.json (written last).
 
     python scripts/camera_patch.py --pairs 1 --block-pairs 0 --null          # smoke
@@ -47,8 +55,9 @@ from vdprobe import runio
 from vdprobe.camera_models import FAMILIES, MODELS, default_config, load_camera_model
 from vdprobe.coords import block_order, enumerate_coordinates
 from vdprobe.edit import Arm, AttnSpec, EditSpec, run_arms, temporal_attention_modules
-from vdprobe.patching import NULL_PATCH_MAX_LATENT_MAD, PatchSpec, window
-from vdprobe.pipeline import make_noise
+from vdprobe.lockstep import Track, run_lockstep
+from vdprobe.patching import NULL_PATCH_MAX_LATENT_MAD, Patcher, PatchSpec, RunningMeanCache, window
+from vdprobe.pipeline import decode, make_noise
 
 NAMED = ("exp1_region", "up1_motion_modules", "up1_motion_modules_all")
 STEPS = tuple(range(8))
@@ -87,11 +96,11 @@ def score_pair(sigs: dict, dc: dict, cand_names) -> list[dict]:
     rows = []
     for nm in cand_names:
         arms = {"suff": (f"B<-A|{nm}", "B"), "transfer": (f"B2<-A|{nm}", "B2"), "nec": (f"A<-B|{nm}", "A"),
-                "ctrl": (f"B<-B2|{nm}", "B")}
+                "ctrl": (f"B<-B2|{nm}", "B"), "mean_abl": (f"A<-mean|{nm}", "A")}
         for direction, (key, target) in arms.items():
             if key not in sigs:
                 continue
-            if direction == "nec":
+            if direction in ("nec", "mean_abl"):
                 eff, eff_cos = proj(sigs["A"] - sigs[key], d), ratio(dcos("A", "B") - dcos(key, "B"), den_cos)
             else:
                 eff = proj(sigs[key] - sigs[target], d)
@@ -107,6 +116,34 @@ def score_pair(sigs: dict, dc: dict, cand_names) -> list[dict]:
     return rows
 
 
+def site_candidates(sites) -> list[dict]:
+    """One candidate per named site: whole output, steps 0-7 (D1 follow-up)."""
+    return [{"name": f"site_{s}", "coords": (s,), "steps": STEPS, "component": "all"} for s in sites]
+
+
+def run_ablation(cm, coords, use, px, py, on, off, noise):
+    """Mean ablation. Group 1: B and B2 (camera off) write one running-mean cache of every candidate's coordinates.
+    Group 2: A (camera on) and one A<-mean|cand arm per candidate. Returns (frames, latents, seconds, checks)."""
+    loaded = cm.loaded
+    mean = RunningMeanCache({c for cd in use for c in cd["coords"]}, STEPS, device="cpu")
+    tracks = [Track("B", px, [mean], meta=off), Track("B2", py, [mean], meta=off)]
+    t1 = run_lockstep(loaded, coords, tracks, noise, before_track=cm.before_track)
+    cm.reset()
+    frames = {tr.id: decode(loaded, tr.latents) for tr in tracks}
+    latents = {tr.id: tr.latents for tr in tracks}
+    patchers = {cd["name"]: Patcher(mean, PatchSpec(tuple(cd["coords"]), tuple(cd["steps"]), component=cd["component"]))
+                for cd in use}
+    tracks = [Track("A", px, meta=on)] + [Track(f"A<-mean|{n}", px, [p], meta=on) for n, p in patchers.items()]
+    t2 = run_lockstep(loaded, coords, tracks, noise, before_track=cm.before_track)
+    cm.reset()
+    for tr in tracks:
+        frames[tr.id], latents[tr.id] = decode(loaded, tr.latents), tr.latents
+    checks = {"mean_counts_2": set(mean.counts.values()) == {2}}
+    checks.update({f"patched:A<-mean|{n}": False for n, p in patchers.items() if not p.applied})
+    print(f"  ablation: {2 + len(tracks)} tracks, {(t1['seconds'] + t2['seconds']) / 60:.1f} min", flush=True)
+    return frames, latents, t1["seconds"] + t2["seconds"], checks
+
+
 def run_pair(cm, coords, cands, camera, x, y, seed, with_blocks, clip_scorer, args):
     loaded, cfg = cm.loaded, cm.loaded.cfg
     out = args.out / f"{camera}__{x.replace(' ', '-')}"
@@ -115,23 +152,49 @@ def run_pair(cm, coords, cands, camera, x, y, seed, with_blocks, clip_scorer, ar
         return True
     from vdprobe.camera_set import CameraClip
     px, py = CameraClip(x, camera, seed).prompt(cfg), CameraClip(y, camera, seed).prompt(cfg)
-    use = [c for c in cands if c["name"] in NAMED or with_blocks]
+    mode = args.mode
+    use = [c for c in cands if (c["name"] in NAMED or with_blocks)] if mode in ("patch", "ablate") else \
+        [c for c in cands if mode == "sites"]
     named = [c for c in use if c["name"] in NAMED]
     spec = lambda cd: EditSpec(patch=PatchSpec(tuple(cd["coords"]), tuple(cd["steps"]), component=cd["component"]))
-    attn = EditSpec(attn=AttnSpec(temporal_attention_modules(coords), window("first_third", cfg.steps)))
+    first = window("first_third", cfg.steps)
+    attn = EditSpec(attn=AttnSpec(temporal_attention_modules(coords), first))
     on, off = {"camera": camera}, {"camera": cm.off}
     noise = make_noise(cfg, seed)
-    runs = {   # run name: (source prompt, source meta, [(arm, target meta)])
-        "A": (px, on, [(Arm("B", px, EditSpec()), off), (Arm("B2", py, EditSpec()), off)]
-              + [(Arm(f"B<-A|{c['name']}", px, spec(c)), off) for c in named]
-              + [(Arm(f"B2<-A|{c['name']}", py, spec(c)), off) for c in use]
-              + [(Arm("B<-A|attn_first_third", px, attn), off), (Arm("B2<-A|attn_first_third", py, attn), off)]),
-        "B": (px, off, [(Arm(f"A<-B|{c['name']}", px, spec(c)), on) for c in use]
-              + ([(Arm("null", px, spec(next(c for c in cands if c["name"] == "up1_motion_modules_all"))), off)]
-                 if args.null else [])),
-        "B2": (py, off, [(Arm(f"B<-B2|{c['name']}", px, spec(c)), off) for c in named]),
-    }
+    base = [(Arm("B", px, EditSpec()), off), (Arm("B2", py, EditSpec()), off)]
+    attn_arms = [(Arm("B<-A|attn_first_third", px, attn), off), (Arm("B2<-A|attn_first_third", py, attn), off)]
+    names = [c["name"] for c in use] + ["attn_first_third"]
+    if mode == "patch":
+        runs = {   # run name: (source prompt, source meta, [(arm, target meta)])
+            "A": (px, on, base + [(Arm(f"B<-A|{c['name']}", px, spec(c)), off) for c in named]
+                  + [(Arm(f"B2<-A|{c['name']}", py, spec(c)), off) for c in use] + attn_arms),
+            "B": (px, off, [(Arm(f"A<-B|{c['name']}", px, spec(c)), on) for c in use]
+                  + ([(Arm("null", px, spec(next(c for c in cands if c["name"] == "up1_motion_modules_all"))), off)]
+                     if args.null else [])),
+            "B2": (py, off, [(Arm(f"B<-B2|{c['name']}", px, spec(c)), off) for c in named]),
+        }
+    elif mode == "heads":
+        mods = temporal_attention_modules(coords)
+        n_heads = dict(cm.loaded.unet.named_modules())[mods[0]].heads
+        head = lambda k: EditSpec(attn=AttnSpec(mods, first, heads=(k,)))
+        blocks = [b for b in block_order(coords) if temporal_attention_modules(coords, [b])]
+        blk = lambda b: EditSpec(attn=AttnSpec(temporal_attention_modules(coords, [b]), first))
+        runs = {"A": (px, on, base + attn_arms
+                      + [(Arm(f"B<-A|attn_h{k}", px, head(k)), off) for k in range(n_heads)]
+                      + [(Arm(f"B2<-A|attn_h{k}", py, head(k)), off) for k in range(n_heads)]
+                      + [(Arm(f"B2<-A|attn_{b}", py, blk(b)), off) for b in blocks])}
+        names = ["attn_first_third"] + [f"attn_h{k}" for k in range(n_heads)] + [f"attn_{b}" for b in blocks]
+    elif mode == "sites":
+        runs = {"A": (px, on, base + [(Arm(f"B<-A|{c['name']}", px, spec(c)), off) for c in use]
+                      + [(Arm(f"B2<-A|{c['name']}", py, spec(c)), off) for c in use]),
+                "B": (px, off, [(Arm(f"A<-B|{c['name']}", px, spec(c)), on) for c in use])}
+        names = [c["name"] for c in use]
+    else:
+        runs = {}
+        names = [c["name"] for c in use]
     frames, latents, seconds, checks = {}, {}, 0.0, {}
+    if mode == "ablate":
+        frames, latents, seconds, checks = run_ablation(cm, coords, use, px, py, on, off, noise)
     for name, (src_prompt, src_meta, arms) in runs.items():
         meta = {"source": src_meta, **{a.id: m for a, m in arms}}
         res = run_arms(loaded, coords, src_prompt, [a for a, _ in arms], noise, track_meta=meta,
@@ -145,10 +208,12 @@ def run_pair(cm, coords, cands, camera, x, y, seed, with_blocks, clip_scorer, ar
             if a.spec.patch is not None and res.n_patched[a.id] == 0:
                 checks[f"patched:{a.id}"] = False
         print(f"  run {name}: {len(arms) + 1} tracks, {res.seconds / 60:.1f} min", flush=True)
-    frames["A"] = frames.pop("A_src")
-    # the three unpatched clips exist twice (as a source and as a baseline arm): they must agree
-    checks["B_arm_equals_B_source"] = M.latent_mad(latents["B"], latents["B_src"]) < NULL_PATCH_MAX_LATENT_MAD
-    checks["B2_arm_equals_B2_source"] = M.latent_mad(latents["B2"], latents["B2_src"]) < NULL_PATCH_MAX_LATENT_MAD
+    if "A_src" in frames:
+        frames["A"] = frames.pop("A_src")
+    # unpatched clips that exist twice (as a source and as a baseline arm) must agree
+    for k in ("B", "B2"):
+        if k + "_src" in latents:
+            checks[f"{k}_arm_equals_{k}_source"] = M.latent_mad(latents[k], latents[k + "_src"]) < NULL_PATCH_MAX_LATENT_MAD
     if args.null:
         checks["null_mad"] = M.latent_mad(latents["null"], latents["B_src"])
         checks["null_patch"] = checks["null_mad"] < NULL_PATCH_MAX_LATENT_MAD
@@ -159,7 +224,6 @@ def run_pair(cm, coords, cands, camera, x, y, seed, with_blocks, clip_scorer, ar
     txt = clip_scorer.text([px, py])
     sign = torch.tensor([1.0, -1.0], device=txt.device)
     dc = {k: float((clip_scorer.image(v) @ txt.T).mean(0) @ sign) for k, v in frames.items()}
-    names = [c["name"] for c in use] + ["attn_first_third"]
     rows = score_pair(sigs, dc, names)
     for r in rows:
         r.update(model=cm.name, pair=out.name, camera=camera, scene_a=x, scene_b=y, seed=seed)
@@ -175,7 +239,7 @@ def run_pair(cm, coords, cands, camera, x, y, seed, with_blocks, clip_scorer, ar
         for k, v in frames.items():
             runio.save_gif(v, out / "gifs" / (k.replace("|", "_").replace("<-", "_from_") + ".gif"), size=192)
     runio.write_json(out / "manifest.json", runio.record(
-        "camera_patch", loaded, model=cm.name, camera=camera, scene_a=x, scene_b=y, seed=seed, prompts=[px, py],
+        "camera_patch", loaded, mode=mode, model=cm.name, camera=camera, scene_a=x, scene_b=y, seed=seed, prompts=[px, py],
         candidates=[{**c, "coords": list(c["coords"]), "steps": list(c["steps"])} for c in use], checks=checks,
         passed=ok, sheet_rows=["A", "B", f"B<-A|{best}", "B2", f"B2<-A|{best}", f"A<-B|{best}"],
         denoise_seconds=seconds, n_tracks=sum(len(a) + 1 for _, _, a in runs.values()),
@@ -197,13 +261,17 @@ def main():
     p.add_argument("--gifs", action="store_true")
     p.add_argument("--shard", default="0/1")
     p.add_argument("--force", action="store_true")
+    p.add_argument("--mode", choices=("patch", "heads", "sites", "ablate"), default="patch")
+    p.add_argument("--sites", nargs="+", default=[], help="--mode sites: U-Net module paths")
     args = p.parse_args()
+    if args.mode == "sites" and not args.sites:
+        p.error("--mode sites needs --sites")
 
     f = FAMILIES[args.model]
     cameras = [f["zoom"][0], f["pan"][0], f["tilt"][0], f["roll"][0]][:args.cameras]
     cm = load_camera_model(args.model, args.config or default_config(args.model), args.profile, cameras=cameras)
     coords = enumerate_coordinates(cm.loaded.unet)
-    cands = candidates(coords)
+    cands = site_candidates(args.sites) if args.mode == "sites" else candidates(coords)
     print("candidates: " + ", ".join(f"{c['name']} ({len(c['coords'])})" for c in cands), flush=True)
     seed = args.seed if args.seed is not None else cm.cameras.heldout_seed
     pairs = draw_pairs(cm.cameras, cameras, args.scenes)

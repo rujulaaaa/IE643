@@ -59,6 +59,7 @@ class AttnSpec:
     steps: tuple[int, ...]
     alpha: float = 1.0
     source: str = "source"          # id of the track whose probabilities are injected
+    heads: tuple[int, ...] | None = None    # inject only these heads (D2); None: every head
 
 
 @dataclass(frozen=True)
@@ -135,6 +136,11 @@ class InjectingProcessor:
         # output, so injecting a clip's own probabilities adds exactly zero (D-11)
         p_src = self.ctl.store[(self.ctl.spec.source, self.name)]
         d_probs = self.ctl.spec.alpha * (p_src.to(probs.device) - probs)
+        heads = self.ctl.spec.heads
+        if heads is not None:           # probabilities are (batch, heads, F, F): zero the change of the other heads
+            keep = torch.zeros(attn.heads, device=d_probs.device, dtype=d_probs.dtype)
+            keep[list(heads)] = 1
+            d_probs = d_probs * keep.view(1, -1, 1, 1)
         self.ctl.applied += 1
         delta = torch.matmul(d_probs.to(v.dtype), v).transpose(1, 2).reshape(b, -1, attn.heads * d)
         delta = F.linear(delta, attn.to_out[0].weight)        # out-projection without its bias
