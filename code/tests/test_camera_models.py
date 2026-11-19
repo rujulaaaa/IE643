@@ -257,3 +257,11 @@ def test_site_candidates():
     assert c == [{"name": "site_up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",
                   "coords": ("up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",), "steps": pt.STEPS,
                   "component": "all"}]
+
+
+def test_draw_pairs_first_scene():
+    pt = _script("camera_patch")
+    cs = CameraSet(CONFIG_DIR / "camera_set.yaml")
+    pairs = pt.draw_pairs(cs, ["zoom-in", "pan-left"], 3, first=3)
+    assert [x for _, x, _ in pairs[::2]] == cs.scenes[3:6]
+    assert pairs[-1][2] == cs.scenes[6] and pt.draw_pairs(cs, ["zoom-in"], 3) == pt.draw_pairs(cs, ["zoom-in"], 3, 0)

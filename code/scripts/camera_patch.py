@@ -75,10 +75,11 @@ def candidates(coords) -> list[dict]:
     return out
 
 
-def draw_pairs(cs, cameras, n_scenes):
-    """(camera, scene X, scene Y): Y is the next scene of the set. Scene-major, so a shard mixes cameras."""
+def draw_pairs(cs, cameras, n_scenes, first: int = 0):
+    """(camera, scene X, scene Y): Y is the next scene of the set. Scene-major, so a shard mixes cameras.
+    `first`: index of the first scene X (D-44 uses scenes 3-5, never patched before)."""
     scenes = cs.scenes
-    return [(c, scenes[i], scenes[(i + 1) % len(scenes)]) for i in range(n_scenes) for c in cameras]
+    return [(c, scenes[i], scenes[(i + 1) % len(scenes)]) for i in range(first, first + n_scenes) for c in cameras]
 
 
 def proj(v, d):
@@ -153,7 +154,7 @@ def run_pair(cm, coords, cands, camera, x, y, seed, with_blocks, clip_scorer, ar
     from vdprobe.camera_set import CameraClip
     px, py = CameraClip(x, camera, seed).prompt(cfg), CameraClip(y, camera, seed).prompt(cfg)
     mode = args.mode
-    use = [c for c in cands if (c["name"] in NAMED or with_blocks)] if mode in ("patch", "ablate") else \
+    use = [c for c in cands if (c["name"] in NAMED or with_blocks)] if mode in ("patch", "ablate", "necessity") else \
         [c for c in cands if mode == "sites"]
     named = [c for c in use if c["name"] in NAMED]
     spec = lambda cd: EditSpec(patch=PatchSpec(tuple(cd["coords"]), tuple(cd["steps"]), component=cd["component"]))
@@ -184,6 +185,10 @@ def run_pair(cm, coords, cands, camera, x, y, seed, with_blocks, clip_scorer, ar
                       + [(Arm(f"B2<-A|attn_h{k}", py, head(k)), off) for k in range(n_heads)]
                       + [(Arm(f"B2<-A|attn_{b}", py, blk(b)), off) for b in blocks])}
         names = ["attn_first_third"] + [f"attn_h{k}" for k in range(n_heads)] + [f"attn_{b}" for b in blocks]
+    elif mode == "necessity":     # knock-out only (D-44): A <- B for every candidate
+        runs = {"B": (px, off, [(Arm("A", px, EditSpec()), on), (Arm("B2", py, EditSpec()), off)]
+                      + [(Arm(f"A<-B|{c['name']}", px, spec(c)), on) for c in use])}
+        names = [c["name"] for c in use]
     elif mode == "sites":
         runs = {"A": (px, on, base + [(Arm(f"B<-A|{c['name']}", px, spec(c)), off) for c in use]
                       + [(Arm(f"B2<-A|{c['name']}", py, spec(c)), off) for c in use]),
@@ -208,11 +213,12 @@ def run_pair(cm, coords, cands, camera, x, y, seed, with_blocks, clip_scorer, ar
             if a.spec.patch is not None and res.n_patched[a.id] == 0:
                 checks[f"patched:{a.id}"] = False
         print(f"  run {name}: {len(arms) + 1} tracks, {res.seconds / 60:.1f} min", flush=True)
-    if "A_src" in frames:
-        frames["A"] = frames.pop("A_src")
+    for k in ("A", "B"):        # a source with no baseline arm of its own is the clip itself
+        if k + "_src" in frames and k not in frames:
+            frames[k], latents[k] = frames.pop(k + "_src"), latents.pop(k + "_src")
     # unpatched clips that exist twice (as a source and as a baseline arm) must agree
     for k in ("B", "B2"):
-        if k + "_src" in latents:
+        if k + "_src" in latents and k in latents:
             checks[f"{k}_arm_equals_{k}_source"] = M.latent_mad(latents[k], latents[k + "_src"]) < NULL_PATCH_MAX_LATENT_MAD
     if args.null:
         checks["null_mad"] = M.latent_mad(latents["null"], latents["B_src"])
@@ -261,7 +267,8 @@ def main():
     p.add_argument("--gifs", action="store_true")
     p.add_argument("--shard", default="0/1")
     p.add_argument("--force", action="store_true")
-    p.add_argument("--mode", choices=("patch", "heads", "sites", "ablate"), default="patch")
+    p.add_argument("--mode", choices=("patch", "heads", "sites", "ablate", "necessity"), default="patch")
+    p.add_argument("--first-scene", type=int, default=0, help="index of the first scene X")
     p.add_argument("--sites", nargs="+", default=[], help="--mode sites: U-Net module paths")
     args = p.parse_args()
     if args.mode == "sites" and not args.sites:
@@ -274,7 +281,7 @@ def main():
     cands = site_candidates(args.sites) if args.mode == "sites" else candidates(coords)
     print("candidates: " + ", ".join(f"{c['name']} ({len(c['coords'])})" for c in cands), flush=True)
     seed = args.seed if args.seed is not None else cm.cameras.heldout_seed
-    pairs = draw_pairs(cm.cameras, cameras, args.scenes)
+    pairs = draw_pairs(cm.cameras, cameras, args.scenes, args.first_scene)
     pairs = [(k, *pr) for k, pr in enumerate(pairs)][:args.pairs or None]
     i, n = (int(v) for v in args.shard.split("/"))
     clip_scorer = M.ClipScorer(device=cm.loaded.device)
