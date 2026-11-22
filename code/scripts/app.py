@@ -7,6 +7,9 @@
   Where motion lives    the Stage 4 selectivity maps, per coordinate, and the H1-H3 verdicts
   Cross-attention       per-frame maps of where each prompt word looks (saved for the four model cells, or
                         live), and Experiment 2 results when present
+  Viewpoint (novelty)   the novelty phase: does the motion path also carry the camera viewpoint, and can an
+                        action move onto another subject while the target keeps its subject and viewpoint?
+                        Saved CameraCtrl and MVDream results (no GPU), and a live CameraCtrl transfer (GPU)
 
 A live edit costs 70-105 s per generated clip on the laptop GPU (4 clips with the reference),
 so the results browser is the fast path during the viva.
@@ -102,9 +105,10 @@ footer { display: none !important; }
 
 HEADER = """
 <div class="hero">
-  <h1>Content vs. motion in a video diffusion model</h1>
+  <h1>Content, motion and viewpoint in video diffusion U-Nets</h1>
   <p class="thesis">Where AnimateDiff decides <span class="c">what is shown</span> and <span class="m">how it
-  moves</span>, and edits that change one while keeping the other.</p>
+  moves</span>, edits that change one while keeping the other, and (novelty phase) whether the camera viewpoint
+  travels with the motion.</p>
   <div class="legend">
     <span class="chip"><span class="dot-c"></span>Content: what is depicted</span>
     <span class="chip"><span class="dot-m"></span>Motion: how it moves</span>
@@ -306,6 +310,117 @@ def results_tab():
         return show, run, pair, [prompts, gallery, table, summary]
 
 
+# --- Viewpoint (novelty phase) ---------------------------------------------------------------------------
+
+def novelty_tab(live: bool):
+    from vdprobe import novelty_demo as N
+    pairs = N.matched_pairs()
+    with gr.Tab("Viewpoint (novelty)"):
+        gr.Markdown("**Novelty phase.** The review asked whether the layers that carry motion also carry the camera "
+                    "viewpoint, and whether an action can be moved onto another subject while the target keeps its "
+                    "own subject and viewpoint. Models: **CameraCtrl** (AnimateDiff with the camera path as an input) "
+                    "and **MVDream** (4-view image model). All clips share one noise tensor and differ in one factor.",
+                    elem_classes="lede")
+        with gr.Tabs():
+            # 1 -------------------------------------------------------------------------------------------
+            with gr.Tab("1 · Does motion carry viewpoint?"):
+                gr.Markdown("How strongly each U-Net block reacts to an **action** change, a **camera** change and a "
+                            "**text-viewpoint** change, relative to a subject change, at each denoising step. "
+                            "Above the dashed line the block reacts more to that factor than to the subject.")
+                with gr.Row():
+                    block = gr.Dropdown(N.BLOCKS, value="up_blocks.0", label="CameraCtrl block", scale=1)
+                    gr.Markdown("`up_blocks.0` holds the motion cell of Experiment 1. In CameraCtrl it ranks "
+                                "**28th of 375 cells for action and 25th for camera**: a camera change moves it "
+                                "about 5× more than a subject change.", elem_classes="lede")
+                curve = gr.Plot(label="Sensitivity over denoising steps")
+                with gr.Row():
+                    for f, c in N.figures()[:2]:
+                        gr.Image(value=f, label=c, height=330, interactive=False)
+                block.change(N.plot_block, block, curve)
+            # 2 -------------------------------------------------------------------------------------------
+            with gr.Tab("2 · Donor with another camera"):
+                gr.Markdown("Patching the motion modules from a donor filmed with a **different camera** brings the "
+                            "donor's camera along: the target's zoom turns into the donor's pan. This held for every "
+                            "block and every window of steps we tried.")
+                ex = N.mismatched_example()
+                if ex:
+                    gr.Gallery(value=ex["clips"], columns=4, height=340, object_fit="contain", label="Clips")
+                    gr.Dataframe(value=ex["scores"], interactive=False, label="Scores")
+                    for f, c in N.figures()[3:4]:
+                        gr.Image(value=f, label="Every patch we tried carries the donor's camera (24 pairs, 95% CI)",
+                                 height=300, interactive=False)
+            # 3 -------------------------------------------------------------------------------------------
+            with gr.Tab("3 · Action transfer, viewpoint kept"):
+                gr.Markdown("**Fix:** generate the donor with the **target's camera**. Then only the subject and the "
+                            "action differ, and patching one up-block's motion modules moves the donor's motion onto "
+                            "the target while the target keeps its own subject.")
+                with gr.Row():
+                    pair = gr.Dropdown([(N.pair_label(p), p) for p in pairs], value=pairs[0] if pairs else None,
+                                       label="Pair (24, held-out seed)", scale=3)
+                    cand = gr.Dropdown([(v, k) for k, v in N.CANDIDATES.items()], value="mm_up_blocks.1",
+                                       label="What is copied from the donor", scale=3)
+                cap = gr.Markdown()
+                clips = gr.Gallery(columns=4, height=340, object_fit="contain", label="Clips")
+                scores = gr.Dataframe(interactive=False, label="Scores for this pair")
+                gr.Dataframe(value=N.matched_summary(), interactive=False,
+                             label="All 24 pairs: mean and 95% bootstrap CI")
+                for f, c in N.figures()[2:3]:
+                    gr.Image(value=f, label="Trade-off: more blocks or steps move more motion and more identity",
+                             height=380, interactive=False)
+
+                def show(p, c):
+                    d = N.matched_pair(p, c)
+                    return d["caption"], d["clips"], d["scores"]
+                pair.change(show, [pair, cand], [cap, clips, scores])
+                cand.change(show, [pair, cand], [cap, clips, scores])
+            # 4 -------------------------------------------------------------------------------------------
+            with gr.Tab("4 · Multi-view model (MVDream)"):
+                gr.Markdown("The same test on a multi-view model. With the donor rendered from the same view ring, "
+                            "patching encoder blocks 0-3 moves the donor's pose into all four views of the target "
+                            "(pose score 2.27 [0.68, 4.00]) and the target keeps its identity (leak −0.01).")
+                gr.Gallery(value=N.mv_sheets(), columns=2, height="auto", object_fit="contain",
+                           label="Same view ring, 8 pairs")
+            # 5 -------------------------------------------------------------------------------------------
+            with gr.Tab("5 · Pre-registered rules"):
+                gr.Markdown("Every rule was written down before the run that tests it.")
+                gr.Dataframe(value=N.verdicts(), interactive=False, wrap=True)
+            # 6 -------------------------------------------------------------------------------------------
+            with gr.Tab("6 · Try it live (GPU)"):
+                if not live:
+                    gr.Markdown("Needs a CUDA GPU (CameraCtrl, about 30 s per pair on an H100). Start the app without "
+                                "`--no-gpu` on a GPU machine; the saved results above need none.")
+                else:
+                    subjects = ["horse", "tiger", "wolf", "deer", "brown bear", "golden retriever", "german shepherd"]
+                    eng = N.LiveTransfer()
+                    with gr.Row():
+                        dn = gr.Dropdown(subjects, value="deer", label="Donor subject")
+                        vb = gr.Dropdown(["jumping", "walking", "spinning"], value="jumping", label="Donor action")
+                        tg = gr.Dropdown(subjects, value="horse", label="Target subject (runs)")
+                        cm_ = gr.Dropdown(["off", "pan-left", "pan-right", "zoom-in", "zoom-out", "tilt-up", "roll-cw"],
+                                          value="zoom-in", label="Camera (both clips)")
+                        sd = gr.Number(value=2024, precision=0, label="Seed")
+                    go = gr.Button("Generate donor, target, reference and patched target", variant="primary")
+                    out_g = gr.Gallery(columns=5, height="auto", object_fit="contain", label="Clips")
+                    out_t = gr.Dataframe(interactive=False, label="Scores")
+
+                    def live_run(d, v, t, c, s, progress=gr.Progress()):
+                        import tempfile
+                        progress(0.05, desc="Loading CameraCtrl (first run only)")
+                        out = Path(tempfile.mkdtemp(prefix="live_", dir=RESULTS))
+                        r = eng.run(d, t, v, c, int(s), out)
+                        g = r["dir"] / "gifs"
+                        keys = [("S", f"Donor: a {d} {v}"), ("T", f"Target: a {t} running"),
+                                ("I", f"Reference: a {t} {v}"), ("T_from_S_mm_up_blocks.1", "Patched, up-block 1"),
+                                ("T_from_S_mm_up123@0-12", "Patched, up-blocks 1-3, steps 0-12")]
+                        tab = r["rows"][["candidate", "act_src", "leak_subj"]].rename(columns={
+                            "candidate": "Patch", "act_src": "Motion transfer", "leak_subj": "Identity leak"}).round(3)
+                        return [(playable(str(g / (k + ".gif"))), lab) for k, lab in keys if (g / (k + ".gif")).exists()], tab
+                    go.click(live_run, [dn, vb, tg, cm_, sd], [out_g, out_t])
+        if pairs:
+            return show, pair, cand, [cap, clips, scores], (N.plot_block, block, curve)
+    return None
+
+
 # --- Where motion lives -------------------------------------------------------------------------------
 
 def _headline(maps, i, name):
@@ -477,7 +592,7 @@ def xattn_tab(engine: Engine | None, vocab: dict):
 # --- app -------------------------------------------------------------------------------------------------
 
 def build(engine: Engine | None) -> gr.Blocks:
-    with gr.Blocks(title="Content vs. motion in AnimateDiff") as demo:
+    with gr.Blocks(title="Content, motion and viewpoint in video diffusion U-Nets") as demo:
         gr.HTML(HEADER)
         with gr.Accordion("How the scores work", open=False):
             try:
@@ -491,6 +606,10 @@ def build(engine: Engine | None) -> gr.Blocks:
         b = results_tab()
         m = maps_tab()
         x = xattn_tab(engine, vocabulary())
+        nv = novelty_tab(engine is not None)
+        if nv:
+            demo.load(nv[0], [nv[1], nv[2]], nv[3])
+            demo.load(nv[4][0], nv[4][1], nv[4][2])
         if b:
             demo.load(b[0], [b[1], b[2]], b[3])
         if m:

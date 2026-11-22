@@ -19,7 +19,8 @@ Model: AnimateDiff = Stable Diffusion 1.5 + `guoyww/animatediff-motion-adapter-v
 | 3 · Patching framework | Whole-tensor, channel, α-scaled and **component** patches (frame-varying part x̃ or frame mean x̄ only), temporal attention injection, null / mis-indexed / symmetry controls | `patching.py`, `edit.py` |
 | 4 · Editing demonstration | Dev pairs choose the patch site; 12 held-out test pairs score it against a prompt-only baseline | `edit_sweep.py`, `score_edits.py` |
 | Trained model | Motion LoRAs on HMDB51: full, probe-guided (placed by the Deliverable 2 map), wrong-place control | `lora.py`, `train_motion_lora.py` |
-| Interface | Gradio app: live edits, upload your own video, browse every scored clip, the selectivity maps | `scripts/app.py`, `demo.py` |
+| Interface | Gradio app: live edits, upload your own video, browse every scored clip, the selectivity maps, the novelty-phase results | `scripts/app.py`, `demo.py`, `novelty_demo.py` |
+| Novelty phase | Camera motion (MotionLoRAs, CameraCtrl), viewpoint vs action (CameraCtrl, MVDream), SAE, attribution patching | see *Novelty phase* below |
 
 ## Results
 
@@ -126,6 +127,29 @@ layout and the latent runs away. The patch is a tool for pairs that share their 
 not a layout-free motion transplant. Attention injection carries *where* things move in the
 frame, not *which object* moves.
 
+## Novelty phase: camera and viewpoint
+
+The review of the intensive phase asked whether the layers that carry motion also carry the camera viewpoint, and
+whether an action can be moved onto another subject while the target keeps its subject and viewpoint. Two models
+take the viewpoint as an input: **CameraCtrl** (AnimateDiff v3 + Plücker-ray camera features in every motion module,
+grafted onto this harness and checked against the authors' code) and **MVDream** (SD2.1, 4 views, a camera matrix
+per view). Every hypothesis and pass rule was fixed before the run that tests it; patching uses 24 pairs on the
+held-out seed 2024, with 95% bootstrap CIs.
+
+| Question | Result |
+|---|---|
+| Do the motion layers respond to viewpoint? (CameraCtrl sweep, 272 pairs) | Yes. The Experiment 1 motion cell (`up_blocks.0` motion module, step 0) ranks 28/375 for action and 25/375 for camera. The camera is fixed in steps 0–2 in the down blocks; the action grows in the up blocks. |
+| Same in a multi-view model? (MVDream sweep, 146 pairs) | The most pose-sensitive cells (first decoder blocks, steps 0–2) are also the most camera-sensitive (ranks 1–8 of 750). |
+| Patch from a donor with another camera | Every motion-module patch carries the donor's camera (0.3–0.8), at early and late steps alike. |
+| Patch from a donor rendered with the target's camera | `up_blocks.1` motion modules, steps 0–7: motion transfer 0.26 [0.18, 0.34], identity leak 0.05, identical in a second run. More blocks or steps move more motion and more identity (up 1–3, steps 0–12: 0.59, leak 0.73). |
+| MVDream, same view ring | Encoder blocks 0–3 move the pose (CLIP pose score 2.27 [0.68, 4.00]) with identity leak −0.01. |
+
+Scripts: `camera_sweep.py --model cc --set configs/av_set.yaml` (sweep), `action_view_patch.py`
+(`--late`, `--matched`, `--combo` for the patching studies), `mvdream_probe.py sweep|patch`, `action_view_analysis.py`
+(verdicts), `novelty_figures.py` (figures). Results: `results/action_view/`, `results/autoresearch/`. The earlier
+camera-motion parts (MotionLoRA and CameraCtrl patching, SAE steering, attribution patching) are in
+`results/camera/` and `results/kaggle/`. A recording guide for the demo video is in `DEMO.md`.
+
 ## Setup
 
 ```bash
@@ -167,6 +191,10 @@ python scripts/app.py --share         # public Gradio link
   summary. Needs `results/kaggle/` (see *Results on disk*).
 - **Where motion lives.** S_dyn and S_stat over the 25 steps for each of the 16 coordinates,
   the H1–H3 verdicts and the sweep figures.
+- **Viewpoint (novelty).** The novelty-phase results without a GPU: sensitivity of each block to action, camera
+  and text-view changes; donor with another camera; viewpoint-matched action transfer on all 24 pairs (every clip
+  and score); MVDream sheets; the pre-registered rules. On a GPU, a live CameraCtrl transfer for any subject,
+  action and camera.
 
 Each live edit is saved under `results/interface/<time>_<pair>/` (GIFs, `scores.csv`,
 `request.json`).
