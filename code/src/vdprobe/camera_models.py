@@ -73,11 +73,12 @@ def default_config(model: str):
     return CONFIG_DIR / CONFIGS[model][0]
 
 
-def load_camera_model(model: str, config=None, profile: str | None = None, cameras=None) -> CameraModel:
-    """Build the pipeline of `model`. `cameras` limits which MotionLoRAs are attached (lora only)."""
+def load_camera_model(model: str, config=None, profile: str | None = None, cameras=None, camera_set=None) -> CameraModel:
+    """Build the pipeline of `model`. `cameras` limits which MotionLoRAs are attached (lora only).
+    `camera_set`: another set file with the same cameras (D-45: subject/action prompts instead of scenes)."""
     if model not in MODELS:
         raise ValueError(f"model must be one of {MODELS}")
-    cs = CameraSet(CONFIG_DIR / CONFIGS[model][1])
+    cs = CameraSet(camera_set or CONFIG_DIR / CONFIGS[model][1])
     cfg = GenerationConfig.from_yaml(config or default_config(model))
     if model == "cc":
         from .cameractrl.model import camera_switcher, load_cameractrl

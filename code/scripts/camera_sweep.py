@@ -25,6 +25,7 @@ import json
 import resource
 import time
 from collections import defaultdict
+from pathlib import Path
 
 import torch
 
@@ -225,15 +226,17 @@ def main():
     p.add_argument("--token-steps", type=int, nargs="+", default=list(TOKEN_STEPS))
     p.add_argument("--verify", action="store_true", help="check the no-camera track against a solo run and pipe()")
     p.add_argument("--force", action="store_true")
+    p.add_argument("--set", type=Path, default=None, help="camera set file (default: the model's own; D-45 uses configs/av_set.yaml)")
     args = p.parse_args()
 
     from vdprobe.camera_set import CameraSet
     from vdprobe.camera_models import CONFIGS
     from vdprobe.config import CONFIG_DIR
-    names = CameraSet(CONFIG_DIR / CONFIGS[args.model][1])
+    names = CameraSet(args.set or CONFIG_DIR / CONFIGS[args.model][1])
     attach = names.cameras[:args.cameras] if args.cameras else None
     cm = load_camera_model(args.model, args.config or default_config(args.model), args.profile,
-                           cameras=[c for c in attach if c != names.anchor_camera] if attach else None)
+                           cameras=[c for c in attach if c != names.anchor_camera] if attach else None,
+                           camera_set=args.set)
     coords = enumerate_coordinates(cm.loaded.unet)
     coarse = coarse_coordinates(coords)
     print(f"model {cm.name}: {len(coords)} coordinates, coarse {len(coarse)}, revisions {cm.loaded.revisions}", flush=True)

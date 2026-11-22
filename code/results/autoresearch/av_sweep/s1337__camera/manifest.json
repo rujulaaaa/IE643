@@ -1,0 +1,878 @@
+{
+  "experiment": "camera_sweep",
+  "date": "2026-11-22",
+  "python": "3.12.3",
+  "torch": "2.10.0+cu128",
+  "diffusers": "0.40.0",
+  "transformers": "5.24.0",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "gpu_total_vram_gb": 79.18,
+  "capability": "sm_90",
+  "profile": "gpu",
+  "revisions": {
+    "base_model": {
+      "repo_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "commit": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+      "variant": "fp16"
+    },
+    "motion_adapter": {
+      "repo_id": "guoyww/animatediff-motion-adapter-v1-5-3",
+      "commit": "2e8139b1d1269fd8a21deb96ad19455e187692eb"
+    },
+    "authors_groupnorm_layers": 20,
+    "cameractrl": {
+      "repo_id": "hehao13/CameraCtrl",
+      "file": "CameraCtrl.ckpt"
+    },
+    "domain_lora": {
+      "repo_id": "guoyww/animatediff",
+      "file": "v3_sd15_adapter.ckpt",
+      "scale": 1.0,
+      "merged_matrices": 128
+    }
+  },
+  "frames": 16,
+  "resolution": "256x384",
+  "steps": 25,
+  "scheduler": "DDIM",
+  "guidance_scale": 14.0,
+  "model": "cc",
+  "seed": 1337,
+  "scene": "camera",
+  "n_clips": 77,
+  "n_pairs": 136,
+  "coords": [
+    "down_blocks.0.motion_modules.1",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.1.motion_modules.1",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.2.motion_modules.1",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.3.motion_modules.1",
+    "mid_block.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.2",
+    "up_blocks.1.motion_modules.2",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.2",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.2",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2"
+  ],
+  "all_coords": [
+    "down_blocks.0.attentions.0.transformer_blocks.0.attn1",
+    "down_blocks.0.attentions.0.transformer_blocks.0.attn2",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn1",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.0.motion_modules.0",
+    "down_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+    "down_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+    "down_blocks.0.motion_modules.1",
+    "down_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+    "down_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+    "down_blocks.1.attentions.0.transformer_blocks.0.attn1",
+    "down_blocks.1.attentions.0.transformer_blocks.0.attn2",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn1",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.1.motion_modules.0",
+    "down_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+    "down_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+    "down_blocks.1.motion_modules.1",
+    "down_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+    "down_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+    "down_blocks.2.attentions.0.transformer_blocks.0.attn1",
+    "down_blocks.2.attentions.0.transformer_blocks.0.attn2",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn1",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2",
+    "down_blocks.2.motion_modules.0",
+    "down_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+    "down_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+    "down_blocks.2.motion_modules.1",
+    "down_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+    "down_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+    "down_blocks.3.motion_modules.0",
+    "down_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+    "down_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+    "down_blocks.3.motion_modules.1",
+    "down_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+    "down_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.0",
+    "up_blocks.0.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.1",
+    "up_blocks.0.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.0.motion_modules.2",
+    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.0.motion_modules.2.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn2",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn1",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.1.motion_modules.0",
+    "up_blocks.1.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.1.motion_modules.1",
+    "up_blocks.1.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.1.motion_modules.2",
+    "up_blocks.1.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.1.motion_modules.2.transformer_blocks.0.attn2",
+    "up_blocks.2.attentions.0.transformer_blocks.0.attn1",
+    "up_blocks.2.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.2.attentions.1.transformer_blocks.0.attn1",
+    "up_blocks.2.attentions.1.transformer_blocks.0.attn2",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn1",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.0",
+    "up_blocks.2.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.2.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.1",
+    "up_blocks.2.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.2.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.2.motion_modules.2",
+    "up_blocks.2.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.2.motion_modules.2.transformer_blocks.0.attn2",
+    "up_blocks.3.attentions.0.transformer_blocks.0.attn1",
+    "up_blocks.3.attentions.0.transformer_blocks.0.attn2",
+    "up_blocks.3.attentions.1.transformer_blocks.0.attn1",
+    "up_blocks.3.attentions.1.transformer_blocks.0.attn2",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn1",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.0",
+    "up_blocks.3.motion_modules.0.transformer_blocks.0.attn1",
+    "up_blocks.3.motion_modules.0.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.1",
+    "up_blocks.3.motion_modules.1.transformer_blocks.0.attn1",
+    "up_blocks.3.motion_modules.1.transformer_blocks.0.attn2",
+    "up_blocks.3.motion_modules.2",
+    "up_blocks.3.motion_modules.2.transformer_blocks.0.attn1",
+    "up_blocks.3.motion_modules.2.transformer_blocks.0.attn2",
+    "mid_block.attentions.0.transformer_blocks.0.attn1",
+    "mid_block.attentions.0.transformer_blocks.0.attn2"
+  ],
+  "sketch_dim": 512,
+  "clips": [
+    "1337__a-horse-running-on-a-beach-side-view__off",
+    "1337__a-horse-running-on-a-beach-side-view__pan-left",
+    "1337__a-horse-running-on-a-beach-side-view__pan-right",
+    "1337__a-horse-running-on-a-beach-side-view__tilt-up",
+    "1337__a-horse-running-on-a-beach-side-view__zoom-in",
+    "1337__a-horse-running-on-a-beach-side-view__zoom-out",
+    "1337__a-horse-running-on-a-beach-side-view__roll-cw",
+    "1337__a-horse-walking-on-a-beach-side-view__off",
+    "1337__a-horse-walking-on-a-beach-side-view__pan-left",
+    "1337__a-horse-walking-on-a-beach-side-view__pan-right",
+    "1337__a-horse-walking-on-a-beach-side-view__tilt-up",
+    "1337__a-horse-walking-on-a-beach-side-view__zoom-in",
+    "1337__a-horse-walking-on-a-beach-side-view__zoom-out",
+    "1337__a-horse-walking-on-a-beach-side-view__roll-cw",
+    "1337__a-horse-jumping-on-a-beach-side-view__off",
+    "1337__a-horse-jumping-on-a-beach-side-view__pan-left",
+    "1337__a-horse-jumping-on-a-beach-side-view__pan-right",
+    "1337__a-horse-jumping-on-a-beach-side-view__tilt-up",
+    "1337__a-horse-jumping-on-a-beach-side-view__zoom-in",
+    "1337__a-horse-jumping-on-a-beach-side-view__zoom-out",
+    "1337__a-horse-jumping-on-a-beach-side-view__roll-cw",
+    "1337__a-horse-spinning-on-a-beach-side-view__off",
+    "1337__a-horse-spinning-on-a-beach-side-view__pan-left",
+    "1337__a-horse-spinning-on-a-beach-side-view__pan-right",
+    "1337__a-horse-spinning-on-a-beach-side-view__tilt-up",
+    "1337__a-horse-spinning-on-a-beach-side-view__zoom-in",
+    "1337__a-horse-spinning-on-a-beach-side-view__zoom-out",
+    "1337__a-horse-spinning-on-a-beach-side-view__roll-cw",
+    "1337__a-tiger-running-on-a-beach-side-view__off",
+    "1337__a-tiger-running-on-a-beach-side-view__pan-left",
+    "1337__a-tiger-running-on-a-beach-side-view__pan-right",
+    "1337__a-tiger-running-on-a-beach-side-view__tilt-up",
+    "1337__a-tiger-running-on-a-beach-side-view__zoom-in",
+    "1337__a-tiger-running-on-a-beach-side-view__zoom-out",
+    "1337__a-tiger-running-on-a-beach-side-view__roll-cw",
+    "1337__a-wolf-running-on-a-beach-side-view__off",
+    "1337__a-wolf-running-on-a-beach-side-view__pan-left",
+    "1337__a-wolf-running-on-a-beach-side-view__pan-right",
+    "1337__a-wolf-running-on-a-beach-side-view__tilt-up",
+    "1337__a-wolf-running-on-a-beach-side-view__zoom-in",
+    "1337__a-wolf-running-on-a-beach-side-view__zoom-out",
+    "1337__a-wolf-running-on-a-beach-side-view__roll-cw",
+    "1337__a-deer-running-on-a-beach-side-view__off",
+    "1337__a-deer-running-on-a-beach-side-view__pan-left",
+    "1337__a-deer-running-on-a-beach-side-view__pan-right",
+    "1337__a-deer-running-on-a-beach-side-view__tilt-up",
+    "1337__a-deer-running-on-a-beach-side-view__zoom-in",
+    "1337__a-deer-running-on-a-beach-side-view__zoom-out",
+    "1337__a-deer-running-on-a-beach-side-view__roll-cw",
+    "1337__a-brown-bear-running-on-a-beach-side-view__off",
+    "1337__a-brown-bear-running-on-a-beach-side-view__pan-left",
+    "1337__a-brown-bear-running-on-a-beach-side-view__pan-right",
+    "1337__a-brown-bear-running-on-a-beach-side-view__tilt-up",
+    "1337__a-brown-bear-running-on-a-beach-side-view__zoom-in",
+    "1337__a-brown-bear-running-on-a-beach-side-view__zoom-out",
+    "1337__a-brown-bear-running-on-a-beach-side-view__roll-cw",
+    "1337__a-horse-running-on-a-beach-front-view__off",
+    "1337__a-horse-running-on-a-beach-front-view__pan-left",
+    "1337__a-horse-running-on-a-beach-front-view__pan-right",
+    "1337__a-horse-running-on-a-beach-front-view__tilt-up",
+    "1337__a-horse-running-on-a-beach-front-view__zoom-in",
+    "1337__a-horse-running-on-a-beach-front-view__zoom-out",
+    "1337__a-horse-running-on-a-beach-front-view__roll-cw",
+    "1337__a-horse-running-on-a-beach-rear-view__off",
+    "1337__a-horse-running-on-a-beach-rear-view__pan-left",
+    "1337__a-horse-running-on-a-beach-rear-view__pan-right",
+    "1337__a-horse-running-on-a-beach-rear-view__tilt-up",
+    "1337__a-horse-running-on-a-beach-rear-view__zoom-in",
+    "1337__a-horse-running-on-a-beach-rear-view__zoom-out",
+    "1337__a-horse-running-on-a-beach-rear-view__roll-cw",
+    "1337__a-horse-running-on-a-beach-aerial-view__off",
+    "1337__a-horse-running-on-a-beach-aerial-view__pan-left",
+    "1337__a-horse-running-on-a-beach-aerial-view__pan-right",
+    "1337__a-horse-running-on-a-beach-aerial-view__tilt-up",
+    "1337__a-horse-running-on-a-beach-aerial-view__zoom-in",
+    "1337__a-horse-running-on-a-beach-aerial-view__zoom-out",
+    "1337__a-horse-running-on-a-beach-aerial-view__roll-cw"
+  ],
+  "clip_meta": {
+    "1337__a-horse-running-on-a-beach-side-view__off": {
+      "scene": "a horse running on a beach, side view",
+      "camera": "off",
+      "subject": "a horse running on a beach, side view",
+      "verb": "off",
+      "family": "a horse running on a beach, side view"
+    },
+    "1337__a-horse-running-on-a-beach-side-view__pan-left": {
+      "scene": "a horse running on a beach, side view",
+      "camera": "pan-left",
+      "subject": "a horse running on a beach, side view",
+      "verb": "pan-left",
+      "family": "a horse running on a beach, side view"
+    },
+    "1337__a-horse-running-on-a-beach-side-view__pan-right": {
+      "scene": "a horse running on a beach, side view",
+      "camera": "pan-right",
+      "subject": "a horse running on a beach, side view",
+      "verb": "pan-right",
+      "family": "a horse running on a beach, side view"
+    },
+    "1337__a-horse-running-on-a-beach-side-view__tilt-up": {
+      "scene": "a horse running on a beach, side view",
+      "camera": "tilt-up",
+      "subject": "a horse running on a beach, side view",
+      "verb": "tilt-up",
+      "family": "a horse running on a beach, side view"
+    },
+    "1337__a-horse-running-on-a-beach-side-view__zoom-in": {
+      "scene": "a horse running on a beach, side view",
+      "camera": "zoom-in",
+      "subject": "a horse running on a beach, side view",
+      "verb": "zoom-in",
+      "family": "a horse running on a beach, side view"
+    },
+    "1337__a-horse-running-on-a-beach-side-view__zoom-out": {
+      "scene": "a horse running on a beach, side view",
+      "camera": "zoom-out",
+      "subject": "a horse running on a beach, side view",
+      "verb": "zoom-out",
+      "family": "a horse running on a beach, side view"
+    },
+    "1337__a-horse-running-on-a-beach-side-view__roll-cw": {
+      "scene": "a horse running on a beach, side view",
+      "camera": "roll-cw",
+      "subject": "a horse running on a beach, side view",
+      "verb": "roll-cw",
+      "family": "a horse running on a beach, side view"
+    },
+    "1337__a-horse-walking-on-a-beach-side-view__off": {
+      "scene": "a horse walking on a beach, side view",
+      "camera": "off",
+      "subject": "a horse walking on a beach, side view",
+      "verb": "off",
+      "family": "a horse walking on a beach, side view"
+    },
+    "1337__a-horse-walking-on-a-beach-side-view__pan-left": {
+      "scene": "a horse walking on a beach, side view",
+      "camera": "pan-left",
+      "subject": "a horse walking on a beach, side view",
+      "verb": "pan-left",
+      "family": "a horse walking on a beach, side view"
+    },
+    "1337__a-horse-walking-on-a-beach-side-view__pan-right": {
+      "scene": "a horse walking on a beach, side view",
+      "camera": "pan-right",
+      "subject": "a horse walking on a beach, side view",
+      "verb": "pan-right",
+      "family": "a horse walking on a beach, side view"
+    },
+    "1337__a-horse-walking-on-a-beach-side-view__tilt-up": {
+      "scene": "a horse walking on a beach, side view",
+      "camera": "tilt-up",
+      "subject": "a horse walking on a beach, side view",
+      "verb": "tilt-up",
+      "family": "a horse walking on a beach, side view"
+    },
+    "1337__a-horse-walking-on-a-beach-side-view__zoom-in": {
+      "scene": "a horse walking on a beach, side view",
+      "camera": "zoom-in",
+      "subject": "a horse walking on a beach, side view",
+      "verb": "zoom-in",
+      "family": "a horse walking on a beach, side view"
+    },
+    "1337__a-horse-walking-on-a-beach-side-view__zoom-out": {
+      "scene": "a horse walking on a beach, side view",
+      "camera": "zoom-out",
+      "subject": "a horse walking on a beach, side view",
+      "verb": "zoom-out",
+      "family": "a horse walking on a beach, side view"
+    },
+    "1337__a-horse-walking-on-a-beach-side-view__roll-cw": {
+      "scene": "a horse walking on a beach, side view",
+      "camera": "roll-cw",
+      "subject": "a horse walking on a beach, side view",
+      "verb": "roll-cw",
+      "family": "a horse walking on a beach, side view"
+    },
+    "1337__a-horse-jumping-on-a-beach-side-view__off": {
+      "scene": "a horse jumping on a beach, side view",
+      "camera": "off",
+      "subject": "a horse jumping on a beach, side view",
+      "verb": "off",
+      "family": "a horse jumping on a beach, side view"
+    },
+    "1337__a-horse-jumping-on-a-beach-side-view__pan-left": {
+      "scene": "a horse jumping on a beach, side view",
+      "camera": "pan-left",
+      "subject": "a horse jumping on a beach, side view",
+      "verb": "pan-left",
+      "family": "a horse jumping on a beach, side view"
+    },
+    "1337__a-horse-jumping-on-a-beach-side-view__pan-right": {
+      "scene": "a horse jumping on a beach, side view",
+      "camera": "pan-right",
+      "subject": "a horse jumping on a beach, side view",
+      "verb": "pan-right",
+      "family": "a horse jumping on a beach, side view"
+    },
+    "1337__a-horse-jumping-on-a-beach-side-view__tilt-up": {
+      "scene": "a horse jumping on a beach, side view",
+      "camera": "tilt-up",
+      "subject": "a horse jumping on a beach, side view",
+      "verb": "tilt-up",
+      "family": "a horse jumping on a beach, side view"
+    },
+    "1337__a-horse-jumping-on-a-beach-side-view__zoom-in": {
+      "scene": "a horse jumping on a beach, side view",
+      "camera": "zoom-in",
+      "subject": "a horse jumping on a beach, side view",
+      "verb": "zoom-in",
+      "family": "a horse jumping on a beach, side view"
+    },
+    "1337__a-horse-jumping-on-a-beach-side-view__zoom-out": {
+      "scene": "a horse jumping on a beach, side view",
+      "camera": "zoom-out",
+      "subject": "a horse jumping on a beach, side view",
+      "verb": "zoom-out",
+      "family": "a horse jumping on a beach, side view"
+    },
+    "1337__a-horse-jumping-on-a-beach-side-view__roll-cw": {
+      "scene": "a horse jumping on a beach, side view",
+      "camera": "roll-cw",
+      "subject": "a horse jumping on a beach, side view",
+      "verb": "roll-cw",
+      "family": "a horse jumping on a beach, side view"
+    },
+    "1337__a-horse-spinning-on-a-beach-side-view__off": {
+      "scene": "a horse spinning on a beach, side view",
+      "camera": "off",
+      "subject": "a horse spinning on a beach, side view",
+      "verb": "off",
+      "family": "a horse spinning on a beach, side view"
+    },
+    "1337__a-horse-spinning-on-a-beach-side-view__pan-left": {
+      "scene": "a horse spinning on a beach, side view",
+      "camera": "pan-left",
+      "subject": "a horse spinning on a beach, side view",
+      "verb": "pan-left",
+      "family": "a horse spinning on a beach, side view"
+    },
+    "1337__a-horse-spinning-on-a-beach-side-view__pan-right": {
+      "scene": "a horse spinning on a beach, side view",
+      "camera": "pan-right",
+      "subject": "a horse spinning on a beach, side view",
+      "verb": "pan-right",
+      "family": "a horse spinning on a beach, side view"
+    },
+    "1337__a-horse-spinning-on-a-beach-side-view__tilt-up": {
+      "scene": "a horse spinning on a beach, side view",
+      "camera": "tilt-up",
+      "subject": "a horse spinning on a beach, side view",
+      "verb": "tilt-up",
+      "family": "a horse spinning on a beach, side view"
+    },
+    "1337__a-horse-spinning-on-a-beach-side-view__zoom-in": {
+      "scene": "a horse spinning on a beach, side view",
+      "camera": "zoom-in",
+      "subject": "a horse spinning on a beach, side view",
+      "verb": "zoom-in",
+      "family": "a horse spinning on a beach, side view"
+    },
+    "1337__a-horse-spinning-on-a-beach-side-view__zoom-out": {
+      "scene": "a horse spinning on a beach, side view",
+      "camera": "zoom-out",
+      "subject": "a horse spinning on a beach, side view",
+      "verb": "zoom-out",
+      "family": "a horse spinning on a beach, side view"
+    },
+    "1337__a-horse-spinning-on-a-beach-side-view__roll-cw": {
+      "scene": "a horse spinning on a beach, side view",
+      "camera": "roll-cw",
+      "subject": "a horse spinning on a beach, side view",
+      "verb": "roll-cw",
+      "family": "a horse spinning on a beach, side view"
+    },
+    "1337__a-tiger-running-on-a-beach-side-view__off": {
+      "scene": "a tiger running on a beach, side view",
+      "camera": "off",
+      "subject": "a tiger running on a beach, side view",
+      "verb": "off",
+      "family": "a tiger running on a beach, side view"
+    },
+    "1337__a-tiger-running-on-a-beach-side-view__pan-left": {
+      "scene": "a tiger running on a beach, side view",
+      "camera": "pan-left",
+      "subject": "a tiger running on a beach, side view",
+      "verb": "pan-left",
+      "family": "a tiger running on a beach, side view"
+    },
+    "1337__a-tiger-running-on-a-beach-side-view__pan-right": {
+      "scene": "a tiger running on a beach, side view",
+      "camera": "pan-right",
+      "subject": "a tiger running on a beach, side view",
+      "verb": "pan-right",
+      "family": "a tiger running on a beach, side view"
+    },
+    "1337__a-tiger-running-on-a-beach-side-view__tilt-up": {
+      "scene": "a tiger running on a beach, side view",
+      "camera": "tilt-up",
+      "subject": "a tiger running on a beach, side view",
+      "verb": "tilt-up",
+      "family": "a tiger running on a beach, side view"
+    },
+    "1337__a-tiger-running-on-a-beach-side-view__zoom-in": {
+      "scene": "a tiger running on a beach, side view",
+      "camera": "zoom-in",
+      "subject": "a tiger running on a beach, side view",
+      "verb": "zoom-in",
+      "family": "a tiger running on a beach, side view"
+    },
+    "1337__a-tiger-running-on-a-beach-side-view__zoom-out": {
+      "scene": "a tiger running on a beach, side view",
+      "camera": "zoom-out",
+      "subject": "a tiger running on a beach, side view",
+      "verb": "zoom-out",
+      "family": "a tiger running on a beach, side view"
+    },
+    "1337__a-tiger-running-on-a-beach-side-view__roll-cw": {
+      "scene": "a tiger running on a beach, side view",
+      "camera": "roll-cw",
+      "subject": "a tiger running on a beach, side view",
+      "verb": "roll-cw",
+      "family": "a tiger running on a beach, side view"
+    },
+    "1337__a-wolf-running-on-a-beach-side-view__off": {
+      "scene": "a wolf running on a beach, side view",
+      "camera": "off",
+      "subject": "a wolf running on a beach, side view",
+      "verb": "off",
+      "family": "a wolf running on a beach, side view"
+    },
+    "1337__a-wolf-running-on-a-beach-side-view__pan-left": {
+      "scene": "a wolf running on a beach, side view",
+      "camera": "pan-left",
+      "subject": "a wolf running on a beach, side view",
+      "verb": "pan-left",
+      "family": "a wolf running on a beach, side view"
+    },
+    "1337__a-wolf-running-on-a-beach-side-view__pan-right": {
+      "scene": "a wolf running on a beach, side view",
+      "camera": "pan-right",
+      "subject": "a wolf running on a beach, side view",
+      "verb": "pan-right",
+      "family": "a wolf running on a beach, side view"
+    },
+    "1337__a-wolf-running-on-a-beach-side-view__tilt-up": {
+      "scene": "a wolf running on a beach, side view",
+      "camera": "tilt-up",
+      "subject": "a wolf running on a beach, side view",
+      "verb": "tilt-up",
+      "family": "a wolf running on a beach, side view"
+    },
+    "1337__a-wolf-running-on-a-beach-side-view__zoom-in": {
+      "scene": "a wolf running on a beach, side view",
+      "camera": "zoom-in",
+      "subject": "a wolf running on a beach, side view",
+      "verb": "zoom-in",
+      "family": "a wolf running on a beach, side view"
+    },
+    "1337__a-wolf-running-on-a-beach-side-view__zoom-out": {
+      "scene": "a wolf running on a beach, side view",
+      "camera": "zoom-out",
+      "subject": "a wolf running on a beach, side view",
+      "verb": "zoom-out",
+      "family": "a wolf running on a beach, side view"
+    },
+    "1337__a-wolf-running-on-a-beach-side-view__roll-cw": {
+      "scene": "a wolf running on a beach, side view",
+      "camera": "roll-cw",
+      "subject": "a wolf running on a beach, side view",
+      "verb": "roll-cw",
+      "family": "a wolf running on a beach, side view"
+    },
+    "1337__a-deer-running-on-a-beach-side-view__off": {
+      "scene": "a deer running on a beach, side view",
+      "camera": "off",
+      "subject": "a deer running on a beach, side view",
+      "verb": "off",
+      "family": "a deer running on a beach, side view"
+    },
+    "1337__a-deer-running-on-a-beach-side-view__pan-left": {
+      "scene": "a deer running on a beach, side view",
+      "camera": "pan-left",
+      "subject": "a deer running on a beach, side view",
+      "verb": "pan-left",
+      "family": "a deer running on a beach, side view"
+    },
+    "1337__a-deer-running-on-a-beach-side-view__pan-right": {
+      "scene": "a deer running on a beach, side view",
+      "camera": "pan-right",
+      "subject": "a deer running on a beach, side view",
+      "verb": "pan-right",
+      "family": "a deer running on a beach, side view"
+    },
+    "1337__a-deer-running-on-a-beach-side-view__tilt-up": {
+      "scene": "a deer running on a beach, side view",
+      "camera": "tilt-up",
+      "subject": "a deer running on a beach, side view",
+      "verb": "tilt-up",
+      "family": "a deer running on a beach, side view"
+    },
+    "1337__a-deer-running-on-a-beach-side-view__zoom-in": {
+      "scene": "a deer running on a beach, side view",
+      "camera": "zoom-in",
+      "subject": "a deer running on a beach, side view",
+      "verb": "zoom-in",
+      "family": "a deer running on a beach, side view"
+    },
+    "1337__a-deer-running-on-a-beach-side-view__zoom-out": {
+      "scene": "a deer running on a beach, side view",
+      "camera": "zoom-out",
+      "subject": "a deer running on a beach, side view",
+      "verb": "zoom-out",
+      "family": "a deer running on a beach, side view"
+    },
+    "1337__a-deer-running-on-a-beach-side-view__roll-cw": {
+      "scene": "a deer running on a beach, side view",
+      "camera": "roll-cw",
+      "subject": "a deer running on a beach, side view",
+      "verb": "roll-cw",
+      "family": "a deer running on a beach, side view"
+    },
+    "1337__a-brown-bear-running-on-a-beach-side-view__off": {
+      "scene": "a brown bear running on a beach, side view",
+      "camera": "off",
+      "subject": "a brown bear running on a beach, side view",
+      "verb": "off",
+      "family": "a brown bear running on a beach, side view"
+    },
+    "1337__a-brown-bear-running-on-a-beach-side-view__pan-left": {
+      "scene": "a brown bear running on a beach, side view",
+      "camera": "pan-left",
+      "subject": "a brown bear running on a beach, side view",
+      "verb": "pan-left",
+      "family": "a brown bear running on a beach, side view"
+    },
+    "1337__a-brown-bear-running-on-a-beach-side-view__pan-right": {
+      "scene": "a brown bear running on a beach, side view",
+      "camera": "pan-right",
+      "subject": "a brown bear running on a beach, side view",
+      "verb": "pan-right",
+      "family": "a brown bear running on a beach, side view"
+    },
+    "1337__a-brown-bear-running-on-a-beach-side-view__tilt-up": {
+      "scene": "a brown bear running on a beach, side view",
+      "camera": "tilt-up",
+      "subject": "a brown bear running on a beach, side view",
+      "verb": "tilt-up",
+      "family": "a brown bear running on a beach, side view"
+    },
+    "1337__a-brown-bear-running-on-a-beach-side-view__zoom-in": {
+      "scene": "a brown bear running on a beach, side view",
+      "camera": "zoom-in",
+      "subject": "a brown bear running on a beach, side view",
+      "verb": "zoom-in",
+      "family": "a brown bear running on a beach, side view"
+    },
+    "1337__a-brown-bear-running-on-a-beach-side-view__zoom-out": {
+      "scene": "a brown bear running on a beach, side view",
+      "camera": "zoom-out",
+      "subject": "a brown bear running on a beach, side view",
+      "verb": "zoom-out",
+      "family": "a brown bear running on a beach, side view"
+    },
+    "1337__a-brown-bear-running-on-a-beach-side-view__roll-cw": {
+      "scene": "a brown bear running on a beach, side view",
+      "camera": "roll-cw",
+      "subject": "a brown bear running on a beach, side view",
+      "verb": "roll-cw",
+      "family": "a brown bear running on a beach, side view"
+    },
+    "1337__a-horse-running-on-a-beach-front-view__off": {
+      "scene": "a horse running on a beach, front view",
+      "camera": "off",
+      "subject": "a horse running on a beach, front view",
+      "verb": "off",
+      "family": "a horse running on a beach, front view"
+    },
+    "1337__a-horse-running-on-a-beach-front-view__pan-left": {
+      "scene": "a horse running on a beach, front view",
+      "camera": "pan-left",
+      "subject": "a horse running on a beach, front view",
+      "verb": "pan-left",
+      "family": "a horse running on a beach, front view"
+    },
+    "1337__a-horse-running-on-a-beach-front-view__pan-right": {
+      "scene": "a horse running on a beach, front view",
+      "camera": "pan-right",
+      "subject": "a horse running on a beach, front view",
+      "verb": "pan-right",
+      "family": "a horse running on a beach, front view"
+    },
+    "1337__a-horse-running-on-a-beach-front-view__tilt-up": {
+      "scene": "a horse running on a beach, front view",
+      "camera": "tilt-up",
+      "subject": "a horse running on a beach, front view",
+      "verb": "tilt-up",
+      "family": "a horse running on a beach, front view"
+    },
+    "1337__a-horse-running-on-a-beach-front-view__zoom-in": {
+      "scene": "a horse running on a beach, front view",
+      "camera": "zoom-in",
+      "subject": "a horse running on a beach, front view",
+      "verb": "zoom-in",
+      "family": "a horse running on a beach, front view"
+    },
+    "1337__a-horse-running-on-a-beach-front-view__zoom-out": {
+      "scene": "a horse running on a beach, front view",
+      "camera": "zoom-out",
+      "subject": "a horse running on a beach, front view",
+      "verb": "zoom-out",
+      "family": "a horse running on a beach, front view"
+    },
+    "1337__a-horse-running-on-a-beach-front-view__roll-cw": {
+      "scene": "a horse running on a beach, front view",
+      "camera": "roll-cw",
+      "subject": "a horse running on a beach, front view",
+      "verb": "roll-cw",
+      "family": "a horse running on a beach, front view"
+    },
+    "1337__a-horse-running-on-a-beach-rear-view__off": {
+      "scene": "a horse running on a beach, rear view",
+      "camera": "off",
+      "subject": "a horse running on a beach, rear view",
+      "verb": "off",
+      "family": "a horse running on a beach, rear view"
+    },
+    "1337__a-horse-running-on-a-beach-rear-view__pan-left": {
+      "scene": "a horse running on a beach, rear view",
+      "camera": "pan-left",
+      "subject": "a horse running on a beach, rear view",
+      "verb": "pan-left",
+      "family": "a horse running on a beach, rear view"
+    },
+    "1337__a-horse-running-on-a-beach-rear-view__pan-right": {
+      "scene": "a horse running on a beach, rear view",
+      "camera": "pan-right",
+      "subject": "a horse running on a beach, rear view",
+      "verb": "pan-right",
+      "family": "a horse running on a beach, rear view"
+    },
+    "1337__a-horse-running-on-a-beach-rear-view__tilt-up": {
+      "scene": "a horse running on a beach, rear view",
+      "camera": "tilt-up",
+      "subject": "a horse running on a beach, rear view",
+      "verb": "tilt-up",
+      "family": "a horse running on a beach, rear view"
+    },
+    "1337__a-horse-running-on-a-beach-rear-view__zoom-in": {
+      "scene": "a horse running on a beach, rear view",
+      "camera": "zoom-in",
+      "subject": "a horse running on a beach, rear view",
+      "verb": "zoom-in",
+      "family": "a horse running on a beach, rear view"
+    },
+    "1337__a-horse-running-on-a-beach-rear-view__zoom-out": {
+      "scene": "a horse running on a beach, rear view",
+      "camera": "zoom-out",
+      "subject": "a horse running on a beach, rear view",
+      "verb": "zoom-out",
+      "family": "a horse running on a beach, rear view"
+    },
+    "1337__a-horse-running-on-a-beach-rear-view__roll-cw": {
+      "scene": "a horse running on a beach, rear view",
+      "camera": "roll-cw",
+      "subject": "a horse running on a beach, rear view",
+      "verb": "roll-cw",
+      "family": "a horse running on a beach, rear view"
+    },
+    "1337__a-horse-running-on-a-beach-aerial-view__off": {
+      "scene": "a horse running on a beach, aerial view",
+      "camera": "off",
+      "subject": "a horse running on a beach, aerial view",
+      "verb": "off",
+      "family": "a horse running on a beach, aerial view"
+    },
+    "1337__a-horse-running-on-a-beach-aerial-view__pan-left": {
+      "scene": "a horse running on a beach, aerial view",
+      "camera": "pan-left",
+      "subject": "a horse running on a beach, aerial view",
+      "verb": "pan-left",
+      "family": "a horse running on a beach, aerial view"
+    },
+    "1337__a-horse-running-on-a-beach-aerial-view__pan-right": {
+      "scene": "a horse running on a beach, aerial view",
+      "camera": "pan-right",
+      "subject": "a horse running on a beach, aerial view",
+      "verb": "pan-right",
+      "family": "a horse running on a beach, aerial view"
+    },
+    "1337__a-horse-running-on-a-beach-aerial-view__tilt-up": {
+      "scene": "a horse running on a beach, aerial view",
+      "camera": "tilt-up",
+      "subject": "a horse running on a beach, aerial view",
+      "verb": "tilt-up",
+      "family": "a horse running on a beach, aerial view"
+    },
+    "1337__a-horse-running-on-a-beach-aerial-view__zoom-in": {
+      "scene": "a horse running on a beach, aerial view",
+      "camera": "zoom-in",
+      "subject": "a horse running on a beach, aerial view",
+      "verb": "zoom-in",
+      "family": "a horse running on a beach, aerial view"
+    },
+    "1337__a-horse-running-on-a-beach-aerial-view__zoom-out": {
+      "scene": "a horse running on a beach, aerial view",
+      "camera": "zoom-out",
+      "subject": "a horse running on a beach, aerial view",
+      "verb": "zoom-out",
+      "family": "a horse running on a beach, aerial view"
+    },
+    "1337__a-horse-running-on-a-beach-aerial-view__roll-cw": {
+      "scene": "a horse running on a beach, aerial view",
+      "camera": "roll-cw",
+      "subject": "a horse running on a beach, aerial view",
+      "verb": "roll-cw",
+      "family": "a horse running on a beach, aerial view"
+    }
+  },
+  "prompts": {
+    "1337__a-horse-running-on-a-beach-side-view__off": "a horse running on a beach, side view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-side-view__pan-left": "a horse running on a beach, side view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-side-view__pan-right": "a horse running on a beach, side view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-side-view__tilt-up": "a horse running on a beach, side view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-side-view__zoom-in": "a horse running on a beach, side view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-side-view__zoom-out": "a horse running on a beach, side view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-side-view__roll-cw": "a horse running on a beach, side view, high quality, detailed",
+    "1337__a-horse-walking-on-a-beach-side-view__off": "a horse walking on a beach, side view, high quality, detailed",
+    "1337__a-horse-walking-on-a-beach-side-view__pan-left": "a horse walking on a beach, side view, high quality, detailed",
+    "1337__a-horse-walking-on-a-beach-side-view__pan-right": "a horse walking on a beach, side view, high quality, detailed",
+    "1337__a-horse-walking-on-a-beach-side-view__tilt-up": "a horse walking on a beach, side view, high quality, detailed",
+    "1337__a-horse-walking-on-a-beach-side-view__zoom-in": "a horse walking on a beach, side view, high quality, detailed",
+    "1337__a-horse-walking-on-a-beach-side-view__zoom-out": "a horse walking on a beach, side view, high quality, detailed",
+    "1337__a-horse-walking-on-a-beach-side-view__roll-cw": "a horse walking on a beach, side view, high quality, detailed",
+    "1337__a-horse-jumping-on-a-beach-side-view__off": "a horse jumping on a beach, side view, high quality, detailed",
+    "1337__a-horse-jumping-on-a-beach-side-view__pan-left": "a horse jumping on a beach, side view, high quality, detailed",
+    "1337__a-horse-jumping-on-a-beach-side-view__pan-right": "a horse jumping on a beach, side view, high quality, detailed",
+    "1337__a-horse-jumping-on-a-beach-side-view__tilt-up": "a horse jumping on a beach, side view, high quality, detailed",
+    "1337__a-horse-jumping-on-a-beach-side-view__zoom-in": "a horse jumping on a beach, side view, high quality, detailed",
+    "1337__a-horse-jumping-on-a-beach-side-view__zoom-out": "a horse jumping on a beach, side view, high quality, detailed",
+    "1337__a-horse-jumping-on-a-beach-side-view__roll-cw": "a horse jumping on a beach, side view, high quality, detailed",
+    "1337__a-horse-spinning-on-a-beach-side-view__off": "a horse spinning on a beach, side view, high quality, detailed",
+    "1337__a-horse-spinning-on-a-beach-side-view__pan-left": "a horse spinning on a beach, side view, high quality, detailed",
+    "1337__a-horse-spinning-on-a-beach-side-view__pan-right": "a horse spinning on a beach, side view, high quality, detailed",
+    "1337__a-horse-spinning-on-a-beach-side-view__tilt-up": "a horse spinning on a beach, side view, high quality, detailed",
+    "1337__a-horse-spinning-on-a-beach-side-view__zoom-in": "a horse spinning on a beach, side view, high quality, detailed",
+    "1337__a-horse-spinning-on-a-beach-side-view__zoom-out": "a horse spinning on a beach, side view, high quality, detailed",
+    "1337__a-horse-spinning-on-a-beach-side-view__roll-cw": "a horse spinning on a beach, side view, high quality, detailed",
+    "1337__a-tiger-running-on-a-beach-side-view__off": "a tiger running on a beach, side view, high quality, detailed",
+    "1337__a-tiger-running-on-a-beach-side-view__pan-left": "a tiger running on a beach, side view, high quality, detailed",
+    "1337__a-tiger-running-on-a-beach-side-view__pan-right": "a tiger running on a beach, side view, high quality, detailed",
+    "1337__a-tiger-running-on-a-beach-side-view__tilt-up": "a tiger running on a beach, side view, high quality, detailed",
+    "1337__a-tiger-running-on-a-beach-side-view__zoom-in": "a tiger running on a beach, side view, high quality, detailed",
+    "1337__a-tiger-running-on-a-beach-side-view__zoom-out": "a tiger running on a beach, side view, high quality, detailed",
+    "1337__a-tiger-running-on-a-beach-side-view__roll-cw": "a tiger running on a beach, side view, high quality, detailed",
+    "1337__a-wolf-running-on-a-beach-side-view__off": "a wolf running on a beach, side view, high quality, detailed",
+    "1337__a-wolf-running-on-a-beach-side-view__pan-left": "a wolf running on a beach, side view, high quality, detailed",
+    "1337__a-wolf-running-on-a-beach-side-view__pan-right": "a wolf running on a beach, side view, high quality, detailed",
+    "1337__a-wolf-running-on-a-beach-side-view__tilt-up": "a wolf running on a beach, side view, high quality, detailed",
+    "1337__a-wolf-running-on-a-beach-side-view__zoom-in": "a wolf running on a beach, side view, high quality, detailed",
+    "1337__a-wolf-running-on-a-beach-side-view__zoom-out": "a wolf running on a beach, side view, high quality, detailed",
+    "1337__a-wolf-running-on-a-beach-side-view__roll-cw": "a wolf running on a beach, side view, high quality, detailed",
+    "1337__a-deer-running-on-a-beach-side-view__off": "a deer running on a beach, side view, high quality, detailed",
+    "1337__a-deer-running-on-a-beach-side-view__pan-left": "a deer running on a beach, side view, high quality, detailed",
+    "1337__a-deer-running-on-a-beach-side-view__pan-right": "a deer running on a beach, side view, high quality, detailed",
+    "1337__a-deer-running-on-a-beach-side-view__tilt-up": "a deer running on a beach, side view, high quality, detailed",
+    "1337__a-deer-running-on-a-beach-side-view__zoom-in": "a deer running on a beach, side view, high quality, detailed",
+    "1337__a-deer-running-on-a-beach-side-view__zoom-out": "a deer running on a beach, side view, high quality, detailed",
+    "1337__a-deer-running-on-a-beach-side-view__roll-cw": "a deer running on a beach, side view, high quality, detailed",
+    "1337__a-brown-bear-running-on-a-beach-side-view__off": "a brown bear running on a beach, side view, high quality, detailed",
+    "1337__a-brown-bear-running-on-a-beach-side-view__pan-left": "a brown bear running on a beach, side view, high quality, detailed",
+    "1337__a-brown-bear-running-on-a-beach-side-view__pan-right": "a brown bear running on a beach, side view, high quality, detailed",
+    "1337__a-brown-bear-running-on-a-beach-side-view__tilt-up": "a brown bear running on a beach, side view, high quality, detailed",
+    "1337__a-brown-bear-running-on-a-beach-side-view__zoom-in": "a brown bear running on a beach, side view, high quality, detailed",
+    "1337__a-brown-bear-running-on-a-beach-side-view__zoom-out": "a brown bear running on a beach, side view, high quality, detailed",
+    "1337__a-brown-bear-running-on-a-beach-side-view__roll-cw": "a brown bear running on a beach, side view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-front-view__off": "a horse running on a beach, front view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-front-view__pan-left": "a horse running on a beach, front view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-front-view__pan-right": "a horse running on a beach, front view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-front-view__tilt-up": "a horse running on a beach, front view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-front-view__zoom-in": "a horse running on a beach, front view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-front-view__zoom-out": "a horse running on a beach, front view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-front-view__roll-cw": "a horse running on a beach, front view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-rear-view__off": "a horse running on a beach, rear view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-rear-view__pan-left": "a horse running on a beach, rear view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-rear-view__pan-right": "a horse running on a beach, rear view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-rear-view__tilt-up": "a horse running on a beach, rear view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-rear-view__zoom-in": "a horse running on a beach, rear view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-rear-view__zoom-out": "a horse running on a beach, rear view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-rear-view__roll-cw": "a horse running on a beach, rear view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-aerial-view__off": "a horse running on a beach, aerial view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-aerial-view__pan-left": "a horse running on a beach, aerial view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-aerial-view__pan-right": "a horse running on a beach, aerial view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-aerial-view__tilt-up": "a horse running on a beach, aerial view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-aerial-view__zoom-in": "a horse running on a beach, aerial view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-aerial-view__zoom-out": "a horse running on a beach, aerial view, high quality, detailed",
+    "1337__a-horse-running-on-a-beach-aerial-view__roll-cw": "a horse running on a beach, aerial view, high quality, detailed"
+  },
+  "cameras": [
+    "off",
+    "pan-left",
+    "pan-right",
+    "tilt-up",
+    "zoom-in",
+    "zoom-out",
+    "roll-cw"
+  ],
+  "anchor_camera": "off",
+  "anchor_scene": "a horse running on a beach, side view",
+  "token_site": null,
+  "token_steps": null,
+  "denoise_seconds": 280.3426244260045,
+  "seconds_per_clip": 3.6408133042338244,
+  "decode_seconds": 155.0033572849352,
+  "peak_rss_gb": 7.941749572753906,
+  "peak_alloc_gb": 5.321389198303223,
+  "verify": null,
+  "subset": {
+    "scenes": 0,
+    "cameras": 0
+  }
+}

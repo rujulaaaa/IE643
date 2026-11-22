@@ -1,0 +1,66 @@
+{
+ "seed": 42,
+ "prompts": [
+  "a horse running on a beach, side view",
+  "a horse walking on a beach, side view",
+  "a horse jumping on a beach, side view",
+  "a horse spinning on a beach, side view",
+  "a tiger running on a beach, side view",
+  "a wolf running on a beach, side view",
+  "a deer running on a beach, side view",
+  "a brown bear running on a beach, side view",
+  "a horse running on a beach, front view",
+  "a horse running on a beach, rear view",
+  "a horse running on a beach, aerial view"
+ ],
+ "views": {
+  "az0": [
+   0.0,
+   0.0
+  ],
+  "az30": [
+   0.0,
+   30.0
+  ],
+  "az60": [
+   0.0,
+   60.0
+  ],
+  "el30": [
+   30.0,
+   0.0
+  ]
+ },
+ "steps": 30,
+ "guidance": 7.5,
+ "size": 256,
+ "sites": [
+  "input_blocks.0",
+  "input_blocks.1",
+  "input_blocks.2",
+  "input_blocks.3",
+  "input_blocks.4",
+  "input_blocks.5",
+  "input_blocks.6",
+  "input_blocks.7",
+  "input_blocks.8",
+  "input_blocks.9",
+  "input_blocks.10",
+  "input_blocks.11",
+  "middle_block",
+  "output_blocks.0",
+  "output_blocks.1",
+  "output_blocks.2",
+  "output_blocks.3",
+  "output_blocks.4",
+  "output_blocks.5",
+  "output_blocks.6",
+  "output_blocks.7",
+  "output_blocks.8",
+  "output_blocks.9",
+  "output_blocks.10",
+  "output_blocks.11"
+ ],
+ "n_pairs": 73,
+ "seconds": 105.21224819892086
+}

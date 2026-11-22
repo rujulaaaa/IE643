@@ -1,0 +1,42 @@
+# D-45 (draft, 2026-11-22): subject x action x viewpoint on CameraCtrl, the novelty-assessment feedback
+# ("hold the subject and action fixed while varying the viewpoint; do the motion-sensitive layers also
+# respond to viewpoint changes?"). Read by vdprobe.camera_set.CameraSet with the CameraCtrl cameras; a
+# "scene" here is a whole subject/action/view prompt. Content pairs against the anchor split into
+#   action pairs     same subject and view, verb changed        (3 per camera)
+#   subject pairs    same verb and view, quadruped changed      (4 per camera)
+#   view pairs       same subject and verb, text viewpoint      (3 per camera)
+# and camera pairs (same prompt, camera off -> trajectory) are the viewpoint-as-camera swap.
+# Verbs and subjects are Experiment 1's (configs/probing_set.yaml), the scene is its "on a beach".
+frozen_on: "2026-11-22"
+scenes:
+  - a horse running on a beach, side view
+  - a horse walking on a beach, side view
+  - a horse jumping on a beach, side view
+  - a horse spinning on a beach, side view
+  - a tiger running on a beach, side view
+  - a wolf running on a beach, side view
+  - a deer running on a beach, side view
+  - a brown bear running on a beach, side view
+  - a horse running on a beach, front view
+  - a horse running on a beach, rear view
+  - a horse running on a beach, aerial view
+anchor_scene: a horse running on a beach, side view
+pair_kinds:
+  action:
+    - a horse walking on a beach, side view
+    - a horse jumping on a beach, side view
+    - a horse spinning on a beach, side view
+  subject:
+    - a tiger running on a beach, side view
+    - a wolf running on a beach, side view
+    - a deer running on a beach, side view
+    - a brown bear running on a beach, side view
+  view:
+    - a horse running on a beach, front view
+    - a horse running on a beach, rear view
+    - a horse running on a beach, aerial view
+cameras: ["off", pan-left, pan-right, tilt-up, zoom-in, zoom-out, roll-cw]
+anchor_camera: "off"
+seeds: [42, 1337]
+heldout_seed: 2024
+expected_counts: {clips_per_seed: 77, camera_pairs: 66, content_pairs: 70}
