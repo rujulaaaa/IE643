@@ -1,0 +1,17 @@
+{
+ "pair": [
+  "wolf",
+  "deer",
+  "walking",
+  "az0",
+  "el30"
+ ],
+ "checks": {
+  "null_mad": 0.0,
+  "null_patch": true
+ },
+ "passed": true,
+ "patch_steps": 16,
+ "patch_from": 6,
+ "seconds": 17.28470943402499
+}

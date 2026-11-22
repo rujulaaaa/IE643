@@ -1,0 +1,17 @@
+{
+ "pair": [
+  "deer",
+  "horse",
+  "jumping",
+  "az0",
+  "az0"
+ ],
+ "checks": {
+  "null_mad": 0.0,
+  "null_patch": true
+ },
+ "passed": true,
+ "patch_steps": 13,
+ "patch_from": 3,
+ "seconds": 17.01499968895223
+}
